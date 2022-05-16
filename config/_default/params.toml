@@ -10,7 +10,7 @@ description = "MetalBear is an open-core company, focusing on the backend engine
 # docsVersion = "0.3"
 
 ## Open Graph
-images = ["doks.png"]
+images = ["metalbear.png"]
 ogLocale = "en_US"
 domainTLD = "metalbear.co"
 titleHome = "MetalBear 🐻"
@@ -21,21 +21,21 @@ twitterSite = "@metalbearco"
 ## JSON-LD
 # schemaType = "Person"
 schemaType = "Organization"
-schemaName = "Doks"
-schemaAuthor = "Henk Verlinde"
-schemaAuthorTwitter = "https://twitter.com/henkverlinde"
-schemaAuthorLinkedIn = "https://www.linkedin.com/in/henkverlinde/"
-schemaAuthorGitHub = "https://github.com/h-enk"
+schemaName = "MetalBear"
+schemaAuthor = "MetalBear"
+schemaAuthorTwitter = "https://twitter.com/metalbearco"
+schemaAuthorLinkedIn = "https://www.linkedin.com/company/metalbearco"
+schemaAuthorGitHub = "https://github.com/metalbear-co"
 schemaLocale = "en-US"
-schemaLogo = "logo-doks.png"
+schemaLogo = "metalbear.png"
 schemaLogoWidth = 512
 schemaLogoHeight = 512
-schemaImage = "doks.png"
+schemaImage = "metalbear.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
-schemaTwitter = "https://twitter.com/getdoks"
-schemaLinkedIn = ""
-schemaGitHub = "https://github.com/h-enk/doks"
+schemaTwitter = "https://twitter.com/metalbearco"
+schemaLinkedIn = "https://www.linkedin.com/company/metalbearco"
+schemaGitHub = "https://github.com/metalbear-co"
 schemaSection = "blog"
 
 ## Sitelinks Search Box
@@ -65,7 +65,6 @@ alertText = ""
 
 # Edit Page
 repoHost = "GitHub"
-#repoHost = "Gitea"
 docsRepo = "https://github.com/metalbear-co/metalbear.co"
 docsRepoBranch = "main"
 docsRepoSubPath = ""
