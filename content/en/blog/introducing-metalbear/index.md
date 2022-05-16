@@ -26,7 +26,7 @@ By building an open-source, remote-first, globally distributed company whose mai
 * Every organization is unique. Naturally, we strive to support as many use cases as possible in our products, but we want our users to be able to adapt our products to fit perfectly with their own specific needs.
 
 ### Remote-first 🏠 🏡
-* Software development is difficult enough as it is, even without someone dictating where and where you have to do it. We trust our team members to work in the space and time that suit them best, in terms of both effectiveness and well-being.
+* Software development is difficult enough as it is, even without someone dictating where and when you have to do it. We trust our team members to work in the space and time that suit them best, in terms of both effectiveness and well-being.
 * Remote-first management and communication practices would let us involve outside contributors more easily and on a level playing field with members of the team.
 ### Distributed 🌍🌎🌏
 * We believe in the value of diversity. By not limiting our team to one location, we get access to amazing talent, different perspectives and new ideas.
