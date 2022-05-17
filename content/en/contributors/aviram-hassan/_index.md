@@ -10,4 +10,5 @@ images: [profile.png]
 CEO & Co-founder @ MetalBear.
 
 
-[@aviramyh](https://twitter.com/aviramyh)
+[Twitter](https://twitter.com/aviramyh)
+[LinkedIn](https://www.linkedin.com/in/aviram-hassan/)
