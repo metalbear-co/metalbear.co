@@ -10,4 +10,5 @@ images: []
 CTO & Co-founder @ MetalBear.
 
 
-[@EBukchin](https://twitter.com/EBukchin)
+[Twitter](https://twitter.com/EBukchin)
+[LinkedIn](https://www.linkedin.com/in/eyal-bukchin/)
