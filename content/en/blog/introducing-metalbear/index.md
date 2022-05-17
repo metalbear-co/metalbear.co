@@ -3,7 +3,7 @@ title: "Metal-who?"
 description: "MetalBear::start()"
 lead: "MetalBear::start()"
 date: 2022-05-12T09:19:42+01:00
-lastmod: 2022-05-12T09:19:42+01:00
+lastmod: 2022-05-17T09:19:42+01:00
 draft: false
 weight: 50
 images: []
@@ -13,9 +13,15 @@ contributors: ["Aviram Hassan", "Eyal Bukchin"]
 # MetalBear!🐻
 A huge omnivore that also conducts electricity. In the present context, though, a new startup that’s working on developing a new toolset for backend engineers.
 ## Why ⏪
-Like many devtools startups, MetalBear was born out of frustration. We've both spent years building cloud services, splitting up monoliths, wrangling configurations, writing endless tests only to break production because of that one edge case. We finally came to the realization that while tools tailored to devops engineers, frontend developers, QA engineers, and more, we, the backend developers, were being underserved. So much of our day to day work seemed needlessly slow or complicated, begging for automation or even fundamental disruption, and yet no company seemed willing to rise up to the challenge. So we decided to start MetalBear 🐻
+Like many devtools startups, MetalBear was born out of frustration. We've both spent years building cloud services, splitting up monoliths, wrangling configurations, writing endless tests only to break production because of that one edge case.
+
+We finally came to the realization that while tools tailored to devops engineers, frontend developers, QA engineers, and more, we, the backend developers, were being underserved. So much of our day to day work seemed needlessly slow or complicated, begging for automation or even fundamental disruption, and yet no company seemed willing to rise up to the challenge. So we decided to start MetalBear 🐻
 ## What ⏺️
-Much as we’d like to fundamentally change the entire state of backend development with one coordinated swoop, we have to start somewhere. The first area we decided to explore was the development and testing cycle. Backend teams waste countless hours writing mocks, maintaining costly production-like environments, and waiting on long CI/CD cycles - and we think there’s a better way. That’s why we’re building mirrord. mirrord will let developers work on existing cloud environments from the comfort and convenience of their local machine and IDE. Developers can use the same environment together, eliminating the need to maintain multiple deployments. By using mirrord, all local development can be done against a production-like environment, so developers can continuously test with higher fidelity without sacrificing convenience or spending time maintaining synthetic data.
+Much as we’d like to fundamentally change the entire state of backend development with one coordinated swoop, we have to start somewhere. The first area we decided to explore was the development and testing cycle.
+
+Backend teams waste countless hours writing mocks, maintaining costly production-like environments, and waiting on long CI/CD cycles - and we think there’s a better way. That’s why we’re building mirrord.
+
+mirrord will let developers work on existing cloud environments from the comfort and convenience of their local machine and IDE. Developers can use the same environment together, eliminating the need to maintain multiple deployments. By using mirrord, all local development can be done against a production-like environment, so developers can continuously test with higher fidelity without sacrificing convenience or spending time maintaining synthetic data.
 
 ## How ▶️
 By building an open-source, remote-first, globally distributed company whose main focus is improving the daily lives of backend engineers.
