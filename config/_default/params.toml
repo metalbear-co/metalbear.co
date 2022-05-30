@@ -59,9 +59,9 @@ footer = "© 2022 MetalBear"
 copyRight = "Copyright (c) 2022 MetalBear"
 
 # Alert
-alert = false
+alert = true
 alertDismissable = true
-alertText = ""
+alertText = "🪞 mirrord 2.0 is out! Read the blog post about it <a class=\"alert-link stretched-link\" href=\"/blog/reintroducing-mirrord/\" rel=\"noopener\">here</a>."
 
 # Edit Page
 repoHost = "GitHub"
