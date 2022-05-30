@@ -1,6 +1,6 @@
 ---
 title: "(Re)Introducing mirrord"
-description: "MetalBear::start()"
+description: "The War on the Long Dev Loop"
 lead: "The War on the Long Dev Loop"
 date: 2022-05-30T15:00:00+00:00
 lastmod: 2022-05-30T15:00:00+00:00
