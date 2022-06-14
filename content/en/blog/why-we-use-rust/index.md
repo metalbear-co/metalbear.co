@@ -80,7 +80,7 @@ The extension can't really be written in Rust due to VS Code support for JS only
 ## Company
 
 Bonus section! I had a feeling having our codebase be mainly in Rust would make hiring engineers a lot easier. As a Rust enthusiast, I would have loved to work somewhere where I'd get to work with Rust regularly, and I suspected that many others felt the same. I even posted a poll in[/r/rust](https://www.reddit.com/r/rust/comments/tjbr92/employeeemployer_market_state_for_rust/) to see how others feel. The results were encouraging - around 40% of the people who voted thought the market for hiring Rust engineer is employer driven. I suspect that in any other ecosystem, the results would have been much more one sided in favor of the market being employee driven. When we finally started hiring, we posted in the "Who's Hiring" mega thread in /r/rust, and received applications from some great candidates, making building the team both fun and fast.
-{{<figure src="rustecean-meme.jpg" class="center">}}
+{{<figure src="rustacean-meme.jpg" class="center">}}
 ## Afterword
 
 Rust can be used for many use cases, software and applications. We believe that every task requires different tools, but in our case our project's whole ecosystem fit right into Rust. You always need to do your research before choosing a language and stack, but generally speaking Rust is powerful and versatile and can be an amazing choice for a lot of different solutions.
