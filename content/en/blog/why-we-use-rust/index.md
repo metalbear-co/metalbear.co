@@ -42,7 +42,7 @@ Ideally, we would like to switch namespaces only for the necessary code flows, s
 One of mirrord's goals is to let multiple developers work on the same environment without impacting each other. To achieve that, our agent has have a very small footprint. Rust lets us have a _fixed-size_ memory layout, without many allocations and without the [overhead of a garbage collector.](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 
 ### Thread Safety
-{{<figure src="race-conditions.jpg" class="center">}}
+
 The Agent has many functionalities running at the same time, requiring the ability to move data between threads safely.
 
 Rust provides great primitives and safety around concurrency and task management. It doesn't let us send data types that are thread-bound unknowingly thanks to [Send](https://doc.rust-lang.org/std/marker/trait.Send.html) and it warns us when we hold references to non-atomic data types across threads with [Sync](https://doc.rust-lang.org/std/marker/trait.Sync.html).
@@ -89,6 +89,6 @@ Do you have any questions/corrections? Our website is completely open-source, so
 
 Want to help mirrord? Have a look at our open issues in the [GitHub issue tracker](https://github.com/metalbear-co/mirrord/issues) and feel free to contribute.
 
-[^1]: (https://mirrord.dev/docs/overview/introduction/)
+[^1]: [https://mirrord.dev/docs/overview/introduction/](https://mirrord.dev/docs/overview/introduction/)
 
 [^2]: A software layer that connects the low level C run time with the JS runtime (translating the hooks into JS function calls)
