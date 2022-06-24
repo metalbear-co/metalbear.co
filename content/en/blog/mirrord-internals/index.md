@@ -2,8 +2,8 @@
 title: "mirrord internals - hooking libc functions and fixing bugs"
 description: "writing detours"
 lead: "mirrord internals - hooking libc functions and fixing bugs"
-date: 2022-06-15T0:00:00+00:00
-lastmod: 2022-06-15T0:00:00+00:00
+date: 2022-06-24T0:00:00+00:00
+lastmod: 2022-06-24T0:00:00+00:00
 draft: false
 weight: 50
 images: []
@@ -60,4 +60,14 @@ fn init() {
     interceptor.replace(open, NativePointer(open_detour as *mut c_void), NativePointer(0 as *mut c_void)).unwrap();
 }
 
+```
+
+The complete crate for the example above is available [here].(<https://github.com/frida/frida-rust/tree/master/examples/gum/hook_open>).
+
+After `cargo +nightly build`, let's `LD_PRELOAD` our shared library and run the unix utility called `cat`.
+
+```bash
+mirrord-user@mirrord:~/mirrord$ LD_PRELOAD=target/debug/libmirrord.so cat file.txt
+open_detour: file.txt
+boots and cats
 ```
