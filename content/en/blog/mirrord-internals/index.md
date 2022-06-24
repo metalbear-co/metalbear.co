@@ -51,8 +51,10 @@ unsafe extern "C" fn open_detour(
 ```
 
 - Inside the [constructor](https://docs.rs/ctor/latest/ctor/attr.ctor.html) of our shared library:
-        - Create an interceptor.
-        - Find the exported symbol from other shared libraries for `open` and replace it with our detour through our interceptor.
+
+Create an interceptor.
+
+Find the exported symbol from other shared libraries for `open` and replace it with our detour through our interceptor.
 
 ```rs
 #[ctor]
@@ -65,7 +67,7 @@ fn init() {
 
 The complete crate for the example above is available [here](https://github.com/frida/frida-rust/tree/master/examples/gum/hook_open).
 
-After `cargo +nightly build`, let's `LD_PRELOAD` our shared library and run the unix utility called `cat`.
+After `cargo +nightly build`, let's `LD_PRELOAD` our shared library and run the unix utility called `cat` om our very cool sample file.
 
 ```bash
 mirrord-user@mirrord:~/mirrord$ LD_PRELOAD=target/debug/libmirrord.so cat file.txt
@@ -74,3 +76,22 @@ boots and cats
 ```
 
 Awesome! we are able to override the functionality of libc's system call wrappers and replace them with our custom code.
+
+## Mirroring network traffic & web servers 💻
+
+I want to do a quick walkthrough of how a simple webserver would work when run with mirrord and how this led me to find my first bug! So, in general, web servers implement the flow of creating a socket and accepting connections on it by making the following system calls sequentially -  `socket`, `bind`, `listen`, `accept`.
+Referring to the notes on the Linux manual for `listen` -
+
+{{<figure src="manpage.png" class="center" height="200" width="1500">}}
+We discuss these system calls in detail and how mirrord handles them.
+
+**Note**: These system calls are just an abstraction/wrappers through libc functions that make the system call using the `syscall` instruction to the kernel.
+
+### socket
+
+[socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. However, in case of a process calling `socket()` being run with mirrord, we do provide similar behavior, but we also need to keep a log of this endpoint in our internal data structure. Now to describe this data structure and what's going on behind the scenes I will refer to this diagram below -
+
+{{<figure src="socket.png" height="100%" width="100%">}}
+
+The function call for `socket` is overridden by mirrord’s detour replaced through Frida as we discussed in an example before. In this detour, we call libc’s version of the socket() and store the returned descriptor in a hashmap (called `SOCKETS`) that maps the socket to its related metadata and initialized state. In the end, we return the socket provided by libc, but we had to take that little detour there 😉.
+
