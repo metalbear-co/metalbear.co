@@ -95,3 +95,28 @@ We discuss these system calls in detail and how mirrord handles them.
 
 The function call for `socket` is overridden by mirrord’s detour replaced through Frida as we discussed in an example before. In this detour, we call libc’s version of the socket() and store the returned descriptor in a hashmap (called `SOCKETS`) that maps the socket to its related metadata and initialized state. In the end, we return the socket provided by libc, but we had to take that little detour there 😉.
 
+**Note**: The words “hook” and “detour” are used interchangeably as they refer to the same idea, but “detour” is more formal as it is used in the codebase.
+
+### bind
+
+To bind an address to the socket descriptor returned by the `socket` system call, [bind](https://man7.org/linux/man-pages/man2/bind.2.html) is called. Our detour for bind doesn’t really do much because all the juicy stuff happens in `listen`. However, here are a few notable things that our detour does do -
+
+- Put the socket in a `Bound` state if it exists in our `SOCKETS` hashmap.
+- Check if the port the socket is being bound to is an ignored port.
+{{<figure src="bind.png" height="100%" width="100%">}}
+
+**Note**: Ignored port refers to a port that could be used by a debugger or an IDE (which uses sockets). We need to ignore a certain range of ports because mirrord comes with a [VSCode extension](https://mirrord.dev/docs/overview/architecture/#vs-code-extension) that uses debugging support provided by the IDE to run our local process in the context of a remote cluster.
+
+### listen
+To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by step with the help of a diagram.
+{{<figure src="listen.png" height="100%" width="100%">}}
+
+In our detour, notably, the following happen - 
+
+- Change the socket state from `Bound` to `Listening` in our `SOCKETS` hashmap.
+- Call libc’s `bind` with address port as 0, which looks something like `sockaddr_in.port = 0` at a lower level in C. This allows the - OS to assign a port to our address, without us having to check for any available ports.
+- Call libc’s `getsockopt()` to get the port that was assigned to our address. This classifies as our “fake port”.
+- Call libc’s `listen()` to qualify as an endpoint open to accepting new connections.
+- Send a message to mirrord-agent that it is listening on the “real port”.
+
+Well, long story short, mirrord-layer listens on the “fake port” bound to the address specified by the user. For example, if a user calls `bind` on port 80, mirrord-layer will create a port like 3424 and call listen on it by binding the address to it. This also means that we don’t need `sudo` to run our web server when listening on a special port like 80 since it is never actually bound. And in parallel, mirrord-agent is forwarding traffic to this fake port giving us the illusion that our process is running on the remote pod. We will talk about how mirrord-agent works in another blog post!
