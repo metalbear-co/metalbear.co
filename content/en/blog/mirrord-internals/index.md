@@ -202,3 +202,100 @@ Looks like even though a connection was enqueued in our `CONNECTION_QUEUE`, but 
 **Note**: All the references made are in context of the present version of mirrord, not commit `d8b4de6`.
 
 That is weird, why was accept never called? Let’s debug our node process and see what’s going on!
+
+{{<figure src="node.gif" height="100%" width="100%">}}
+
+Well, good luck debugging that and I won’t waste your time trying to figure out how to step into `listen()` and other related functions to look at the underlying function calls. Instead, we will look at the underlying system calls with [strace](https://strace.io/).
+
+Let’s run the node server with `strace` and send a `GET` request to it. 
+
+```bash
+mehula@mehul-machine:~/mirrord$ strace -c node sample/app.js
+server listening to {"address":"::","family":"IPv6","port":8080}
+new client connection from ::ffff:127.0.0.1:48510
+connection data from ::ffff:127.0.0.1:48510: {"type":"Buffer","data":[71,69,84,32,47,32,72,84,84,80,47,49,46,49,13,10,72,111,115,116,58,32,108,111,99,97,108,104,111,115,116,58,56,48,56,48,13,10,85,115,101,114,45,65,103,101,110,116,58,32,99,117,114,108,47,55,46,54,56,46,48,13,10,65,99,99,101,112,116,58,32,42,47,42,13,10,13,10]}
+connection from ::ffff:127.0.0.1:48510 closed
+^Cstrace: Process 285853 detached
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 80.95    0.018595           5      3361           mprotect
+  4.74    0.001088           9       113           mmap
+  3.56    0.000817           3       266           brk
+  1.17    0.000268           5        51           futex
+  0.94    0.000215           7        30         8 openat
+  0.89    0.000204           9        22           fstat
+  0.79    0.000182           5        31        10 ioctl
+  0.71    0.000163           8        20           close
+  0.68    0.000156           7        20           read
+  0.56    0.000129          11        11           getgid
+  0.54    0.000125          20         6           clone
+  0.50    0.000114          10        11           geteuid
+  0.45    0.000104           9        11           getegid
+  0.45    0.000103           9        11           getuid
+  0.44    0.000101          14         7           prlimit64
+  0.42    0.000096          12         8           pread64
+  0.41    0.000094           3        26           munmap
+  0.34    0.000079           6        13           getpid
+  0.33    0.000075          10         7           rt_sigaction
+  0.24    0.000054          18         3           pipe2
+  0.15    0.000034           4         7           rt_sigprocmask
+  0.13    0.000031          15         2           eventfd2
+  0.10    0.000024          12         2           epoll_create1
+  0.09    0.000021           3         6           madvise
+  0.07    0.000016           2         7           write
+  0.07    0.000015           7         2         1 arch_prctl
+  0.05    0.000012          12         1           set_robust_list
+  0.04    0.000010           1         6           epoll_ctl
+  0.04    0.000010          10         1           getrandom
+  0.04    0.000009           9         1           set_tid_address
+  0.02    0.000005           1         4         1 epoll_wait
+  0.02    0.000004           0        11         8 stat
+  0.02    0.000004           2         2           setsockopt
+  0.01    0.000003           3         1           socket
+  0.01    0.000003           3         1           listen
+  0.01    0.000003           1         2         1 accept4
+  0.01    0.000002           2         1           bind
+  0.01    0.000002           2         1           getsockname
+  0.00    0.000000           0         1         1 access
+  0.00    0.000000           0         1           getpeername
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         2           fcntl
+  0.00    0.000000           0         2           getcwd
+  0.00    0.000000           0         4           readlink
+  0.00    0.000000           0         2           dup3
+  0.00    0.000000           0         7           statx
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.022970                  4106        30 total
+```
+
+It looks like `accept` is never called and the only system closest to accept we can see on this list is `accept4`. So according to the Linux manual page, `accept` and `accept4` are essentially the same except for the flags parameter, which we probably don’t care about right now. So we will hook `accept4` the same way as `accept` and pray that things go well this time.
+
+```bash
+2022-06-24T16:22:59.983321Z DEBUG mirrord: accept4 hooked
+2022-06-24T16:23:00.371721Z DEBUG mirrord: socket called
+2022-06-24T16:23:00.371935Z DEBUG mirrord: bind called
+2022-06-24T16:23:00.372050Z DEBUG mirrord: listen called
+server listening to {"address":""}
+2022-06-24T16:23:04.983632Z DEBUG mirrord: send message to client 80
+2022-06-24T16:23:22.756866Z DEBUG mirrord: new connection id: 0
+2022-06-24T16:23:22.758080Z DEBUG mirrord: No socket found for connection_id: 0
+events.js:174
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: accept EINVAL
+    at TCP.onconnection (net.js:1497:24)
+Emitted 'error' event at:
+    at TCP.onconnection (net.js:1497:10)
+```
+
+Hah, didn’t take long for things to south again. We hooked the libc wrapper for `accept4` but it was never called?
+
+Here are a few reasons that I can think of why this could not be working:
+
+- Node is into some voodoo black magic and has decided to screw with me this time.
+- Maybe Node never even calls accept, but instead something else to accept new connections.
+
+I don’t believe in black magic, so I will dig into the second reasoning here.
+
+`strace` only shows us the underlying system calls made by a process. So let’s do some static analysis and look for some functions similar to `accept` or `accept4`.
