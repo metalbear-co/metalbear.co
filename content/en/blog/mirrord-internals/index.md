@@ -14,7 +14,7 @@ contributors: ["Mehul Arora"]
 
 ## Recap ⏪
 
-mirrord lets you run a local process in the context of a cloud service, which means we can test our code on staging, without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there). There is a detailed overview of mirrord and what we strive to achieve with it in [this](https://metalbear.co/blog/reintroducing-mirrord/) blog post.
+mirrord lets you run a local process in the context of a cloud service, which means we can test our code on staging, without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there).  There is a detailed overview of mirrord and what we strive to achieve with it in [this](https://metalbear.co/blog/reintroducing-mirrord/) blog post.
 
 ## mirrord-layer + LD_PRELOAD = ❤️
 
@@ -22,10 +22,9 @@ mirrord-layer, shipped as a dynamic library, is responsible for “overriding”
 
 ### What is `LD_PRELOAD`?
 
-`LD_PRELOAD`, available as an environment variable, is a feature provided by dynamic linkers like ldd that allows us to load our shared library i.e. mirrord-layer, in this case, before any other. This feature is available through `DYLD_INSERT_LIBRARIES` on OSX and therefore, mirrord-layer is cross-platform i.e. it works with all Unix-based systems.
-
-And just to have some more context, we are overriding libc functions so that we can replace them with our custom implementation which enables incoming/outgoing traffic and allows us to redirect file read/writes bidirectionally between our local process and the remote pod.
-Overriding these libc functions on different systems would have been a difficult task and this is where Frida-gum comes to save the day through its [inline hooking interceptor](https://github.com/frida/frida-gum/blob/main/gum/guminterceptor.h). Read more about Frida [here](https://frida.re/).
+`LD_PRELOAD`, available as an environment variable, is a feature provided by dynamic linkers like ldd that lets us load a shared library into a process before the process loads anything else.
+In our case, we use `LD_PRELOAD` to load mirrord-layer, which overrides libc functions with a custom implementation. By overriding file and socket functions, we can then transparently plug the process into the remote pod, having it read and write files and traffic remotely without changing a single line of code.
+Overriding these libc functions on different systems would have been a difficult task and this is where Frida-gum comes to save the day through its [inline hooking interceptor](https://github.com/frida/frida-gum/blob/main/gum/guminterceptor.h).
 
 Let's go over a quick example of how we can hook the [open](https://man7.org/linux/man-pages/man2/open.2.html) system call by finding and replacing libc symbols through Frida's Rust bindings.
 
@@ -80,12 +79,8 @@ Awesome! we are able to override the functionality of libc's system call wrapper
 ## Mirroring network traffic & web servers 💻
 
 I want to do a quick walkthrough of how a simple webserver would work when run with mirrord and how this led me to find my first bug! So, in general, web servers implement the flow of creating a socket and accepting connections on it by making the following system calls sequentially -  `socket`, `bind`, `listen`, `accept`.
-Referring to the notes on the Linux manual for `listen` -
-
-{{<figure src="manpage.png" class="center" height="200" width="1500">}}
+Referring to the notes on the Linux manual for [listen](https://man7.org/linux/man-pages/man2/listen.2.html#NOTES):
 We discuss these system calls in detail and how mirrord handles them.
-
-**Note**: These system calls are just an abstraction/wrappers through libc functions that make the system call using the `syscall` instruction to the kernel.
 
 ### socket
 
