@@ -146,15 +146,15 @@ Now furthermore in our detour for `accept`, we do the following -
 - Is there a socket in `Listening` state in our `SOCKETS` hashmap?
 - If yes, we get the pending connection from our `CONNECTION_QUEUE` for our original socket descriptor.
 - Add the new socket descriptor to our `SOCKETS` hashmap in the `Connected` state.
-- Modify the pointer to the sockaddr struct to implicitly return the address of the new connection.
+- Modify the pointer to the `sockaddr` struct to implicitly return the address of the new connection.
 
-{{<figure src="accept.png" height="100%" width="100%">}}
+{{<figure src="accept.gif" height="100%" width="100%">}}
 
-Alright then, we have all our detours in place. Everything should work smoothly! (that’s what I thought) So let’s test it out by rolling back to the commit with only these detours in place. Fair warning before we go ahead, those were primitive times and required manual labor 😔.
+Alright then, we have all our detours in place. Everything should work smoothly! (that’s what I thought) So let’s test it out by rolling back to the commit with only these detours in place. Fair warning before we go ahead, those were primitive times (no CLI) and required manual labor 😔.
 
-`git checkout d8b4de6`
+`git checkout `[d8b4de6](https://github.com/metalbear-co/mirrord/tree/d8b4de6f5c5907d4d682f018d42455cd41551eb2)
 
-That’s the commit before the patch I made for the bug I discovered. We don’t need to explicitly build and load the agent image in our cluster because the image is already hardcoded in the agent specification. So let’s get rolling?
+That’s the commit before the [patch](https://github.com/metalbear-co/mirrord/pull/32) I made for the bug I discovered. We don’t need to explicitly build and load the agent image in our cluster because the image is already hardcoded in the agent specification. So let’s get rolling?
 
 ```bash
 MIRRORD_IMPERSONATED_POD_NAME=http-echo-deployment-77fddcdc49-6z22r LD_PRELOAD=/home/mehula/mirrord/target/debug/libmirrord.so node sample/app.js
@@ -200,7 +200,7 @@ That is weird, why was accept never called? Let’s debug our node process and s
 
 Well, good luck debugging that and I won’t waste your time trying to figure out how to step into `listen()` and other related functions to look at the underlying function calls. Instead, we will look at the underlying system calls with [strace](https://strace.io/).
 
-Let’s run the node server with `strace` and send a `GET` request to it. 
+Let’s run the node server with `strace` and send a `GET` request to it.
 
 ```bash
 mehula@mehul-machine:~/mirrord$ strace -c node sample/app.js
@@ -261,7 +261,7 @@ connection from ::ffff:127.0.0.1:48510 closed
 100.00    0.022970                  4106        30 total
 ```
 
-It looks like `accept` is never called and the only system closest to accept we can see on this list is `accept4`. So according to the Linux manual page, `accept` and `accept4` are essentially the same except for the flags parameter, which we probably don’t care about right now. So we will hook `accept4` the same way as `accept` and pray that things go well this time.
+It looks like `accept` is never called and the only system closest to accept we can see on this list is `accept4`. So according to the Linux manual page, `accept` and `accept4` are essentially the same except for the `flags` parameter, which we probably don’t care about right now. So we will hook `accept4` the same way as `accept` and pray that things go well this time.
 
 ```bash
 2022-06-24T16:22:59.983321Z DEBUG mirrord: accept4 hooked
@@ -282,7 +282,7 @@ Emitted 'error' event at:
     at TCP.onconnection (net.js:1497:10)
 ```
 
-Hah, didn’t take long for things to south again. We hooked the libc wrapper for `accept4` but it was never called?
+Hah, didn’t take long for things to south, the exact same error again 😔. We hooked the libc wrapper for `accept4` but it was never called?
 
 Here are a few reasons that I can think of why this could not be working:
 
@@ -292,3 +292,39 @@ Here are a few reasons that I can think of why this could not be working:
 I don’t believe in black magic, so I will dig into the second reasoning here.
 
 `strace` only shows us the underlying system calls made by a process. So let’s do some static analysis and look for some functions similar to `accept` or `accept4`.
+
+I will be using [Ghidra](https://ghidra-sre.org/) here, a reverse engineering toolkit that comes in super handy when decompiling a binary. So let’s load our node binary into Ghidra and analyze it!
+
+{{<figure src="gh1.png" height="100%" width="100%">}}
+
+So looks like we won’t find anything useful unless we import some more relevant shared objects used by our node binary.
+
+{{<figure src="gh2.png" height="70%" width="70%">}}
+
+Finding paths for shared library dependencies can be a bit painful with `find`, so instead I will use [ldd](https://man7.org/linux/man-pages/man1/ldd.1.html) here.
+
+```bash
+bigbear@metalbear:~/mirrord$ which node
+/usr/bin/node
+bigbear@metalbear:~/mirrord$ ldd /usr/bin/node
+        linux-vdso.so.1 (0x00007fffda938000)
+        libnode.so.64 => /lib/x86_64-linux-gnu/libnode.so.64 (0x00007f9934a00000)
+        libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f99349dd000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f99347eb000)
+        libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f99347cf000)
+        libuv.so.1 => /lib/x86_64-linux-gnu/libuv.so.1 (0x00007f993479e000)
+        libcares.so.2 => /lib/x86_64-linux-gnu/libcares.so.2 (0x00007f993478a000)
+        libnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x00007f993475f000)
+        libcrypto.so.1.1 => /lib/x86_64-linux-gnu/libcrypto.so.1.1 (0x00007f9934489000)
+        libssl.so.1.1 => /lib/x86_64-linux-gnu/libssl.so.1.1 (0x00007f99343f6000)
+        libicui18n.so.66 => /lib/x86_64-linux-gnu/libicui18n.so.66 (0x00007f99340f7000)
+        libicuuc.so.66 => /lib/x86_64-linux-gnu/libicuuc.so.66 (0x00007f9933f11000)
+        libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f9933f0b000)
+        libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f9933d27000)
+        libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f9933bd8000)
+        libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f9933bbd000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007f9935fcb000)
+        libicudata.so.66 => /lib/x86_64-linux-gnu/libicudata.so.66 (0x00007f99320fc000)
+```
+
+Let’s start with `libnode` and again look for the `accept` like symbols/functions.
