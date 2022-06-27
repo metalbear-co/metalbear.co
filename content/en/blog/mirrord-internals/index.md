@@ -22,7 +22,7 @@ mirrord-layer, shipped as a dynamic library, is responsible for “overriding”
 
 ### What is `LD_PRELOAD`?
 
-`LD_PRELOAD`, available as an environment variable, is a feature provided by dynamic linkers like [ld.so](https://man7.org/linux/man-pages/man8/ld.so.8.html) that lets us load a shared library into a process before the process loads anything else.
+`LD_PRELOAD`[^1], available as an environment variable, is a feature provided by dynamic linkers like [ld.so](https://man7.org/linux/man-pages/man8/ld.so.8.html) that lets us load a shared library into a process before the process loads anything else.
 In our case, we use `LD_PRELOAD` to load mirrord-layer, which overrides libc functions with a custom implementation. By overriding file and socket functions, we can then transparently plug the process into the remote pod, having it read and write files and traffic remotely without changing a single line of code.
 Overriding these libc functions on different systems would have been a difficult task and this is where Frida-gum comes to save the day through its [inline hooking interceptor](https://github.com/frida/frida-gum/blob/main/gum/guminterceptor.h).
 
@@ -83,6 +83,7 @@ Awesome! we are able to override the functionality of libc's system call wrapper
 
 I want to do a quick walkthrough of how a simple webserver would work when run with mirrord and how this led me to find my first bug! So, in general, web servers implement the flow of creating a socket and accepting connections on it by making the following system calls sequentially -  `socket`, `bind`, `listen`, `accept`.
 Referring to the notes on the Linux manual for [listen](https://man7.org/linux/man-pages/man2/listen.2.html#NOTES):
+
 We discuss these system calls in detail and how mirrord handles them.
 
 ### socket
@@ -333,7 +334,7 @@ Let’s start with `libnode` and again look for the `accept` like symbols/functi
 
 That gives us some hope! And probably a good lead to follow -
 
-A quick Google search tells me that the `uv__accept` function belongs to `libuv` which is also listed as a node dependency [here](https://nodejs.org/en/docs/meta/topics/dependencies/#dependencies).
+A quick Google search tells me that the `uv__accept` function belongs to `libuv` which is also listed as a node dependency [here](https://nodejs.org/en/docs/meta/topics/dependencies/#dependencies). Let's load `libuv` and carry on our search!
 
 {{<figure src="gh4.png" height="250" width="950">}}
 
@@ -341,7 +342,7 @@ Here’s a decompiled version of `uv__accept` which clearly shows it makes calls
 
 {{<figure src="gh5.png" height="100%" width="100%">}}
 
-AH! This is it. It all makes sense now. `uv__accept4` is directly making the syscall instead of using the libc wrapper. So let’s hook `uv__accept4` to behave the same as our hook for accept/accept4.
+AH! This is it. It all makes sense now. `uv__accept4` is directly making the syscall instead of using the libc wrapper. So let’s hook `uv__accept4` to behave the same as our hook for `accept/accept4`.
 
 ```rs
 #[cfg(target_os = "linux")]
@@ -361,7 +362,7 @@ unsafe extern "C" fn accept4_detour(
 }
 ```
 
-Yet another hopefule `GET` request -
+Yet another hopeful `GET` request -
 
 `curl http://192.168.49.2:32118`
 
@@ -396,3 +397,5 @@ On a personal note, these past two months working at MetalBear on mirrord have n
 Checkout our open issues on the [GitHub issue tracker](https://github.com/metalbear-co/mirrord/issues), any kind of contribution is welcome!
 
 Got questions? Reach out to us on [Discord](https://discord.com/invite/J5YSrStDKD) or checkout our [discussions forum](https://github.com/metalbear-co/mirrord/discussions).
+
+[^1]: Available as `DYLD_INSERT_LIBRARIES` on OSX.
