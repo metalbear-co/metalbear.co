@@ -81,10 +81,9 @@ Awesome! we are able to override the functionality of libc's system call wrapper
 
 ## Mirroring network traffic & web servers 💻
 
-I want to do a quick walkthrough of how a simple webserver would work when run with mirrord and how this led me to find my first bug! So, in general, web servers implement the flow of creating a socket and accepting connections on it by making the following system calls sequentially -  `socket`, `bind`, `listen`, `accept`.
-Referring to the notes on the Linux manual for [listen](https://man7.org/linux/man-pages/man2/listen.2.html#NOTES):
+I want to do a quick walkthrough of how a simple webserver would work when run with mirrord and how this led me to find my first bug! So, in general, web servers implement the flow of creating a socket and accepting connections on it by making the following system calls sequentially -  `socket`, `bind`, `listen`, `accept`[^2].
 
-We discuss these system calls in detail and how mirrord handles them.
+Referring to the notes on the Linux manual for [listen](https://man7.org/linux/man-pages/man2/listen.2.html#NOTES), we discuss these system calls in detail and how mirrord handles them.
 
 ### socket
 
@@ -133,7 +132,7 @@ In our detour, notably, the following happen -
 
 - Change the socket state from `Bound` to `Listening` in our `SOCKETS` hashmap.
 - Call libc’s `bind` with address port as 0, which looks something like `sockaddr_in.port = 0` at a lower level in C. This allows the - OS to assign a port to our address, without us having to check for any available ports.
-- Call libc’s `getsockopt` to get the port that was assigned to our address. We call this our “fake port”.
+- Call libc’s `getsockname` to get the port that was assigned to our address. We call this our “fake port”.
 - Call libc’s `listen` to qualify as an endpoint open to accepting new connections.
 - Send a message to mirrord-agent that it is listening on the “real port”.
 
@@ -287,7 +286,7 @@ Hah, didn’t take long for things to south, the exact same error again 😔. We
 
 Here are a few reasons that I can think of why this could not be working:
 
-- Node is into some voodoo black magic and has decided to screw with me this time.
+- Node is probably into some sorcery and has decided to screw with me this time.
 - Maybe Node never even calls accept, but instead something else to accept new connections.
 
 I don’t believe in black magic, so I will dig into the second reasoning here.
@@ -399,3 +398,4 @@ Checkout our open issues on the [GitHub issue tracker](https://github.com/metalb
 Got questions? Reach out to us on [Discord](https://discord.com/invite/J5YSrStDKD) or checkout our [discussions forum](https://github.com/metalbear-co/mirrord/discussions).
 
 [^1]: Available as `DYLD_INSERT_LIBRARIES` on OSX.
+[^2]: Webservers also make use of [select](https://man7.org/linux/man-pages/man2/select.2.html) between `listen` and `accept`.
