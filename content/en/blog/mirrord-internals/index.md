@@ -387,4 +387,12 @@ Time to celebrate? Yes! We were finally able to find the correct function to hoo
 
 ## Credits
 
+On a personal note, these past two months working at MetalBear on mirrord have not only been an amazing learning experience but have also given me a chance to work with some extremely talented engineers and Rust enthusiasts. Just want to take a moment and thank them for their guidance and mentorship with this little [meme](https://www.reddit.com/r/ProgrammerHumor/comments/vdumxo/you_can_do_it_jr_devs/) -
+
 {{<figure src="meme.jpeg" height="450" width="950">}}
+
+## Afterword
+
+Checkout our open issues on the [GitHub issue tracker](https://github.com/metalbear-co/mirrord/issues), any kind of contribution is welcome!
+
+Got questions? Reach out to us on [Discord](https://discord.com/invite/J5YSrStDKD) or checkout our [discussions forum](https://github.com/metalbear-co/mirrord/discussions).
