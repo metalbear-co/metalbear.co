@@ -328,3 +328,63 @@ bigbear@metalbear:~/mirrord$ ldd /usr/bin/node
 ```
 
 Let’s start with `libnode` and again look for the `accept` like symbols/functions.
+
+{{<figure src="gh3.png" height="250" width="100%">}}
+
+That gives us some hope! And probably a good lead to follow -
+
+A quick Google search tells me that the `uv__accept` function belongs to `libuv` which is also listed as a node dependency [here](https://nodejs.org/en/docs/meta/topics/dependencies/#dependencies).
+
+{{<figure src="gh4.png" height="250" width="950">}}
+
+Here’s a decompiled version of `uv__accept` which clearly shows it makes calls to either `uv__accept4` or `accept`. We already have our hook for `accept` in place, so we probably don’t need to worry about that, but let's look into `uv__accept4`.
+
+{{<figure src="gh5.png" height="100%" width="100%">}}
+
+AH! This is it. It all makes sense now. `uv__accept4` is directly making the syscall instead of using the libc wrapper. So let’s hook `uv__accept4` to behave the same as our hook for accept/accept4.
+
+```rs
+#[cfg(target_os = "linux")]
+unsafe extern "C" fn accept4_detour(
+    sockfd: i32,
+    address: *mut sockaddr,
+    address_len: *mut socklen_t,
+    flags: i32,
+) -> i32 {
+    let accept_fd = libc::accept4(sockfd, address, address_len, flags);
+
+    if accept_fd == -1 {
+        accept_fd
+    } else {
+        accept(sockfd, address, address_len, accept_fd)
+    }
+}
+```
+
+Yet another hopefule `GET` request -
+
+`curl http://192.168.49.2:32118`
+
+```bash
+2022-06-24T18:44:55.391978Z DEBUG mirrord: uv__accept4 hooked
+2022-06-24T18:44:55.392238Z DEBUG mirrord: accept4 hooked
+2022-06-24T18:44:55.392321Z DEBUG mirrord: accept hooked
+2022-06-24T18:44:55.722728Z DEBUG mirrord: socket called
+2022-06-24T18:44:55.722935Z DEBUG mirrord: bind called
+2022-06-24T18:44:55.723112Z DEBUG mirrord: listen called
+server listening to {"address":""}
+2022-06-24T18:45:00.392698Z DEBUG mirrord: send message to client 80
+2022-06-24T18:45:02.962967Z DEBUG mirrord: new connection id: 0
+2022-06-24T18:45:02.963693Z DEBUG mirrord: No socket found for connection_id: 0
+2022-06-24T18:45:02.963787Z DEBUG mirrord: Accept called with sockfd 28, addr 0x0, addrlen 0x0
+2022-06-24T18:45:02.963905Z DEBUG mirrord: Accepted connection from read_fd:30, write_sock:SocketpairStream { raw_fd: 31 }
+2022-06-24T18:45:02.963949Z DEBUG mirrord: writing pending data for connection_id: 0
+new client connection from 127.0.0.1:8080
+2022-06-24T18:45:02.965490Z DEBUG mirrord: Accept called with sockfd 28, addr 0x0, addrlen 0x0
+````
+
+Time to celebrate? Yes! We were finally able to find the correct function to hook and make `accept` work the way want it to work in context of mirrord. Maybe someother functionality was broken when I worked on this, but everything was rectified in future refactors.
+
+## Credits
+
+{{<figure src="meme.jpeg" height="450" width="950">}}
