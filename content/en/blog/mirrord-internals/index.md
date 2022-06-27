@@ -12,7 +12,7 @@ contributors: ["Mehul Arora"]
 
 “Is mirrord some kind of ptrace magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. But to my surprise, the idea and design behind mirrord are completely out of the box! And this is what I want to discuss in the blog post along with my experience as a student learning how to tackle bugs working on this badass project.
 
-## Recap ⏪
+## What is mirrord? 🐻
 
 mirrord lets you run a local process in the context of a cloud service, which means we can test our code on staging, without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there).  There is a detailed overview of mirrord and what we strive to achieve with it in [this](https://metalbear.co/blog/reintroducing-mirrord/) blog post.
 
@@ -22,7 +22,7 @@ mirrord-layer, shipped as a dynamic library, is responsible for “overriding”
 
 ### What is `LD_PRELOAD`?
 
-`LD_PRELOAD`, available as an environment variable, is a feature provided by dynamic linkers like ldd that lets us load a shared library into a process before the process loads anything else.
+`LD_PRELOAD`, available as an environment variable, is a feature provided by dynamic linkers like [ld.so](https://man7.org/linux/man-pages/man8/ld.so.8.html) that lets us load a shared library into a process before the process loads anything else.
 In our case, we use `LD_PRELOAD` to load mirrord-layer, which overrides libc functions with a custom implementation. By overriding file and socket functions, we can then transparently plug the process into the remote pod, having it read and write files and traffic remotely without changing a single line of code.
 Overriding these libc functions on different systems would have been a difficult task and this is where Frida-gum comes to save the day through its [inline hooking interceptor](https://github.com/frida/frida-gum/blob/main/gum/guminterceptor.h).
 
@@ -53,7 +53,7 @@ unsafe extern "C" fn open_detour(
 
 Create an interceptor.
 
-Find the exported symbol from other shared libraries for `open` and replace it with our detour through our interceptor.
+Find the exported symbol from other shared libraries for `open` and replace it with our detour through the interceptor.
 
 ```rs
 #[ctor]
@@ -66,12 +66,15 @@ fn init() {
 
 The complete crate for the example above is available [here](https://github.com/frida/frida-rust/tree/master/examples/gum/hook_open).
 
-After `cargo +nightly build`, let's `LD_PRELOAD` our shared library and run the unix utility called `cat` om our very cool sample file.
+After `cargo +nightly build`, let's `LD_PRELOAD` our shared library and run the unix utility called `cat` on our very cool sample file.
 
 ```bash
 mirrord-user@mirrord:~/mirrord$ LD_PRELOAD=target/debug/libmirrord.so cat file.txt
 open_detour: file.txt
 boots and cats
+
+mirrord-user@mirrord:~/mirrord$ echo "look at the statement before boots and cats is printed!"
+look at the statement before boots and cats is printed!
 ```
 
 Awesome! we are able to override the functionality of libc's system call wrappers and replace them with our custom code.
@@ -84,28 +87,25 @@ We discuss these system calls in detail and how mirrord handles them.
 
 ### socket
 
-[socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. However, in case of a process calling `socket()` being run with mirrord, we do provide similar behavior, but we also need to keep a log of this endpoint in our internal data structure. Now to describe this data structure and what's going on behind the scenes I will refer to this diagram below -
+[socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. However, in case of a process calling `socket` being run with mirrord, we do provide similar behavior, but we also need to keep a log of this endpoint in an internal data structure. Now to describe this data structure and what's going on behind the scenes I will refer to this visual below -
 
-{{<figure src="socket.png" height="100%" width="100%">}}
+{{<figure src="socket.gif" height="100%" width="100%">}}
 
-The function call for `socket` is overridden by mirrord’s detour replaced through Frida as we discussed in an example before. In this detour, we call libc’s version of the `socket` and store the returned descriptor in a hashmap (called `SOCKETS`) that maps the socket to its related metadata and "initialized" state. In the end, we return the socket provided by libc, but we had to take that little detour there 😉.
+The `socket` system call is overridden by mirrord’s detour replaced through Frida as we discussed in an example before. In this detour, we call libc’s version of `socket` and store the returned descriptor in a hashmap (called `SOCKETS`) that maps the socket to its related metadata and "initialized" state. In the end, we return the socket provided by libc, but we had to take that little detour there 😉.
 
 ```rs
 pub(crate) static SOCKETS: LazyLock<Mutex<HashMap<RawFd, Arc<Socket>>>> =
     LazyLock::new(|| Mutex::new(HashMap::new()));
 ```
 
-This is what our hashmap looks like in the codebase. We will talk about Rust primitives like `Arc` and `LazyLock` later in the Blogpost.
-
 **Note**: The words “hook” and “detour” are used interchangeably as they refer to the same idea, but “detour” is more formal as it is used in the codebase.
 
 ### bind
 
-To bind an address to the socket descriptor returned by the `socket` system call, [bind](https://man7.org/linux/man-pages/man2/bind.2.html) is called. Our detour for bind doesn’t really do much because all the juicy stuff happens in `listen`. However, here are a few notable things that our detour does do -
+To bind an address to the socket descriptor returned by the `socket` system call, [bind](https://man7.org/linux/man-pages/man2/bind.2.html) is called. Our detour for bind doesn’t really do much because all the juicy stuff happens in `listen`. However, it puts the socket in a `Bound` state if it exists in our `SOCKETS` hashmap.
+{{<figure src="bound.gif" height="100%" width="100%">}}
 
-- Put the socket in a `Bound` state if it exists in our `SOCKETS` hashmap.
-- Check if the port the socket is being bound to is an ignored port.
-{{<figure src="bind.png" height="100%" width="100%">}}
+Structs for Socket metadata and its states:
 
 ```rs
 pub struct Socket {
@@ -122,27 +122,25 @@ pub enum SocketState {
     Connected(Connected),
 }
 ```
-Structs for Socket metadata and its states.
-
-**Note**: Ignored port refers to a port that could be used by a debugger or an IDE (which uses sockets). We need to ignore a certain range of ports because mirrord comes with a [VSCode extension](https://mirrord.dev/docs/overview/architecture/#vs-code-extension) that uses debugging support provided by the IDE to run our local process in the context of a remote cluster.
 
 ### listen
-To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by step with the help of a diagram.
-{{<figure src="listen.png" height="100%" width="100%">}}
 
-In our detour, notably, the following happen - 
+To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by step with the help of a visual.
+{{<figure src="listen.gif" height="100%" width="100%">}}
+
+In our detour, notably, the following happen -
 
 - Change the socket state from `Bound` to `Listening` in our `SOCKETS` hashmap.
 - Call libc’s `bind` with address port as 0, which looks something like `sockaddr_in.port = 0` at a lower level in C. This allows the - OS to assign a port to our address, without us having to check for any available ports.
-- Call libc’s `getsockopt()` to get the port that was assigned to our address. This classifies as our “fake port”.
-- Call libc’s `listen()` to qualify as an endpoint open to accepting new connections.
+- Call libc’s `getsockopt` to get the port that was assigned to our address. We call this our “fake port”.
+- Call libc’s `listen` to qualify as an endpoint open to accepting new connections.
 - Send a message to mirrord-agent that it is listening on the “real port”.
 
 Well, long story short, mirrord-layer listens on the “fake port” bound to the address specified by the user. For example, if a user calls `bind` on port 80, mirrord-layer will create a port like 3424 and call listen on it by binding the address to it. This also means that we don’t need `sudo` to run our web server when listening on a special port like 80 since it is never actually bound. And in parallel, mirrord-agent is forwarding traffic to this fake port giving us the illusion that our process is running on the remote pod. We will talk about how mirrord-agent works in another blog post!
 
 ### accept
 
-Now we just need to handle new connections! Every time `accept` is called in our local process, we call libc’s `accept` and get a new socket descriptor referring to that connection/socket passed to `accept`, but that’s just not it because under the hood we also maintain an internal connection queue for pending connections. This means that every time we receive a new connection request from the agent pod we enqueue that in our `CONNECTION_QUEUE` and each socket descriptor has its own unique queue.
+Now we just need to handle new connections! Every time [accept](https://man7.org/linux/man-pages/man2/accept.2.html) is called in our local process, we call libc’s `accept` and get a new socket descriptor referring to that connection/socket passed to `accept`, but that’s just not it because under the hood we also maintain an internal connection queue for pending connections. This means that every time we receive a new connection request from the agent pod we enqueue that in our `CONNECTION_QUEUE` and each socket descriptor has its own unique queue.
 Now furthermore in our detour for `accept`, we do the following -
 
 - Is there a socket in `Listening` state in our `SOCKETS` hashmap?
