@@ -10,7 +10,7 @@ images: []
 contributors: ["Mehul Arora"]
 ---
 
-“Is mirrord some kind of ptrace magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. But to my surprise, the idea and design behind mirrord are completely out of the box! And this is what I want to discuss in the blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.
+"Is mirrord some kind of ptrace magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. To my surprise, the idea and design behind mirrord are based on simple concepts implemented in a novel way! this is what I want to discuss in the blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.
 
 ## What is mirrord? 🪞
 
@@ -383,17 +383,18 @@ new client connection from 127.0.0.1:8080
 2022-06-24T18:45:02.965490Z DEBUG mirrord: Accept called with sockfd 28, addr 0x0, addrlen 0x0
 ````
 
+## Conclusion
+
 Time to celebrate? Yes! We were finally able to find the correct function to hook and make `accept` work the way want it to work in context of mirrord. Maybe someother functionality was broken when I worked on this, but everything was rectified in future refactors.
+Writing hooks is not easy, not only does it take an extensive amount of time but also a ton of research. Which is why we try to follow a [feature guide](https://mirrord.dev/docs/developer/new_feature/) which lets us work on new features/hooks based on real use cases and needs, such that we don't end up wasting time on something that wouldn't be required in the ages to come.
+
+Hope you enjoyed reading the post! Please feel free to reach out to me with feedback at [mehula@metalbear.co](mehula@metalbear.co)/[Discord](https://discord.com/invite/J5YSrStDKD), or provide any suggestions/open issues/PRs on our [website](https://github.com/metalbear-co/metalbear.co).
 
 ## Credits
 
 On a personal note, these past two months working at MetalBear on mirrord have not only been an amazing learning experience but have also given me a chance to work with some extremely talented engineers and Rust enthusiasts. Just want to take a moment and thank my team for their guidance and mentorship with this little [meme](https://www.reddit.com/r/ProgrammerHumor/comments/vdumxo/you_can_do_it_jr_devs/) -
 
 {{<figure src="senior-junior-meme.jpeg" alt="senior junior meme" height="450" width="950">}}
-
-## Afterword
-
-Hope you enjoyed reading the post! Please feel free to reach out to me with feedback at [mehula@metalbear.co](mehula@metalbear.co)/[Discord](https://discord.com/invite/J5YSrStDKD), or provide any suggestions/open issues/PRs on our [website](https://github.com/metalbear-co/metalbear.co).
 
 
 [^1]: Available as `DYLD_INSERT_LIBRARIES` on OSX.
