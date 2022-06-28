@@ -73,8 +73,8 @@ mirrord-user@mirrord:~/mirrord$ LD_PRELOAD=target/debug/libmirrord.so cat file.t
 open_detour: file.txt
 boots and cats
 
-mirrord-user@mirrord:~/mirrord$ echo "look at the statement before boots and cats is printed!"
-look at the statement before boots and cats is printed!
+mirrord-user@mirrord:~/mirrord$ echo "look at the statement before "boots and cats" is printed!"
+look at the statement before "boots and cats" is printed!
 ```
 
 Awesome! we are able to override the functionality of libc's system call wrappers and replace them with our custom code.
@@ -87,16 +87,29 @@ Referring to the notes on the Linux manual for [listen](https://man7.org/linux/m
 
 ### [1] socket
 
-[socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. However, in case of a process calling `socket` being run with mirrord, we do provide similar behavior, but we also need to keep a log of this endpoint in an internal data structure. Now to describe this data structure and what's going on behind the scenes I will refer to this visual below -
+[socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. However, in case of a process calling `socket` being run with mirrord, we do provide similar behavior, but we also need to keep a log of this endpoint in an internal data structure. Now to describe this data structure and what's going on behind the scenes I will refer to to these diagrams below -
 
-{{<figure src="mirrord-socket-detour.gif" alt="mirrord socket detour" height="100%" width="100%">}}
+- The local process calls `socket`, which then tries to find the `socket` symbol in libc from the shared library dependencies.
 
-The `socket` system call is overridden by mirrord’s detour replaced through Frida as we discussed in an example before. In this detour, we call libc’s version of `socket` and store the returned descriptor in a hashmap (called `SOCKETS`) that maps the socket to its related metadata and "initialized" state. In the end, we return the socket provided by libc, but we had to take that little detour there 😉.
+{{<figure src="mirrord-process-layer.png" alt="mirrord socket detour" height="100%" width="100%">}}
+
+- Frida’s interceptor replaced (in-place) the libc’s socket wrapper with our detour, so the `socket` call goes to our detour 😉.
+
+{{<figure src="mirrord-libc-intercept.png" alt="mirrord socket detour" height="100%" width="100%">}}
+
+- Inside the detour, we call libc’s socket wrapper and store the returned descriptor in a hashmap (called `SOCKETS`) that maps the socket to its related metadata and "initialized" state. 
+
+{{<figure src="mirrord-layer-hashmap.png" alt="mirrord socket detour" height="100%" width="100%">}}
 
 ```rs
 pub(crate) static SOCKETS: LazyLock<Mutex<HashMap<RawFd, Arc<Socket>>>> =
     LazyLock::new(|| Mutex::new(HashMap::new()));
 ```
+
+- In the end, we just return the socket descriptor returned by the call to libc to the local process.
+
+{{<figure src="mirrord-layer-process.png" alt="mirrord socket detour" height="100%" width="100%">}}
+
 
 **Note**: The words “hook” and “detour” are used interchangeably as they refer to the same idea, but “detour” is more formal as it is used in the codebase.
 
@@ -125,30 +138,34 @@ pub enum SocketState {
 
 ### [3] listen
 
-To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by step with the help of a visual.
-{{<figure src="mirrord-listen-detour.gif" alt="mirrord listen detour" height="100%" width="100%">}}
-
-In our detour, notably, the following happen -
+To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by step with the help of these diagrams below -
 
 - Change the socket state from `Bound` to `Listening` in our `SOCKETS` hashmap.
-- Call libc’s `bind` with address port as 0, which looks something like `sockaddr_in.port = 0` at a lower level in C. This allows the - OS to assign a port to our address, without us having to check for any available ports.
+
+{{<figure src="mirrord-listen-bound-listening.gif" alt="mirrord listen detour" height="100%" width="100%">}}
+
+- Call libc’s `bind` with address port as 0, which looks something like `sockaddr_in.port = 0` at a lower level in C. This makes the - OS assign a port to our address, without us having to check for any available ports.
 - Call libc’s `getsockname` to get the port that was assigned to our address. We call this our “fake port”.
 - Call libc’s `listen` to qualify as an endpoint open to accepting new connections.
-- Send a message to mirrord-agent that it is listening on the “real port”.
+- Send a message to mirrord-agent, with information including the "real" and "fake port", that a new "peer" has connected to the agent to receive network traffic.
 
-Well, long story short, mirrord-layer listens on the “fake port” bound to the address specified by the user. For example, if a user calls `bind` on port 80, mirrord-layer will create a port like 3424 and call listen on it by binding the address to it. This also means that we don’t need `sudo` to run our web server when listening on a special port like 80 since it is never actually bound. And in parallel, mirrord-agent is forwarding traffic to this fake port giving us the illusion that our process is running on the remote pod. We will talk about how mirrord-agent works in another blog post!
+{{<figure src="mirrord-listen-to-agent.png" alt="mirrord listen detour" height="100%" width="100%">}}
+
+Long story short, mirrord-layer listens on the “fake port” bound to the address specified by the user. For example, if a user calls `bind` on port 80, mirrord-layer will create a port like 3424 and call listen on it by binding the address to it. This also means that we don’t need `sudo` to run our web server when listening on a special port like 80 since it is never actually bound. And in parallel, mirrord-agent is forwarding traffic to this fake port giving us the illusion that our process is running on the remote pod. We will talk about how mirrord-agent works in another blog post!
+
+{{<figure src="mirrord-listen-detour.gif" alt="mirrord listen detour" height="100%" width="100%">}}
 
 ### [4] accept
 
 Now we just need to handle new connections! Every time [accept](https://man7.org/linux/man-pages/man2/accept.2.html) is called in our local process, we call libc’s `accept` and get a new socket descriptor referring to that connection/socket passed to `accept`, but that’s just not it because under the hood we also maintain an internal connection queue for pending connections. This means that every time we receive a new connection request from the agent pod we enqueue that in our `CONNECTION_QUEUE` and each socket descriptor has its own unique queue.
 Now furthermore in our detour for `accept`, we do the following -
 
-- Is there a socket in `Listening` state in our `SOCKETS` hashmap?
+- Is there a socket in `Listening` state in our `SOCKETS` hashmap, matching the socket passed to the parameters to `accept`?
 - If yes, we get the pending connection from our `CONNECTION_QUEUE` for our original socket descriptor.
 - Add the new socket descriptor to our `SOCKETS` hashmap in the `Connected` state.
 - Modify the pointer to the `sockaddr` struct to implicitly return the address of the new connection.
 
-{{<figure src="mirrord-accept-detour.gif" alt="mirrord accept detour" height="100%" width="100%">}}
+{{<figure src="mirrord-accept.png" alt="mirrord accept detour" height="100%" width="100%">}}
 
 Alright then, we have all our detours in place. Everything should work smoothly! (that’s what I thought) So let’s test it out by rolling back to the commit with only these detours in place. Fair warning before we go ahead, those were primitive times (no CLI) and required manual labor 😔.
 
@@ -192,7 +209,7 @@ Emitted 'error' event at:
 
 Looks like even though a connection was enqueued in our `CONNECTION_QUEUE`, it was never dequeued and no new socket descriptor was inserted in our `SOCKETS` hashmap.
 
-**Note**: All the references made are in context of the present version of mirrord, not commit `d8b4de6`.
+**Note**: All references made are in the context of the present version of mirrord, not commit `d8b4de6`.
 
 That is weird, why was accept never called? Let’s debug our node process and see what’s going on!
 
@@ -301,7 +318,7 @@ So looks like we won’t find anything useful unless we import some more relevan
 
 {{<figure src="mirrord-ghidra-imports.png" alt="mirrord - use ghidra to find imports" height="70%" width="70%">}}
 
-Finding paths for shared library dependencies can be a bit painful with `find`, so instead I will use [ldd](https://man7.org/linux/man-pages/man1/ldd.1.html) here.
+Finding paths for shared library dependencies can be a bit painful with `find`, so instead, I will use [ldd](https://man7.org/linux/man-pages/man1/ldd.1.html) here.
 
 ```bash
 bigbear@metalbear:~/mirrord$ which node
@@ -327,7 +344,7 @@ bigbear@metalbear:~/mirrord$ ldd /usr/bin/node
         libicudata.so.66 => /lib/x86_64-linux-gnu/libicudata.so.66 (0x00007f99320fc000)
 ```
 
-Let’s start with `libnode` and again look for the `accept` like symbols/functions.
+Let’s start with `libnode` and look for the `accept` like symbols/functions again.
 
 {{<figure src="mirrord-ghidra-accept.png" alt="mirrord - use ghidra to find imports" height="250" width="100%">}}
 
@@ -390,7 +407,7 @@ Writing hooks is not easy, not only does it take an extensive amount of time but
 
 Hope you enjoyed reading the post! Please feel free to reach out to me with feedback at [mehula@metalbear.co](mehula@metalbear.co)/[Discord](https://discord.com/invite/J5YSrStDKD), or provide any suggestions/open issues/PRs on our [website](https://github.com/metalbear-co/metalbear.co).
 
-## Credits
+## Credits 🐻
 
 On a personal note, these past two months working at MetalBear on mirrord have not only been an amazing learning experience but have also given me a chance to work with some extremely talented engineers and Rust enthusiasts. Just want to take a moment and thank my team for their guidance and mentorship with this little [meme](https://www.reddit.com/r/ProgrammerHumor/comments/vdumxo/you_can_do_it_jr_devs/) -
 
