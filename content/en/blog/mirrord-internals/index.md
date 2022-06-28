@@ -1,5 +1,5 @@
 ---
-title: "mirrord internals - hooking libc functions and fixing bugs"
+title: "mirrord internals - hooking libc functions in Rust and fixing bugs"
 description: "writing detours"
 lead: "mirrord internals - hooking libc functions and fixing bugs"
 date: 2022-06-24T0:00:00+00:00
@@ -190,7 +190,7 @@ Emitted 'error' event at:
     at TCP.onconnection (net.js:1497:10)
 ```
 
-Looks like even though a connection was enqueued in our `CONNECTION_QUEUE`, but was never dequeued and no new socket descriptor was inserted in our `SOCKETS` hashmap.
+Looks like even though a connection was enqueued in our `CONNECTION_QUEUE`, it was never dequeued and no new socket descriptor was inserted in our `SOCKETS` hashmap.
 
 **Note**: All the references made are in context of the present version of mirrord, not commit `d8b4de6`.
 
@@ -261,7 +261,7 @@ connection from ::ffff:127.0.0.1:48510 closed
 100.00    0.022970                  4106        30 total
 ```
 
-It looks like `accept` is never called and the only system closest to accept we can see on this list is `accept4`. So according to the Linux manual page, `accept` and `accept4` are essentially the same except for the `flags` parameter, which we probably don’t care about right now. So we will hook `accept4` the same way as `accept` and pray that things go well this time.
+It looks like `accept` is never called and the only system call closest to accept we can see on this list is `accept4`. According to the Linux manual page, `accept` and `accept4` are essentially the same except for the `flags` parameter, which we probably don’t care about right now. So we will hook `accept4` the same way as `accept` and pray that things go well this time.
 
 ```bash
 2022-06-24T16:22:59.983321Z DEBUG mirrord: accept4 hooked
