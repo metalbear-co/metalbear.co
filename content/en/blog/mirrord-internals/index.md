@@ -12,7 +12,7 @@ contributors: ["Mehul Arora"]
 
 “Is mirrord some kind of ptrace magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. But to my surprise, the idea and design behind mirrord are completely out of the box! And this is what I want to discuss in the blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.
 
-## What is mirrord? 🐻
+## What is mirrord? 🪞
 
 [mirrord](https://github.com/metalbear-co/mirrord) lets you run a local process in the context of a cloud service, which means we can test our code on staging, without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there).  There is a detailed overview of mirrord and what we strive to achieve with it in [this](https://metalbear.co/blog/reintroducing-mirrord/) blog post.
 
@@ -85,7 +85,7 @@ I want to do a quick walkthrough of how a simple webserver would work when run w
 
 Referring to the notes on the Linux manual for [listen](https://man7.org/linux/man-pages/man2/listen.2.html#NOTES), we discuss these system calls in detail and how mirrord handles them.
 
-### socket
+### [1] socket
 
 [socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. However, in case of a process calling `socket` being run with mirrord, we do provide similar behavior, but we also need to keep a log of this endpoint in an internal data structure. Now to describe this data structure and what's going on behind the scenes I will refer to this visual below -
 
@@ -100,9 +100,9 @@ pub(crate) static SOCKETS: LazyLock<Mutex<HashMap<RawFd, Arc<Socket>>>> =
 
 **Note**: The words “hook” and “detour” are used interchangeably as they refer to the same idea, but “detour” is more formal as it is used in the codebase.
 
-### bind
+### [2] bind
 
-To bind an address to the socket descriptor returned by the `socket` system call, [bind](https://man7.org/linux/man-pages/man2/bind.2.html) is called. Our detour for bind doesn’t really do much because all the juicy stuff happens in `listen`. However, it puts the socket in a `Bound` state if it exists in our `SOCKETS` hashmap.
+To bind an address to the socket descriptor returned by the `socket` system call, [bind](https://man7.org/linux/man-pages/man2/bind.2.html) is called. Our detour for bind doesn’t really do much because all the juicy stuff happens in `listen`. However, it puts the socket in a `Bound` state if it exists in our `SOCKETS` hashmap along with the address supplied by the process through the `sockaddr` struct.
 {{<figure src="mirrord-bound.gif" height="100%" width="100%">}}
 
 Structs for Socket metadata and its states:
@@ -123,7 +123,7 @@ pub enum SocketState {
 }
 ```
 
-### listen
+### [3] listen
 
 To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by step with the help of a visual.
 {{<figure src="mirrord-listen-detour.gif" height="100%" width="100%">}}
@@ -138,7 +138,7 @@ In our detour, notably, the following happen -
 
 Well, long story short, mirrord-layer listens on the “fake port” bound to the address specified by the user. For example, if a user calls `bind` on port 80, mirrord-layer will create a port like 3424 and call listen on it by binding the address to it. This also means that we don’t need `sudo` to run our web server when listening on a special port like 80 since it is never actually bound. And in parallel, mirrord-agent is forwarding traffic to this fake port giving us the illusion that our process is running on the remote pod. We will talk about how mirrord-agent works in another blog post!
 
-### accept
+### [4] accept
 
 Now we just need to handle new connections! Every time [accept](https://man7.org/linux/man-pages/man2/accept.2.html) is called in our local process, we call libc’s `accept` and get a new socket descriptor referring to that connection/socket passed to `accept`, but that’s just not it because under the hood we also maintain an internal connection queue for pending connections. This means that every time we receive a new connection request from the agent pod we enqueue that in our `CONNECTION_QUEUE` and each socket descriptor has its own unique queue.
 Now furthermore in our detour for `accept`, we do the following -
@@ -393,9 +393,8 @@ On a personal note, these past two months working at MetalBear on mirrord have n
 
 ## Afterword
 
-Checkout our open issues on the [GitHub issue tracker](https://github.com/metalbear-co/mirrord/issues), any kind of contribution is welcome!
+Hope you enjoyed reading the post! Please feel free to reach out to me with feedback at [mehula@metalbear.co](mehula@metalbear.co)/[Discord](https://discord.com/invite/J5YSrStDKD), or provide any suggestions/open issues/PRs on our [website](https://github.com/metalbear-co/metalbear.co).
 
-Got questions? Reach out to us on [Discord](https://discord.com/invite/J5YSrStDKD) or checkout our [discussions forum](https://github.com/metalbear-co/mirrord/discussions).
 
 [^1]: Available as `DYLD_INSERT_LIBRARIES` on OSX.
 [^2]: Webservers also make use of [select](https://man7.org/linux/man-pages/man2/select.2.html) between `listen` and `accept`.
