@@ -89,7 +89,7 @@ Referring to the notes on the Linux manual for [listen](https://man7.org/linux/m
 
 [socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. However, in case of a process calling `socket` being run with mirrord, we do provide similar behavior, but we also need to keep a log of this endpoint in an internal data structure. Now to describe this data structure and what's going on behind the scenes I will refer to this visual below -
 
-{{<figure src="socket.gif" height="100%" width="100%">}}
+{{<figure src="mirrord-socket-detour.gif" alt="mirrord socket detour" height="100%" width="100%">}}
 
 The `socket` system call is overridden by mirrord’s detour replaced through Frida as we discussed in an example before. In this detour, we call libc’s version of `socket` and store the returned descriptor in a hashmap (called `SOCKETS`) that maps the socket to its related metadata and "initialized" state. In the end, we return the socket provided by libc, but we had to take that little detour there 😉.
 
@@ -103,7 +103,7 @@ pub(crate) static SOCKETS: LazyLock<Mutex<HashMap<RawFd, Arc<Socket>>>> =
 ### [2] bind
 
 To bind an address to the socket descriptor returned by the `socket` system call, [bind](https://man7.org/linux/man-pages/man2/bind.2.html) is called. Our detour for bind doesn’t really do much because all the juicy stuff happens in `listen`. However, it puts the socket in a `Bound` state if it exists in our `SOCKETS` hashmap along with the address supplied by the process through the `sockaddr` struct.
-{{<figure src="mirrord-bound.gif" height="100%" width="100%">}}
+{{<figure src="mirrord-bound.gif" alt="mirrord bind image" height="100%" width="100%">}}
 
 Structs for Socket metadata and its states:
 
@@ -126,7 +126,7 @@ pub enum SocketState {
 ### [3] listen
 
 To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by step with the help of a visual.
-{{<figure src="mirrord-listen-detour.gif" height="100%" width="100%">}}
+{{<figure src="mirrord-listen-detour.gif" alt="mirrord listen detour" height="100%" width="100%">}}
 
 In our detour, notably, the following happen -
 
@@ -148,11 +148,11 @@ Now furthermore in our detour for `accept`, we do the following -
 - Add the new socket descriptor to our `SOCKETS` hashmap in the `Connected` state.
 - Modify the pointer to the `sockaddr` struct to implicitly return the address of the new connection.
 
-{{<figure src="mirrord-accept-detour.gif" height="100%" width="100%">}}
+{{<figure src="mirrord-accept-detour.gif" alt="mirrord accept detour" height="100%" width="100%">}}
 
 Alright then, we have all our detours in place. Everything should work smoothly! (that’s what I thought) So let’s test it out by rolling back to the commit with only these detours in place. Fair warning before we go ahead, those were primitive times (no CLI) and required manual labor 😔.
 
-`git checkout `[d8b4de6](https://github.com/metalbear-co/mirrord/tree/d8b4de6f5c5907d4d682f018d42455cd41551eb2)
+`git checkout` [d8b4de6](https://github.com/metalbear-co/mirrord/tree/d8b4de6f5c5907d4d682f018d42455cd41551eb2)
 
 That’s the commit before the [patch](https://github.com/metalbear-co/mirrord/pull/32) I made for the bug I discovered. We don’t need to explicitly build and load the agent image in our cluster because the image is already hardcoded in the agent specification. So let’s get rolling?
 
@@ -196,7 +196,7 @@ Looks like even though a connection was enqueued in our `CONNECTION_QUEUE`, but 
 
 That is weird, why was accept never called? Let’s debug our node process and see what’s going on!
 
-{{<figure src="mirrord-debug-node.gif" height="100%" width="100%">}}
+{{<figure src="mirrord-debug-node.gif" alt="mirrord - try to debug node process" height="100%" width="100%">}}
 
 Well, good luck debugging that and I won’t waste your time trying to figure out how to step into `listen()` and other related functions to look at the underlying function calls. Instead, we will look at the underlying system calls with [strace](https://strace.io/).
 
@@ -295,11 +295,11 @@ I don’t believe in black magic, so I will dig into the second reasoning here.
 
 I will be using [Ghidra](https://ghidra-sre.org/) here, a reverse engineering toolkit that comes in super handy when decompiling a binary. So let’s load our node binary into Ghidra and analyze it!
 
-{{<figure src="mirrord-ghidra-search.png" height="100%" width="100%">}}
+{{<figure src="mirrord-ghidra-search.png" alt="mirrord - use ghidra to search symbols" height="100%" width="100%">}}
 
 So looks like we won’t find anything useful unless we import some more relevant shared objects used by our node binary.
 
-{{<figure src="mirrord-ghidra-imports.png" height="70%" width="70%">}}
+{{<figure src="mirrord-ghidra-imports.png" alt="mirrord - use ghidra to find imports" height="70%" width="70%">}}
 
 Finding paths for shared library dependencies can be a bit painful with `find`, so instead I will use [ldd](https://man7.org/linux/man-pages/man1/ldd.1.html) here.
 
@@ -329,17 +329,17 @@ bigbear@metalbear:~/mirrord$ ldd /usr/bin/node
 
 Let’s start with `libnode` and again look for the `accept` like symbols/functions.
 
-{{<figure src="mirrord-ghidra-accept.png" height="250" width="100%">}}
+{{<figure src="mirrord-ghidra-accept.png" alt="mirrord - use ghidra to find imports" height="250" width="100%">}}
 
 That gives us some hope! And probably a good lead to follow -
 
 A quick Google search tells me that the `uv__accept` function belongs to `libuv` which is also listed as a node dependency [here](https://nodejs.org/en/docs/meta/topics/dependencies/#dependencies). Let's load `libuv` and carry on our search!
 
-{{<figure src="mirrord-ghidra-uv__accept.png" height="250" width="100%">}}
+{{<figure src="mirrord-ghidra-uv__accept.png" alt="mirrord - use ghidra to find uv__accept" height="250" width="100%">}}
 
 Here’s a decompiled version of `uv__accept` which clearly shows it makes calls to either `uv__accept4` or `accept`. We already have our hook for `accept` in place, so we probably don’t need to worry about that, but let's look into `uv__accept4`.
 
-{{<figure src="mirrord-ghidra-uvdecompile.png" height="100%" width="100%">}}
+{{<figure src="mirrord-ghidra-uvdecompile.png" alt="mirrord - use ghidra to check decompilation" height="100%" width="100%">}}
 
 AH! This is it. It all makes sense now. `uv__accept4` is directly making the syscall instead of using the libc wrapper. So let’s hook `uv__accept4` to behave the same as our hook for `accept/accept4`.
 
@@ -387,9 +387,9 @@ Time to celebrate? Yes! We were finally able to find the correct function to hoo
 
 ## Credits
 
-On a personal note, these past two months working at MetalBear on mirrord have not only been an amazing learning experience but have also given me a chance to work with some extremely talented engineers and Rust enthusiasts. Just want to take a moment and thank them for their guidance and mentorship with this little [meme](https://www.reddit.com/r/ProgrammerHumor/comments/vdumxo/you_can_do_it_jr_devs/) -
+On a personal note, these past two months working at MetalBear on mirrord have not only been an amazing learning experience but have also given me a chance to work with some extremely talented engineers and Rust enthusiasts. Just want to take a moment and thank my team for their guidance and mentorship with this little [meme](https://www.reddit.com/r/ProgrammerHumor/comments/vdumxo/you_can_do_it_jr_devs/) -
 
-{{<figure src="senior-junior-meme.jpeg" height="450" width="950">}}
+{{<figure src="senior-junior-meme.jpeg" alt="senior junior meme" height="450" width="950">}}
 
 ## Afterword
 
