@@ -1,6 +1,6 @@
 ---
 title: "mirrord internals - hooking libc functions in Rust and fixing bugs"
-description: "writing detours"
+description: "writing hooks in Rust"
 lead: "mirrord internals - hooking libc functions and fixing bugs"
 date: 2022-06-24T0:00:00+00:00
 lastmod: 2022-06-24T0:00:00+00:00
@@ -10,7 +10,7 @@ images: []
 contributors: ["Mehul Arora"]
 ---
 
-"Is mirrord some kind of ptrace magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. To my surprise, the idea and design behind mirrord are based on simple concepts implemented in a novel way! this is what I want to discuss in the blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.
+"Is mirrord some kind of ptrace magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. To my surprise, the idea and design behind mirrord are based on simple concepts implemented in a novel way! This is what I want to discuss in this blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.
 
 ## What is mirrord? 🪞
 
@@ -81,13 +81,13 @@ Awesome! we are able to override the functionality of libc's system call wrapper
 
 ## Mirroring network traffic & web servers 💻
 
-I want to do a quick walkthrough of how a simple webserver would work when run with mirrord and how this led me to find my first bug! So, in general, web servers implement the flow of creating a socket and accepting connections on it by making the following system calls sequentially -  `socket`, `bind`, `listen`, `accept`[^2].
+I want to do a quick walkthrough of how a simple webserver would work when run with mirrord and how this led me to finding my first bug! So, in general, web servers implement the flow of creating a socket and accepting connections on it by making the following system calls sequentially -  `socket`, `bind`, `listen`, `accept`[^2].
 
 Referring to the notes on the Linux manual for [listen](https://man7.org/linux/man-pages/man2/listen.2.html#NOTES), we discuss these system calls in detail and how mirrord handles them.
 
 ### [1] socket
 
-[socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. However, in case of a process calling `socket` being run with mirrord, we do provide similar behavior, but we also need to keep a log of this endpoint in an internal data structure. Now to describe this data structure and what's going on behind the scenes I will refer to to these diagrams below -
+[socket](https://man7.org/linux/man-pages/man2/socket.2.html) returns a _socket descriptor_ referring to a communication endpoint. When mirrord hooks a process’ `socket` call,  it maintains that original behavior, but also keeps a record of the new socket in an internal data structure. To describe this data structure and what's going on behind the scenes I will refer to these diagrams below -
 
 - The local process calls `socket`, which then tries to find the `socket` symbol in libc from the shared library dependencies.
 
@@ -116,6 +116,7 @@ pub(crate) static SOCKETS: LazyLock<Mutex<HashMap<RawFd, Arc<Socket>>>> =
 ### [2] bind
 
 To bind an address to the socket descriptor returned by the `socket` system call, [bind](https://man7.org/linux/man-pages/man2/bind.2.html) is called. Our detour for bind doesn’t really do much because all the juicy stuff happens in `listen`. However, it puts the socket in a `Bound` state if it exists in our `SOCKETS` hashmap along with the address supplied by the process through the `sockaddr` struct.
+
 {{<figure src="mirrord-bound.gif" alt="mirrord bind image" height="100%" width="100%">}}
 
 Structs for Socket metadata and its states:
@@ -138,7 +139,7 @@ pub enum SocketState {
 
 ### [3] listen
 
-To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by step with the help of these diagrams below -
+To start accepting connections on our socket, we have to mark the socket as passive using the [listen](https://man7.org/linux/man-pages/man2/listen.2.html) system call. There are quite a few things happening in our “little” detour here, so let's take it step by with the help of these diagrams below -
 
 - Change the socket state from `Bound` to `Listening` in our `SOCKETS` hashmap.
 
@@ -147,11 +148,11 @@ To start accepting connections on our socket, we have to mark the socket as pass
 - Call libc’s `bind` with address port as 0, which looks something like `sockaddr_in.port = 0` at a lower level in C. This makes the - OS assign a port to our address, without us having to check for any available ports.
 - Call libc’s `getsockname` to get the port that was assigned to our address. We call this our “fake port”.
 - Call libc’s `listen` to qualify as an endpoint open to accepting new connections.
-- Send a message to mirrord-agent, with information including the "real" and "fake port", that a new "peer" has connected to the agent to receive network traffic.
+- Send a message to mirrord-agent, with information including the "real" and "fake" port, that a new "peer" has connected to the agent to receive network traffic on the "real" port.
 
 {{<figure src="mirrord-listen-to-agent.png" alt="mirrord listen detour" height="100%" width="100%">}}
 
-Long story short, mirrord-layer listens on the “fake port” bound to the address specified by the user. For example, if a user calls `bind` on port 80, mirrord-layer will create a port like 3424 and call listen on it by binding the address to it. This also means that we don’t need `sudo` to run our web server when listening on a special port like 80 since it is never actually bound. And in parallel, mirrord-agent is forwarding traffic to this fake port giving us the illusion that our process is running on the remote pod. We will talk about how mirrord-agent works in another blog post!
+Long story short, mirrord-layer listens on the “fake" port bound to the address specified by the user. For example, if a user calls `bind` on port 80, mirrord-layer will create a port like 3424 and call listen on it by binding the address to it. This also means that we don’t need `sudo` to run our web server when listening on a special port like 80 since it is never actually bound. In parallel, mirrord-agent forwards traffic to this fake port giving us the illusion that our process is running on the remote pod. We will talk about how mirrord-agent works in another blog post!
 
 {{<figure src="mirrord-listen-detour.gif" alt="mirrord listen detour" height="100%" width="100%">}}
 
@@ -167,7 +168,7 @@ Now furthermore in our detour for `accept`, we do the following -
 
 {{<figure src="mirrord-accept.png" alt="mirrord accept detour" height="100%" width="100%">}}
 
-Alright then, we have all our detours in place. Everything should work smoothly! (that’s what I thought) So let’s test it out by rolling back to the commit with only these detours in place. Fair warning before we go ahead, those were primitive times (no CLI) and required manual labor 😔.
+Alright then, we have all our detours in place. Everything should work smoothly! Or so I thought. Let’s test it out by rolling back to the commit with only these detours in place.
 
 `git checkout` [d8b4de6](https://github.com/metalbear-co/mirrord/tree/d8b4de6f5c5907d4d682f018d42455cd41551eb2)
 
@@ -402,8 +403,8 @@ new client connection from 127.0.0.1:8080
 
 ## Conclusion
 
-Time to celebrate? Yes! We were finally able to find the correct function to hook and make `accept` work the way want it to work in context of mirrord. Maybe someother functionality was broken when I worked on this, but everything was rectified in future refactors.
-Writing hooks is not easy, not only does it take an extensive amount of time but also a ton of research. Which is why we try to follow a [feature guide](https://mirrord.dev/docs/developer/new_feature/) which lets us work on new features/hooks based on real use cases and needs, such that we don't end up wasting time on something that wouldn't be required in the ages to come.
+Time to celebrate? Yes! We were finally able to find the correct function to hook and make `accept` work the way want it to work in the context of mirrord.
+Writing hooks is not easy - not only does it take an extensive amount of time, but also a ton of research. That's why we try to follow a [feature guide](https://mirrord.dev/docs/developer/new_feature/) which lets us work on new features/hooks based on real use cases and needs so that we don't end up wasting time on something that no one would actually use.
 
 Hope you enjoyed reading the post! Please feel free to reach out to me with feedback at [mehula@metalbear.co](mehula@metalbear.co)/[Discord](https://discord.com/invite/J5YSrStDKD), or provide any suggestions/open issues/PRs on our [website](https://github.com/metalbear-co/metalbear.co).
 
