@@ -1,6 +1,6 @@
 ---
 title: "mirrord internals - hooking libc functions in Rust and fixing bugs"
-description: "writing hooks in Rust"
+description: "Practical example of how to hook functions in Rust and a guide to detours in mirrord"
 lead: "mirrord internals - hooking libc functions and fixing bugs"
 date: 2022-06-24T0:00:00+00:00
 lastmod: 2022-06-24T0:00:00+00:00
