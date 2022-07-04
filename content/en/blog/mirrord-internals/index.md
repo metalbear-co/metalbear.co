@@ -2,15 +2,15 @@
 title: "mirrord internals - hooking libc functions in Rust and fixing bugs"
 description: "Practical example of how to hook functions in Rust and a guide to detours in mirrord"
 lead: "mirrord internals - hooking libc functions and fixing bugs"
-date: 2022-06-24T0:00:00+00:00
-lastmod: 2022-06-24T0:00:00+00:00
+date: 2022-07-04T0:00:00+00:00
+lastmod: 2022-07-04T0:00:00+00:00
 draft: false
 weight: 50
 images: []
 contributors: ["Mehul Arora"]
 ---
 
-"Is mirrord some kind of ptrace magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. To my surprise, the idea and design behind mirrord are based on simple concepts implemented in a novel way! This is what I want to discuss in this blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.
+"Is mirrord some kind of [ptrace](https://man7.org/linux/man-pages/man2/ptrace.2.html) magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. To my surprise, the idea and design behind mirrord are based on simple concepts implemented in a novel way! This is what I want to discuss in this blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.
 
 ## What is mirrord? 🪞
 
@@ -97,7 +97,7 @@ Referring to the notes on the Linux manual for [listen](https://man7.org/linux/m
 
 {{<figure src="mirrord-libc-intercept.png" alt="mirrord socket detour" height="100%" width="100%">}}
 
-- Inside the detour, we call libc’s socket wrapper and store the returned descriptor in a hashmap (called `SOCKETS`) that maps the socket to its related metadata and "initialized" state. 
+- Inside the detour, we call libc’s socket wrapper and store the returned descriptor in a hashmap called `SOCKETS` that maps the socket to its related metadata and "initialized" state.
 
 {{<figure src="mirrord-layer-hashmap.png" alt="mirrord socket detour" height="100%" width="100%">}}
 
@@ -109,7 +109,6 @@ pub(crate) static SOCKETS: LazyLock<Mutex<HashMap<RawFd, Arc<Socket>>>> =
 - In the end, we just return the socket descriptor returned by the call to libc to the local process.
 
 {{<figure src="mirrord-layer-process.png" alt="mirrord socket detour" height="100%" width="100%">}}
-
 
 **Note**: The words “hook” and “detour” are used interchangeably as they refer to the same idea, but “detour” is more formal as it is used in the codebase.
 
@@ -158,8 +157,9 @@ Long story short, mirrord-layer listens on the “fake" port bound to the addres
 
 ### [4] accept
 
-Now we just need to handle new connections! Every time [accept](https://man7.org/linux/man-pages/man2/accept.2.html) is called in our local process, we call libc’s `accept` and get a new socket descriptor referring to that connection/socket passed to `accept`, but that’s just not it because under the hood we also maintain an internal connection queue for pending connections. This means that every time we receive a new connection request from the agent pod we enqueue that in our `CONNECTION_QUEUE` and each socket descriptor has its own unique queue.
-Now furthermore in our detour for `accept`, we do the following -
+Now we just need to handle new connections! Every time [accept](https://man7.org/linux/man-pages/man2/accept.2.html) is called in our local process, we call libc’s `accept` and get a new socket descriptor referring to that connection/socket passed to `accept`, but that’s just not it because under the hood we also maintain an internal connection queue for pending connections. This means that every time we receive a new connection request from the agent pod we enqueue that in our `CONNECTION_QUEUE`. Each socket descriptor has its own unique queue.
+
+Furthermore in our detour for `accept`, we do the following -
 
 - Is there a socket in `Listening` state in our `SOCKETS` hashmap, matching the socket passed to the parameters to `accept`?
 - If yes, we get the pending connection from our `CONNECTION_QUEUE` for our original socket descriptor.
@@ -307,7 +307,7 @@ Here are a few reasons that I can think of why this could not be working:
 - Node is probably into some sorcery and has decided to screw with me this time.
 - Maybe Node never even calls accept, but instead something else to accept new connections.
 
-I don’t believe in black magic, so I will dig into the second reasoning here.
+I don’t believe in sorcery, so I will dig into the second reasoning here.
 
 `strace` only shows us the underlying system calls made by a process. So let’s do some static analysis and look for some functions similar to `accept` or `accept4`.
 
@@ -399,9 +399,9 @@ server listening to {"address":""}
 2022-06-24T18:45:02.963949Z DEBUG mirrord: writing pending data for connection_id: 0
 new client connection from 127.0.0.1:8080
 2022-06-24T18:45:02.965490Z DEBUG mirrord: Accept called with sockfd 28, addr 0x0, addrlen 0x0
-````
+```
 
-## Conclusion
+## Conclusion 🤠
 
 Time to celebrate? Yes! We were finally able to find the correct function to hook and make `accept` work the way want it to work in the context of mirrord.
 Writing hooks is not easy - not only does it take an extensive amount of time, but also a ton of research. That's why we try to follow a [feature guide](https://mirrord.dev/docs/developer/new_feature/) which lets us work on new features/hooks based on real use cases and needs so that we don't end up wasting time on something that no one would actually use.
@@ -413,7 +413,6 @@ Hope you enjoyed reading the post! Please feel free to reach out to me with feed
 On a personal note, these past two months working at MetalBear on mirrord have not only been an amazing learning experience but have also given me a chance to work with some extremely talented engineers and Rust enthusiasts. Just want to take a moment and thank my team for their guidance and mentorship with this little [meme](https://www.reddit.com/r/ProgrammerHumor/comments/vdumxo/you_can_do_it_jr_devs/) -
 
 {{<figure src="senior-junior-meme.jpeg" alt="senior junior meme" height="450" width="950">}}
-
 
 [^1]: Available as `DYLD_INSERT_LIBRARIES` on OSX.
 [^2]: Webservers also make use of [select](https://man7.org/linux/man-pages/man2/select.2.html) between `listen` and `accept`.
