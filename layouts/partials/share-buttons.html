@@ -496,10 +496,10 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "linkedin" }}
 <!-- Sharingbutton LinkedIn -->
-{{$linkedinUrl := "https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $pageURL }}&amp;title={{ $pageTitle }}&amp;summary={{ $pageTitle }}&amp;{{ $pageURL }}"}}
+
 <a class="resp-sharing-button__link"
-    href="{{$linkedinUrl}}"
-    onclick="window.open('{{$linkedinUrl}}', 'popup', 'width=600,height=600');return false;"
+    href="#!"
+    onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $pageURL }}&amp;title={{ $pageTitle }}&amp;summary={{ $pageTitle }}&amp;{{ $pageURL }}', 'popup', 'width=600,height=600');return false;"
     target="popup" rel="noopener" aria-label="">
     
     <div
