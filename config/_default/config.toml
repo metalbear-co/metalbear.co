@@ -87,3 +87,6 @@ rel  = "sitemap"
   [[module.mounts]]
     source = "node_modules/mermaid"
     target = "assets/js/vendor/mermaid"
+[params.shareButtons]
+  size = "small"
+  networks = ["twitter", "linkedin", "reddit", "copylink"]
