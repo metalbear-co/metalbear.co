@@ -56,12 +56,7 @@ $supportedNetworks ", ") }}
     .resp-sharing-button__link {
         text-decoration: none;
         color: #fff !important;
-
-        margin: {
-                {
-                $buttonMargin
-            }
-        }
+        margin: 0.5em
     }
 
     .resp-sharing-button {
@@ -501,9 +496,12 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "linkedin" }}
 <!-- Sharingbutton LinkedIn -->
+{{$linkedinUrl := "https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $pageURL }}&amp;title={{ $pageTitle }}&amp;summary={{ $pageTitle }}&amp;{{ $pageURL }}"}}
 <a class="resp-sharing-button__link"
-    href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $pageURL }}&amp;title={{ $pageTitle }}&amp;summary={{ $pageTitle }}&amp;{{ $pageURL }}"
-    target="_blank" rel="noopener" aria-label="">
+    href="{{$linkedinUrl}}"
+    onclick="window.open('{{$linkedinUrl}}', 'popup', 'width=600,height=600');return false;"
+    target="popup" rel="noopener" aria-label="">
+    
     <div
         class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
         <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--{{ $icon }}">
