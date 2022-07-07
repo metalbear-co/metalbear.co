@@ -4,9 +4,11 @@
     <article>
       <div class="blog-header">
         <h1>{{ .Title }}</h1>
+        {{ partial "share-buttons.html" . }}
         {{ partial "main/blog-meta.html" . }}
       </div>
       {{ .Content }}
+      {{ partial "share-buttons.html" . }}
     </article>
   </div>
 </div>
