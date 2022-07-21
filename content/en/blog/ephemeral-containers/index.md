@@ -6,7 +6,7 @@ date: 2022-07-21T0:00:00+00:00
 lastmod: 2022-07-21T0:00:00+00:00
 draft: false
 weight: 50
-images: []
+images: ["mirrord-ephemeral-blog-thumbnail.png"]
 contributors: ["Mehul Arora"]
 ---
 
