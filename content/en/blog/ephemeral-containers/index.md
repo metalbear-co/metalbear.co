@@ -10,7 +10,7 @@ images: []
 contributors: ["Mehul Arora"]
 ---
 
-If you’re following the latest news on Kubernetes, you probably would have heard about Ephemeral Containers. Not sure? Fear not! In this blog post we will try to shed some light on this new feature soon to be stable in Kubernetes v1.25.
+If you’re following the latest news on Kubernetes, you probably would have heard about Ephemeral Containers. Not sure? Fear not! In this blog post we will try to shed some light on this new feature soon to be stable[^1] in Kubernetes v1.25.
 
 ## What are Ephemeral Containers? 
 
@@ -95,7 +95,7 @@ Attach an ephemeral container to the pod -
 ```bash
 bigbear@metalbear:~/mirrord$ kubectl debug -it py-serv-deployment-686578cbfb-lb9g7 --image busybox
 Defaulting debug container name to debugger-hthnc.
-If you don't see a command prompt, try pressing enter.
+If you dont see a command prompt, try pressing enter.
 / #
 ```
 
@@ -103,7 +103,7 @@ If you don't see a command prompt, try pressing enter.
 
 Since we have access to a the network namespace of the Pod, we should be able to send a GET request using curl/wget utilities, which would not be available on a distroless image - 
 
-```
+```bash
 / # wget localhost:80
 Connecting to localhost:80 (127.0.0.1:80)
 saving to 'index.html'
@@ -118,7 +118,7 @@ OK - GET: Request completed
 
 ### Inspecting Network Traffic
 
-Intercepting network traffic on port 80 using tcpdump - 
+Inspecting network traffic using `tcpdump` - 
 
 ```bash
 mehula@mehul-machine:~/mirrord$ kubectl debug -it nginx-deployment-66b6c48dd5-jn5xg  –image=itsthenetwork/alpine-tcpdump -- sh
@@ -187,11 +187,11 @@ lrwxrwxrwx 1 root root 0 Jul 19 06:17 user -> 'user:[4026531837]'
 lrwxrwxrwx 1 root root 0 Jul 19 06:17 uts -> 'uts:[4026532524]'
 ```
 
-Newly created `debugger-tmdxk` in the Pod - 
+Newly created `debugger-tmdxk` ephemeral container in the Pod - 
 ```bash
 bigbear@metalbear:~/mirrord$ kubectl debug -it py-serv-deployment-686578cbfb-9hfpw --share-processes --image busybox
 Defaulting debug container name to debugger-tmdxk.
-If you don't see a command prompt, try pressing enter.
+If you dont see a command prompt, try pressing enter.
 / # cd ..
 / # ls -l proc/self/ns
 total 0
@@ -205,12 +205,11 @@ lrwxrwxrwx    1 root     root             0 Jul 19 06:11 user -> user:[402653183
 lrwxrwxrwx    1 root     root             0 Jul 19 06:11 uts -> uts:[4026532524]
 ```
 
-It looks like the ephemeral container has the same `cgroup`, `ipc`, `net`, `user`, and `uts` namespaces. It would make sense for the mnt namespace to not be available, because filesystems for both the ephemeral and the debugged container are different. However, pid namespace can be accessed by creating a copy of the pod as discussed in the documentation [here](https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#debugging-using-a-copy-of-the-pod). Let’s take a look at how these shared namespaces turned out to be useful for the purpose of mirroring traffic with mirrord!
-
+It looks like the ephemeral container has the same `cgroup`, `ipc`, `net`, `user`, and `uts` namespaces. It would make sense for the `mnt` namespace to not be available, because filesystems for both the ephemeral and the debugged container are different. However, `pid` namespace can be accessed by creating a copy of the pod as discussed in the documentation [here](https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#debugging-using-a-copy-of-the-pod). Let’s take a look at how these shared namespaces turned out to be useful for the purpose of mirroring traffic with mirrord!
 
 ## Case Study - mirrord 🤝 Ephemeral Containers
 
-In our last [blog post](https://metalbear.co/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/), we discussed how network operations are handled by `mirrord-layer`, how subscription requests are sent to `mirrord-agent` when `listen` is called and that `mirrord-agent` is responsible for sending back traffic to `mirrord-layer`. Verbosely, mirrord-agent is shipped as a container image and runs with elevated permissions on the same node as the impersonated pod.
+In our last [blog post](https://metalbear.co/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/), we discussed how network operations are handled by mirrord-layer, how subscription requests are sent to mirrord-agent when `listen` is called and that mirrord-agent is responsible for sending back traffic to mirrord-layer. Verbosely, mirrord-agent is shipped as a container image and runs with elevated permissions on the same node as the impersonated pod.
 
 This idea is similar to the one described in [KEP-277: Ephemeral Containers](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/277-ephemeral-containers/README.md#standalone-pod-in-shared-namespace-debug-pod).
 
@@ -314,10 +313,13 @@ Ephemeral containers really do turn out to be super useful as they save the hass
 
 While Kubernetes Jobs needs to be privileged, we can easily get rid of the privileged security context when using ephemeral containers because we don’t need to mount the container runtime sockets.
 
-It is to be noted that, Kubernetes Jobs come with a [TTL controller](https://kubernetes.io/docs/concepts/workloads/controllers/job/#ttl-mechanism-for-finished-jobs) which enables deletion of resources created by the Job on completion. A similar feature for ephemeral containers could prove to be useful.
+It is to be noted that, Kubernetes Jobs come with a `TTL controller`[^2] which enables deletion of resources created by the Job on completion. A similar feature for ephemeral containers could prove to be useful.
 
 In summary, this little exploration probably calls for a new KEP for ephemeral containers with a focus on the following - 
 
-- Support for file system mounting - the original container `root` path will be exposed under `/original_root` or something similar so we can leverage the debug image for resources, but still access the running container’s file system.
-- Ability to select which namespaces to override - Network, Filesystem, IPC, etc.
+- Support for file system mounting - Original container's `root` path will be exposed under `/original_root` or something similar, so we can leverage the debug image for resources, but still access the running container’s file system.
+- Ability to select which namespaces to override - Network, Mount, IPC, etc.
 - Autoclean on completion -  Clear entries from the Ephemeral Containers list after they finish executing.
+
+[^1]: https://github.com/kubernetes/enhancements/issues/277
+[^2]: https://kubernetes.io/docs/concepts/workloads/controllers/job/#ttl-mechanism-for-finished-jobs
