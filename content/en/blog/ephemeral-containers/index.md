@@ -2,8 +2,8 @@
 title: "Getting Started With Ephemeral Containers"
 description: "Getting started with Ephemeral Containers, and a short case study on how we used them with mirrord"
 lead: "Getting started with Ephemeral Containers, and a short case study on how we used them with mirrord"
-date: 2022-07-15T0:00:00+00:00
-lastmod: 2022-07-15T0:00:00+00:00
+date: 2022-07-21T0:00:00+00:00
+lastmod: 2022-07-21T0:00:00+00:00
 draft: false
 weight: 50
 images: []
@@ -12,18 +12,20 @@ contributors: ["Mehul Arora"]
 
 If you’re following the latest news on Kubernetes, you probably would have heard about Ephemeral Containers. Not sure? Fear not! In this blog post we will try to shed some light on this new feature soon to be stable[^1] in Kubernetes v1.25.
 
-## What are Ephemeral Containers? 
+## What are Ephemeral Containers?
 
-Ephemeral containers let us run a container with a specific image in the context of an already running container in a Pod. This comes in handy when debugging/troubleshooting distroless images or images that lack certain utilities, where `kubectl exec` won’t be helpful. 
+[Ephemeral containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) let us run a container with a specific image in the context of an already running container in a Pod. This comes in handy when debugging/troubleshooting distroless images or images that lack certain utilities, where `kubectl exec` won’t be helpful.
 
 ```bash
 bigbear@metalbear:~/mirrord$ kubectl exec -it py-serv-deployment-686578cbfb-9hfpw  -- sh
 # tcpdump
 sh: 1: tcpdump: not found
 ```
+
 Let’s look at a few examples of how one might go about debugging with ephemeral containers -
 
-I will create a new deployment using this file - 
+I will create a new deployment using this file -
+
 <details>
   <summary>app.yaml</summary>
 
@@ -80,7 +82,7 @@ spec:
 kubectl apply -f app.yaml
 ```
 
-List the deployments - 
+List the deployments -
 
 ```bash
 bigbear@metalbear:~/mirrord$ kubectl get pods
@@ -101,7 +103,7 @@ If you dont see a command prompt, try pressing enter.
 
 ### Sending Requests
 
-Since we have access to a the network namespace of the Pod, we should be able to send a GET request using curl/wget utilities, which would not be available on a distroless image - 
+Since we have access to a the network namespace of the Pod, we should be able to send a GET request using curl/wget utilities, which would not be available on a distroless image -
 
 ```bash
 / # wget localhost:80
@@ -118,7 +120,7 @@ OK - GET: Request completed
 
 ### Inspecting Network Traffic
 
-Inspecting network traffic using `tcpdump` - 
+Inspecting network traffic using `tcpdump` -
 
 ```bash
 mehula@mehul-machine:~/mirrord$ kubectl debug -it nginx-deployment-66b6c48dd5-jn5xg  –image=itsthenetwork/alpine-tcpdump -- sh
@@ -142,6 +144,7 @@ listening on any, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 262144
 ```
 
 ### Network Latency
+
 Checking network latency with `ping`
 
 ```bash
@@ -167,11 +170,12 @@ rtt min/avg/max/mdev = 0.024/0.040/0.061/0.008 ms
 
 ## How does it work?
 
-Kubernetes schedules the given image to be run in the same namespaces as that of the selected container. This is very similar to what we do in [mirrord](http://mirrord.dev) manually, which we will discuss later. But let’s take a closer look at what namespaces are available to ephemeral containers.
+Kubernetes schedules the given image to be run in the same namespaces as that of the selected container. This is very similar to what we do in [mirrord](https://github.com/metalbear-co/mirrord) manually, which we will discuss later. But let’s take a closer look at what namespaces are available to ephemeral containers.
 
-Exec into the pod being debugged, list all the namespaces, and compare them to the ones set in the ephemeral container - 
+Exec into the pod being debugged, list all the namespaces, and compare them to the ones set in the ephemeral container -
 
-`py-serv` container inside the Pod - 
+`py-serv` container inside the Pod -
+
 ```bash
 bigbear@metalbear:~/mirrord$ kubectl exec -it py-serv-deployment-686578cbfb-lb9g7 -- sh
 Defaulted container "py-serv" out of: py-serv, debugger-hthnc (ephem)
@@ -187,7 +191,8 @@ lrwxrwxrwx 1 root root 0 Jul 19 06:17 user -> 'user:[4026531837]'
 lrwxrwxrwx 1 root root 0 Jul 19 06:17 uts -> 'uts:[4026532524]'
 ```
 
-Newly created `debugger-tmdxk` ephemeral container in the Pod - 
+Newly created `debugger-tmdxk` ephemeral container in the Pod -
+
 ```bash
 bigbear@metalbear:~/mirrord$ kubectl debug -it py-serv-deployment-686578cbfb-9hfpw --share-processes --image busybox
 Defaulting debug container name to debugger-tmdxk.
@@ -216,7 +221,8 @@ This idea is similar to the one described in [KEP-277: Ephemeral Containers](htt
 Let’s look into the method we currently use to send traffic back to mirrord-layer.
 
 ### Kubernetes Jobs
-Kubernetes lets you create Jobs that run Pods until their execution is complete. mirrord-agent, run as a Kubernetes Job now, needs to enter the container’s network namespace of the pod being debugged and have access to its root file system. In order to be able to do so, mirrord-layer has to infer the container runtime and spawn the Job with the container runtime and the container ID as command line arguments for the agent process. 
+
+Kubernetes lets you create Jobs that run Pods until their execution is complete. mirrord-agent, run as a Kubernetes Job now, needs to enter the container’s network namespace of the pod being debugged and have access to its root file system. In order to be able to do so, mirrord-layer has to infer the container runtime and spawn the Job with the container runtime and the container ID as command line arguments for the agent process.
 
 We will spawn mirrord-agent using the spec below:
 
@@ -276,7 +282,7 @@ We will spawn mirrord-agent using the spec below:
     }
 ```
 
-mirrord-agent then uses the container runtime API to get the PID of the container and calls setns to enter the network namespace. Once it has entered the namespace, it sniffs the network packets and mirrors the traffic to a local port. 
+mirrord-agent then uses the container runtime API to get the PID of the container and calls setns to enter the network namespace. Once it has entered the namespace, it sniffs the network packets and mirrors the traffic to a local port.
 
 mirrord-layer, on successful creation of the agent, forwards the port on the pod and analyzes the traffic stream for responses.
 
@@ -284,7 +290,7 @@ mirrord-layer, on successful creation of the agent, forwards the port on the pod
 
 While the main intended use case for this feature is to let users troubleshoot/debug remote pod, we will use it to run mirrord-agent instead of Kubernetes Jobs, as ephemeral containers share common namespaces, such as the net namespace, and resource allocations with the debugged pod.
 
-We will use the mirrord-agent container image for the ephemeral container and send traffic back to mirrord-layer. Let’s start by patching the `ephemeralcontainers` subresource using the spec below - 
+We will use the mirrord-agent container image for the ephemeral container and send traffic back to mirrord-layer. Let’s start by patching the `ephemeralcontainers` subresource using the spec below -
 
 ```json
 {
@@ -315,7 +321,7 @@ While Kubernetes Jobs needs to be privileged, we can easily get rid of the privi
 
 It is to be noted that, Kubernetes Jobs come with a `TTL controller`[^2] which enables deletion of resources created by the Job on completion. A similar feature for ephemeral containers could prove to be useful.
 
-In summary, this little exploration probably calls for a new KEP for ephemeral containers with a focus on the following - 
+In summary, this little exploration probably calls for a new KEP for ephemeral containers with a focus on the following -
 
 - Support for file system mounting - Original container's `root` path will be exposed under `/original_root` or something similar, so we can leverage the debug image for resources, but still access the running container’s file system.
 - Ability to select which namespaces to override - Network, Mount, IPC, etc.
