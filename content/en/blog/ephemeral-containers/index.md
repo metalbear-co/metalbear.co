@@ -3,7 +3,7 @@ title: "Getting Started With Ephemeral Containers"
 description: "Getting started with Ephemeral Containers, and a short case study on how we used them with mirrord"
 lead: "Getting started with Ephemeral Containers, and a short case study on how we used them with mirrord"
 date: 2022-07-21T0:00:00+00:00
-lastmod: 2022-07-21T0:00:00+00:00
+lastmod: 2022-07-27T0:00:00+00:00
 draft: false
 weight: 50
 images: ["mirrord-ephemeral-blog-thumbnail.png"]
@@ -123,7 +123,7 @@ OK - GET: Request completed
 Inspecting network traffic using `tcpdump` -
 
 ```bash
-mehula@mehul-machine:~/mirrord$ kubectl debug -it nginx-deployment-66b6c48dd5-jn5xg  –image=itsthenetwork/alpine-tcpdump -- sh
+bigbear@metalbear:~/mirrord$ kubectl debug -it nginx-deployment-66b6c48dd5-jn5xg  –image=itsthenetwork/alpine-tcpdump -- sh
                                                                
 Defaulting debug container name to debugger-mzrzj.
 If you dont see a command prompt, try pressing enter.
@@ -210,7 +210,28 @@ lrwxrwxrwx    1 root     root             0 Jul 19 06:11 user -> user:[402653183
 lrwxrwxrwx    1 root     root             0 Jul 19 06:11 uts -> uts:[4026532524]
 ```
 
-It looks like the ephemeral container has the same `cgroup`, `ipc`, `net`, `user`, and `uts` namespaces. It would make sense for the `mnt` namespace to not be available, because filesystems for both the ephemeral and the debugged container are different. However, `pid` namespace can be accessed by creating a copy of the pod as discussed in the documentation [here](https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#debugging-using-a-copy-of-the-pod). Let’s take a look at how these shared namespaces turned out to be useful for the purpose of mirroring traffic with mirrord!
+It looks like the ephemeral container has the same `cgroup`, `ipc`, `net`, `user`, and `uts` namespaces. It would make sense for the `mnt` namespace to not be available, because filesystems for both the ephemeral and the debugged container are different. `pid` namespace can be accessed by creating a copy of the pod as discussed in the documentation [here](https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#debugging-using-a-copy-of-the-pod).
+
+However, if the target container is specified explicitly, the ephemeral container has access to the pid namespace. This means we can access the filesystem of the debugged pod by referring to the root path as `/proc/1/root`
+
+```bash
+bigbear@metalbear:~/mirrord$ kubectl debug -it --target py-serv py-serv-deployment-686578cbfb-bh58v --image busybox
+Targeting container "py-serv". If you don't see processes from this container it may be because the container runtime doesn't support this feature.
+Defaulting debug container name to debugger-zfd64.
+If you dont see a command prompt, try pressing enter.
+/ # ps
+PID   USER     TIME  COMMAND
+    1 root      1:49 python3 app.py
+   26 root      0:00 sh
+   32 root      0:00 ps
+/ # cd proc/1/root
+sh: getcwd
+(unknown) # ls
+app    boot   etc    lib    media  opt    root   sbin   sys    usr
+bin    dev    home   lib64  mnt    proc   run    srv    tmp    var
+```
+
+Let’s take a look at how these shared namespaces turned out to be useful for the purpose of mirroring traffic with mirrord!
 
 ## Case Study - mirrord 🤝 Ephemeral Containers
 
@@ -315,17 +336,11 @@ For more info on how we used ephemeral containers, refer to this [Pull Request](
 
 ## Conclusion
 
-Ephemeral containers really do turn out to be super useful as they save the hassle of switching namespaces and interacting with various container runtimes. This is great as long as our scope is limited to debugging network traffic. But in case of mirrord, where filesystem access is also necessary, it is not possible to perform file operations through ephemeral containers due to lack of availability of the `mnt` namespace.
+Ephemeral containers really do turn out to be super useful as they save the hassle of switching namespaces and interacting with various container runtimes. While Kubernetes Jobs needs to be privileged, we can easily get rid of the privileged security context when using ephemeral containers because we don’t need to mount the container runtime sockets.
 
-While Kubernetes Jobs needs to be privileged, we can easily get rid of the privileged security context when using ephemeral containers because we don’t need to mount the container runtime sockets.
+It should be noted that, Kubernetes Jobs come with a TTL controller which enables deletion of resources created by the Job on completion. A similar feature for ephemeral containers could prove to be useful (we have a KEP in the works).
 
-It is to be noted that, Kubernetes Jobs come with a `TTL controller`[^2] which enables deletion of resources created by the Job on completion. A similar feature for ephemeral containers could prove to be useful.
-
-In summary, this little exploration probably calls for a new KEP for ephemeral containers with a focus on the following -
-
-- Support for file system mounting - Original container's `root` path will be exposed under `/original_root` or something similar, so we can leverage the debug image for resources, but still access the running container’s file system.
-- Ability to select which namespaces to override - Network, Mount, IPC, etc.
-- Autoclean on completion -  Clear entries from the Ephemeral Containers list after they finish executing.
+**Note:** This blogpost is updated on `July 27, 2022`. I found out through a [Twitter discussion](https://twitter.com/Mehulwastaken/status/1550228831398727680) that it is possible to have access to the pid namespace by explicitly specifying the target container explicitly.
 
 [^1]: https://github.com/kubernetes/enhancements/issues/277
 [^2]: https://kubernetes.io/docs/concepts/workloads/controllers/job/#ttl-mechanism-for-finished-jobs
