@@ -340,7 +340,7 @@ Ephemeral containers really do turn out to be super useful as they save the hass
 
 It should be noted that, Kubernetes Jobs come with a TTL controller which enables deletion of resources created by the Job on completion. A similar feature for ephemeral containers could prove to be useful (we have a KEP in the works).
 
-**Note:** This blogpost is updated on `July 27, 2022`. I found out through a [Twitter discussion](https://twitter.com/Mehulwastaken/status/1550228831398727680) that it is possible to have access to the pid namespace by explicitly specifying the target container explicitly.
+**Note:** This blogpost is updated on `July 27, 2022`. I found out through a [Twitter discussion](https://twitter.com/Mehulwastaken/status/1550228831398727680) that it is possible to have access to the pid namespace by specifying the target container explicitly.
 
 [^1]: https://github.com/kubernetes/enhancements/issues/277
 [^2]: https://kubernetes.io/docs/concepts/workloads/controllers/job/#ttl-mechanism-for-finished-jobs
