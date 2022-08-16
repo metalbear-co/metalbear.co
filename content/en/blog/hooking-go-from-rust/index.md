@@ -17,7 +17,7 @@ To cover most common scenarios, mirrord hooks libc functions and this works for 
 ## Mostly Harmless
 
 [Golang doesn’t use libc on Linux](https://lwn.net/Articles/771441/), and instead calls syscalls directly. This is mostly harmless for the common developer - they don’t care about the assembly, syscalls, linkage, etc - they just want their binary to work. Therefore, being self-contained provides a very good user experience, as Go applications aren’t dependent on the local machine’s libc.
-It’s pretty harmful for us, though. Since we explicitly override libc functions, our software simply doesn’t function when run in Go apps (or any other process that doesn’t call libc). Therefore, we must hook Golang functions!
+It’s pretty harmful for us, though. Since we explicitly override libc functions, our software simply doesn’t function when run with Go apps (or any other process that doesn’t call libc). Therefore, we must hook Golang functions!
 
 ## Almost, but not quite, entirely unlike tea
 
@@ -28,7 +28,7 @@ How do we hook Golang functions? Same way we do libc functions -  with [Frida](h
 
 The trampoline will be written in Assembly and its purpose is to translate a Go function call into a Rust function call, then return the result as the caller of the original Go function expected it to return.
 
-Looking at the backtrace of our Go binary and dependencies of the net/http package, it was obvious that it involved the use of the syscall package. By reverse engineering the Go binary using Ghidra, we mapped out the relevant flows (socket, listen, accept, etc.) to three different functions that we need to hook:
+Looking at the backtrace of our Go [binary](https://github.com/metalbear-co/mirrord/blob/main/tests/go-e2e/main.go) and dependencies of the `net/http` package, it was obvious that it involved the use of the `syscall` package. By reverse engineering the Go binary using [Ghidra](https://github.com/NationalSecurityAgency/ghidra), we mapped out the relevant flows (socket, listen, accept, etc.) to three different functions that we need to hook:
 
 - `syscall.Syscall6.abi0` - syscalls with 6 parameters letting the runtime know we switched to a blocking operation so it can schedule on another thread/goroutine.
 - `syscall.Syscall.abi0` - same as `syscall.Syscall6.abi0` but with three parameters.
@@ -53,7 +53,7 @@ mov rcx, QWORD PTR [rsp+0x20]
 mov rdi, QWORD PTR [rsp+0x8]
 ```
 
-Golang has its own ABI, precisely `ABI0` and `ABIInternal`. Go keeps [backward compatibility](https://go.googlesource.com/proposal/+/master/design/27539-internal-abi.md) with a stack based calling convention along with the recently introduced register based calling convention. Turns out ABI0 functions follow a stack based convention, which is why we move values from the stack rather than registers.
+Golang has its own ABI(as mentioned before), precisely `ABI0` and `ABIInternal`. Go keeps [backward compatibility](https://go.googlesource.com/proposal/+/master/design/27539-internal-abi.md) with a stack based calling convention along with the recently introduced register based calling convention. Turns out `ABI0` functions follow a stack based convention, which is why we move values from the stack rather than registers.
 
 ### Calling the handler
 
@@ -61,7 +61,7 @@ Golang has its own ABI, precisely `ABI0` and `ABIInternal`. Go keeps [backward c
 call c_abi_syscall_handler
 ```
 
-Following the stack based convention from Go, we move the arguments to registers. But what registers exactly and why? Since we’re hooking a function that directly makes the syscall, we require a handler to handle i.e. detour the syscalls for us. Our handler will be called using the C ABI calling convention, and it will match on syscalls and redirect them based on their type to their specific detours and return the result in the specific register conforming to the C ABI.
+Following the stack based convention from Go, we move the arguments to registers. But what registers exactly and why? Since we’re hooking a function that directly makes the syscall, we would require a handler to manage the syscalls for us. Our handler will be called using the C ABI calling convention, it will match on syscalls and redirect them based on their type to their specific detours and return the result in the specific register conforming to the C ABI.
 
 ```rs
 #[no_mangle]
@@ -94,7 +94,7 @@ unsafe extern "C" fn c_abi_syscall_handler(
 // would pass 4th arg in CX, not R10.
 ```
 
-As mentioned above, we will move the result returned by the handler back to the stack like so:
+As mentioned above and as we saw in the disassembly, we will move the result returned by the handler back to the stack like so:
 
 ```asm
 
@@ -131,8 +131,6 @@ Note the usage of the [Naked function feature](https://rust-lang.github.io/rfcs/
 Let’s do a sample run and see if everything works:
 
 {{<figure src="mirrord-go-run.png" alt="running the gin server with the rawsyscall hook" height="100%" width="100%">}}
-
-[^1]: The cool Gopher was made using https://gopherize.me/.
 
 Great! It works just as we expected. However, the actual detours in mirrord contain logs and do a lot of book-keeping. Let’s start by adding a simple debug statement and see where things go.
 
@@ -321,9 +319,11 @@ mov    r14, QWORD PTR FS:[0xfffffff8]
 ret
 ```
 
-After stitching together all the ABI0 syscall detours with mirrord, let’s look if things work as expected -
+After stitching together all the `ABI0` syscall detours with mirrord, let’s look if things work as expected -
 
 {{<figure src="mirrord-go-hook-good-run.png" alt="running the gin server with the rawsyscall hook" height="100%" width="100%">}}
+
+Success! 🥂
 
 Complete implementation of all hooks is available [here](https://github.com/metalbear-co/mirrord/blob/main/mirrord-layer/src/go_hooks.rs).
 
@@ -334,3 +334,5 @@ We decided **not** to handle the non-blocking changes that Go makes, primarily b
 One of the ideas we had while working on this was to write a framework that will provide APIs to hook Go functions, i.e make trampolines from Rust using proc macros. It felt like too big of a project, and what we ended up doing suits our current needs, but if anyone is up for working on such a framework, we’d be happy to sponsor it! We’d love to hear your feedback and thoughts in our Backend Engineers community on [Discord](https://discord.com/invite/J5YSrStDKD).
 Feel free to checkout [mirrord](https://github.com/metalbear-co/mirrord), send corrections/issues with the blog post on our [website’s repository](https://github.com/metalbear-co/metalbear.co) or just reach us at hi@metalbear.co.
 
+
+[^1]: The cool Gopher was made using https://gopherize.me/.
