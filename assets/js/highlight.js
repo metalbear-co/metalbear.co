@@ -8,6 +8,7 @@ import ini from 'highlight.js/lib/languages/ini';
 import yaml from 'highlight.js/lib/languages/yaml';
 import markdown from 'highlight.js/lib/languages/markdown';
 import rust from 'highlight.js/lib/languages/rust';
+import assembly from 'highlight.js/lib/languages/x86asm';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('json', json);
@@ -18,6 +19,7 @@ hljs.registerLanguage('toml', ini);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('md', markdown);
 hljs.registerLanguage('rs', rust);
+hljs.registerLanguage('asm', assembly);
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('pre code:not(.language-mermaid)').forEach((block) => {
