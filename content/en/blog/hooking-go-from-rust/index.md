@@ -11,17 +11,20 @@ contributors: ["Aviram Hassan", "Mehul Arora"]
 ---
 
 Most mainstream programming languages strive to fit into a few common standards, to increase interoperability and decrease adoption friction. Golang isn’t one of those (there [are](https://spectralops.io/blog/rust-vs-go-why-not-use-both/) [several](https://words.filippo.io/rustgo/) [articles](https://fasterthanli.me/articles/lies-we-tell-ourselves-to-keep-using-golang) on the subject). In this blog post we’ll demonstrate how to overcome Go’s isolationist design and integrate with it from another language (in our case Rust).
+
 Why do we need to interop with Go? [mirrord works by hooking system calls to the operating systems](https://metalbear.co/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/) and applying logic that decides whether to execute locally or remotely. To do that, mirrord side-loads (using `LD_PRELOAD`) into the process, then hooks relevant functions.
 To cover most common scenarios, mirrord hooks libc functions and this works for most common languages (Python, Go on macOS, Rust, Node to name a few) as they all rely on libc.
 
 ## Mostly Harmless
 
 [Golang doesn’t use libc on Linux](https://lwn.net/Articles/771441/), and instead calls syscalls directly. This is mostly harmless for the common developer - they don’t care about the assembly, syscalls, linkage, etc - they just want their binary to work. Therefore, being self-contained provides a very good user experience, as Go applications aren’t dependent on the local machine’s libc.
+
 It’s pretty harmful for us, though. Since we explicitly override libc functions, our software simply doesn’t function when run with Go apps (or any other process that doesn’t call libc). Therefore, we must hook Golang functions!
 
 ## Almost, but not quite, entirely unlike tea
 
 Luckily for us, Go applications are not entirely unlike other software. Golang **has** to work with the operating system, so it has to use syscalls. Since libc doesn’t add much logic on top of the syscalls it wraps, we can still use all our existing code - we just have to override a different function with it.
+
 How do we hook Golang functions? Same way we do libc functions -  with [Frida](http://frida.re/). The problem is that writing Rust code that can work from a Go routine call state isn’t trivial. Go has its own ABI, which doesn’t conform to any common ABI. This nonconformance is relatively common, though. For example, Rust also has an unstable internal ABI. If we could recompile the Go binary before side-loading into it, we could use cgo to have standard C ABI accessible, but in our use case we can’t. This means we have to implement a [trampoline](https://en.wikipedia.org/wiki/Trampoline_(computing))[^1].
 
 {{<figure src="mirrord-rust-go-trampoline.png" alt="rust, go, asm trampoline" height="100%" width="100%">}}
@@ -332,6 +335,7 @@ We decided **not** to handle the non-blocking changes that Go makes, primarily b
 ## So Long, and Thanks for All the Fish
 
 One of the ideas we had while working on this was to write a framework that will provide APIs to hook Go functions, i.e make trampolines from Rust using proc macros. It felt like too big of a project, and what we ended up doing suits our current needs, but if anyone is up for working on such a framework, we’d be happy to sponsor it! We’d love to hear your feedback and thoughts in our Backend Engineers community on [Discord](https://discord.com/invite/J5YSrStDKD).
+
 Feel free to checkout [mirrord](https://github.com/metalbear-co/mirrord), send corrections/issues with the blog post on our [website’s repository](https://github.com/metalbear-co/metalbear.co) or just reach us at hi@metalbear.co.
 
 
