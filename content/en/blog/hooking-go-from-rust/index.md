@@ -18,11 +18,13 @@ To cover most common scenarios, mirrord hooks libc functions and this works for 
 ## Mostly Harmless
 
 [Golang doesn’t use libc on Linux](https://lwn.net/Articles/771441/), and instead calls syscalls directly. This is mostly harmless for the common developer - they don’t care about the assembly, syscalls, linkage, etc - they just want their binary to work. Therefore, being self-contained provides a very good user experience, as Go applications aren’t dependent on the local machine’s libc.
+
 It’s pretty harmful for us, though. Since we explicitly override libc functions, our software simply doesn’t function when run with Go apps (or any other process that doesn’t call libc). Therefore, we must hook Golang functions!
 
 ## Almost, but not quite, entirely unlike tea
 
 Luckily for us, Go applications are not entirely unlike other software. Golang **has** to work with the operating system, so it has to use syscalls. Since libc doesn’t add much logic on top of the syscalls it wraps, we can still use all our existing code - we just have to override a different function with it.
+
 How do we hook Golang functions? Same way we do libc functions -  with [Frida](http://frida.re/). The problem is that writing Rust code that can work from a Go routine call state isn’t trivial. Go has its own ABI, which doesn’t conform to any common ABI. This nonconformance is relatively common, though. For example, Rust also has an unstable internal ABI. If we could recompile the Go binary before side-loading into it, we could use cgo to have standard C ABI accessible, but in our use case we can’t. This means we have to implement a [trampoline](https://en.wikipedia.org/wiki/Trampoline_(computing))[^1].
 
 {{<figure src="mirrord-rust-go-trampoline.png" alt="rust, go, asm trampoline" height="100%" width="100%">}}
