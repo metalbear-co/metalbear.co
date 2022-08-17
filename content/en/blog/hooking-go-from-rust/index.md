@@ -231,9 +231,9 @@ As described in the [design document](https://docs.google.com/document/d/1TTj4T2
 
 > “When a new G is created or an existing G becomes runnable, it is pushed onto a list of runnable goroutines of current P. When P finishes executing G, it first tries to pop a G from own list of runnable goroutines; if the list is empty, P chooses a random victim (another P) and tries to steal a half of runnable goroutines from it.”
 
-In summary, each G runs on an M assigned to a P.
+In summary, every G runs on an M assigned to a P.
 
-Now that we know a bit about how Go schedule goroutines, by looking at [this](https://cs.opensource.google/go/go/+/master:src/runtime/stack.go) source file we can see Golang doesn’t work with the “system stack” (on Linux in most cases, the pthread stack) but with its own goroutine stack implementation with a minimum size of 2048 bytes.
+Now that we know a bit about how Go schedules goroutines, by looking at [this](https://cs.opensource.google/go/go/+/master:src/runtime/stack.go) source file we can see Golang doesn’t work with the “system stack” (on Linux in most cases, the pthread stack) but with its own goroutine stack implementation with a minimum size of 2048 bytes.
 
 Goroutine stack is dynamic, i.e. it is constantly expanding/shrinking depending on the current needs. This means any common code that runs in system stack assumes it can grow as it wishes (until it exceeds max stack size) while actually, it can’t unless using Go APIs for expanding. Our Rust code isn’t aware of it, so it uses parts of the stack that aren't actually usable and causes stack overflow.
 
@@ -270,7 +270,7 @@ Referring [runtime/cgocall.go](https://go.dev/src/runtime/cgocall.go):
 
 ```
 
-We will skip the non-blocking part i.e. calling runtime.entersyscall/runtime.exitsyscall for letting the scheduler beware of the “blocking” call so that the scheduler can yield its time to another goroutine as seen in the case of `Syscall.Syscall6.abi0` and ``Syscall.Syscall6.abi0`. Therefore, we just replace the stack from the goroutine to the system stack using the implementation of`runtime.asmcgocall.abi0`.
+We will skip the non-blocking part i.e. calling runtime.entersyscall/runtime.exitsyscall for letting the scheduler beware of the “blocking” call so that the scheduler can yield its time to another goroutine as seen in the case of `Syscall.Syscall6.abi0` and `Syscall.Syscall.abi0`. Therefore, we just replace the stack from the goroutine to the system stack using the implementation of`runtime.asmcgocall.abi0`.
 
 ```asm
 mov rbx, QWORD PTR [rsp+0x10]
