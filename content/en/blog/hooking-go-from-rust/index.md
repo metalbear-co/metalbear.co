@@ -73,8 +73,7 @@ unsafe extern "C" fn c_abi_syscall_handler(
     param1: i64,
     param2: i64,
     param3: i64,
-) -> i32 {    
-    debug!("c_abi_sycall_handler received syscall: {syscall:?}");
+) -> i32 {        
     let res = match syscall {        
         libc::SYS_socket => {
             let sock = libc::socket(param1 as i32, param2 as i32, param3 as i32);            
