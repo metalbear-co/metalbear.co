@@ -25,7 +25,7 @@ It’s pretty harmful for us, though. Since we explicitly override libc function
 
 Luckily for us, Go applications are not entirely unlike other software. Golang **has** to work with the operating system, so it has to use syscalls. Since libc doesn’t add much logic on top of the syscalls it wraps, we can still use all our existing code - we just have to override a different function with it.
 
-How do we hook Golang functions? Same way we do libc functions -  with [Frida](http://frida.re/). The problem is that writing Rust code that can work from a Go routine call state isn’t trivial. Go has its own ABI, which doesn’t conform to any common ABI. This nonconformance is relatively common, though. For example, Rust also has an unstable internal ABI. If we could recompile the Go binary before side-loading into it, we could use cgo to have standard C ABI accessible, but in our use case we can’t. This means we have to implement a [trampoline](https://en.wikipedia.org/wiki/Trampoline_(computing))[^1].
+How do we hook Golang functions? Same way we do libc functions -  with [Frida](http://frida.re/). The problem is that writing Rust code that can work from a Go routine call state isn’t trivial. Go has its own ABI[^1], which doesn’t conform to any common ABI. This nonconformance is relatively common, though. For example, Rust also has an unstable internal ABI. If we could recompile the Go binary before side-loading into it, we could use cgo to have standard C ABI accessible, but in our use case we can’t. This means we have to implement a [trampoline](https://en.wikipedia.org/wiki/Trampoline_(computing))[^2].
 
 {{<figure src="mirrord-rust-go-trampoline.png" alt="rust, go, asm trampoline" height="100%" width="100%">}}
 
@@ -236,7 +236,7 @@ Now that we know a bit about how Go schedules goroutines, by looking at [this](h
 
 Goroutine stack is dynamic, i.e. it is constantly expanding/shrinking depending on the current needs. This means any common code that runs in system stack assumes it can grow as it wishes (until it exceeds max stack size) while actually, it can’t unless using Go APIs for expanding. Our Rust code isn’t aware of it, so it uses parts of the stack that aren't actually usable and causes stack overflow.
 
-We lack some steps. One might consider using `runtime.morestack`, but that's probably not ideal for us because that involves managing the stack manually per our needs. Luckily, we aren’t the first ones to do FFI in Go, so we looked into what cgo does when calling foreign functions:
+We lack some steps. One might consider using `runtime.morestack`, but that's probably not ideal for us because that involves managing the stack manually per our needs. Luckily, we aren’t the first ones to do FFI[^3] in Go, so we looked into what cgo does when calling foreign functions:
 
 Referring [runtime/cgocall.go](https://go.dev/src/runtime/cgocall.go):
 
@@ -337,4 +337,6 @@ One of the ideas we had while working on this was to write a framework that will
 
 Feel free to checkout [mirrord](https://github.com/metalbear-co/mirrord), send corrections/issues with the blog post on our [website’s repository](https://github.com/metalbear-co/metalbear.co) or just reach us at hi@metalbear.co.
 
-[^1]: The cool Gopher was made using https://gopherize.me/.
+[^1]: Application binary interface - how binary programs interact, how do they use the stack, registers, etc.
+[^2]: The cool Gopher was made using https://gopherize.me/.
+[^3]: Foreign Function Interface - how a language/framework interacts with external functions provided by other languages/frameworks.
