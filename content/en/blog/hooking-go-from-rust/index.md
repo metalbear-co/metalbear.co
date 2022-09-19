@@ -339,4 +339,4 @@ Feel free to checkout [mirrord](https://github.com/metalbear-co/mirrord), send c
 
 [^1]: Application binary interface - how binary programs interact, how do they use the stack, registers, etc.
 [^2]: The cool Gopher was made using https://gopherize.me/.
-[^3]: Foreign Function Interface - How to interact with external functions provided by other frameworks/dependencies.
+[^3]: Foreign Function Interface - how a language/framework interacts with external functions provided by other languages/frameworks.
