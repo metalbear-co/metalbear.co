@@ -19,7 +19,7 @@ mirrord is the cornerstone of a new development workflow, one with dramatically 
 
 Here’s what it looks like in the CLI:
 
-`mirrord exec –target pod/app-pod-wwv47 node app.js`
+`mirrord exec -–target pod/app-pod-wwv47 node app.js`
 
 Your local process (`node app.js`[^1] in this example) is now connected to the pod `app-pod-wwv47` in your Kubernetes cluster. Here’s what this means:
 * Incoming traffic to the pod is mirrored to your local process
