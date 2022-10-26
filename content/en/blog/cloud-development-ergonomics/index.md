@@ -13,7 +13,7 @@ The advent of microservice architectures and cloud-native has taken some pretty 
 
 The clearest example of this is that it’s now **really hard to just run your application**. Not the one microservice you’re currently working on, but your actual entire application, which you ultimately deploy to the cloud and serves your customers. You used to be able to fire up your monolith right there on your laptop from within your IDE (crash, change some code, run it again), but architectures today have become resource-intensive, reliant on third-party services, and mostly just plain convoluted to the point where local execution is no longer a viable option.
 
-{{<figure src="ergonomics.jpg" height="100%" width="100%">}}
+{{<figure src="ergonomics.jpg" class="center large-width">}}
 
 When we talk about something as elementary as running your application, it naturally applies to many aspects of the developer’s day-to-day: debugging, testing, even just writing new code to see if it works. Therefore, solutions that make your application easier to run provide considerable value across the board.
 In this article, we’re going to discuss today’s dominant approaches to making microservice applications easier for developers to run, and we’re also going to make the case for our [own thing](https://mirrord.dev) - namely, a single shared environment in the cloud that the organization maintains, and that developers can plug in and out of non-intrusively as they develop their microservices.
@@ -33,7 +33,7 @@ Deploy your new code to a shared staging environment and test it there
 ### Run Locally
 This approach works great when it’s feasible, which is usually at a very early stage in the life of the application where it’s still small and tenable. There’s some tooling that lets you extend this honeymoon phase by letting you do it more easily, like [docker-compose](https://docs.docker.com/compose), [Skaffold](https://skaffold.dev), or [Tilt](https://tilt.dev). However, at a certain point, even if you’ve written whatever scriptage is needed to actually configure and run the latest stable version of all of your components together, you’re going to hit some sort of ceiling: if you’ve got a large database, or some CPU-heavy computations, or you’re relying on some managed service that can’t be containerized, this approach soon becomes untenable.
 
-{{<figure src="local.png" alt="Run Locally" height="100%" width="100%">}}
+{{<figure src="local.png" alt="Run Locally" class="center large-width">}}
 
 **Pros:**
 * Convenient development on your local machine
@@ -51,7 +51,7 @@ To generate state, database seed files are used. These need to be maintained so 
 You have to work against a cloud environment, which isn’t always fun (though some tools make it easier, like [GitHub Codespaces](https://github.com/features/codespaces) or [Gitpod](https://www.gitpod.io/)).
 Same as with running your application locally, having hard-to-containerize components in your architecture like managed services can make this approach unfeasible.
 
-{{<figure src="personal.png" alt="Personal Cloud Environment" height="100%" width="100%">}}
+{{<figure src="personal.png" alt="Personal Cloud Environment" class="center large-width">}}
 
 **Pros:**
 * Not capped by the hardware limitations of your development machine
@@ -70,7 +70,7 @@ However, since this environment is shared by multiple developers, some measures 
 
 This is where shared environment tools like [Telepresence](https://telepresence.io/) and [CodeZero](https://www.codezero.io/) can help. These tools let you connect your local service to the staging environment, replacing the service currently running in the cluster,  without deployment. By letting you quickly plug your new code in and out of the staging environment, they reduce the lengthy iterations caused by deployment scripts and CI.
 
-{{<figure src="shared.png" alt="Shared Cloud Environment" height="100%" width="100%">}}
+{{<figure src="shared.png" alt="Shared Cloud Environment" class="center large-width">}}
 
 **Pros:**
 * Leverage a single shared environment, making it feasible for you to manually set up database state and managed services (since you only have to do it once, for one environment)
