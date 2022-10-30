@@ -2,6 +2,7 @@
 title: "Approaches in Cloud Development Ergonomics"
 description: "Where we discuss the ways modern devtool companies are trying to make life easier for cloud developers."
 lead: "Where we discuss the ways modern devtool companies are trying to make life easier for cloud developers."
+images: ["cloud-development-ergonomics-thumbnail.jpg"]
 date: 2022-10-26T0:00:00+00:00
 lastmod: 2022-10-26T0:00:00+00:00
 draft: false
