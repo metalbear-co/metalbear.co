@@ -96,6 +96,6 @@ By using mirrord, developers can run the one service they’re working on locall
 
 We’ve recently released our [first stable version](https://metalbear.co/blog/mirrord-3.0-is-out/), and would love to hear your thoughts (on [GitHub](https://github.com/metalbear-co/mirrord) or [Discord](https://discord.gg/pSKEdmNZcK)).
 
-[^1]: It can also be supplemented with a cloud development environment, as provided by products like Gitpod or Codespaces. For a comprehensive survey of the non-localhost space see this excellent article.  
+[^1]: It can also be supplemented with a cloud development environment, as provided by products like Gitpod or Codespaces. For a comprehensive survey of the non-localhost space see this [excellent article](https://dx.tips/the-end-of-localhost).  
 
 
