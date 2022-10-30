@@ -2,12 +2,11 @@
 title: "Approaches in Cloud Development Ergonomics"
 description: "Where we discuss the ways modern devtool companies are trying to make life easier for cloud developers."
 lead: "Where we discuss the ways modern devtool companies are trying to make life easier for cloud developers."
-images: ["cloud-development-ergonomics-thumbnail.jpg"]
+images: ["cloud-development-ergonomics-thumbnail.png"]
 date: 2022-10-26T0:00:00+00:00
 lastmod: 2022-10-26T0:00:00+00:00
 draft: false
 weight: 50
-# images: ["mirrord-ephemeral-blog-thumbnail.png"]
 contributors: ["Eyal Bukchin"]
 ---
 The advent of microservice architectures and cloud-native has taken some pretty severe tolls on developer ergonomics. It feels as if the tools cloud developers have at their disposal haven’t evolved fast enough to keep up with the rapid progress in infrastructure, and this tool debt is readily apparent in the day-to-day of the modern developer. 
