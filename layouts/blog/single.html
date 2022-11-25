@@ -1,17 +1,39 @@
 {{ define "main" }}
-<div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8">
-    <article>
-      <div class="blog-header">
-        <h1>{{ .Title }}</h1>
-        {{ partial "share-buttons.html" . }}
-        {{ partial "main/blog-meta.html" . }}
+<div class="blog__single">
+  <div class="container">
+    <div class="single__wrapper row">
+      <div class="single__main col-16 col-lg-11">
+        <div>
+          <a class="nav-back" href="/blog/">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4.56252 9.54995L0.350024 5.34995C0.300024 5.29995 0.264691 5.24578 0.244024 5.18745C0.223024 5.12912 0.212524 5.06662 0.212524 4.99995C0.212524 4.93328 0.223024 4.87078 0.244024 4.81245C0.264691 4.75412 0.300024 4.69995 0.350024 4.64995L4.56252 0.437451C4.67919 0.320784 4.82502 0.262451 5.00002 0.262451C5.17502 0.262451 5.32502 0.324951 5.45002 0.449951C5.57502 0.574951 5.63752 0.720784 5.63752 0.887451C5.63752 1.05412 5.57502 1.19995 5.45002 1.32495L1.77502 4.99995L5.45002 8.67495C5.56669 8.79162 5.62502 8.93528 5.62502 9.10595C5.62502 9.27695 5.56252 9.42495 5.43752 9.54995C5.31252 9.67495 5.16669 9.73745 5.00002 9.73745C4.83336 9.73745 4.68752 9.67495 4.56252 9.54995Z"
+                fill="#222222" />
+            </svg>
+            <span>Back to blog page</span>
+          </a>
+        </div>
+        <article>
+          <div class="blog__header">
+            <h1>{{ .Title }}</h1>
+            {{ partial "main/blog-meta-single.html" . }}
+          </div>
+          <div class="blog__content">
+            {{ .Content }}
+          </div>
+        </article>
+        {{ partial "blog-newsletter.html" . }}
       </div>
-      {{ .Content }}
-      <div class="center"> 
-      {{ partial "share-buttons.html" . }}
+      <div class="single__sidebar col-16 col-lg-5">
+        {{ partial "blog-contributor.html" . }}
+        <div class="widget__share mb-5">
+          <h3>Share post</h3>
+          {{ partial "share-buttons.html" . }}
+        </div>
+        {{ partial "blog-related.html" . }}
+        
       </div>
-    </article>
+    </div>
   </div>
 </div>
 {{ end }}

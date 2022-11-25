@@ -116,3 +116,72 @@ a.docs-link {
 .page-links h3.sidebar-link a:hover {
   text-decoration: underline;
 }
+
+
+// Sidebar
+@include media-breakpoint-up(lg) {
+  .widget__contributor,
+  .widget__share,
+  .widget__related-post {
+    border-left: 1px solid #F5F5F5;
+    padding-left: 1.5rem;
+  }
+}
+
+.contributor__header {
+  margin-bottom: 1rem;
+}
+
+.contributor__header h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.profile__image {
+  border-radius: 100%;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.widget-contributor__name {
+  color: $primary;
+}
+
+.contributor-body p {
+  font-size: 0.9rem;
+}
+
+// Widget share
+.widget__share h3,
+.widget__related-post h3 {
+  color: $brand-black;
+}
+
+.sharing-button__link {
+  margin-right: 0.5rem;
+}
+
+.related__post {
+  border: 1px solid $brand-black;
+  border-radius: 7px;
+  padding: 1rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.related__post h3 {
+  margin-top: 0;
+}
+
+.related__post-link {
+  color: $brand-black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.related__post-meta {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}

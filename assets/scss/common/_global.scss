@@ -12,18 +12,17 @@
 
 .navbar {
   z-index: 1000;
-  background-color: #248b81;
   border-bottom: 1px solid $gray-200;
-  padding-top: 0.25rem;
+  padding-top: 2rem;
   font-weight: 500;
-  font-family: "Maven Pro", sans-serif;
+  font-family: $font-family;
   /*
   margin-top: 4px;
   */
 }
 
 header.navbar.navbar-expand-md.navbar-light.doks-navbar nav.container-xxl.flex-wrap.flex-md-nowrap div#offcanvasDoks.offcanvas.offcanvas-end.border-0.py-md-1.show div.offcanvas-body.px-4 ul.nav.flex-column.flex-md-row.ms-md-n3 li.nav-item a.nav-link.ps-0.py-1 {
-  color:#248b81;
+  color: #248b81;
 
 }
 
@@ -31,13 +30,13 @@ header.navbar.navbar-expand-md.navbar-light.doks-navbar nav.container-xxl.flex-w
   color: #333840;
 }
 
-header.navbar.navbar-expand-md.navbar-light.doks-navbar nav.container-xxl.flex-wrap.flex-md-nowrap div#offcanvasDoks.offcanvas.offcanvas-end.border-0.py-md-1.show div.offcanvas-body.px-4 ul.nav.flex-column.flex-md-row.ms-md-auto.me-md-n5.pe-md-2 li.nav-item a.nav-link.ps-0.py-1
-{
-  color:#248b81;
+header.navbar.navbar-expand-md.navbar-light.doks-navbar nav.container-xxl.flex-wrap.flex-md-nowrap div#offcanvasDoks.offcanvas.offcanvas-end.border-0.py-md-1.show div.offcanvas-body.px-4 ul.nav.flex-column.flex-md-row.ms-md-auto.me-md-n5.pe-md-2 li.nav-item a.nav-link.ps-0.py-1 {
+  color: #248b81;
 }
 
 body {
-  color: black
+  color: black;
+  font-family: $font-family;
 }
 
 .content img {
@@ -62,7 +61,7 @@ h6,
 .h6 {
   color: #f16b26;
   margin: 2rem 0 1rem;
-  font-family: "Maven Pro", sans-serif;
+  font-family: $font-family;
   font-weight: 700;
 }
 
@@ -75,7 +74,6 @@ h3 {
 }
 
 .offcanvas-header {
-  border-bottom: 1px solid $gray-300;
   padding-top: 1.0625rem;
   padding-bottom: 0.8125rem;
 }
@@ -89,8 +87,9 @@ body.docs {
 }
 
 body {
-  background-color: #f3f3f4;
+  background-color: #ffffff;
 }
+
 @include media-breakpoint-up(md) {
   body {
     font-size: $font-size-md;
@@ -113,7 +112,7 @@ body {
   .h5,
   .h6 {
     margin-bottom: 1.125rem;
-    font-family: "Maven Pro", sans-serif;
+    font-family: $font-family;
     font-weight: 700;
   }
 }

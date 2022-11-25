@@ -1,7 +1,5 @@
 .footer {
-  border-top: 1px solid $gray-200;
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
+  background-color: $primary;
 }
 
 .footer ul {
@@ -9,6 +7,7 @@
 }
 
 .footer li {
+  color: $brand-black;
   font-size: $font-size-sm;
   margin-bottom: 0;
 }
@@ -16,5 +15,17 @@
 @include media-breakpoint-up(md) {
   .footer li {
     font-size: $font-size-base;
+  }
+}
+
+.footer__social {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $brand-black;
+}
+
+@include media-breakpoint-up(md) {
+  .footer__social {
+    padding-bottom: 0;
+    border-bottom: none;
   }
 }

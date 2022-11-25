@@ -12,6 +12,9 @@
 
 .navbar-brand {
   font-weight: $headings-font-weight;
+  width: 230px;
+  flex: none;
+  margin-right: 0;
 }
 
 /*
@@ -88,7 +91,10 @@ button#doks-versions {
 }
 
 .navbar .offcanvas .nav-link {
-  color: #ffffff;
+  color: #222222;
+  text-transform: uppercase;
+  font-size: $font-size-base;
+  font-weight: 400;
 }
 
 .doks-subnavbar {
@@ -111,6 +117,7 @@ button#doks-versions {
 
 .offcanvas .nav-link.active {
   color: $link-color;
+  font-weight: bold;
 }
 
 /*
@@ -132,9 +139,19 @@ button#doks-versions {
   margin-bottom: -4px;
 }
 
-.home .navbar {
+.home .navbar,
+.blog .navbar,
+.contributors .navbar {
   border-bottom: 0;
+  background-color: #F5F5F5;
 }
+
+.blog.single .navbar,
+.contributors.list .navbar {
+  border-radius: 0px 0px 90px 0px;
+  padding-bottom: 3rem;
+}
+
 
 /*
 .navbar-form {
@@ -144,9 +161,6 @@ button#doks-versions {
 */
 
 @include media-breakpoint-up(md) {
-  .navbar-brand {
-    margin-right: 0.75rem !important;
-  }
 
   .main-nav .nav-item:first-child .nav-link,
   .social-nav .nav-item:first-child .nav-link {
@@ -357,25 +371,25 @@ button#doks-versions {
   display: none;
 }
 
-.navbar .menu-btn:checked ~ .navbar-collapse {
+.navbar .menu-btn:checked~.navbar-collapse {
   display: block;
   max-height: 100vh;
 }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon {
+.navbar .menu-btn:checked~.menu-icon .navicon {
   background: transparent;
 }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon::before {
+.navbar .menu-btn:checked~.menu-icon .navicon::before {
   transform: rotate(-45deg);
 }
 
-.navbar .menu-btn:checked ~ .menu-icon .navicon::after {
+.navbar .menu-btn:checked~.menu-icon .navicon::after {
   transform: rotate(45deg);
 }
 
-.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before,
-.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after {
+.navbar .menu-btn:checked~.menu-icon:not(.steps) .navicon::before,
+.navbar .menu-btn:checked~.menu-icon:not(.steps) .navicon::after {
   top: 0;
 }
 
@@ -434,4 +448,33 @@ button#doks-versions {
 
 .dropdown-item:active {
   color: inherit;
+}
+
+.nav__social-link {
+  color: $brand-black;
+}
+
+@include media-breakpoint-up(md) {
+  .nav__social {
+    width: 230px;
+    flex: none;
+  }
+
+  .navbar .offcanvas .nav__social-link {
+    color: $primary;
+  }
+}
+
+.navbar-brand__image-desktop {
+  display: none;
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar-brand__image-mobile {
+    display: none;
+  }
+
+  .navbar-brand__image-desktop {
+    display: block;
+  }
 }

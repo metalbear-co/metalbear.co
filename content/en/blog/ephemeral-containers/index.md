@@ -2,6 +2,8 @@
 title: "Getting Started With Ephemeral Containers"
 description: "Getting started with Ephemeral Containers, and a short case study on how we used them with mirrord"
 lead: "Getting started with Ephemeral Containers, and a short case study on how we used them with mirrord"
+tags:
+  - metalbear
 date: 2022-07-21T0:00:00+00:00
 lastmod: 2022-07-27T0:00:00+00:00
 draft: false

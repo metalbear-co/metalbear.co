@@ -2,6 +2,8 @@
 title: "Carcinisation of mirrord (or: why we use Rust)"
 description: "Why we chose to use Rust at MetalBear"
 lead: "Why we chose to use Rust at MetalBear"
+tags:
+  - metalbear
 date: 2022-06-14T0:00:00+00:00
 lastmod: 2022-06-14T0:00:00+00:00
 draft: false

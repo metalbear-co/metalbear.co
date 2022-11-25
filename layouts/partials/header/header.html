@@ -10,8 +10,9 @@
 
 <header class="navbar navbar-expand-md navbar-light doks-navbar">
   <nav class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }} flex-wrap flex-md-nowrap" aria-label="Main navigation">
-    <a class="navbar-brand p-0 me-auto" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
-      <img src="/metalbear-header-logo.svg" style="height: 60px;"/>
+    <a class="navbar-brand p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
+      <img class="navbar-brand__image-desktop" src="/metalbear-header-logo-new.svg" style="height: 60px;"/>
+      <img class="navbar-brand__image-mobile" src="/metalbear-logo-mobile.svg" style="height: 112px;"/>
     </a>
 
     <button class="btn btn-menu d-block d-md-none order-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
@@ -21,47 +22,50 @@
     <div class="offcanvas offcanvas-end border-0 py-md-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
       <div class="header-bar d-md-none"></div>
       <div class="offcanvas-header d-md-none">
-        <h2 class="h5 offcanvas-title ps-2" id="offcanvasDoksLabel"><a class="text-dark" href="{{ "/" | relLangURL }}">{{ .Site.Params.Title }}</a></h2>
+        <a class="navbar-brand flex-grow-1 p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
+          <img class="navbar-brand__image-mobile d-block mx-auto" src="/metalbear-logo-mobile.svg" style="height: 112px;"/>
+        </a>
         <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
       </div>
-      <div class="offcanvas-body px-4">
-        <h3 class="h6 text-uppercase mb-3 d-md-none">Main</h3>
-        <ul class="nav flex-column flex-md-row ms-md-n3">
-          {{- $current := . -}}
-          {{- $section := $current.Section -}}
-          {{ range .Site.Menus.main -}}
-            {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
-            {{- $active = or $active (eq .Name $current.Title) -}}
-            {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
-            {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "contributors")) -}}
-            {{ if .HasChildren }}
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  {{ .Name }}
-                  <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
-                  {{ range .Children -}}
-                  {{- $active = eq .Name $current.Title -}}
-                    <li>
-                      <a class="dropdown-item{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="true"{{ end }}>{{ .Name }}</a>
-                    </li>
-                  {{ end -}}
-                </ul>
-              </li>
-            {{ else }}
-              <li class="nav-item">
-                <a class="nav-link ps-0 py-1{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-              </li>
-            {{ end }}
-          {{ end -}}
-        </ul>
-        <hr class="text-black-50 my-4 d-md-none">
-        <h3 class="h6 text-uppercase mb-3 d-md-none">Socials</h3>
-        <ul class="nav flex-column flex-md-row ms-md-auto me-md-n5 pe-md-2">
+      <div class="offcanvas-body justify-content-center">
+        <div class="flex-grow-1">
+          <ul class="nav flex-column flex-md-row justify-content-center align-items-center">
+            {{- $current := . -}}
+            {{- $section := $current.Section -}}
+            {{ range .Site.Menus.main -}}
+              {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+              {{- $active = or $active (eq .Name $current.Title) -}}
+              {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
+              {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "contributors")) -}}
+              {{- $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) -}}
+              {{ if .HasChildren }}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ .Name }}
+                    <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
+                    {{ range .Children -}}
+                    {{- $active = eq .Name $current.Title -}}
+                      <li>
+                        <a class="dropdown-item{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="true"{{ end }}>{{ .Name }}</a>
+                      </li>
+                    {{ end -}}
+                  </ul>
+                </li>
+              {{ else }}
+                <li class="nav-item">
+                  <a class="nav-link ps-0 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                </li>
+              {{ end }}
+            {{ end -}}
+          </ul>
+        </div>
+        <hr class="my-4 d-md-none" style="color:#222222;">
+        <ul class="nav nav__social justify-content-center">
           {{ range .Site.Menus.social -}}
             <li class="nav-item">
-              <a class="nav-link ps-0 py-1" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}<small class="ms-2 d-md-none">{{ .Name | safeHTML }}</small></a>
+              <a class="nav-link nav__social-link ps-0 py-1" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
             </li>
           {{ end -}}
         </ul>

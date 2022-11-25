@@ -2,6 +2,8 @@
 title: "Hooking Go from Rust - Hitchhiker’s Guide to the Go-laxy"
 description: "How did we hook Go functions from Rust to work with mirrord? A quick dive into the Go Runtime and switching from the Go stack to the system stack."
 lead: "How did we hook Go functions from Rust to work with mirrord? A quick dive into the Go Runtime and switching from the Go stack to the system stack."
+tags:
+  - metalbear
 date: 2022-08-17T15:00:00+00:00
 lastmod: 2022-08-17T15:00:00+00:00
 draft: false

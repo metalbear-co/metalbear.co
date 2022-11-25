@@ -1,24 +1,68 @@
 {{ define "main" }}
-<div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8">
-    <article>
-      <h1 class="text-center">{{ .Title }}</h1>
-      <div class="text-center">{{ .Content }}</div>
-			<div class="card-list">
-				{{ $paginator := .Paginate (.Data.Pages) -}}
+<div class="blog__list">
+	<div class="blog__list-header mb-5">
+		<div class="container-xxl flex-wrap flex-md-nowrap">
+			<div class="row row-cols-1 row-cols-lg-2 align-items-center">
+				<div class="col order-lg-1">
+					<div class="blog__list-img">
+						<img src="/metalbear-logo-blog.svg"
+							style="max-width: 85%; max-height: 85%; display: block; margin-left: auto; margin-right: auto;" />
+					</div>
+				</div>
+				<div class="col order-lg-0">
+					<h2 style="font-size: 2.5rem; margin-top:0.1rem">{{ .Title }}</h2>
+					<p class="lead">{{ .Params.description | safeHTML }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="blog__list-wrapper">
+		<div class="container-xxl flex-wrap flex-md-nowrap">
+			<div class="d-flex justify-content-end pt-3 pb-5">
+				<div>
+					<span class="me-2">Show Filters</span>
+					<svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M17 3H6M4 3H1M12 10.5H1M17 10.5H14M5 1C5.26522 1 5.51957 1.10536 5.70711 1.29289C5.89464 1.48043 6 1.73478 6 2V4C6 4.26522 5.89464 4.51957 5.70711 4.70711C5.51957 4.89464 5.26522 5 5 5C4.73478 5 4.48043 4.89464 4.29289 4.70711C4.10536 4.51957 4 4.26522 4 4V2C4 1.73478 4.10536 1.48043 4.29289 1.29289C4.48043 1.10536 4.73478 1 5 1ZM13 8.5C13.2652 8.5 13.5196 8.60536 13.7071 8.79289C13.8946 8.98043 14 9.23478 14 9.5V11.5C14 11.7652 13.8946 12.0196 13.7071 12.2071C13.5196 12.3946 13.2652 12.5 13 12.5C12.7348 12.5 12.4804 12.3946 12.2929 12.2071C12.1054 12.0196 12 11.7652 12 11.5V9.5C12 9.23478 12.1054 8.98043 12.2929 8.79289C12.4804 8.60536 12.7348 8.5 13 8.5Z"
+							stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<div class="ms-4">
+					<span class="me-2">Sort By</span>
+					<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7 8.96683L0 1.96683L1.63333 0.333496L7 5.70016L12.3667 0.333496L14 1.96683L7 8.96683Z"
+							fill="black" />
+					</svg>
+				</div>
+			</div>
+			{{ $paginator := .Paginate (.Data.Pages) -}}
+			<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-md-3 mb-3">
 				{{ range $paginator.Pages -}}
-					<div class="card">
-						<div class="card-body">
-							<h2 class="h3"><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}</a></h2>
-							<p>{{ .Params.lead | safeHTML }}</p>
+				<div class="col mb-5">
+					<div class="blog-card d-flex flex-column px-3">
+						<div class="blog-card__body mb-auto">
+							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{
+									with
+									.Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+							<div class="blog-card__summary">
+								<p class="summary">{{ .Params.lead | safeHTML }}</p>
+							</div>
 							{{ partial "main/blog-meta.html" . -}}
 						</div>
+						<div class="blog-card__continue">
+							<a class="blog-card__continue-link" href="{{ .RelPermalink }}">Continue
+								Reading&nbsp;&hyphen;&nbsp;<span>{{ .ReadingTime -}}&nbsp;min</span></a>
+						</div>
 					</div>
+				</div>
 				{{ end -}}
-				{{ $.Scratch.Set "paginator" true }}
+			</div>
+			{{ $.Scratch.Set "paginator" true }}
+			<div class="d-flex justify-content-center mb-5">
 				{{ template "_internal/pagination.html" . }}
 			</div>
-    </article>
-  </div>
+		</div>
+	</div>
 </div>
 {{ end }}
