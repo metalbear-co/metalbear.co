@@ -1,0 +1,6 @@
+{{ $last := sub (len .Params.contributors) 1 }}
+<p class="related__post-meta mb-0"><small>{{ .PublishDate.Format "January 2, 2006" }} by {{ if .Params.contributors -}}{{ range $index,
+$contributor := .Params.contributors }}{{ if gt $index 0 }}{{ if eq $index $last }} and {{ else }}, {{ end }}{{
+end }}<a class="related__post-meta-link" href="{{ "/contributors/" | relURL }}{{ . | urlize }}/">{{ .
+}}</a>{{ end -}}{{ end -}}</small>
+</p>
