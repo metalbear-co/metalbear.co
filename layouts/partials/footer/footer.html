@@ -1,19 +1,19 @@
 <footer class="footer text-muted py-1">
   <div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }}">
-    <div class="row row-cols-1 row-cols-md-3 align-items-center">
-      <div class="col order-md-1">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-center">
+      <div class="col order-lg-1">
         <div class="text-center">
           <ul class="footer__social nav d-inline-flex justify-content-center py-3">
             {{ range .Site.Menus.footer_social -}}
               <li class="nav-item">
-                <a class="nav-link py-1" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
+                <a class="nav-link py-1 px-2" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
               </li>
             {{ end -}}
           </ul>
         </div>
       </div>
-      <div class="col order-md-0">
-        <ul class="list-inline text-center text-md-start py-3">
+      <div class="col order-lg-0">
+        <ul class="list-inline text-center text-lg-start py-3">
           <li class="list-inline-item">{{ .Site.Params.footer | safeHTML }}<span class="d-md-none"> • Designed by Gili Dori</span></li>
         </ul>
       </div>

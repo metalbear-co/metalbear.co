@@ -1,25 +1,24 @@
 {{ define "main" }}
-<div class="blog__list">
-	<div class="blog__list-header mb-5">
-		<div class="container-xxl flex-wrap flex-md-nowrap">
+<div class="blog-list">
+	<div class="blog-list__header">
+		<div class="blog-list__wrapper container mb-5">
 			<div class="row row-cols-1 row-cols-lg-2 align-items-center">
-				<div class="col order-lg-1">
-					<div class="blog__list-img">
-						<img src="/metalbear-logo-blog.svg"
-							style="max-width: 85%; max-height: 85%; display: block; margin-left: auto; margin-right: auto;" />
-					</div>
+				<div class="col">
+					<h2 class="blog-list__header-title">{{ .Title }}</h2>
+					<p class="blog-list__header-desc">{{ .Params.description | safeHTML }}</p>
 				</div>
-				<div class="col order-lg-0">
-					<h2 style="font-size: 2.5rem; margin-top:0.1rem">{{ .Title }}</h2>
-					<p class="lead">{{ .Params.description | safeHTML }}</p>
+				<div class="col">
+					<div class="blog-list__image-logo">
+						<img src="/metalbear-logo-blog.svg"/>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="blog__list-wrapper">
-		<div class="container-xxl flex-wrap flex-md-nowrap">
-			<div class="d-flex justify-content-end pt-3 pb-5">
+	<div class="blog-list__wrapper container">
+		<div class="flex-wrap flex-md-nowrap">
+			<!-- <div class="d-flex justify-content-end pt-3 pb-5">
 				<div>
 					<span class="me-2">Show Filters</span>
 					<svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,12 +34,12 @@
 							fill="black" />
 					</svg>
 				</div>
-			</div>
+			</div> -->
 			{{ $paginator := .Paginate (.Data.Pages) -}}
-			<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-md-3 mb-3">
+			<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
 				{{ range $paginator.Pages -}}
 				<div class="col mb-5">
-					<div class="blog-card d-flex flex-column px-3">
+					<div class="blog-card d-flex flex-column px-3 position-relative">
 						<div class="blog-card__body mb-auto">
 							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{
 									with
@@ -51,7 +50,7 @@
 							{{ partial "main/blog-meta.html" . -}}
 						</div>
 						<div class="blog-card__continue">
-							<a class="blog-card__continue-link" href="{{ .RelPermalink }}">Continue
+							<a class="blog-card__continue-link position-relative" href="{{ .RelPermalink }}">Continue
 								Reading&nbsp;&hyphen;&nbsp;<span>{{ .ReadingTime -}}&nbsp;min</span></a>
 						</div>
 					</div>

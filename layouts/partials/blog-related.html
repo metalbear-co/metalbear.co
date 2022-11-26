@@ -4,9 +4,9 @@
     <h3>You may also like...</h3>
     <div class="related-post">
         {{- range . }}
-        <div class="related__post">
+        <div class="related__post position-relative">
             <h3>
-                <a class="related__post-link" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a>
+                <a class="related__post-link stretched-link" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a>
             </h3>
             {{ partial "main/post-meta.html" . }}
         </div>

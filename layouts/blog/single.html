@@ -1,8 +1,8 @@
 {{ define "main" }}
-<div class="blog__single">
-  <div class="container">
-    <div class="single__wrapper row">
-      <div class="single__main col-16 col-lg-11">
+<div class="blog-single">
+  <div class="container blog-single__wrapper">
+    <div class="row">
+      <div class="blog-single__main col-16 col-lg-10 col-xl-11 px-3 px-lg-5">
         <div>
           <a class="nav-back" href="/blog/">
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -13,25 +13,25 @@
             <span>Back to blog page</span>
           </a>
         </div>
-        <article>
-          <div class="blog__header">
+        <article class="mb-5">
+          <div class="blog-single__header">
             <h1>{{ .Title }}</h1>
             {{ partial "main/blog-meta-single.html" . }}
           </div>
-          <div class="blog__content">
+          <div class="blog-single__content">
             {{ .Content }}
           </div>
         </article>
         {{ partial "blog-newsletter.html" . }}
       </div>
-      <div class="single__sidebar col-16 col-lg-5">
+      <div class="blog-single__sidebar col-16 col-lg-6 col-xl-5 d-none d-lg-block">
         {{ partial "blog-contributor.html" . }}
         <div class="widget__share mb-5">
           <h3>Share post</h3>
           {{ partial "share-buttons.html" . }}
         </div>
         {{ partial "blog-related.html" . }}
-        
+
       </div>
     </div>
   </div>

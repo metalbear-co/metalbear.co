@@ -1,16 +1,17 @@
 {{ define "main" }}
 <section class="section section__hero">
-  <div class="container-xxl flex-wrap flex-md-nowrap">
-    <div class="row row-cols-1 row-cols-lg-2 align-items-center">
-      <div class="col order-lg-1">
+  <div class="container-xl flex-wrap flex-md-nowrap">
+    <div class="row align-items-center">
+      <div class="col-16 col-lg-7 order-lg-1 hero__image">
         <img class="metalbear-hero" src="/metalbear-logo-home.svg"/>
       </div>
-      <div class="col order-lg-0">
-        <h2 style="font-size: 2.5rem; margin-top:0.1rem"> We Are MetalBear </h2>
-        <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      <div class="col-16 col-lg-9 order-lg-0 hero__body">
+        <h2 class="d-md-none" style="font-size: 44px;">We’re<br/>MetalBear</h2>
+        <h2 class="d-none d-md-block" style="margin-top:0.1rem;">We Are MetalBear</h2>
+        <p class="section__hero-desc">{{ .Params.lead | safeHTML }}</p>
         <div class="button-wrapper d-flex flex-column flex-md-row pt-3">
-          <div class="text-center">
-            <a class="button-primary" href="https://mirrord.dev/">Try mirrord</a>
+          <div class="text-center mb-3">
+            <a class="button-primary" href="https://mirrord.dev/">Try Mirrord</a>
           </div>
           <div class="text-center">
             <a class="button-secondary" href="/contact/">Contact Us</a>
@@ -21,7 +22,7 @@
   </div>
 </section>
 
-<section class="section section__waitlist">
+<!-- <section class="section section__waitlist">
   <div class="container">
     <div class="waitlist__box py-4 px-5">
       <form method="POST" action="">
@@ -45,9 +46,9 @@
       </form>
     </div>
   </div>
-</section>
+</section> -->
 
-<!-- <section class="section section__waitlist">
+<section class="section__waitlist d-none d-lg-block">
   <div class="container">
     <div class="sib-form" style="text-align: center; padding: 0">
       <div id="sib-form-container" class="sib-form-container">
@@ -78,13 +79,13 @@
         </div>
         <div></div>
         <div id="sib-container" class="sib-container--large sib-container--vertical waitlist__box">
-          <form id="sib-form-2" method="POST"
+          <form id="sib-form" method="POST"
             action="https://e000752a.sibforms.com/serve/MUIEABU0hTArwwLIb4i74FJBkvD8bGCEdLhvI2lhvU1mMvKtm-30xLHhzp-DDkWG0Yv3mDTXewp-pG0acvD7T-ehWjCIqUAdFQRqPwTaIDMhWqEmTv79PRuJziD_u4mmipi9KJeQDaX-cMPfYwMQ2WZEBsA79lKP9CGba9Vp6G5t4dwAV8pOPuiUGs4uTDe4aeFkIGIBGGA3gmPZ"
             data-type="subscription">
             <div class="sib-form-block waitlist__header" style="margin-bottom: 8px;">
               <h4>mirrord for teams is coming soon!</h4>
             </div>
-            <div style="margin-bottom: 24px;">
+            <div style="margin-bottom: 40px;">
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
                   <div class="form__label-row ">
@@ -102,7 +103,7 @@
             </div>
             <div style="margin-bottom: 24px;">
               <div class="sib-form-block" style="text-align: center">
-                <button class="sib-form-block__button sib-form-block__button-with-loader button-primary" form="sib-form-2" type="submit">
+                <button class="sib-form-block__button sib-form-block__button-with-loader button-primary" form="sib-form" type="submit">
                   <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
                     <path
                       d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
@@ -119,31 +120,33 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 <section class="section section__blog mt-3">
-  <div class="container-xxl">
-    <header class="mb-5">
-      <h2 class="section__blog-title text-center my-0">Latest from MetalBear blog</h2>
+  <div class="container-lg">
+    <header class="mb-3 mb-lg-5">
+      <h2 class="section__blog-title text-center my-0">Latest from MetalBear Blog</h2>
     </header>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-md-3 mb-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-0 mb-lg-5">
         {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "blog")  -}}
         <div class="col mb-5">
-          <div class="blog-card px-3">
-            <h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
-            <div class="blog-card__summary">
+          <div class="blog-card d-flex flex-column position-relative">
+            <div class="blog-card__body mb-auto">
+              <h3><a class="stretched-link" style="color: #222222;" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+              <div class="blog-card__summary">
               <p class="summary">{{ .Params.lead | safeHTML }}</p>
+              </div>
+              {{ partial "main/blog-meta.html" . -}}
             </div>
-            {{ partial "main/blog-meta.html" . -}}
             <div class="pt-4">
-              <a class="button-secondary" href="{{ .RelPermalink }}">Continue Reading</a>
+              <a class="button-secondary position-relative btn-reading" href="{{ .RelPermalink }}">Continue Reading</a>
             </div>
           </div>
         </div>
         {{ end -}}
     </div>
-    <div class="pt-2 text-center">
-      <a class="button-primary" href="/blog/">Show Me More</a>
+    <div class="pt-4 pt-lg-5 text-center">
+      <a class="button-primary button-big" href="/blog/">Show Me More</a>
     </div>
   </div>
 </section>
@@ -183,23 +186,23 @@
               </span>
             </div>
           </div>
-          <div id="sib-container" class="sib-container--large sib-container--vertical">
-            <form id="sib-form" method="POST"
+          <div id="sib-container" class="sib-container--large sib-container--vertical" style="padding-left: 0; padding-right: 0;">
+            <form id="sib-form-2" method="POST"
               action="https://e000752a.sibforms.com/serve/MUIEABU0hTArwwLIb4i74FJBkvD8bGCEdLhvI2lhvU1mMvKtm-30xLHhzp-DDkWG0Yv3mDTXewp-pG0acvD7T-ehWjCIqUAdFQRqPwTaIDMhWqEmTv79PRuJziD_u4mmipi9KJeQDaX-cMPfYwMQ2WZEBsA79lKP9CGba9Vp6G5t4dwAV8pOPuiUGs4uTDe4aeFkIGIBGGA3gmPZ"
               data-type="subscription">
               <div class="sib-form-block newsletter__header" style="margin-bottom: 8px;">
                 <h4>Sign up for our newsletter</h4>
               </div>
               <div class="newsletter__field">
-                <div class="sib-input sib-form-block">
+                <div class="sib-input sib-form-block" style="padding-left: 0; padding-right: 0;">
                   <div class="form__entry entry_block">
                     <div class="form__label-row ">
                       <div class="entry__field field__email position-relative" style="color: #2a8c82">
                         <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your Email"
                           data-required="true" required />
                           <button class="sib-form-block__button sib-form-block__button-with-loader position-absolute top-50"
-                          form="sib-form" type="submit">
-                          <svg width="21" height="20" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          form="sib-form-2" type="submit">
+                          <svg width="27" height="26" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.76174 0.589253L28.633 13.8298C28.7795 13.902 28.9029 14.0137 28.9892 14.1525C29.0755 14.2912 29.1212 14.4513 29.1212 14.6146C29.1212 14.778 29.0755 14.9381 28.9892 15.0768C28.9029 15.2155 28.7795 15.3273 28.633 15.3995L1.75999 28.64C1.60944 28.714 1.44081 28.7431 1.27417 28.7239C1.10754 28.7047 0.949926 28.6381 0.820107 28.5319C0.690288 28.4256 0.593733 28.2844 0.541943 28.1248C0.490153 27.9653 0.48531 27.7942 0.52799 27.632L3.97374 14.6225L0.52624 1.599C0.482853 1.43645 0.487247 1.26484 0.538897 1.10473C0.590547 0.944612 0.687261 0.802781 0.817455 0.696225C0.947649 0.589669 1.1058 0.522907 1.27297 0.503934C1.44014 0.484962 1.60923 0.514584 1.75999 0.589253H1.76174ZM2.71199 3.0095L5.52949 13.653L5.63799 13.632L5.74999 13.625H18C18.2186 13.6246 18.4295 13.7061 18.5911 13.8534C18.7527 14.0007 18.8533 14.2032 18.873 14.4209C18.8928 14.6387 18.8303 14.856 18.6979 15.03C18.5654 15.2039 18.3726 15.322 18.1575 15.361L18 15.375H5.74999C5.69601 15.3753 5.64212 15.3706 5.58899 15.361L2.71374 26.2215L26.2652 14.6155L2.71199 3.0095Z" fill="white"/>
                             </svg>
                         </button>
@@ -225,20 +228,20 @@
 
 <section class="section section__community mt-3 position-relative">
   <div class="container-md community__wrapper">
-    <div class="row row-cols-1 row-cols-md-2 justify-content-center">
-      <div class="col">
+    <div class="row justify-content-center">
+      <div class="col-16 col-lg-11">
         <h2 class="section__community-title mt-0 mb-3">Join Our Community</h2>
         <p class="section__community-desc mt-0">Visit our MetalBear backend<br> community at Discord</p>
         <div class="button-wrapper pt-3">
-          <a class="button-primary" href="https://mirrord.dev/">Join Now</a>
+          <a class="button-primary button-big" href="https://mirrord.dev/">Join Now</a>
         </div>
       </div>
-      <div class="col d-flex align-items-end">
+      <div class="col-16 col-lg-5 d-none d-lg-flex align-items-end">
         <img class="join-community-logo" src="/join-community.svg"/>
       </div>
     </div>
   </div>
-  <div class="join-community__col-img position-absolute d-flex align-items-end">
+  <div class="join-community__col-img position-absolute d-flex d-lg-none align-items-end">
     <img class="join-community-logo-mobile" src="/join-community-mobile.svg"/>
   </div>
 </section>

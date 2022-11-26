@@ -8,168 +8,106 @@
 
 <div class="header-bar"></div>
 
-<header class="navbar navbar-expand-md navbar-light doks-navbar">
-  <nav class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }} flex-wrap flex-md-nowrap" aria-label="Main navigation">
-    <a class="navbar-brand p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
-      <img class="navbar-brand__image-desktop" src="/metalbear-header-logo-new.svg" style="height: 60px;"/>
-      <img class="navbar-brand__image-mobile" src="/metalbear-logo-mobile.svg" style="height: 112px;"/>
-    </a>
+<header class="header__site">
+  <div class="navbar navbar-expand-lg navbar-light doks-navbar">
+    <nav class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xl{{ end }} flex-wrap flex-md-nowrap align-items-start align-items-lg-center" aria-label="Main navigation">
+      <a class="navbar-brand p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
+        <img class="navbar-brand__image-desktop" src="/metalbear-header-logo-new.svg"/>
+        <img class="navbar-brand__image-mobile" src="/metalbear-logo-mobile.svg" style="height: 124px;"/>
+      </a>
 
-    <button class="btn btn-menu d-block d-md-none order-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-    </button>
+      <button class="btn btn-menu d-block d-lg-none order-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
 
-    <div class="offcanvas offcanvas-end border-0 py-md-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
-      <div class="header-bar d-md-none"></div>
-      <div class="offcanvas-header d-md-none">
-        <a class="navbar-brand flex-grow-1 p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
-          <img class="navbar-brand__image-mobile d-block mx-auto" src="/metalbear-logo-mobile.svg" style="height: 112px;"/>
-        </a>
-        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
-      </div>
-      <div class="offcanvas-body justify-content-center">
-        <div class="flex-grow-1">
-          <ul class="nav flex-column flex-md-row justify-content-center align-items-center">
-            {{- $current := . -}}
-            {{- $section := $current.Section -}}
-            {{ range .Site.Menus.main -}}
-              {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
-              {{- $active = or $active (eq .Name $current.Title) -}}
-              {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
-              {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "contributors")) -}}
-              {{- $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) -}}
-              {{ if .HasChildren }}
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ .Name }}
-                    <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
-                    {{ range .Children -}}
-                    {{- $active = eq .Name $current.Title -}}
-                      <li>
-                        <a class="dropdown-item{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="true"{{ end }}>{{ .Name }}</a>
-                      </li>
-                    {{ end -}}
-                  </ul>
-                </li>
-              {{ else }}
-                <li class="nav-item">
-                  <a class="nav-link ps-0 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-                </li>
-              {{ end }}
+      <div class="offcanvas offcanvas-end border-0 pt-lg-3" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
+        <div class="offcanvas-header align-items-start d-lg-none">
+          <a class="navbar-brand flex-grow-1 p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
+            <img class="navbar-brand__image-mobile d-block mx-auto" src="/metalbear-logo-mobile.svg" style="height: 112px; transform: translateX(1rem);"/>
+          </a>
+          <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+        </div>
+        <div class="offcanvas-body justify-content-center">
+          <div class="flex-grow-1">
+            <ul class="nav flex-column flex-lg-row justify-content-center align-items-center">
+              {{- $current := . -}}
+              {{- $section := $current.Section -}}
+              {{ range .Site.Menus.main -}}
+                {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+                {{- $active = or $active (eq .Name $current.Title) -}}
+                {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
+                {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "contributors")) -}}
+                {{- $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) -}}
+                {{ if .HasChildren }}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ .Name }}
+                      <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
+                      {{ range .Children -}}
+                      {{- $active = eq .Name $current.Title -}}
+                        <li>
+                          <a class="dropdown-item{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="true"{{ end }}>{{ .Name }}</a>
+                        </li>
+                      {{ end -}}
+                    </ul>
+                  </li>
+                {{ else }}
+                  <li class="nav-item ms-lg-2">
+                    <a class="nav-link px-3 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                  </li>
+                {{ end }}
+              {{ end -}}
+            </ul>
+          </div>
+          <hr class="my-4 d-lg-none" style="color:#222222;">
+          <ul class="nav nav__social justify-content-center">
+            {{ range .Site.Menus.social -}}
+              <li class="nav-item">
+                <a class="nav-link nav__social-link px-2 py-1 mx-1" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
+              </li>
             {{ end -}}
           </ul>
         </div>
-        <hr class="my-4 d-md-none" style="color:#222222;">
-        <ul class="nav nav__social justify-content-center">
-          {{ range .Site.Menus.social -}}
-            <li class="nav-item">
-              <a class="nav-link nav__social-link ps-0 py-1" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
-            </li>
+      </div>
+      {{ if .Site.Params.options.darkMode -}}
+      {{ end -}}
+
+      {{ if eq .Site.Params.options.multilingualMode true -}}
+      <div class="dropdown order-md-2">
+        <button class="btn btn-doks-light dropdown-toggle" id="doks-languages" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+          {{ .Site.Params.languageISO }}
+          <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow rounded border-0" aria-labelledby="doks-languages">
+
+          <li><a class="dropdown-item current" aria-current="true" href="{{ .RelPermalink }}">{{ .Site.Language.LanguageName }}</a></li>
+
+          <li><hr class="dropdown-divider"></li>
+
+        {{ if .IsTranslated -}}
+          {{ range .Translations }}
+            <li><a class="dropdown-item" rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .Language.LanguageName }}</a></li>
           {{ end -}}
+        {{ else -}}
+          {{ range .Site.Languages -}}
+            {{ if ne $.Site.Language.Lang .Lang }}
+              <li><a class="dropdown-item" rel="alternate" href="{{ .Lang | relLangURL }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .LanguageName }}</a></li>
+            {{ end -}}
+          {{ end -}}
+        {{ end -}}
+          <!--
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="/docs/contributing/how-to-contribute/">Help Translate</a></li>
+          -->
         </ul>
       </div>
-    </div>
-    {{ if .Site.Params.options.darkMode -}}
-    {{ end -}}
-
-    {{ if eq .Site.Params.options.multilingualMode true -}}
-    <div class="dropdown order-md-2">
-      <button class="btn btn-doks-light dropdown-toggle" id="doks-languages" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-        {{ .Site.Params.languageISO }}
-        <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow rounded border-0" aria-labelledby="doks-languages">
-
-        <li><a class="dropdown-item current" aria-current="true" href="{{ .RelPermalink }}">{{ .Site.Language.LanguageName }}</a></li>
-
-        <li><hr class="dropdown-divider"></li>
-
-      {{ if .IsTranslated -}}
-        {{ range .Translations }}
-          <li><a class="dropdown-item" rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .Language.LanguageName }}</a></li>
-        {{ end -}}
-      {{ else -}}
-        {{ range .Site.Languages -}}
-          {{ if ne $.Site.Language.Lang .Lang }}
-            <li><a class="dropdown-item" rel="alternate" href="{{ .Lang | relLangURL }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .LanguageName }}</a></li>
-          {{ end -}}
-        {{ end -}}
       {{ end -}}
-        <!--
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="/docs/contributing/how-to-contribute/">Help Translate</a></li>
-        -->
-      </ul>
-    </div>
-    {{ end -}}
-  </nav>
+    </nav>
+  </div>
 </header>
 
 {{ if eq .Site.Params.options.flexSearch false }}
-</div>
-{{ end -}}
-
-{{ if eq .Section "docs" -}}
-<nav class="doks-subnavbar py-2 sticky-lg-top{{ if eq .Site.Params.options.flexSearch false }} d-lg-none{{ end }}" aria-label="Secondary navigation">
-  <div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }} d-flex align-items-md-center">
-
-    {{ if .Site.Params.options.flexSearch -}}
-    <form class="doks-search position-relative flex-grow-1 me-auto">
-      <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
-      <div id="suggestions" class="shadow bg-white rounded d-none"></div>
-    </form>
-    {{ end -}}
-
-    {{ if eq .Site.Params.options.docsVersioning true -}}
-    <div class="dropdown ms-3">
-      <button class="btn btn-doks-light dropdown-toggle" id="doks-versions" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static" aria-label="Toggle version menu">
-        <span class="d-none d-lg-inline">Doks</span> v{{ .Site.Params.docsVersion }}
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow rounded border-0" aria-labelledby="doks-versions">
-        <li><a class="dropdown-item current" aria-current="true" href="/docs/{{ .Site.Params.docsVersion }}/prologue/introduction/">Latest ({{ .Site.Params.docsVersion }}.x)</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="/docs/0.2/prologue/introduction/">v0.2.x</a></li>
-        <li><a class="dropdown-item" href="/docs/0.1/prologue/introduction/">v0.1.x</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="/docs/versions/">All versions</a></li>
-      </ul>
-    </div>
-    {{ end -}}
-
-    <button class="btn doks-sidebar-toggle d-lg-none ms-3 order-3 collapsed{{ if eq .Site.Params.options.flexSearch false }} ms-auto{{ end }}" type="button" data-bs-toggle="collapse" data-bs-target="#doks-docs-nav" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle documentation navigation">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
-    </button>
-
-  </div>
-</nav>
-
-<div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }}">
-  <aside class="doks-sidebar">
-    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
-      {{ partial "sidebar/docs-menu.html" . }}
-    </nav>
-  </aside>
-</div>
-
-{{ else if ne .CurrentSection .FirstSection -}}
-<nav class="doks-subnavbar py-2 sticky-lg-top d-lg-none" aria-label="Secondary navigation">
-  <div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }} d-flex align-items-md-center">
-    <span class="navbar-text ms-0">{{ .Section | humanize }}</span>
-    <button class="btn doks-sidebar-toggle d-lg-none ms-auto order-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#doks-docs-nav" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle documentation navigation">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
-    </button>
-  </div>
-</nav>
-
-<div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }}">
-  <aside class="doks-sidebar">
-    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
-      {{ partial "sidebar/docs-menu.html" . }}
-    </nav>
-  </aside>
 </div>
 {{ end -}}

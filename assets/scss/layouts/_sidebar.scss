@@ -1,5 +1,3 @@
-
-
 .docs-links,
 .docs-toc {
   scrollbar-width: thin;
@@ -46,6 +44,7 @@
 }
 
 @include media-breakpoint-up(lg) {
+
   .docs-links h3,
   .page-links h3 {
     margin: 1.125rem 1.5rem 0.75rem 0;
@@ -120,19 +119,20 @@ a.docs-link {
 
 // Sidebar
 @include media-breakpoint-up(lg) {
-  .widget__contributor,
+
+  .widget-contributor,
   .widget__share,
   .widget__related-post {
-    border-left: 1px solid #F5F5F5;
+    border-left: 1px solid #EDEDED;
     padding-left: 1.5rem;
   }
 }
 
-.contributor__header {
-  margin-bottom: 1rem;
+.widget-contributor__header {
+  margin-bottom: 0.5rem;
 }
 
-.contributor__header h3 {
+.widget-contributor__header h3 {
   font-size: 1.25rem;
   margin-top: 0;
   margin-bottom: 0;
@@ -147,10 +147,15 @@ a.docs-link {
 }
 
 .widget-contributor__name {
+  font-size: 18px;
   color: $primary;
 }
 
-.contributor-body p {
+.widget-contributor .widget-contributor___social-link {
+  margin-right: 4px;
+}
+
+.widget-contributor__body p {
   font-size: 0.9rem;
 }
 

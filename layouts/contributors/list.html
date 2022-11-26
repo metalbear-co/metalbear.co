@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="contributor__list">
-	<div class="contributor__list-nav">
+<div class="contributor-list px-3">
+	<div class="contributor-list__nav">
 		<a class="nav-back" href="/blog/">
 			<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
@@ -10,23 +10,22 @@
 			<span>Back to blog page</span>
 		</a>
 	</div>
-	<div class="contributor__wrapper">
-		<div class="contributor__image-wrapper d-flex justify-content-center mb-3">
+	<div class="contributor-list__wrapper container">
+		<div class="contributor-list__image-wrapper d-flex justify-content-center mb-3">
 			{{- with .Resources.GetMatch "profile.png" }}
-			{{- with .Resize (printf "%dx webp" 97 ) }}
-			<img src="{{ .RelPermalink }}"
-				class="contributor__image"
-				alt="{{  .Title }}" width="{{ .Width }}" height="{{ .Height }}">
+			{{- with .Resize (printf "%dx webp" 84 ) }}
+			<img src="{{ .RelPermalink }}" class="contributor__image" alt="{{  .Title }}" width="{{ .Width }}"
+				height="{{ .Height }}">
 			{{- end }}
 			{{- end }}
 		</div>
 		<div class="contributor__body mb-5">
-			<h1 class="contributor__name text-center">{{ .Title }}</h1>
-			<div class="text-center">{{ .Content }}</div>
+			<h1 class="contributor-list__name text-center">{{ .Title }}</h1>
+			<div class="contributor-list__body text-center">{{ .Content }}</div>
 			<div class="d-flex justify-content-center">
 				{{- with .Params.twitter }}
 				<a class="contributor__social-link mx-2" href="{{ . }}" title="Twitter" target="_blank" rel="noopener">
-					<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M19 0C8.50759 0 0 8.50759 0 19C0 29.4924 8.50759 38 19 38C29.4924 38 38 29.4924 38 19C38 8.50759 29.4924 0 19 0ZM28.131 14.3221C28.1437 14.5214 28.1437 14.7292 28.1437 14.9328C28.1437 21.1587 23.4022 28.3304 14.7377 28.3304C12.0658 28.3304 9.58906 27.5542 7.50246 26.2183C7.88415 26.2607 8.24888 26.2777 8.63906 26.2777C10.8444 26.2777 12.8717 25.5312 14.4875 24.2674C12.4179 24.225 10.679 22.8679 10.0853 21.0018C10.8105 21.1078 11.4636 21.1078 12.21 20.917C11.1444 20.7005 10.1865 20.1217 9.49922 19.279C8.81192 18.4363 8.43755 17.3816 8.43973 16.2942V16.2348C9.06317 16.5868 9.79688 16.8031 10.5645 16.8328C9.9192 16.4027 9.38998 15.8201 9.02378 15.1365C8.65757 14.4529 8.4657 13.6896 8.46518 12.9141C8.46518 12.0362 8.6942 11.2346 9.10558 10.5391C10.2884 11.9952 11.7644 13.1861 13.4377 14.0344C15.1109 14.8827 16.944 15.3694 18.8176 15.4629C18.1518 12.2609 20.5438 9.66964 23.4192 9.66964C24.7763 9.66964 25.9978 10.2379 26.8587 11.154C27.9232 10.9547 28.9411 10.556 29.8487 10.0217C29.4967 11.1116 28.7587 12.0319 27.779 12.6129C28.729 12.5112 29.6451 12.2482 30.4933 11.8792C29.8529 12.8208 29.0513 13.6562 28.131 14.3221Z"
 							fill="#222222" />
@@ -35,7 +34,7 @@
 				{{- end }}
 				{{- with .Params.linkedin }}
 				<a class="contributor__social-link mx-2" href="{{ . }}" title="Twitter" target="_blank" rel="noopener">
-					<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M19 0C8.50646 0 0 8.50646 0 19C0 29.4935 8.50646 38 19 38C29.4935 38 38 29.4935 38 19C38 8.50646 29.4935 0 19 0ZM14.349 26.8751H10.5015V14.4934H14.349V26.8751ZM12.4015 12.9734C11.1862 12.9734 10.4005 12.1125 10.4005 11.0477C10.4005 9.96115 11.21 9.12594 12.4509 9.12594C13.6919 9.12594 14.4519 9.96115 14.4756 11.0477C14.4756 12.1125 13.6919 12.9734 12.4015 12.9734ZM28.401 26.8751H24.5535V20.0133C24.5535 18.4161 23.9954 17.3316 22.6041 17.3316C21.5413 17.3316 20.9099 18.0658 20.6308 18.7724C20.5279 19.0238 20.5022 19.38 20.5022 19.7343V26.8731H16.6527V18.4419C16.6527 16.8961 16.6032 15.6038 16.5518 14.4915H19.8946L20.0707 16.2114H20.1479C20.6546 15.4039 21.8955 14.2124 23.9717 14.2124C26.503 14.2124 28.401 15.9085 28.401 19.5542V26.8751Z"
 							fill="#222222" />
@@ -45,11 +44,11 @@
 			</div>
 		</div>
 
-		<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 mb-3">
+		<div class="contributor-list__card-wrapper row row-cols-1 row-cols-md-2 mb-3">
 			{{ range .Data.Pages -}}
 			<div class="col mb-5">
-				<div class="blog-card d-flex flex-column px-3 py-3">
-					<h2 class="h3 mt-0"><a class="contributor-post__title" href="{{ .RelPermalink }}">{{
+				<div class="blog-card d-flex flex-column px-3 py-3 position-relative">
+					<h2 class="h3 mt-0"><a class="contributor-post__title stretched-link" href="{{ .RelPermalink }}">{{
 							.Params.title }}</a></h2>
 					{{ if eq .Section "blog" -}}
 					{{ partial "main/post-meta.html" . }}
