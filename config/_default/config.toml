@@ -6,7 +6,7 @@ enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
 languageCode = "en-US"
-paginate = 9
+paginate = 6
 rssLimit = 10
 
 # Multilingual

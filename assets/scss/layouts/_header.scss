@@ -424,7 +424,7 @@ button#doks-versions {
 .btn-menu:focus,
 .doks-sidebar-toggle:focus,
 .doks-mode-toggle:focus {
-  outline: 0;
+  outline: none;
 }
 
 .doks-sidebar-toggle .doks-collapse {
@@ -465,6 +465,11 @@ button#doks-versions {
   color: $brand-black;
 }
 
+.navbar .offcanvas .nav__social-link:hover svg path {
+  color: #FFFFFF;
+  stroke: $brand-black;
+}
+
 @include media-breakpoint-up(lg) {
   .nav__social {
     width: 230px;
@@ -477,7 +482,8 @@ button#doks-versions {
 }
 
 .navbar-brand__image-desktop {
-  display: none;
+  display: block;
+  max-width: 90%;
 }
 
 @include media-breakpoint-up(lg) {

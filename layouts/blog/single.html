@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="blog-single">
   <div class="container blog-single__wrapper">
-    <div class="row">
+    <div class="row position-relative">
       <div class="blog-single__main col-16 col-lg-10 col-xl-11 px-3 px-lg-5">
         <div>
           <a class="nav-back" href="/blog/">
@@ -22,12 +22,18 @@
             {{ .Content }}
           </div>
         </article>
+        <div class="widget__share d-lg-none">
+          <p class="text-center mt-0">Share post</p>
+          <div class="d-flex justify-content-center">
+            {{ partial "share-buttons.html" . }}
+          </div>
+        </div>
         {{ partial "blog-newsletter.html" . }}
       </div>
       <div class="blog-single__sidebar col-16 col-lg-6 col-xl-5 d-none d-lg-block">
         {{ partial "blog-contributor.html" . }}
-        <div class="widget__share mb-5">
-          <h3>Share post</h3>
+        <div class="widget__share pb-5">
+          <h3 class="mt-0">Share post</h3>
           {{ partial "share-buttons.html" . }}
         </div>
         {{ partial "blog-related.html" . }}

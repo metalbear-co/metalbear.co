@@ -20,7 +20,7 @@
 }
 
 .section__hero-desc {
-    font-size: 24px;
+    font-size: 20px;
     color: #222222;
     margin-bottom: 2.5rem;
 }
@@ -47,11 +47,15 @@
     border: 0.899709px solid $brand-black;
     box-shadow: -5px 6px 0px #000000;
     border-radius: 8px;
-    padding: 12px 60px;
+    padding: 8px 60px;
+}
+
+.button-hero {
+    padding: 8px 25px;
 }
 
 .button-big {
-    padding: 12px 54px;
+    padding: 8px 54px;
 }
 
 @include media-breakpoint-up(lg) {
@@ -89,9 +93,17 @@
 }
 
 .metalbear-hero {
-    max-width: 177px;
+    max-width: 86%;
     display: block;
     margin-left: auto;
+    margin-right: auto;
+}
+
+.metalbear-hero-mobile {
+    max-width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero__image {
@@ -114,13 +126,6 @@
 }
 
 @include media-breakpoint-up(lg) {
-    .metalbear-hero {
-        max-width: 86%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .hero__image {
         margin-top: 0;
         position: static;
@@ -133,11 +138,19 @@
     margin-bottom: 2rem;
 }
 
-@include media-breakpoint-up(lg) {
-    .section__waitlist {
-        transform: translateY(-4rem);
-        margin-bottom: -1rem;
-    }
+.sib-form-block.waitlist__header {
+    padding: 0;
+}
+
+.waitlist__header h4 {
+    color: $brand-black;
+    font-weight: 500;
+    font-family: $font-family;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 1.5rem;
 }
 
 #sib-container.waitlist__box {
@@ -147,7 +160,38 @@
     border: 0.899709px solid $brand-black;
     box-shadow: -5px 6px 0px #000000;
     border-radius: 8.99709px;
-    padding: 2rem 3rem;
+    padding: 1.5rem 0.5rem;
+}
+
+.section__waitlist-email {
+    margin-bottom: 2rem;
+}
+
+.section__waitlist-button {
+    margin-bottom: 1rem;
+}
+
+@include media-breakpoint-up(lg) {
+    .section__waitlist {
+        transform: translateY(-4rem);
+        margin-bottom: -1rem;
+    }
+
+    .waitlist__header h4 {
+        font-size: 22px;
+    }
+
+    #sib-container.waitlist__box {
+        padding: 2rem 0.5rem;
+    }
+
+    .section__waitlist-email {
+        margin-bottom: 2.5rem;
+    }
+
+    .section__waitlist-button {
+        margin-bottom: 1.5rem;
+    }
 }
 
 .waitlist__box {
@@ -161,35 +205,27 @@
     margin-right: auto;
 }
 
-.waitlist__header h4 {
-    color: $brand-black;
-    font-weight: 400;
-    font-family: $font-family;
-    font-size: 22px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 8px;
-    margin-bottom: 1.5rem;
-}
-
 .sib-form .entry__field.field__email {
-    border: 1px solid $brand-black;
+    border: 0.359223px solid $brand-black;
     border-radius: 10px;
 }
 
-input::-webkit-input-placeholder {
+.sib-form .entry__field.field__email .input::-webkit-input-placeholder,
+.sib-form .entry__field.blog-single__input .input::-webkit-input-placeholder {
     color: $brand-black;
     opacity: 1;
     /* Firefox */
 }
 
-input::-moz-placeholder {
+.sib-form .entry__field.field__email .input::-moz-placeholder,
+.sib-form .entry__field.blog-single__input .input::-moz-placeholder {
     color: $brand-black;
     opacity: 1;
     /* Firefox */
 }
 
-input::-ms-input-placeholder {
+.sib-form .entry__field.field__email .input::-ms-input-placeholder,
+.sib-form .entry__field.blog-single__input .input::-ms-input-placeholder {
     /* Microsoft Edge */
     color: $brand-black;
 }
@@ -197,7 +233,7 @@ input::-ms-input-placeholder {
 .sib-form .entry__field.field__email .input {
     color: $brand-black;
     font-family: $font-family;
-    padding: 0.5rem 2rem;
+    padding: 0 1rem;
 }
 
 .sib-form-block__button.button-primary {
@@ -219,7 +255,8 @@ input::-ms-input-placeholder {
 
 .sib-form-block__button.button-primary {
     font-family: $font-family;
-    padding: 12px 64px;
+    padding: 8px 30px;
+    border: 1px solid $brand-black;
 }
 
 .section__blog {
@@ -242,6 +279,18 @@ input::-ms-input-placeholder {
 
     .section__blog-title {
         font-size: 28px;
+    }
+
+    #sib-container.waitlist__box {
+        padding: 2rem 3rem;
+    }
+
+    .sib-form-block__button.button-primary {
+        padding: 12px 64px;
+    }
+
+    .sib-form .entry__field.field__email .input {
+        padding: 0.5rem 2rem;
     }
 }
 
@@ -267,6 +316,7 @@ input::-ms-input-placeholder {
     color: $brand-black;
     font-family: $font-family;
     font-weight: 300;
+    font-size: 14px;
 }
 
 @include media-breakpoint-up(lg) {
@@ -275,17 +325,21 @@ input::-ms-input-placeholder {
     .blog-list__wrapper .blog-card h3 {
         font-size: 1.3rem;
     }
+
+    .section__blog .blog-card .summary,
+    .blog-list__wrapper .blog-card .summary {
+        font-size: 1rem;
+    }
 }
 
 .section__blog .btn-reading {
     font-size: 1rem;
     z-index: 100;
-    padding: 10px 16px;
+    padding: 8px 16px;
 }
 
 .blog-card__summary {
     font-size: 1rem;
-    border-bottom: 1px solid $brand-black;
     margin-bottom: 16px;
 }
 
@@ -296,9 +350,15 @@ input::-ms-input-placeholder {
     font-size: 16px;
 }
 
+.section__blog .block-card__footer {
+    border-top: 1px solid $brand-black;
+    min-height: 124px;
+}
+
 .blog-card__meta-link {
     color: $brand-black;
     text-decoration: underline;
+    z-index: 10;
 }
 
 .sib-form-block.newsletter__header {
@@ -337,6 +397,10 @@ input::-ms-input-placeholder {
         padding: 0;
         transform: translateX(-5%);
     }
+
+    .section__blog .btn-reading {
+        padding: 10px 16px;
+    }
 }
 
 .section__newsletter #sib-container {
@@ -354,9 +418,9 @@ input::-ms-input-placeholder {
 }
 
 .newsletter__field .sib-form-block__button {
-    padding: 0 12px;
+    padding: 0 6px;
     background-color: $primary;
-    line-height: 54px;
+    line-height: 38px;
     border: 1px solid $brand-black;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -364,6 +428,21 @@ input::-ms-input-placeholder {
     right: 0;
     transform: translateY(-50%);
     margin-right: -1px;
+}
+
+.newsletter__field .sib-form-block__button:hover {
+    color: $brand-black;
+    background-color: #D3E5E4;
+}
+
+.newsletter__field .sib-form-block__button svg {
+    color: white;
+    margin-bottom: 6px;
+    width: 20px;
+}
+
+.newsletter__field .sib-form-block__button:hover svg {
+    color: $brand-black;
 }
 
 .newsletter__field .sib-form-block__button svg {
@@ -385,6 +464,15 @@ input::-ms-input-placeholder {
 
     .newsletter__header h4 {
         font-size: 20px;
+    }
+
+    .newsletter__field .sib-form-block__button {
+        padding: 0 12px;
+        line-height: 54px;
+    }
+
+    .newsletter__field .sib-form-block__button svg {
+        width: 27px;
     }
 }
 

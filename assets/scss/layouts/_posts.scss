@@ -5,14 +5,16 @@
 }
 
 .blog-list__header-title {
-  font-size: 44px;
-  margin-top: 0rem;
+  font-size: 40px;
+  margin-top: 0;
+  text-align: center;
 }
 
 .blog-list__header-desc {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 300;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 @include media-breakpoint-up(lg) {
@@ -23,10 +25,12 @@
 
   .blog-list__header-title {
     font-size: 2rem;
+    text-align: start;
   }
 
   .blog-list__header-desc {
     font-size: 1.125rem;
+    text-align: start;
   }
 }
 
@@ -54,6 +58,17 @@
   border: 1px solid $brand-black;
   border-radius: 7px;
   height: 100%;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 370px;
+}
+
+.blog-list__wrapper .blog-card:hover {
+  background: #D0E2E1;
+  box-shadow: -5px 6px 0px #000000;
 }
 
 .blog-card__continue {
@@ -72,7 +87,7 @@
   padding-top: 3em;
 }
 
-.blog-list__wrapper{
+.blog-list__wrapper {
   max-width: 1080px;
   padding-top: 0;
 }
@@ -140,11 +155,18 @@
 }
 
 .blog__newsletter {
-  width: 85%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 5rem;
+  padding-top: 2rem;
   padding-bottom: 5rem;
+}
+
+@include media-breakpoint-up(lg) {
+  .blog__newsletter {
+    padding-top: 2rem;
+    width: 85%;
+  }
 }
 
 #sib-container.blog-newsletter__box {
@@ -155,6 +177,28 @@
   box-shadow: -5px 6px 0px #000000;
   border-radius: 8.99709px;
   padding: 2rem 1rem;
+}
+
+.sib-form-block.blog__newsletter-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sib-form-block.blog__newsletter-header h4 {
+  font-family: $font-family;
+  text-transform: uppercase;
+  color: #222222;
+  font-weight: 400;
+  font-size: 12px;
+  margin: 0;
+}
+
+@include media-breakpoint-up(lg) {
+  .sib-form-block.blog__newsletter-header h4 {
+    font-size: 16px;
+  }
 }
 
 .sib-form .entry__field.blog-single__input {
@@ -254,4 +298,12 @@
 
 .contributor-terms__content {
   font-size: 14px;
+}
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
 }

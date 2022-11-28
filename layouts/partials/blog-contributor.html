@@ -1,5 +1,5 @@
 {{- range (.GetTerms "contributors") }}
-<div class="widget-contributor mb-5">
+<div class="widget-contributor pb-5">
     <div class="widget-contributor___image-wrapper mb-3">
         {{- with .Resources.GetMatch "profile.png" }}
         {{- with .Resize (printf "%dx webp" 56 ) }}

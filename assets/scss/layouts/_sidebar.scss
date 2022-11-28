@@ -118,6 +118,12 @@ a.docs-link {
 
 
 // Sidebar
+.blog-single__sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
 @include media-breakpoint-up(lg) {
 
   .widget-contributor,
@@ -157,6 +163,7 @@ a.docs-link {
 
 .widget-contributor__body p {
   font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 // Widget share
@@ -169,11 +176,25 @@ a.docs-link {
   margin-right: 0.5rem;
 }
 
+.sharing-button__link:hover {
+  text-decoration: none;
+}
+
 .related__post {
   border: 1px solid $brand-black;
   border-radius: 7px;
   padding: 1rem 1rem;
   margin-bottom: 1.5rem;
+  min-height: 174px;
+  background-color: white;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.related__post:hover {
+  background: #D0E2E1;
+  box-shadow: -5px 6px 0px #000000;
 }
 
 .related__post h3 {
