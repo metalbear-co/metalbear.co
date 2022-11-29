@@ -55,7 +55,7 @@
                   </li>
                 {{ else }}
                   <li class="nav-item ms-lg-2">
-                    <a class="nav-link px-3 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                    <a data-bs-dismiss="offcanvas" class="nav-link px-3 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
                   </li>
                 {{ end }}
               {{ end -}}
