@@ -13,7 +13,7 @@ description = "MetalBear is an open-core company, focusing on the backend engine
 images = ["metalbear.png"]
 ogLocale = "en_US"
 domainTLD = "metalbear.co"
-titleHome = "MetalBear 🐻"
+titleHome = "MetalBear 🐻 - Tools for Backend Engineers"
 
 ## Twitter Cards
 twitterSite = "@metalbearco"
