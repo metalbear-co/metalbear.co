@@ -6,7 +6,7 @@
           <ul class="footer__social nav d-inline-flex justify-content-center py-3">
             {{ range .Site.Menus.footer_social -}}
               <li class="nav-item">
-                <a class="nav-link py-1 px-2" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
+                <a class="nav-link py-1 px-2" target="_blank" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
               </li>
             {{ end -}}
           </ul>
