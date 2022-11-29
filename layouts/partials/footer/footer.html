@@ -1,7 +1,7 @@
 <footer class="footer text-muted py-1">
   <div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }}">
     <div class="row row-cols-1 row-cols-lg-3 align-items-center">
-      <div class="col order-lg-2">
+      <div class="col order-lg-0">
         <ul class="list-inline text-center text-lg-start py-3">
           <li class="list-inline-item" href="gilidori.com">Designed by Gili Dori</li>
         </ul>
@@ -17,7 +17,7 @@
           </ul>
         </div>
       </div>
-      <div class="col order-lg-0">
+      <div class="col order-lg-2">
         <ul class="list-inline text-center text-lg-start py-3">
           <li class="list-inline-item">{{ .Site.Params.footer | safeHTML }}</li>
         </ul>
