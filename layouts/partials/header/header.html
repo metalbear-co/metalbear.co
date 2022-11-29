@@ -65,7 +65,7 @@
           <ul class="nav nav__social justify-content-center">
             {{ range .Site.Menus.social -}}
               <li class="nav-item">
-                <a class="nav-link nav__social-link px-2 py-1 mx-1" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
+                <a class="nav-link nav__social-link px-2 py-1 mx-1" target="_blank" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
               </li>
             {{ end -}}
           </ul>
