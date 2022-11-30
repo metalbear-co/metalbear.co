@@ -26,77 +26,47 @@
 </section>
 
 
-<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-<section class="section__waitlist">
+<section class="section section-waitlist">
   <div class="container">
-    <div class="sib-form" style="text-align: center; padding: 0">
-      <div id="sib-form-container" class="sib-form-container">
-        <div id="error-message" class="sib-form-message-panel"
-          style="font-size:16px; text-align:left; font-family:&quot;Jost&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:10px; border-color:#ff4949;max-width:540px;">
-          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-              <path
-                d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-            </svg>
-            <span class="sib-form-message-panel__inner-text">
-              Your subscription could not be saved. Please try again.
-            </span>
-          </div>
-        </div>
-        <div></div>
-        <div id="success-message" class="sib-form-message-panel"
-          style="font-size:16px; text-align:left; font-family:&quot;Jost&quot;, sans-serif; color:#085229; background-color:#e7faf0; border-radius:10px; border-color:#13ce66;max-width:540px;">
-          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-              <path
-                d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-            </svg>
-            <span class="sib-form-message-panel__inner-text">
-              Your subscription has been successful.
-            </span>
-          </div>
-        </div>
-        <div></div>
-        <div id="sib-container" class="sib-container--large sib-container--vertical waitlist__box">
-          <form id="sib-form" method="POST"
-            action="https://e000752a.sibforms.com/serve/MUIEABU0hTArwwLIb4i74FJBkvD8bGCEdLhvI2lhvU1mMvKtm-30xLHhzp-DDkWG0Yv3mDTXewp-pG0acvD7T-ehWjCIqUAdFQRqPwTaIDMhWqEmTv79PRuJziD_u4mmipi9KJeQDaX-cMPfYwMQ2WZEBsA79lKP9CGba9Vp6G5t4dwAV8pOPuiUGs4uTDe4aeFkIGIBGGA3gmPZ"
-            data-type="subscription">
-            <div class="sib-form-block waitlist__header" style="margin-bottom: 8px;">
-              <h4>mirrord for teams is coming soon!</h4>
-            </div>
-            <div class="section__waitlist-email">
-              <div class="sib-input sib-form-block">
-                <div class="form__entry entry_block">
-                  <div class="form__label-row ">
-                    <div class="entry__field field__email" style="color: #2a8c82">
-                      <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your Email"
-                        data-required="true" required />
-                    </div>
-                  </div>
-
-                  <label class="entry__error entry__error--primary"
-                    style="font-size:16px; text-align:left; font-family:&quot;Jost&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:10px; border-color:#ff4949;">
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="section__waitlist-button">
-              <div class="sib-form-block" style="text-align: center">
-                <button class="sib-form-block__button sib-form-block__button-with-loader button-primary button-waitlist" form="sib-form" type="submit">
-                  <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                    <path
-                      d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                  </svg>
-                  Join The Waitlist
-                </button>
-              </div>
-            </div>
-
-            <input type="text" name="email_address_check" value="" class="input--hidden">
-            <input type="hidden" name="locale" value="en">
-          </form>
-        </div>
+    <div class="section-waitlist__message px-2 px-lg-5">
+      <div id="error-message" class="section-waitlist__message-error py-2 px-2 mb-3 d-none">
+        <svg width="24" height="24" viewBox="0 0 512 512" class="section-waitlist__error-icon">
+          <path
+            d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+        </svg>
+        <span class="section-waitlist__error-text">
+          Your subscription could not be saved. Please try again.
+        </span>
       </div>
+      <div id="success-message" class="section-waitlist__message-success py-2 px-2 mb-3 d-none">
+          <svg width="24" height="24" viewBox="0 0 512 512" class="section-waitlist__success-icon">
+            <path
+              d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+          </svg>
+          <span class="section-waitlist__success-text">
+            Your subscription has been successful.
+          </span>
+      </div>
+    </div>
+
+    <div class="section-waitlist__form-wrapper py-4 px-2 px-lg-5">
+      <form id="waitlist-form" method="POST" action="">
+        <div class="section-waitlist__header" style="margin-bottom: 8px;">
+          <h4>mirrord for teams is coming soon!</h4>
+        </div>
+        <div class="section-waitlist__email px-2">
+          <input class="section-waitlist__input input px-4 py-2 py-lg-3" type="text" id="EMAIL" name="EMAIL"
+            autocomplete="off" placeholder="Your Email" data-required="true" required />
+          <div class="section-waitlist__entry-error px-2 py-1 mx-2 mt-2 d-none">
+            <p class="m-0">This field cannot be left blank.</p>
+          </div>
+        </div>
+        <div class="section-waitlist__button-wrapper">
+          <button class="button-primary section-waitlist__button" form="waitlist-form" type="submit">
+            Join The Waitlist
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -134,74 +104,57 @@
   </div>
 </section>
 
-<section class="section section__newsletter">
+<section class="section section-newsletter">
   <div class="container">
-    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
-      <div class="section__newsletter-logo order-1 order-md-0">
-        <img src="/metalbear-newsletter.svg"/>
+    <div class="section-newsletter__message px-2 pt-4 pt-lg-0">
+      <div id="error-message" class="section-newsletter__message-error py-2 px-2 mb-3 d-none">
+        <svg width="24" height="24" viewBox="0 0 512 512" class="section-newsletter__error-icon">
+          <path
+            d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+        </svg>
+        <span class="section-newsletter__error-text">
+          Your subscription could not be saved. Please try again.
+        </span>
+      </div>
+      <div id="success-message" class="section-newsletter__message-success py-2 px-2 mb-3 d-none">
+        <svg width="24" height="24" viewBox="0 0 512 512" class="section-newsletter__success-icon">
+          <path
+            d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+        </svg>
+        <span class="section-newsletter__success-text">
+          Your subscription has been successful.
+        </span>
+      </div>
+    </div>
+
+    <div class="section-newsletter__wrapper d-flex flex-column flex-md-row justify-content-center align-items-center">
+      <div class="section-newsletter__logo order-1 order-md-0">
+        <img src="/metalbear-newsletter.svg" />
       </div>
 
-      <div class="section__newsletter-form order-0 order-md-1 sib-form">
-        <div id="sib-form-container" class="sib-form-container">
-          <div id="error-message" class="sib-form-message-panel"
-            style="font-size:16px; text-align:left; font-family:&quot;Jost&quot;, sans-serif; color:#661d1d; border-radius:10px; border-color:#ff4949;max-width:540px;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-                <path
-                  d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-              </svg>
-              <span class="sib-form-message-panel__inner-text">
-                Your subscription could not be saved. Please try again.
-              </span>
+      <div class="section-newsletter__form order-0 order-md-1">
+        <div class="section-newsletter__form-wrapper py-4 px-2">
+          <form id="newsletter-form" method="POST" action="">
+            <div class="section-newsletter__header">
+              <h4 class="m-0">Sign up for our newsletter</h4>
             </div>
-          </div>
-          <div></div>
-          <div id="success-message" class="sib-form-message-panel"
-            style="font-size:16px; text-align:left; font-family:&quot;Jost&quot;, sans-serif; color:#085229; border-radius:10px; border-color:#13ce66;max-width:540px;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-                <path
-                  d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-              </svg>
-              <span class="sib-form-message-panel__inner-text">
-                Your subscription has been successful.
-              </span>
+            <div class="section-newsletter__email position-relative">
+              <input class="section-newsletter__input input px-4 py-2 py-lg-3" type="text" id="EMAIL" name="EMAIL"
+                autocomplete="off" placeholder="Your Email" data-required="true" required />
+              <div class="section-newsletter__button-wrapper position-absolute top-50">
+                <button class="section-newsletter__button" form="newsletter-form" type="submit">
+                  <svg width="27" height="26" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.76174 0.589253L28.633 13.8298C28.7795 13.902 28.9029 14.0137 28.9892 14.1525C29.0755 14.2912 29.1212 14.4513 29.1212 14.6146C29.1212 14.778 29.0755 14.9381 28.9892 15.0768C28.9029 15.2155 28.7795 15.3273 28.633 15.3995L1.75999 28.64C1.60944 28.714 1.44081 28.7431 1.27417 28.7239C1.10754 28.7047 0.949926 28.6381 0.820107 28.5319C0.690288 28.4256 0.593733 28.2844 0.541943 28.1248C0.490153 27.9653 0.48531 27.7942 0.52799 27.632L3.97374 14.6225L0.52624 1.599C0.482853 1.43645 0.487247 1.26484 0.538897 1.10473C0.590547 0.944612 0.687261 0.802781 0.817455 0.696225C0.947649 0.589669 1.1058 0.522907 1.27297 0.503934C1.44014 0.484962 1.60923 0.514584 1.75999 0.589253H1.76174ZM2.71199 3.0095L5.52949 13.653L5.63799 13.632L5.74999 13.625H18C18.2186 13.6246 18.4295 13.7061 18.5911 13.8534C18.7527 14.0007 18.8533 14.2032 18.873 14.4209C18.8928 14.6387 18.8303 14.856 18.6979 15.03C18.5654 15.2039 18.3726 15.322 18.1575 15.361L18 15.375H5.74999C5.69601 15.3753 5.64212 15.3706 5.58899 15.361L2.71374 26.2215L26.2652 14.6155L2.71199 3.0095Z"
+                      fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-          <div id="sib-container" class="sib-container--large sib-container--vertical" style="padding-left: 0; padding-right: 0;">
-            <form id="sib-form-2" method="POST"
-              action="https://e000752a.sibforms.com/serve/MUIEABU0hTArwwLIb4i74FJBkvD8bGCEdLhvI2lhvU1mMvKtm-30xLHhzp-DDkWG0Yv3mDTXewp-pG0acvD7T-ehWjCIqUAdFQRqPwTaIDMhWqEmTv79PRuJziD_u4mmipi9KJeQDaX-cMPfYwMQ2WZEBsA79lKP9CGba9Vp6G5t4dwAV8pOPuiUGs4uTDe4aeFkIGIBGGA3gmPZ"
-              data-type="subscription">
-              <div class="sib-form-block newsletter__header" style="margin-bottom: 8px;">
-                <h4>Sign up for our newsletter</h4>
-              </div>
-              <div class="newsletter__field">
-                <div class="sib-input sib-form-block" style="padding-left: 0; padding-right: 0;">
-                  <div class="form__entry entry_block">
-                    <div class="form__label-row ">
-                      <div class="entry__field field__email position-relative" style="color: #2a8c82">
-                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your Email"
-                          data-required="true" required />
-                          <button class="sib-form-block__button sib-form-block__button-with-loader position-absolute top-50"
-                          form="sib-form-2" type="submit">
-                          <svg width="27" height="26" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.76174 0.589253L28.633 13.8298C28.7795 13.902 28.9029 14.0137 28.9892 14.1525C29.0755 14.2912 29.1212 14.4513 29.1212 14.6146C29.1212 14.778 29.0755 14.9381 28.9892 15.0768C28.9029 15.2155 28.7795 15.3273 28.633 15.3995L1.75999 28.64C1.60944 28.714 1.44081 28.7431 1.27417 28.7239C1.10754 28.7047 0.949926 28.6381 0.820107 28.5319C0.690288 28.4256 0.593733 28.2844 0.541943 28.1248C0.490153 27.9653 0.48531 27.7942 0.52799 27.632L3.97374 14.6225L0.52624 1.599C0.482853 1.43645 0.487247 1.26484 0.538897 1.10473C0.590547 0.944612 0.687261 0.802781 0.817455 0.696225C0.947649 0.589669 1.1058 0.522907 1.27297 0.503934C1.44014 0.484962 1.60923 0.514584 1.75999 0.589253H1.76174ZM2.71199 3.0095L5.52949 13.653L5.63799 13.632L5.74999 13.625H18C18.2186 13.6246 18.4295 13.7061 18.5911 13.8534C18.7527 14.0007 18.8533 14.2032 18.873 14.4209C18.8928 14.6387 18.8303 14.856 18.6979 15.03C18.5654 15.2039 18.3726 15.322 18.1575 15.361L18 15.375H5.74999C5.69601 15.3753 5.64212 15.3706 5.58899 15.361L2.71374 26.2215L26.2652 14.6155L2.71199 3.0095Z" fill="currentColor"/>
-                            </svg>
-                        </button>
-                      </div>
-                    </div>
-  
-                    <label class="entry__error entry__error--primary"
-                      style="font-size:16px; text-align:left; font-family:&quot;Jost&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:10px; border-color:#ff4949;">
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <input type="text" name="email_address_check" value="" class="input--hidden">
-              <input type="hidden" name="locale" value="en">
-            </form>
-          </div>
+            <div class="section-newsletter__entry-error px-2 py-1 mx-2 mt-2 d-none">
+              <p class="m-0">This field cannot be left blank.</p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -237,28 +190,3 @@
   </div>
 </section>
 
-
-<!-- END - We recommend to place the below code where you want the form in your website html  -->
-
-<!-- START - We recommend to place the below code in footer or bottom of your website html  -->
-<script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-  window.LOCALE = 'en';
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-
-  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
-
-  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-
-  window.translation = {
-    common: {
-      selectedList: '{quantity} list selected',
-      selectedLists: '{quantity} lists selected'
-    }
-  };
-
-  var AUTOHIDE = Boolean(0);
-</script>
-<script src="https://sibforms.com/forms/end-form/build/main.js"></script>
-<!-- <script defer  src="{{ "/js/sibform.js" | relURL }}"></script> -->
-{{ end }}
