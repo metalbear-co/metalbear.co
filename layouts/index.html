@@ -3,11 +3,11 @@
   <div class="container-xl flex-wrap flex-md-nowrap">
     <div class="row align-items-center">
       <div class="col-16 col-lg-9">
-        <h2 class="d-md-none text-center" style="font-size: 40px;">We’re<br/>MetalBear</h2>
+        <h2 class="d-md-none text-center" style="font-size: 40px;">We’re<br />MetalBear</h2>
         <h2 class="d-none d-md-block" style="margin-top:0.1rem;">We Are MetalBear</h2>
         <p class="section__hero-desc text-center text-md-start">{{ .Params.lead | safeHTML }}</p>
         <div class="d-lg-none">
-          <img class="metalbear-hero-mobile" src="/metalbear-logo-home.svg"/>
+          <img class="metalbear-hero-mobile" src="/metalbear-logo-home.svg" />
         </div>
         <div class="button-wrapper d-flex justify-content-center justify-content-lg-start pt-3">
           <div class="text-center mb-3">
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="col-16 col-lg-7 d-none d-lg-block">
-        <img class="metalbear-hero" src="/metalbear-logo-home.svg"/>
+        <img class="metalbear-hero" src="/metalbear-logo-home.svg" />
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
 <section class="section section-waitlist">
   <div class="container">
     <div class="section-waitlist__message px-2 px-lg-5">
-      <div id="error-message" class="section-waitlist__message-error py-2 px-2 mb-3 d-none">
+      <div id="waitlist-error-message" class="section-waitlist__message-error py-2 px-2 mb-3 d-none">
         <svg width="24" height="24" viewBox="0 0 512 512" class="section-waitlist__error-icon">
           <path
             d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
@@ -38,14 +38,14 @@
           Your subscription could not be saved. Please try again.
         </span>
       </div>
-      <div id="success-message" class="section-waitlist__message-success py-2 px-2 mb-3 d-none">
-          <svg width="24" height="24" viewBox="0 0 512 512" class="section-waitlist__success-icon">
-            <path
-              d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-          </svg>
-          <span class="section-waitlist__success-text">
-            Your subscription has been successful.
-          </span>
+      <div id="waitlist-success-message" class="section-waitlist__message-success py-2 px-2 mb-3 d-none">
+        <svg width="24" height="24" viewBox="0 0 512 512" class="section-waitlist__success-icon">
+          <path
+            d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+        </svg>
+        <span class="section-waitlist__success-text">
+          Your subscription has been successful.
+        </span>
       </div>
     </div>
 
@@ -55,7 +55,7 @@
           <h4>mirrord for teams is coming soon!</h4>
         </div>
         <div class="section-waitlist__email px-2">
-          <input class="section-waitlist__input input px-4 py-2 py-lg-3" type="text" id="EMAIL" name="EMAIL"
+          <input class="section-waitlist__input input px-4 py-2 py-lg-3" type="text" id="email" name="email"
             autocomplete="off" placeholder="Your Email" data-required="true" required />
           <div class="section-waitlist__entry-error px-2 py-1 mx-2 mt-2 d-none">
             <p class="m-0">This field cannot be left blank.</p>
@@ -77,26 +77,27 @@
       <h2 class="section__blog-title text-center my-0">Latest from MetalBear Blog</h2>
     </header>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-0 mb-lg-5">
-        {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "blog")  -}}
-        <div class="col mb-5">
-          <div class="blog-card d-flex flex-column position-relative align-content-between justify-content-between">
-            <div class="blog-card__body">
-              <h3><a class="stretched-link" style="color: #222222;" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
-              <div class="blog-card__summary">
+      {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") -}}
+      <div class="col mb-5">
+        <div class="blog-card d-flex flex-column position-relative align-content-between justify-content-between">
+          <div class="blog-card__body">
+            <h3><a class="stretched-link" style="color: #222222;" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with
+                .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+            <div class="blog-card__summary">
               <p class="summary">{{ .Params.lead | safeHTML }}</p>
-              </div>
             </div>
-            <div class="block-card__footer pt-2 d-flex flex-column justify-content-between">
-              <div>
-                {{ partial "main/blog-meta.html" . -}}
-              </div>
-              <div class="pt-4">
-                <a class="button-secondary position-relative btn-reading" href="{{ .RelPermalink }}">Continue Reading</a>
-              </div>
+          </div>
+          <div class="block-card__footer pt-2 d-flex flex-column justify-content-between">
+            <div>
+              {{ partial "main/blog-meta.html" . -}}
+            </div>
+            <div class="pt-4">
+              <a class="button-secondary position-relative btn-reading" href="{{ .RelPermalink }}">Continue Reading</a>
             </div>
           </div>
         </div>
-        {{ end -}}
+      </div>
+      {{ end -}}
     </div>
     <div class="pt-4 pt-lg-5 text-center">
       <a class="button-primary button-big" href="/blog/">Show Me More</a>
@@ -172,22 +173,68 @@
         </div>
       </div>
       <div class="col-16 col-lg-5 d-none d-lg-flex align-items-end">
-        <img class="join-community-logo" src="/join-community.svg"/>
+        <img class="join-community-logo" src="/join-community.svg" />
       </div>
     </div>
   </div>
   <div class="join-community__col-img position-absolute d-flex d-lg-none align-items-start">
-    <img class="join-community-logo-mobile" src="/join-community-mobile.svg"/>
+    <img class="join-community-logo-mobile" src="/join-community-mobile.svg" />
   </div>
 </section>
 
 <section class="section section__contact mt-3">
   <div class="container">
-      <div id="contact" class="contact-wrapper">
-        <h2 class="section__contact-title text-center fw-bold mt-0 mb-3">Contact us</h2>
-        <p class="section__contact-desc text-center mt-0">hi@metalbear.co</p>
-      </div>
+    <div id="contact" class="contact-wrapper">
+      <h2 class="section__contact-title text-center fw-bold mt-0 mb-3">Contact us</h2>
+      <p class="section__contact-desc text-center mt-0">hi@metalbear.co</p>
+    </div>
   </div>
 </section>
+
+
+<script type="text/javascript">
+  window.addEventListener("load", () => {
+    function sendData() {
+      const XHR = new XMLHttpRequest();
+
+      const FD = new FormData(form);
+
+      XHR.addEventListener("load", (event) => {
+        if (event.target.status === 200) {
+          if (!errorElement.classList.contains("d-none")) {
+            errorElement.classList.add("d-none");
+          }
+          successElement.classList.remove("d-none");
+        } else {
+          if (!successElement.classList.contains("d-none")) {
+            successElement.classList.add("d-none");
+          }
+          errorElement.classList.remove("d-none");
+        }
+      });
+
+      XHR.addEventListener("error", (event) => {
+        errorElement.classList.remove("d-none");
+        if (!successElement.classList.contains("d-none")) {
+          successElement.classList.add("d-none");
+        }
+      });
+
+      XHR.open("POST", "https://waitlist.metalbear.co/v1/waitlist");
+      XHR.send(FD);
+    }
+
+    const form = document.getElementById("waitlist-form");
+    const errorElement = document.getElementById("waitlist-error-message");
+    const successElement = document.getElementById("waitlist-success-message");
+
+    // Add 'submit' event handler
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      sendData();
+    });
+  });
+</script>
 
 {{ end }}
