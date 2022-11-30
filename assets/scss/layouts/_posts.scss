@@ -401,3 +401,15 @@
     padding: 12px 64px;
   }
 }
+
+.blog-header {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.widget__share__mobile {
+  display: grid;
+  justify-content: right;
+}
