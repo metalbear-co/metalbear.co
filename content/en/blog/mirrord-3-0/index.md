@@ -1,5 +1,5 @@
 ---
-title: "Mirrord 3.0 is out!"
+title: "mirrord 3.0 is out!"
 description: "Our biggest release yet is now available for download"
 lead: "Our biggest release yet is now available for download"
 tags:
