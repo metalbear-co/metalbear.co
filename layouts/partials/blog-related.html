@@ -1,0 +1,16 @@
+{{- $related := .Site.RegularPages.Related . | first 3 }}
+{{- with $related }}
+<section class="widget__related-post">
+    <h3 class="mt-0">You may also like...</h3>
+    <div class="related-post">
+        {{- range . }}
+        <div class="related__post position-relative d-flex flex-column justify-content-between">
+            <h3>
+                <a class="related__post-link stretched-link" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a>
+            </h3>
+            {{ partial "main/post-meta.html" . }}
+        </div>
+        {{- end }}
+    </div>
+</section>
+{{- end }}

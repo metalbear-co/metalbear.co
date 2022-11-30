@@ -1,5 +1,3 @@
-
-
 .docs-links,
 .docs-toc {
   scrollbar-width: thin;
@@ -46,6 +44,7 @@
 }
 
 @include media-breakpoint-up(lg) {
+
   .docs-links h3,
   .page-links h3 {
     margin: 1.125rem 1.5rem 0.75rem 0;
@@ -115,4 +114,101 @@ a.docs-link {
 .docs-links h3.sidebar-link a:hover,
 .page-links h3.sidebar-link a:hover {
   text-decoration: underline;
+}
+
+// Sidebar
+.blog-single__sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+
+@include media-breakpoint-up(lg) {
+
+  .widget-contributor,
+  .widget__share,
+  .widget__related-post {
+    border-left: 1px solid #EDEDED;
+    padding-left: 1.5rem;
+  }
+}
+
+.widget-contributor__header {
+  margin-bottom: 0.5rem;
+}
+
+.widget-contributor__header h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.profile__image {
+  border-radius: 100%;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.widget-contributor__name {
+  font-size: 18px;
+  color: $primary;
+}
+
+.widget-contributor .widget-contributor___social-link {
+  margin-right: 4px;
+}
+
+.widget-contributor__body p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+// Widget share
+.widget__share h3,
+.widget__related-post h3 {
+  color: $brand-black;
+}
+
+.sharing-button__link {
+  margin-right: 0.5rem;
+}
+
+.sharing-button__link:hover {
+  text-decoration: none;
+}
+
+.related__post {
+  border: 1px solid $brand-black;
+  border-radius: 7px;
+  padding: 1rem 1rem;
+  margin-bottom: 1.5rem;
+  min-height: 174px;
+  background-color: white;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.related__post:hover {
+  background: #D0E2E1;
+  box-shadow: -5px 6px 0px #000000;
+}
+
+.related__post h3 {
+  margin-top: 0;
+}
+
+.related__post-link {
+  color: $brand-black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.related__post-meta {
+  font-size: 0.9rem;
+  margin-bottom: 0;
 }

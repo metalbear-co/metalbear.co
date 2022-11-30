@@ -2,6 +2,8 @@
 title: "mirrord internals - hooking libc functions in Rust and fixing bugs"
 description: "Practical example of how to hook functions in Rust and a guide to detours in mirrord"
 lead: "mirrord internals - hooking libc functions and fixing bugs"
+tags:
+  - metalbear
 date: 2022-07-04T0:00:00+00:00
 lastmod: 2022-07-04T0:00:00+00:00
 draft: false

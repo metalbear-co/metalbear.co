@@ -46,305 +46,9 @@ $supportedNetworks ", ") }}
 {{ $buttonMargin = .Site.Params.ShareButtons.ButtonMargin }}
 {{ end }}
 
-
-<style>
-    .resp-sharing-button__link,
-    .resp-sharing-button__icon {
-        display: inline-block
-    }
-
-    .resp-sharing-button__link {
-        text-decoration: none;
-        color: #fff !important;
-        margin: 0.5em
-    }
-
-    .resp-sharing-button {
-        border-radius: 5px;
-        transition: 25ms ease-out;
-        padding: 0.5em 0.75em;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-
-            {
-                {
-                if (isset .Site.Params.ShareButtons "fontsize")
-            }
-        }
-
-        font-size: {
-                {
-                .Site.Params.ShareButtons.FontSize
-            }
-        }
-
-            {
-                {
-                end
-            }
-        }
-    }
-
-    .resp-sharing-button__icon svg {
-        width: 1em;
-        height: 1em;
-        margin-right: 0.4em;
-        vertical-align: middle
-    }
-
-    .resp-sharing-button--small svg {
-        margin: 0;
-        vertical-align: middle
-    }
-
-    /* Non solid icons get a stroke */
-    .resp-sharing-button__icon {
-        stroke: #fff;
-        fill: none
-    }
-
-    /* Solid icons get a fill */
-    .resp-sharing-button__icon--solid,
-    .resp-sharing-button__icon--solidcircle {
-        fill: #fff;
-        stroke: none
-    }
-
-    .resp-sharing-button--twitter {
-        background-color: #55acee
-    }
-
-    .resp-sharing-button--twitter:hover {
-        background-color: #2795e9
-    }
-
-    .resp-sharing-button--pinterest {
-        background-color: #bd081c
-    }
-
-    .resp-sharing-button--pinterest:hover {
-        background-color: #8c0615
-    }
-
-    .resp-sharing-button--facebook {
-        background-color: #3b5998
-    }
-
-    .resp-sharing-button--facebook:hover {
-        background-color: #2d4373
-    }
-
-    .resp-sharing-button--tumblr {
-        background-color: #35465C
-    }
-
-    .resp-sharing-button--tumblr:hover {
-        background-color: #222d3c
-    }
-
-    .resp-sharing-button--reddit {
-        background-color: #ff4500
-    }
-
-    .resp-sharing-button--reddit:hover {
-        background-color: #3a80c1
-    }
-
-    .resp-sharing-button--google {
-        background-color: #dd4b39
-    }
-
-    .resp-sharing-button--google:hover {
-        background-color: #c23321
-    }
-
-    .resp-sharing-button--linkedin {
-        background-color: #0077b5
-    }
-
-    .resp-sharing-button--linkedin:hover {
-        background-color: #046293
-    }
-
-    .resp-sharing-button--email {
-        background-color: #777
-    }
-
-    .resp-sharing-button--email:hover {
-        background-color: #5e5e5e
-    }
-
-    .resp-sharing-button--xing {
-        background-color: #1a7576
-    }
-
-    .resp-sharing-button--xing:hover {
-        background-color: #114c4c
-    }
-
-    .resp-sharing-button--whatsapp {
-        background-color: #25D366
-    }
-
-    .resp-sharing-button--whatsapp:hover {
-        background-color: #1da851
-    }
-
-    .resp-sharing-button--hackernews {
-        background-color: #FF6600
-    }
-
-    .resp-sharing-button--hackernews:hover,
-    .resp-sharing-button--hackernews:focus {
-        background-color: #FB6200
-    }
-
-    .resp-sharing-button--vk {
-        background-color: #507299
-    }
-
-    .resp-sharing-button--vk:hover {
-        background-color: #43648c
-    }
-
-    .resp-sharing-button--facebook {
-        background-color: #3b5998;
-        border-color: #3b5998;
-    }
-
-    .resp-sharing-button--facebook:hover,
-    .resp-sharing-button--facebook:active {
-        background-color: #2d4373;
-        border-color: #2d4373;
-    }
-
-    .resp-sharing-button--twitter {
-        background-color: #55acee;
-        border-color: #55acee;
-    }
-
-    .resp-sharing-button--twitter:hover,
-    .resp-sharing-button--twitter:active {
-        background-color: #2795e9;
-        border-color: #2795e9;
-    }
-
-    .resp-sharing-button--tumblr {
-        background-color: #35465C;
-        border-color: #35465C;
-    }
-
-    .resp-sharing-button--tumblr:hover,
-    .resp-sharing-button--tumblr:active {
-        background-color: #222d3c;
-        border-color: #222d3c;
-    }
-
-    .resp-sharing-button--email {
-        background-color: #777777;
-        border-color: #777777;
-    }
-
-    .resp-sharing-button--email:hover,
-    .resp-sharing-button--email:active {
-        background-color: #5e5e5e;
-        border-color: #5e5e5e;
-    }
-
-    .resp-sharing-button--pinterest {
-        background-color: #bd081c;
-        border-color: #bd081c;
-    }
-
-    .resp-sharing-button--pinterest:hover,
-    .resp-sharing-button--pinterest:active {
-        background-color: #8c0615;
-        border-color: #8c0615;
-    }
-
-    .resp-sharing-button--linkedin {
-        background-color: #0077b5;
-        border-color: #0077b5;
-    }
-
-    .resp-sharing-button--linkedin:hover,
-    .resp-sharing-button--linkedin:active {
-        background-color: #046293;
-        border-color: #046293;
-    }
-
-    .resp-sharing-button--reddit {
-        background-color: #ff4500;
-        border-color: #ff4500;
-    }
-
-    .resp-sharing-button--reddit:hover,
-    .resp-sharing-button--reddit:active {
-        background-color: #ff5700;
-        border-color: #ff5700;
-    }
-
-    .resp-sharing-button--xing {
-        background-color: #1a7576;
-        border-color: #1a7576;
-    }
-
-    .resp-sharing-button--xing:hover .resp-sharing-button--xing:active {
-        background-color: #114C4C;
-        border-color: #114C4C;
-    }
-
-    .resp-sharing-button--whatsapp {
-        background-color: #25D366;
-        border-color: #25D366;
-    }
-
-    .resp-sharing-button--whatsapp:hover,
-    .resp-sharing-button--whatsapp:active {
-        background-color: #1DA851;
-        border-color: #1DA851;
-    }
-
-    .resp-sharing-button--hackernews {
-        background-color: #FF6600;
-        border-color: #FF6600;
-    }
-
-    .resp-sharing-button--hackernews:hover .resp-sharing-button--hackernews:active {
-        background-color: #FB6200;
-        border-color: #FB6200;
-    }
-
-    .resp-sharing-button--vk {
-        background-color: #507299;
-        border-color: #507299;
-    }
-
-    .resp-sharing-button--vk:hover .resp-sharing-button--vk:active {
-        background-color: #43648c;
-        border-color: #43648c;
-    }
-
-    .resp-sharing-button--telegram {
-        background-color: #54A9EB;
-    }
-
-    .resp-sharing-button--telegram:hover {
-        background-color: #4B97D1;
-    }
-
-    .resp-sharing-button--copylink {
-        background-color: #7e8d97;
-    }
-
-    .resp-sharing-button--copylink:hover {
-        background-color: #4d5a63;
-    }
-</style>
-
-
 {{ if in .Site.Params.ShareButtons.Networks "facebook" }}
 <!-- Sharingbutton Facebook -->
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u={{ $pageURL }}" target="_blank"
+<a class="sharing-button__link" href="https://facebook.com/sharer/sharer.php?u={{ $pageURL }}" target="_blank"
     rel="noopener" aria-label="" title="Facebook">
     <div
         class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
@@ -373,37 +77,18 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "twitter" }}
 <!-- Sharingbutton Twitter -->
-<a class="resp-sharing-button__link"
+<a class="sharing-button__link"
     href="https://twitter.com/intent/tweet/?text={{ $pageTitle }}&amp;url={{ $pageURL }}" target="_blank" rel="noopener"
     aria-label="" title="Twitter">
-    <div
-        class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
-        <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--{{ $icon }}">
-            {{ if eq $icon "normal" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M23.4 4.83c-.8.37-1.5.38-2.22.02.94-.56.98-.96 1.32-2.02-.88.52-1.85.9-2.9 1.1-.8-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.04.7.12 1.04-3.78-.2-7.12-2-9.37-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.73-.03-1.43-.23-2.05-.57v.06c0 2.2 1.57 4.03 3.65 4.44-.67.18-1.37.2-2.05.08.57 1.8 2.25 3.12 4.24 3.16-1.95 1.52-4.36 2.16-6.74 1.88 2 1.3 4.4 2.04 6.97 2.04 8.36 0 12.93-6.92 12.93-12.93l-.02-.6c.9-.63 1.96-1.22 2.57-2.14z" />
-            </svg>{{end}}
-            {{ if eq $icon "solid" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
-            </svg>{{end}}
-            {{ if eq $icon "circle" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M18.5 7.4l-2 .2c-.4-.5-1-.8-2-.8C13.3 6.8 12 8 12 9.4v.6c-2 0-4-1-5.4-2.7-.2.4-.3.8-.3 1.3 0 1 .4 1.7 1.2 2.2-.5 0-1 0-1.2-.3 0 1.3 1 2.3 2 2.6-.3.4-.7.4-1 0 .2 1.4 1.2 2 2.3 2-1 1-2.5 1.4-4 1 1.3 1 2.7 1.4 4.2 1.4 4.8 0 7.5-4 7.5-7.5v-.4c.5-.4.8-1.5 1.2-2z" />
-                <circle cx="12" cy="12" r="11.5" />
-            </svg>{{ end }}
-            {{ if eq $icon "solidcircle" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm5.26 9.38v.34c0 3.48-2.64 7.5-7.48 7.5-1.48 0-2.87-.44-4.03-1.2 1.37.17 2.77-.2 3.9-1.08-1.16-.02-2.13-.78-2.46-1.83.38.1.8.07 1.17-.03-1.2-.24-2.1-1.3-2.1-2.58v-.05c.35.2.75.32 1.18.33-.7-.47-1.17-1.28-1.17-2.2 0-.47.13-.92.36-1.3C7.94 8.85 9.88 9.9 12.06 10c-.04-.2-.06-.4-.06-.6 0-1.46 1.18-2.63 2.63-2.63.76 0 1.44.3 1.92.82.6-.12 1.95-.27 1.95-.27-.35.53-.72 1.66-1.24 2.04z" />
-            </svg>{{ end }}
-        </div>{{$linkPrefix}}{{if ne .Site.Params.ShareButtons.Size "small"}}Twitter{{end}}
-    </div>
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.0003 0.937744C7.23454 0.937744 0.937805 7.23448 0.937805 15.0002C0.937805 22.766 7.23454 29.0627 15.0003 29.0627C22.7661 29.0627 29.0628 22.766 29.0628 15.0002C29.0628 7.23448 22.7661 0.937744 15.0003 0.937744ZM21.7585 11.538C21.7679 11.6855 21.7679 11.8393 21.7679 11.99C21.7679 16.598 18.2585 21.9059 11.8457 21.9059C9.86812 21.9059 8.03497 21.3315 6.49061 20.3427C6.77312 20.3741 7.04307 20.3867 7.33185 20.3867C8.9641 20.3867 10.4645 19.8342 11.6605 18.8988C10.1287 18.8674 8.84168 17.863 8.40223 16.4818C8.93899 16.5603 9.42239 16.5603 9.97484 16.4191C9.18611 16.2588 8.47717 15.8304 7.96848 15.2067C7.45978 14.583 7.18271 13.8024 7.18432 12.9976V12.9536C7.64574 13.2142 8.18878 13.3743 8.75693 13.3962C8.27932 13.0779 7.88762 12.6467 7.61659 12.1408C7.34555 11.6348 7.20354 11.0698 7.20315 10.4959C7.20315 9.84609 7.37266 9.25282 7.67713 8.73804C8.55259 9.81575 9.64504 10.6972 10.8835 11.3251C12.1219 11.9529 13.4786 12.3132 14.8653 12.3824C14.3725 10.0125 16.1429 8.09455 18.2711 8.09455C19.2756 8.09455 20.1796 8.51517 20.8168 9.19318C21.6047 9.04565 22.358 8.75059 23.0297 8.35509C22.7692 9.1618 22.223 9.84295 21.4979 10.273C22.2011 10.1976 22.8791 10.003 23.5069 9.72995C23.0329 10.4268 22.4396 11.0452 21.7585 11.538Z" fill="#222222"/>
+        </svg>        
 </a>
 {{ end }}
 
 {{ if in .Site.Params.ShareButtons.Networks "tumblr" }}
 <!-- Sharingbutton Tumblr -->
-<a class="resp-sharing-button__link"
+<a class="sharing-button__link"
     href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={{ $pageTitle }}&amp;caption={{ $pageTitle }}&amp;content={{ $pageURL }}&amp;canonicalUrl={{ $pageURL }}&amp;shareSource=tumblr_share_button"
     target="_blank" rel="noopener" aria-label="">
     <div
@@ -434,7 +119,7 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "email" }}
 <!-- Sharingbutton E-Mail -->
-<a class="resp-sharing-button__link" href="mailto:?subject={{ $pageTitle }}&amp;body={{ $pageURL }}" target="_self"
+<a class="sharing-button__link" href="mailto:?subject={{ $pageTitle }}&amp;body={{ $pageURL }}" target="_self"
     rel="noopener" aria-label="" title="E-Mail">
     <div
         class="resp-sharing-button resp-sharing-button--email resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
@@ -466,7 +151,7 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "pinterest" }}
 <!-- Sharingbutton Pinterest -->
-<a class="resp-sharing-button__link"
+<a class="sharing-button__link"
     href="https://pinterest.com/pin/create/button/?url={{ $pageURL }}&amp;media={{ $pageURL }}&amp;description={{ $pageTitle }}"
     target="_blank" rel="noopener" aria-label="">
     <div
@@ -497,89 +182,30 @@ $supportedNetworks ", ") }}
 {{ if in .Site.Params.ShareButtons.Networks "linkedin" }}
 <!-- Sharingbutton LinkedIn -->
 
-<a class="resp-sharing-button__link"
+<a class="sharing-button__link"
     href="#!"
     onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $pageURL }}&amp;title={{ $pageTitle }}&amp;summary={{ $pageTitle }}&amp;{{ $pageURL }}', 'popup', 'width=600,height=600');return false;"
     target="popup" rel="noopener" aria-label="">
-    
-    <div
-        class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
-        <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--{{ $icon }}">
-            {{ if eq $icon "normal" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M6.5 21.5h-5v-13h5v13zM4 6.5h-.04c-1.5 0-2.5-1.18-2.5-2.48 0-1.33 1.02-2.4 2.56-2.4s2.5 1.1 2.52 2.43c0 1.3-.98 2.45-2.55 2.45zm11.5 6c-1.1 0-2 .9-2 2v7h-5s.06-12 0-13h5V10s1.55-1.46 3.94-1.46c2.96 0 5.06 2.15 5.06 6.3v6.66h-5v-7c0-1.1-.9-2-2-2z" />
-            </svg>{{end}}
-            {{ if eq $icon "solid" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z" />
-            </svg>{{end}}
-            {{ if eq $icon "circle" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="11.5" />
-                <path
-                    d="M15 12.5c-.28 0-.5.22-.5.5v3.5h-3s.03-6.48 0-7h3v.83s.46-.75 1.7-.75c1.56 0 2.3 1.12 2.3 3.3v3.62h-3V13c0-.28-.23-.5-.5-.5zm-7.5-3h2v7h-2z" />
-                <circle cx="8.5" cy="6.5" r="1" />
-            </svg>{{ end }}
-            {{ if eq $icon "solidcircle" }}<svg version="1.1" x="0px" y="0px" width="24px" height="24px"
-                viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-                <path
-                    d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12s12-5.383,12-12S18.617,0,12,0z M9.5,16.5h-2v-7h2V16.5z M8.5,7.5 c-0.553,0-1-0.448-1-1c0-0.552,0.447-1,1-1s1,0.448,1,1C9.5,7.052,9.053,7.5,8.5,7.5z M18.5,16.5h-3V13c0-0.277-0.225-0.5-0.5-0.5 c-0.276,0-0.5,0.223-0.5,0.5v3.5h-3c0,0,0.031-6.478,0-7h3v0.835c0,0,0.457-0.753,1.707-0.753c1.55,0,2.293,1.12,2.293,3.296V16.5z" />
-            </svg>{{ end }}
-        </div>{{$linkPrefix}}{{if ne .Site.Params.ShareButtons.Size "small"}}LinkedIn{{end}}
-    </div>
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.0003 0.937744C7.23373 0.937744 0.937836 7.23364 0.937836 15.0002C0.937836 22.7668 7.23373 29.0627 15.0003 29.0627C22.7669 29.0627 29.0628 22.7668 29.0628 15.0002C29.0628 7.23364 22.7669 0.937744 15.0003 0.937744ZM11.558 20.8289H8.7103V11.6648H11.558V20.8289ZM10.1165 10.5398C9.21713 10.5398 8.63559 9.90259 8.63559 9.1145C8.63559 8.3103 9.23471 7.69214 10.1532 7.69214C11.0716 7.69214 11.6341 8.3103 11.6517 9.1145C11.6517 9.90259 11.0716 10.5398 10.1165 10.5398ZM21.9583 20.8289H19.1107V15.7502C19.1107 14.5681 18.6976 13.7654 17.6678 13.7654C16.8812 13.7654 16.4139 14.3088 16.2074 14.8318C16.1312 15.0178 16.1122 15.2815 16.1122 15.5437V20.8274H13.263V14.5872C13.263 13.4431 13.2264 12.4866 13.1883 11.6633H15.6624L15.7928 12.9363H15.8499C16.2249 12.3386 17.1434 11.4568 18.68 11.4568C20.5536 11.4568 21.9583 12.7122 21.9583 15.4104V20.8289Z" fill="#222222"/>
+        </svg>        
 </a>
 {{ end }}
 
 {{ if in .Site.Params.ShareButtons.Networks "reddit" }}
 <!-- Sharingbutton Reddit -->
-<a class="resp-sharing-button__link"
+<a class="sharing-button__link"
     href="https://reddit.com/submit/?url={{ $pageURL }}&amp;resubmit=true&amp;title={{ $pageTitle }}" target="_blank"
     rel="noopener" aria-label="" title="Reddit">
-    <div
-        class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
-        <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--{{ $icon }}">
-            {{ if eq $icon "normal" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <ellipse cx="12" cy="15" rx="9.5" ry="6.5" />
-                <path d="M15.54 17.88c-.96.55-2.2.88-3.54.88-1.35 0-2.6-.33-3.55-.9" />
-                <circle cx="16" cy="13.5" r="1.5" />
-                <circle cx="8" cy="13.5" r="1.5" />
-                <path d="M18.74 10.42C19.14 9.58 20 9 21 9c1.38 0 2.5 1.12 2.5 2.5 0 1.25-.92 2.3-2.12 2.47" />
-                <circle cx="20" cy="4.5" r="2.5" />
-                <path
-                    d="M5.26 10.42C4.86 9.58 4 9 3 9 1.62 9 .5 10.12.5 11.5c0 1.25.92 2.3 2.12 2.47M12 8.5s-.13-7.4 5.5-4" />
-            </svg>{{end}}
-            {{ if eq $icon "solid" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
-            </svg>{{end}}
-            {{ if eq $icon "circle" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="11.5" />
-                <ellipse cx="12" cy="14.37" rx="6.2" ry="4.24" />
-                <path d="M14.3 16.25c-.62.36-1.42.57-2.3.57-.88 0-1.7-.2-2.32-.58" />
-                <circle cx="14.61" cy="13.39" r=".98" />
-                <circle cx="9.39" cy="13.39" r=".98" />
-                <path d="M16.4 11.38c.26-.55.82-.92 1.47-.92.9 0 1.63.73 1.63 1.63 0 .8-.6 1.47-1.38 1.6" />
-                <circle cx="17.22" cy="7.52" r="1.63" />
-                <path
-                    d="M7.6 11.38c-.26-.54-.82-.92-1.47-.92-.9 0-1.63.73-1.63 1.63 0 .8.6 1.47 1.38 1.6M12 10.12s-.08-4.82 3.6-2.6" />
-            </svg>{{ end }}
-            {{ if eq $icon "solidcircle" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <circle cx="9.391" cy="13.392" r=".978" />
-                <path
-                    d="M14.057 15.814c-1.14.66-2.987.655-4.122-.004-.238-.138-.545-.058-.684.182-.13.24-.05.545.19.685.72.417 1.63.646 2.568.646.93 0 1.84-.228 2.558-.642.24-.13.32-.44.185-.68-.14-.24-.445-.32-.683-.18zM5 12.086c0 .41.23.78.568.978.27-.662.735-1.264 1.353-1.774-.2-.207-.48-.334-.79-.334-.62 0-1.13.507-1.13 1.13z" />
-                <path
-                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm6.673 14.055c.01.104.022.208.022.314 0 2.61-3.004 4.73-6.695 4.73s-6.695-2.126-6.695-4.74c0-.105.013-.21.022-.313C4.537 13.73 4 12.97 4 12.08c0-1.173.956-2.13 2.13-2.13.63 0 1.218.29 1.618.757 1.04-.607 2.345-.99 3.77-1.063.057-.803.308-2.33 1.388-2.95.633-.366 1.417-.323 2.322.085.302-.81 1.076-1.397 1.99-1.397 1.174 0 2.13.96 2.13 2.13 0 1.177-.956 2.133-2.13 2.133-1.065 0-1.942-.79-2.098-1.81-.734-.4-1.315-.506-1.716-.276-.6.346-.818 1.395-.88 2.087 1.407.08 2.697.46 3.728 1.065.4-.468.987-.756 1.617-.756 1.17 0 2.13.953 2.13 2.13 0 .89-.54 1.65-1.33 1.97z" />
-                <circle cx="14.609" cy="13.391" r=".978" />
-                <path
-                    d="M17.87 10.956c-.302 0-.583.128-.79.334.616.51 1.082 1.112 1.352 1.774.34-.197.568-.566.568-.978 0-.623-.507-1.13-1.13-1.13z" />
-            </svg>{{ end }}
-        </div>{{$linkPrefix}}{{if ne .Site.Params.ShareButtons.Size "small"}}Reddit{{end}}
-    </div>
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.5 18.774C17.612 18.9 17.612 19.166 17.5 19.32C16.478 20.3 14.574 20.384 14 20.384C13.454 20.384 11.55 20.3 10.556 19.32C10.416 19.166 10.416 18.9 10.556 18.774C10.71 18.634 10.948 18.634 11.088 18.774C11.732 19.418 13.062 19.6 14 19.6C14.966 19.6 16.324 19.418 16.94 18.774C17.094 18.634 17.332 18.634 17.5 18.774ZM12.25 15.456C12.25 14.658 11.592 14 10.794 14C9.996 14 9.338 14.658 9.338 15.456C9.338 16.254 9.996 16.926 10.794 16.912C11.592 16.912 12.25 16.254 12.25 15.456ZM17.206 14C16.408 14 15.75 14.7 15.75 15.47C15.75 16.24 16.408 16.926 17.206 16.926C18.004 16.926 18.662 16.254 18.662 15.47C18.662 14.7 18.004 14 17.206 14ZM28 14C28 21.7 21.7 28 14 28C6.3 28 0 21.7 0 14C0 6.3 6.3 0 14 0C21.7 0 28 6.3 28 14ZM23.338 14C23.338 12.866 22.4 11.956 21.308 11.956C20.748 11.956 20.244 12.18 19.88 12.53C18.48 11.522 16.562 10.878 14.42 10.794L15.358 6.412L18.396 7.07C18.424 7.84 19.068 8.456 19.852 8.456C20.65 8.456 21.308 7.798 21.308 7C21.308 6.202 20.65 5.544 19.852 5.544C19.278 5.544 18.774 5.88 18.55 6.37L15.148 5.642C15.05 5.6 14.952 5.642 14.882 5.698C14.798 5.754 14.756 5.838 14.742 5.936L13.706 10.808C11.536 10.878 9.576 11.522 8.148 12.544C7.784 12.194 7.28 11.984 6.734 11.984C5.6 11.984 4.69 12.894 4.69 14C4.69 14.854 5.194 15.554 5.894 15.876C5.866 16.1 5.852 16.268 5.852 16.492C5.852 19.6 9.506 22.19 14 22.19C18.522 22.19 22.19 19.642 22.19 16.492C22.19 16.296 22.176 16.1 22.134 15.876C22.834 15.554 23.338 14.84 23.338 14Z" fill="#222222"/>
+        </svg>        
 </a>
 {{ end }}
 
 {{ if in .Site.Params.ShareButtons.Networks "xing" }}
 <!-- Sharingbutton XING -->
-<a class="resp-sharing-button__link"
+<a class="sharing-button__link"
     href="https://www.xing.com/app/user?op=share;url={{ $pageURL }};title={{ $pageTitle }}" target="_blank"
     rel="noopener" aria-label="">
     <div
@@ -607,7 +233,7 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "whatsapp" }}
 <!-- Sharingbutton WhatsApp -->
-<a class="resp-sharing-button__link" href="whatsapp://send?text={{ $pageTitle }}%20{{ $pageURL }}" target="_blank"
+<a class="sharing-button__link" href="whatsapp://send?text={{ $pageTitle }}%20{{ $pageURL }}" target="_blank"
     rel="noopener" aria-label="">
     <div
         class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
@@ -637,7 +263,7 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "hackernews" }}
 <!-- Sharingbutton Hacker News -->
-<a class="resp-sharing-button__link"
+<a class="sharing-button__link"
     href="https://news.ycombinator.com/submitlink?u={{ $pageURL }}&amp;t={{ $pageTitle }}" target="_blank"
     rel="noopener" aria-label="">
     <div
@@ -669,7 +295,7 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "vk" }}
 <!-- Sharingbutton VK -->
-<a class="resp-sharing-button__link" href="http://vk.com/share.php?title={{ $pageTitle }}&amp;url={{ $pageURL }}"
+<a class="sharing-button__link" href="http://vk.com/share.php?title={{ $pageTitle }}&amp;url={{ $pageURL }}"
     target="_blank" rel="noopener" aria-label="">
     <div class="resp-sharing-button resp-sharing-button--vk resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
         <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--{{ $icon }}">
@@ -697,7 +323,7 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "telegram" }}
 <!-- Sharingbutton Telegram -->
-<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text={{ $pageTitle }}&amp;url={{ $pageURL }}"
+<a class="sharing-button__link" href="https://telegram.me/share/url?text={{ $pageTitle }}&amp;url={{ $pageURL }}"
     target="_blank" rel="noopener" aria-label="">
     <div
         class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
@@ -727,30 +353,11 @@ $supportedNetworks ", ") }}
 
 {{ if in .Site.Params.ShareButtons.Networks "copylink" }}
 <!-- Sharingbutton Copy Link -->
-<a onclick="copyToClipboard(this)" class="resp-sharing-button__link" href="#!" rel="noopener" aria-label="">
-    <div
-        class="resp-sharing-button resp-sharing-button--copylink resp-sharing-button--{{ .Site.Params.ShareButtons.Size }}">
-        <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--{{ $icon }}">
-            {{ if eq $icon "normal" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z" />
-            </svg>{{end}}
-            {{ if eq $icon "solid" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z" />
-            </svg>{{end}}
-            {{ if eq $icon "circle" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="11.5" />
-                <path
-                    d="M2.505 11.053c-.31.118-.505.738-.505.738s.203.62.513.737l3.636 1.355 1.417 4.557a.787.787 0 0 0 1.25.375l2.115-1.72a.29.29 0 0 1 .353-.01L15.1 19.85a.786.786 0 0 0 .746.095.786.786 0 0 0 .487-.573l2.793-13.426a.787.787 0 0 0-1.054-.893l-15.568 6z" />
-            </svg>{{ end }}
-            {{ if eq $icon "solidcircle" }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M12 23.5c6.35 0 11.5-5.15 11.5-11.5S18.35.5 12 .5.5 5.65.5 12 5.65 23.5 12 23.5zM2.505 11.053c-.31.118-.505.738-.505.738s.203.62.513.737l3.636 1.355 1.417 4.557a.787.787 0 0 0 1.25.375l2.115-1.72a.29.29 0 0 1 .353-.01L15.1 19.85a.786.786 0 0 0 .746.095.786.786 0 0 0 .487-.573l2.793-13.426a.787.787 0 0 0-1.054-.893l-15.568 6z"
-                    fill-rule="evenodd" />
-            </svg>{{ end }}
-        </div>{{$linkPrefix}}{{if ne .Site.Params.ShareButtons.Size "small"}}Copy Link{{end}}
-    </div>
+<a onclick="copyToClipboard(this)" class="sharing-button__link" href="#!" rel="noopener" aria-label="">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="14" fill="#222222"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7752 10.2752C14.6427 10.4174 14.5706 10.6054 14.574 10.7997C14.5774 10.994 14.6561 11.1794 14.7936 11.3168C14.931 11.4542 15.1164 11.5329 15.3107 11.5364C15.505 11.5398 15.693 11.4677 15.8352 11.3352L17.0852 10.0852C17.271 9.89936 17.4916 9.75196 17.7344 9.65139C17.9772 9.55083 18.2374 9.49907 18.5002 9.49907C18.763 9.49907 19.0232 9.55083 19.266 9.65139C19.5088 9.75196 19.7294 9.89936 19.9152 10.0852C20.101 10.271 20.2484 10.4916 20.349 10.7344C20.4495 10.9772 20.5013 11.2374 20.5013 11.5002C20.5013 11.763 20.4495 12.0232 20.349 12.266C20.2484 12.5088 20.101 12.7294 19.9152 12.9152L17.4152 15.4152C17.2294 15.6011 17.0089 15.7486 16.7661 15.8493C16.5233 15.9499 16.263 16.0018 16.0002 16.0018C15.7373 16.0018 15.4771 15.9499 15.2343 15.8493C14.9915 15.7486 14.7709 15.6011 14.5852 15.4152C14.443 15.2827 14.255 15.2106 14.0607 15.214C13.8664 15.2174 13.681 15.2961 13.5436 15.4336C13.4061 15.571 13.3274 15.7564 13.324 15.9507C13.3206 16.145 13.3927 16.333 13.5252 16.4752C13.8502 16.8002 14.236 17.0581 14.6607 17.234C15.0854 17.4099 15.5405 17.5004 16.0002 17.5004C16.4598 17.5004 16.915 17.4099 17.3397 17.234C17.7643 17.0581 18.1502 16.8002 18.4752 16.4752L20.9752 13.9752C21.6316 13.3188 22.0004 12.4285 22.0004 11.5002C22.0004 10.5719 21.6316 9.68159 20.9752 9.02518C20.3188 8.36877 19.4285 8 18.5002 8C17.5719 8 16.6816 8.36877 16.0252 9.02518L14.7752 10.2752ZM10.0852 19.9152C9.89923 19.7294 9.75171 19.5089 9.65106 19.2661C9.55041 19.0233 9.49861 18.763 9.49861 18.5002C9.49861 18.2373 9.55041 17.9771 9.65106 17.7343C9.75171 17.4915 9.89923 17.2709 10.0852 17.0852L12.5852 14.5852C12.7709 14.3992 12.9915 14.2517 13.2343 14.1511C13.4771 14.0504 13.7373 13.9986 14.0002 13.9986C14.263 13.9986 14.5233 14.0504 14.7661 14.1511C15.0089 14.2517 15.2294 14.3992 15.4152 14.5852C15.5574 14.7177 15.7454 14.7898 15.9397 14.7864C16.134 14.7829 16.3194 14.7042 16.4568 14.5668C16.5942 14.4294 16.6729 14.244 16.6764 14.0497C16.6798 13.8554 16.6077 13.6674 16.4752 13.5252C16.1502 13.2001 15.7643 12.9423 15.3397 12.7664C14.915 12.5905 14.4598 12.4999 14.0002 12.4999C13.5405 12.4999 13.0854 12.5905 12.6607 12.7664C12.236 12.9423 11.8502 13.2001 11.5252 13.5252L9.02518 16.0252C8.36877 16.6816 8 17.5719 8 18.5002C8 19.4285 8.36877 20.3188 9.02518 20.9752C9.68159 21.6316 10.5719 22.0004 11.5002 22.0004C12.4285 22.0004 13.3188 21.6316 13.9752 20.9752L15.2252 19.7252C15.3577 19.583 15.4298 19.395 15.4264 19.2007C15.4229 19.0064 15.3442 18.821 15.2068 18.6836C15.0694 18.5461 14.884 18.4674 14.6897 18.464C14.4954 18.4606 14.3074 18.5327 14.1652 18.6652L12.9152 19.9152C12.7294 20.1011 12.5089 20.2486 12.2661 20.3493C12.0233 20.4499 11.763 20.5018 11.5002 20.5018C11.2373 20.5018 10.9771 20.4499 10.7343 20.3493C10.4915 20.2486 10.2709 20.1011 10.0852 19.9152Z" fill="white"/>
+        </svg>
 </a>
 <script>
     function copyToClipboard(element) {
@@ -763,9 +370,4 @@ $supportedNetworks ", ") }}
     }
 </script>
 {{ end }}
-
-
-
-
-
 {{ end }}

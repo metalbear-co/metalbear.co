@@ -1,16 +1,25 @@
-<footer class="footer text-muted">
+<footer class="footer text-muted py-1">
   <div class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xxl{{ end }}">
-    <div class="row">
-      <div class="col-lg-8 order-last order-lg-first">
-        <ul class="list-inline">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-center">
+      <div class="col order-lg-0">
+        <ul class="list-inline text-center text-lg-center py-3">
           <li class="list-inline-item">{{ .Site.Params.footer | safeHTML }}</li>
         </ul>
       </div>
-      <div class="col-lg-8 order-first order-lg-last text-lg-end">
-        <ul class="list-inline">
-          {{ range .Site.Menus.footer -}}
-            <li class="list-inline-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-          {{ end -}}
+      <div class="col order-lg-1">
+        <div class="text-center">
+          <ul class="footer__social nav d-inline-flex justify-content-center py-3">
+            {{ range .Site.Menus.footer_social -}}
+              <li class="nav-item">
+                <a class="nav-link py-1 px-2" target="_blank" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
+              </li>
+            {{ end -}}
+          </ul>
+        </div>
+      </div>
+      <div class="col order-lg-2">
+        <ul class="list-inline text-center text-lg-center py-3">
+          <li class="list-inline-item"><a class="nav-link py-1 px-2" target="_blank" href="https://gilidori.com">Designed by Gili Dori</a></li>
         </ul>
       </div>
     </div>

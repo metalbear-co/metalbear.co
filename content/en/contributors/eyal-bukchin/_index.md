@@ -4,11 +4,9 @@ description: "CTO & Co-founder @ MetalBear"
 date: 2022-05-12T08:50:45+00:00
 lastmod: 2022-05-12T08:50:45+00:00
 draft: false
-images: []
+images: ["profile.png"]
+twitter: "https://twitter.com/EBukchin"
+linkedin: "https://www.linkedin.com/in/eyal-bukchin/"
 ---
 
 CTO & Co-founder @ MetalBear.
-
-
-[Twitter](https://twitter.com/EBukchin)
-[LinkedIn](https://www.linkedin.com/in/eyal-bukchin/)
