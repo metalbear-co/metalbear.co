@@ -37,6 +37,9 @@ header.navbar.navbar-expand-md.navbar-light.doks-navbar nav.container-xxl.flex-w
 body {
   color: black;
   font-family: $font-family;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .content img {
