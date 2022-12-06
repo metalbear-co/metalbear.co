@@ -8,11 +8,15 @@ links.forEach(function (link) {
             var target = document.getElementById(this.getAttribute("href").split("#")[1]);
             e.preventDefault();
             let offCanvas = document.getElementById("offcanvasDoks");
-            offCanvas.addEventListener('hidden.bs.offcanvas', function () {
+            // Distinguish between the offcanvas being open or closed
+            if (offCanvas.classList.contains("show")) {
+                offCanvas.addEventListener('hidden.bs.offcanvas', function () {
+                    target.scrollIntoView();
+                })
+                document.getElementById("menuDismissButton").click();
+            } else {
                 target.scrollIntoView();
-            })
-            document.getElementById("menuDismissButton").click();
-
+            }
         }
     });
 });
