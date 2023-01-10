@@ -3,7 +3,7 @@ title: "Cookie Policy"
 description: "MetalBear's Cookie Policy"
 lead: "MetalBear Cookie Policy"
 tags:
-  - metalbear
+  - legal
 date: 2022-10-31T06:00:00+00:00
 lastmod: 2022-10-31T06:00:00+00:00
 draft: false

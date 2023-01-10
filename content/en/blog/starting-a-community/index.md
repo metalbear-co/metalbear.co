@@ -3,7 +3,9 @@ title: "Starting a Backend Developers Community"
 description: "Launching a new Discord community for backend developers to hang, discuss and learn from."
 lead: "Launching a new Discord community for backend developers to hang, discuss and learn from."
 tags:
-  - metalbear
+  - backend
+  - community
+  - discord
 date: 2022-08-02T0:00:00+00:00
 lastmod: 2022-08-02T0:00:00+00:00
 draft: false

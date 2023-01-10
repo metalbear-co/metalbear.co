@@ -4,6 +4,10 @@ description: "Our biggest release yet is now available for download"
 lead: "Our biggest release yet is now available for download"
 tags:
   - metalbear
+  - mirrord
+  - ergonomics
+  - cloud
+  - devtools  
 date: 2022-10-20T06:00:00+00:00
 lastmod: 2022-10-20T06:00:00+00:00
 draft: false
