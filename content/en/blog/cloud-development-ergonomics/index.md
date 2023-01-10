@@ -3,7 +3,11 @@ title: "Approaches in Cloud Development Ergonomics"
 description: "Where we discuss the ways modern devtool companies are trying to make life easier for cloud developers."
 lead: "Where we discuss the ways modern devtool companies are trying to make life easier for cloud developers."
 tags:
-  - metalbear
+  - microservices
+  - cloud
+  - devtools
+  - ergonomics
+  - platform-engineering 
 images: ["cloud-development-ergonomics-thumbnail.png"]
 date: 2022-10-31T06:00:00+00:00
 lastmod: 2022-10-31T06:00:00+00:00

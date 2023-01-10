@@ -4,6 +4,10 @@ description: "MetalBear::start()"
 lead: "MetalBear::start()"
 tags:
   - metalbear
+  - general
+  - devtools
+  - remote-first
+  - open-source
 date: 2022-05-12T09:19:42+01:00
 lastmod: 2022-05-17T09:19:42+01:00
 draft: false

@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "MetalBear's Privacy Policy"
 lead: "MetalBear Privacy Policy"
 tags:
-  - metalbear
+  - legal
 images: []
 date: 2022-10-31T06:00:00+00:00
 lastmod: 2022-10-31T06:00:00+00:00
