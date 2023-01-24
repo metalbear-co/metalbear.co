@@ -28,7 +28,7 @@ One of the features of SIP is that it disallows the use of `DYLD_INSERT_LIBRARIE
 
 ## Detecting if a binary is SIP-protected
 
-In order to start bypassing SIP, we needed to find a way to check if a binary is even SIP protected to begin with. We initially used pretty coarse heuristic,assuming  that a binary is SIP-protected if it’s in one of these locations:
+In order to start bypassing SIP, we needed to find a way to check if a binary is even SIP protected to begin with. We initially used pretty coarse heuristic, assuming that a binary is SIP-protected if it’s in one of these locations:
 
 - /System
 - /bin
@@ -55,10 +55,10 @@ require('../lib/cli.js')(process)
 
 In this example it will execute env, which will execute node with the next line.
 The problem? `/usr/bin/env` is SIP protected, meaning it will strip our `DYLD_INSERT_LIBRARIES` then run node without mirrord. Thanks for nothing SIP!
-So we also needed to check whether the file is a “shebang” file (i.e starts with #!),what file  the shebang points to, and whether that file is a SIP-protected binary.
+So we also needed to check whether the file is a “shebang” file (i.e starts with #!), what file  the shebang points to, and whether that file is a SIP-protected binary.
 
 ## Bypassing SIP
-Now that we found a way to detect whether we’re being run on a SIP-protected binary, we need to figure out how to bypass SIP and let mirrord load into the binary with DYLD_INSERT_LIBRARIES. When googling around,we found people saying you can bypass SIP by copying the binary to another directory and re-signing it. We found that to be partially true.
+Now that we found a way to detect whether we’re being run on a SIP-protected binary, we need to figure out how to bypass SIP and let mirrord load into the binary with DYLD_INSERT_LIBRARIES. When googling around, we found people saying you can bypass SIP by copying the binary to another directory and re-signing it. We found that to be partially true.
 Why partially? Because if you tried to do it on Apple Silicon (arm), it wouldn’t work. This is because beginning with M1, macOS ships with arm64e binaries. The `e` indicates an arm64 extension that adds pointer authentication. It’s another security measurement added by Apple (kudos to Apple for having great security, too bad it affects us).
 We won’t go into details about what pointer authentication does, but you can read more about it [here](https://googleprojectzero.blogspot.com/2019/02/examining-pointer-authentication-on.html).
 So why is it a problem? First, Rust doesn’t support compiling arm64e binaries. The other problem is that only Apple-signed binaries can run with arm64e architecture.
@@ -175,6 +175,7 @@ The loss of entitlements is not a problem for mirrord, because we do not expect 
 
 
 ## Afterword
+
 You’re welcome to check out the full implementation in our [GitHub repository](https://github.com/metalbear-co/mirrord/tree/main/mirrord/sip), Join our [Backend Engineers Discord](https://discord.gg/pSKEdmNZcK) community, subscribe to our newsletter and of course use mirrord!
 
 
