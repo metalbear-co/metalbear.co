@@ -1,7 +1,7 @@
 ---
-title: "Fun with macOS' SIP"
-description: "How we dealt with macOS' SIP mechanism to load mirrord into protected binaries"
-lead: "How we dealt with macOS' SIP mechanism to load mirrord into protected binaries"
+title: "Fun with macOS's SIP"
+description: "How we dealt with macOS's SIP mechanism to load mirrord into protected binaries"
+lead: "How we dealt with macOS's SIP mechanism to load mirrord into protected binaries"
 tags:
   - lowlevel
   - macos
@@ -12,10 +12,10 @@ date: 2023-01-24T0:00:00+00:00
 lastmod: 2023-01-24T0:00:00+00:00
 draft: false
 weight: 50
-contributors: ["Tal Zwick", "Aviram Hassan"]
+contributors: ["Aviram Hassan", "Tal Zwick"]
 ---
 
-While developing mirrord, we had some fun with macOS’ SIP (System Integrity Protection) and thought it’d be nice to share, especially given that the information is lacking and almost nobody writes about it. We’ll cover a bit of low level, a bit of high level, and Rust.
+While developing mirrord, which heavily relies on injecting itself into other people's binaries, ran into some challenges posed by macOS’s SIP (System Integrity Protection). This post details how we ultimately overcame these challenges, and we hope it can be of help to other people hoping to learn about SIP, as we've learned the hard way that there's very little written about this subject on the internet.
 
 ## What is mirrord
 [mirrord](https://mirrord.dev) lets you run a local process in the context of a cloud service, which means we can test our code on our staging cluster without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there). There is a detailed overview of mirrord in [this](https://metalbear.co/blog/mirrord-3.0-is-out/) blog post.
@@ -55,13 +55,13 @@ require('../lib/cli.js')(process)
 
 In this example it will execute env, which will execute node with the next line.
 The problem? `/usr/bin/env` is SIP protected, meaning it will strip our `DYLD_INSERT_LIBRARIES` then run node without mirrord. Thanks for nothing SIP!
-So we also needed to check whether the file is a “shebang” file (i.e starts with #!), what file  the shebang points to, and whether that file is a SIP-protected binary.
+So we also needed to check whether the file is a “shebang” file (i.e starts with #!), what file the shebang points to, and whether that file is a SIP-protected binary.
 
 ## Bypassing SIP
-Now that we found a way to detect whether we’re being run on a SIP-protected binary, we need to figure out how to bypass SIP and let mirrord load into the binary with DYLD_INSERT_LIBRARIES. When googling around, we found people saying you can bypass SIP by copying the binary to another directory and re-signing it. We found that to be partially true.
+Now that we found a way to detect whether we’re being run on a SIP-protected binary, we need to figure out how to bypass SIP and let mirrord load into the binary with `DYLD_INSERT_LIBRARIES`. When googling around, we found people saying you can bypass SIP by copying the binary to another directory and re-signing it. We found that to be partially true.
 Why partially? Because if you tried to do it on Apple Silicon (arm), it wouldn’t work. This is because beginning with M1, macOS ships with arm64e binaries. The `e` indicates an arm64 extension that adds pointer authentication. It’s another security measurement added by Apple (kudos to Apple for having great security, too bad it affects us).
 We won’t go into details about what pointer authentication does, but you can read more about it [here](https://googleprojectzero.blogspot.com/2019/02/examining-pointer-authentication-on.html).
-So why is it a problem? First, Rust doesn’t support compiling arm64e binaries. The other problem is that only Apple-signed binaries can run with arm64e architecture.
+So why was this a problem? First, mirrord is written in Rust, which doesn’t support compiling arm64e binaries. The other problem is that only Apple-signed binaries can run with arm64e architecture.
 This is what happens if we try the “old” trick:
 ➜  /tmp cp /usr/bin/env /tmp/env
 ➜  /tmp codesign -f -s - /tmp/env
@@ -70,7 +70,7 @@ This is what happens if we try the “old” trick:
 [1]	20114 killed 	/tmp/env
 
 Killed! And it was so young. :(
-Recording using Console (macOS’ built in log viewer) while running the binary reveals the reason:
+Recording using Console (macOS’s built in log viewer) while running the binary reveals the reason:
 {{<figure src="console.png" alt="screenshot from console saying exec_mach_imgact: not running binary env built against preview arm64e ABI" height="100%" width="100%">}}
 From Apple’s point of view, arm64e is preview only, i.e the ABI can change and they don’t want a third party building on top of it, as it’s not guaranteed to work. You can enable running third party executables with arm64e ABI only if you boot into recovery mode and change the settings, which is not something we want to ask our users to do. 
 
@@ -168,7 +168,7 @@ pub(crate) unsafe extern "C" fn execve_detour(
 ```
 
 ## Bonus content: Why is this possible?
-You might be asking yourself: “If this is a security feature by Apple, why is it possible to just bypass it that way?” The answer is that we do not bypass the security feature, just the problem it created for us. Apple operating systems have the concept of [“entitlements”](https://developer.apple.com/documentation/bundleresources/entitlements), which are definitions of which special operations an executable is allowed to perform, and which special resources it should have access to. Before released applications can have entitlements, they need to go through some approval process with Apple. Shared libraries get the entitlements of the host executable, so if we could load any library to any process, a non-Apple-approved library could enjoy entitlements it shouldn’t have by loading into an entitled process. That would be a pretty straight forward privilege escalation of that library’s code. SIP and the [hardened runtime](https://developer.apple.com/documentation/security/hardened_runtime) prevent that from happening.
+You might be asking yourself, “If this is a security feature by Apple, why is it possible to just bypass it that way?” The answer is that we do not bypass the security feature, just the problem it created for us. Apple operating systems have the concept of [“entitlements”](https://developer.apple.com/documentation/bundleresources/entitlements), which are definitions of which special operations an executable is allowed to perform, and which special resources it should have access to. Before released applications can have entitlements, they need to go through some approval process with Apple. Shared libraries get the entitlements of the host executable, so if we could load any library to any process, a non-Apple-approved library could enjoy entitlements it shouldn’t have by loading into an entitled process. That would be a pretty straight forward privilege escalation of that library’s code. SIP and the [hardened runtime](https://developer.apple.com/documentation/security/hardened_runtime) prevent that from happening.
 
 When we, in our bypassing mechanism, copy an executable and resign it, it loses its entitlements. So it is still guaranteed that our dynamic library could not run with any ungranted entitlements. The integrity of granted entitlements is preserved.
 The loss of entitlements is not a problem for mirrord, because we do not expect to ever execute with mirrord any application that requires Apple entitlements. Apple entitlements are a concept that exists in operating systems of Apple consumer devices like iPhone or Macbook, while mirrord is used to run cloud services. So we give up the mirrored application’s entitlements (which do not exist or are not needed), in order to be able to load our library into that application.
