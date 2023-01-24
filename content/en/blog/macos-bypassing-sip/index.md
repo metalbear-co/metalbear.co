@@ -31,9 +31,13 @@ One of the features of SIP is that it disallows the use of `DYLD_INSERT_LIBRARIE
 In order to start bypassing SIP, we needed to find a way to check if a binary is even SIP protected to begin with. We initially used pretty coarse heuristic, assuming that a binary is SIP-protected if it’s in one of these locations:
 
 - /System
+
 - /bin
+
 - /usr
+
 - /sbin
+
 - /var
 
 However, we found that the “stat” function can return a flag called `RESTRICTED` which we read could be related, and decided to use that instead[^1]. The code is quite simple:
