@@ -112,7 +112,7 @@ The idea is that we take the binary we want to load ourself into, extract only t
     a. Extract x64 binary into a new file
 
     b. chmod +x it
-    
+
     c. Sign it
 
 3. Execute
