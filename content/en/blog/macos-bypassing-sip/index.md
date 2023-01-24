@@ -17,7 +17,7 @@ contributors: ["Aviram Hassan", "Tal Zwick"]
 
 While developing mirrord, which heavily relies on injecting itself into other people's binaries, we ran into some challenges posed by macOS’s SIP (System Integrity Protection). This post details how we ultimately overcame these challenges, and we hope it can be of help to other people hoping to learn about SIP, as we've learned the hard way that there's very little written about this subject on the internet.
 
-## What is mirrord
+## What is mirrord?
 [mirrord](https://mirrord.dev) lets you run a local process in the context of a cloud service, which means we can test our code on our staging cluster without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there). There is a detailed overview of mirrord in [this](https://metalbear.co/blog/mirrord-3.0-is-out/) blog post.
 
 ## What is SIP and why does mirrord care about it?
