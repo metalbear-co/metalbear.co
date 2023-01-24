@@ -3,7 +3,7 @@ title: "Fun with macOS's SIP"
 description: "How we dealt with macOS's SIP mechanism to load mirrord into protected binaries"
 lead: "How we dealt with macOS's SIP mechanism to load mirrord into protected binaries"
 tags:
-  - lowlevel
+  - low-level
   - macos
   - sip
   - research
@@ -137,7 +137,9 @@ The idea is that we take the binary we want to load ourself into, extract only t
 ```
 
 Integration into mirrord took two steps:
+
 1. When using mirrord directly on a SIP-protected binary, do the patch
+
 2. When using mirrord on a process, and that process executes a SIP-protected binary, replace it on the fly. This was done by having mirrord hook `execve` in the process
 
 `execve` hook:
