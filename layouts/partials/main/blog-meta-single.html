@@ -3,5 +3,5 @@
         range $index,
         $contributor := .Params.contributors }}{{ if gt $index 0 }}{{ if eq $index $last }} and {{ else }}, {{ end }}{{
         end }}<a class="blog-single__meta-link" href="{{ "/contributors/" | relURL }}{{ . | urlize }}/">{{ .
-            }}</a>{{ end -}}{{ end -}}</small>&nbsp;&hyphen;&nbsp;<span>{{ .ReadingTime -}}&nbsp;Min Read</span>
+            }}</a>{{ end -}}{{ end -}}</small><span>{{ .ReadingTime -}}&nbsp;Min Read</span>
         </p>
