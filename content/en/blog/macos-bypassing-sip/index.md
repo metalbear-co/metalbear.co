@@ -77,14 +77,31 @@ From Apple’s point of view, arm64e is preview only, i.e the ABI can change and
 ## Handling arm64e
 
 Initially we tried to convert the arm64e ABI into arm64 on the fly. Yes, people familiar with how this ABI works probably think we’re insane, but we were optimistic…
-..and it actually worked! for example, if you take `/usr/bin/env` and just change the file headers to say it’s arm64, you’d be able to re-sign it and run it normally! It didn’t work for all binaries though (`ls` for example) and when we started digging we found out that there are a lot of new features being used in arm64e, for example specific relocations that contain pointer authentication stuff. We decided to give up on ABI conversion for the time being.
+..and it actually worked! for example, if you take `/usr/bin/env` and just change the file headers to say it’s arm64, you’d be able to re-sign it and run it normally! We actually do it for our binaries to be able to load to arm64e binaries:
+
+```yaml
+# from our release.yaml https://github.com/metalbear-co/mirrord/blob/main/.github/workflows/release.yaml
+    - name: build mirrord-layer macOS arm/arm64e
+      # Editing the arm64 binary, since arm64e can be loaded into both arm64 & arm64e
+      # >> target/debug/libmirrord_layer.dylib: Mach-O 64-bit dynamically linked shared library arm64
+      # >> magic bits: 0000000 facf feed 000c 0100 0000 0000 0006 0000
+      # >> After editing using dd -
+      # >> magic bits: 0000000 facf feed 000c 0100 0002 0000 0006 0000
+      # >> target/debug/libmirrord_layer.dylib: Mach-O 64-bit dynamically linked shared library arm64e
+      run: |
+        cargo +nightly build --release -p mirrord-layer --target=aarch64-apple-darwin
+        cp target/aarch64-apple-darwin/release/libmirrord_layer.dylib target/aarch64-apple-darwin/release/libmirrord_layer_arm64e.dylib
+        printf '\x02' | dd of=target/aarch64-apple-darwin/release/libmirrord_layer_arm64e.dylib bs=1 seek=8 count=1 conv=notrunc
+```
+
+It didn’t work for all binaries though (`ls` for example) and when we started digging we found out that there are a lot of new features being used in arm64e, for example specific relocations that contain pointer authentication stuff. We decided to give up on ABI conversion for the time being.
 Luckily, Apple ships fat binaries on both architecture machines. Fat binaries are Apple’s name for Mach-O files containing two different binaries, each built for a different architecture, so the runtime can decide which one it will use. By default, it will choose arm64e, but we can do something nice with the x64 binary.
 ```file /bin/ls
 /bin/ls: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]
 /bin/ls (for architecture x86_64):    Mach-O 64-bit executable x86_64
 /bin/ls (for architecture arm64e):    Mach-O 64-bit executable arm64e
 ```
-The idea is that we take the binary we want to load ourself into, extract only the x64 binary (on arm), re-sign it, and run it. The only downside here is that we require Rosetta to be installed on the system and there’s a performance impact - but usually system binaries are used for simple operations like `env` or `bash` (see the shebang case).
+The idea is that we take the binary we want to load ourself into, extract only the x64 binary (on arm), re-sign it, and run it. The only downside here is that we require Rosetta[^2] to be installed on the system and there’s a performance impact - but usually system binaries are used for simple operations like `env` or `bash` (see the shebang case).
 
 ## Putting it all together
 
@@ -180,3 +197,4 @@ You’re welcome to check out the full implementation in our [GitHub repository]
 
 
 [^1]: But in fact there might be other locations that are SIP protected, and if someone has a good and reliable way to detect if a binary is SIP, we’d love to hear it.
+[^2]: Apple emulator for running x86-64 binaries on arm. https://support.apple.com/en-il/HT211861
