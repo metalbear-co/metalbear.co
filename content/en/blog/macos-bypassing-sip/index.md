@@ -71,7 +71,7 @@ This is what happens if we try the “old” trick:
 
 Killed! And it was so young. :(
 Recording using Console (macOS’ built in log viewer) while running the binary reveals the reason:
-{{<figure src="console.png" alt='screenshot from console saying `exec_mach_imgact: not running binary "env" built against preview arm64e ABI' height="100%" width="100%">}}
+{{<figure src="console.png" alt="screenshot from console saying exec_mach_imgact: not running binary env built against preview arm64e ABI" height="100%" width="100%">}}
 From Apple’s point of view, arm64e is preview only, i.e the ABI can change and they don’t want a third party building on top of it, as it’s not guaranteed to work. You can enable running third party executables with arm64e ABI only if you boot into recovery mode and change the settings, which is not something we want to ask our users to do. 
 
 ## Handling arm64e
