@@ -1,7 +1,7 @@
 ---
-title: "Fun with macOS's SIP"
-description: "How we dealt with macOS's SIP mechanism to load mirrord into protected binaries"
-lead: "How we dealt with macOS's SIP mechanism to load mirrord into protected binaries"
+title: "Fun with macOS' SIP"
+description: "How we dealt with macOS' SIP mechanism to load mirrord into protected binaries"
+lead: "How we dealt with macOS' SIP mechanism to load mirrord into protected binaries"
 tags:
   - low-level
   - macos
