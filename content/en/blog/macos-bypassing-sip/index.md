@@ -71,13 +71,14 @@ This is what happens if we try the “old” trick:
 
 Killed! And it was so young. :(
 Recording using Console (macOS’s built in log viewer) while running the binary reveals the reason:
+
 {{<figure src="console.png" alt="screenshot from console saying exec_mach_imgact: not running binary env built against preview arm64e ABI" height="100%" width="100%">}}
+
 From Apple’s point of view, arm64e is preview only, i.e the ABI can change and they don’t want a third party building on top of it, as it’s not guaranteed to work. You can enable running third party executables with arm64e ABI only if you boot into recovery mode and change the settings, which is not something we want to ask our users to do. 
 
 ## Handling arm64e
 
-Initially we tried to convert the arm64e ABI into arm64 on the fly. Yes, people familiar with how this ABI works probably think we’re insane, but we were optimistic…
-..and it actually worked! for example, if you take `/usr/bin/env` and just change the file headers to say it’s arm64, you’d be able to re-sign it and run it normally! We actually do it for our binaries to be able to load to arm64e binaries:
+Initially we tried to convert the arm64e ABI into arm64 on the fly. Yes, people familiar with how this ABI works probably think we’re insane, but we were optimistic.. and it actually worked! for example, if you take `/usr/bin/env` and just change the file headers to say it’s arm64, you’d be able to re-sign it and run it normally! We actually do it for our binaries to be able to load to arm64e binaries:
 
 ```yaml
 # from our release.yaml https://github.com/metalbear-co/mirrord/blob/main/.github/workflows/release.yaml
@@ -107,9 +108,13 @@ The idea is that we take the binary we want to load ourself into, extract only t
 
 1. Detect SIP (Shebang/Restricted)
 2. Patch
-  a. Extract x64 binary into a new file
-  b. chmod +x it
-  c. Sign it
+
+    a. Extract x64 binary into a new file
+
+    b. chmod +x it
+    
+    c. Sign it
+
 3. Execute
 
 ```rs
