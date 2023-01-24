@@ -184,7 +184,7 @@ pub(crate) unsafe extern "C" fn execve_detour(
        })
        .unwrap_or(argv);
 
-
+// Call execve's default implementation
    FN_EXECVE(final_path, final_argv, envp)
 }
 ```
