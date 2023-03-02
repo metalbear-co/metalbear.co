@@ -1,7 +1,7 @@
 ---
 title: "Writing a Kubernetes Operator/Controller"
-description: ""
-lead: ""
+description: "Short Explanation on Kubernetes Operators and Controllers with tutorial on creating an Operator"
+lead: "10mins And you can create Kubernetes Operators"
 tags:
   - kubernetes
   - operator
