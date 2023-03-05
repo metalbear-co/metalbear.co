@@ -153,7 +153,14 @@ This means that when we create the APIService, Kubernetes will perform a lookup 
 
 This way it knows which resource requests to route to the operator. The response from the farm-operator will look like this. 
 
-{{<figure src="apiservicelist-return-value.png" alt="Json result from /apis/farm.example.com/v1alpha" height="100%" width="100%">}}
+```json
+{
+    "apiVersion": "v1",
+    "kind": "APIResourceList",
+    "groupVersion": "farm.example.com/v1alpha",
+    "resources": [ ]
+}
+```
 
 **NOTE**: *groupVersion is very important because if misconfigured, it can make Kubernetes have unexpected behavior with its built-in resources and potentially cause crashes for the entire cluster.*
 
@@ -262,45 +269,9 @@ Our operator is now running locally, but stealing requests that are being sent t
 {{<figure src="kubectl-get-llamas.png" alt="Return value from kubectl get llamas." height="100%" width="100%">}}
 {{<figure src="kubectl-describe-llamas.png" alt="Return value from kubectl describe llamas." height="100%" width="100%">}}
 
+## Benefit of Operators
 
-### Impersonating users in your operator
-
-One advantage that APIService has over CustomResourceDefinition is that it can use request data and metadata to implement further logic. For example, we can use the user headers in the request to control access to our resources by using Kubernetes’ RBAC.
-
-To demonstrate this, let’s change the list_llamas function to print out all the headers it received from the Kubernetes API, and run:
-
-```rs
-pub async fn list_llamas(Path(namespace): Path<String>, headers: HeaderMap) -> impl IntoResponse {
-    println!("{headers:?}");
-
-    Json(serde_json::json!({
-        "apiVersion": "farm.example.com/v1alpha",
-        "kind": "LamaList",
-        "items": &STATIC_LLAMAS.get(&namespace).map(|lamas| lamas.values().collect::<Vec<_>>()).unwrap_or_default(),
-        "metadata": ListMeta::default()
-    }))
-}
-```
-
-```bash
-cargo build && mirrord exec -t deploy/farm-operator –steal ./target/debug/farm-operator
-```
-
-When we now run our process with mirrord, and then run we run kubectl get llamas, we’ll see our local code log the headers of the request that was sent to the Kubernetes API. We can see headers named `x-forwarded-for` and `x-remote-*`. Using these headers, our operator can make Kubernetes requests on behalf of the user with the impersonation API.
-
-Example headers for the impersonation API would be:
-
-|Impersonation header|from request|
-|-|-|
-|Impersonate-User | x-remote-user |
-|Impersonate-Group |  x-remote-group |
-|Impersonate-Extra-* | x-remote-extra-* |
-
-One little rust-specific nuisance if we want to use the “kube” crate and the cluster uses the “extra” headers for security purposes and we only set the `impersonate` and `impersonate_group` members of [AuthInfo](https://docs.rs/kube/0.78.0/kube/config/struct.AuthInfo.html) inside of `kube::Config` before creating the `kube::Client` object will result in an impersonation failure on requests due to the missing headers. And adding these headers in a tower middleware is a bit too rust specific for this scope.
-
-So we will not get into the implementation of impersonation for this post and can expand on it in a later post. With this in mind, we will just ignore impersonation for now and simply use `Client::try_default()` that loads the default incluster kubernetes config. Incluster means it will use the pod’s service account for Kubernetes API credentials.
-
-Implementing APIService lets us do is to provide access to existing resources but modify or enrich them before returning them to the user.
+Implementing APIService lets us do is to provide access to existing resources but modify or enrich them before returning them to the user. All this without some complex synchronisation because you can rely on the Kubernetes as your source of truth and act accordingly. 
 
 ```rs
 #[derive(CustomResource, Clone, Debug, Deserialize, Serialize, JsonSchema)]
@@ -401,6 +372,7 @@ To test out the new `FarmPod` we can run our server again with mirrord. Now when
 kubectl get farmpods
 ```
 And we should get a list of our pods in the default namespace but with `farm-` in front of their names.
+
 
 ## What’s next?
 With this example, we are just touching the tip of the iceberg of what is possible when you integrate yourself into the Kubernetes API. Besides, we’ve overlooked some basic requirements, including:
