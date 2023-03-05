@@ -64,7 +64,7 @@ git clone https://github.com/metalbear-co/farm-operator.git
 cd farm-operator
 ```
 
-*Note that the example repository is divided into three steps, each in its respective directory, and each with its prebuilt image.[\*](https://github.com/metalbear-co/farm-operator/pkgs/container/farm-operator).*
+*Note that the example directory is divided into three steps, each with its prebuilt image.[\*](https://github.com/metalbear-co/farm-operator/pkgs/container/farm-operator).*
 
 To start us off, we have some boilerplate for a basic HTTP server. This server will eventually be our operator that returns a Llama 🦙 resource from its memory. It will also return the already existing Pod resource (retrieved from the Kubernetes cluster’s API), but with some modifications.
 
@@ -163,6 +163,8 @@ This way it knows which resource requests to route to the operator. The response
 ```
 
 **NOTE**: *groupVersion is very important because if misconfigured, it can make Kubernetes have unexpected behavior with its built-in resources and potentially cause crashes for the entire cluster.*
+
+## Coding our Operator
 
 1. First, let’s talk about adding a new resource to be handled by the operator.
 
@@ -269,7 +271,7 @@ Our operator is now running locally, but stealing requests that are being sent t
 {{<figure src="kubectl-get-llamas.png" alt="Return value from kubectl get llamas." height="100%" width="100%">}}
 {{<figure src="kubectl-describe-llamas.png" alt="Return value from kubectl describe llamas." height="100%" width="100%">}}
 
-## Benefit of Operators
+## Using benefits of Operators
 
 Implementing APIService lets us do is to provide access to existing resources but modify or enrich them before returning them to the user. All this without some complex synchronisation because you can rely on the Kubernetes as your source of truth and act accordingly. 
 
