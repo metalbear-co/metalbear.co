@@ -211,6 +211,8 @@ So `get_llama` will return the Llama by name and list_llamas will return a Kuber
 
 ```rs
 pub async fn list_llamas(Path(namespace): Path<String>) -> impl IntoResponse {
+    println!("Listing Llamas in {namespace}");
+
     Json(serde_json::json!({
         "apiVersion": "farm.example.com/v1alpha",
         "kind": "LamaList",
@@ -220,6 +222,8 @@ pub async fn list_llamas(Path(namespace): Path<String>) -> impl IntoResponse {
 }
 
 pub async fn get_llama(Path((namespace, name)): Path<(String, String)>) -> Response {
+    println!("Getting Llama {name} in {namespace}");
+
     if let Some(lama) = STATIC_LLAMAS
         .get(&namespace)
         .and_then(|lamas| lamas.get(&name))
