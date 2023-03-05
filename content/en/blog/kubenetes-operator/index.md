@@ -1,7 +1,7 @@
 ---
 title: "Writing a Kubernetes Operator/Controller"
-description: "Short Explanation on Kubernetes Operators and Controllers with tutorial on creating an Operator"
-lead: "10mins And you can create Kubernetes Operators"
+description: "Basic introduction to Kubernetes Operators and Controllers, with a tutorial on creating an Operator in Rust"
+lead: "Get up and running with Kubernetes operators in (hopefully) minutes!"
 tags:
   - kubernetes
   - operator
@@ -10,7 +10,7 @@ date: 2023-03-01T0:00:00+00:00
 lastmod: 2023-03-01T0:00:00+00:00
 draft: false
 weight: 50
-contributors: ["Dmitry Dodzin", "Eyal Bukchin"]
+contributors: ["Dmitry Dodzin"]
 ---
 As part of mirrord For Teams, we wanted to build a persistent component that would run in our user’s cluster and synchronize independent uses of mirrord. It quickly became apparent that we needed a component that was both:
 
@@ -64,7 +64,7 @@ git clone https://github.com/metalbear-co/farm-operator.git
 cd farm-operator
 ```
 
-*A small note on the example structure it is broken into 3 steps each in its respective dir, each step is built upon the previous step with prebuilt images[\*](https://github.com/metalbear-co/farm-operator/pkgs/container/farm-operator).*
+*Note that the example repository is divided into three steps, each in its respective directory, and each with its prebuilt image.[\*](https://github.com/metalbear-co/farm-operator/pkgs/container/farm-operator).*
 
 To start us off, we have some boilerplate for a basic HTTP server. This server will eventually be our operator that returns a Llama 🦙 resource from its memory. It will also return the already existing Pod resource (retrieved from the Kubernetes cluster’s API), but with some modifications.
 
