@@ -389,7 +389,7 @@ And we should get a list of our pods in the default namespace but with `farm-` i
 ## What’s next?
 With this example, we are just touching the tip of the iceberg of what is possible when you integrate yourself into the Kubernetes API. Besides, we’ve overlooked some basic requirements, including:
 
-* Support for OpenAPI v3 and v3 (via /openapi/v2 and /openapi/v3), which Kubernetes looks up for each new APIService
+* Support for OpenAPI v2 or v3 (via /openapi/v2 or /openapi/v3), which Kubernetes looks up for each new APIService
 * Support for other verbs like “watch”, “create” and “delete”
 
 The Kubernetes ecosystem can be overwhelming to start with, but hopefully, this guide has helped you grasp just a little bit more of it. If you’d like to discuss writing and building operators, talking about backend, Kubernetes, or mirrord, you’re more than welcome to join our Discord!
