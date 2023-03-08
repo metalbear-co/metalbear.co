@@ -267,7 +267,7 @@ mirrord comes as a VS Code or IntelliJ extension, or as a CLI tool. We’ll use 
 To run our operator using mirrord, we can use this command:
 
 ```bash
-cargo build && mirrord exec -t deploy/farm-operator --steal ./target/debug/farm-operator
+cargo build -p farm-operator-2 && mirrord exec -t deploy/farm-operator --steal ./target/debug/farm-operator-2
 ```
 
 Our operator is now running locally, but stealing requests that are being sent to the operator deployment in the cluster! 
@@ -375,7 +375,11 @@ let app = Router::new()
         get(farmpod::list_farmpods),
     );
 ```
-To test out the new `FarmPod` we can run our server again with mirrord. Now when we run 
+To test out the new `FarmPod` we can run our server again with mirrord.
+```bash
+cargo build -p farm-operator-3 && mirrord exec -t deploy/farm-operator --steal ./target/debug/farm-operator-3
+```
+Now when we run
 ```bash
 kubectl get farmpods
 ```
