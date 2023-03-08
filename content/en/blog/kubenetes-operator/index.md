@@ -57,14 +57,14 @@ For the example in this post, we will use Rust + kube-rs. Here are a few reasons
 
 ## This is where the tutorial starts
 
-In the sections that follow, we’ll be creating an APIService. We’ll use Rust, but implementations in other languages can be extrapolated from it fairly easily. 
+In the sections that follow, we’ll be creating an APIService. We’ll use Rust, but implementations in other languages can be extrapolated from it fairly easily. First, clone our [example repository](https://github.com/metalbear-co/farm-operator):
 
 ```bash
 git clone https://github.com/metalbear-co/farm-operator.git
 cd farm-operator
 ```
 
-*Note that the example directory is divided into three steps, each with its prebuilt image.[\*](https://github.com/metalbear-co/farm-operator/pkgs/container/farm-operator).*
+*Note that the example directory is divided into three steps, each with its [prebuilt image](https://github.com/metalbear-co/farm-operator/pkgs/container/farm-operator).*
 
 To start us off, we have some boilerplate for a basic HTTP server. This server will eventually be our operator that returns a Llama 🦙 resource from its memory. It will also return the already existing Pod resource (retrieved from the Kubernetes cluster’s API), but with some modifications.
 
@@ -267,13 +267,15 @@ mirrord comes as a VS Code or IntelliJ extension, or as a CLI tool. We’ll use 
 To run our operator using mirrord, we can use this command:
 
 ```bash
-cargo build && mirrord exec -t deploy/farm-operator –steal ./target/debug/farm-operator
+cargo build && mirrord exec -t deploy/farm-operator --steal ./target/debug/farm-operator
 ```
 
 Our operator is now running locally, but stealing requests that are being sent to the operator deployment in the cluster! 
 
 {{<figure src="kubectl-get-llamas.png" alt="Return value from kubectl get llamas." height="100%" width="100%">}}
 {{<figure src="kubectl-describe-llamas.png" alt="Return value from kubectl describe llamas." height="100%" width="100%">}}
+
+*Note that when you first run the operator with mirrord, it might take 1-2 minutes until Kubernetes queries it for its resource list. Commands like `kubectl get llama` will return a NotFound error until that happens.*
 
 ## Using benefits of Operators
 
