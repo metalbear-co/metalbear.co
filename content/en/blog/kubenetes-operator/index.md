@@ -68,9 +68,8 @@ cd farm-operator
 
 To start us off, we have some boilerplate for a basic HTTP server. This server will eventually be our operator that returns a Llama 🦙 resource from its memory. It will also return the already existing Pod resource (retrieved from the Kubernetes cluster’s API), but with some modifications.
 
+[*src/main.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-1/src/main.rs#L7-L35)
 ```rs
-// src/main.rs
-
 async fn get_api_resources() -> impl IntoResponse {
     Json(APIResourceList {
         group_version: "farm.example.com/v1alpha".to_string(),
@@ -119,8 +118,8 @@ kubectl get apiservice
 
 Now let's dive into what is happening here. 
 
+[*app.yaml:*](https://github.com/metalbear-co/farm-operator/blob/main/app.yaml#L41-L55)
 ```yaml
-# app.yaml
 ...
 ---
 apiVersion: apiregistration.k8s.io/v1
@@ -169,6 +168,8 @@ This way it knows which resource requests to route to the operator. The response
 1. First, let’s talk about adding a new resource to be handled by the operator.
 
 The first thing we do is create a LlamaSpec struct with a CustomResource derive we have available from kube-rs.
+
+[*src/resources/llama.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-2/src/resources/llama.rs#L38-L48)
 ```rs
 #[derive(CustomResource, Clone, Debug, Deserialize, Serialize, JsonSchema)]
 #[kube(
@@ -186,6 +187,8 @@ pub struct LlamaSpec {
 2. Next, we need to add an APIResource to our APIResourceList.
 
 Because we defined a CustomResource with `kind = “Llama”`, the type Llama is now available for us to use.
+
+[*src/main.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-2/src/main.rs#L14-L26)
 ```rs
 async fn get_api_resources() -> impl IntoResponse {
     Json(APIResourceList {
@@ -209,6 +212,7 @@ async fn get_api_resources() -> impl IntoResponse {
 In this sample implementation, STATIC_LLAMAS holds a nested hashmap, where the keys are the namespace name and the Llama’s name respectively. 
 So `get_llama` will return the Llama by name and list_llamas will return a Kubernetes List object named LlamaList.
 
+[*src/resources/llama.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-2/src/resources/llama.rs#L50-L72)
 ```rs
 pub async fn list_llamas(Path(namespace): Path<String>) -> impl IntoResponse {
     println!("Listing Llamas in {namespace}");
@@ -239,6 +243,7 @@ pub async fn get_llama(Path((namespace, name)): Path<(String, String)>) -> Respo
 
 Note that since we specified `namespaced: true` in the APIResource, the routes need to reflect that:
 
+[*src/main.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-2/src/main.rs#L30-L39)
 ```rs
 let app = Router::new()
   .route("/apis/farm.example.com/v1alpha", get(get_api_resources))
@@ -281,6 +286,7 @@ Our operator is now running locally, but stealing requests that are being sent t
 
 Implementing APIService lets us do is to provide access to existing resources but modify or enrich them before returning them to the user. All this without some complex synchronisation because you can rely on the Kubernetes as your source of truth and act accordingly. 
 
+[*src/resources/farmpod.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-3/src/resources/farmpod.rs#L7-L54)
 ```rs
 #[derive(CustomResource, Clone, Debug, Deserialize, Serialize, JsonSchema)]
 #[kube(
@@ -333,6 +339,7 @@ pub async fn list_farmpods(Path(namespace): Path<String>) -> impl IntoResponse {
 ```
 For example, we can implement a simple handler that lists Kubernetes Pods. We’ll name our new, enriched resource FarmPod, and add it to our `APIResourceList` and our router.
 
+[*src/main.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-3/src/main.rs#L14-L36)
 ```rs
 async fn get_api_resources() -> impl IntoResponse {
     Json(APIResourceList {
@@ -359,6 +366,7 @@ async fn get_api_resources() -> impl IntoResponse {
 }
 ```
 
+[*src/main.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-3/src/main.rs#L40-L53)
 ```rs
 let app = Router::new()
     .route("/apis/farm.example.com/v1alpha", get(get_api_resources))
