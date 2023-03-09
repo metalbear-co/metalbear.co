@@ -285,7 +285,7 @@ Our operator is now running locally, but stealing requests that are being sent t
 
 ## Using benefits of Operators
 
-Implementing APIService lets us do is to provide access to existing resources but modify or enrich them before returning them to the user. All this without some complex synchronisation because you can rely on the Kubernetes as your source of truth and act accordingly. 
+Implementing APIService lets us do is to provide access to existing resources but modify or enrich them before returning them to the user. All this without some complex synchronisation because you can rely on the Kubernetes as your source of truth and act accordingly. For example, we can implement a simple handler that lists Kubernetes Pods. We’ll name our new, enriched resource FarmPod, and add it to our `APIResourceList` and our router. 
 
 [*src/resources/farmpod.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-3/src/resources/farmpod.rs#L7-L54)
 ```rs
@@ -338,7 +338,7 @@ pub async fn list_farmpods(Path(namespace): Path<String>) -> impl IntoResponse {
     }))
 }
 ```
-For example, we can implement a simple handler that lists Kubernetes Pods. We’ll name our new, enriched resource FarmPod, and add it to our `APIResourceList` and our router.
+
 
 [*src/main.rs:*](https://github.com/metalbear-co/farm-operator/blob/main/example/step-3/src/main.rs#L14-L36)
 ```rs
@@ -388,7 +388,7 @@ To test out the new `FarmPod` we can run our server again with mirrord.
 ```bash
 cargo build -p farm-operator-3 && mirrord exec -t deploy/farm-operator --steal ./target/debug/farm-operator-3
 ```
-Now when we run
+Now lets run
 ```bash
 kubectl get farmpods
 ```
