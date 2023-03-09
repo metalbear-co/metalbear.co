@@ -5,9 +5,9 @@ lead: "Get up and running with Kubernetes operators in (hopefully) minutes!"
 tags:
   - kubernetes
   - operator
-  - APIService
-date: 2023-03-01T0:00:00+00:00
-lastmod: 2023-03-01T0:00:00+00:00
+  - cloud
+date: 2023-03-09T0:00:00+00:00
+lastmod: 2023-03-09T0:00:00+00:00
 draft: false
 weight: 50
 contributors: ["Dmitry Dodzin"]
