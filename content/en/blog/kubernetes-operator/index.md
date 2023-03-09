@@ -275,7 +275,8 @@ To run our operator using mirrord, we can use this command:
 cargo build -p farm-operator-2 && mirrord exec -t deploy/farm-operator --steal ./target/debug/farm-operator-2
 ```
 
-Our operator is now running locally, but stealing requests that are being sent to the operator deployment in the cluster! 
+The first part of the command builds the `farm-operator-2` binary from the code in the [step-2 directory](https://github.com/metalbear-co/farm-operator/tree/main/example/step-2). The second part runs the resulting binary with mirrord, with the `farm-operator` deployment as its target.
+Our operator is now running locally, but stealing requests that are being sent to the `farm-operator` deployment in the cluster! 
 
 {{<figure src="kubectl-get-llamas.png" alt="Return value from kubectl get llamas." height="100%" width="100%">}}
 {{<figure src="kubectl-describe-llamas.png" alt="Return value from kubectl describe llamas." height="100%" width="100%">}}
@@ -305,7 +306,7 @@ pub async fn list_farmpods(Path(namespace): Path<String>) -> impl IntoResponse {
     let pods = Api::<Pod>::namespaced(client, &namespace)
         .list(&Default::default())
         .await
-        .expect("Falied to fetch pods");
+        .expect("Failed to fetch pods");
 
     let items = pods
         .items
