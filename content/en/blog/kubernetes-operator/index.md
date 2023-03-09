@@ -118,7 +118,7 @@ kubectl get apiservice
 
 Now let's dive into what is happening here. 
 
-[*app.yaml:*](https://github.com/metalbear-co/farm-operator/blob/main/app.yaml#L41-L55)
+[*app.yaml:*](https://github.com/metalbear-co/farm-operator/blob/main/app.yaml#L42-L56)
 ```yaml
 ...
 ---
@@ -402,3 +402,11 @@ With this example, we are just touching the tip of the iceberg of what is possib
 * Support for other verbs like “watch”, “create” and “delete”
 
 The Kubernetes ecosystem can be overwhelming to start with, but hopefully, this guide has helped you grasp just a little bit more of it. If you’d like to discuss writing and building operators, talking about backend, Kubernetes, or mirrord, you’re more than welcome to join our Discord!
+
+
+### Cleanup
+
+To remove example resources from kubernetes
+```bash
+kubectl delete -f app.yaml
+```
