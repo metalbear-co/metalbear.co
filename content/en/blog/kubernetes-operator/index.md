@@ -1,5 +1,5 @@
 ---
-title: "Writing a Kubernetes Operator/Controller"
+title: "Writing a Kubernetes Operator"
 description: "Basic introduction to Kubernetes Operators and Controllers, with a tutorial on creating an Operator in Rust"
 lead: "Get up and running with Kubernetes operators in (hopefully) minutes!"
 tags:
