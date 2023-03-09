@@ -1,5 +1,5 @@
 ---
-title: "Writing a Kubernetes Operator/Controller"
+title: "Writing a Kubernetes Operator"
 description: "Basic introduction to Kubernetes Operators and Controllers, with a tutorial on creating an Operator in Rust"
 lead: "Get up and running with Kubernetes operators in (hopefully) minutes!"
 tags:
@@ -394,6 +394,12 @@ kubectl get farmpods
 ```
 And we should get a list of our pods in the default namespace but with `farm-` in front of their names.
 
+### Cleanup
+
+To remove the example resources from Kubernetes, run:
+```bash
+kubectl delete -f app.yaml
+```
 
 ## What’s next?
 With this example, we are just touching the tip of the iceberg of what is possible when you integrate yourself into the Kubernetes API. Besides, we’ve overlooked some basic requirements, including:
@@ -401,12 +407,4 @@ With this example, we are just touching the tip of the iceberg of what is possib
 * Support for OpenAPI v2 or v3 (via /openapi/v2 or /openapi/v3), which Kubernetes looks up for each new APIService
 * Support for other verbs like “watch”, “create” and “delete”
 
-The Kubernetes ecosystem can be overwhelming to start with, but hopefully, this guide has helped you grasp just a little bit more of it. If you’d like to discuss writing and building operators, talking about backend, Kubernetes, or mirrord, you’re more than welcome to join our Discord!
-
-
-### Cleanup
-
-To remove the example resources from Kubernetes, run:
-```bash
-kubectl delete -f app.yaml
-```
+The Kubernetes ecosystem can be overwhelming to start with, but hopefully, this guide has helped you grasp just a little bit more of it. If you’d like to discuss writing and building operators, talking about backend, Kubernetes, or mirrord, you’re more than welcome to join our [Discord](https://discord.gg/pSKEdmNZcK)!
