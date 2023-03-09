@@ -27,10 +27,10 @@ Using a Kubernetes operator/controller can make it easier for your users to setu
 
 ## Operator vs. Controller
 
-A **controller** is a software component that tracks Kubernetes objects and interacts with them. The objects themselves are managed by Kubernetes itself. For example, Admission Controllers watch new objects being created and enforce policies on them. The objects the controller manages can be existing objects, or new ones you add by using CustomResourceDefinition. Note that the controller is a pattern. It doesn’t dictate how the controller should run - it can be from a desktop, server, cluster, or anywhere else where it can interact with the Kubernetes API. 
+A **controller** is a software component that tracks Kubernetes objects and interacts with them. The objects themselves are managed by Kubernetes itself. For example, Admission Controllers watch new objects being created and enforce policies on them. The objects the controller manages can be existing objects. Note that the controller is a pattern. It doesn’t dictate how the controller should run - it can be from a desktop, server, cluster, or anywhere else where it can interact with the Kubernetes API. 
 
-An **operator** is a controller that doesn’t only track objects but also manages them, meaning all requests to their corresponding resources through the Kubernetes API are routed to the operator.
-But the operator must be exposed via an APIService, which expects its upstream Service to implement a CRUD API for the new resource.
+An **operator** is a controller that tracks new resources you can add by using CustomResourceDefinition. 
+An operator can use the Kubernetes API to manage these resources; alternatively, a third component called APIService can be leveraged for handling requests to these resources to the Kubernetes API.
 
 ## Possible languages and frameworks
 
@@ -57,7 +57,7 @@ For the example in this post, we will use Rust + kube-rs. Here are a few reasons
 
 ## This is where the tutorial starts
 
-In the sections that follow, we’ll be creating an APIService. We’ll use Rust, but implementations in other languages can be extrapolated from it fairly easily. First, clone our [example repository](https://github.com/metalbear-co/farm-operator):
+In the sections that follow, we’ll be creating an operator with an APIService. We’ll use Rust, but implementations in other languages can be extrapolated from it fairly easily. First, clone our [example repository](https://github.com/metalbear-co/farm-operator):
 
 ```bash
 git clone https://github.com/metalbear-co/farm-operator.git
