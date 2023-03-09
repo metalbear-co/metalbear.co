@@ -406,7 +406,7 @@ The Kubernetes ecosystem can be overwhelming to start with, but hopefully, this 
 
 ### Cleanup
 
-To remove example resources from kubernetes
+To remove the example resources from Kubernetes, run:
 ```bash
 kubectl delete -f app.yaml
 ```
