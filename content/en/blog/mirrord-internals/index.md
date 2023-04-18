@@ -412,7 +412,7 @@ new client connection from 127.0.0.1:8080
 Time to celebrate? Yes! We were finally able to find the correct function to hook and make `accept` work the way want it to work in the context of mirrord.
 Writing hooks is not easy - not only does it take an extensive amount of time, but also a ton of research. That's why we try to follow a [feature guide](https://mirrord.dev/docs/developer/new_feature/) which lets us work on new features/hooks based on real use cases and needs so that we don't end up wasting time on something that no one would actually use.
 
-Hope you enjoyed reading the post! Please feel free to reach out to me with feedback at [mehula@metalbear.co](mehula@metalbear.co)/[Discord](https://discord.com/invite/J5YSrStDKD), or provide any suggestions/open issues/PRs on our [website](https://github.com/metalbear-co/metalbear.co).
+Hope you enjoyed reading the post! Please feel free to reach out to me with feedback at [mehula@metalbear.co](mehula@metalbear.co)/[Discord](https://discord.gg/metalbear), or provide any suggestions/open issues/PRs on our [website](https://github.com/metalbear-co/metalbear.co).
 
 ## Credits 🐻
 

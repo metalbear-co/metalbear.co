@@ -46,5 +46,5 @@ You might have noticed that, when suggesting that every developer in the organiz
 
 ## Try it out!
 * Give mirrord a try [here](https://mirrord.dev/docs/overview/quick-start/) - it’s free and self-serve
-* Tell us about your experience: you can open an issue on [GitHub](https://github.com/metalbear-co/mirrord/issues), reply to our [feedback thread](https://github.com/metalbear-co/mirrord/discussions/598), or talk to us on [Discord](https://discord.gg/pSKEdmNZcK)
+* Tell us about your experience: you can open an issue on [GitHub](https://github.com/metalbear-co/mirrord/issues), reply to our [feedback thread](https://github.com/metalbear-co/mirrord/discussions/598), or talk to us on [Discord](https://discord.gg/metalbear)
 * If you’d like to support mirrord, star it on [GitHub](https://github.com/metalbear-co/mirrord) or vote for it on [ProductHunt](https://www.producthunt.com/posts/mirrord)
