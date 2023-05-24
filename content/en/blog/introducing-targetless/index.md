@@ -91,10 +91,10 @@ deploying a new version after every little change.
 
 ## Can’t I just use `kubectl port-forward`?
 There are some basic tasks that can be achieved with either mirrord or kubectl port-forward in varying degrees of
-comfort. However, mirrord does something fundamentally different than port-forwarding. mirrord runs an application
+comfort. However, mirrord does something fundamentally different from port-forwarding. mirrord runs an application
 and forwards to the cluster whatever connections it initiates. This means you don’t need to know the ports in
 advance and configure them before running the application, DNS is resolved in the cluster, UDP is forwarded as well
-as TCP, and connections can also be made to addresses outside of the cluster (with the source address of the
+as TCP, and connections can also be made to addresses outside the cluster (with the source address of the
 cluster, so if an external service is only open to the cluster’s IP, the application can access it with mirrord).
 
 ## I want to start using it right now!
@@ -111,8 +111,8 @@ curl -fsSL https://raw.githubusercontent.com/metalbear-co/mirrord/main/scripts/i
 Or you can install it as a [VS Code extension](vscode:extension/MetalBear.mirrord) or [a plugin for IntelliJ-based 
  IDEs](https://plugins.jetbrains.com/plugin/19772-mirrord).
 
-Of course, as mirrord is completely [open source](https://github.com/metalbear-co/mirrord) you can also just [build 
- it from source](https://github.com/metalbear-co/mirrord/blob/main/TESTING.md#build-and-run-mirrord).
+Of course, as mirrord is completely [open source](https://github.com/metalbear-co/mirrord) you can also 
+[build it from source](https://github.com/metalbear-co/mirrord/blob/main/TESTING.md#build-and-run-mirrord).
 
 Check out the [mirrord docs](https://mirrord.dev/docs/overview/introduction/), especially the 
 [mirrord configuration docs](https://mirrord.dev/docs/overview/configuration/), and the target reference for 
