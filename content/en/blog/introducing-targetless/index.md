@@ -30,15 +30,15 @@ resolution as well as the network connection will be done from the cluster. This
 configuring or testing your services on the cluster.
 Let’s see what this looks like with a little practical example. We have a Kafka cluster set up on Kubernetes[^1]:
 
-![Output of running `kubectl get svc` showing multiple Kafka services](kubectl-get-svc.png "Kafka services on the cluster.")
+{{<figure src="kubectl-get-svc.png" alt="Output of running `kubectl get svc` showing multiple Kafka services." height="100%" width="100%">}}
 
-![Output of running `kubectl get pod` showing multiple Kafka pods](kubectl-get-pod.png "Kafka pods on the cluster.")
+{{<figure src="kubectl-get-pod.png" alt="Output of running `kubectl get pod` showing multiple Kafka pods." height="100%" width="100%">}}
 
 With mirrord we can use utility tools to manage and test the services on the cluster, with the same ease as if they
 were running locally. Say we want to add some events to an existing `weather-updates` topic. We just run Kafka’s
 console client, and give it the name of the bootstrap service as its URL.
 
-![Running a Kafka client on the command line, reading events from the given topic.](kafka-client.png "Kafka client running locally, fetching events from inside the cluster.")
+{{<figure src="kafka-client.png" alt="Running a Kafka client on the command line, reading events from the given topic." height="100%" width="100%">}}
 
 The client connects to the bootstrap server, which tells it what Kafka brokers it should connect to, and it then
 fetches the events from those brokers.
@@ -57,8 +57,7 @@ or if you want to test your cluster’s network connectivity to external service
 see what it looks like when we run `curl ifconfig.me` (a web service that returns the IP you connect from in its
 response) with mirrord (IPs partially redacted). When we run the curl command with mirrord, it’s sent out of the
 cluster, so the cluster’s egress IP is returned.
-![Running curl ifconfig.me, with and without targetless mirrord](curl-ifconfig-me.png "Finding out the K8s cluster's 
-egress IP.")
+{{<figure src="curl-ifconfig.me.png" alt="Running curl ifconfig.me, with and without targetless mirrord" height="100%" width="100%">}}
 
 ## Debugging new services with targetless mirrord
 Your microservices are deployed on the cluster, so far away. You can see they are there with kubectl. You can even
@@ -108,8 +107,8 @@ or
 curl -fsSL https://raw.githubusercontent.com/metalbear-co/mirrord/main/scripts/install.sh | bash
 ```
 
-Or you can install it as a [VS Code extension](vscode:extension/MetalBear.mirrord) or [a plugin for IntelliJ-based 
- IDEs](https://plugins.jetbrains.com/plugin/19772-mirrord).
+Or you can install it as a [VS Code extension](vscode:extension/MetalBear.mirrord) or 
+[a plugin for IntelliJ-based IDEs](https://plugins.jetbrains.com/plugin/19772-mirrord).
 
 Of course, as mirrord is completely [open source](https://github.com/metalbear-co/mirrord) you can also 
 [build it from source](https://github.com/metalbear-co/mirrord/blob/main/TESTING.md#build-and-run-mirrord).
@@ -120,5 +119,6 @@ Check out the [mirrord docs](https://mirrord.dev/docs/overview/introduction/), e
 Reach out to us on [Discord](https://discord.gg/metalbear) or [GitHub]((https://github.com/metalbear-co/mirrord)) 
 for help, questions, feedback or just to say hi.
 
-[^1]: We used the manifests from Red Hat Developer’s [Kafka in Kubernetes tutorial](https://redhat-developer-demos.
- github.io/kafka-tutorial/kafka-tutorial/1.0.x/07-kubernetes.html) to quickly set up the cluster.
+[^1]: We used the manifests from Red Hat Developer’s 
+[Kafka in Kubernetes tutorial](https://redhat-developer-demos.github.io/kafka-tutorial/kafka-tutorial/1.0.x/07-kubernetes.html) 
+to quickly set up the cluster.
