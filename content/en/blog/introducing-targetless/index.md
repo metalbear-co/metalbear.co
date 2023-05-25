@@ -21,6 +21,7 @@ have if it were deployed to the cluster. Together with the secret sauce of in-cl
 program on your computer and have it access cluster-internal services that do not have any external IP. The
 program would also have access to third-party services that are open to IPs from your cluster, but not to your
 local IP.
+
 This can be useful for different cases, notably for running utility tools with access to the cluster, or for debugging
 new services.
 
@@ -28,6 +29,7 @@ new services.
 When you run an application with mirrord, and the application connects to a network address or domain name, DNS
 resolution as well as the network connection will be done from the cluster. This lets you run tools locally for
 configuring or testing your services on the cluster.
+
 Let’s see what this looks like with a little practical example. We have a Kafka cluster set up on Kubernetes[^1]:
 
 {{<figure src="kubectl-get-svc.png" alt="Output of running `kubectl get svc` showing multiple Kafka services." height="100%" width="100%">}}
@@ -42,11 +44,11 @@ console client, and give it the name of the bootstrap service as its URL.
 
 The client connects to the bootstrap server, which tells it what Kafka brokers it should connect to, and it then
 fetches the events from those brokers.
+
 All of this works with a simple client running locally on the developer’s machine. No containerizing, no deployment,
-no setup.
-And the fun part is mirrord operates on the process level, so it doesn’t affect connectivity for the rest of your
-system. This means you can even run multiple applications accessing different clusters or different namespaces at
-the same time.
+no setup. And the fun part is mirrord operates on the process level, so it doesn’t affect connectivity for the rest 
+of your system. This means you can even run multiple applications accessing different clusters or different 
+namespaces at the same time.
 
 ## Access external services through the cluster
 When you run an application with mirrord, the connections it initiates will be sent out of a temporary pod on your
@@ -67,7 +69,9 @@ microservices, you can’t run it locally, because its requests to the other mic
 addressed by cluster-internal domain names. So close, and yet so far. So in order to test your new little service
 which barely even does anything, you have to create Kubernetes resources for it, package it in a container, deploy
 it to the cluster, right?
+
 Wrong, obviously.
+
 Just run it with mirrord, and when it makes requests to services on the cluster, they’ll just work.  The DNS
 resolving will be performed on your cluster, and the network traffic will be emitted from within your cluster, so
 your new little app won’t even notice that it’s running locally and not deployed to the cloud. You can run your app
