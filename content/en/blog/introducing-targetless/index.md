@@ -57,7 +57,8 @@ or if you want to test your cluster’s network connectivity to external service
 see what it looks like when we run `curl ifconfig.me` (a web service that returns the IP you connect from in its
 response) with mirrord (IPs partially redacted). When we run the curl command with mirrord, it’s sent out of the
 cluster, so the cluster’s egress IP is returned.
-{{<figure src="curl-ifconfig.me.png" alt="Running curl ifconfig.me, with and without targetless mirrord" height="100%" width="100%">}}
+
+{{<figure src="curl-ifconfig-me.png" alt="Running curl ifconfig.me, with and without targetless mirrord" height="100%" width="100%">}}
 
 ## Debugging new services with targetless mirrord
 Your microservices are deployed on the cluster, so far away. You can see they are there with kubectl. You can even
@@ -107,8 +108,8 @@ or
 curl -fsSL https://raw.githubusercontent.com/metalbear-co/mirrord/main/scripts/install.sh | bash
 ```
 
-Or you can install it as a [VS Code extension](vscode:extension/MetalBear.mirrord) or 
-[a plugin for IntelliJ-based IDEs](https://plugins.jetbrains.com/plugin/19772-mirrord).
+Or you can install it as a [VS Code extension](vscode:extension/MetalBear.mirrord) or a
+[plugin for IntelliJ-based IDEs](https://plugins.jetbrains.com/plugin/19772-mirrord).
 
 Of course, as mirrord is completely [open source](https://github.com/metalbear-co/mirrord) you can also 
 [build it from source](https://github.com/metalbear-co/mirrord/blob/main/TESTING.md#build-and-run-mirrord).
