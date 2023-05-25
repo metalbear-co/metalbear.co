@@ -35,7 +35,7 @@ Let’s see what this looks like with a little practical example. We have a Kafk
 {{<figure src="kubectl-get-pod.png" alt="Output of running `kubectl get pod` showing multiple Kafka pods." height="100%" width="100%">}}
 
 With mirrord we can use utility tools to manage and test the services on the cluster, with the same ease as if they
-were running locally. Say we want to add some events to an existing `weather-updates` topic. We just run Kafka’s
+were running locally. Say we want to read some events from an existing `weather-updates` topic. We just run Kafka’s
 console client, and give it the name of the bootstrap service as its URL.
 
 {{<figure src="kafka-client.png" alt="Running a Kafka client on the command line, reading events from the given topic." height="100%" width="100%">}}
