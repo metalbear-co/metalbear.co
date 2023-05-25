@@ -46,8 +46,8 @@ The client connects to the bootstrap server, which tells it what Kafka brokers i
 fetches the events from those brokers.
 
 All of this works with a simple client running locally on the developer’s machine. No containerizing, no deployment,
-no setup. And the fun part is mirrord operates on the process level, so it doesn’t affect connectivity for the rest 
-of your system. This means you can even run multiple applications accessing different clusters or different 
+no setup. And the fun part is mirrord operates on the process level, so it doesn’t affect connectivity for the rest
+of your system. This means you can even run multiple applications accessing different clusters or different
 namespaces at the same time.
 
 ## Access external services through the cluster
@@ -55,10 +55,11 @@ When you run an application with mirrord, the connections it initiates will be s
 Kubernetes cluster. This means your application can connect not only to services in the cluster, but to any
 endpoint in the internet that the cluster has access to. This can be useful if you want your application to
 communicate with external services that are configured to only accept communication from your cluster’s IP address,
-or if you want to test your cluster’s network connectivity to external services. In the screenshot below you can
-see what it looks like when we run `curl ifconfig.me` (a web service that returns the IP you connect from in its
-response) with mirrord (IPs partially redacted). When we run the curl command with mirrord, it’s sent out of the
-cluster, so the cluster’s egress IP is returned.
+or if you want to test your cluster’s network connectivity to external services.
+
+In the screenshot below you can see what it looks like when we run `curl ifconfig.me` (a web service that returns
+the IP you connect from in its response) with mirrord (IPs partially redacted). When we run the curl command with
+mirrord, it’s sent out of the cluster, so the cluster’s egress IP is returned.
 
 {{<figure src="curl-ifconfig-me.png" alt="Running curl ifconfig.me, with and without targetless mirrord" height="100%" width="100%">}}
 
@@ -86,12 +87,13 @@ mode of operation of mirrord, you specify a target container on your cluster (yo
 even the deployment, you do not have to know the specific container name). mirrord then spawns an
 [agent](https://mirrord.dev/docs/overview/architecture/#mirrord-agent) on the same node as the target, which helps
 your local program impersonate that container - mirror or steal its incoming traffic, send out network requests
-over it, access the same filesystem and read its environment variables. The main use case for this mode is to debug
-a new version of an existing application. For example, if you are making changes to an API endpoint of an existing
-microservice, you can run the changed version with mirrord, with the existing microservice running in the cloud as
-a target, and when that service receives requests, they will be mirrored (or redirected entirely) to your local
-application by mirrord. This lets you debug the changed endpoint using traffic from the Kubernetes cluster without
-deploying a new version after every little change.
+over it, access the same filesystem and read its environment variables.
+
+The main use case for this mode is to debug a new version of an existing application. For example, if you are
+making changes to an API endpoint of an existing microservice, you can run the changed version with mirrord, with
+the existing microservice running in the cloud as a target, and when that service receives requests, they will be
+mirrored (or redirected entirely) to your local application by mirrord. This lets you debug the changed endpoint
+using traffic from the Kubernetes cluster without deploying a new version after every little change.
 
 ## Can’t I just use `kubectl port-forward`?
 There are some basic tasks that can be achieved with either mirrord or kubectl port-forward in varying degrees of
