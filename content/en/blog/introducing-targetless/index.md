@@ -12,7 +12,7 @@ lastmod: 2023-05-25T0:00:00+00:00
 draft: false
 weight: 50
 images: ["curl-ifconfig-me.png", "kafka-client.png", "kubectl-get-pod.png", "kubectl-get-svc.png"]
-contributors: ["Tal Zwick", "Eyal Bukchin"]
+contributors: ["Tal Zwick"]
 ---
 
 With the new targetless mode of mirrord, you can run a program locally on your machine, and mirrord will forward
