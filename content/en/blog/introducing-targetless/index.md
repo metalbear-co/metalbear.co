@@ -18,7 +18,7 @@ contributors: ["Tal Zwick"]
 With the new targetless mode of mirrord, you can run a program locally on your machine, and mirrord will forward
 network connections initiated by the program to the cluster, such that the program gets the connectivity it would
 have if it were deployed to the cluster. Together with the secret sauce of in-cluster DNS resolution, you can run a
-program on your computer, and have it access cluster-internal services that do not have any external IP. The
+program on your computer and have it access cluster-internal services that do not have any external IP. The
 program would also have access to third-party services that are open to IPs from your cluster, but not to your
 local IP.
 This can be useful for different cases, notably for running utility tools with access to the cluster, or for debugging
