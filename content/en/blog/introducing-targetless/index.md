@@ -7,8 +7,8 @@ tags:
   - microservices
   - testing
   - debugging
-date: 2023-05-25T0:00:00+00:00
-lastmod: 2023-05-25T0:00:00+00:00
+date: 2023-06-04T0:00:00+00:00
+lastmod: 2023-06-04T0:00:00+00:00
 draft: false
 weight: 50
 images: ["curl-ifconfig-me.png", "kafka-client.png", "kubectl-get-pod.png", "kubectl-get-svc.png"]
