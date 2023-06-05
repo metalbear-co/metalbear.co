@@ -123,7 +123,7 @@ Of course, as mirrord is completely [open source](https://github.com/metalbear-c
 Check out the [mirrord docs](https://mirrord.dev/docs/overview/introduction/), especially the 
 [mirrord configuration docs](https://mirrord.dev/docs/overview/configuration/), and the target reference for 
 [how to run targetless](https://mirrord.dev/docs/reference/targets/#running-without-a-target).
-Reach out to us on [Discord](https://discord.gg/metalbear) or [GitHub]((https://github.com/metalbear-co/mirrord)) 
+Reach out to us on [Discord](https://discord.gg/metalbear) or [GitHub](https://github.com/metalbear-co/mirrord) 
 for help, questions, feedback or just to say hi.
 
 [^1]: We used the manifests from Red Hat Developer’s 
