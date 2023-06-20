@@ -12,4 +12,5 @@ menu:
     name: "Home"
     url: "/"
     weight: 10
+feed_exclude: true
 ---
