@@ -10,14 +10,18 @@
   url = "https://mirrord.dev"
 
 [[main]]
-  name = "Community"
+  name = "Teams"
   weight = 40
-  url = "/#community"
+  url = "/teams"
 
+[[main]]
+  name = "Community"
+  weight = 50
+  url = "/#community"
 
 [[main]]
   name = "Contact"
-  weight = 50
+  weight = 60
   url = "/#contact"
 
 [[social]]

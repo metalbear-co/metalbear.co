@@ -88,6 +88,13 @@ rel  = "sitemap"
   [[module.mounts]]
     source = "node_modules/mermaid"
     target = "assets/js/vendor/mermaid"
+  [[module.mounts]]
+    source = "node_modules/@frontegg/js/umd/frontegg.production.min.js"
+    target = "assets/js/vendor/@frontegg/js/umd/frontegg.production.min.js"
+[[module.mounts]]
+    source = "node_modules/alpinejs/dist"
+    target = "assets/js/vendor/alpinejs/dist"
+
 [params.shareButtons]
   size = "small"
   networks = ["twitter", "linkedin", "reddit", "copylink"]

@@ -84,8 +84,13 @@ lastMod = true
   multilingualMode = false
   docsVersioning = false
   fullWidth = false
+  teams = true
 
 [menu]
   [menu.section]
     auto = true
     collapsibleSidebar = true
+
+[frontegg]
+  baseUrl = "https://app-y3ku8d7npxle.frontegg.com"
+  clientId = "fc38df76-60a7-428b-8a51-6edd86031103"
