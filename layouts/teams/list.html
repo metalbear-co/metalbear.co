@@ -1,13 +1,18 @@
 {{ define "main" }}
-<div x-data="teams" class="text-center p-10">
+<div x-data="teams" class="container p-10">
     <strong x-show="!authenticated">Loading..</strong>
-    <h1 x-show="authenticated">Hi <span x-text="user?.name"></span></h1>
-    <div x-data="{ license: '' }">
-        <div class="flex">
-            <textarea x-text="license" style="width: 720px;"></textarea>
-        </div>
-        <button @click="license = await getLicense()">Reveal License</button>
+    <div x-show="authenticated">
+        <h6>Hi <span x-text="user?.name"></span></h6>
+        <div x-data="{ license: '', visible: false }" x-effect="license = await getLicense()">
+            <div class="flex">
+                <label>License Key</label>
+                <input style="width: 32rem;" class="m-2" x-bind:value="license" x-bind:type="visible ? 'text' : 'password'"></input>
+                <button class="btn" @click="visible = !visible" x-text="visible ? 'Hide' : 'Show'"></button>
+            </div>
+            {{ .Content }}
+        </div>    
     </div>
+    
 </div>
 
 <script type="text/javascript">
@@ -19,8 +24,8 @@
             init() {
                 const app = Frontegg.initialize(({
                   contextOptions: {
-                    baseUrl: "https://app-y3ku8d7npxle.frontegg.com",
-                    clientId: 'fc38df76-60a7-428b-8a51-6edd86031103',
+                    baseUrl: '{{ .Params.baseUrl }}',
+                    clientId: '{{ .Params.clientId }}',
                   },
                   authOptions: {
                     keepSessionAlive: true
@@ -49,12 +54,12 @@
                     return "";
                 }
 
-                console.log(this.user);
+                let result = await fetch('{{ .Params.licenseUrl }}/v1/license-key', {
+                    headers: { authorization: `Bearer ${this.user.accessToken}` } 
+                });
 
-                let res = await fetch("http://localhost:3000/v1/license", { headers: { authorization: `Bearer ${this.user.accessToken}` } });
-
-                if (res.status === 200) {
-                    return res.text();
+                if (result.status === 200) {
+                    return result.text();
                 }
 
                 return ""
