@@ -12,7 +12,7 @@
 [[main]]
   name = "Teams"
   weight = 40
-  url = "/teams"
+  url = "/teams/"
 
 [[main]]
   name = "Community"
