@@ -204,7 +204,7 @@ The loss of entitlements is not a problem for mirrord, because we do not expect 
 
 ## Afterword
 
-You’re welcome to check out the full implementation in our [GitHub repository](https://github.com/metalbear-co/mirrord/tree/main/mirrord/sip), Join our [Backend Engineers Discord](https://discord.gg/pSKEdmNZcK) community, subscribe to our newsletter and of course use mirrord!
+You’re welcome to check out the full implementation in our [GitHub repository](https://github.com/metalbear-co/mirrord/tree/main/mirrord/sip), Join our [Backend Engineers Discord](https://discord.gg/metalbear) community, subscribe to our newsletter and of course use mirrord!
 
 
 [^1]: But in fact there might be other locations that are SIP protected, and if someone has a good and reliable way to detect if a binary is SIP, we’d love to hear it.
