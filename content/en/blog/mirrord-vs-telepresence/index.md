@@ -37,7 +37,7 @@ It’s pretty heavy lifting compared to just starting a VPN - mirrord has to hoo
 Most importantly though, all of these things are supported out of the box and with no required changes to your system. You don’t have to set up mounts, manually ingest environment variables, or create headless services. Just run your process with mirrord, and everything works. It’s this lack of friction that really makes the vision of local Kubernetes development possible - a true shift left of the cloud, where running your code in Kubernetes isn’t the thing you’re saving for last after all the unit tests and local setups, but rather the first thing you do when you write new code. 
 
 Usage is simple and intuitive. In the CLI:
-{{<figure src="cli-command.png" alt="A very straightforward breakdown of the mirrord CLI command" height="100%" width="60%">}}
+{{<figure src="cli-command.png" alt="A very straightforward breakdown of the mirrord CLI command" class="center mid-width">}}
 
 And in the IDE - enable mirrord, run or debug your code, and select a target. For example, in VSCode:
 
