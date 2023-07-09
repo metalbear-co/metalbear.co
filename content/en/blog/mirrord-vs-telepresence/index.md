@@ -1,14 +1,14 @@
 ---
 title: "mirrord as an alternative to Telepresence"
-description: "A short introduction to the new targetless mode of mirrord, explaining its main use-cases."
+description: "A comparison between mirrord and Telepresence"
 lead: "A comparison between mirrord and Telepresence"
 tags:
   - Kubernetes
   - microservices
   - testing
   - debugging
-date: 2023-07-06T0:00:00+00:00
-lastmod: 2023-07-06T0:00:00+00:00
+date: 2023-07-10T0:00:00+00:00
+lastmod: 2023-07-10T0:00:00+00:00
 draft: false
 weight: 50
 images: ["mirrord-vs-telepresence.png", "cli-command.png", "vscode-usage.gif"]
