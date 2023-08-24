@@ -144,7 +144,7 @@ Without mirrord, you would either need to run everything locally, including the 
 
 With mirrord you don’t have to choose. You can have youw cake and eat it t-too!!
 
-## The feature 🔃
+## The Feature 🔃
 
 With the new outgoing traffic filter feature (say it fast 3 times), you can pick and choose from where outgoing traffic is sent from. Paired with other mirrord features, such as the incoming HTTP traffic filter, you get unprecedented control over how your app communicates with your cluster.
 
