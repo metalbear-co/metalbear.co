@@ -1,3 +1,21 @@
+---
+title: "the title"
+description: "Showcase of the outgoing traffic filter feature"
+lead: "the lead"
+tags:
+  - feature
+  - mirrord
+  - network
+  - filter
+  - traffic
+date: 2023-08-24T0:00:00+00:00
+lastmod: 2023-08-24T0:00:00+00:00
+draft: false
+weight: 50
+images: []
+contributors: ["Alexandre Cavalcante", "Eyal Bukchin"]
+---
+
 # The title
 
 So, you've been using mirrord to simplify your development process (if you haven’t, go here!). Naturally, you want the traffic from the app you're debugging to go through the cluster environment, so your app can communicate with its _clustery_ pals. There is a problem though: your latest change adds some new columns to the database, and you don’t want to modify the database in the cluster and affect everyone else working on it. You do have a local instance of the database that you can modify, so your app can use that, but you still want it to talk to all the other components in the cluster.  So what now? The new **outgoing traffic filter** feature is here to solve exactly this type of problem!
