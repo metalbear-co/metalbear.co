@@ -20,12 +20,16 @@ contributors: ["Alexandre Cavalcante"]
 
 So, you've been using mirrord to simplify your development process (if you haven’t, go here!). Naturally, you want the traffic from the app you're debugging to go through the cluster environment, so your app can communicate with its _clustery_ pals. There is a problem though: your latest change adds some new columns to the database, and you don’t want to modify the database in the cluster and affect everyone else working on it. You do have a local instance of the database that you can modify, so your app can use that, but you still want it to talk to all the other components in the cluster.  So what now? The new **outgoing traffic filter** feature is here to solve exactly this type of problem!
 
-With the new filter, you can specify whether your app’s outgoing traffic should be sent locally or remotely based on its destination. If we take the example above, with the database running in the cluster as a service `app-db` on port `7777`, and locally on the same port, you can select which database your app will be talking to with:
-
-- `config.json` where app sends traffic to local database
+With the new filter, you can specify whether your app’s outgoing traffic should be sent locally or remotely based on its destination. If we take the example above, with the database running in the cluster as a service `app-db` on port `7777`, and locally on the same port, you can select which database your app will be talking to with. Here is a sample `config.json` for this use case:
 
 ```json
-{ feature": { "network": { "outgoing": { "filter": { "local": ["app-db"] } } } } }
+{ 
+  feature": { 
+    "network": { 
+      "outgoing": { "filter": { "local": ["app-db"] } } 
+    } 
+  } 
+}
 ```
 
 In this case, when your app tries to resolve the `app-db` hostname it’ll do so locally locally (instead of in-cluster), meaning that traffic which would normally go to the cluster’s `app-db` will be sent to your local database, while all other traffic (that doesn’t match the filter) will keep flowing as you expect, in the cluster. Isn’t this neat? Your cluster’s database remains unmodified, and you can keep working with the other services in your cluster. The filter supports multiple options, listed [here](https://mirrord.dev/docs/overview/configuration/#feature.network.outgoing.filter). 
