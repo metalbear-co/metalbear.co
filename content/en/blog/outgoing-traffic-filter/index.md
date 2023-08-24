@@ -72,11 +72,13 @@ mirrord exec -f config.json ./uwu-app
 
 Where `config.json` is just:
 
-- `config.json`
+- `config.json`[^1]
 
 ```json
 { "target": “pod/uwu-app”, "feature": { "network": { "incoming": "steal", "outgoing": { "filter": { "local": [":8888"] } } } } }
 ```
+
+[^1]: We're setting `incoming` traffic to `steal`, but mirrord also supports traffic `mirror`ing, and traffic `steal`ing with a filter, you can see what's supported [here](https://mirrord.dev/docs/overview/configuration/#feature-network-incoming).
 
 This is enough to start mirrord and the `uwu-app` that we want to test. You should see something like this:
 
