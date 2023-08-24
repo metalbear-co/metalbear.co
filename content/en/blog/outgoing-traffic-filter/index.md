@@ -104,7 +104,7 @@ This is enough to start mirrord and the `uwu-app` that we want to test. You shou
 
 Our app is ready, and so is mirrord. Now we can make a request to the `uwu-app` pod and have it stolen by mirrord (traffic will be stolen from the cluster app to our local app):
 
-- retrieve `uwu-app` service port
+- retrieve `uwu-app`'s service port
 
 ```sh
 $ kubectl describe service uwu-app
