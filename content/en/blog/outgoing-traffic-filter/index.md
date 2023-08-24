@@ -44,7 +44,7 @@ The recipe for our example is as follows:
 
 Diagram with the services and traffic flow
 
-// TODO(alex) diagram image
+![outgoing traffic filter diagram](/outgoing-traffic-filter.jpg)
 
 Our flow here is as follows: 
 
