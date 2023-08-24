@@ -32,7 +32,7 @@ In this case, when your app tries to resolve the `app-db` hostname it’ll do so
 
 Let's look at a more detailed example.
 
-## The setup 📋
+## The Setup 📋
 
 The recipe for our example is as follows:
 
