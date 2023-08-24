@@ -13,7 +13,7 @@ lastmod: 2023-08-24T0:00:00+00:00
 draft: false
 weight: 50
 images: []
-contributors: ["Alexandre Cavalcante", "Eyal Bukchin"]
+contributors: ["Alexandre Cavalcante"]
 ---
 
 # The title
