@@ -58,7 +58,7 @@ Our flow here is as follows:
 
 Under normal circumstances, the response from `uwu-service` would be written to the cluster’s `message-db` database, but the cluster database doesn’t comply with our new schema, so the write operation would just fail.
 
-## The example 💾
+## The Example 💾
 
 Our main issue is that we want our local app’s outgoing traffic to be sent both locally and remotely, depending on its destination. Let's see how mirrord helps us solve this.
 
