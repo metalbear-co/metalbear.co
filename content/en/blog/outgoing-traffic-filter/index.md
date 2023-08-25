@@ -66,8 +66,6 @@ Our main issue is that we want our local app’s outgoing traffic to be sent bot
 
 We start out by running this command, which starts the `uwu-app` with mirrord:
 
-- starts the `uwu-app` with mirrord
-
 ```sh
 mirrord exec -f config.json ./uwu-app
 ```
