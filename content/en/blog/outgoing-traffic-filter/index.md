@@ -156,7 +156,7 @@ The example we just saw was really small, but you can imagine if the app we’re
 
 ## Get mirrord 🪞
 
-Ready to improve your workflow? Want to start using the outgoing traffic filter? Check out this [mirrord configuration](https://mirrord.dev/docs/overview/configuration/#feature-network-outgoing) and start using it today!
+Ready to improve your workflow? Want to start using the outgoing traffic filter? Check out the [new configuration](https://mirrord.dev/docs/overview/configuration/#feature-network-outgoing) and start using it today!
 
 What? You're not using mirrord?! You have to deploy every small change, just so you can test it in cloud conditions? Let me stop you right there! Just download and install mirrord, and test your code in the context of your Kubernetes environment, right from the comfort of your own local machine.! You can get it from [here](https://mirrord.dev/), what are you waiting for?
 
