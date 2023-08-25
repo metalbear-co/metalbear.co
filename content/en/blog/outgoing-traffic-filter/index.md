@@ -66,7 +66,7 @@ Under normal circumstances, the response from `uwu-service` would be written to 
 
 Our main issue is that we want our local app’s outgoing traffic to be sent both locally and remotely, depending on its destination. Let's see how mirrord helps us solve this.
 
-We start out by running this command:
+We start out by running this command, which starts the `uwu-app` with mirrord:
 
 - starts the `uwu-app` with mirrord
 
