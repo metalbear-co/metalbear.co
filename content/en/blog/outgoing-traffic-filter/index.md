@@ -123,8 +123,9 @@ Endpoints:                10.244.0.6:9999
 - make a request using `curl`
 
 ```sh
-$ curl -d "Hey, are you enjoying mirrord? Why not star us on github? It would be very cool of you." -X POST  http://192.168.49.2:3003
-2/uwu
+$ curl -d \
+"Hey, are you enjoying mirrord? Why not star us on github? It would be very cool of you." \
+-X POST  http://192.168.49.2:30032/uwu
 
 Added new message hey, 🥺 awe you enjoying miwwowd? why n-nyot staw us on g-github? it wouwd b-be vewy coow o-of you. with id 0
 ```
