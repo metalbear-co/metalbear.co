@@ -133,8 +133,7 @@ Added new message hey, 🥺 awe you enjoying miwwowd? why n-nyot staw us on g-gi
 - and here are the logs from the local `messages-db`
 
 ```sh
-[DEBUG messages_db] store; new_message="hey, 🥺 awe you enjoying miwwowd? why n-nyot staw us on g-github? it wouwd b-be
-vewy coow o-of you."
+[DEBUG messages_db] store; new_message="hey, 🥺 awe you enjoying miwwowd? why n-nyot staw us on g-github? it wouwd b-be vewy coow o-of you."
 [DEBUG messages_db] return="Added new message hey, 🥺 awe you enjoying miwwowd? why n-nyot staw us on g-github? it wouwd b-be vewy coow o-of you. with id 0"
 [INFO  actix_web::middleware::logger] 127.0.0.1 "POST /store/0 HTTP/1.1" 200 129 "-" "-" 0.000243
 ```
