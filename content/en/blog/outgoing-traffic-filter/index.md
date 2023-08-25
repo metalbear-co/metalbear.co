@@ -48,7 +48,7 @@ The recipe for our example is as follows:
 
 Diagram with the services and traffic flow
 
-{{<figure src="outgoing-traffic-filter.jpg" alt="Outgoing traffic filter diagram" height="100%" width="100%">}}
+{{<figure src="outgoing-traffic-filter.jpg" alt="Outgoing traffic filter diagram" height="100%" width="100%" class="zoomable">}}
 
 Our flow here is as follows: 
 
