@@ -1,5 +1,5 @@
 ---
-title: "The Traffic Police - How you can control outgoing traffic with mirrord"
+title: "The Traffic Police - Controlling outgoing traffic with mirrord"
 description: "Showcase of the outgoing traffic filter feature"
 lead: "Introducing the new outgoing traffic control feature for mirrord"
 tags:
@@ -16,7 +16,7 @@ images: []
 contributors: ["Alexandre Cavalcante"]
 ---
 
-# The Traffic Police 🚨 - How you can control outgoing traffic with mirrord
+# The Traffic Police 🚨 - Controlling outgoing traffic with mirrord
 
 So, you've been using mirrord to simplify your development process (if you haven’t, go here!). Naturally, you want the traffic from the app you're debugging to go through the cluster environment, so your app can communicate with its _clustery_ pals. There is a problem though: your latest change adds some new columns to the database, and you don’t want to modify the database in the cluster and affect everyone else working on it. You do have a local instance of the database that you can modify, so your app can use that, but you still want it to talk to all the other components in the cluster.  So what now? The new **outgoing traffic filter** feature is here to solve exactly this type of problem!
 
