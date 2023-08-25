@@ -1,7 +1,7 @@
 ---
 title: "The Traffic Police - Controlling outgoing traffic with mirrord"
 description: "Showcase of the outgoing traffic filter feature"
-lead: "Introducing the new outgoing traffic control feature for mirrord"
+lead: "Introducing the new outgoing traffic filter feature for mirrord"
 tags:
   - feature
   - mirrord
