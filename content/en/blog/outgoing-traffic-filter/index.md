@@ -86,7 +86,7 @@ Where `config.json`[^1] is just:
 }
 ```
 
-[^1]: We're setting `incoming` traffic to `steal`, but mirrord also supports traffic `mirror`ing, and traffic `steal`ing with a filter, you can see what's supported [here](https://mirrord.dev/docs/overview/configuration/#feature-network-incoming).
+[^1]: We're setting `incoming` traffic to `steal`, but mirrord also supports traffic `mirror`ing, and traffic `steal`ing with a filter. You can see all the options [here](https://mirrord.dev/docs/overview/configuration/#feature-network-incoming).
 
 This is enough to start mirrord and the `uwu-app` that we want to test. You should see something like this:
 
