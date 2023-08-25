@@ -20,7 +20,7 @@ contributors: ["Alexandre Cavalcante"]
 
 So, you've been using mirrord to simplify your development process (if you haven’t, go here!). Naturally, you want the traffic from the app you're debugging to go through the cluster environment, so your app can communicate with its _clustery_ pals. There is a problem though: your latest change adds some new columns to the database, and you don’t want to modify the database in the cluster and affect everyone else working on it. You do have a local instance of the database that you can modify, so your app can use that, but you still want it to talk to all the other components in the cluster.  So what now? The new **outgoing traffic filter** feature is here to solve exactly this type of problem!
 
-With the new filter, you can specify whether your app’s outgoing traffic should be sent locally or remotely based on its destination. If we take the example above, with the database running in the cluster as a service `app-db` on port `7777`, and locally on the same port, you can select which database your app will be talking to with. Here is a sample `config.json` for this use case:
+With the new filter, you can specify whether your app’s outgoing traffic should be sent locally or remotely based on its destination. If we take the example above, with the database running in the cluster as a service `app-db` on port `7777`, and locally on the same port, you can select which database your app will be talking to. Here is a sample `config.json` for this use case:
 
 ```json
 { 
