@@ -16,9 +16,9 @@ images: []
 contributors: ["Alexandre Cavalcante"]
 ---
 
-So, you've been using mirrord to simplify your development process (if you haven’t, go here!). Naturally, you want the traffic from the app you're debugging to go through the cluster environment, so your app can communicate with its _clustery_ pals. There is a problem though: your latest change adds some new columns to the database, and you don’t want to modify the database in the cluster and affect everyone else working on it. You do have a local instance of the database that you can modify, so your app can use that, but you still want it to talk to all the other components in the cluster.  So what now? The new **outgoing traffic filter** feature is here to solve exactly this type of problem!
+So, you've been using mirrord to simplify your development process (if you haven’t, go [here!](https://mirrord.dev/)). Naturally, you want the traffic from the app you're debugging to go through the cluster environment, so your app can communicate with its _clustery_ pals. There is a problem though: your latest change adds some new columns to the database, and you don’t want to modify the database in the cluster and affect everyone else working on it. You do have a local instance of the database that you can modify, so your app can use that, but you still want it to talk to all the other components in the cluster.  So what now? The new **outgoing traffic filter** feature is here to solve exactly this type of problem!
 
-With the new filter, you can specify whether your app’s outgoing traffic should be sent locally or remotely based on its destination. If we take the example above, with the database running in the cluster as a service `app-db` on port `7777`, and locally on the same port, you can select which database your app will be talking to. Here is a sample `config.json` for this use case:
+With the new filter, you can specify whether your app’s outgoing traffic should be sent locally or remotely based on its destination. If we take the example above, with the database running in the cluster as a service `app-db`, and locally with the same hostname, you can select which database your app will be talking to. Here is a sample `config.json` for this use case:
 
 ```json
 { 
@@ -72,9 +72,7 @@ We start out by running this command, which starts the `uwu-app` with mirrord:
 mirrord exec -f config.json ./uwu-app
 ```
 
-Where `config.json` is just:
-
-- `config.json`[^1]
+Where `config.json`[^1] is just:
 
 ```json
 {
@@ -92,8 +90,6 @@ Where `config.json` is just:
 
 This is enough to start mirrord and the `uwu-app` that we want to test. You should see something like this:
 
-- mirrord starting
-
 ```sh
 ⠧ mirrord cli starting...
  ⠧ exec
@@ -104,9 +100,7 @@ This is enough to start mirrord and the `uwu-app` that we want to test. You shou
    ✓ pod is ready
 ```
 
-Our app is ready, and so is mirrord. Now we can make a request to the `uwu-app` pod and have it stolen by mirrord (traffic will be stolen from the cluster app to our local app):
-
-- retrieve `uwu-app`'s service port
+Our app is ready, and so is mirrord. Now we can make a request to the `uwu-app` pod and have it stolen by mirrord (traffic will be stolen from the cluster app to our local app). First let's get the `uwu-app` service port:
 
 ```sh
 $ kubectl describe service uwu-app
@@ -118,21 +112,32 @@ NodePort:                 <unset>  30032/TCP
 Endpoints:                10.244.0.6:9999
 ```
 
-- make a request using `curl`
+Now we can make a request using `curl`:
 
 ```sh
 $ curl -d \
 "Hey, are you enjoying mirrord? Why not star us on github? It would be very cool of you." \
 -X POST  http://192.168.49.2:30032/uwu
 
-Added new message hey, 🥺 awe you enjoying miwwowd? why n-nyot staw us on g-github? it wouwd b-be vewy coow o-of you. with id 0
+Added new message
+hey, 🥺 awe you enjoying miwwowd? 
+why n-nyot staw us on g-github? 
+it wouwd b-be vewy coow o-of you.
+with id 0
 ```
 
-- and here are the logs from the local `messages-db`
+And here are the logs from the local `messages-db`:
 
 ```sh
-[DEBUG messages_db] store; new_message="hey, 🥺 awe you enjoying miwwowd? why n-nyot staw us on g-github? it wouwd b-be vewy coow o-of you."
-[DEBUG messages_db] return="Added new message hey, 🥺 awe you enjoying miwwowd? why n-nyot staw us on g-github? it wouwd b-be vewy coow o-of you. with id 0"
+[DEBUG messages_db] store; 
+new_message="hey, 🥺 awe you enjoying miwwowd? 
+             why n-nyot staw us on g-github? 
+             it wouwd b-be vewy coow o-of you."
+[DEBUG messages_db]
+return="Added new message hey, 🥺 awe you enjoying miwwowd?
+                          why n-nyot staw us on g-github? 
+                          it wouwd b-be vewy coow o-of you. 
+        with id 0"
 [INFO  actix_web::middleware::logger] 127.0.0.1 "POST /store/0 HTTP/1.1" 200 129 "-" "-" 0.000243
 ```
 
