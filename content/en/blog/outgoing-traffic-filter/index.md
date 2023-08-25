@@ -156,6 +156,6 @@ The example we just saw was really small, but you can imagine if the app we’re
 
 Ready to improve your workflow? Want to start using the outgoing traffic filter? Check out the [new configuration](https://mirrord.dev/docs/overview/configuration/#feature-network-outgoing) and start using it today!
 
-What? You're not using mirrord?! You have to deploy every small change, just so you can test it in cloud conditions? Let me stop you right there! Just download and install mirrord, and test your code in the context of your Kubernetes environment, right from the comfort of your own local machine.! You can get it from [here](https://mirrord.dev/), what are you waiting for?
+What? You're not using mirrord?! You have to deploy every small change, just so you can test it in cloud conditions? Let me stop you right there! Just download and install mirrord, and test your code in the context of your Kubernetes environment, right from the comfort of your own local machine. You can get it from [here](https://mirrord.dev/), what are you waiting for?
 
 Here is a [quick start guide](https://mirrord.dev/docs/overview/quick-start/) link. Want to talk to an actual human? Then hop in our [Discord](https://discord.gg/metalbear) (no chatbots here, I promise). Prefer more asynchronous communication? Open up an [issue](https://github.com/metalbear-co/mirrord/issues/new/choose) or a [discussion](https://github.com/metalbear-co/mirrord/discussions/new/choose) on [GitHub](https://github.com/metalbear-co/mirrord). We love feedback, don’t be shy!
