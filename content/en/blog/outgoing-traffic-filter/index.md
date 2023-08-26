@@ -30,7 +30,7 @@ With the new filter, you can specify whether your app’s outgoing traffic shoul
 }
 ```
 
-In this case, when your app tries to resolve the `app-db` hostname it’ll do so locally locally (instead of in-cluster), meaning that traffic which would normally go to the cluster’s `app-db` will be sent to your local database, while all other traffic (that doesn’t match the filter) will keep flowing as you expect, in the cluster. Isn’t this neat? Your cluster’s database remains unmodified, and you can keep working with the other services in your cluster. The filter supports multiple options, listed [here](https://mirrord.dev/docs/overview/configuration/#feature.network.outgoing.filter). 
+In this case, when your app tries to resolve the `app-db` hostname it’ll do so locally (instead of in-cluster), meaning that traffic which would normally go to the cluster’s `app-db` will be sent to your local database, while all other traffic (that doesn’t match the filter) will keep flowing as you expect, in the cluster. Isn’t this neat? Your cluster’s database remains unmodified, and you can keep working with the other services in your cluster. The filter supports multiple options, listed [here](https://mirrord.dev/docs/overview/configuration/#feature.network.outgoing.filter). 
 
 Let's look at a more detailed example.
 
