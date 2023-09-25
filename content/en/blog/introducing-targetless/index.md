@@ -118,7 +118,7 @@ Or you can install it as a [VS Code extension](vscode:extension/MetalBear.mirror
 [plugin for IntelliJ-based IDEs](https://plugins.jetbrains.com/plugin/19772-mirrord).
 
 Of course, as mirrord is completely [open source](https://github.com/metalbear-co/mirrord) you can also 
-[build it from source](https://github.com/metalbear-co/mirrord/blob/main/TESTING.md#build-and-run-mirrord).
+[build it from source](https://github.com/metalbear-co/mirrord/blob/main/CONTRIBUTING.md#build-and-run-mirrord).
 
 Check out the [mirrord docs](https://mirrord.dev/docs/overview/introduction/), especially the 
 [mirrord configuration docs](https://mirrord.dev/docs/overview/configuration/), and the target reference for 
