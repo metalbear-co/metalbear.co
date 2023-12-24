@@ -214,7 +214,7 @@ That basically means, you can move your dev environment from one machine to anot
 
 As a result, on-boarding time should go significantly down!
 
-I’ve already written a blog on devcontainers in the past, hope that helps someone completely new to this: [Getting Started with Devcontainer](https://www.notion.so/Getting-Started-with-Devcontainer-c727dbf9d56f4d6b9b0ef87b3111693f?pvs=21)
+I’ve already written a blog on devcontainers in the past, hope that helps someone completely new to this: [Getting Started with Devcontainer](https://audacioustux.com/Getting-Started-with-Devcontainer-c727dbf9d56f4d6b9b0ef87b3111693f)
 
 ## Tailscale & Cloudflare Tunnel
 
