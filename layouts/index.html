@@ -74,8 +74,8 @@
       <div class="col mb-5">
         <div class="blog-card d-flex flex-column position-relative align-content-between justify-content-between">
           <div class="blog-card__body">
-            <h3><a class="stretched-link" style="color: #222222;" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with
-                .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+            <h3><a class="stretched-link" style="color: #222222;" href="{{ .RelPermalink }}" target="_blank">{{ .Params.title }}{{ with
+              .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>          
             <div class="blog-card__summary">
               <p class="summary">{{ .Params.lead | safeHTML }}</p>
             </div>

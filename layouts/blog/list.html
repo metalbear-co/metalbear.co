@@ -24,9 +24,8 @@
 				<div class="blog-card__col col mb-5">
 					<div class="blog-card d-flex flex-column px-3 position-relative">
 						<div class="blog-card__body mb-auto">
-							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{
-									with
-									.Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}" target="_blank">{{ .Params.title }}{{
+								with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>						
 							<div class="blog-card__summary">
 								<p class="summary">{{ .Params.lead | safeHTML }}</p>
 							</div>
