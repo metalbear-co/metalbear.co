@@ -28,7 +28,7 @@ Once upon a time, there was LAMP Stack… **L**inux, **A**pache, **M**ysql, **P*
 
 Well, maybe I can use docker-compose to keep things clean and tidy, re-producible for the other team members, but what about the compute resources usage? I don’t know about the M2/M3 users out there, but my Linux laptop either halts or burns my lap.
 
-Soo, how ‘bout I offload some of the compute intensive stuffs to remote machine, or maybe cloud? Although, that introduces some other factors like cloud cost, internet connectivity…, what if you have an old machine laying around in your house? That’s exactly what I did at some point.
+So, how ‘bout I offload some of the compute intensive stuff to a remote machine, or maybe the cloud? Although, that introduces some other factors like cloud cost, internet connectivity… what if you have an old machine laying around in your house? That’s exactly what I did at some point.
 
 But there’re still questions and issues…
 
