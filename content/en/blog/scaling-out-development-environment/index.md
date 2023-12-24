@@ -1,7 +1,7 @@
 ---
 title: "Scaling-Out Development Environment"
 description: "How mirrord helps to alleviate the pain of dev-prod parity"
-lead: "Mirrord to close the gap between Dev & Prod"
+lead: "mirrord to close the gap between Dev & Prod"
 tags:
   - metalbear
   - mirrord
