@@ -39,7 +39,7 @@ But there’re still questions and issues…
 
 3. **CNCF Landscape & Kubernetes:** Have you seen the CNCF Landscape? [Cloud Native Landscape](https://landscape.cncf.io/)
 
-    Yah, it’s Massive! But my point is, many of those tools are not very easy to configure in simple compose files. They may not have any detail of the required setup, other than just a helm or Kubernetes manifests. That means, you’ll face some issues if your application architecture is not too simple, or the tools you use are from recent generation.
+    Yah, it’s massive! But my point is, many of those tools are not very easy to configure in simple compose files. They may not have any detail of the required setup, other than just a Helm or Kubernetes manifests. That means you’ll face some issues if your application architecture is not too simple, or the tools you use are from a recent generation.
 
 4. **Change-Build-Test (CBT) Performance:** How do you containerize your app for dev environment? Maybe you don’t do that, instead use port bindings to expose all the dependencies you have on other services, and access them from your app, running as a local process. So, there’re 4 options here:
     1. Build your app locally, copy the final artifact to container image (using COPY in Dockerfile for example) - **Cons:** Increased container build context sync time - due to the nature of build artifacts (e.g., large in size, hard to sync only the delta of the change) **Pros:** Potentially re-uses the local artifacts that your IDE may have already created, reduced redundant work!
