@@ -53,7 +53,7 @@ I think we should talk / discuss more about the development environments of our 
 
 ---
 
-Kubernetes, without any doubts, have a steep learning curve. Not everyone involved in a project should be well-versed in 100s of CRDs and yaml manifests!
+Kubernetes, without any doubts, has a steep learning curve. Not everyone involved in a project should be well-versed in 100s of CRDs and yaml manifests!
 
 {{<figure src="kelsey-hightower-tweet.png" alt="Kubernetes is a platform for building platforms. It's a better place to start; not the endgame" height="100%" width="100%">}}
 
