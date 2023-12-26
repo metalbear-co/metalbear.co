@@ -34,7 +34,7 @@ So, how ‘bout I offload some of the compute intensive stuff to a remote machin
 But there’re still questions and issues…
 
 1. **Reproducibility:** So, you have all the containers with their configurations specified in a docker-compose file, great! All the platform needs, including the other services you have as dependencies (if you’re into ~~micro~~-services) are now accessible to your application, and reproducible with a simple `docker compose up`. Boom, done! But what about the CLI tools, desktop apps, IDE extensions, and so on? Maybe you or your teammates each have multiple machines for their development work. It’s not only the platform, or the application you’re working on that should be containerized, but also the whole **Dev Environment!**
-2. **Dev-Prod Parity:** Are you willing to sacrifice the [“Twelve-Factor App Methodology”] (https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology)
+2. **Dev-Prod Parity:** Are you willing to sacrifice the ["Twelve-Factor App Methodology"](https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology)
 
     because of the constraints you have in your local dev setup? Not so ideal, right? In this day & age, typically your app should be ready for multi-instance deployment, or even multi-region for HA. It’s hard to anticipate what would happen in that kind of production dynamic, if you only ever deployed a single instance of the app in a docker compose manifest. Also, if your target deployment platform is Kubernetes (EKS, K3s, AKE, GKE, OKE, CIVO etc.), why docker compose!? why docker!? why containers!? ahem… ok, I’ll explain the last one, I promise 🤞
 
