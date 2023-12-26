@@ -97,7 +97,7 @@ You may use the vscode extension for mirrord, or the CLI directly.
           - touch .trigger # add .trigger in .gitignore
           - cargo watch -x check -s 'touch .trigger'
         internal: true
-      cargo:watch:
+      cargo:watch :
         cmd: >-
           mirrord exec -f .mirrord/mirrord.json -- cargo watch 
           --no-vcs-ignores -w .trigger 
