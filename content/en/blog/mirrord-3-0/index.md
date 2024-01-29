@@ -37,7 +37,7 @@ Or in other words: **your process still runs locally, but it thinks it’s runni
 
 mirrord is **free and open-source** and takes about ten seconds to install. When you run your process with mirrord, it takes about five seconds to plug it into your cloud environment. It requires no prior configuration or installation in your cluster - all it needs is access to your Kubernetes cluster. And when it shuts down, it leaves absolutely no trace.
 
- [^1]: Read [here](https://mirrord.dev/docs/overview/faq/#what-frameworkslanguages-does-mirrord-support) about what languages are supported. Don’t see yours on the list? Let us know!
+ [^1]: Read [here](https://mirrord.dev/docs/faq/limitations/#what-frameworkslanguages-does-mirrord-support) about what languages are supported. Don’t see yours on the list? Let us know!
 ## What’s next?
 You might have noticed that, when suggesting that every developer in the organization plug into the shared staging environment on a regular basis, we’ve conveniently ignored one important word: shared. Though using mirrord is already less disruptive than actually deploying your service to the staging environment, it can still mutate the cluster in unwanted ways. This is what we’re planning to tackle next:
 * Highly granular configuration of what happens remotely and what happens locally. For example, you’ll be able to read from a database remotely but write locally, filter out certain host names from remote access, even block network requests based on rules.
