@@ -30,7 +30,7 @@ With the new filter, you can specify whether your app’s outgoing traffic shoul
 }
 ```
 
-In this case, when your app tries to resolve the `app-db` hostname it’ll do so locally (instead of in-cluster), meaning that traffic which would normally go to the cluster’s `app-db` will be sent to your local database, while all other traffic (that doesn’t match the filter) will keep flowing as you expect, in the cluster. Isn’t this neat? Your cluster’s database remains unmodified, and you can keep working with the other services in your cluster. The filter supports multiple options, listed [here](https://mirrord.dev/docs/overview/configuration/#feature.network.outgoing.filter). 
+In this case, when your app tries to resolve the `app-db` hostname it’ll do so locally (instead of in-cluster), meaning that traffic which would normally go to the cluster’s `app-db` will be sent to your local database, while all other traffic (that doesn’t match the filter) will keep flowing as you expect, in the cluster. Isn’t this neat? Your cluster’s database remains unmodified, and you can keep working with the other services in your cluster. The filter supports multiple options, listed [here](https://mirrord.dev/docs/reference/configuration/#feature.network.outgoing.filter). 
 
 Let's look at a more detailed example.
 
@@ -84,7 +84,7 @@ Where `config.json`[^1] is just:
 }
 ```
 
-[^1]: We're setting `incoming` traffic to `steal`, but mirrord also supports traffic `mirror`ing, and traffic `steal`ing with a filter. You can see all the options [here](https://mirrord.dev/docs/overview/configuration/#feature-network-incoming).
+[^1]: We're setting `incoming` traffic to `steal`, but mirrord also supports traffic `mirror`ing, and traffic `steal`ing with a filter. You can see all the options [here](https://mirrord.dev/docs/reference/configuration/#feature-network-incoming).
 
 This is enough to start mirrord and the `uwu-app` that we want to test. You should see something like this:
 
@@ -157,7 +157,7 @@ The example we just saw was really small, but you can imagine if the app we’re
 
 ## Get mirrord 🪞
 
-Ready to improve your workflow? Want to start using the outgoing traffic filter? Check out the [new configuration](https://mirrord.dev/docs/overview/configuration/#feature-network-outgoing) and start using it today!
+Ready to improve your workflow? Want to start using the outgoing traffic filter? Check out the [new configuration](https://mirrord.dev/docs/reference/configuration/#feature-network-outgoing) and start using it today!
 
 What? You're not using mirrord?! You have to deploy every small change, just so you can test it in cloud conditions? Let me stop you right there! Just download and install mirrord, and test your code in the context of your Kubernetes environment, right from the comfort of your own local machine. You can get it from [here](https://mirrord.dev/), what are you waiting for?
 

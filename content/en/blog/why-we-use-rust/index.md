@@ -35,7 +35,7 @@ mirrord has four main components:
 
 ## Agent
 
-This component is shipped as a container image. The layer creates a job with this image, providing it with elevated permissions on the same node as the [impersonated pod](https://mirrord.dev/docs/overview/architecture/#mirrord-agent). The job then enters the impersonated pod's namespaces in order to be able to access its file system and network interfaces.
+This component is shipped as a container image. The layer creates a job with this image, providing it with elevated permissions on the same node as the [impersonated pod](https://mirrord.dev/docs/reference/architecture/#mirrord-agent). The job then enters the impersonated pod's namespaces in order to be able to access its file system and network interfaces.
 
 ### Switching Namespaces
 
@@ -75,7 +75,7 @@ The load method is fairly simple, but if in the future we'd want to introduce a 
 
 ### Standalone
 
-Rust generates standalone binaries (apart from libc). On top of that, using Cargo's new `bindeps` feature we could embed [mirrord-](https://mirrord.dev/docs/overview/architecture/#mirrord-layer)[layer](https://mirrord.dev/docs/overview/architecture/#mirrord-layer) into the CLI, creating a smooth and transparent experience instead of having to ship two files or downloading dependencies at runtime.
+Rust generates standalone binaries (apart from libc). On top of that, using Cargo's new `bindeps` feature we could embed [mirrord-](https://mirrord.dev/docs/reference/architecture/#mirrord-layer)[layer](https://mirrord.dev/docs/reference/architecture/#mirrord-layer) into the CLI, creating a smooth and transparent experience instead of having to ship two files or downloading dependencies at runtime.
 
 ## VS Code Extension
 
