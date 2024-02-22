@@ -12,10 +12,13 @@ date: 2024-02-22T06:00:00+00:00
 lastmod: 2024-02-22T06:00:00+00:00
 draft: false
 weight: 50
+images: ["kubecon-paris.png"]
 contributors: ["Anita Ihuman"]
 ---
 
 Bonjour Kubernauts! Kubecon Europe is less than a month away, and it’s coming to the city of lights. The MetalBear team will be joining the fun in Paris this year, and we’ve prepared a list of five talks that we’re particularly excited about. 
+
+{{<figure src="kubecon-paris.png" alt="mirrord at KubeCon Europe 2024"  class="center mid-width">}}
 
 ## What’s New at KubeCon This Year?
 
