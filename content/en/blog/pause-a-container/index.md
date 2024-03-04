@@ -1,5 +1,5 @@
 ---
-title: "Pause a Container - How we built, and why we deprecated, our container pause feature"
+title: "On Pausing Containers - how we built, and why we deprecated, our container pause feature"
 description: "How we implemented the container pause feature, and why we decided to deprecate it"
 lead: "How we implemented the container pause feature, and why we decided to deprecate it"
 tags:
@@ -21,7 +21,7 @@ mirrord lets developers run local code in the context of a remote Kubernetes pod
 
 ## How Do We Pause? 
 
-We found out that there is a Docker API [for pausing a container](https://docs.docker.com/engine/api/v1.44/#tag/Container/operation/ContainerPause), which can be used to suspend all processes in a container. Luckily, we already work with CRI (Container Runtime Interface) API to collect information about the container, so using it for pausing is easy.
+We found out that there is a Docker API [for pausing a container](https://docs.docker.com/engine/api/v1.44/#tag/Container/operation/ContainerPause), which can be used to suspend all processes in a container. Luckily, we already work with the CRI (Container Runtime Interface) API to collect information about the container, so using it for pausing is easy.
 We found out that this also exists for the other main container runtimes as well: [cri-o](https://github.com/cri-o/cri-o/blob/9493a08a3a53e4cb788eb13f0b0965a81d00ef36/internal/oci/runtime_pod.go#L233) and [containerd](https://github.com/containerd/containerd/blob/1435b0552eab7dd0370f57e2c82e67c8d1afdaf1/core/runtime/task.go#L71).
 So, that worked pretty well. We released [an initial version of the pause feature](https://github.com/metalbear-co/mirrord/pull/791) and marked it unstable.
 Like any software, the naive idea works until you meet the edge cases as you try to stabilize it.
@@ -97,4 +97,4 @@ Note that both issues have workarounds, but they’re still a bit of a hassle.
 
 ## Final Notes
 
-It’s no fun removing a feature you’ve worked hard on, but it’s even worse to leave broken functionality in your product, and so we’ll be deprecating the pause feature in the coming months. Hopefully, at least the lessons we learned while working on it and documented in this blog post would be useful or interesting for some of you. And if you want to try out copy/scaledown functionality, check out [mirrord for Teams](http://app.metalbear.co).
+It’s no fun removing a feature you’ve worked hard on, but it’s even worse to leave broken functionality in your product, and so we’ll be deprecating the pause feature in the coming months. Hopefully, at least the lessons we learned while working on it and documented in this blog post would be useful or interesting for some of you. And if you want to try out copy/scaledown functionality, check out [mirrord for Teams](http://app.metalbear.co)!
