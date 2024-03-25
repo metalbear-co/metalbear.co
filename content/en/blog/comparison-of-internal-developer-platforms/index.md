@@ -96,7 +96,7 @@ Today, there are numerous IDP solutions available. These toolings are categorize
 
 
 
-# Wrapping up
+## Wrapping up
 
 Choosing the right internal developer platform (IDP) requires careful consideration, as there's no single solution that fits every situation. While the platforms discussed in this article all offer impressive features, it's crucial to prioritize your development team's specific needs and goals. 
 You can start by analyzing your team's size, the complexity of your projects, and your preferred development workflows. 
