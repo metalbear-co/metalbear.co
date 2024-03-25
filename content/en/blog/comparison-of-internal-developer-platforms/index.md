@@ -79,6 +79,8 @@ Today, there are numerous IDP solutions available. These toolings are categorize
 
 {{<figure src="kratix.png" alt="comparison of idp platforms " height="100%" width="100%">}}
 
+## IDP Comparison
+
 |  | Category | Pricing  |Features |
 | -------- | -------- | -------- | -------|
 |Mia Platform    | Platform as a Service    |Not published on their website   |<ul><li>Dashboard</li><li>System visibility</li><li>Built-in CI/CD</li><li>Service cataloging</li><li>Service Discovery</li><li>API management</li><li>Data management</li><li>Access control/permissions</li></ul>|
