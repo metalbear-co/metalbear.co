@@ -6,7 +6,7 @@ tags:
   - Internal Developer Platforms 
   - Internal Developer Portals
   - cloud
-  - Developer experince
+  - devex
   - platform-engineering 
 date: 2024-03-22T06:00:00+00:00
 lastmod: 2024-03-22T06:00:00+00:00
