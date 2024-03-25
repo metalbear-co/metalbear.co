@@ -4,7 +4,7 @@ description: "A comprehensive comparison of Internal Developer Platform vendors 
 lead: "A comprehensive comparison of Internal Developer Platform vendors and tools."
 tags:
   - Internal Developer Platforms 
-  - Internal Developer Portals
+  - idps
   - cloud
   - devex
   - platform-engineering 
