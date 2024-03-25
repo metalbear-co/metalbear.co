@@ -19,7 +19,7 @@ DevOps emerged to address the need for better developer productivity and a more 
 
 This article dives into what internal developer platforms are, provides a comprehensive comparison of IDP vendors and tools, and details the features they offer. At the end of this article, your organization should be able to make informed decisions on which platform best optimizes your development workflows.
 
-# What is an Internal Developer Platform?
+## What is an Internal Developer Platform?
 An internal developer platform (IDP) is a centralized environment with a comprehensive suite of tools and services that empower developers by providing self-service capabilities for tasks like configuration, deployment, databases, monitoring, provisioning, and other system operational needs. These IDPs provide a service layer that abstracts the complexities, and reduces inefficiencies. 
 Their primary goal is to enable developers to concentrate on delivering valuable solutions to their customers instead of getting entangled in infrastructure-related challenges or waiting on the Ops team. 
 
