@@ -3,7 +3,6 @@ title: "Comparison of Internal Developer Platforms"
 description: "A comprehensive comparison of Internal Developer Platform vendors and tools."
 lead: "A comprehensive comparison of Internal Developer Platform vendors and tools."
 tags:
-  - Internal Developer Platforms 
   - idps
   - cloud
   - devex
