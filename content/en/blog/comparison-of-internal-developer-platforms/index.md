@@ -11,7 +11,7 @@ date: 2024-03-22T06:00:00+00:00
 lastmod: 2024-03-22T06:00:00+00:00
 draft: false
 weight: 50
-images: ["designer.png"]
+images: ["idp-comparison.png"]
 contributors: ["Anita Ihuman"]
 ---
 
@@ -45,22 +45,39 @@ Today, there are numerous IDP solutions available. These toolings are categorize
 
 * **Mia Platform:** [Mia Platform](https://mia-platform.eu/) is a PaaS solution that offers self-serve capabilities to handle the delivery and lifecycle management of cloud native applications. At its core is the Mia-Platform Console, a platform builder that automates and governs cloud-native development and operations. Its [marketplace](https://mia-platform.eu/platform/console/) provides the Console with a wide range of ready-to-use components and add-ons to accelerate the construction of your digital platform. Among the numerous components is the [Mia-Platform Fast Data](https://mia-platform.eu/platform/fast-data/), a data management layer for creating an out-of-the-box Digital Integration Hub. This tool allows you to integrate your cloud-native platform with existing systems, decouple and offload legacy systems, and while still providing continuous access to real-time data of your cloud application. However, it's important to note that Mia-Platform doesn't currently support features like regional provisioning, performance testing, platform performance analysis, or application code optimization. Additionally, it offers minimal analytics and insights into user engagement and data management. As for billing, it only offers annual billing for teams. 
 
+{{<figure src="miaplatform.png" alt="comparison of idp platforms " height="100%" width="100%">}}
+
 * **Humanitec:** [Humanitec](https://developer.humanitec.com/introduction/overview/) is a platform orchestrator that offers platform engineers and developers a self-service infrastructure for building IDPs. It has three products designed to reduce cognitive load and drive standardization. The [Humanitec workload specification Score](https://developer.humanitec.com/score/overview/) enables developers to specify the resources their workload requires, and deploy code to it on any tech stack, regardless of its underlying technology. The [Platform Orchestrator](https://developer.humanitec.com/platform-orchestrator/overview/) integrates with your CI/CD pipeline to standardize configurations and workflows, eliminating infrastructure bottlenecks. Finally, the Humanitec Portal acts as the user interface on top of the IDP. Its user-friendly interface and automation tools simplify infrastructure setup, accelerate delivery cycles, and foster better collaboration between the development and operations teams. Most large organizations migrating from traditional or legacy tools to platform centric tools find it useful in modernizing their CI/CD infrastructure. Compared to other platform solutions, Humanitec offers minimal observability and scalability capabilities. Its manual configurations through the CLI can be daunting for developers. 
+
+{{<figure src="humanitec.png" alt="comparison of idp platforms " height="100%" width="100%">}}
 
 * **Appvia:** [Appvia](https://www.appvia.io/) is a PaaS solution that manages the delivery of cloud infrastructure and provides self-service capabilities for developers through a centralized configuration. It offers a range of features, like automated deployment, infrastructure management, and integration with major cloud providers like AWS, GCP and Azure. Through the [Appvia Wayfinder](https://www.appvia.io/wayfinder), developers can provision their environment while navigating cloud configuration complexity. It is accompanied with access control options for developer teams to manage access and provides visibility into costs and security of your clusters and application. It is suitable for engineering and platform teams in medium to large organizations. While powerful, the extensive customization options of Wayfinder might cause a learning curve for many users.
 
+{{<figure src="appvia.png" alt="comparison of idp platforms " height="100%" width="100%">}}
+
 * **Qovery:** [Qovery](https://www.qovery.com/) is an open-source self-service PaaS vendor that offers solutions for developer portals and internal platforms. It integrates with major cloud providers, offering a range of features like [cloning environments](https://hub.qovery.com/docs/using-qovery/configuration/environment/?_gl=1*1qplg5r*_gcl_au*MTEwOTI3MDExOS4xNzEwMTUxMjU0#clone-environment), provisioning new environments on pull requests, and optimizing cost. It provides a range of analytics that capture platform usage reports, and a text-based template system to visualize configurations. Qovery is accompanied by an interface that can be accessed from the Qovery web console, API, CLI, or Terraform provider to manage infrastructure, scale applications, and ensure continuous delivery. Its easily configurable functionalities abstract away the complexities of infrastructure management and help developers and DevOps work together without compromising velocity and security. While it offers a simplified cloud infrastructure solution, it has a steep learning curve with minimal security and observability capabilities.
+
+{{<figure src="qovery.png" alt="comparison of idp platforms " height="100%" width="100%">}}
 
 * **Port:** [Port](https://www.getport.io/) is a SaaS-based IDP that offers a set of pre-built software catalog for microservices, resources, K8s, CI/CD and custom assets. It supports several developer self-service actions, and is easily extensible. The open platform offers a set of pre-built features and integrations that allows users to connect tools and programs like Kubernetes and Jira. It has an intuitive and user-friendly interface that can be used to create a functional IDP with easy customization. Port currently has no provision for platform teams to detect anomalies or unusual behaviors in metrics or logs. While customization can be a strength, it also requires a lot of time and effort, which can be a drawback.
 
+{{<figure src="port.png" alt="comparison of idp platforms " height="100%" width="100%">}}
+
 * **Backstage:** [Backstage](https://backstage.io/) is an open-source IDP that allows developers to manage services, infrastructure, documentation, and more, all within a single platform. It features a software catalog that provides various tooling options, where teams can track ownership and metadata of all software in their organization. It supports integration with several offerings like GitHub and GitLab and allows teams to create new components from existing templates. Backstage also comprises a plugin architecture that enables teams to tailor the portal to their specific needs, increasing its compatibility with other systems. This IDP provides an intuitive user interface for developers but has a steep learning curve and requires a lot of manual configuration with resources to manage. Compared to other platform solutions, Backstage offers minimal infrastructure provisioning, observability and security capabilities with no compliance. 
+
+{{<figure src="backstage.png" alt="comparison of idp platforms " height="100%" width="100%">}}
 
 * **Mogenius:** [Mogenius](https://mogenius.com/) is a PaaS designed to accelerate enterprises' processes by empowering teams to establish platform engineering and build internal developer platforms. It offers intuitive self-service environments for development teams to deploy, monitor, and log their applications in Kubernetes clusters on any infrastructure. Mogenius has a unified dashboard for managing applications and environments and streamlining the development lifecycle. While it can handle building multiple services, its concurrent build pipeline capabilities are limited compared to other platforms. This can lead to slower build times when you're working on several services at once.
 
+{{<figure src="mogenius.png" alt="comparison of idp platforms " height="100%" width="100%">}}
+
 * **Nullstone:** [Nullstone](https://www.nullstone.io/) is a PaaS solution emphasizing self-service infrastructure management to help teams launch and manage their applications on cloud providers. It offers a unified dashboard for managing applications and environments, streamlining the development lifecycle. With the Nullstone developer-friendly interface, your team can launch applications, data stores, and custom domains without toiling with configuration. It offers better visibility/control over cloud providers, automates the deployment process, and environment provisioning. While other tools allow you to connect with various solutions, Nullstone has limited integration capabilities with external developer solutions.
+
+{{<figure src="nullstone.png" alt="comparison of idp platforms " height="100%" width="100%">}}
 
 * **Kratix:** [Kratix](https://kratix.io/) is an open source platform orchestrator that offers platform engineers the capability to build internal platforms. It harnesses the power of Kubernetes and GitOps to empower platform teams with self-service capabilities in maintaining up-to-date platforms. It offers a marketplace where platform engineers can find and distribute [Promises](https://docs.kratix.io/main/guides/writing-a-promise) created by the Kratix team. It also allows seamless integration with other tools like Backstage, Kubernetes operators, and Terraform. Compared to other solutions, Kratix offers minimal scalability, observability, security and compliance capabilities. Currently, it does not support integration with most developer tools on the market.
 
+{{<figure src="kratix.png" alt="comparison of idp platforms " height="100%" width="100%">}}
 
 |  | Category | Pricing  |Features |
 | -------- | -------- | -------- | -------|
