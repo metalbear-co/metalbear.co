@@ -6,4 +6,4 @@
   {{ $alertInit := resources.Get "js/alert-init.js" | js.Build | minify -}}
   <script>{{ $alertInit.Content | safeJS }}</script>
 {{- end -}}
-<script defer data-domain="metalbear.co" src="https://plausible.io/js/plausible.js"></script>
+<script defer data-domain="metalbear.co" src="https://plausible.io/js/script.outbound-links.js"></script>
