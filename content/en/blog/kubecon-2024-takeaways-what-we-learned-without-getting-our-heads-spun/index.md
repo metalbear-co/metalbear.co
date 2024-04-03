@@ -1,7 +1,7 @@
 ---
 title: "KubeCon 2024 Takeaways"
 description: "A summary of our collective impressions and insights from KubeCon Europe 2024"
-lead: "A summary of our collective impressions and insights from KubeCon Europe  2024"
+lead: "A summary of our collective impressions and insights from KubeCon Europe 2024"
 tags:
   - CNCF
   - KubeCon
