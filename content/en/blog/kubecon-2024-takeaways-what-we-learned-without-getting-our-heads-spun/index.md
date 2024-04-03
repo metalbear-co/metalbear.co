@@ -17,7 +17,7 @@ contributors: ["Aviram Hassan", "Tal Zwick"]
 
 Last week marked a huge milestone for us as we attended our first KubeCon! This was KubeCon EU which took place in Paris, city of lights and cloud orchestration. Below is a summary of our collective impressions and insights.
 
-# Co-Located Sessions and Surprising Highlights
+## Co-Located Sessions and Surprising Highlights
 
 We arrived a day before KubeCon proper started so we could attend the co-located events. We ended up mostly going to AppDeveloperCon sessions, and it was surprisingly crowded. Our highlight from the first day was Daniel Bryant’s excellent talk “**Testing Cloud Apps: Mocks vs. Service Virtualization vs. Remocal Tools**” ([slides](https://speakerdeck.com/danielbryantuk/testing-cloud-apps-mocks-vs-service-virtualization-vs-remocal-tools), [video](https://www.youtube.com/watch?v=3tP31j_T6IE)). Daniel covered our favorite pain - being unable to work against a real environment and iterate with it as part of the development workflow. We were pleased to see a very friendly shoutout to mirrord and our talk later in the convention! 
 
