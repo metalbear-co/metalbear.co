@@ -6,8 +6,7 @@ tags:
   - CNCF
   - KubeCon
   - cloud
-  - application-testing
-  - AI/ML
+  - application-testing  
   - platform-engineering 
 date: 2024-04-03T0:00:00+00:00
 lastmod: 2024-04-03T0:00:00+00:00
