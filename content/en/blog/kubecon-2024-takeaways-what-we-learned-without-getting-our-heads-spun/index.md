@@ -16,7 +16,7 @@ images: ["thumbnail.png"]
 contributors: ["Aviram Hassan", "Tal Zwick"]
 ---
 
-March marked a huge milestone for us as we attended our first KubeCon! This was KubeCon Europe, which took place in Paris, a city of lights and cloud orchestration. Below is a summary of our collective impressions and insights.
+Last month marked a huge milestone for us as we attended our first KubeCon! This was KubeCon Europe, which took place in Paris, city of lights and cloud orchestration. Below is a summary of our collective impressions and insights.
 
 ## Co-Located Events and Surprising Highlights
 
