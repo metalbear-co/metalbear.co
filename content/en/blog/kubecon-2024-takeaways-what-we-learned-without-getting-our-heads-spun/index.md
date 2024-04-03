@@ -48,4 +48,4 @@ We had a fun surprise on the last day of the conference when a team that uses mi
 
 ## Closing Thoughts
 
-To wrap things up: our first KubeCon was a blast. We had a chance to present the unique technical details of the implementation of mirrord, geek out about it with a great crowd, and meet our community face to face. We’re already waiting for KubeCon NA (at Salt Lake City, cloud-native capital of the western frontier!), and we might even do a booth this time. Looking forward to seeing everyone there!
+To wrap things up: our first KubeCon was a blast. We had a chance to present the unique technical details of the implementation of mirrord, geek out about it with a great crowd, and meet our community face to face. We’re already waiting for KubeCon North America (at Salt Lake City, cloud-native capital of the western frontier!), and we might even do a booth this time. Looking forward to seeing everyone there!
