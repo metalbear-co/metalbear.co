@@ -13,10 +13,11 @@ date: 2024-04-03T0:00:00+00:00
 lastmod: 2024-04-03T0:00:00+00:00
 draft: false
 weight: 50
+images: ["thumbnail.png"]
 contributors: ["Aviram Hassan", "Tal Zwick"]
 ---
 
-Last week marked a huge milestone for us as we attended our first KubeCon! This was KubeCon EU which took place in Paris, city of lights and cloud orchestration. Below is a summary of our collective impressions and insights.
+Two week marked a huge milestone for us as we attended our first KubeCon! This was KubeCon EU which took place in Paris, city of lights and cloud orchestration. Below is a summary of our collective impressions and insights.
 
 # Co-Located Sessions and Surprising Highlights
 
