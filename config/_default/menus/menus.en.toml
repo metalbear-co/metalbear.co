@@ -11,14 +11,26 @@
 
 [[main]]
   name = "Community"
+  identifier = "community"
   weight = 40
   url = "/#community"
-
 
 [[main]]
   name = "Contact"
   weight = 50
   url = "/#contact"
+
+[[main]]
+  name = "Writers Program"
+  parent = "community"
+  weight = 10
+  url = "/writers-program/"
+
+[[main]]
+  name = "CFP Program"
+  parent = "community"
+  weight = 20
+  url = "/cfp-program/"
 
 [[social]]
   name = "Discord"

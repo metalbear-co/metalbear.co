@@ -37,13 +37,18 @@
                 {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
                 {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "contributors")) -}}
                 {{- $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) -}}
+                {{- $active = or $active (and (eq .Name "Community") (eq $current.Title "Writers Program" "CFP Program")) -}}
                 {{ if .HasChildren }}
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle py-1{{ if $active }} active{{ end }}" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       {{ .Name }}
-                      <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                      <span class="dropdown-caret">
+                        <svg width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.33594 6L8.33594 1L13.3359 6H3.33594Z" fill="black"/>
+                        </svg>
+                      </span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-menu dropdown-menu-main" aria-labelledby="navbarDropdownMenuLink">
                       {{ range .Children -}}
                       {{- $active = eq .Name $current.Title -}}
                         <li>
@@ -53,8 +58,8 @@
                     </ul>
                   </li>
                 {{ else }}
-                  <li class="nav-item ms-lg-2">
-                    <a class="nav-link px-3 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                  <li class="nav-item nav-item-non-children ms-lg-2">
+                    <a class="nav-link px-3 px-lg-2 px-xl-3 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
                   </li>
                 {{ end }}
               {{ end -}}
@@ -63,7 +68,7 @@
           <hr class="my-4 d-lg-none" style="color:#222222;">
           <ul class="nav nav__social justify-content-center">
             {{ range .Site.Menus.social -}}
-              <li class="nav-item">
+              <li class="nav-item nav-item__social">
                 <a class="nav-link nav__social-link px-2 py-1 mx-1" target="_blank" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
               </li>
             {{ end -}}
