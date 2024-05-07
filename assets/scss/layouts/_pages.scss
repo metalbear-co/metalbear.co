@@ -331,8 +331,13 @@ p.meta {
 }
 
 .button-cfp {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.button-cfp:focus
+.button-cfp:active {
+  text-decoration: none;
 }
 
 @include media-breakpoint-up(lg) {
