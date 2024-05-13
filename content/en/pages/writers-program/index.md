@@ -17,7 +17,7 @@ textbox:
 - label: what?
   title: What topics should you write about?
   content: >
-    - Technical tutorials: Using mirrord with 3rd party platforms and technologies, frameworks, or libraries used in application development and testing.
+    - Technical tutorials: Using mirrord for different use cases and within different stacks.
   
     - Deep dives: In-depth articles on technical concepts and technologies like platform engineering, Kubernetes, microservices, service meshes, etc.
     
