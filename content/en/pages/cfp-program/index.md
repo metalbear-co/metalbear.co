@@ -16,7 +16,7 @@ textbox:
   
     - We're especially interested in supporting talks about mirrord, its use cases, or its functionalities.
     
-    - We will provide personalized assistance to help you deliver smooth presentations
+    - We will provide personalized assistance to help you deliver a great presentation.
 - label: needs
   title: What are we looking for?
   content: >
