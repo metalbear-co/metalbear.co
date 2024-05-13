@@ -49,15 +49,16 @@
       </div>
     </div>
 
-    <div class="section-waitlist__form-wrapper py-4 px-2 px-lg-5">
+    <div class="section-waitlist__form-wrapper pt-5 pb-4 px-2 px-lg-5">
       <form id="waitlist-form" method="POST" action="">
-        <div class="section-waitlist__header" style="margin-bottom: 8px;">
-          <h4>mirrord for teams is out now!</h4>
-        </div>        
+        <div class="section-waitlist__header mb-4">
+          <h4>mirrord for teams is COMING SOON!</h4>
+        </div>  
+        <div class="section-waitlist__input-wrapper px-4 px-lg-4 mb-lg-5">
+          <input class="section-waitlist__input input px-4 py-2 py-lg-3" type="email" id="email" name="email" autocomplete="off" placeholder="Your Email" data-required="true" required="">
+        </div>      
         <div class="section-waitlist__button-wrapper">
-          <a class="button-primary section-waitlist__button" href="https://mirrord.dev/docs/overview/teams/"  type="submit">
-            Try it out
-          </a>
+          <button class="section-waitlist__button button-primary section-waitlist__button" form="waitlist-form" type="submit">Join the Waitlist</button>
         </div>
       </form>
     </div>
@@ -84,8 +85,11 @@
             <div>
               {{ partial "main/blog-meta.html" . -}}
             </div>
-            <div class="pt-4">
-              <a class="button-secondary position-relative btn-reading" href="{{ .RelPermalink }}">Read Post</a>
+            <div class="pt-lg-4">
+              <a class="button-secondary position-relative btn-reading" href="{{ .RelPermalink }}">
+                <span class="d-lg-none">Continue Reading</span>
+                <span class="d-none d-lg-inline-block">Read Post</span>
+              </a>
             </div>
           </div>
         </div>
@@ -95,6 +99,40 @@
     <div class="pt-4 pt-lg-5 text-center">
       <a class="button-primary button-big" href="/blog/">Show Me More</a>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-md section__writer-program">
+    <header class="mb-3">
+      <h2 class="section__blog-title text-center my-0">MetalBear Writers Program</h2>
+    </header>
+    <div class="text-center">
+      <p>Submit a brief application with a topic of interest and an outline, along with a writing sample that showcases your experience and writing skills?</p>
+    </div>
+    <div class="pt-4 pt-lg-5 text-center">
+      <a class="button-primary button-big button-writers-program" href="/writers-program/">Write For Metalbear</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section__community mt-3 position-relative">
+  <div class="container-md community__wrapper">
+    <div class="row justify-content-center">
+      <div class="col-16 col-lg-11">
+        <h2 id="community" class="section__community-title mt-0 mb-3">Community</h2>
+        <p class="section__community-desc mt-0">Our Backend Community<br> is on Discord</p>
+        <div class="button-wrapper text-center text-lg-start pt-3">
+          <a class="button-primary button-big" href="https://discord.gg/metalbear" target="_blank">Join Now</a>
+        </div>
+      </div>
+      <div class="col-16 col-lg-5 d-none d-lg-flex align-items-end">
+        <img class="join-community-logo" src="/join-community.svg" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="join-community__col-img position-absolute d-flex d-lg-none align-items-start">
+    <img class="join-community-logo-mobile" src="/join-community-mobile.svg" alt="" />
   </div>
 </section>
 
@@ -152,26 +190,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section section__community mt-3 position-relative">
-  <div class="container-md community__wrapper">
-    <div class="row justify-content-center">
-      <div class="col-16 col-lg-11">
-        <h2 id="community" class="section__community-title mt-0 mb-3">Community</h2>
-        <p class="section__community-desc mt-0">Our Backend Community<br> is on Discord</p>
-        <div class="button-wrapper text-center text-lg-start pt-3">
-          <a class="button-primary button-big" href="https://discord.gg/metalbear" target="_blank">Join Now</a>
-        </div>
-      </div>
-      <div class="col-16 col-lg-5 d-none d-lg-flex align-items-end">
-        <img class="join-community-logo" src="/join-community.svg" />
-      </div>
-    </div>
-  </div>
-  <div class="join-community__col-img position-absolute d-flex d-lg-none align-items-start">
-    <img class="join-community-logo-mobile" src="/join-community-mobile.svg" />
   </div>
 </section>
 
