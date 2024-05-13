@@ -24,7 +24,7 @@ textbox:
 
     - mirrord enthusiasts: Passionate about mirrord's potential and eager to share its benefits with the world.
 
-    - Engaging presenters: Ability to deliver captivating presentations that inspire and educate audiences.
+    - Engaging speakers: speakers who can deliver captivating talks that inspire and educate technical audiences.
     
     - Individuals from diverse backgrounds and fields are encouraged to apply as long as your topic intersects with mirrord.
 how_to_apply:
