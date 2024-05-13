@@ -19,7 +19,7 @@ textbox:
   content: >
     - Technical tutorials: Using mirrord for different use cases and within different stacks.
   
-    - Deep dives: In-depth articles on technical concepts and technologies like platform engineering, Kubernetes, microservices, service meshes, etc.
+    - Deep dives: In-depth articles on technical concepts and technologies.
     
     - Best practices: Share tips and tricks for improving developer experience.
     
