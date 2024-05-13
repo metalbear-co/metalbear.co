@@ -21,7 +21,7 @@ textbox:
   
     - Deep dives: in-depth articles on technical concepts and technologies.
     
-    - Best practices: Share tips and tricks for improving developer experience.
+    - Best practices: share tips and tricks for improving developer experience.
     
     - Personal experiences: share your own unique journey and lessons learned using mirrord in your software development cycle.
     
