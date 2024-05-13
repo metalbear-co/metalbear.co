@@ -32,7 +32,7 @@ textbox:
     We welcome applications from everyone, regardless of experience level. You must have some experience writing for a third party and are comfortable with receiving feedback on your writing.
 
 
-    - We do not publish posts that have appeared elsewhere.
+    - We do not publish posts that have already been published somewhere else.
 - label: why?
   title: Why should you participate?
   content: >
