@@ -42,6 +42,6 @@ textbox:
     
     - Build your reputation: Increase your visibility within global developer communities.
 
-    - Boost your portfolio: Showcase your writing skills and technical knowledge to potential employers.
+    - Boost your portfolio: Showcase your writing skills and technical knowledge.
 layout: writers-program
 ---
