@@ -4,15 +4,15 @@ description: Writers Program
 slug: writers-program
 process:
   - title: Apply
-    description: Submit a brief application with a topic of interest and an outline, along with a writing sample that showcases your experience and writing skills.
+    description: submit a brief application with a topic of interest and an outline, along with a writing sample that showcases your experience and writing skills.
   - title: Collaborate
-    description: Once accepted, you'll receive feedback from an editor who will guide you through the writing process. They will help you refine your chosen topic and outline and offer feedback throughout the writing stage.
+    description: once accepted, you'll receive feedback from an editor who will guide you through the writing process. They will help you refine your chosen topic and outline and offer feedback throughout the writing stage.
   - title: Write
-    description: Draft your article based on the agreed-upon outline and style guide. Submit your draft for review and feedback.
+    description: draft your article based on the agreed-upon outline and style guide. Submit your draft for review and feedback.
   - title: Revise
-    description: Get expert guidance to elevate your writing! Our editors will offer insightful feedback to help polish your article for publication.
+    description: get expert guidance to elevate your writing! Our editors will offer insightful feedback to help polish your article for publication.
   - title: Publish
-    description: Once reviews are completed, you will get paid, and we'll publish the article and promote it across all of our channels.
+    description: once reviews are completed, you will get paid, and we'll publish the article and promote it across all of our channels.
 textbox:
 - label: what?
   title: What topics should you write about?
@@ -38,10 +38,10 @@ textbox:
   content: >
     - Get paid: you can earn $150-$300 for each article you write that gets published.
     
-    - Help others: Your writing will help educate and empower other developers.
+    - Help others: your writing will help educate and empower other developers.
     
-    - Build your reputation: Increase your visibility within global developer communities.
+    - Build your reputation: increase your visibility within global developer communities.
 
-    - Boost your portfolio: Showcase your writing skills and technical knowledge.
+    - Boost your portfolio: showcase your writing skills and technical knowledge.
 layout: writers-program
 ---
