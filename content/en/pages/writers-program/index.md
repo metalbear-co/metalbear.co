@@ -23,7 +23,7 @@ textbox:
     
     - Best practices: Share tips and tricks for improving developer experience.
     
-    - Personal experiences: Share your own unique journey and lessons learned using mirrord in your software development cycle.
+    - Personal experiences: share your own unique journey and lessons learned using mirrord in your software development cycle.
     
     - Something else! Feel free to suggest content not listed here if you think it might be appropriate and interesting to our target audience.
 - label: who?
