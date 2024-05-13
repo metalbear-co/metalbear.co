@@ -19,7 +19,7 @@ textbox:
   content: >
     - Technical tutorials: using mirrord for different use cases and within different stacks.
   
-    - Deep dives: In-depth articles on technical concepts and technologies.
+    - Deep dives: in-depth articles on technical concepts and technologies.
     
     - Best practices: Share tips and tricks for improving developer experience.
     
