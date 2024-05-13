@@ -4,15 +4,15 @@ description: Writers Program
 slug: writers-program
 process:
   - title: Apply
-    description: submit a brief application with a topic of interest and an outline, along with a writing sample that showcases your experience and writing skills.
+    description: Submit a brief application with a topic of interest and an outline, along with a writing sample that showcases your experience and writing skills.
   - title: Collaborate
-    description: once accepted, you'll receive feedback from an editor who will guide you through the writing process. They will help you refine your chosen topic and outline and offer feedback throughout the writing stage.
+    description: Once accepted, you'll receive feedback from an editor who will guide you through the writing process. They will help you refine your chosen topic and outline and offer feedback throughout the writing stage.
   - title: Write
-    description: draft your article based on the agreed-upon outline and style guide. Submit your draft for review and feedback.
+    description: Draft your article based on the agreed-upon outline and style guide. Submit your draft for review and feedback.
   - title: Revise
-    description: get expert guidance to elevate your writing! Our editors will offer insightful feedback to help polish your article for publication.
+    description: Get expert guidance to elevate your writing! Our editors will offer insightful feedback to help polish your article for publication.
   - title: Publish
-    description: once reviews are completed, you will get paid, and we'll publish the article and promote it across all of our channels.
+    description: Once reviews are completed, you will get paid, and we'll publish the article and promote it across all of our channels.
 textbox:
 - label: what?
   title: What topics should you write about?
