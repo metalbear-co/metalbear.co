@@ -12,7 +12,7 @@ process:
   - title: Revise
     description: Get expert guidance to elevate your writing! Our editors will offer insightful feedback to help polish your article for publication.
   - title: Publish
-    description: Once reviews are completed, we’ll send your compensation, publish the article, and promote it across all of our channels and you will be tagged as the author.
+    description: Once reviews are completed, you will get paid, and we'll publish the article and promote it across all of our channels.
 textbox:
 - label: what?
   title: What topics should you write about?
