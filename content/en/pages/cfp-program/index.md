@@ -17,7 +17,7 @@ textbox:
     - We're especially interested in supporting talks about mirrord, its use cases, or its functionalities.
     
     - We will provide personalized assistance to help you deliver a great presentation.
-- label: needs
+- label: requirements
   title: What are we looking for?
   content: >
     - Subject matter experts: users and individuals with deep knowledge and experience with mirrord.
