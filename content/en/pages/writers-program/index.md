@@ -25,7 +25,7 @@ textbox:
     
     - Personal experiences: Share your own unique journey and lessons learned using mirrord in your software development cycle.
     
-    - Feel free to suggest content related to mirrord and its surrounding technologies.
+    - Something else! Feel free to suggest content not listed here if you think it might be appropriate and interesting to our target audience.
 - label: who?
   title: Who can write for us?
   content: >
