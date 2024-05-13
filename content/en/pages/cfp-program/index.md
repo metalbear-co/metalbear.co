@@ -22,7 +22,7 @@ textbox:
   content: >
     - Subject matter experts: users and individuals with deep knowledge and proven experience with mirrord and its features.
 
-    - mirrord enthusiasts: Passionate about mirrord's potential and eager to share its benefits with the world.
+    - mirrord enthusiasts: people who are passionate about mirrord's potential and are eager to share its benefits with the world.
 
     - Engaging speakers: speakers who can deliver captivating talks that inspire and educate technical audiences.
     
