@@ -2,7 +2,7 @@
 title: CFP Program
 description: Talk about mirrord
 slug: cfp-program
-header_title: Talk About Mirrord
+header_title: Talk About mirrord
 header_text: >
   Are you interested in speaking about mirrord at conferences?
 
