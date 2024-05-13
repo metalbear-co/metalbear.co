@@ -26,7 +26,7 @@ textbox:
 
     - Engaging presenters: Ability to deliver captivating presentations that inspire and educate audiences.
     
-    - Individuals from diverse backgrounds and fields are encouraged to apply as long as your topic intersects with the mirrord capabilities.
+    - Individuals from diverse backgrounds and fields are encouraged to apply as long as your topic intersects with mirrord.
 how_to_apply:
   - "Pick your conferences: Indicate the specific conferences you plan to attend and present at."
   - "Tell us about your talk: Briefly describe your proposed topic, the target audience, how it aligns with the themes of the conference, and demonstrates mirrord's capabilities and use cases."
