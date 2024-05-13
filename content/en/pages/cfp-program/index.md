@@ -20,7 +20,7 @@ textbox:
 - label: needs
   title: What are we looking for?
   content: >
-    - Subject matter experts: users and individuals with deep knowledge and proven experience with mirrord and its features.
+    - Subject matter experts: users and individuals with deep knowledge and experience with mirrord.
 
     - mirrord enthusiasts: people who are passionate about mirrord's potential and are eager to share its benefits with the world.
 
