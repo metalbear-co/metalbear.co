@@ -12,7 +12,7 @@ process:
   - title: Revise
     description: Get expert guidance to elevate your writing! Our editors will offer insightful feedback to help polish your article for publication.
   - title: Publish
-    description: Your article will be published on the MetalBear website and promoted across social media channels (Reddit, Hacker News, and more) and you will be tagged as the author.
+    description: Once reviews are completed, we’ll send your compensation, publish the article, and promote it across all of our channels and you will be tagged as the author.
 textbox:
 - label: what?
   title: What topics should you write about?
