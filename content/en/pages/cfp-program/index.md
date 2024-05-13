@@ -7,7 +7,7 @@ header_text: >
   Are you interested in speaking about mirrord at conferences?
 
 
-  We are calling on mirrored users, contributors, developers, and engineers actively working with mirrord to represent mirrord at conferences worldwide. Got a presentation in mind? This is your chance to share your knowledge and help spread the word about mirrord.
+  We are calling on mirrord users and contributors actively working with mirrord to talk about their takes and experiences with mirrord at conferences worldwide. Got a presentation in mind? This is your chance to share your knowledge and help spread the word about mirrord.
 textbox:
 - label: info
   title: Program details
