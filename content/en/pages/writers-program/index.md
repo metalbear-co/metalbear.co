@@ -29,7 +29,7 @@ textbox:
 - label: who?
   title: Who can write for us?
   content: >
-    We welcome applications from everyone, regardless of experience level. You must have some experience writing for a third party and are comfortable with receiving feedback on your writing.
+    We welcome applications from everyone, regardless of experience or role. All we ask is that you be comfortable with receiving feedback on your writing.
 
 
     - We do not publish posts that have already been published somewhere else.
