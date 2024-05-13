@@ -17,7 +17,7 @@ textbox:
 - label: what?
   title: What topics should you write about?
   content: >
-    - Technical tutorials: Using mirrord for different use cases and within different stacks.
+    - Technical tutorials: using mirrord for different use cases and within different stacks.
   
     - Deep dives: In-depth articles on technical concepts and technologies.
     
