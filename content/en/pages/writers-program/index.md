@@ -36,7 +36,7 @@ textbox:
 - label: why?
   title: Why should you participate?
   content: >
-    - Get paid: You can earn $150-$300 for each article you write that gets published.
+    - Get paid: you can earn $150-$300 for each article you write that gets published.
     
     - Help others: Your writing will help educate and empower other developers.
     
