@@ -21,7 +21,7 @@ textbox:
   
     - Deep dives: In-depth articles on technical concepts and technologies like platform engineering, Kubernetes, microservices, service meshes, etc.
     
-    - Best practices: Share tips and tricks to make the Developer Experience easier and more efficient.
+    - Best practices: Share tips and tricks for improving developer experience.
     
     - Personal experiences: Share your own unique journey and lessons learned using mirrord in your software development cycle.
     
