@@ -55,7 +55,8 @@
           <h4>mirrord for teams is out now!</h4>
         </div>
         <div class="section-waitlist__button-wrapper">
-          <a class="button-primary section-waitlist__button" href="https://mirrord.dev/docs/overview/teams/"  type="submit">
+          <a class="button-primary section-waitlist__button" href="https://mirrord.dev/docs/overview/teams/"
+            type="submit">
             Try it out
           </a>
         </div>
@@ -107,7 +108,8 @@
       <h2 class="section__blog-title text-center my-0">MetalBear Writers Program</h2>
     </header>
     <div class="text-center">
-      <p>Submit a brief application with a topic of interest and an outline, along with a writing sample that showcases your experience and writing skills?</p>
+      <p>Submit a brief application with a topic of interest and an outline, along with a writing sample that showcases
+        your experience and writing skills?</p>
     </div>
     <div class="pt-4 pt-lg-5 text-center">
       <a class="button-primary button-big button-writers-program" href="/writers-program/">Write For Metalbear</a>
@@ -204,7 +206,7 @@
 
 <script type="text/javascript">
   window.addEventListener("load", () => {
-    function sendData(form, url, successElement, errorElement) {
+    function sendData(form, successElement, errorElement) {
       const XHR = new XMLHttpRequest();
 
       const FD = new FormData(form);
@@ -230,25 +232,38 @@
         }
       });
 
-      XHR.open("POST", url);
-      XHR.send(FD);
+      const object = {
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title
+        },
+        fields: [
+          {
+            "objectTypeId": "0-1",
+            "name": "email",
+            "value": FD.get('email')
+          }
+        ],
+
+      }
+      XHR.open("POST", "https://forms-eu1.hsforms.com/submissions/v3/integration/submit/143742664/297a4bbc-0f7e-471a-9ac7-cee951a8d8aa");
+      XHR.setRequestHeader("Content-Type", "application/json");
+      XHR.setRequestHeader("Accept", "application/json");
+      XHR.send(JSON.stringify(object));
     }
 
     function addForm(prefix) {
-      const url = `https:\/\/${prefix}.metalbear.co\/v1\/${prefix}?source=metalbear`;
       const form = document.getElementById(`${prefix}-form`);
       const errorElement = document.getElementById(`${prefix}-error-message`);
       const successElement = document.getElementById(`${prefix}-success-message`);
       form.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        sendData(form, url, successElement, errorElement);
+        sendData(form, successElement, errorElement);
       });
     }
 
     addForm("newsletter");
-    addForm("waitlist");
-
   });
 </script>
 
