@@ -17,7 +17,7 @@ images: []
 contributors: ["The MetalBear Team"]
 ---
 
-{{<figure src="mftlaunch.jpeg" height="100%" width="100%">}}
+{{<figure src="mftlaunch.png" height="100%" width="100%">}}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing _mirrord for Teams_ to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – _Remote_ development, where you maintain no local environment and everything is cloud dependent, and _Local_ development, where you develop software on your computer, sync code to staging and production, and test. _Remocal_ development allows developers to work locally while their process _thinks_ it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for Kubernetes developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in _mirrord for Teams_. But first, a bit about how we got there.
 
