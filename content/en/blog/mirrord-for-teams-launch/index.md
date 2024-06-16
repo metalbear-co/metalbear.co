@@ -1,7 +1,7 @@
 ---
 title: "mirrord for Teams – a Step Into the Remocal Future"
-description: "Our biggest release yet is now available for download"
-lead: "Our biggest release yet is now available for download"
+description: "mirrord for Teams is officially launched! Read on to learn more about what it adds on top of the mirrord OSS, and how it can help your organization develop software more efficiently and collaboratively."
+lead: "mirrord for Teams is officially launched! Read on to learn more about what it adds on top of the mirrord OSS, and how it can help your organization develop software more efficiently and collaboratively."
 tags:
   - metalbear
   - mirrord
