@@ -59,9 +59,9 @@ footer = "© 2022 MetalBear"
 copyRight = "Copyright (c) 2022 MetalBear"
 
 # Alert
-alert = false
+alert = true
 alertDismissable = true
-alertText = "We're coming to KubeCon EU 🥳 <a class=\"alert-link stretched-link\" href=\"https://kccnceu2024.sched.com/event/1YeN7\" rel=\"noopener\" target=\"_blank\">Come hear our talk</a> about the low level magic behind mirrord, or just to say hi 👋"
+alertText = "mirrord for Teams is live on Product Hunt! <a class=\"alert-link stretched-link\" href=\"https://www.producthunt.com/posts/mirrord-for-teams\" rel=\"noopener\" target=\"_blank\">Check out the launch and share your feedback!</a>"
 
 # Edit Page
 repoHost = "GitHub"
