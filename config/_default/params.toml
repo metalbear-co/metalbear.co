@@ -59,7 +59,7 @@ footer = "© 2022 MetalBear"
 copyRight = "Copyright (c) 2022 MetalBear"
 
 # Alert
-alert = true
+alert = false
 alertDismissable = true
 alertText = "mirrord for Teams is live on Product Hunt! <a class=\"alert-link stretched-link\" href=\"https://www.producthunt.com/posts/mirrord-for-teams\" rel=\"noopener\" target=\"_blank\">Check out the launch and share your feedback!</a>"
 
