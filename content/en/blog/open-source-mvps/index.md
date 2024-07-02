@@ -41,6 +41,3 @@ contributors: ["Eyal Bukchin"]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It ended up being really popular, being regularly used by ~10% of OSS users. We were ultimately unable to completely stabilize it and had to deprecate it (which we discussed at length in a previous [blog post](/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature)), but our learnings from the pause feature led us to build the Copy/Scaledown feature as part of mirrord for Teams. This feature, rather than pausing the remote pod, shuts it down completely and creates an empty copy of it in the cluster in order to give the local process its network access. It was easier to stabilize because it didn’t rely on Kubernetes’ weird “freeze” API, but could only be technically achieved using the mirrord Operator.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The OSS MVP strategy is a great way to quickly and efficiently get feedback on a new product or feature from a large audience. The fact that it can be continuously used throughout the company’s lifetime makes it much more beneficial than might be expected, and is such a great asset that we believe it’s a significant point in favor of an OSS business model in general. 
-
-
-{{<figure src="real-mvp.jpg" class="center large-width">}}
