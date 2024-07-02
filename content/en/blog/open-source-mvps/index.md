@@ -3,11 +3,10 @@ title: "Validation at Scale with Open Source MVPs"
 description: "On the advantages of using OSS MVPs in continuously validating your new product offerings."
 lead: "On the advantages of using OSS MVPs in continuously validating your new product offerings."
 tags:
-  - microservices
-  - cloud
+  - open-source
   - devtools
-  - ergonomics
-  - platform-engineering 
+  - startup
+  - mirrord 
 images: ["real-mvp.jpg"]
 date: 2024-07-01T06:00:00+00:00
 lastmod: 2024-07-01T06:00:00+00:00
