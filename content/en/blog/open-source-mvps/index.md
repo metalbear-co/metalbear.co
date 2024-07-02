@@ -7,7 +7,7 @@ tags:
   - devtools
   - startup
   - mirrord 
-images: ["thumbnail.png"]
+images: ["real-mvp.jpg"]
 date: 2024-07-01T06:00:00+00:00
 lastmod: 2024-07-01T06:00:00+00:00
 draft: false
