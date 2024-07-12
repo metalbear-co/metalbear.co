@@ -119,6 +119,8 @@ We use log files. We use such information to analyze trends, administer the Site
 
 ● **Plausible****. **The Site uses a tool called "**Plausible**" to collect information about use of the Site. Plausible collects information such as how often users visit this Site, what pages they visit when they do so, and what other websites they used prior to coming to this Site. We use the information we get from Plausible to maintain and improve the Site and our services. Plausible's ability to use and share information collected by Plausible about your visits to this Site is restricted by the Plausible Terms of Service, available at <https://plausible.io/terms>, and Plausible Privacy Policy, available at <https://plausible.io/privacy> and the Data policy available at <https://plausible.io/data-policy>.
 
+● **Amplitude****. **The Site uses a tool called "**Amplitude**" to collect information about use of the Site. Amplitude collects information such as how often users visit this Site and what pages they visit when they do so. We use the information we get from Amplitude to maintain and improve the Site and our services. Amplitude's ability to use and share information collected by Amplitude about your visits to this Site is restricted by the Amplitude Terms of Service, available at <https://amplitude.com/terms>, and Amplitude Privacy Notice, available at <https://amplitude.com/privacy>.
+
 We reserve the right to remove or add new analytic tools.
 
 **9. SPECIFIC PROVISIONS APPLICABLE UNDER CALIFORNIA PRIVACY LAW**
