@@ -8,8 +8,8 @@ tags:
   - startup
   - mirrord 
 images: ["real-mvp.jpg"]
-date: 2024-07-01T06:00:00+00:00
-lastmod: 2024-07-01T06:00:00+00:00
+date: 2024-07-14T06:00:00+00:00
+lastmod: 2024-07-14T06:00:00+00:00
 draft: false
 weight: 50
 contributors: ["Eyal Bukchin"]
