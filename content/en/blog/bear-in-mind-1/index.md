@@ -14,7 +14,7 @@ lastmod: 2022-07-18T06:00:00+00:00
 draft: false
 weight: 50
 images: []
-contributors: ["Eyal Bukchin"]
+contributors: ["Eyal Bukchin", "Anita Ihuman"]
 ---
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At MetalBear we build open-source dev tools for backend developers, which puts our domain at the intersection of some pretty interesting topics. There's still a lot of great content being written about things that aren't AI - things like Kubernetes, DevEx, Open Source, Rust, and more - and we go through a lot of it as part of our daily work. How easy it would then be, we collectively thought, to provide our growing community of curious but busy backend developers with a periodic, curated list of our favorite pieces of writing on these topics?
