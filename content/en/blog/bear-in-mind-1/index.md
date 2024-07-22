@@ -9,8 +9,8 @@ tags:
   - bear-in-mind
   - digest
   - metrics
-date: 2024-07-18T06:00:00+00:00
-lastmod: 2022-07-18T06:00:00+00:00
+date: 2024-07-22T06:00:00+00:00
+lastmod: 2022-07-22T06:00:00+00:00
 draft: false
 weight: 50
 images: []
