@@ -6,4 +6,5 @@
   {{ $alertInit := resources.Get "js/alert-init.js" | js.Build | minify -}}
   <script>{{ $alertInit.Content | safeJS }}</script>
 {{- end -}}
-<script defer data-domain="metalbear.co,rollup.metalbear.co" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script defer data-domain="app.metalbear.co" src="https://plausible.io/js/script.hash.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
