@@ -1,9 +1,9 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "MetalBear 🐻 - Tools for Backend Engineers"
-titleSeparator = ""
-titleAddition = ""
+title = "MetalBear 🐻"
+titleSeparator = "-"
+titleAddition = "Tools for Backend Engineers"
 description = "MetalBear is an open-core company, focusing on the backend engineering experience."
 
 ## Documentation
@@ -13,7 +13,7 @@ description = "MetalBear is an open-core company, focusing on the backend engine
 images = ["metalbear.png"]
 ogLocale = "en_US"
 domainTLD = "metalbear.co"
-titleHome = "MetalBear 🐻 - Tools for Backend Engineers"
+titleHome = "MetalBear 🐻"
 
 ## Twitter Cards
 twitterSite = "@metalbearco"
@@ -72,20 +72,20 @@ editPage = true
 lastMod = true
 
 [options]
-  lazySizes = true
-  clipBoard = true
-  instantPage = true
-  flexSearch = true
-  darkMode = false
-  bootStrapJs = true
-  breadCrumb = false
-  highLight = true
-  kaTex = false
-  multilingualMode = false
-  docsVersioning = false
-  fullWidth = false
+lazySizes = true
+clipBoard = true
+instantPage = true
+flexSearch = true
+darkMode = false
+bootStrapJs = true
+breadCrumb = false
+highLight = true
+kaTex = false
+multilingualMode = false
+docsVersioning = false
+fullWidth = false
 
 [menu]
-  [menu.section]
-    auto = true
-    collapsibleSidebar = true
+[menu.section]
+auto = true
+collapsibleSidebar = true
