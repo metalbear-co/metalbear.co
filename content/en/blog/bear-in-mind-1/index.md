@@ -35,7 +35,7 @@ __Favorite excerpt:__ "Many organizations now recognize platform teams as the qu
 
 Author: Steve Fenton, Octopus Deploy
 
-__Why we liked it:__ we like acronyms. We’re fans of DORA. Most importantly though, we think think accepted metrics are a crucial step in maturation, especially of something as nebulous as platform engineering.
+__Why we liked it:__ we like acronyms. We’re fans of DORA. Most importantly though, we think accepted metrics are a crucial step in maturation, especially of something as nebulous as platform engineering.
 
 __Favorite excerpt:__ "MONK metrics work because they mix concrete measures common across the platform engineering industry with contextual success metrics that align with the reasons a platform was considered a worthy investment in the first place.
 A strong set of metrics is crucial to the long-term investment in the platform. Without a clear understanding of its value, there’s a good chance developers will eventually be reassigned to feature development at some point in the future."
