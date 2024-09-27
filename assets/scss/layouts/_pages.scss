@@ -101,6 +101,22 @@ p.meta {
 }
 
 @include media-breakpoint-up(lg) {
+  .section__writer-wrapper .col-lg-6,
+  .section__writer-process .process-card__col {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .section__cfp .col-lg-10 {
+    flex: 0 0 auto;
+    width: 62.5%;
+  }
+
+  .section__cfp .col-lg-6 {
+    flex: 0 0 auto;
+    width: 37.5%;
+  }
+
   .section__writer,
   .section__cfp {
     font-size: 1.7rem;
@@ -217,6 +233,12 @@ p.meta {
 }
 
 @include media-breakpoint-up(lg) {
+  .writer-program__col-left,
+  .writer-program__col-right {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
   .writer-program__textbox,
   .cfp-program__textbox {
     font-weight: 300;

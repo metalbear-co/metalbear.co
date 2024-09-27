@@ -7,7 +7,7 @@
                     <h2 class="writer-program__title">MetalBear Writers Program</h2>
                 </header>
                 <div class="row align-items-center">
-                    <div class="col-16 col-lg-8">
+                    <div class="col-12 col-lg-6">
                         <p>The MetalBear Writers program is focused on supporting developers in
                             sharing knowledge with the community through educational, hands-on & opinionated content. We
                             hope
@@ -15,7 +15,7 @@
                             test
                             software applications smoothly.</p>
                     </div>
-                    <div class="col-16 col-lg-8">
+                    <div class="col-12 col-lg-6">
                         <p>We work with authors and developers to produce high-quality content on open source, cloud
                             software development, DevOps, Developer Experience, Platform Engineering, backend
                             engineering,
@@ -26,7 +26,7 @@
                 </div>
                 <div class="button-wrapper d-flex justify-content-center pt-3 mt-2 mt-lg-5">
                     <div class="text-center mb-3">
-                        <a class="button-primary button-hero" target="_blank" href="https://forms.gle/3ZRrJbDBAwQSxnW16">Apply Here</a>
+                        <a class="button-primary cta-button-primary" target="_blank" href="https://forms.gle/3ZRrJbDBAwQSxnW16">Apply Here</a>
                     </div>
                 </div>
             </div>
@@ -39,10 +39,10 @@
         </div>
     </section>
 
-    <section class="pt-5">
+    <section class="section__writer-process pt-5">
         <div class="container-xl">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-4 mb-lg-4">
-                <div class="col mb-5">
+                <div class="process-card__col col mb-5">
                     <div class="">
                         <header class="process-card__header">
                             <h3 class="process-card__header-title">Here’s how the<br> process works</h3>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 {{- range $index, $card := .Params.process -}}
-                <div class="col mb-3 mb-lg-5">
+                <div class="process-card__col col mb-3 mb-lg-5">
                     <div class="process-card">
                         <header class="process-card__header d-flex align-items-center mb-2">
                             <span class="process-card__num">0{{ add $index 1 }}</span>
@@ -75,11 +75,11 @@
     </section>
 
     <section>
-        <div class="container-xl">
+        <div class="container-xl flex-wrap flex-md-nowrap">
             <div class="row mb-4 mb-lg-5">
                 {{- range $index, $textbox := .Params.textbox -}}
                 {{ if eq $index 0 }}
-                <div class="col-16 col-lg-7 mb-4 mb-lg-0">
+                <div class="writer-program__col-left col-16 col-lg-5 mb-4 mb-lg-0">
                     <div class="writer-program__textbox writer-program__textbox-one pt-3 pb-3 px-5">
                         <header>
                             <div class="writer-program__textbox-label">{{ .label }}</div>
@@ -92,7 +92,7 @@
                 </div>
                 {{- end }}
                 {{- end }}
-                <div class="col-16 col-lg-9">
+                <div class="writer-program__col-right col-16 col-lg-7">
                     {{- range $index, $textbox := .Params.textbox -}}
                     {{ if gt $index 0 }}
                     <div class="writer-program__textbox pt-3 pb-2 px-5 {{ if eq $index 1 }}mb-4{{ end }} {{ if eq $index 2 }}writer-program__textbox-two{{ end }}">
@@ -110,7 +110,7 @@
             </div>
             <div class="button-wrapper d-flex justify-content-center pt-2 pt-lg-4 mt-5 mb-5">
                 <div class="text-center mb-3">
-                    <a class="button-primary button-hero" target="_blank" href="https://forms.gle/MKdV7tQccgKUHdhq8">Apply Here</a>
+                    <a class="button-primary cta-button-primary" target="_blank" href="https://forms.gle/MKdV7tQccgKUHdhq8">Apply Here</a>
                 </div>
             </div>
         </div>

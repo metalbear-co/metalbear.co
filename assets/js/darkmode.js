@@ -16,10 +16,5 @@ if (mode !== null) {
 
   });
 
-  
-
   document.documentElement.setAttribute('data-dark-mode', '');
-
-  
-
 }
