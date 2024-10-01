@@ -1,7 +1,6 @@
 ---
 title: "Split Queues To Share Cloud Development Environments"
-subtitle: "How multiple developers can debug the same event driven microservice in one shared environment, and split 
-queue messages between them"
+subtitle: "How multiple developers can debug the same event driven microservice in one shared environment, and split queue messages between them"
 description: "Introducing SQS splitting in mirrord for Teams."
 lead: "Introducing SQS splitting in mirrord for Teams."
 tags:
