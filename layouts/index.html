@@ -12,18 +12,15 @@
           <div class="col-12 col-lg-6 section__hero-body">
             <h2 class="text-center text-lg-start">We’re developing tools for the modern backend engineer</h2>
             <p class="section__hero-desc text-center text-lg-start">{{ .Params.lead | safeHTML }}</p>
-            <div class="d-lg-none mb-5">
-              <img class="metalbear-hero-mobile" src="/hero.png" alt="img" />
-            </div>
             <div class="button-wrapper d-flex justify-content-center justify-content-lg-start pt-3">
               <div class="text-center">
                 <a class="section-button" href="https://mirrord.dev/">Learn more about mirrord</a>
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-6 d-none d-lg-block">
+          <div class="col-12 col-lg-6">
             <div class="hero-image-wrapper">
-              <img class="img-fluid" class="hero-image metalbear-hero" src="/hero.png" alt="hero image" />
+              <img class="img-fluid" src="/hero.png" alt="hero image" />
             </div>
           </div>
         </div>
@@ -120,7 +117,7 @@
     <div class="section__blog">
       <div class="container-xl flex-wrap flex-md-nowrap">
         <header class="section__blog-header text-center">
-          <h2 class="section-title">Insights and tutorials from developers like you</h2>
+          <h2 class="section-title">Insights and tutorials <span class="d-none d-lg-inline-block">from developers like you</span></h2>
           <div class="section-content px-4 px-xl-0">
             <p class="mb-0">Check out our blog for technical insights, hands-on tutorials, and best practices.</p>
           </div>
@@ -158,7 +155,7 @@
         </div>
         <div class="button-wrapper d-flex justify-content-center">
           <div class="text-center">
-            <a class="section-button section-button-primary" href="/blog/">Show Me More</a>
+            <a class="section-button section-button-primary" href="/blog/">Read more</a>
           </div>
         </div>
       </div>
@@ -385,7 +382,7 @@
           </div>
         </div>
         <div class="section-7-footer-text text-center">
-          <p class="mb-0">or if you have any questions, send us a message</p>
+          <p class="mb-0">or if you have any questions, <a class="text-underline" href="/contact/">send us a message</a></p>
         </div>
       </div>
     </div>

@@ -271,16 +271,10 @@
 }
 
 .hero-image-wrapper {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.metalbear-hero-mobile {
     width: 75%;
-    display: block;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 56px;
 }
 
 @include media-breakpoint-up(md) {
@@ -292,9 +286,9 @@
         border-radius: 0px 0px 0px 78px;
     }
 
-    .metalbear-hero-mobile {
+    .hero-image-wrapper {
         width: 65%;
-        max-width: 100%;
+        padding-top: 0;
     }
 
     .section__hero h2 {
@@ -328,6 +322,10 @@
     .section__hero-desc {
         font-size: 1rem;
         margin-bottom: 46px;
+    }
+
+    .hero-image-wrapper {
+        width: 90%;
     }
 }
 
@@ -872,6 +870,11 @@
     padding-top: 28px;
     color: #222222;
     font-size: 12px;
+}
+
+.text-underline {
+    color: #222222;
+    text-decoration: underline;
 }
 
 @include media-breakpoint-up(md) {
