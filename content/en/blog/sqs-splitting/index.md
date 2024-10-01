@@ -57,7 +57,7 @@ To make the use-case for this feature a bit more concrete, let's think about a t
 Kubernetes. In that project, there is a service called ip-visit-counter that writes a message to an SQS queue every 
 time it gets a request. The service ip-visit-sqs-consumer reads messages from that queue.
 
-{{<figure src="playground.png" class="center large-width">}}
+{{<figure src="playground.svg" class="center large-width">}}
 
 If Amy wants to test a new version she’s working on, where ip-visit-counter sends messages with a changed format, 
 she can run that service locally with mirrord, make it set the message attribute `"x-pg-tenant: Amy"` to all 
