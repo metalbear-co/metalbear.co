@@ -100,4 +100,4 @@ the scenes, this is what the setup looks like while Amy and Bruno are splitting 
 If you want to try out SQS splitting, but don’t yet have mirrord for Teams, just
 [register for a free trial](https://app.metalbear.co/). It does not require a payment method, and it does not 
 automatically extend if you don’t get a subscription. And if you would like to talk to us, feel free to write to us 
-at hi@metalbear.co, or to join [our discord server](https://discord.gg/metalbear).
+at hi@metalbear.co, or to join [our Discord server](https://discord.gg/metalbear).
