@@ -20,7 +20,7 @@ contributors: ["Tal Zwick"]
 One of the reasons [mirrord for Teams](https://mirrord.dev/docs/overview/teams/) is a gamechanger for many 
 organizations is that it makes it possible for a whole team to work with one shared cloud environment. They don’t 
 need to run the whole environment for each developer, they don’t need to have their entire architecture running on 
-their laptops, and they do not need to redeploy to Kubernetes to test new code or debug it. Developers just press 
+their laptops, and they don't need to redeploy to Kubernetes to test new code or debug it. Developers just press 
 “run” in their IDE, and their code is executed [remocally](https://mirrord.dev/): the code runs locally, but with 
 access to any required resources in the Kubernetes cluster or outside of it. With mirrord for Teams, developers can 
 even work on the same service at the same time, and control how to divide between them consumable data like 
