@@ -10,9 +10,9 @@
 
 <header class="header__site">
   <div class="navbar navbar-expand-lg navbar-light doks-navbar">
-    <nav class="container-{{ if .Site.Params.options.fullWidth }}fluid{{ else }}xl{{ end }} flex-wrap flex-md-nowrap align-items-center" aria-label="Main navigation">
+    <nav class="container-xl flex-wrap flex-md-nowrap align-items-center" aria-label="Main navigation">
       <a class="navbar-brand p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
-        <img class="navbar-brand__image-desktop" src="/metalbear-header-logo-new.svg"/>
+        <img class="img-fluid" src="/metalbear-header-logo.svg"/>
       </a>
 
       <button class="btn btn-menu d-block d-lg-none order-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">

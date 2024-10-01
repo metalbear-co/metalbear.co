@@ -30,7 +30,7 @@
         <div class="container-xl">
             <div class="row mb-4 mb-lg-5">
                 {{- range $index, $textbox := .Params.textbox -}}
-                <div class="col-16 col-lg-8 cfp-program__card mb-4">
+                <div class="col-12 col-lg-6 cfp-program__card mb-4">
                     <div class="cfp-program__textbox cfp-program__textbox-one pt-4 ps-5 pe-3 pe-lg-4">
                         <header>
                             <div class="cfp-program__textbox-label-wrapper">
@@ -52,7 +52,7 @@
         <div class="container-xl">
             <div class="px-4">
                 <div class="row mb-4 mb-lg-5">
-                    <div class="col-16 col-lg-4 how-to-apply-col">
+                    <div class="col-12 col-lg-3 how-to-apply-col">
                         <header class="cfp-program__textbox-header text-lg-center">
                             <h3 class="cfp-program__textbox-title how-to-apply__title">How To Apply</h3>
                             <div class="d-lg-none">
@@ -65,7 +65,7 @@
                             </div>
                         </header>
                     </div>
-                    <div class="col-16 col-lg-12 how-to-apply-col pt-lg-2">
+                    <div class="col-12 col-lg-8 how-to-apply-col pt-lg-2">
                         {{- range $index, $howto := .Params.how_to_apply -}}
                         <div class="d-flex align-items-start mb-5">
                             <div class="how-to-apply__num">0{{ add $index 1 }}</div>
