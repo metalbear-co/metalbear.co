@@ -56,7 +56,9 @@ I think we should talk / discuss more about the development environments of our 
 
 Kubernetes, without any doubts, has a steep learning curve. Not everyone involved in a project should be well-versed in 100s of CRDs and yaml manifests!
 
-{{< tweet user="kelseyhightower" id="935252923721793536" >}}
+> Kubernetes is a platform for building platforms. It's a better place to start; not the endgame.
+>
+> \- Kelsey Hightower (@kelseyhightower) Nov 27, 2017
 
 But after all these years, people still write Deployment, Service, Ingress manifests manually, under-utilizing projects like Kubevela(OAM)… anyway, that’s a different long discussion. This post is only about Dev Env & Dev Experience (DevX), and the first question someone may ask, WHY!? and the context of the question is I think obvious… if you’re working on a single application or ~~micro~~-service, what’s the point of bringing all the overhead that comes with Kubernetes? Yes, [K3s](https://k3s.io/), [minikube](https://minikube.sigs.k8s.io/docs/) (with docker driver) like lightweight Kubernetes distributions are there, but still, it sounds like an overkill.
 
