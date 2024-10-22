@@ -1,5 +1,5 @@
 ---
-title: "Getting There (and Back Again): Port Forwarding with mirrord"
+title: "There and Back Again: Port Forwarding with mirrord"
 description: "Understanding and using the mirrord port-forward command to redirect traffic."
 lead: "Understanding and using the mirrord port-forward command to redirect traffic."
 tags:
@@ -22,15 +22,15 @@ Port forwarding via SSH, also called SSH tunneling, is a method for communicatin
 
 {{<figure src="ssh-port-forwarding.png" alt="diagram of SSH port forwarding" height="100%" width="100%">}}
 
-More recently, port forwarding might also refer to `kubectl port-forward`, allowing the user to forward traffic into a Kubernetes cluster from a local port by going through the Kubernetes API. This is a faster way to access a pod without having to write config to set up ingress or a service, but is generally considered “just good enough” for lightweight debugging.
+More recently, port forwarding might also refer to `kubectl port-forward`, allowing the user to forward traffic into a Kubernetes cluster from a local port by going through the Kubernetes API. This is a faster way to access a pod without having to write special configuration to set up ingress or a service, but is generally considered “just good enough” for lightweight debugging.
 
 ### Port forwarding with mirrord
 
-That’s cool, but what if you want something more robust and flexible in terms of permissions? Maybe a way to piggyback on the existing permissions of a pod you already have, allowing you to access anything that pod can, like a specific microservice only accessible by that pod, an external third-party API or a managed database? The answer is that you can use mirrord’s new port-forward command. Let's explore how it works and then dive into a practical example.
+That’s cool, but what if you want something more robust and flexible in terms of permissions? Maybe a way to piggyback on the existing permissions of a pod you already have, allowing you to access anything that the pod can (like a specific microservice only accessible by that pod, an external third-party API or a managed database)? The answer is that you can use mirrord’s new port-forward command. Let's explore how it works and then dive into a practical example.
 
 Port forwarding in mirrord leverages the existing mirrord client-agent architecture to forward data coming to local ports to a remote one - each TCP data stream gets translated into mirrord-protocol messages that get sent to the agent in your cluster and then onwards to the specified remote port. A similar process happens in reverse to return the response.
 
-This conversion happens by using individual [tokio](https://tokio.rs/) tasks for each stream and a control loop, referred to as PortForwarder’s “main loop”, to handle interactions with the agent and ensure all of the components are healthy. These tasks communicate with the main loop using MPSC channels, bringing the total up to four separate conversions between stream/channel types. Of course, from the perspective of the local process and the remote peer, it simply appears as if there is a TCP stream to send and receive data on.
+Examining the implementation, you can see that this conversion happens by using individual [tokio](https://tokio.rs/) tasks for each stream and a control loop, referred to as PortForwarder’s “main loop”, to handle interactions with the agent and ensure all of the components are healthy. These tasks communicate with the main loop using MPSC channels, bringing the total up to four separate conversions between stream/channel types. Of course, from the perspective of the local process and the remote peer, it simply appears as if there is a TCP stream to send and receive data on.
 
 {{<figure src="mirrord-port-forwarding.png" alt="diagram of mirrord port forwarding" height="100%" width="100%">}}
 
@@ -38,9 +38,9 @@ This conversion happens by using individual [tokio](https://tokio.rs/) tasks for
 
 You're not even limited by which direction you can forward traffic, because mirrord can do it both ways. When forwarding in reverse (backwarding?), mirrord establishes a connection with the agent and eagerly steals or mirrors traffic (according to your configuration file, if provided) at a specified target port, channels it through the agent, and sends to your preferred local destination.
 
-There are a few differences between the two directions of forwarding - that the lazy connections of regular forwarding differs from the eager strategy in reverse, and that reverse port forwarding requires a target pod to be set explicitly, whereas regular port forwarding can run in [targetless mode](https://mirrord.dev/docs/using-mirrord/targetless/). It is also possible to specify the network configuration only during reverse forwarding, allowing you to mirror, steal or filtered steal traffic. You can read more about this in [the docs](https://mirrord.dev/docs/using-mirrord/port-forwarding/).
+There are a few differences between the two directions of forwarding - that the lazy connections of regular forwarding differs from the eager strategy in reverse, and that reverse port forwarding requires a target pod to be set explicitly, whereas regular port forwarding can run in [targetless mode](https://mirrord.dev/docs/using-mirrord/targetless/). It is also only possible to specify the network configuration when reverse forwarding, allowing you to choose between mirroring, stealing or filtered stealing traffic. You can read more about this in [the docs](https://mirrord.dev/docs/using-mirrord/port-forwarding/).
 
-Other than that, the only difference is in the internal mechanism - reverse forwarding leverages the IncomingProxy struct rather than custom tokio tasks to communicate with the local machine. The forward and reverse PortForwarder structs run at the same time, meaning you can specify as many forward and/or backward routes as you want in the same command, and mirrord will handle it all without complaint.
+Other than that, the only difference is in the internal mechanism - at the code level, reverse forwarding leverages the IncomingProxy struct rather than custom tokio tasks to communicate with the local machine. The forward and reverse PortForwarder structs run at the same time, meaning you can specify as many forward and/or backward routes as you want in the same command, and mirrord will handle it all without complaint.
 
 ### Comparing mirrord and kubectl
 
