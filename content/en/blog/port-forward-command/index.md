@@ -9,8 +9,8 @@ tags:
   - mirrord 
   - port-forward
 images: []
-date: 2024-10-30T10:00:00+00:00
-lastmod: 2024-10-30T10:00:00+00:00
+date: 2024-10-30T00:00:00+00:00
+lastmod: 2024-10-30T00:00:00+00:00
 draft: false
 weight: 50
 contributors: ["Gemma Tipper"]
