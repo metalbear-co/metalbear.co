@@ -1,5 +1,5 @@
 ---
-title: "Why should you prioritize the mirrord booth at KubeCon?"
+title: "Discover mirrord’s approach to fast, cloud-connected local dev at KubeCon"
 description: "If you’re looking to speed things up and ship more, come see us at Booth #R51 - and we’ll get you sorted."
 lead: "If you’re looking to speed things up and ship more, come see us at Booth #R51 - and we’ll get you sorted."
 tags:
