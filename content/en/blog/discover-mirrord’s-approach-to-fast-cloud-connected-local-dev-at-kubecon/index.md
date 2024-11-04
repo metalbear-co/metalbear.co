@@ -12,7 +12,7 @@ tags:
   - cloud
   - application-testing  
 images: [booth-r51.png]
-date: 2024-10-31T00:00:00+00:00
+date: 2024-11-4T00:00:00+00:00
 lastmod: 2024-11-4T00:00:00+00:00
 draft: false
 weight: 50
