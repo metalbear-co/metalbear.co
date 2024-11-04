@@ -50,7 +50,7 @@ A bunch of our devs are going to be at the booth. Come chat with us about the pr
 
 It’s our first conference booth, so we’ve brain-dumped two years of swag ideas on it. We’ve got customized sleep masks (if you booked the same flights to Utah as us, you’ll need them), stress balls for when things get chaotic, and T-shirts and stickers to show off your new favorite dev tool 😉.
 
-{{<figure src="swags" class="center large-width">}}
+{{<figure src="swags.png" class="center large-width">}}
 
 
 We’ve also got a few surprises up our sleeves. But to find out, you’ll have to stop by Booth #R51.
