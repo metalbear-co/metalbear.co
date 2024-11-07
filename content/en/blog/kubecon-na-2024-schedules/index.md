@@ -9,7 +9,7 @@ tags:
   - CloudNativeCon
   - cloud
   - conferences
-images: [ booth-r51.png ]
+images: [ kubecon_preview.png ]
 date: 2024-11-07T00:00:00+00:00
 lastmod: 2024-11-07T00:00:00+00:00
 draft: false
