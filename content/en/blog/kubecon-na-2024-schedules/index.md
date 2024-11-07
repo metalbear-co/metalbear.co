@@ -462,8 +462,8 @@ Apple & Yuki Iwai, CyberAgent, Inc.](https://sched.co/1i7nV)
 
 **After lunch:** Walk around the venue, interact with booths and activities you haven’t visited yet.
 
-**02:30pm:** [Unlocking Potential of Large Models in Production - Yuan Tang, Red Hat & Adam Tetelman, NVIDIA]
-(https://sched.co/1i7ns)
+**02:30pm:**
+[Unlocking Potential of Large Models in Production - Yuan Tang, Red Hat & Adam Tetelman, NVIDIA](https://sched.co/1i7ns)
 
 **03:25pm:** [Unlocking the Future of GPU Scheduling in Kubernetes with Reinforcement Learning - Nikunj Goyal, Adobe 
 Systems & Aditi Gupta, Disney Plus Hotstar](https://sched.co/1i7oK)
