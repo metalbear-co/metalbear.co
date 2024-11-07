@@ -489,8 +489,8 @@ well.
 
 **After coffee:** Had over to [our booth](#our-booth) to find out about this day’s contest.
 
-**11:55am:** [Building Massive-Scale Generative AI Services with Kubernetes and Open Source - John McBride, OpenSauced]
-(https://sched.co/1i7qI)
+**11:55am:**
+[Building Massive-Scale Generative AI Services with Kubernetes and Open Source - John McBride, OpenSauced](https://sched.co/1i7qI)
 
 **12:30pm:** [Lunch 🍲](https://sched.co/1iGCR)
 
