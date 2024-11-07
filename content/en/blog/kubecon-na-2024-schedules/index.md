@@ -28,7 +28,8 @@ activities in and outside the conference venue. Identify the type, or types of a
 jump to their schedule. There you’ll find our recommendations you can build your final schedule around.
 
 The full event schedule is available on [Sched](https://sched.co/1qT7x). You can sign up and save items to your Sched
-account. The schedules below include links to the items they refer to, for you to be able to easily save them.
+account. The schedules below include links to the items they refer to. Additionally, at the end of each type's schedule,
+we linked the Sched-profile of that type.
 
 ## KubeCon + CloudNativeCon Attendees: The Archetypes
 
@@ -95,8 +96,8 @@ Don’t expect to immediately understand every project you hear about in this li
 to get introduced to many projects in a short time, get a better image of the landscape, and find projects that are
 interesting to you.
 
-**09:25am:** If you have an All Access Pass, head over
-to [https://colocatedeventsna2024.sched.com/event/1izpd/navigating-the-no-code-to-full-code-spectrum-a-platform-engineering-journey-jared-watts-upbound-maximilian-blatt-accenture](https://colocatedeventsna2024.sched.com/event/1izpd/navigating-the-no-code-to-full-code-spectrum-a-platform-engineering-journey-jared-watts-upbound-maximilian-blatt-accenture),
+**09:25am:** If you have an All Access Pass, head over to
+[Navigating the No-Code to Full-Code Spectrum - a Platform Engineering Journey - Jared Watts, Upbound & Maximilian Blatt, Accenture](https://sched.co/1izpd),
 to hear about various developer platforms.
 
 **09:50am:** Get some water, walk around the venue and get an idea of where everything is. Once you’re ready to hear 
@@ -110,9 +111,10 @@ the [project lightning talks](https://kccncna2024.sched.com/type/Project+Opportu
 the [lightning talks](https://kccncna2024.sched.com/type/%E2%9A%A1+Lightning+Talks), as most of the talks in the
 co-located events are more specialized so will probably be less relevant and helpful for newbies.
 
-**About lunch:** there is no lunch item on the schedule for that day, so we’re not sure what, if at all, will be provided
-that day, so consider packing something to eat with you if you tend to get hungry. It’s also a good day to make lunch
-plans outside the venue.
+**11:40am** [Lunch Break](https://sched.co/1j1Va) (might require an *All Access Pass*)
+
+**05:30pm:** [Evening Reception (Salt Palace)](https://sched.co/1jSZV) - Only for the co-located events (requires an
+*All Access Pass*).
 
 After a long day of hearing talks and talking shop, head over to one of the parties happening that night, like:
 
@@ -249,6 +251,8 @@ Coulombel, Dell Technologies & Jan Šafránek, Red Hat](https://sched.co/1i7q7)
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
 #### More useful schedule links for newbies:
+- [The newbie's Sched-page](https://kccncna2024.sched.com/thenewbie1)
+- [The newbie's co-located Sched-page](https://colocatedeventsna2024.sched.com/thenewbie1)
 - [All “Cloud Native Novice” talks](https://kccncna2024.sched.com/type/Cloud+Native+Novice)
 - [All talks marked with “Content Experience Level: Beginner”](https://kccncna2024.sched.com/company/Beginner)
 - [External parties](https://conferenceparties.com/kubecon24/)
@@ -378,6 +382,7 @@ Coulombel, Dell Technologies & Jan Šafránek, Red Hat](https://sched.co/1i7q7)
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
 #### Useful Links for SREs
+- [The SRE's Sched page](https://kccncna2024.sched.com/thesre)
 - [External parties](https://conferenceparties.com/kubecon24/)
 
 ### The AI Fans’s Schedule for KubeCon + CloudNativeCon
@@ -392,7 +397,7 @@ Tuesday.
 
 #### Tuesday, November 12
 
-**09:00am:**
+**09:00am:** External event:
 [Kong AI Gateway & Insomnia Workshop: AI Success Through API Heroics Hosted by Kong](https://sched.co/1oWAL) -
 this beauty has “AI” 12 times in its description and title.
 
@@ -400,13 +405,9 @@ Alternatively, attend
 the [Data on Kubernetes Day](https://colocatedeventsna2024.sched.com/overview/type/Data+on+Kubernetes+Day) (requires an
 All Access pass).
 
-**About lunch:** there is no lunch item on the schedule for that day, so we’re not sure what, if at all, will be 
-provided
-that day, so consider packing something to eat if you tend to get hungry. It’s also a good day to make lunch plans
-outside the venue.
-
 **06:00pm:** [AI After Hours at Quarters](https://lu.ma/o9lsudvd) - external event, registration needed.
-Wednesday, November 13
+
+#### Wednesday, November 13
 
 **09:00am:** [Keynote: Welcome + Opening Remarks - Priyanka Sharma, Executive Director, CNCF; Chris Aniszczyk, CTO, 
 CNCF; Joanna Lee, VP of Legal and Strategic Programs, CNCF; Jim Zemlin, Executive Director, The Linux Foundation](https://kccncna2024.sched.com/event/1iCMn/keynote-welcome-opening-remarks-priyanka-sharma-executive-director-cncf-chris-aniszczyk-cto-cncf-joanna-lee-vp-of-legal-and-strategic-programs-cncf-jim-zemlin-executive-director-the-linux-foundation)
@@ -514,6 +515,7 @@ Gutierrez, NVIDIA & Angel Beltre, Sandia National Laboratories](https://sched.co
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
 #### Useful Links for AI Fans
+- [The AI Fan's Sched-page](https://kccncna2024.sched.com/theaifan)
 - [All AI + ML talks in the conference](https://kccncna2024.sched.com/type/AI+%2B+ML?iframe=no)
 - [External parties](https://conferenceparties.com/kubecon24/)
 
@@ -532,9 +534,7 @@ take a quick look around, and that way you can enter the venue much quicker thro
 Attend [Platform Engineering Day](https://colocatedeventsna2024.sched.com/overview/type/Platform+Engineering+Day) - All
 Access Pass required.
 
-**About lunch:** there is no lunch item on the schedule for that day, so we’re not sure what, if at all, will be 
-provided that day, so consider packing something to eat if you tend to get hungry. It’s also a good day to make lunch
-plans outside the venue.
+**11:40am:** [Lunch](https://sched.co/1j2NT) - might require an *All Access Pass*.
 
 **07:00pm:** [The House Of Kube](https://www.houseofkube.com/) - space is limited so you have to RSVP on their 
 website in order to attend.
@@ -637,6 +637,8 @@ Airlines](https://sched.co/1i7rq)
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
 #### Useful Links for Platforms Enjoyers
+- [The Platforms Enjoyer's Sched-page](https://kccncna2024.sched.com/theplatformsenjoyer?sendconfirm=yes&iframe=no)
+- [The Platforms Enjoyer's co-located Sched-page](https://colocatedeventsna2024.sched.com/theplatformsenjoyer?sendconfirm=yes)
 - [All Platform Engineering talks](https://kccncna2024.sched.com/type/Platform+Engineering?iframe=no)
 - [External parties](https://conferenceparties.com/kubecon24/)
 
