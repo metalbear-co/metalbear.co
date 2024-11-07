@@ -274,9 +274,10 @@ some [project lightning talks](https://kccncna2024.sched.com/type/Project+Opport
 and [lightning talks](https://kccncna2024.sched.com/type/%E2%9A%A1+Lightning+Talks?iframe=no) will certainly be
 interesting as well.
 
-About lunch: there is no lunch item on the schedule for that day, so we’re not sure what, if at all, will be provided
-that day, so consider packing something to eat if you tend to get hungry. It’s also a good day to make lunch plans
-outside the venue.
+**11:40am** [Lunch Break](https://sched.co/1j2NT) (might require an *All Access Pass*)
+
+**05:30pm:** [Evening Reception (Salt Palace)](https://sched.co/1jSZV) - Only for the co-located events (requires an
+*All Access Pass*).
 
 **07:00pm:** [House of Kube Hosted by Humanitec, Dash0 and Cloudsmith](https://sched.co/1j7wg) - external
 party, [registration](https://www.houseofkube.com/) required
