@@ -369,8 +369,8 @@ Coulombel, Dell Technologies & Jan Šafránek, Red Hat](https://sched.co/1i7q7)
 
 **After lunch:** last chance to visit booths in the [Solution Showcase](https://sched.co/1iGWS)
 
-**02:00pm:** [Tutorial: Simplify and Optimize Your YAML with YAMLScript - Ingy döt Net, YAML LLC](https://sched.
-co/1i7qP)
+**02:00pm:**
+[Tutorial: Simplify and Optimize Your YAML with YAMLScript - Ingy döt Net, YAML LLC](https://sched.co/1i7qP)
 
 **03:30pm:** [Coffee Break ☕](https://sched.co/1qT7x)
 
