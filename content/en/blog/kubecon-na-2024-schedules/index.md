@@ -249,9 +249,9 @@ Coulombel, Dell Technologies & Jan Šafránek, Red Hat](https://sched.co/1i7q7)
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
 #### More useful schedule links for newbies:
-- All “Cloud Native Novice” talks: https://kccncna2024.sched.com/type/Cloud+Native+Novice
-- All talks marked with “Content Experience Level: Beginner”: https://kccncna2024.sched.com/company/Beginner
-- External parties: https://conferenceparties.com/kubecon24/
+- [All “Cloud Native Novice” talks](https://kccncna2024.sched.com/type/Cloud+Native+Novice)
+- [All talks marked with “Content Experience Level: Beginner”](https://kccncna2024.sched.com/company/Beginner)
+- [External parties](https://conferenceparties.com/kubecon24/)
 
 ### The SRE’s Schedule for KubeCon + CloudNativeCon
 #### Tuesday, November 12
@@ -377,7 +377,7 @@ co/1i7qP)
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
 #### Useful Links for SREs
-- External parties: https://conferenceparties.com/kubecon24/
+- [External parties](https://conferenceparties.com/kubecon24/)
 
 ### The AI Fans’s Schedule for KubeCon + CloudNativeCon
 
@@ -513,8 +513,8 @@ Gutierrez, NVIDIA & Angel Beltre, Sandia National Laboratories](https://sched.co
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
 #### Useful Links for AI Fans
-- All AI + ML talks in the conference: https://kccncna2024.sched.com/type/AI+%2B+ML?iframe=no
-- External parties: https://conferenceparties.com/kubecon24/
+- [All AI + ML talks in the conference](https://kccncna2024.sched.com/type/AI+%2B+ML?iframe=no)
+- [External parties](https://conferenceparties.com/kubecon24/)
 
 ### The Platform Enjoyer’s Schedule for KubeCon + CloudNativeCon
 
@@ -636,8 +636,8 @@ Airlines](https://sched.co/1i7rq)
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
 #### Useful Links for Platforms Enjoyers
-- All Platform Engineering talks: https://kccncna2024.sched.com/type/Platform+Engineering?iframe=no
-- External parties: https://conferenceparties.com/kubecon24/
+- [All Platform Engineering talks](https://kccncna2024.sched.com/type/Platform+Engineering?iframe=no)
+- [External parties](https://conferenceparties.com/kubecon24/)
 
 ## Our Booth
 
