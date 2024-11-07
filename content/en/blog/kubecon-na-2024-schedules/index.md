@@ -74,6 +74,14 @@ CloudNativeCon](#the-platform-enjoyers-schedule-for-kubecon--cloudnativecon) for
 
 ### The Newbie’s Schedule for KubeCon + CloudNativeCon
 
+#### Useful schedule links for newbies:
+- [The newbie's Sched-page](https://kccncna2024.sched.com/thenewbie1)
+- [The newbie's co-located Sched-page](https://colocatedeventsna2024.sched.com/thenewbie1)
+- [All “Cloud Native Novice” talks](https://kccncna2024.sched.com/type/Cloud+Native+Novice)
+- [All talks marked with “Content Experience Level: Beginner”](https://kccncna2024.sched.com/company/Beginner)
+- [External parties](https://conferenceparties.com/kubecon24/)
+
+
 #### Monday, November 11
 
 **Any time between 08:00am to 05:00pm:**
@@ -250,14 +258,12 @@ Coulombel, Dell Technologies & Jan Šafránek, Red Hat](https://sched.co/1i7q7)
 
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
-#### More useful schedule links for newbies:
-- [The newbie's Sched-page](https://kccncna2024.sched.com/thenewbie1)
-- [The newbie's co-located Sched-page](https://colocatedeventsna2024.sched.com/thenewbie1)
-- [All “Cloud Native Novice” talks](https://kccncna2024.sched.com/type/Cloud+Native+Novice)
-- [All talks marked with “Content Experience Level: Beginner”](https://kccncna2024.sched.com/company/Beginner)
+### The SRE’s Schedule for KubeCon + CloudNativeCon
+
+#### Useful Links For SREs
+- [The SRE's Sched page](https://kccncna2024.sched.com/thesre)
 - [External parties](https://conferenceparties.com/kubecon24/)
 
-### The SRE’s Schedule for KubeCon + CloudNativeCon
 #### Tuesday, November 12
 On this day, the conference doesn’t really fully begin yet. There are
 the [co-hosted and co-located events](https://kccncna2024.sched.com/type/CNCF-hosted+Co-located+Events?iframe=no), and
@@ -381,11 +387,12 @@ Coulombel, Dell Technologies & Jan Šafránek, Red Hat](https://sched.co/1i7q7)
 
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
-#### Useful Links for SREs
-- [The SRE's Sched page](https://kccncna2024.sched.com/thesre)
-- [External parties](https://conferenceparties.com/kubecon24/)
-
 ### The AI Fans’s Schedule for KubeCon + CloudNativeCon
+
+#### Useful Links For AI Fans
+- [The AI Fan's Sched-page](https://kccncna2024.sched.com/theaifan)
+- [All AI + ML talks in the conference](https://kccncna2024.sched.com/type/AI+%2B+ML?iframe=no)
+- [External parties](https://conferenceparties.com/kubecon24/)
 
 #### Monday, November 11
 
@@ -514,12 +521,14 @@ Gutierrez, NVIDIA & Angel Beltre, Sandia National Laboratories](https://sched.co
 
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
 
-#### Useful Links for AI Fans
-- [The AI Fan's Sched-page](https://kccncna2024.sched.com/theaifan)
-- [All AI + ML talks in the conference](https://kccncna2024.sched.com/type/AI+%2B+ML?iframe=no)
+### The Platforms Enjoyer’s Schedule for KubeCon + CloudNativeCon
+
+#### Useful Links for Platforms Enjoyers
+- [The Platforms Enjoyer's Sched-page](https://kccncna2024.sched.com/theplatformsenjoyer?sendconfirm=yes&iframe=no)
+- [The Platforms Enjoyer's co-located Sched-page](https://colocatedeventsna2024.sched.com/theplatformsenjoyer?sendconfirm=yes)
+- [All Platform Engineering talks](https://kccncna2024.sched.com/type/Platform+Engineering?iframe=no)
 - [External parties](https://conferenceparties.com/kubecon24/)
 
-### The Platform Enjoyer’s Schedule for KubeCon + CloudNativeCon
 
 #### Monday, November 11
 
@@ -635,12 +644,6 @@ Salesforce](https://sched.co/1i7rD)
 Airlines](https://sched.co/1i7rq)
 
 Say goodbye to the people you’ve met, exchange contact info, talk to people you didn’t get the chance to talk to.
-
-#### Useful Links for Platforms Enjoyers
-- [The Platforms Enjoyer's Sched-page](https://kccncna2024.sched.com/theplatformsenjoyer?sendconfirm=yes&iframe=no)
-- [The Platforms Enjoyer's co-located Sched-page](https://colocatedeventsna2024.sched.com/theplatformsenjoyer?sendconfirm=yes)
-- [All Platform Engineering talks](https://kccncna2024.sched.com/type/Platform+Engineering?iframe=no)
-- [External parties](https://conferenceparties.com/kubecon24/)
 
 ## Our Booth
 
