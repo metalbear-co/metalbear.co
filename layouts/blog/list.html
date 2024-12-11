@@ -42,18 +42,10 @@
 			</div>
 			{{ $.Scratch.Set "paginator" true }}
 			<div class="d-flex justify-content-center mb-5">
-
-
-				
-
 				{{ partial "pagination.html" . -}}
 			</div>
 		</div>
 	</div>
+	{{ partial "blog-list-cta.html" . }}
 </div>
-
-
-
-
-
 {{ end }}
