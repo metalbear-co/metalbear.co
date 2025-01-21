@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="guides-single">
+  <div class="container-xl guides-single__wrapper">
+    <div class="row justify-content-lg-end position-relative">
+      <div class="col-12 col-lg-11 d-lg-flex align-items-start px-xl-0">
+        <div class="guides-single__main">
+          <article class="guides-content__wrapper">
+            <div class="guides-content">
+              {{ .Content }}
+            </div>
+          </article>
+          <div class="widget__share d-lg-none">
+            <p class="text-center mt-0">Share post</p>
+            <div class="d-flex justify-content-center">
+              {{ partial "share-buttons.html" . }}
+            </div>
+          </div>
+        </div>
+        <div class="guides-single__sidebar d-none d-lg-block">
+          {{ partial "guides-contributor.html" . }}
+          {{ partial "guides-toc.html" . }}
+          {{ partial "guides-widget-cta.html" . }}
+          {{ partial "guides-related.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ partial "guides-page-cta.html" . }}
+</div>
+{{ end }}

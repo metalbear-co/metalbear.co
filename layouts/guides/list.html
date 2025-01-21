@@ -1,0 +1,52 @@
+{{ define "main" }}
+<div class="blog-list">
+	<img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=2d0d178f-001f-403c-8329-411bb6edd26b" />
+	<div class="blog-list__header">
+		<div class="blog-list__wrapper container mb-5">
+			<div class="row row-cols-1 row-cols-lg-2 align-items-center">
+				<div class="col">
+					<h2 class="blog-list__header-title">{{ .Title }}</h2>
+					<p class="blog-list__header-desc">{{ .Params.description | safeHTML }}</p>
+				</div>
+				<div class="col">
+					<div class="blog-list__image-logo">
+						<img src="/metalbear-logo-blog.svg"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="blog-list__wrapper container">
+		<div class="flex-wrap flex-md-nowrap">
+			{{ $paginator := .Paginate (.Data.Pages) -}}
+			<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
+				{{ range $paginator.Pages -}}
+				<div class="blog-card__col col mb-5">
+					<div class="blog-card d-flex flex-column px-3 position-relative">
+						<div class="blog-card__body mb-auto">
+							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{
+									with
+									.Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+							<div class="blog-card__summary">
+								<p class="summary">{{ .Params.lead | safeHTML }}</p>
+							</div>
+							{{ partial "main/blog-meta.html" . -}}
+						</div>
+						<div class="blog-card__continue">
+							<a class="blog-card__continue-link position-relative" href="{{ .RelPermalink }}">Reading
+								Time&nbsp;-&nbsp;<span>{{ .ReadingTime -}}&nbsp;min</span></a>
+						</div>
+					</div>
+				</div>
+				{{ end -}}
+			</div>
+			{{ $.Scratch.Set "paginator" true }}
+			<div class="d-flex justify-content-center mb-5">
+				{{ partial "pagination.html" . -}}
+			</div>
+		</div>
+	</div>
+	{{ partial "blog-list-cta.html" . }}
+</div>
+{{ end }}
