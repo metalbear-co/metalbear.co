@@ -1,4 +1,1 @@
-<a href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}" {{ end }} {{ if strings.HasPrefix .Destination "http" }} target="_blank" {{ end }}>
-    {{ .Text | safeHTML }}
-  </a>
-  
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }} <a href="#{{ .Anchor | safeURL }}" class="anchor" aria-hidden="true"></a></h{{ .Level }}>
