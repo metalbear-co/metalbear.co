@@ -1,6 +1,25 @@
 .footer {
-  background-color: $primary;
-  margin-top: auto;
+  padding-top: 114px;
+  padding-bottom: 28px;
+}
+
+.footer__logo {
+  width: 250px;
+}
+
+.footer__info {
+  margin-bottom: 48px;
+}
+
+.footer__menu-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.footer__menu {
+  margin-bottom: 32px;
 }
 
 .footer ul {
@@ -8,15 +27,18 @@
 }
 
 .footer li {
-  color: $brand-black;
-  font-size: $font-size-sm;
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 
-@include media-breakpoint-up(md) {
-  .footer li {
-    font-size: $font-size-base;
-  }
+.footer__menu-link {
+  font-size: 0.875rem;
+  color: #000000;
+  line-height: 1.8;
+}
+
+.footer__social-wrapper {
+  text-align: center;
+  padding-top: 40px;
 }
 
 .footer__social {
@@ -25,8 +47,38 @@
 }
 
 @include media-breakpoint-up(lg) {
+  .footer__navigation {
+    flex: 1 1 0%;
+  }
+
+  .footer__menu-wrapper {
+    width: 85%;
+  }
+
+  .footer__menu {
+    margin-bottom: 0;
+  }
+
+  .footer__info {
+    width: 37%;
+    flex: none;
+    margin-bottom: 0;
+  }
+
   .footer__social {
     padding-bottom: 0;
     border-bottom: none;
   }
+}
+
+.footer__copyright {
+  color: #222222;
+  font-size: 0.875rem;
+  font-weight: 300;
+  padding-top: 104px;
+}
+
+.footer__copyright a {
+  color: #222222;
+  text-decoration: underline;
 }

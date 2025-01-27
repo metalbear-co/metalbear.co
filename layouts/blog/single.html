@@ -40,16 +40,16 @@
         </div>
       </div>
       <div class="blog-single__sidebar col-12 col-lg-6 col-xl-5 d-none d-lg-block">
-        {{ partial "contributor.html" . }}
+        {{ partial "blog-contributor.html" . }}
         <div class="widget__share pb-5">
           <h3 class="mt-0">Share post</h3>
           {{ partial "share-buttons.html" . }}
         </div>
-        {{ partial "related.html" . }}
+        {{ partial "blog-related.html" . }}
 
       </div>
     </div>
   </div>
-  {{ partial "page-cta.html" . }}
+  {{ partial "blog-page-cta.html" . }}
 </div>
 {{ end }}

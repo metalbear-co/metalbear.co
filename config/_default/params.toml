@@ -53,7 +53,7 @@ lqipWidth = "20x"
 smallLimit = "300"
 
 # Footer
-footer = "© 2022 MetalBear"
+footer = "© MetalBear"
 
 # Feed
 copyRight = "Copyright (c) 2022 MetalBear"
