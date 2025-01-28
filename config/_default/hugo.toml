@@ -6,7 +6,8 @@ enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
 languageCode = "en-US"
-paginate = 6
+[pagination]
+  pagerSize = 6
 rssLimit = 10
 
 # Multilingual
@@ -63,6 +64,7 @@ rel  = "sitemap"
 
 [permalinks]
   blog = "/blog/:title/"
+  guides = "/guides/:title/"
   pages = "/:slug/"
 # docs = "/docs/1.0/:sections[1:]/:title/"
 
@@ -72,7 +74,7 @@ rel  = "sitemap"
 [module]
   [module.hugoVersion]
     extended = true
-    min = "0.80.0"
+    min = "0.136.0"
     max = ""
   [[module.mounts]]
     source = "assets"

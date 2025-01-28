@@ -1,7 +1,20 @@
 [[main]]
-  name = "Blog"
-  url = "/blog/"
+  name = "Resources"
   weight = 20
+  identifier = "resources"
+  url = "https://mirrord.dev"
+
+[[main]]
+  name = "Blog"
+  parent = "resources"
+  weight = 10
+  url = "/blog/"
+
+[[main]]
+  name = "Guides"
+  parent = "resources"
+  weight = 20
+  url = "/guides/"
 
 [[main]]
   name = "mirrord"
@@ -31,6 +44,61 @@
   parent = "community"
   weight = 20
   url = "/cfp-program/"
+
+[[footer_left]]
+  name = "Product Overview"
+  weight = 10
+  url = "https://mirrord.dev/"
+
+[[footer_left]]
+  name = "User Stories"
+  weight = 20
+  url = "https://mirrord.dev/stories/"
+
+[[footer_left]]
+  name = "Pricing"
+  weight = 30
+  url = "https://mirrord.dev/pricing/"
+
+[[footer_left]]
+  name = "Contact us"
+  weight = 40
+  url = "https://mirrord.dev/contact/"
+
+[[footer_center]]
+  name = "Blog"
+  weight = 10
+  url = "/blog/"
+
+[[footer_center]]
+  name = "Docs"
+  weight = 20
+  url = "https://mirrord.dev/docs/overview/introduction/"
+
+[[footer_center]]
+  name = "vs Telepresence"
+  weight = 30
+  url = "https://mirrord.dev/compare/telepresence/"
+
+[[footer_center]]
+  name = "vs Bridge to Kubernetes"
+  weight = 40
+  url = "https://mirrord.dev/compare/telepresence/"
+
+[[footer_right]]
+  name = "How to Debug a Java Microservice"
+  weight = 10
+  url = "/guides/how-to-debug-a-java-microservice/"
+
+[[footer_right]]
+  name = "How to Debug a Ruby Microservice"
+  weight = 20
+  url = "/guides/how-to-debug-a-ruby-microservice/"
+
+[[footer_right]]
+  name = "How to Debug a Go Microservice"
+  weight = 30
+  url = "/guides/how-to-debug-a-go-microservice/"
 
 [[social]]
   name = "Discord"

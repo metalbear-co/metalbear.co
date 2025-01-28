@@ -17,6 +17,11 @@
   margin-right: 0;
 }
 
+.svg-fluid {
+  width: 100%;
+  height: auto;
+}
+
 /*
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:hover,
@@ -179,13 +184,6 @@ button#doks-versions {
 .pages .header__site,
 .contributors .header__site {
   background-color: #FAFAFD;
-}
-
-.home .navbar,
-.blog .navbar,
-.pages .navbar,
-.contributors .navbar {
-  border-bottom: 0;
 }
 
 .blog.single .header__site,
