@@ -87,6 +87,7 @@ The above minikube service command automatically sets up a port forwarding sessi
 Once we run the command minikube service command, we get output which looks something like this. 
 
 ```bash
+
 minikube service nodejs-guestbook
 
 
@@ -103,6 +104,7 @@ minikube service nodejs-guestbook
 |-----------|-----------|-------------|------------------------|
 🎉  Opening service default/guestbook in default browser...
 ❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
+
 ```
 
 
@@ -137,6 +139,7 @@ After mirrord is installed you will see a mirrord button in the bottom left corn
 Let’s add a new config file for mirrord which we can use with VSCode for debugging. The configuration below contains the target deployment from where we need to mirror the context. 
 
 ```json
+
 {
    "feature": {
        "network": {
@@ -151,6 +154,7 @@ Let’s add a new config file for mirrord which we can use with VSCode for debug
        "namespace": "default"
    }
 }
+
 ```
 
 
@@ -273,6 +277,7 @@ mirrord exec -t deployment/nodejs-guestbook npm start
 You should see the following output which will let you know that the Node.js Guestbook has started in debug mode.
 
 ```bash
+
 ⠒ mirrord exec
 	✓ update to 3.126.0 available
 	✓ ready to launch process
@@ -286,6 +291,7 @@ You should see the following output which will let you know that the Node.js Gue
 > node app.js
 
 Guestbook app running on port 3000
+
 ```
 
 
