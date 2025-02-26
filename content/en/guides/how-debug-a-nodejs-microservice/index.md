@@ -69,11 +69,6 @@ cd mirrord-nodejs-debug-example
 
 ```bash
 kubectl create -f ./kube
-
-deployment.apps/nodejs-guestbook created
-service/nodejs-guestbook created
-deployment.apps/redis created
-service/redis created
 ```
 
 
