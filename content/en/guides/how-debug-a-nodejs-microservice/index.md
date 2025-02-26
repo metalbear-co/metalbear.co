@@ -141,7 +141,7 @@ After mirrord is installed you will see a mirrord button in the bottom left corn
 ### mirrord configuration
 Let’s add a new config file for mirrord which we can use with VSCode for debugging. The configuration below contains the target deployment from where we need to mirror the context. 
 
-```bash
+```json
 {
    "feature": {
        "network": {
