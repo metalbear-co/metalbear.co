@@ -82,7 +82,7 @@ minikube service nodejs-guestbook
 
 The above minikube service command automatically sets up a port forwarding session to the specified service and opens it in the default web browser. With the tunnel to our microservice setup, our application architecture now looks like this. 
 
-![alt text](<Screenshot 2025-02-21 at 6.56.28 PM.png>)
+![alt text](<Architecture Diagram - without mirrord.png>)
 
 
 Once we run the command minikube service command, we get output which looks something like this. 
@@ -215,7 +215,7 @@ Now, let’s debug the application with mirrord.
 ## Debugging the application with the mirrord plugin
 Now that we can run the application, let’s understand what our setup looks like with the mirrord-agent working with the target-impersonated Pod. The target impersonated Pod here is the Guestbook Pod.
 
-![alt text](<Screenshot 2025-02-21 at 7.09.41 PM.png>)
+![alt text](<Architecture Diagram - with mirrord.png>)
 
 
 If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference here https://mirrord.dev/docs/reference/architecture/#mirrord-agent.
