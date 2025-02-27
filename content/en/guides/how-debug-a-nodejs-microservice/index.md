@@ -72,6 +72,8 @@ cd mirrord-nodejs-debug-example
 kubectl create -f ./kube
 ```
 
+{{<figure src="kubectl create -f kube.png" class="bg-white center" alt="alt text">}}
+
 
 Once the above is deployed let’s use the following command to get access to the application endpoint so we can see what it looks like.
 
@@ -82,37 +84,22 @@ minikube service nodejs-guestbook
 
 The above minikube service command automatically sets up a port forwarding session to the specified service and opens it in the default web browser. With the tunnel to our microservice setup, our application architecture now looks like this. 
 
-![alt text](<Screenshot 2025-02-21 at 6.56.28 PM.png>)
+
+{{<figure src="Architecture Diagram - without mirrord.png"  class="bg-white center" alt="alt text">}}
+
 
 
 Once we run the command minikube service command, we get output which looks something like this. 
 
-```bash
 
-minikube service nodejs-guestbook
-
-
-|-----------|-----------|-------------|---------------------------|
-| NAMESPACE |   NAME	| TARGET PORT |        	URL        	|
-|-----------|-----------|-------------|---------------------------|
-| default   | nodejs-guestbook |    	3000 | http://192.168.49.2:31233 |
-|-----------|-----------|-------------|---------------------------|
-🏃  Starting tunnel for service guestbook.
-|-----------|-----------|-------------|------------------------|
-| NAMESPACE |   NAME	| TARGET PORT |      	URL       	|
-|-----------|-----------|-------------|------------------------|
-| default   | nodejs-guestbook |         	| http://127.0.0.1:57485 |
-|-----------|-----------|-------------|------------------------|
-🎉  Opening service default/guestbook in default browser...
-❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
-
-```
+{{<figure src="minikube service nodejs-guestbook.png"  class="bg-white center" alt="alt text">}}
 
 
 Now we have access to the Guestbook application on http://localhost:57485.
 Let’s access this URL from the browser.
 
-![alt text](<Screenshot 2025-02-21 at 6.58.05 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 6.58.05 PM.png" class="bg-white center" alt="alt text">}}
+
 
 
 We have our staging application deployed now. Let’s run the microservice with mirrord now. This will allow us to run the local Node.js application in the context of Kubernetes without having to build and deploy it over and over again for testing. 
@@ -129,11 +116,12 @@ To get started, install mirrord in VSCode.
 ### Extension installation
 You can install the plugin by searching for mirrord in the extensions.
 
-![alt text](<Screenshot 2025-02-21 at 7.00.07 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.00.07 PM.png" class="bg-white center" alt="alt text">}}
+
 
 After mirrord is installed, you will see a mirrord button in the bottom left corner of your VSCode instance.
 
-![alt text](<Screenshot 2025-02-21 at 7.00.36 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.00.36 PM.png" class="bg-white center" alt="alt text">}}
 
 
 ### mirrord configuration
@@ -163,7 +151,8 @@ If you want to mirror traffic from a multipod deployment, you can learn more abo
 
 To ensure that the configuration file created is read by the VSCode mirrord extension, hover over the mirrord button we mentioned earlier and press the ‘Select active config` option. From the given prompt, enter the location of the configuration to be consumed by the plugin.
 
-![alt text](<Screenshot 2025-02-21 at 7.01.35 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.01.35 PM.png" class="bg-white center" alt="alt text">}}
+
 
 
 Once the active configuration is selected, we can start using mirrord with VSCode.
@@ -173,41 +162,48 @@ Once the active configuration is selected, we can start using mirrord with VSCod
 ### Run and Debug with the mirrord extension disabled
 Ensure that the mirrord extension is disabled.
 
-![alt text](<Screenshot 2025-02-21 at 7.03.17 PM.png>)
+
+{{<figure src="Screenshot 2025-02-21 at 7.03.17 PM.png" class="bg-white center" alt="alt text">}}
+
 
 
 Before running the application ensure that the dependencies have been satisfied by executing *npm install* in the root of the repository. After that, let’s Run and Debug our application without mirrord first by selecting Run and Debug from the Run and Debug tab.
 
-![alt text](<Screenshot 2025-02-21 at 7.04.51 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.04.51 PM.png" class="bg-white center" alt="alt text">}}
+
 
 Select the Node.js debugger from the drop-down menu.
 
-![alt text](<Screenshot 2025-02-21 at 7.05.08 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.05.08 PM.png" class="bg-white center" alt="alt text">}}
+
 
 The application fails to run with the below error because it doesn’t have access to the Redis instance running on Kubernetes.
 
-![alt text](<Screenshot 2025-02-21 at 7.05.51 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.05.51 PM.png" class="bg-white center" alt="alt text">}}
+
 
 Now let’s use mirrord to mirror the context from Kubernetes to our locally running Node.js application.
 
 ### Run and Debug with the mirrord plugin enabled
 Enable the mirrord plugin by clicking on the mirrord button in the bottom left corner of the screen. The enabled button should look like the one below.
 
-![alt text](<Screenshot 2025-02-21 at 7.07.05 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.07.05 PM.png" class="bg-white center" alt="alt text">}}
+
 
 Once mirrord is enabled, let’s Run and Debug the application once again. Once we start the debugging, the dropdown will ask us which target to use for mirrord.
 
+{{<figure src="Screenshot 2025-02-21 at 7.07.33 PM.png" class="bg-white center" alt="alt text">}}
 
-![alt text](<Screenshot 2025-02-21 at 7.07.33 PM.png>)
 
 Upon choosing the Node.js Pod as the target, you can see logs similar to the ones below with the Node.js app starting successfully. 
 
-![alt text](<Screenshot 2025-02-21 at 7.08.00 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.08.00 PM.png" class="bg-white center" alt="alt text">}}
 
 
 Once the app is running with the mirrord extension, access it on localhost:3000 in the browser. You will see the following UI to the mirrord guestbook application.
 
-![alt text](<Screenshot 2025-02-21 at 7.08.41 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.08.41 PM.png"class="bg-white center" alt="alt text">}}
+
 
 
 Now, let’s debug the application with mirrord.
@@ -215,7 +211,8 @@ Now, let’s debug the application with mirrord.
 ## Debugging the application with the mirrord plugin
 Now that we can run the application, let’s understand what our setup looks like with the mirrord-agent working with the target-impersonated Pod. The target impersonated Pod here is the Guestbook Pod.
 
-![alt text](<Screenshot 2025-02-21 at 7.09.41 PM.png>)
+{{<figure src="Architecture Diagram - with mirrord.png" class="bg-white center" alt="alt text">}}
+
 
 
 If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference here https://mirrord.dev/docs/reference/architecture/#mirrord-agent.
@@ -224,22 +221,26 @@ We can now be sure that mirrord is working properly.
 
 Moving forward, let’s set a debug breakpoint in the application and see how it runs. I want to put a breakpoint in the application every time I create a note with the Guestbook application. The below line of code is where I am going to put the breakpoint.
 
-![alt text](<Screenshot 2025-02-21 at 7.10.37 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.10.37 PM.png"class="bg-white center" alt="alt text">}}
+
 
 Start debugging by pressing the debug button below.
 
-![alt text](<Screenshot 2025-02-21 at 7.11.20 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.11.20 PM.png" class="bg-white center" alt="alt text">}}
+
 
 
 You will be prompted to select a target pod for mirroring again. Choose the guestbook Pod. Once the debugging starts, you should be able to see the call stack and the terminal for debugging, like the one below.
 
-![alt text](<Screenshot 2025-02-21 at 7.11.36 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.11.36 PM.png" class="bg-white center" alt="alt text">}}
+
 
 From http://localhost:3000, try publishing a new entry to the guestbook, which would hit the debugging entry point.
 
 You should hit the breakpoint as shown below:
 
-![alt text](<Screenshot 2025-02-21 at 7.12.27 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.12.27 PM.png" class="bg-white center" alt="alt text">}}
+
 
 We can debug the issue now as the breakpoint is hit.
 
@@ -258,7 +259,8 @@ npm install && npm start
 
 We get the below error after running the command above. 
 
-![alt text](<Screenshot 2025-02-21 at 7.15.14 PM.png>)
+{{<figure src="Screenshot 2025-02-21 at 7.15.14 PM.png" class="bg-white center" alt="alt text">}}
+
 
 
 The error states that the application is not able to connect to the Redis service. Let’s use mirrord to help our local application run with the Kubernetes context.
@@ -294,7 +296,6 @@ You should see the following output, which will let you know that the Node.js Gu
 Guestbook app running on port 3000
 
 ```
-
 
 After you have run the Guestbook program with mirrord you should be able to make your changes and rerun the service as necessary. You can even run the program in debug mode and attach a debugger if required.
 
