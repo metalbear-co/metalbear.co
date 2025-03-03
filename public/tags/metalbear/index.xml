@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metalbear on </title>
+    <link>http://localhost:1313/tags/metalbear/</link>
+    <description>Recent content in Metalbear on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 Jan 2025 06:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/metalbear/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Debug Golang Microservices in Kubernetes</title>
+      <link>http://localhost:1313/guides/how-to-debug-a-go-microservice/</link>
+      <pubDate>Wed, 15 Jan 2025 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/guides/how-to-debug-a-go-microservice/</guid>
+      <description>&lt;h1 id=&#34;how-to-debug-a-go-microservice&#34;&gt;How to Debug a Go Microservice &lt;a href=&#34;#how-to-debug-a-go-microservice&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;In this guide, we’ll cover how to debug a Golang microservice running in a Kubernetes environment using mirrord. You’ll learn how to set up and use mirrord with the Goland IDE and the command line.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tip:&lt;/strong&gt;&lt;/em&gt; You can use &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;  mirrord&#xA;&lt;/a&gt;&#xA; to debug, test, and troubleshoot your applications locally with Kubernetes context, without needing to build or deploy each time.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;common-debugging-techniques-for-microservices-in-go&#34;&gt;Common debugging techniques for microservices in Go &lt;a href=&#34;#common-debugging-techniques-for-microservices-in-go&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;It can be cumbersome to debug microservices on Kubernetes. The lack of a debugging workflow for applications with multiple runtime dependencies in the context of Kubernetes makes it even harder. Why does it even make it harder? The following are common ways of debugging microservices with strict runtime environment dependencies:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Debug Java Microservices in Kubernetes</title>
+      <link>http://localhost:1313/guides/how-to-debug-a-java-microservice/</link>
+      <pubDate>Wed, 15 Jan 2025 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/guides/how-to-debug-a-java-microservice/</guid>
+      <description>&lt;h1 id=&#34;how-to-debug-a-java-microservice&#34;&gt;How to Debug a Java Microservice &lt;a href=&#34;#how-to-debug-a-java-microservice&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;In this guide, we’ll cover how to debug a Java microservice running in a Kubernetes environment using mirrord. You’ll learn how to set up and use mirrord with IntelliJ IDEA and the command-line Java Debugger (jdb).&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tip:&lt;/em&gt;&lt;/strong&gt; You can use &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;  mirrord&#xA;&lt;/a&gt;&#xA;  to debug, test, and troubleshoot your applications locally with Kubernetes context, without needing to build or deploy each time.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;common-debugging-techniques-for-microservices-in-java&#34;&gt;Common debugging techniques for microservices in Java &lt;a href=&#34;#common-debugging-techniques-for-microservices-in-java&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Debugging microservices in Kubernetes can be quite cumbersome, especially due to the lack of a structured debugging workflow for applications with runtime dependencies. This complexity makes the debugging process even more challenging. Let’s explore a few common methods for debugging microservices that have strict runtime environment dependencies: &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bear in Mind #1: Platform Engineering</title>
+      <link>http://localhost:1313/blog/bear-in-mind-1/</link>
+      <pubDate>Mon, 22 Jul 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bear-in-mind-1/</guid>
+      <description>&lt;p&gt;      At MetalBear we build open-source dev tools for backend developers, which puts our domain at the intersection of some pretty interesting topics. There&amp;rsquo;s still a lot of great content being written about things that aren&amp;rsquo;t AI - things like Kubernetes, DevEx, Open Source, Rust, and more - and we go through a lot of it as part of our daily work. How easy it would then be, we collectively thought, to provide our growing community of curious but busy backend developers with a periodic, curated list of our favorite pieces of writing on these topics?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mirrord for Teams – a Step Into the Remocal Future</title>
+      <link>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</link>
+      <pubDate>Mon, 17 Jun 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/mftlaunch.png&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;      Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing &lt;em&gt;mirrord for Teams&lt;/em&gt; to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – &lt;em&gt;Remote&lt;/em&gt; development, where you maintain no local environment and everything is cloud dependent, and &lt;em&gt;Local&lt;/em&gt; development, where you develop software on your computer, sync code to staging and production, and test. &lt;em&gt;Remocal&lt;/em&gt; development allows developers to work locally while their process &lt;em&gt;thinks&lt;/em&gt; it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for backend developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in &lt;em&gt;mirrord for Teams&lt;/em&gt;. But first, a bit about how we got there.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Scaling Out Development Environments</title>
+      <link>http://localhost:1313/blog/scaling-out-development-environments/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/scaling-out-development-environments/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Cross-posted from &lt;a href=&#34;https://audacioustux.com/Scaling-Out-Development-Environment-ceb823260a1f4a10b717a87e998480de&#34;   target=&#34;_blank&#34; &gt;&#xA;    https://audacioustux.com/Scaling-Out-Development-Environment-ceb823260a1f4a10b717a87e998480de&#xA;  &lt;/a&gt;&#xA;  &lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Once upon a time, there was LAMP Stack… &lt;strong&gt;L&lt;/strong&gt;inux, &lt;strong&gt;A&lt;/strong&gt;pache, &lt;strong&gt;M&lt;/strong&gt;ysql, &lt;strong&gt;P&lt;/strong&gt;hp/&lt;strong&gt;P&lt;/strong&gt;ython/&lt;strong&gt;P&lt;/strong&gt;erl - That’s what I’ve used to start my Software Engineering journey. Things were simple, in a sense that there were less “options” to choose from. But today, I have to deploy multiple types of databases, event store + processing pipeline, and other behemoths to work on my application locally.&lt;/p&gt;&#xA;&lt;p&gt;Well, maybe I can use docker-compose to keep things clean and tidy, re-producible for the other team members, but what about the compute resources usage? I don’t know about the M2/M3 users out there, but my Linux laptop either halts or burns my lap.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mirrord 3.0 is out!</title>
+      <link>http://localhost:1313/blog/mirrord-3.0-is-out/</link>
+      <pubDate>Thu, 20 Oct 2022 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/mirrord-3.0-is-out/</guid>
+      <description>&lt;p&gt;Today we’re very excited to launch the first full, stable version of mirrord! Full because it’s the first version where mirrord completely wraps your process in the context of your Kubernetes cluster - it connects everything, from network traffic to file access to environment variables, so that you can keep running your process from the familiar comfort of your local environment, but with input, configuration, and state from the cloud.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Carcinisation of mirrord (or: why we use Rust)</title>
+      <link>http://localhost:1313/blog/carcinisation-of-mirrord-or-why-we-use-rust/</link>
+      <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/carcinisation-of-mirrord-or-why-we-use-rust/</guid>
+      <description>&lt;p&gt;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/carcinisation-of-mirrord-or-why-we-use-rust/rustacean-flat-happy.svg&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;strong&gt;Carcinisation&lt;/strong&gt; (or &lt;strong&gt;carcinization&lt;/strong&gt;) is an example of &lt;a href=&#34;https://en.wikipedia.org/wiki/Convergent_evolution&#34;   target=&#34;_blank&#34; &gt;&#xA;    convergent evolution&#xA;  &lt;/a&gt;&#xA;   in which a &lt;a href=&#34;https://en.wikipedia.org/wiki/Crustacean&#34;   target=&#34;_blank&#34; &gt;&#xA;    crustacean&#xA;  &lt;/a&gt;&#xA;   &lt;a href=&#34;https://en.wikipedia.org/wiki/Evolution&#34;   target=&#34;_blank&#34; &gt;&#xA;    evolves&#xA;  &lt;/a&gt;&#xA;   into a &lt;a href=&#34;https://en.wikipedia.org/wiki/Crab&#34;   target=&#34;_blank&#34; &gt;&#xA;    crab&#xA;  &lt;/a&gt;&#xA;  -like form from a non-crab-like form. (source: &lt;a href=&#34;https://en.wikipedia.org/wiki/Carcinisation&#34;   target=&#34;_blank&#34; &gt;&#xA;    Wikipedia&#xA;  &lt;/a&gt;&#xA;  ).&lt;/p&gt;&#xA;&lt;p&gt;A classic example of carcinisation is MetalBear&amp;rsquo;s mirrord project, where several different components converged on Rust as their main language. In this post, we&amp;rsquo;ll detail their different evolutionary paths and explain why they ended up being written in Rust.&lt;/p&gt;&#xA;&lt;h1 id=&#34;first-of-all-what-is-mirrord&#34;&gt;First of all, what is mirrord? &lt;a href=&#34;#first-of-all-what-is-mirrord&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;mirrord is an open-source tool that lets developers run local processes in the context of their cloud environment. It is meant to provide the benefits of running your service in a cloud environment (e.g. staging) without going through the hassle of actually deploying it there, and without disrupting the environment by deploying untested code.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>(Re)Introducing mirrord</title>
+      <link>http://localhost:1313/blog/reintroducing-mirrord/</link>
+      <pubDate>Mon, 30 May 2022 15:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/reintroducing-mirrord/</guid>
+      <description>&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/reintroducing-mirrord/mirrord.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;the-dev-loop-or-know-your-enemy&#34;&gt;The Dev Loop (or: know your enemy) &lt;a href=&#34;#the-dev-loop-or-know-your-enemy&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/reintroducing-mirrord/loop.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Imagine you’re a backend developer at post series B SaaS soonicorn. You’ve spent half a sprint adding a new feature to your microservice. You’ve thoroughly researched possible inputs and database states and built an elaborate test suite. Your code was mercilessly reviewed by two of your teammates. Finally, the tests pass, the pull request is approved, and as a final verification, you deploy your new code to the staging environment…&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Metal-who?</title>
+      <link>http://localhost:1313/blog/metal-who/</link>
+      <pubDate>Thu, 12 May 2022 09:19:42 +0100</pubDate>
+      <guid>http://localhost:1313/blog/metal-who/</guid>
+      <description>&lt;h1 id=&#34;metalbear&#34;&gt;MetalBear!🐻 &lt;a href=&#34;#metalbear&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;A huge omnivore that also conducts electricity. In the present context, though, a new startup that’s working on developing a new toolset for backend engineers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-&#34;&gt;Why ⏪ &lt;a href=&#34;#why-&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Like many devtools startups, MetalBear was born out of frustration. We&amp;rsquo;ve both spent years building cloud services, splitting up monoliths, wrangling configurations, writing endless tests only to break production because of that one edge case.&lt;/p&gt;&#xA;&lt;p&gt;We finally came to the realization that while tools tailored to devops engineers, frontend developers, QA engineers, and more, we, the backend developers, were being underserved. So much of our day to day work seemed needlessly slow or complicated, begging for automation or even fundamental disruption, and yet no company seemed willing to rise up to the challenge. So we decided to start MetalBear 🐻&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

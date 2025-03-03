@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI/ML on </title>
+    <link>http://localhost:1313/tags/ai/ml/</link>
+    <description>Recent content in AI/ML on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Feb 2024 06:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Five Talks We&#39;re Waiting for at KubeCon Europe 2024</title>
+      <link>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</link>
+      <pubDate>Thu, 22 Feb 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</guid>
+      <description>&lt;p&gt;Bonjour Kubernauts! Kubecon Europe is less than a month away, and it’s coming to the city of lights. The MetalBear team will be joining the fun in Paris this year, and we’ve prepared a list of five talks that we’re particularly excited about.&lt;/p&gt;&#xA;&lt;figure class=&#34;center mid-width&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/kubecon-paris.png&#34;&#xA;    alt=&#34;mirrord at KubeCon Europe 2024&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;whats-new-at-kubecon-this-year&#34;&gt;What’s New at KubeCon This Year? &lt;a href=&#34;#whats-new-at-kubecon-this-year&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Every year, the event unveils transformative tech trends that are making waves in the tech ecosystem, causing end-users, developers, engineers, and stakeholders to reflect on the past and how these trends can impact their future.&#xA;KubeCon + CloudNativeCon 2024 promises to spotlight several groundbreaking projects that have flourished within the Kubernetes ecosystem. Unsurprisingly, the main buzzword this year is AI.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

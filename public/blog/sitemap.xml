@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    <url>
+      <loc>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</loc>
+      <lastmod>2024-11-07T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</loc>
+      <lastmod>2024-11-04T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/there-and-back-again-port-forwarding-with-mirrord/</loc>
+      <lastmod>2024-10-30T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</loc>
+      <lastmod>2024-10-01T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/bear-in-mind-1/</loc>
+      <lastmod>2022-07-22T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/validation-at-scale-with-open-source-mvps/</loc>
+      <lastmod>2024-07-14T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</loc>
+      <lastmod>2022-06-17T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/kubecon-2024-takeaways/</loc>
+      <lastmod>2024-04-03T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/comparison-of-internal-developer-platforms/</loc>
+      <lastmod>2024-03-22T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</loc>
+      <lastmod>2024-03-04T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</loc>
+      <lastmod>2024-02-22T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/scaling-out-development-environments/</loc>
+      <lastmod>2023-12-21T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</loc>
+      <lastmod>2023-08-29T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</loc>
+      <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</loc>
+      <lastmod>2023-06-04T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/writing-a-kubernetes-operator/</loc>
+      <lastmod>2023-03-09T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/fun-with-macoss-sip/</loc>
+      <lastmod>2023-01-24T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</loc>
+      <lastmod>2022-10-31T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/mirrord-3.0-is-out/</loc>
+      <lastmod>2022-10-20T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/hooking-go-from-rust-hitchhikers-guide-to-the-go-laxy/</loc>
+      <lastmod>2022-08-17T15:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/starting-a-backend-developers-community/</loc>
+      <lastmod>2022-08-02T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/getting-started-with-ephemeral-containers/</loc>
+      <lastmod>2022-07-27T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/</loc>
+      <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/carcinisation-of-mirrord-or-why-we-use-rust/</loc>
+      <lastmod>2022-06-14T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/reintroducing-mirrord/</loc>
+      <lastmod>2022-05-30T15:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/blog/metal-who/</loc>
+      <lastmod>2022-05-17T09:19:42+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    </urlset>
