@@ -6,6 +6,109 @@
     max-width: 1024px;
 }
 
+.home {
+    background-color: #FAFAFD;
+}
+
+.rotating-text {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.rotating-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rotating-text.exit {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.splide-brand__item {
+    display: flex;
+    align-items: center;
+}
+
+// .splide-brand__item img {
+//     width: 50%;
+// }
+
+.splide-story .splide__pagination {
+    bottom: -14px;
+}
+
+.splide__pagination__page {
+    color: #ACACAC;
+    width: 11px;
+    height: 11px;
+}
+
+.splide__pagination__page.is-active {
+    background: #756DF3;
+    transform: scale(1);
+    z-index: 1;
+}
+
+.home-arrow {
+    translate: -24px;
+    height: 140px;
+}
+
+.home-arrow__image-wrapper {
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@include media-breakpoint-up(lg) {
+    .home-arrow {
+        height: 170px;
+    }
+
+    .home-arrow__image-wrapper {
+        padding-bottom: 21px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .home-arrow__image {
+        width: 326px;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .home-arrow {
+        height: 213px;
+    }
+
+    .home-arrow__image-wrapper {
+        padding-bottom: 27px;
+    }
+
+    .home-arrow__image {
+        width: 408px;
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .home-arrow {
+        height: 286px;
+    }
+
+    .home-arrow__image-wrapper {
+        padding-bottom: 36px;
+    }
+
+    .home-arrow__image {
+        width: 548px;
+    }
+}
+
 .homepage {
     overflow: hidden;
 }
@@ -21,10 +124,6 @@
     font-size: 1rem;
     color: #222222;
     margin-bottom: 25px;
-}
-
-.text-primary {
-    color: #F36869;
 }
 
 .section-button {
@@ -62,37 +161,37 @@
     gap: 32px;
 }
 
-.button-primary,
-.button-secondary {
-    font-size: 1rem;
-    border: 1px solid $brand-black;
-    box-shadow: -5px 6px 0px #000000;
-    border-radius: 8px;
-    padding: 11px 21px;
-    display: inline-block;
-}
+// .button-primary,
+// .button-secondary {
+//     font-size: 1rem;
+//     border: 1px solid $brand-black;
+//     box-shadow: -5px 6px 0px #000000;
+//     border-radius: 8px;
+//     padding: 11px 21px;
+//     display: inline-block;
+// }
 
-.button-primary {
-    color: #ffffff;
-    background: $primary;
-}
+// .button-primary {
+//     color: #ffffff;
+//     background: $primary;
+// }
 
-.button-primary:hover {
-    color: $brand-black;
-    text-decoration: none;
-    background-color: #D3E5E4;
-}
+// .button-primary:hover {
+//     color: $brand-black;
+//     text-decoration: none;
+//     background-color: #D3E5E4;
+// }
 
-.button-secondary {
-    color: $brand-black;
-    background: #ffffff;
-}
+// .button-secondary {
+//     color: $brand-black;
+//     background: #ffffff;
+// }
 
-.button-secondary:hover {
-    color: $brand-black;
-    text-decoration: none;
-    background-color: #D3E5E4;
-}
+// .button-secondary:hover {
+//     color: $brand-black;
+//     text-decoration: none;
+//     background-color: #D3E5E4;
+// }
 
 .button-hero {
     padding: 10px 25px;
@@ -132,13 +231,13 @@
         min-width: 138px;
     }
 
-    .button-primary,
-    .button-secondary {
-        font-size: 1rem;
-        box-shadow: -6px 6px 0px #000000;
-        border-radius: 9px;
-        padding: 11px 21px;
-    }
+    // .button-primary,
+    // .button-secondary {
+    //     font-size: 1rem;
+    //     box-shadow: -6px 6px 0px #000000;
+    //     border-radius: 9px;
+    //     padding: 11px 21px;
+    // }
 
     .button-big {
         padding: 12px 65px;
@@ -175,13 +274,13 @@
         min-width: 183px;
     }
 
-    .button-primary,
-    .button-secondary {
-        font-size: 1rem;
-        box-shadow: -5px 5px 0px #000000;
-        border-radius: 9px;
-        padding: 14px 27px;
-    }
+    // .button-primary,
+    // .button-secondary {
+    //     font-size: 1rem;
+    //     box-shadow: -5px 5px 0px #000000;
+    //     border-radius: 9px;
+    //     padding: 14px 27px;
+    // }
 
     .button-big {
         padding: 12px 65px;
@@ -218,13 +317,13 @@
         min-width: 222px;
     }
 
-    .button-primary,
-    .button-secondary {
-        font-size: 1.25rem;
-        box-shadow: -6px 6px 0px #000000;
-        border-radius: 11px;
-        padding: 17px 33px;
-    }
+    // .button-primary,
+    // .button-secondary {
+    //     font-size: 1.25rem;
+    //     box-shadow: -6px 6px 0px #000000;
+    //     border-radius: 11px;
+    //     padding: 17px 33px;
+    // }
 
     .button-big {
         padding: 12px 65px;

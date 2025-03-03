@@ -11,7 +11,6 @@
     "access": "public"
   },
   "scripts": {
-     "dev": "hugo server",
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
     "prestart": "npm run clean",
