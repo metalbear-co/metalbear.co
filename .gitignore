@@ -1,1 +1,4 @@
+# Don't commit this file as it might break cloudflare!
+build.sh
+
 node_modules
