@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anita Ihuman on </title>
+    <link>http://localhost:1313/contributors/anita-ihuman/</link>
+    <description>Recent content in Anita Ihuman on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 22 Mar 2024 06:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/contributors/anita-ihuman/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bear in Mind #1: Platform Engineering</title>
+      <link>http://localhost:1313/blog/bear-in-mind-1/</link>
+      <pubDate>Mon, 22 Jul 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bear-in-mind-1/</guid>
+      <description>&lt;p&gt;      At MetalBear we build open-source dev tools for backend developers, which puts our domain at the intersection of some pretty interesting topics. There&amp;rsquo;s still a lot of great content being written about things that aren&amp;rsquo;t AI - things like Kubernetes, DevEx, Open Source, Rust, and more - and we go through a lot of it as part of our daily work. How easy it would then be, we collectively thought, to provide our growing community of curious but busy backend developers with a periodic, curated list of our favorite pieces of writing on these topics?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comparison of Internal Developer Platforms</title>
+      <link>http://localhost:1313/blog/comparison-of-internal-developer-platforms/</link>
+      <pubDate>Fri, 22 Mar 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/comparison-of-internal-developer-platforms/</guid>
+      <description>&lt;p&gt;DevOps emerged to address the need for better developer productivity and a more efficient development lifecycle. However, DevOps teams often find themselves bogged down by operational tasks like security, scaling, and infrastructure management. The demand for robust developer platforms continues to grow, and with the rise of cloud computing, organizations struggle to keep pace with the complexities and speed involved. This is where Internal Developer Platforms (IDPs) come in – a trendy concept in Platform Engineering that promises to streamline processes and boost developer productivity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Five Talks We&#39;re Waiting for at KubeCon Europe 2024</title>
+      <link>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</link>
+      <pubDate>Thu, 22 Feb 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</guid>
+      <description>&lt;p&gt;Bonjour Kubernauts! Kubecon Europe is less than a month away, and it’s coming to the city of lights. The MetalBear team will be joining the fun in Paris this year, and we’ve prepared a list of five talks that we’re particularly excited about.&lt;/p&gt;&#xA;&lt;figure class=&#34;center mid-width&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/kubecon-paris.png&#34;&#xA;    alt=&#34;mirrord at KubeCon Europe 2024&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;whats-new-at-kubecon-this-year&#34;&gt;What’s New at KubeCon This Year? &lt;a href=&#34;#whats-new-at-kubecon-this-year&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Every year, the event unveils transformative tech trends that are making waves in the tech ecosystem, causing end-users, developers, engineers, and stakeholders to reflect on the past and how these trends can impact their future.&#xA;KubeCon + CloudNativeCon 2024 promises to spotlight several groundbreaking projects that have flourished within the Kubernetes ecosystem. Unsurprisingly, the main buzzword this year is AI.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

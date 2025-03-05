@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQS on </title>
+    <link>http://localhost:1313/tags/sqs/</link>
+    <description>Recent content in SQS on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Oct 2024 06:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sqs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Split Queues To Share Cloud Development Environments</title>
+      <link>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</link>
+      <pubDate>Tue, 01 Oct 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</guid>
+      <description>&lt;p&gt;One of the reasons &lt;a href=&#34;https://mirrord.dev/docs/overview/teams/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord for Teams&#xA;  &lt;/a&gt;&#xA;   is a gamechanger for many&#xA;organizations is that it makes it possible for a whole team to work with one shared cloud environment. They don’t&#xA;need to run the whole environment for each developer, they don’t need to have their entire architecture running on&#xA;their laptops, and they don&amp;rsquo;t need to redeploy to Kubernetes to test new code or debug it. Developers just press&#xA;“run” in their IDE, and their code is executed &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    remocally&#xA;  &lt;/a&gt;&#xA;  : the code runs locally, but with&#xA;access to any required resources in the Kubernetes cluster or outside of it. With mirrord for Teams, developers can&#xA;even work on the same service at the same time, and control how to divide between them consumable data like&#xA;incoming HTTP requests, and now also queue messages.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

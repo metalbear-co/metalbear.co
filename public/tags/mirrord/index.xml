@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mirrord on </title>
+    <link>http://localhost:1313/tags/mirrord/</link>
+    <description>Recent content in Mirrord on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mirrord/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Four KubeCon &#43; CloudNativeCon Schedules for Four Types of Attendees</title>
+      <link>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</link>
+      <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</guid>
+      <description>&lt;p&gt;KubeCon is one of those huge events where so much is happening, and so much is happening at the same time. If you don&amp;rsquo;t&#xA;plan in advance, you&amp;rsquo;re very likely to miss out on some events that would have been interesting for you. Our first tip&#xA;is: don’t worry too much about missing talks, as all talks will be recorded and uploaded to YouTube shortly after the&#xA;event. Social events, workshops, discussions etc. cannot be caught up later.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Discover mirrord’s approach to fast, cloud-connected local dev at KubeCon</title>
+      <link>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
+      <description>&lt;p&gt;We get it—“Another blog about a company’s KubeCon booth?” These posts can be a bit predictable. So, we’ll keep this one brief and focused on how &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord&#xA;  &lt;/a&gt;&#xA;   can actually make cloud development easier.&lt;/p&gt;&#xA;&lt;p&gt;As one CTO put it, “&lt;em&gt;at our company, mirrord is doing as much for developer productivity as AI is&lt;/em&gt;.” That’s high praise, and while we’re not here to boast, we do think it’s worth checking out if you’re looking for a smoother development process.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>There and Back Again: Port Forwarding with mirrord</title>
+      <link>http://localhost:1313/blog/there-and-back-again-port-forwarding-with-mirrord/</link>
+      <pubDate>Wed, 30 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/there-and-back-again-port-forwarding-with-mirrord/</guid>
+      <description>&lt;h3 id=&#34;port-forwarding-in-the-wild&#34;&gt;Port forwarding in the wild &lt;a href=&#34;#port-forwarding-in-the-wild&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Port forwarding via SSH, also called SSH tunneling, is a method for communicating securely over an insecure connection. In this way sensitive info can be transmitted over the internet, for example to access your company&amp;rsquo;s testing environment data from home.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/blog/there-and-back-again-port-forwarding-with-mirrord/ssh-port-forwarding.png&#34;&#xA;    alt=&#34;diagram of SSH port forwarding&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;More recently, port forwarding might also refer to &lt;code&gt;kubectl port-forward&lt;/code&gt;, allowing the user to forward traffic into a Kubernetes cluster from a local port by going through the Kubernetes API. This is a faster way to access a pod without having to write special configuration to set up ingress or a service, but is generally considered “just good enough” for lightweight debugging.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Split Queues To Share Cloud Development Environments</title>
+      <link>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</link>
+      <pubDate>Tue, 01 Oct 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</guid>
+      <description>&lt;p&gt;One of the reasons &lt;a href=&#34;https://mirrord.dev/docs/overview/teams/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord for Teams&#xA;  &lt;/a&gt;&#xA;   is a gamechanger for many&#xA;organizations is that it makes it possible for a whole team to work with one shared cloud environment. They don’t&#xA;need to run the whole environment for each developer, they don’t need to have their entire architecture running on&#xA;their laptops, and they don&amp;rsquo;t need to redeploy to Kubernetes to test new code or debug it. Developers just press&#xA;“run” in their IDE, and their code is executed &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    remocally&#xA;  &lt;/a&gt;&#xA;  : the code runs locally, but with&#xA;access to any required resources in the Kubernetes cluster or outside of it. With mirrord for Teams, developers can&#xA;even work on the same service at the same time, and control how to divide between them consumable data like&#xA;incoming HTTP requests, and now also queue messages.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Validation at Scale with Open Source MVPs</title>
+      <link>http://localhost:1313/blog/validation-at-scale-with-open-source-mvps/</link>
+      <pubDate>Sun, 14 Jul 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/validation-at-scale-with-open-source-mvps/</guid>
+      <description>&lt;p&gt;      Minimum Viable Products (MVPs) are generally accepted as the right way to kickstart a product startup. It’s easy - you whip up a quick prototype, get it in front of some users, and boom - you’ve got some feedback plus an initial user base. All that’s left to do is iterate for a few years until you reach Unicorn status. What’s often left unaddressed in this version of the story is - &lt;em&gt;how do you get users for your MVP, and in a large enough amount that their feedback isn’t skewed or overfitted&lt;/em&gt;?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mirrord for Teams – a Step Into the Remocal Future</title>
+      <link>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</link>
+      <pubDate>Mon, 17 Jun 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/mftlaunch.png&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;      Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing &lt;em&gt;mirrord for Teams&lt;/em&gt; to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – &lt;em&gt;Remote&lt;/em&gt; development, where you maintain no local environment and everything is cloud dependent, and &lt;em&gt;Local&lt;/em&gt; development, where you develop software on your computer, sync code to staging and production, and test. &lt;em&gt;Remocal&lt;/em&gt; development allows developers to work locally while their process &lt;em&gt;thinks&lt;/em&gt; it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for backend developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in &lt;em&gt;mirrord for Teams&lt;/em&gt;. But first, a bit about how we got there.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>On Pausing Containers - how we built, and why we deprecated, our container pause feature</title>
+      <link>http://localhost:1313/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</link>
+      <pubDate>Mon, 04 Mar 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</guid>
+      <description>&lt;p&gt;Did you know that you can ”freeze” running containers? We found out about this feature while developing a particularly handy capability for mirrord.&#xA;mirrord lets developers run local code in the context of a remote Kubernetes pod. This lets them test their code in cloud conditions without going through CI and deployment. In most cases, stealing or mirroring incoming traffic from the remote pod to the local process is good enough. However, when you have applications that consume tasks and do more than react to incoming requests, the user might want to &lt;a href=&#34;https://github.com/metalbear-co/mirrord/discussions/2016&#34;   target=&#34;_blank&#34; &gt;&#xA;    pause the remote application completely&#xA;  &lt;/a&gt;&#xA;  , so that it doesn’t compete with their local process for tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Scaling Out Development Environments</title>
+      <link>http://localhost:1313/blog/scaling-out-development-environments/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/scaling-out-development-environments/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Cross-posted from &lt;a href=&#34;https://audacioustux.com/Scaling-Out-Development-Environment-ceb823260a1f4a10b717a87e998480de&#34;   target=&#34;_blank&#34; &gt;&#xA;    https://audacioustux.com/Scaling-Out-Development-Environment-ceb823260a1f4a10b717a87e998480de&#xA;  &lt;/a&gt;&#xA;  &lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Once upon a time, there was LAMP Stack… &lt;strong&gt;L&lt;/strong&gt;inux, &lt;strong&gt;A&lt;/strong&gt;pache, &lt;strong&gt;M&lt;/strong&gt;ysql, &lt;strong&gt;P&lt;/strong&gt;hp/&lt;strong&gt;P&lt;/strong&gt;ython/&lt;strong&gt;P&lt;/strong&gt;erl - That’s what I’ve used to start my Software Engineering journey. Things were simple, in a sense that there were less “options” to choose from. But today, I have to deploy multiple types of databases, event store + processing pipeline, and other behemoths to work on my application locally.&lt;/p&gt;&#xA;&lt;p&gt;Well, maybe I can use docker-compose to keep things clean and tidy, re-producible for the other team members, but what about the compute resources usage? I don’t know about the M2/M3 users out there, but my Linux laptop either halts or burns my lap.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Traffic Police 🚨 - Controlling outgoing traffic with mirrord</title>
+      <link>http://localhost:1313/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</guid>
+      <description>&lt;p&gt;So, you&amp;rsquo;ve been using mirrord to simplify your development process (if you haven’t, go &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    here!&#xA;  &lt;/a&gt;&#xA;  ). Naturally, you want the traffic from the app you&amp;rsquo;re debugging to go through the cluster environment, so your app can communicate with its &lt;em&gt;clustery&lt;/em&gt; pals. There is a problem though: your latest change adds some new columns to the database, and you don’t want to modify the database in the cluster and affect everyone else working on it. You do have a local instance of the database that you can modify, so your app can use that, but you still want it to talk to all the other components in the cluster.  So what now? The new &lt;strong&gt;outgoing traffic filter&lt;/strong&gt; feature is here to solve exactly this type of problem!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mirrord 3.0 is out!</title>
+      <link>http://localhost:1313/blog/mirrord-3.0-is-out/</link>
+      <pubDate>Thu, 20 Oct 2022 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/mirrord-3.0-is-out/</guid>
+      <description>&lt;p&gt;Today we’re very excited to launch the first full, stable version of mirrord! Full because it’s the first version where mirrord completely wraps your process in the context of your Kubernetes cluster - it connects everything, from network traffic to file access to environment variables, so that you can keep running your process from the familiar comfort of your local environment, but with input, configuration, and state from the cloud.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mirrord internals - hooking libc functions in Rust and fixing bugs</title>
+      <link>http://localhost:1313/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Is mirrord some kind of &lt;a href=&#34;https://man7.org/linux/man-pages/man2/ptrace.2.html&#34;   target=&#34;_blank&#34; &gt;&#xA;    ptrace&#xA;  &lt;/a&gt;&#xA;   magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. To my surprise, the idea and design behind mirrord are based on simple concepts implemented in a novel way! This is what I want to discuss in this blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>(Re)Introducing mirrord</title>
+      <link>http://localhost:1313/blog/reintroducing-mirrord/</link>
+      <pubDate>Mon, 30 May 2022 15:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/reintroducing-mirrord/</guid>
+      <description>&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/reintroducing-mirrord/mirrord.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;the-dev-loop-or-know-your-enemy&#34;&gt;The Dev Loop (or: know your enemy) &lt;a href=&#34;#the-dev-loop-or-know-your-enemy&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/reintroducing-mirrord/loop.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Imagine you’re a backend developer at post series B SaaS soonicorn. You’ve spent half a sprint adding a new feature to your microservice. You’ve thoroughly researched possible inputs and database states and built an elaborate test suite. Your code was mercilessly reviewed by two of your teammates. Finally, the tests pass, the pull request is approved, and as a final verification, you deploy your new code to the staging environment…&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
