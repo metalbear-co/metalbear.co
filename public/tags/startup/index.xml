@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Startup on </title>
-    <link>http://localhost:1313/tags/startup/</link>
+    <link>http://localhost:54350/tags/startup/</link>
     <description>Recent content in Startup on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/startup/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54350/tags/startup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discover mirrord’s approach to fast, cloud-connected local dev at KubeCon</title>
-      <link>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
+      <link>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
       <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
+      <guid>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
       <description>&lt;p&gt;We get it—“Another blog about a company’s KubeCon booth?” These posts can be a bit predictable. So, we’ll keep this one brief and focused on how &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord&#xA;  &lt;/a&gt;&#xA;   can actually make cloud development easier.&lt;/p&gt;&#xA;&lt;p&gt;As one CTO put it, “&lt;em&gt;at our company, mirrord is doing as much for developer productivity as AI is&lt;/em&gt;.” That’s high praise, and while we’re not here to boast, we do think it’s worth checking out if you’re looking for a smoother development process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>There and Back Again: Port Forwarding with mirrord</title>
-      <link>http://localhost:1313/blog/there-and-back-again-port-forwarding-with-mirrord/</link>
+      <link>http://localhost:54350/blog/there-and-back-again-port-forwarding-with-mirrord/</link>
       <pubDate>Wed, 30 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/there-and-back-again-port-forwarding-with-mirrord/</guid>
-      <description>&lt;h3 id=&#34;port-forwarding-in-the-wild&#34;&gt;Port forwarding in the wild &lt;a href=&#34;#port-forwarding-in-the-wild&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Port forwarding via SSH, also called SSH tunneling, is a method for communicating securely over an insecure connection. In this way sensitive info can be transmitted over the internet, for example to access your company&amp;rsquo;s testing environment data from home.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/blog/there-and-back-again-port-forwarding-with-mirrord/ssh-port-forwarding.png&#34;&#xA;    alt=&#34;diagram of SSH port forwarding&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;More recently, port forwarding might also refer to &lt;code&gt;kubectl port-forward&lt;/code&gt;, allowing the user to forward traffic into a Kubernetes cluster from a local port by going through the Kubernetes API. This is a faster way to access a pod without having to write special configuration to set up ingress or a service, but is generally considered “just good enough” for lightweight debugging.&lt;/p&gt;</description>
+      <guid>http://localhost:54350/blog/there-and-back-again-port-forwarding-with-mirrord/</guid>
+      <description>&lt;h3 id=&#34;port-forwarding-in-the-wild&#34;&gt;Port forwarding in the wild &lt;a href=&#34;#port-forwarding-in-the-wild&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Port forwarding via SSH, also called SSH tunneling, is a method for communicating securely over an insecure connection. In this way sensitive info can be transmitted over the internet, for example to access your company&amp;rsquo;s testing environment data from home.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:54350/blog/there-and-back-again-port-forwarding-with-mirrord/ssh-port-forwarding.png&#34;&#xA;    alt=&#34;diagram of SSH port forwarding&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;More recently, port forwarding might also refer to &lt;code&gt;kubectl port-forward&lt;/code&gt;, allowing the user to forward traffic into a Kubernetes cluster from a local port by going through the Kubernetes API. This is a faster way to access a pod without having to write special configuration to set up ingress or a service, but is generally considered “just good enough” for lightweight debugging.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Validation at Scale with Open Source MVPs</title>
-      <link>http://localhost:1313/blog/validation-at-scale-with-open-source-mvps/</link>
+      <link>http://localhost:54350/blog/validation-at-scale-with-open-source-mvps/</link>
       <pubDate>Sun, 14 Jul 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/validation-at-scale-with-open-source-mvps/</guid>
+      <guid>http://localhost:54350/blog/validation-at-scale-with-open-source-mvps/</guid>
       <description>&lt;p&gt;      Minimum Viable Products (MVPs) are generally accepted as the right way to kickstart a product startup. It’s easy - you whip up a quick prototype, get it in front of some users, and boom - you’ve got some feedback plus an initial user base. All that’s left to do is iterate for a few years until you reach Unicorn status. What’s often left unaddressed in this version of the story is - &lt;em&gt;how do you get users for your MVP, and in a large enough amount that their feedback isn’t skewed or overfitted&lt;/em&gt;?&lt;/p&gt;</description>
     </item>
   </channel>

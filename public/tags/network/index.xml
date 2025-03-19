@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on </title>
-    <link>http://localhost:1313/tags/network/</link>
+    <link>http://localhost:54350/tags/network/</link>
     <description>Recent content in Network on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 29 Aug 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54350/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Traffic Police 🚨 - Controlling outgoing traffic with mirrord</title>
-      <link>http://localhost:1313/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</link>
+      <link>http://localhost:54350/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</link>
       <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</guid>
+      <guid>http://localhost:54350/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</guid>
       <description>&lt;p&gt;So, you&amp;rsquo;ve been using mirrord to simplify your development process (if you haven’t, go &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    here!&#xA;  &lt;/a&gt;&#xA;  ). Naturally, you want the traffic from the app you&amp;rsquo;re debugging to go through the cluster environment, so your app can communicate with its &lt;em&gt;clustery&lt;/em&gt; pals. There is a problem though: your latest change adds some new columns to the database, and you don’t want to modify the database in the cluster and affect everyone else working on it. You do have a local instance of the database that you can modify, so your app can use that, but you still want it to talk to all the other components in the cluster.  So what now? The new &lt;strong&gt;outgoing traffic filter&lt;/strong&gt; feature is here to solve exactly this type of problem!&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eyal Bukchin on </title>
-    <link>http://localhost:1313/contributors/eyal-bukchin/</link>
+    <link>http://localhost:54350/contributors/eyal-bukchin/</link>
     <description>Recent content in Eyal Bukchin on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 14 Jul 2024 06:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/contributors/eyal-bukchin/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54350/contributors/eyal-bukchin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bear in Mind #1: Platform Engineering</title>
-      <link>http://localhost:1313/blog/bear-in-mind-1/</link>
+      <link>http://localhost:54350/blog/bear-in-mind-1/</link>
       <pubDate>Mon, 22 Jul 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/bear-in-mind-1/</guid>
+      <guid>http://localhost:54350/blog/bear-in-mind-1/</guid>
       <description>&lt;p&gt;      At MetalBear we build open-source dev tools for backend developers, which puts our domain at the intersection of some pretty interesting topics. There&amp;rsquo;s still a lot of great content being written about things that aren&amp;rsquo;t AI - things like Kubernetes, DevEx, Open Source, Rust, and more - and we go through a lot of it as part of our daily work. How easy it would then be, we collectively thought, to provide our growing community of curious but busy backend developers with a periodic, curated list of our favorite pieces of writing on these topics?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Validation at Scale with Open Source MVPs</title>
-      <link>http://localhost:1313/blog/validation-at-scale-with-open-source-mvps/</link>
+      <link>http://localhost:54350/blog/validation-at-scale-with-open-source-mvps/</link>
       <pubDate>Sun, 14 Jul 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/validation-at-scale-with-open-source-mvps/</guid>
+      <guid>http://localhost:54350/blog/validation-at-scale-with-open-source-mvps/</guid>
       <description>&lt;p&gt;      Minimum Viable Products (MVPs) are generally accepted as the right way to kickstart a product startup. It’s easy - you whip up a quick prototype, get it in front of some users, and boom - you’ve got some feedback plus an initial user base. All that’s left to do is iterate for a few years until you reach Unicorn status. What’s often left unaddressed in this version of the story is - &lt;em&gt;how do you get users for your MVP, and in a large enough amount that their feedback isn’t skewed or overfitted&lt;/em&gt;?&lt;/p&gt;</description>
     </item>
     <item>
       <title>mirrord as an alternative to Telepresence</title>
-      <link>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</link>
+      <link>http://localhost:54350/blog/mirrord-as-an-alternative-to-telepresence/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</guid>
+      <guid>http://localhost:54350/blog/mirrord-as-an-alternative-to-telepresence/</guid>
       <description>&lt;p&gt;A question that comes up often from those already familiar with local Kubernetes development is how mirrord compares to Telepresence. The idea at the base of both products is indeed similar: instead of deploying your new code to the cloud and testing it there, connect it to the cloud from your local machine. By shifting left on cloud testing this way you utilize your cloud environment much more effectively and speed up your development process. The people at Ambassador Labs &lt;a href=&#34;https://www.getambassador.io/docs/telepresence-oss/latest/concepts/devworkflow&#34;   target=&#34;_blank&#34; &gt;&#xA;    wrote about it at length&#xA;  &lt;/a&gt;&#xA;  .&lt;/p&gt;</description>
     </item>
     <item>
       <title>Approaches in Cloud Development Ergonomics</title>
-      <link>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</link>
+      <link>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</link>
       <pubDate>Mon, 31 Oct 2022 06:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</guid>
+      <guid>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</guid>
       <description>&lt;p&gt;The advent of microservice architectures and cloud-native has taken some pretty severe tolls on developer ergonomics. It feels as if the tools cloud developers have at their disposal haven’t evolved fast enough to keep up with the rapid progress in infrastructure, and this tool debt is readily apparent in the day-to-day of the modern developer.&lt;/p&gt;&#xA;&lt;p&gt;The clearest example of this is that it’s now &lt;strong&gt;really hard to just run your application&lt;/strong&gt;. Not the one microservice you’re currently working on, but your actual entire application, which you ultimately deploy to the cloud and serves your customers. You used to be able to fire up your monolith right there on your laptop from within your IDE (crash, change some code, run it again), but architectures today have become resource-intensive, reliant on third-party services, and mostly just plain convoluted to the point where local execution is no longer a viable option.&lt;/p&gt;</description>
     </item>
     <item>
       <title>mirrord 3.0 is out!</title>
-      <link>http://localhost:1313/blog/mirrord-3.0-is-out/</link>
+      <link>http://localhost:54350/blog/mirrord-3.0-is-out/</link>
       <pubDate>Thu, 20 Oct 2022 06:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/mirrord-3.0-is-out/</guid>
+      <guid>http://localhost:54350/blog/mirrord-3.0-is-out/</guid>
       <description>&lt;p&gt;Today we’re very excited to launch the first full, stable version of mirrord! Full because it’s the first version where mirrord completely wraps your process in the context of your Kubernetes cluster - it connects everything, from network traffic to file access to environment variables, so that you can keep running your process from the familiar comfort of your local environment, but with input, configuration, and state from the cloud.&lt;/p&gt;</description>
     </item>
     <item>
       <title>(Re)Introducing mirrord</title>
-      <link>http://localhost:1313/blog/reintroducing-mirrord/</link>
+      <link>http://localhost:54350/blog/reintroducing-mirrord/</link>
       <pubDate>Mon, 30 May 2022 15:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/reintroducing-mirrord/</guid>
-      <description>&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/reintroducing-mirrord/mirrord.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;the-dev-loop-or-know-your-enemy&#34;&gt;The Dev Loop (or: know your enemy) &lt;a href=&#34;#the-dev-loop-or-know-your-enemy&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/reintroducing-mirrord/loop.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Imagine you’re a backend developer at post series B SaaS soonicorn. You’ve spent half a sprint adding a new feature to your microservice. You’ve thoroughly researched possible inputs and database states and built an elaborate test suite. Your code was mercilessly reviewed by two of your teammates. Finally, the tests pass, the pull request is approved, and as a final verification, you deploy your new code to the staging environment…&lt;/p&gt;</description>
+      <guid>http://localhost:54350/blog/reintroducing-mirrord/</guid>
+      <description>&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:54350/blog/reintroducing-mirrord/mirrord.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;the-dev-loop-or-know-your-enemy&#34;&gt;The Dev Loop (or: know your enemy) &lt;a href=&#34;#the-dev-loop-or-know-your-enemy&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:54350/blog/reintroducing-mirrord/loop.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Imagine you’re a backend developer at post series B SaaS soonicorn. You’ve spent half a sprint adding a new feature to your microservice. You’ve thoroughly researched possible inputs and database states and built an elaborate test suite. Your code was mercilessly reviewed by two of your teammates. Finally, the tests pass, the pull request is approved, and as a final verification, you deploy your new code to the staging environment…&lt;/p&gt;</description>
     </item>
     <item>
       <title>Metal-who?</title>
-      <link>http://localhost:1313/blog/metal-who/</link>
+      <link>http://localhost:54350/blog/metal-who/</link>
       <pubDate>Thu, 12 May 2022 09:19:42 +0100</pubDate>
-      <guid>http://localhost:1313/blog/metal-who/</guid>
+      <guid>http://localhost:54350/blog/metal-who/</guid>
       <description>&lt;h1 id=&#34;metalbear&#34;&gt;MetalBear!🐻 &lt;a href=&#34;#metalbear&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;A huge omnivore that also conducts electricity. In the present context, though, a new startup that’s working on developing a new toolset for backend engineers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-&#34;&gt;Why ⏪ &lt;a href=&#34;#why-&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Like many devtools startups, MetalBear was born out of frustration. We&amp;rsquo;ve both spent years building cloud services, splitting up monoliths, wrangling configurations, writing endless tests only to break production because of that one edge case.&lt;/p&gt;&#xA;&lt;p&gt;We finally came to the realization that while tools tailored to devops engineers, frontend developers, QA engineers, and more, we, the backend developers, were being underserved. So much of our day to day work seemed needlessly slow or complicated, begging for automation or even fundamental disruption, and yet no company seemed willing to rise up to the challenge. So we decided to start MetalBear 🐻&lt;/p&gt;</description>
     </item>
   </channel>

@@ -31,7 +31,7 @@
 }
 
 .link-hover-underline:hover {
-    text-decoration: underline!important;
+    text-decoration: underline !important;
 }
 
 .lh-\[1\.2\] {
@@ -304,6 +304,14 @@
     width: 263px;
 }
 
+.h-34 {
+    height: 34px;
+}
+
+.h-68 {
+    height: 68px;
+}
+
 .h-72 {
     height: 72px;
 }
@@ -324,10 +332,16 @@
     min-height: 160px;
 }
 
+@include media-breakpoint-up(md) {
+    .mr-md-24 {
+        margin-right: 24px;
+    }
+}
+
 @include media-breakpoint-up(lg) {
     .px-lg-14 {
-        padding-left: 14px!important;
-        padding-right: 14px!important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
     }
 
     .py-lg-19 {
@@ -336,8 +350,8 @@
     }
 
     .px-lg-21 {
-        padding-left: 21px!important;
-        padding-right: 21px!important;
+        padding-left: 21px !important;
+        padding-right: 21px !important;
     }
 
     .px-lg-37 {
@@ -538,6 +552,14 @@
         height: 56px;
     }
 
+    .h-lg-43 {
+        height: 43px;
+    }
+
+    .h-lg-86 {
+        height: 86px;
+    }
+
     .h-lg-144 {
         height: 144px;
     }
@@ -557,8 +579,8 @@
 
 @include media-breakpoint-up(xl) {
     .px-xl-21 {
-        padding-left: 21px!important;
-        padding-right: 21px!important;
+        padding-left: 21px !important;
+        padding-right: 21px !important;
     }
 }
 
@@ -569,8 +591,8 @@
     }
 
     .px-xxl-28 {
-        padding-left: 28px!important;
-        padding-right: 28px!important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
     }
 
     .px-xxl-50 {
@@ -735,8 +757,16 @@
         width: 185px;
     }
 
+    .h-xxl-58 {
+        height: 58px;
+    }
+
     .h-xxl-72 {
         height: 72px;
+    }
+
+    .h-xxl-116 {
+        height: 116px;
     }
 
     .h-xxl-192 {
@@ -853,14 +883,48 @@
     z-index: 10;
 }
 
+.home-arrow__box-2-wrapper {
+    padding-top: 20px;
+    padding-bottom: 16px;
+}
+
+.home-arrow__box-2 {
+    height: 92px;
+    transition: height 0.5s ease;
+}
+
+// .home-arrow__box-2.active {
+//     height: 90px;
+// }
+
+@include media-breakpoint-up(md) {
+    .home-arrow__box-2 {
+        height: 175px;
+    }
+}
+
 @include media-breakpoint-up(lg) {
     .gap-lg-40 {
         gap: 40px;
+    }
+
+    .home-arrow__box-2 {
+        height: 150px;;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .home-arrow__box-2 {
+        height: 190px;
     }
 }
 
 @include media-breakpoint-up(xxl) {
     .gap-xxl-54 {
         gap: 54px;
+    }
+
+    .home-arrow__box-2 {
+        height: 250px;;
     }
 }

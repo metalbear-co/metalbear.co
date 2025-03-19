@@ -2,21 +2,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>http://localhost:1313/legal/cookie-policy/</loc>
+      <loc>http://localhost:54350/legal/cookie-policy-2/</loc>
       <lastmod>2022-10-31T06:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/legal/privacy-policy/</loc>
+      <loc>http://localhost:54350/legal/cookie-policy/</loc>
       <lastmod>2022-10-31T06:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/legal/terms/</loc>
+      <loc>http://localhost:54350/legal/privacy-policy-2/</loc>
+      <lastmod>2022-10-31T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:54350/legal/privacy-policy/</loc>
+      <lastmod>2022-10-31T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:54350/legal/terms-2/</loc>
+      <lastmod>2022-10-31T06:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:54350/legal/terms/</loc>
       <lastmod>2022-10-31T06:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>

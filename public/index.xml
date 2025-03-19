@@ -2,49 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MetalBear 🐻 - Tools for Backend Engineers on </title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:54350/</link>
     <description>Recent content in MetalBear 🐻 - Tools for Backend Engineers on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright (c) 2022 MetalBear</copyright>
     <lastBuildDate>Thu, 12 May 2022 16:35:10 +0300</lastBuildDate>
     
-        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:54350/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Guides</title>
-      <link>http://localhost:1313/guides/</link>
-      <pubDate>Wed, 15 Jan 2025 06:00:00 +0000</pubDate>
+      <link>http://localhost:54350/guides/</link>
+      <pubDate>Fri, 21 Feb 2025 06:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/guides/</guid>
+      <guid>http://localhost:54350/guides/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Legals</title>
-      <link>http://localhost:1313/legal/</link>
+      <link>http://localhost:54350/legal/</link>
       <pubDate>Mon, 31 Oct 2022 06:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/legal/</guid>
+      <guid>http://localhost:54350/legal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MetalBear 🐻 - Tools for Backend Engineers</title>
+      <link>http://localhost:54350/_index-2/</link>
+      <pubDate>Thu, 12 May 2022 16:35:10 +0300</pubDate>
+      
+      <guid>http://localhost:54350/_index-2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blog</title>
-      <link>http://localhost:1313/blog/</link>
+      <link>http://localhost:54350/blog/</link>
       <pubDate>Thu, 12 May 2022 08:49:55 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/</guid>
+      <guid>http://localhost:54350/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pages</title>
-      <link>http://localhost:1313/pages/</link>
+      <link>http://localhost:54350/pages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/pages/</guid>
+      <guid>http://localhost:54350/pages/</guid>
       <description></description>
     </item>
     

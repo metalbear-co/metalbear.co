@@ -16,18 +16,18 @@
             <div class="position-relative h-72 h-lg-56 h-xxl-72 overflow-hidden">
               <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text active">setting up
                 environments</span>
-              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">Waiting for CI</span>
-              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">Fixing flakey tests</span>
-              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">Rebuilding Docker
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">waiting for CI</span>
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">fixing flakey tests</span>
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">rebuilding Docker
                 images</span>
-              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">Loading test data</span>
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">loading test data</span>
             </div>
           </h2>
           <p class="fs-22 fs-xxl-30 text-black text-center text-lg-start lh-[1.5] mb-26 mb-lg-60 mb-xxl-80">Run local
             code like it’s in your Kubernetes cluster without deploying it first.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <div class="text-center">
-              <a class="button button-primary mr-lg-24 mr-xxl-32 mb-24 mb-lg-0 w-263px w-lg-auto"
+              <a class="button button-primary mr-md-24 mr-lg-24 mr-xxl-32 mb-24 mb-lg-0 w-263px w-lg-auto"
                 href="https://mirrord.dev/" target="_blank">Try it now For Free</a>
               <a class="button button-secondary w-263px w-lg-auto" href="https://mirrord.dev/" target="_blank">Learn
                 More About
@@ -173,7 +173,7 @@
         </div>
       </div>
     </div>
-    <div class="container pt-60 pt-lg-80 pt-xxl-106 pb-68 pb-lg-86 pb-xxl-116">
+    <div class="container pt-60 pt-lg-80 pt-xxl-106"> <!-- pb-68 pb-lg-86 pb-xxl-116 -->
       <div class="w-lg-54 mx-auto px-3 px-lg-0">
         <div class="fs-18 fs-xxl-24 text-black lh-[1.5] text-center border-b-xxl-[1.5]">
           <p class="mb-20 mb-xxl-24">“One of the biggest outcomes of using mirrord is that it didn’t just improve
@@ -196,7 +196,9 @@
           </div>
         </div>
       </div>
-      <div class="home-arrow__box-2"></div>
+      <div class="home-arrow__box-2-wrapper">
+        <div class="home-arrow__box-2"></div>
+      </div>
     </div>
   </section>
   <section id="home-section-arrow3" class="home-section-arrow3 border-b-3">
@@ -258,7 +260,7 @@
       </div>
       <div class="text-center d-none d-lg-block">
         <div class="d-inline-block border-b">
-          <a class="link-text text-black fs-xxl-20 lh-[1.5] link-underline-opacity-0" href="">See how mirrord speeds up
+          <a class="link-text text-black fs-xxl-20 lh-[1.5] link-underline-opacity-0" href="https://mirrord.dev/" target="_blank">See how mirrord speeds up
             your dev loop</a>
         </div>
       </div>
@@ -352,7 +354,7 @@
           </div>
           <div class="d-flex justify-content-center mb-42 mb-lg-24 mb-xxl-34">
             <div class="text-center">
-              <a class="button button-primary mr-lg-30 mr-xxl-40 mb-24 mb-lg-0 w-263px w-lg-auto"
+              <a class="button button-primary mr-md-24 mr-lg-30 mr-xxl-40 mb-24 mb-lg-0 w-263px w-lg-auto"
                 href="https://mirrord.dev/">Try mirrord
                 For Free</a>
               <a class="button button-secondary w-263px w-lg-auto" href="https://mirrord.dev/">Learn More About
@@ -453,13 +455,19 @@
 </div>
 
 <!-- GSAP Library -->
-{{/*  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const arrow = document.querySelector('.home-arrow');
-    const target2 = document.querySelector('.home-arrow__box-2');
-    const target3 = document.querySelector('.home-arrow__box-3');
+    const target = document.querySelector('.home-arrow__box-2');
+
+    // Pastikan elemen ditemukan
+    if (!arrow || !target) return;
+
+    // Hitung jarak yang akan ditempuh
+    const deltaX = target.getBoundingClientRect().left - arrow.getBoundingClientRect().left;
+    const deltaY = target.getBoundingClientRect().top - arrow.getBoundingClientRect().top;
 
     gsap.to(arrow, {
       scrollTrigger: {
@@ -467,27 +475,14 @@
         start: "top center",
         end: "bottom center",
         scrub: 1,
-        markers: false
+        markers: false,
       },
-      x: target2.offsetLeft - arrow.offsetLeft,
-      y: target2.offsetTop - arrow.offsetTop,
+      x: deltaX,
+      y: deltaY,
       ease: "power1.inOut"
     });
-
-    gsap.to(arrow, {
-      scrollTrigger: {
-        trigger: ".home-section-arrow3", // Trigger animasi saat section 3 masuk viewport
-        start: "top center", // Mulai animasi saat bagian atas section 3 mencapai tengah viewport
-        end: "bottom center", // Akhiri animasi saat bagian bawah section 3 mencapai tengah viewport
-        scrub: 1, // Animasi mengikuti scroll dengan smooth
-        markers: false // Set true untuk debugging
-      },
-      x: target3.offsetLeft - arrow.offsetLeft, // Pindahkan arrow ke posisi horizontal target 3
-      y: target3.offsetTop - arrow.offsetTop, // Pindahkan arrow ke posisi vertikal target 3
-      ease: "power1.inOut" // Efek easing untuk animasi
-    });
   });
-</script>  */}}
+</script>
 <script>
   const texts = document.querySelectorAll(".rotating-text");
   let index = 0;
@@ -505,10 +500,10 @@
 
     setTimeout(() => {
       currentText.classList.remove("exit");
-    }, 600);
+    }, 500);
   }
 
-  setInterval(rotateText, 3000);
+  setInterval(rotateText, 2000);
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {

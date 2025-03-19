@@ -65,6 +65,12 @@
     margin-right: auto;
 }
 
+@include media-breakpoint-up(md) {
+    .home-arrow {
+        height: 200px;
+    }
+}
+
 @include media-breakpoint-up(lg) {
     .home-arrow {
         height: 170px;

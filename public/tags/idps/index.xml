@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Idps on </title>
-    <link>http://localhost:1313/tags/idps/</link>
+    <link>http://localhost:54350/tags/idps/</link>
     <description>Recent content in Idps on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 22 Mar 2024 06:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/idps/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54350/tags/idps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comparison of Internal Developer Platforms</title>
-      <link>http://localhost:1313/blog/comparison-of-internal-developer-platforms/</link>
+      <link>http://localhost:54350/blog/comparison-of-internal-developer-platforms/</link>
       <pubDate>Fri, 22 Mar 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/comparison-of-internal-developer-platforms/</guid>
+      <guid>http://localhost:54350/blog/comparison-of-internal-developer-platforms/</guid>
       <description>&lt;p&gt;DevOps emerged to address the need for better developer productivity and a more efficient development lifecycle. However, DevOps teams often find themselves bogged down by operational tasks like security, scaling, and infrastructure management. The demand for robust developer platforms continues to grow, and with the rise of cloud computing, organizations struggle to keep pace with the complexities and speed involved. This is where Internal Developer Platforms (IDPs) come in – a trendy concept in Platform Engineering that promises to streamline processes and boost developer productivity.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="blog-single">
+  <div class="container blog-single__wrapper">
+    <div class="row position-relative">
+      <div class="blog-single__main col-12 col-lg-10 col-xl-11 px-3 px-lg-5">
+        <article class="mb-5">
+          <div class="blog-single__header">
+            <h1>{{ .Title }}</h1>
+          </div>
+          <div class="blog-single__content">
+            {{ .Content }}
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

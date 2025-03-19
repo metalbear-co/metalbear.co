@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tal Zwick on </title>
-    <link>http://localhost:1313/contributors/tal-zwick/</link>
+    <link>http://localhost:54350/contributors/tal-zwick/</link>
     <description>Recent content in Tal Zwick on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 01 Oct 2024 06:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/contributors/tal-zwick/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54350/contributors/tal-zwick/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Split Queues To Share Cloud Development Environments</title>
-      <link>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</link>
+      <link>http://localhost:54350/blog/split-queues-to-share-cloud-development-environments/</link>
       <pubDate>Tue, 01 Oct 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</guid>
+      <guid>http://localhost:54350/blog/split-queues-to-share-cloud-development-environments/</guid>
       <description>&lt;p&gt;One of the reasons &lt;a href=&#34;https://mirrord.dev/docs/overview/teams/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord for Teams&#xA;  &lt;/a&gt;&#xA;   is a gamechanger for many&#xA;organizations is that it makes it possible for a whole team to work with one shared cloud environment. They don’t&#xA;need to run the whole environment for each developer, they don’t need to have their entire architecture running on&#xA;their laptops, and they don&amp;rsquo;t need to redeploy to Kubernetes to test new code or debug it. Developers just press&#xA;“run” in their IDE, and their code is executed &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    remocally&#xA;  &lt;/a&gt;&#xA;  : the code runs locally, but with&#xA;access to any required resources in the Kubernetes cluster or outside of it. With mirrord for Teams, developers can&#xA;even work on the same service at the same time, and control how to divide between them consumable data like&#xA;incoming HTTP requests, and now also queue messages.&lt;/p&gt;</description>
     </item>
     <item>
       <title>KubeCon 2024 Takeaways</title>
-      <link>http://localhost:1313/blog/kubecon-2024-takeaways/</link>
+      <link>http://localhost:54350/blog/kubecon-2024-takeaways/</link>
       <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/kubecon-2024-takeaways/</guid>
+      <guid>http://localhost:54350/blog/kubecon-2024-takeaways/</guid>
       <description>&lt;p&gt;Last month marked a huge milestone for us as we attended our first KubeCon! This was KubeCon Europe, which took place in Paris, city of lights and cloud orchestration. Below is a summary of our collective impressions and insights.&lt;/p&gt;&#xA;&lt;h2 id=&#34;co-located-events-and-surprising-highlights&#34;&gt;Co-Located Events and Surprising Highlights &lt;a href=&#34;#co-located-events-and-surprising-highlights&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;We arrived a day before KubeCon proper started so we could attend the co-located events. We ended up mostly going to AppDeveloperCon sessions, and it was surprisingly crowded. Our highlight from the first day was Daniel Bryant’s excellent talk &lt;strong&gt;“&lt;a href=&#34;https://www.youtube.com/watch?v=3tP31j_T6IE&#34;   target=&#34;_blank&#34; &gt;&#xA;    Testing Cloud Apps: Mocks vs. Service Virtualization vs. Remocal Tools&#xA;  &lt;/a&gt;&#xA;  ”&lt;/strong&gt;. Daniel covered our favorite pain - being unable to work against a real environment and iterate with it as part of the development workflow. We were pleased to see a very friendly shoutout to mirrord and our to talk later in the convention!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Easy K8S Connectivity for Local Utils</title>
-      <link>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</link>
+      <link>http://localhost:54350/blog/easy-k8s-connectivity-for-local-utils/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</guid>
+      <guid>http://localhost:54350/blog/easy-k8s-connectivity-for-local-utils/</guid>
       <description>&lt;p&gt;With the new targetless mode of mirrord, you can run a program locally on your machine, and mirrord will forward&#xA;network connections initiated by the program to the cluster, such that the program gets the connectivity it would&#xA;have if it were deployed to the cluster. Together with the secret sauce of in-cluster DNS resolution, you can run a&#xA;program on your computer and have it access cluster-internal services that do not have any external IP. The&#xA;program would also have access to third-party services that are open to IPs from your cluster, but not to your&#xA;local IP.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fun with macOS&#39;s SIP</title>
-      <link>http://localhost:1313/blog/fun-with-macoss-sip/</link>
+      <link>http://localhost:54350/blog/fun-with-macoss-sip/</link>
       <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/fun-with-macoss-sip/</guid>
+      <guid>http://localhost:54350/blog/fun-with-macoss-sip/</guid>
       <description>&lt;p&gt;While developing mirrord, which heavily relies on injecting itself into other people&amp;rsquo;s binaries, we ran into some challenges posed by macOS’s SIP (System Integrity Protection). This post details how we ultimately overcame these challenges, and we hope it can be of help to other people hoping to learn about SIP, as we&amp;rsquo;ve learned the hard way that there&amp;rsquo;s very little written about this subject on the internet.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-mirrord&#34;&gt;What is mirrord? &lt;a href=&#34;#what-is-mirrord&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mirrord.dev&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord&#xA;  &lt;/a&gt;&#xA;   lets you run a local process in the context of a cloud service, which means we can test our code on our staging cluster without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there). There is a detailed overview of mirrord in &lt;a href=&#34;https://metalbear.co/blog/mirrord-3.0-is-out/&#34;   target=&#34;_blank&#34; &gt;&#xA;    this&#xA;  &lt;/a&gt;&#xA;   blog post.&lt;/p&gt;</description>
     </item>
   </channel>

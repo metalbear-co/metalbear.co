@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lorena Martínez on </title>
-    <link>http://localhost:1313/contributors/lorena-mart%C3%ADnez/</link>
+    <link>http://localhost:54350/contributors/lorena-mart%C3%ADnez/</link>
     <description>Recent content in Lorena Martínez on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/contributors/lorena-mart%C3%ADnez/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54350/contributors/lorena-mart%C3%ADnez/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discover mirrord’s approach to fast, cloud-connected local dev at KubeCon</title>
-      <link>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
+      <link>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
       <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
+      <guid>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
       <description>&lt;p&gt;We get it—“Another blog about a company’s KubeCon booth?” These posts can be a bit predictable. So, we’ll keep this one brief and focused on how &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord&#xA;  &lt;/a&gt;&#xA;   can actually make cloud development easier.&lt;/p&gt;&#xA;&lt;p&gt;As one CTO put it, “&lt;em&gt;at our company, mirrord is doing as much for developer productivity as AI is&lt;/em&gt;.” That’s high praise, and while we’re not here to boast, we do think it’s worth checking out if you’re looking for a smoother development process.&lt;/p&gt;</description>
     </item>
   </channel>

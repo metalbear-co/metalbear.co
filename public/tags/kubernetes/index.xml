@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on </title>
-    <link>http://localhost:1313/tags/kubernetes/</link>
+    <link>http://localhost:54350/tags/kubernetes/</link>
     <description>Recent content in Kubernetes on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54350/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scaling Out Development Environments</title>
-      <link>http://localhost:1313/blog/scaling-out-development-environments/</link>
+      <link>http://localhost:54350/blog/scaling-out-development-environments/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/scaling-out-development-environments/</guid>
+      <guid>http://localhost:54350/blog/scaling-out-development-environments/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Cross-posted from &lt;a href=&#34;https://audacioustux.com/Scaling-Out-Development-Environment-ceb823260a1f4a10b717a87e998480de&#34;   target=&#34;_blank&#34; &gt;&#xA;    https://audacioustux.com/Scaling-Out-Development-Environment-ceb823260a1f4a10b717a87e998480de&#xA;  &lt;/a&gt;&#xA;  &lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Once upon a time, there was LAMP Stack… &lt;strong&gt;L&lt;/strong&gt;inux, &lt;strong&gt;A&lt;/strong&gt;pache, &lt;strong&gt;M&lt;/strong&gt;ysql, &lt;strong&gt;P&lt;/strong&gt;hp/&lt;strong&gt;P&lt;/strong&gt;ython/&lt;strong&gt;P&lt;/strong&gt;erl - That’s what I’ve used to start my Software Engineering journey. Things were simple, in a sense that there were less “options” to choose from. But today, I have to deploy multiple types of databases, event store + processing pipeline, and other behemoths to work on my application locally.&lt;/p&gt;&#xA;&lt;p&gt;Well, maybe I can use docker-compose to keep things clean and tidy, re-producible for the other team members, but what about the compute resources usage? I don’t know about the M2/M3 users out there, but my Linux laptop either halts or burns my lap.&lt;/p&gt;</description>
     </item>
     <item>
       <title>mirrord as an alternative to Telepresence</title>
-      <link>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</link>
+      <link>http://localhost:54350/blog/mirrord-as-an-alternative-to-telepresence/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</guid>
+      <guid>http://localhost:54350/blog/mirrord-as-an-alternative-to-telepresence/</guid>
       <description>&lt;p&gt;A question that comes up often from those already familiar with local Kubernetes development is how mirrord compares to Telepresence. The idea at the base of both products is indeed similar: instead of deploying your new code to the cloud and testing it there, connect it to the cloud from your local machine. By shifting left on cloud testing this way you utilize your cloud environment much more effectively and speed up your development process. The people at Ambassador Labs &lt;a href=&#34;https://www.getambassador.io/docs/telepresence-oss/latest/concepts/devworkflow&#34;   target=&#34;_blank&#34; &gt;&#xA;    wrote about it at length&#xA;  &lt;/a&gt;&#xA;  .&lt;/p&gt;</description>
     </item>
     <item>
       <title>Easy K8S Connectivity for Local Utils</title>
-      <link>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</link>
+      <link>http://localhost:54350/blog/easy-k8s-connectivity-for-local-utils/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</guid>
+      <guid>http://localhost:54350/blog/easy-k8s-connectivity-for-local-utils/</guid>
       <description>&lt;p&gt;With the new targetless mode of mirrord, you can run a program locally on your machine, and mirrord will forward&#xA;network connections initiated by the program to the cluster, such that the program gets the connectivity it would&#xA;have if it were deployed to the cluster. Together with the secret sauce of in-cluster DNS resolution, you can run a&#xA;program on your computer and have it access cluster-internal services that do not have any external IP. The&#xA;program would also have access to third-party services that are open to IPs from your cluster, but not to your&#xA;local IP.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Writing a Kubernetes Operator</title>
-      <link>http://localhost:1313/blog/writing-a-kubernetes-operator/</link>
+      <link>http://localhost:54350/blog/writing-a-kubernetes-operator/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/writing-a-kubernetes-operator/</guid>
+      <guid>http://localhost:54350/blog/writing-a-kubernetes-operator/</guid>
       <description>&lt;p&gt;As part of mirrord For Teams, we wanted to build a persistent component that would run in our user’s cluster and synchronize independent uses of mirrord. It quickly became apparent that we needed a component that was both:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Kubernetes-native&lt;/strong&gt; - meaning it leverages the Kubernetes APIs and ecosystem&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cluster-synchronized&lt;/strong&gt; - Manage and synchronize the use of our open-source project, mirrord, from the cluster’s point of view.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Some research pointed us in the direction of the Kubernetes Operator/Controller pattern.&#xA;The operator pattern can be quite ambiguous, and we found the guides that currently exist for it to be quite dense and technical. In this post, I want to instead take a step-by-step approach and provide a quick start for newcomers looking to explore the operator pattern.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fun with macOS&#39;s SIP</title>
-      <link>http://localhost:1313/blog/fun-with-macoss-sip/</link>
+      <link>http://localhost:54350/blog/fun-with-macoss-sip/</link>
       <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/fun-with-macoss-sip/</guid>
+      <guid>http://localhost:54350/blog/fun-with-macoss-sip/</guid>
       <description>&lt;p&gt;While developing mirrord, which heavily relies on injecting itself into other people&amp;rsquo;s binaries, we ran into some challenges posed by macOS’s SIP (System Integrity Protection). This post details how we ultimately overcame these challenges, and we hope it can be of help to other people hoping to learn about SIP, as we&amp;rsquo;ve learned the hard way that there&amp;rsquo;s very little written about this subject on the internet.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-mirrord&#34;&gt;What is mirrord? &lt;a href=&#34;#what-is-mirrord&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mirrord.dev&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord&#xA;  &lt;/a&gt;&#xA;   lets you run a local process in the context of a cloud service, which means we can test our code on our staging cluster without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there). There is a detailed overview of mirrord in &lt;a href=&#34;https://metalbear.co/blog/mirrord-3.0-is-out/&#34;   target=&#34;_blank&#34; &gt;&#xA;    this&#xA;  &lt;/a&gt;&#xA;   blog post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Getting Started With Ephemeral Containers</title>
-      <link>http://localhost:1313/blog/getting-started-with-ephemeral-containers/</link>
+      <link>http://localhost:54350/blog/getting-started-with-ephemeral-containers/</link>
       <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/getting-started-with-ephemeral-containers/</guid>
+      <guid>http://localhost:54350/blog/getting-started-with-ephemeral-containers/</guid>
       <description>&lt;p&gt;If you’re following the latest news on Kubernetes, you probably would have heard about Ephemeral Containers. Not sure? Fear not! In this blog post we will try to shed some light on this new feature soon to be stable&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; in Kubernetes v1.25.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-ephemeral-containers&#34;&gt;What are Ephemeral Containers? &lt;a href=&#34;#what-are-ephemeral-containers&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/&#34;   target=&#34;_blank&#34; &gt;&#xA;    Ephemeral containers&#xA;  &lt;/a&gt;&#xA;   let us run a container with a specific image in the context of an already running container in a Pod. This comes in handy when debugging/troubleshooting distroless images or images that lack certain utilities, where &lt;code&gt;kubectl exec&lt;/code&gt; won’t be helpful.&lt;/p&gt;</description>
     </item>
   </channel>
