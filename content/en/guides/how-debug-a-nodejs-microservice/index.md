@@ -21,35 +21,43 @@ In this guide, we’ll cover how to debug a Node.js microservice running in a Ku
 Tip: You can use mirrord to debug, test, and troubleshoot your applications locally with Kubernetes context, without needing to build or deploy each time.
 
 ## Common debugging techniques for microservices in Node.js
+
 It can be cumbersome to debug microservices on Kubernetes. The lack of a debugging workflow for applications with multiple runtime dependencies in the context of Kubernetes makes it even harder. Why does it even make it harder? The following are common ways of debugging microservices with strict runtime environment dependencies:
 
 ### Continuous Deployment
+
 Build a container image and deploy it to a Kubernetes cluster dedicated to testing or staging. The iterative process of building, deploying, and testing is resource-intensive and time-consuming, especially for testing frequent code changes.
 
 ### Log Analysis
+
 One of the most common ways to understand the application behavior in a cluster is by analyzing logs. Adding extra logs to extract runtime information on the application is very common. Collecting and analyzing logs from different services can be effective but it isn’t the best real-time debugging solution.
 
 ### Remote Debugging
+
 Developers can use remote debugging tools built into IDEs like VSCode to attach to processes already running in a Kubernetes cluster. While this allows real-time code inspection and interaction, it still requires heavy overhead from the IDE and a separate debug configuration for the deployment, which can potentially affect the application's performance while debugging.
 
 The above methods can be used by themselves or they can be used together.
 
 ## Challenges of debugging Node.js microservices in Kubernetes
+
 Debugging effectively within a Kubernetes context is the biggest challenge of working with Kubernetes. The build and release loop of the application can be short, but the process slows down development significantly. Nothing beats the ease and speed of debugging applications locally.
 
 ## Introduction to debugging Node.js microservices with mirrord
+
 With mirrord, we don’t have to think of building and releasing our applications for debugging. We can run our applications locally, and mirrord will make sure to have your locally running process in the context of Kubernetes. Context mirroring for processes allows your process to run locally and consume the resources of a remote resource. 
 
 ### Workload to process context mirroring
+
 To achieve this, inputs from a Kubernetes workload (eg: a Pod) are mirrored to a locally running process. The process in question here today is a Node.js process. Let’s see how we can mirror inputs for our locally running Node.js application using mirrord and pipe these outputs back to Kubernetes. This will create a tighter feedback look effectively allowing you to debug faster without the downsides of the common debugging techniques we discussed above.
 
 ### Sample application setup
+
 In the example below, our Node.js application will run locally. It will need to have the network information and environment of a Kubernetes Pod to debug. This Kubernetes Pod is running as part of a staging application deployment and will be our mirroring target.
 
 Let’s get started with some prerequisites by setting up a test cluster and deploying our mirroring target.
 
-
 ## Prerequisites
+
 Set up the Kubernetes cluster to test our application setup.
 
 1. Start an instance of a development cluster like minikube, k3d kind, etc. We are using minikube here.
@@ -81,7 +89,6 @@ Once the above is deployed let’s use the following command to get access to th
 minikube service nodejs-guestbook
 ```
 
-
 The above minikube service command automatically sets up a port forwarding session to the specified service and opens it in the default web browser. With the tunnel to our microservice setup, our application architecture now looks like this. 
 
 
@@ -108,9 +115,11 @@ In this section of the guide, we are going to use the VSCode mirrord extension t
 The application in question is Guestbook, a simple note-taking app written in Node.js with support for storing notes in Redis. The source code for the test application is available on GitHub at https://github.com/waveywaves/mirrord-nodejs-debug-example. We will use it as a follow-along Node.js application for debugging with mirrord.
 
 ## Setup VSCode with the mirrord extension
+
 To get started, install mirrord in VSCode.
 
 ### Extension installation
+
 You can install the plugin by searching for mirrord in the extensions.
 
 ![alt text](<Screenshot 2025-02-21 at 7.00.07 PM.png>)
@@ -122,6 +131,7 @@ After mirrord is installed, you will see a mirrord button in the bottom left cor
 
 
 ### mirrord configuration
+
 Let’s add a new config file for mirrord, which we can use with VSCode for debugging. The configuration below contains the target deployment from where we need to mirror the context. 
 
 ```json
@@ -155,6 +165,7 @@ Once the active configuration is selected, we can start using mirrord with VSCod
 ## Run and Debug with and without mirrord in VSCode
 
 ### Run and Debug with the mirrord extension disabled
+
 Ensure that the mirrord extension is disabled.
 
 
@@ -178,6 +189,7 @@ The application fails to run with the below error because it doesn’t have acce
 Now let’s use mirrord to mirror the context from Kubernetes to our locally running Node.js application.
 
 ### Run and Debug with the mirrord plugin enabled
+
 Enable the mirrord plugin by clicking on the mirrord button in the bottom left corner of the screen. The enabled button should look like the one below.
 
 ![alt text](<Screenshot 2025-02-21 at 7.07.05 PM.png>)
@@ -201,6 +213,7 @@ Once the app is running with the mirrord extension, access it on localhost:3000 
 Now, let’s debug the application with mirrord.
 
 ## Debugging the application with the mirrord plugin
+
 Now that we can run the application, let’s understand what our setup looks like with the mirrord-agent working with the target-impersonated Pod. The target impersonated Pod here is the Guestbook Pod.
 
 ![alt text](<Architecture Diagram - with mirrord.png>)
@@ -239,7 +252,9 @@ You now know how to debug your Node.js microservice with VSCode + mirrord withou
 Next, let’s see how to debug our microservice in the CLI with the Node.js Debugger and mirrord.
 
 # Debug in the CLI with Node.js and mirrord
+
 ## Run the application with npm in the CLI
+
 Do a dry run of the application with the command below to see if the application starts without mirrord and the Kubernetes context we require for the Redis connection.
 
 ```bash 
@@ -255,10 +270,12 @@ We get the below error after running the command above.
 The error states that the application is not able to connect to the Redis service. Let’s use mirrord to help our local application run with the Kubernetes context.
 
 ## Installing mirrord
+
 Install the mirrord CLI tool and run Guestbook with the required Kubernetes context. Follow the installation guide for mirrord here https://mirrord.dev/docs/overview/quick-start/#installation.
 
 
 ## Run the guestbook application with Node.js and mirrord in the CLI
+
 After installing, run the following command: start the Node.js guestbook application with mirrord.
 
 ```bash
@@ -289,9 +306,11 @@ Guestbook app running on port 3000
 After you have run the Guestbook program with mirrord you should be able to make your changes and rerun the service as necessary. You can even run the program in debug mode and attach a debugger if required.
 
 # Debugging with mirrord vs. other debugging techniques
+
 [mirrord](https://mirrord.dev/) distinguishes itself by eliminating the need for repeated building and deployment cycles. It allows developers to run the application locally while providing the necessary network and execution context of the target Kubernetes Pod. In this case, the local application behaves as if it were running within the cluster, enabling developers to debug using familiar tools without the overhead to build and deploy.
 
 # Conclusion
+
 This guide explored how to use mirrord in VSCode using the mirrord extension and the mirrord CLI. We demonstrated how developers can set breakpoints in their IDE or CLI debugger and step through code execution while leveraging the live Kubernetes environment.
 
 By enabling local execution with Kubernetes context, mirrord helps developers save substantial time during debugging.
