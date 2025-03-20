@@ -161,7 +161,7 @@ As a new config file is opened up in your editor, you can update the contents of
 }
 ```
 
-If you want to mirror traffic from a multipod deployment, you can learn more about mirrord for teams https://mirrord.dev/docs/overview/teams/ which provides this feature. Right now we only have one pod in this deployment and mirrord’s OSS features should work perfectly for us.
+If you want to mirror traffic from a multipod deployment, you can learn more about [mirrord for teams]( https://mirrord.dev/docs/overview/teams/) which provides this feature. Right now we only have one pod in this deployment and mirrord’s OSS features should work perfectly for us.
 
 ### 2. How to run the application with and without mirrord in IntelliJ IDEA?
 
