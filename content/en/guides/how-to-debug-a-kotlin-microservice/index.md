@@ -36,7 +36,7 @@ Debugging effectively within a Kubernetes context is the biggest challenge of wo
 ## Introduction to debugging Kotlin microservices with mirrord
 With mirrord, we don’t have to think of building and releasing our applications for debugging. We can run our applications locally and mirrord will make sure to have your locally running process in the context of Kubernetes. Context mirroring for processes allows your process to run locally and consume the resources of a remote resource. 
 #### Workload to process context mirroring
-To achieve this, inputs from a Kubernetes workload (eg: a Pod) are mirrored to a locally running process. The process in question here today is a Kotlin process. Let’s see how we can mirror inputs for our locally running Kotlin application using mirrord and pipe these outputs back to Kubernetes. This will create a tighter feedback look effectively allowing you to debug faster without the downsides of the common debugging techniques we discussed above.
+To achieve this, inputs from a Kubernetes workload (eg: a Pod) are mirrored to a locally running process. The process in question here today is a Kotlin process. Let’s see how we can mirror inputs for our locally running Kotlin application using mirrord and pipe these outputs back to Kubernetes. This will create a tighter feedback loop effectively allowing you to debug faster without the downsides of the common debugging techniques we discussed above.
 #### Sample application setup
 In the example below, our Kotlin application will run locally. It will need to have the network information and environment of a Kubernetes Pod to debug. This Kubernetes Pod is running as part of a staging application deployment and will be our mirroring target. 
 ### Prerequisites
