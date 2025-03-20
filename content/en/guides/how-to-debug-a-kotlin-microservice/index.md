@@ -110,7 +110,7 @@ Let’s access this URL from the browser.
 We have our staging application deployed now. Let’s run the microservice with mirrord now. This will allow us to run the local Kotlin application in the context of Kubernetes without having to build and deploy it over and over again for testing.
 
 ## Debug the Guestbook application with IntelliJ IDEA and the JetBrains mirrord plugin
-In this section of the guide, we are going to use the mirrord Intellij Plugin to help debug the Kotlin application. If you would like to see how we can do the same with the Kotlin Debugger in the CLI, go to this section of the guide.
+In this section of the guide, we are going to use the mirrord Intellij Plugin to help debug the Kotlin application. If you would like to see how we can do the same with the Kotlin Debugger in the CLI, go to [this section of the guide](https://metalbear-co/guides/how-to-debug-a-kotlin-microservice/#debug-in-the-cli-with-mvn-and-mirrord).
 
 The application in question is Guestbook, a simple note-taking app written in Kotlin with support for storing notes in Redis. The source code for the test application is available on GitHub at https://github.com/waveywaves/mirrord-kotlin-debug-example. We will use it as a follow-along Kotlin application for debugging with mirrord.
 ### 1. Setup IntelliJ IDEA with the mirrord plugin
