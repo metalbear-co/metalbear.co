@@ -42,7 +42,7 @@ In the example below, our Kotlin application will run locally. It will need to h
 ### Prerequisites
 Set up the Kubernetes cluster to test our application setup.
 
-1. Start an instance of a development cluster like minikube, k3d kind, etc. We are using minikube here.
+1. Start an instance of a development cluster like minikube, k3d, kind, etc. We are using minikube here.
 
 ```
 minikube start
