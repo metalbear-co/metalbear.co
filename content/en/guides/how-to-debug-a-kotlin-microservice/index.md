@@ -201,7 +201,7 @@ Now that we can run the application, let’s understand what our setup looks lik
 ![alt text](<Screenshot 2025-03-14 at 4.04.09 PM.png>)
 
 
-If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference here https://mirrord.dev/docs/reference/architecture/#mirrord-agent.
+If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference [here](https://mirrord.dev/docs/reference/architecture/#mirrord-agent).
 
 We can now be sure that mirrord is working properly. 
 
