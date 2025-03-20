@@ -234,7 +234,7 @@ mvn compile exec:java
 
 On the run above we can see that the application run fails because this local execution doesn’t have access to the services running inside the Kubernetes cluster we have created. 
 
-The microservice needs access to the “redis” service hosted on the cluster. To run the microservice with Kubernetes, we can use mirrord CLI tool.
+The microservice needs access to the “redis” service hosted on the cluster. To run the microservice with Kubernetes, we can use the mirrord CLI tool.
 ### 2. Install mirrord
 Let’s install mirrord CLI tool and run kotlin-guestbook with the required Kubernetes context. Follow the installation guide for mirrord here https://mirrord.dev/docs/overview/quick-start/#installation and run the below command.
 
