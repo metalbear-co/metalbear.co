@@ -127,7 +127,7 @@ After installing the plugin and restarting the IDE, a dialog box like the one be
 
 You will see a mirrord button and a dropdown menu in the top right corner of the screen.
 
-This dialogue box appears as mirrord is successfully installed. It contains the directions for how to use mirrord in the IntelliJ IDEA IDE. Let’s set up the mirrord configuration.
+This dialog box appears as mirrord is successfully installed. It contains the directions for how to use mirrord in the IntelliJ IDEA IDE. Let’s set up the mirrord configuration.
 
 ![alt text](<Screenshot 2025-03-14 at 4.06.17 PM.png>)
 
