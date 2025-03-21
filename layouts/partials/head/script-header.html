@@ -1,10 +1,26 @@
 {{ if .Site.Params.options.darkMode -}}
-  {{ $darkModeInit := resources.Get "js/darkmode-init.js" | js.Build | minify -}}
-  <script>{{ $darkModeInit.Content | safeJS }}</script>
+{{ $darkModeInit := resources.Get "js/darkmode-init.js" | js.Build | minify -}}
+<script>{ { $darkModeInit.Content | safeJS } }</script>
 {{ end -}}
 {{- if and (.Site.Params.alert) (.Site.Params.alertDismissable) -}}
-  {{ $alertInit := resources.Get "js/alert-init.js" | js.Build | minify -}}
-  <script>{{ $alertInit.Content | safeJS }}</script>
+{{ $alertInit := resources.Get "js/alert-init.js" | js.Build | minify -}}
+<script>{ { $alertInit.Content | safeJS } }</script>
 {{- end -}}
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-KG7VCLP8');</script>
+<!-- End Google Tag Manager -->
+<!-- Start of Reo Javascript -->
+<script type="text/javascript">
+  !function () { var e, t, n; e = "0e0f4d642e9f23a", t = function () { Reo.init({ clientID: "0e0f4d642e9f23a" }) }, (n = document.createElement("script")).src = "https://static.reo.dev/" + e + "/reo.js", n.defer = !0, n.onload = t, document.head.appendChild(n) }();
+</script>
+<!-- End of Reo Javascript -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/143742664.js"></script>
 <script defer data-domain="metalbear.co" src="https://plausible.io/js/script.hash.outbound-links.js"></script>
-<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
