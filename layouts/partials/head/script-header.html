@@ -17,6 +17,12 @@
 const distinctId = hashParams.get('distinct_id') || undefined;
 const sessionId = hashParams.get('session_id') || undefined;
 
+// remove distinct_id and session_id from the URL
+window.location.hash = window.location.hash
+  .split('&')
+  .filter(param => !param.startsWith('distinct_id=') && !param.startsWith('session_id='))
+  .join('&');
+
 posthog.init('phc_wIZh92nyk4vu6HidiLFUzjW6piZlZszuWZZFBS7yHHe', {
   api_host: 'https://hog.metalbear.co',
   ui_host: 'https://us.i.posthog.com',

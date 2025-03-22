@@ -140,8 +140,10 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    console.log('PostHog initialized');
     const sessionId = posthog.get_session_id()
     const distinctId = posthog.get_distinct_id()
+    console.log(distinctId, sessionId);
     const targetDomain = 'mirrord.dev'; // Domain you want to match
 
     document.querySelectorAll('a[href]').forEach(link => {
