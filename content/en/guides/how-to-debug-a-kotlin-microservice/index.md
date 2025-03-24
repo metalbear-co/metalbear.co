@@ -36,13 +36,13 @@ Debugging effectively within a Kubernetes context is the biggest challenge of wo
 ## Introduction to debugging Kotlin microservices with mirrord
 With mirrord, we don’t have to think of building and releasing our applications for debugging. We can run our applications locally and mirrord will make sure to have your locally running process in the context of Kubernetes. Context mirroring for processes allows your process to run locally and consume the resources of a remote resource. 
 #### Workload to process context mirroring
-To achieve this, inputs from a Kubernetes workload (eg: a Pod) are mirrored to a locally running process. The process in question here today is a Kotlin process. Let’s see how we can mirror inputs for our locally running Kotlin application using mirrord and pipe these outputs back to Kubernetes. This will create a tighter feedback look effectively allowing you to debug faster without the downsides of the common debugging techniques we discussed above.
+To achieve this, inputs from a Kubernetes workload (eg: a Pod) are mirrored to a locally running process. The process in question here today is a Kotlin process. Let’s see how we can mirror inputs for our locally running Kotlin application using mirrord and pipe these outputs back to Kubernetes. This will create a tighter feedback loop effectively allowing you to debug faster without the downsides of the common debugging techniques we discussed above.
 #### Sample application setup
 In the example below, our Kotlin application will run locally. It will need to have the network information and environment of a Kubernetes Pod to debug. This Kubernetes Pod is running as part of a staging application deployment and will be our mirroring target. 
 ### Prerequisites
 Set up the Kubernetes cluster to test our application setup.
 
-1. Start an instance of a development cluster like minikube, k3d kind, etc. We are using minikube here.
+1. Start an instance of a development cluster like minikube, k3d, kind, etc. We are using minikube here.
 
 ```
 minikube start
@@ -110,7 +110,7 @@ Let’s access this URL from the browser.
 We have our staging application deployed now. Let’s run the microservice with mirrord now. This will allow us to run the local Kotlin application in the context of Kubernetes without having to build and deploy it over and over again for testing.
 
 ## Debug the Guestbook application with IntelliJ IDEA and the JetBrains mirrord plugin
-In this section of the guide, we are going to use the mirrord Intellij Plugin to help debug the Kotlin application. If you would like to see how we can do the same with the Kotlin Debugger in the CLI, go to this section of the guide.
+In this section of the guide, we are going to use the mirrord Intellij Plugin to help debug the Kotlin application. If you would like to see how we can do the same with the Kotlin Debugger in the CLI, go to [this section of the guide](https://metalbear-co/guides/how-to-debug-a-kotlin-microservice/#:~:text=Debugger%20and%20mirrord.-,Debug%20in%20the%20CLI%20with%20mvn%20and%20mirrord,-1.%20Run%20the).
 
 The application in question is Guestbook, a simple note-taking app written in Kotlin with support for storing notes in Redis. The source code for the test application is available on GitHub at https://github.com/waveywaves/mirrord-kotlin-debug-example. We will use it as a follow-along Kotlin application for debugging with mirrord.
 ### 1. Setup IntelliJ IDEA with the mirrord plugin
@@ -127,7 +127,7 @@ After installing the plugin and restarting the IDE, a dialog box like the one be
 
 You will see a mirrord button and a dropdown menu in the top right corner of the screen.
 
-This dialogue box appears as mirrord is successfully installed. It contains the directions for how to use mirrord in the IntelliJ IDEA IDE. Let’s set up the mirrord configuration.
+This dialog box appears as mirrord is successfully installed. It contains the directions for how to use mirrord in the IntelliJ IDEA IDE. Let’s set up the mirrord configuration.
 
 ![alt text](<Screenshot 2025-03-14 at 4.06.17 PM.png>)
 
@@ -161,7 +161,7 @@ As a new config file is opened up in your editor, you can update the contents of
 }
 ```
 
-If you want to mirror traffic from a multipod deployment, you can learn more about mirrord for teams https://mirrord.dev/docs/overview/teams/ which provides this feature. Right now we only have one pod in this deployment and mirrord’s OSS features should work perfectly for us.
+If you want to mirror traffic from a multipod deployment, you can learn more about [mirrord for teams]( https://mirrord.dev/docs/overview/teams/) which provides this feature. Right now we only have one pod in this deployment and mirrord’s OSS features should work perfectly for us.
 
 ### 2. How to run the application with and without mirrord in IntelliJ IDEA?
 
@@ -201,7 +201,7 @@ Now that we can run the application, let’s understand what our setup looks lik
 ![alt text](<Screenshot 2025-03-14 at 4.04.09 PM.png>)
 
 
-If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference here https://mirrord.dev/docs/reference/architecture/#mirrord-agent.
+If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference [here](https://mirrord.dev/docs/reference/architecture/#mirrord-agent).
 
 We can now be sure that mirrord is working properly. 
 
@@ -234,9 +234,9 @@ mvn compile exec:java
 
 On the run above we can see that the application run fails because this local execution doesn’t have access to the services running inside the Kubernetes cluster we have created. 
 
-The microservice needs access to the “redis” service hosted on the cluster. To run the microservice with Kubernetes, we can use mirrord CLI tool.
+The microservice needs access to the “redis” service hosted on the cluster. To run the microservice with Kubernetes, we can use the mirrord CLI tool.
 ### 2. Install mirrord
-Let’s install mirrord CLI tool and run kotlin-guestbook with the required Kubernetes context. Follow the installation guide for mirrord here https://mirrord.dev/docs/overview/quick-start/#installation and run the below command.
+Let’s install the mirrord CLI tool and run kotlin-guestbook with the required Kubernetes context. Follow the installation guide for mirrord [here](https://mirrord.dev/docs/overview/quick-start/#installation) and run the below command.
 
 ### 3. Run the application with Maven and mirrord in the CLI
 ```
