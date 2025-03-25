@@ -55,7 +55,6 @@ minikube start
 
 git clone https://github.com/waveywaves/mirrord-kotlin-debug-example
 cd mirrord-kotlin-debug-example
-
 ```
 
 1. Deploy our application which will act as our staging environment.
