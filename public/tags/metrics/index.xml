@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Metrics on </title>
-    <link>http://localhost:54350/tags/metrics/</link>
+    <link>http://localhost:1313/tags/metrics/</link>
     <description>Recent content in Metrics on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 22 Jul 2022 06:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/metrics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/metrics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bear in Mind #1: Platform Engineering</title>
-      <link>http://localhost:54350/blog/bear-in-mind-1/</link>
+      <link>http://localhost:1313/blog/bear-in-mind-1/</link>
       <pubDate>Mon, 22 Jul 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/bear-in-mind-1/</guid>
+      <guid>http://localhost:1313/blog/bear-in-mind-1/</guid>
       <description>&lt;p&gt;      At MetalBear we build open-source dev tools for backend developers, which puts our domain at the intersection of some pretty interesting topics. There&amp;rsquo;s still a lot of great content being written about things that aren&amp;rsquo;t AI - things like Kubernetes, DevEx, Open Source, Rust, and more - and we go through a lot of it as part of our daily work. How easy it would then be, we collectively thought, to provide our growing community of curious but busy backend developers with a periodic, curated list of our favorite pieces of writing on these topics?&lt;/p&gt;</description>
     </item>
   </channel>

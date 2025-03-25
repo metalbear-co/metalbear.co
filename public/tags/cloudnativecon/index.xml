@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CloudNativeCon on </title>
-    <link>http://localhost:54350/tags/cloudnativecon/</link>
+    <link>http://localhost:1313/tags/cloudnativecon/</link>
     <description>Recent content in CloudNativeCon on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 07 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/cloudnativecon/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cloudnativecon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Four KubeCon &#43; CloudNativeCon Schedules for Four Types of Attendees</title>
-      <link>http://localhost:54350/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</link>
+      <link>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</link>
       <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</guid>
+      <guid>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</guid>
       <description>&lt;p&gt;KubeCon is one of those huge events where so much is happening, and so much is happening at the same time. If you don&amp;rsquo;t&#xA;plan in advance, you&amp;rsquo;re very likely to miss out on some events that would have been interesting for you. Our first tip&#xA;is: don’t worry too much about missing talks, as all talks will be recorded and uploaded to YouTube shortly after the&#xA;event. Social events, workshops, discussions etc. cannot be caught up later.&lt;/p&gt;</description>
     </item>
   </channel>

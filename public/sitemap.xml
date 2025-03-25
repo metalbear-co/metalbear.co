@@ -3,858 +3,823 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:54350/guides/how-to-debug-a-nodejs-microservice/</loc>
+    <loc>http://localhost:1313/guides/how-to-debug-a-nodejs-microservice/</loc>
     <lastmod>2025-02-21T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/guides/how-to-debug-a-go-microservice/</loc>
+    <loc>http://localhost:1313/guides/how-to-debug-a-go-microservice/</loc>
     <lastmod>2025-01-15T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/guides/how-to-debug-a-java-microservice/</loc>
+    <loc>http://localhost:1313/guides/how-to-debug-a-java-microservice/</loc>
     <lastmod>2025-01-15T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/guides/how-to-debug-a-ruby-microservice/</loc>
+    <loc>http://localhost:1313/guides/how-to-debug-a-ruby-microservice/</loc>
     <lastmod>2025-01-15T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</loc>
+    <loc>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</loc>
     <lastmod>2024-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</loc>
+    <loc>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</loc>
     <lastmod>2024-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/there-and-back-again-port-forwarding-with-mirrord/</loc>
+    <loc>http://localhost:1313/blog/there-and-back-again-port-forwarding-with-mirrord/</loc>
     <lastmod>2024-10-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/split-queues-to-share-cloud-development-environments/</loc>
+    <loc>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</loc>
     <lastmod>2024-10-01T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/bear-in-mind-1/</loc>
+    <loc>http://localhost:1313/blog/bear-in-mind-1/</loc>
     <lastmod>2022-07-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/validation-at-scale-with-open-source-mvps/</loc>
+    <loc>http://localhost:1313/blog/validation-at-scale-with-open-source-mvps/</loc>
     <lastmod>2024-07-14T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/</loc>
+    <loc>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</loc>
     <lastmod>2022-06-17T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/kubecon-2024-takeaways/</loc>
+    <loc>http://localhost:1313/blog/kubecon-2024-takeaways/</loc>
     <lastmod>2024-04-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/comparison-of-internal-developer-platforms/</loc>
+    <loc>http://localhost:1313/blog/comparison-of-internal-developer-platforms/</loc>
     <lastmod>2024-03-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</loc>
+    <loc>http://localhost:1313/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</loc>
     <lastmod>2024-03-04T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</loc>
+    <loc>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</loc>
     <lastmod>2024-02-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/scaling-out-development-environments/</loc>
+    <loc>http://localhost:1313/blog/scaling-out-development-environments/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</loc>
+    <loc>http://localhost:1313/blog/the-traffic-police-controlling-outgoing-traffic-with-mirrord/</loc>
     <lastmod>2023-08-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/mirrord-as-an-alternative-to-telepresence/</loc>
+    <loc>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</loc>
     <lastmod>2023-07-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/easy-k8s-connectivity-for-local-utils/</loc>
+    <loc>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</loc>
     <lastmod>2023-06-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/writing-a-kubernetes-operator/</loc>
+    <loc>http://localhost:1313/blog/writing-a-kubernetes-operator/</loc>
     <lastmod>2023-03-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/fun-with-macoss-sip/</loc>
+    <loc>http://localhost:1313/blog/fun-with-macoss-sip/</loc>
     <lastmod>2023-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</loc>
+    <loc>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</loc>
     <lastmod>2022-10-31T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/legal/cookie-policy-2/</loc>
+    <loc>http://localhost:1313/legal/cookie-policy/</loc>
     <lastmod>2022-10-31T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/legal/cookie-policy/</loc>
+    <loc>http://localhost:1313/legal/privacy-policy/</loc>
     <lastmod>2022-10-31T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/legal/privacy-policy-2/</loc>
+    <loc>http://localhost:1313/legal/terms/</loc>
     <lastmod>2022-10-31T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/legal/privacy-policy/</loc>
-    <lastmod>2022-10-31T06:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:54350/legal/terms-2/</loc>
-    <lastmod>2022-10-31T06:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:54350/legal/terms/</loc>
-    <lastmod>2022-10-31T06:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:54350/blog/mirrord-3.0-is-out/</loc>
+    <loc>http://localhost:1313/blog/mirrord-3.0-is-out/</loc>
     <lastmod>2022-10-20T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/hooking-go-from-rust-hitchhikers-guide-to-the-go-laxy/</loc>
+    <loc>http://localhost:1313/blog/hooking-go-from-rust-hitchhikers-guide-to-the-go-laxy/</loc>
     <lastmod>2022-08-17T15:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/starting-a-backend-developers-community/</loc>
+    <loc>http://localhost:1313/blog/starting-a-backend-developers-community/</loc>
     <lastmod>2022-08-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/getting-started-with-ephemeral-containers/</loc>
+    <loc>http://localhost:1313/blog/getting-started-with-ephemeral-containers/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/</loc>
+    <loc>http://localhost:1313/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/carcinisation-of-mirrord-or-why-we-use-rust/</loc>
+    <loc>http://localhost:1313/blog/carcinisation-of-mirrord-or-why-we-use-rust/</loc>
     <lastmod>2022-06-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/reintroducing-mirrord/</loc>
+    <loc>http://localhost:1313/blog/reintroducing-mirrord/</loc>
     <lastmod>2022-05-30T15:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/metal-who/</loc>
+    <loc>http://localhost:1313/blog/metal-who/</loc>
     <lastmod>2022-05-17T09:19:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/guides/</loc>
+    <loc>http://localhost:1313/tags/guides/</loc>
     <lastmod>2025-02-21T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/guides/</loc>
+    <loc>http://localhost:1313/guides/</loc>
     <lastmod>2025-02-21T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/metalbear/</loc>
+    <loc>http://localhost:1313/tags/metalbear/</loc>
     <lastmod>2025-02-21T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-02-21T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/cloud/</loc>
+    <loc>http://localhost:1313/tags/cloud/</loc>
     <lastmod>2024-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/cloudnativecon/</loc>
+    <loc>http://localhost:1313/tags/cloudnativecon/</loc>
     <lastmod>2024-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/cncf/</loc>
+    <loc>http://localhost:1313/tags/cncf/</loc>
     <lastmod>2024-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/conferences/</loc>
+    <loc>http://localhost:1313/tags/conferences/</loc>
     <lastmod>2024-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/kubecon/</loc>
+    <loc>http://localhost:1313/tags/kubecon/</loc>
     <lastmod>2024-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/mirrord/</loc>
+    <loc>http://localhost:1313/tags/mirrord/</loc>
     <lastmod>2024-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/application-testing/</loc>
+    <loc>http://localhost:1313/tags/application-testing/</loc>
     <lastmod>2024-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/devtools/</loc>
+    <loc>http://localhost:1313/tags/devtools/</loc>
     <lastmod>2024-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/open-source/</loc>
+    <loc>http://localhost:1313/tags/open-source/</loc>
     <lastmod>2024-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/startup/</loc>
+    <loc>http://localhost:1313/tags/startup/</loc>
     <lastmod>2024-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/port-forward/</loc>
+    <loc>http://localhost:1313/tags/port-forward/</loc>
     <lastmod>2024-10-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/gemma-tipper/</loc>
+    <loc>http://localhost:1313/contributors/gemma-tipper/</loc>
     <lastmod>2024-10-21T14:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/lorena-mart%C3%ADnez/</loc>
+    <loc>http://localhost:1313/contributors/lorena-mart%C3%ADnez/</loc>
     <lastmod>2024-10-21T14:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/sqs/</loc>
+    <loc>http://localhost:1313/tags/sqs/</loc>
     <lastmod>2024-10-01T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/bear-in-mind/</loc>
+    <loc>http://localhost:1313/tags/bear-in-mind/</loc>
     <lastmod>2022-07-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/digest/</loc>
+    <loc>http://localhost:1313/tags/digest/</loc>
     <lastmod>2022-07-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/metrics/</loc>
+    <loc>http://localhost:1313/tags/metrics/</loc>
     <lastmod>2022-07-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/platform-engineering/</loc>
+    <loc>http://localhost:1313/tags/platform-engineering/</loc>
     <lastmod>2024-04-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/ergonomics/</loc>
+    <loc>http://localhost:1313/tags/ergonomics/</loc>
     <lastmod>2022-10-31T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/mirrord-for-teams/</loc>
+    <loc>http://localhost:1313/tags/mirrord-for-teams/</loc>
     <lastmod>2022-06-17T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/devex/</loc>
+    <loc>http://localhost:1313/tags/devex/</loc>
     <lastmod>2024-03-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/idps/</loc>
+    <loc>http://localhost:1313/tags/idps/</loc>
     <lastmod>2024-03-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/container/</loc>
+    <loc>http://localhost:1313/tags/container/</loc>
     <lastmod>2024-03-04T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/cri/</loc>
+    <loc>http://localhost:1313/tags/cri/</loc>
     <lastmod>2024-03-04T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/pause/</loc>
+    <loc>http://localhost:1313/tags/pause/</loc>
     <lastmod>2024-03-04T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/runtime/</loc>
+    <loc>http://localhost:1313/tags/runtime/</loc>
     <lastmod>2024-03-04T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/ai/ml/</loc>
+    <loc>http://localhost:1313/tags/ai/ml/</loc>
     <lastmod>2024-02-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/anita-ihuman/</loc>
+    <loc>http://localhost:1313/contributors/anita-ihuman/</loc>
     <lastmod>2024-02-22T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/cloudflared/</loc>
+    <loc>http://localhost:1313/tags/cloudflared/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/devcontainers/</loc>
+    <loc>http://localhost:1313/tags/devcontainers/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/devenv/</loc>
+    <loc>http://localhost:1313/tags/devenv/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/devops/</loc>
+    <loc>http://localhost:1313/tags/devops/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/devx/</loc>
+    <loc>http://localhost:1313/tags/devx/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/k3s/</loc>
+    <loc>http://localhost:1313/tags/k3s/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/kubernetes/</loc>
+    <loc>http://localhost:1313/tags/kubernetes/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/minikube/</loc>
+    <loc>http://localhost:1313/tags/minikube/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/tailscale/</loc>
+    <loc>http://localhost:1313/tags/tailscale/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/vscode/</loc>
+    <loc>http://localhost:1313/tags/vscode/</loc>
     <lastmod>2023-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/feature/</loc>
+    <loc>http://localhost:1313/tags/feature/</loc>
     <lastmod>2023-08-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/filter/</loc>
+    <loc>http://localhost:1313/tags/filter/</loc>
     <lastmod>2023-08-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/network/</loc>
+    <loc>http://localhost:1313/tags/network/</loc>
     <lastmod>2023-08-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/traffic/</loc>
+    <loc>http://localhost:1313/tags/traffic/</loc>
     <lastmod>2023-08-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/debugging/</loc>
+    <loc>http://localhost:1313/tags/debugging/</loc>
     <lastmod>2023-07-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/microservices/</loc>
+    <loc>http://localhost:1313/tags/microservices/</loc>
     <lastmod>2023-07-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/testing/</loc>
+    <loc>http://localhost:1313/tags/testing/</loc>
     <lastmod>2023-07-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/operator/</loc>
+    <loc>http://localhost:1313/tags/operator/</loc>
     <lastmod>2023-03-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/dmitry-dodzin/</loc>
+    <loc>http://localhost:1313/contributors/dmitry-dodzin/</loc>
     <lastmod>2023-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/low-level/</loc>
+    <loc>http://localhost:1313/tags/low-level/</loc>
     <lastmod>2023-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/macos/</loc>
+    <loc>http://localhost:1313/tags/macos/</loc>
     <lastmod>2023-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/research/</loc>
+    <loc>http://localhost:1313/tags/research/</loc>
     <lastmod>2023-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/sip/</loc>
+    <loc>http://localhost:1313/tags/sip/</loc>
     <lastmod>2023-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/legal/</loc>
+    <loc>http://localhost:1313/tags/legal/</loc>
     <lastmod>2022-10-31T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/legal/</loc>
+    <loc>http://localhost:1313/legal/</loc>
     <lastmod>2022-10-31T06:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/assembly/</loc>
+    <loc>http://localhost:1313/tags/assembly/</loc>
     <lastmod>2022-08-17T15:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/frida/</loc>
+    <loc>http://localhost:1313/tags/frida/</loc>
     <lastmod>2022-08-17T15:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/go/</loc>
+    <loc>http://localhost:1313/tags/go/</loc>
     <lastmod>2022-08-17T15:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/hooks/</loc>
+    <loc>http://localhost:1313/tags/hooks/</loc>
     <lastmod>2022-08-17T15:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/rust/</loc>
+    <loc>http://localhost:1313/tags/rust/</loc>
     <lastmod>2022-08-17T15:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/backend/</loc>
+    <loc>http://localhost:1313/tags/backend/</loc>
     <lastmod>2022-08-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/community/</loc>
+    <loc>http://localhost:1313/tags/community/</loc>
     <lastmod>2022-08-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/discord/</loc>
+    <loc>http://localhost:1313/tags/discord/</loc>
     <lastmod>2022-08-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/containers/</loc>
+    <loc>http://localhost:1313/tags/containers/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/internals/</loc>
+    <loc>http://localhost:1313/tags/internals/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/_index-2/</loc>
+    <loc>http://localhost:1313/contributors/</loc>
     <lastmod>2022-05-16T08:50:29+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/</loc>
-    <lastmod>2022-05-16T08:50:29+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:54350/_index-2/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2022-05-12T16:35:10+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/</loc>
-    <lastmod>2022-05-12T16:35:10+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:54350/contributors/alexandre-cavalcante/</loc>
+    <loc>http://localhost:1313/contributors/alexandre-cavalcante/</loc>
     <lastmod>2022-05-12T08:50:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/aviram-hassan/</loc>
+    <loc>http://localhost:1313/contributors/aviram-hassan/</loc>
     <lastmod>2022-05-12T08:50:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/eyal-bukchin/</loc>
+    <loc>http://localhost:1313/contributors/eyal-bukchin/</loc>
     <lastmod>2022-05-12T08:50:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/mehul-arora/</loc>
+    <loc>http://localhost:1313/contributors/mehul-arora/</loc>
     <lastmod>2022-05-12T08:50:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/tal-zwick/</loc>
+    <loc>http://localhost:1313/contributors/tal-zwick/</loc>
     <lastmod>2022-05-12T08:50:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/tanjim-hossain/</loc>
+    <loc>http://localhost:1313/contributors/tanjim-hossain/</loc>
     <lastmod>2022-05-12T08:50:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/the-metalbear-team/</loc>
+    <loc>http://localhost:1313/contributors/the-metalbear-team/</loc>
     <lastmod>2022-05-12T08:50:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contributors/vibhav-bobade/</loc>
+    <loc>http://localhost:1313/contributors/vibhav-bobade/</loc>
     <lastmod>2022-05-12T08:50:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2022-05-12T08:49:55+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/general/</loc>
+    <loc>http://localhost:1313/tags/general/</loc>
     <lastmod>2022-05-17T09:19:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/tags/remote-first/</loc>
+    <loc>http://localhost:1313/tags/remote-first/</loc>
     <lastmod>2022-05-17T09:19:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/cfp-program/</loc>
+    <loc>http://localhost:1313/cfp-program/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/pages/</loc>
+    <loc>http://localhost:1313/pages/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:54350/writers-program/</loc>
+    <loc>http://localhost:1313/writers-program/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>The MetalBear Team on </title>
-    <link>http://localhost:54350/contributors/the-metalbear-team/</link>
+    <link>http://localhost:1313/contributors/the-metalbear-team/</link>
     <description>Recent content in The MetalBear Team on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 07 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/contributors/the-metalbear-team/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/contributors/the-metalbear-team/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Four KubeCon &#43; CloudNativeCon Schedules for Four Types of Attendees</title>
-      <link>http://localhost:54350/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</link>
+      <link>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</link>
       <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</guid>
+      <guid>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</guid>
       <description>&lt;p&gt;KubeCon is one of those huge events where so much is happening, and so much is happening at the same time. If you don&amp;rsquo;t&#xA;plan in advance, you&amp;rsquo;re very likely to miss out on some events that would have been interesting for you. Our first tip&#xA;is: don’t worry too much about missing talks, as all talks will be recorded and uploaded to YouTube shortly after the&#xA;event. Social events, workshops, discussions etc. cannot be caught up later.&lt;/p&gt;</description>
     </item>
     <item>
       <title>mirrord for Teams – a Step Into the Remocal Future</title>
-      <link>http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/</link>
+      <link>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</link>
       <pubDate>Mon, 17 Jun 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/mftlaunch.png&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;      Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing &lt;em&gt;mirrord for Teams&lt;/em&gt; to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – &lt;em&gt;Remote&lt;/em&gt; development, where you maintain no local environment and everything is cloud dependent, and &lt;em&gt;Local&lt;/em&gt; development, where you develop software on your computer, sync code to staging and production, and test. &lt;em&gt;Remocal&lt;/em&gt; development allows developers to work locally while their process &lt;em&gt;thinks&lt;/em&gt; it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for backend developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in &lt;em&gt;mirrord for Teams&lt;/em&gt;. But first, a bit about how we got there.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/mftlaunch.png&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;      Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing &lt;em&gt;mirrord for Teams&lt;/em&gt; to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – &lt;em&gt;Remote&lt;/em&gt; development, where you maintain no local environment and everything is cloud dependent, and &lt;em&gt;Local&lt;/em&gt; development, where you develop software on your computer, sync code to staging and production, and test. &lt;em&gt;Remocal&lt;/em&gt; development allows developers to work locally while their process &lt;em&gt;thinks&lt;/em&gt; it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for backend developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in &lt;em&gt;mirrord for Teams&lt;/em&gt;. But first, a bit about how we got there.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

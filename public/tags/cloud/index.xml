@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud on </title>
-    <link>http://localhost:54350/tags/cloud/</link>
+    <link>http://localhost:1313/tags/cloud/</link>
     <description>Recent content in Cloud on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 07 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Four KubeCon &#43; CloudNativeCon Schedules for Four Types of Attendees</title>
-      <link>http://localhost:54350/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</link>
+      <link>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</link>
       <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</guid>
+      <guid>http://localhost:1313/blog/four-kubecon--cloudnativecon-schedules-for-four-types-of-attendees/</guid>
       <description>&lt;p&gt;KubeCon is one of those huge events where so much is happening, and so much is happening at the same time. If you don&amp;rsquo;t&#xA;plan in advance, you&amp;rsquo;re very likely to miss out on some events that would have been interesting for you. Our first tip&#xA;is: don’t worry too much about missing talks, as all talks will be recorded and uploaded to YouTube shortly after the&#xA;event. Social events, workshops, discussions etc. cannot be caught up later.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Discover mirrord’s approach to fast, cloud-connected local dev at KubeCon</title>
-      <link>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
+      <link>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
       <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
+      <guid>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
       <description>&lt;p&gt;We get it—“Another blog about a company’s KubeCon booth?” These posts can be a bit predictable. So, we’ll keep this one brief and focused on how &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord&#xA;  &lt;/a&gt;&#xA;   can actually make cloud development easier.&lt;/p&gt;&#xA;&lt;p&gt;As one CTO put it, “&lt;em&gt;at our company, mirrord is doing as much for developer productivity as AI is&lt;/em&gt;.” That’s high praise, and while we’re not here to boast, we do think it’s worth checking out if you’re looking for a smoother development process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Split Queues To Share Cloud Development Environments</title>
-      <link>http://localhost:54350/blog/split-queues-to-share-cloud-development-environments/</link>
+      <link>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</link>
       <pubDate>Tue, 01 Oct 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/split-queues-to-share-cloud-development-environments/</guid>
+      <guid>http://localhost:1313/blog/split-queues-to-share-cloud-development-environments/</guid>
       <description>&lt;p&gt;One of the reasons &lt;a href=&#34;https://mirrord.dev/docs/overview/teams/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord for Teams&#xA;  &lt;/a&gt;&#xA;   is a gamechanger for many&#xA;organizations is that it makes it possible for a whole team to work with one shared cloud environment. They don’t&#xA;need to run the whole environment for each developer, they don’t need to have their entire architecture running on&#xA;their laptops, and they don&amp;rsquo;t need to redeploy to Kubernetes to test new code or debug it. Developers just press&#xA;“run” in their IDE, and their code is executed &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    remocally&#xA;  &lt;/a&gt;&#xA;  : the code runs locally, but with&#xA;access to any required resources in the Kubernetes cluster or outside of it. With mirrord for Teams, developers can&#xA;even work on the same service at the same time, and control how to divide between them consumable data like&#xA;incoming HTTP requests, and now also queue messages.&lt;/p&gt;</description>
     </item>
     <item>
       <title>mirrord for Teams – a Step Into the Remocal Future</title>
-      <link>http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/</link>
+      <link>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</link>
       <pubDate>Mon, 17 Jun 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/mftlaunch.png&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;      Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing &lt;em&gt;mirrord for Teams&lt;/em&gt; to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – &lt;em&gt;Remote&lt;/em&gt; development, where you maintain no local environment and everything is cloud dependent, and &lt;em&gt;Local&lt;/em&gt; development, where you develop software on your computer, sync code to staging and production, and test. &lt;em&gt;Remocal&lt;/em&gt; development allows developers to work locally while their process &lt;em&gt;thinks&lt;/em&gt; it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for backend developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in &lt;em&gt;mirrord for Teams&lt;/em&gt;. But first, a bit about how we got there.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/mftlaunch.png&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;      Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing &lt;em&gt;mirrord for Teams&lt;/em&gt; to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – &lt;em&gt;Remote&lt;/em&gt; development, where you maintain no local environment and everything is cloud dependent, and &lt;em&gt;Local&lt;/em&gt; development, where you develop software on your computer, sync code to staging and production, and test. &lt;em&gt;Remocal&lt;/em&gt; development allows developers to work locally while their process &lt;em&gt;thinks&lt;/em&gt; it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for backend developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in &lt;em&gt;mirrord for Teams&lt;/em&gt;. But first, a bit about how we got there.&lt;/p&gt;</description>
     </item>
     <item>
       <title>KubeCon 2024 Takeaways</title>
-      <link>http://localhost:54350/blog/kubecon-2024-takeaways/</link>
+      <link>http://localhost:1313/blog/kubecon-2024-takeaways/</link>
       <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/kubecon-2024-takeaways/</guid>
+      <guid>http://localhost:1313/blog/kubecon-2024-takeaways/</guid>
       <description>&lt;p&gt;Last month marked a huge milestone for us as we attended our first KubeCon! This was KubeCon Europe, which took place in Paris, city of lights and cloud orchestration. Below is a summary of our collective impressions and insights.&lt;/p&gt;&#xA;&lt;h2 id=&#34;co-located-events-and-surprising-highlights&#34;&gt;Co-Located Events and Surprising Highlights &lt;a href=&#34;#co-located-events-and-surprising-highlights&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;We arrived a day before KubeCon proper started so we could attend the co-located events. We ended up mostly going to AppDeveloperCon sessions, and it was surprisingly crowded. Our highlight from the first day was Daniel Bryant’s excellent talk &lt;strong&gt;“&lt;a href=&#34;https://www.youtube.com/watch?v=3tP31j_T6IE&#34;   target=&#34;_blank&#34; &gt;&#xA;    Testing Cloud Apps: Mocks vs. Service Virtualization vs. Remocal Tools&#xA;  &lt;/a&gt;&#xA;  ”&lt;/strong&gt;. Daniel covered our favorite pain - being unable to work against a real environment and iterate with it as part of the development workflow. We were pleased to see a very friendly shoutout to mirrord and our to talk later in the convention!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Comparison of Internal Developer Platforms</title>
-      <link>http://localhost:54350/blog/comparison-of-internal-developer-platforms/</link>
+      <link>http://localhost:1313/blog/comparison-of-internal-developer-platforms/</link>
       <pubDate>Fri, 22 Mar 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/comparison-of-internal-developer-platforms/</guid>
+      <guid>http://localhost:1313/blog/comparison-of-internal-developer-platforms/</guid>
       <description>&lt;p&gt;DevOps emerged to address the need for better developer productivity and a more efficient development lifecycle. However, DevOps teams often find themselves bogged down by operational tasks like security, scaling, and infrastructure management. The demand for robust developer platforms continues to grow, and with the rise of cloud computing, organizations struggle to keep pace with the complexities and speed involved. This is where Internal Developer Platforms (IDPs) come in – a trendy concept in Platform Engineering that promises to streamline processes and boost developer productivity.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Five Talks We&#39;re Waiting for at KubeCon Europe 2024</title>
-      <link>http://localhost:54350/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</link>
+      <link>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</link>
       <pubDate>Thu, 22 Feb 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</guid>
-      <description>&lt;p&gt;Bonjour Kubernauts! Kubecon Europe is less than a month away, and it’s coming to the city of lights. The MetalBear team will be joining the fun in Paris this year, and we’ve prepared a list of five talks that we’re particularly excited about.&lt;/p&gt;&#xA;&lt;figure class=&#34;center mid-width&#34;&gt;&lt;img src=&#34;http://localhost:54350/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/kubecon-paris.png&#34;&#xA;    alt=&#34;mirrord at KubeCon Europe 2024&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;whats-new-at-kubecon-this-year&#34;&gt;What’s New at KubeCon This Year? &lt;a href=&#34;#whats-new-at-kubecon-this-year&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Every year, the event unveils transformative tech trends that are making waves in the tech ecosystem, causing end-users, developers, engineers, and stakeholders to reflect on the past and how these trends can impact their future.&#xA;KubeCon + CloudNativeCon 2024 promises to spotlight several groundbreaking projects that have flourished within the Kubernetes ecosystem. Unsurprisingly, the main buzzword this year is AI.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</guid>
+      <description>&lt;p&gt;Bonjour Kubernauts! Kubecon Europe is less than a month away, and it’s coming to the city of lights. The MetalBear team will be joining the fun in Paris this year, and we’ve prepared a list of five talks that we’re particularly excited about.&lt;/p&gt;&#xA;&lt;figure class=&#34;center mid-width&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/kubecon-paris.png&#34;&#xA;    alt=&#34;mirrord at KubeCon Europe 2024&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;whats-new-at-kubecon-this-year&#34;&gt;What’s New at KubeCon This Year? &lt;a href=&#34;#whats-new-at-kubecon-this-year&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Every year, the event unveils transformative tech trends that are making waves in the tech ecosystem, causing end-users, developers, engineers, and stakeholders to reflect on the past and how these trends can impact their future.&#xA;KubeCon + CloudNativeCon 2024 promises to spotlight several groundbreaking projects that have flourished within the Kubernetes ecosystem. Unsurprisingly, the main buzzword this year is AI.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Writing a Kubernetes Operator</title>
-      <link>http://localhost:54350/blog/writing-a-kubernetes-operator/</link>
+      <link>http://localhost:1313/blog/writing-a-kubernetes-operator/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/writing-a-kubernetes-operator/</guid>
+      <guid>http://localhost:1313/blog/writing-a-kubernetes-operator/</guid>
       <description>&lt;p&gt;As part of mirrord For Teams, we wanted to build a persistent component that would run in our user’s cluster and synchronize independent uses of mirrord. It quickly became apparent that we needed a component that was both:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Kubernetes-native&lt;/strong&gt; - meaning it leverages the Kubernetes APIs and ecosystem&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cluster-synchronized&lt;/strong&gt; - Manage and synchronize the use of our open-source project, mirrord, from the cluster’s point of view.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Some research pointed us in the direction of the Kubernetes Operator/Controller pattern.&#xA;The operator pattern can be quite ambiguous, and we found the guides that currently exist for it to be quite dense and technical. In this post, I want to instead take a step-by-step approach and provide a quick start for newcomers looking to explore the operator pattern.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Approaches in Cloud Development Ergonomics</title>
-      <link>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</link>
+      <link>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</link>
       <pubDate>Mon, 31 Oct 2022 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</guid>
+      <guid>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</guid>
       <description>&lt;p&gt;The advent of microservice architectures and cloud-native has taken some pretty severe tolls on developer ergonomics. It feels as if the tools cloud developers have at their disposal haven’t evolved fast enough to keep up with the rapid progress in infrastructure, and this tool debt is readily apparent in the day-to-day of the modern developer.&lt;/p&gt;&#xA;&lt;p&gt;The clearest example of this is that it’s now &lt;strong&gt;really hard to just run your application&lt;/strong&gt;. Not the one microservice you’re currently working on, but your actual entire application, which you ultimately deploy to the cloud and serves your customers. You used to be able to fire up your monolith right there on your laptop from within your IDE (crash, change some code, run it again), but architectures today have become resource-intensive, reliant on third-party services, and mostly just plain convoluted to the point where local execution is no longer a viable option.&lt;/p&gt;</description>
     </item>
     <item>
       <title>mirrord 3.0 is out!</title>
-      <link>http://localhost:54350/blog/mirrord-3.0-is-out/</link>
+      <link>http://localhost:1313/blog/mirrord-3.0-is-out/</link>
       <pubDate>Thu, 20 Oct 2022 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/mirrord-3.0-is-out/</guid>
+      <guid>http://localhost:1313/blog/mirrord-3.0-is-out/</guid>
       <description>&lt;p&gt;Today we’re very excited to launch the first full, stable version of mirrord! Full because it’s the first version where mirrord completely wraps your process in the context of your Kubernetes cluster - it connects everything, from network traffic to file access to environment variables, so that you can keep running your process from the familiar comfort of your local environment, but with input, configuration, and state from the cloud.&lt;/p&gt;</description>
     </item>
   </channel>

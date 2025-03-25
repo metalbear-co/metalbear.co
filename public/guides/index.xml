@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guides on </title>
-    <link>http://localhost:54350/guides/</link>
+    <link>http://localhost:1313/guides/</link>
     <description>Recent content in Guides on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 21 Feb 2025 06:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/guides/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/guides/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Debug Node.js Microservices in Kubernetes</title>
-      <link>http://localhost:54350/guides/how-to-debug-a-nodejs-microservice/</link>
+      <link>http://localhost:1313/guides/how-to-debug-a-nodejs-microservice/</link>
       <pubDate>Fri, 21 Feb 2025 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/guides/how-to-debug-a-nodejs-microservice/</guid>
+      <guid>http://localhost:1313/guides/how-to-debug-a-nodejs-microservice/</guid>
       <description>&lt;h1 id=&#34;how-to-debug-a-nodejs-microservice&#34;&gt;How to Debug a Node.js Microservice &lt;a href=&#34;#how-to-debug-a-nodejs-microservice&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;In this guide, we’ll cover how to debug a Node.js microservice running in a Kubernetes environment using mirrord. You’ll learn how to set up and use mirrord with the VSCode IDE and the command line too.&lt;/p&gt;&#xA;&lt;p&gt;Tip: You can use mirrord to debug, test, and troubleshoot your applications locally with Kubernetes context, without needing to build or deploy each time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;common-debugging-techniques-for-microservices-in-nodejs&#34;&gt;Common debugging techniques for microservices in Node.js &lt;a href=&#34;#common-debugging-techniques-for-microservices-in-nodejs&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;It can be cumbersome to debug microservices on Kubernetes. The lack of a debugging workflow for applications with multiple runtime dependencies in the context of Kubernetes makes it even harder. Why does it even make it harder? The following are common ways of debugging microservices with strict runtime environment dependencies:&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Debug Golang Microservices in Kubernetes</title>
-      <link>http://localhost:54350/guides/how-to-debug-a-go-microservice/</link>
+      <link>http://localhost:1313/guides/how-to-debug-a-go-microservice/</link>
       <pubDate>Wed, 15 Jan 2025 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/guides/how-to-debug-a-go-microservice/</guid>
+      <guid>http://localhost:1313/guides/how-to-debug-a-go-microservice/</guid>
       <description>&lt;h1 id=&#34;how-to-debug-a-go-microservice&#34;&gt;How to Debug a Go Microservice &lt;a href=&#34;#how-to-debug-a-go-microservice&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;In this guide, we’ll cover how to debug a Golang microservice running in a Kubernetes environment using mirrord. You’ll learn how to set up and use mirrord with the Goland IDE and the command line.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tip:&lt;/strong&gt;&lt;/em&gt; You can use &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;  mirrord&#xA;&lt;/a&gt;&#xA; to debug, test, and troubleshoot your applications locally with Kubernetes context, without needing to build or deploy each time.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;common-debugging-techniques-for-microservices-in-go&#34;&gt;Common debugging techniques for microservices in Go &lt;a href=&#34;#common-debugging-techniques-for-microservices-in-go&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;It can be cumbersome to debug microservices on Kubernetes. The lack of a debugging workflow for applications with multiple runtime dependencies in the context of Kubernetes makes it even harder. Why does it even make it harder? The following are common ways of debugging microservices with strict runtime environment dependencies:&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Debug Java Microservices in Kubernetes</title>
-      <link>http://localhost:54350/guides/how-to-debug-a-java-microservice/</link>
+      <link>http://localhost:1313/guides/how-to-debug-a-java-microservice/</link>
       <pubDate>Wed, 15 Jan 2025 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/guides/how-to-debug-a-java-microservice/</guid>
+      <guid>http://localhost:1313/guides/how-to-debug-a-java-microservice/</guid>
       <description>&lt;h1 id=&#34;how-to-debug-a-java-microservice&#34;&gt;How to Debug a Java Microservice &lt;a href=&#34;#how-to-debug-a-java-microservice&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;In this guide, we’ll cover how to debug a Java microservice running in a Kubernetes environment using mirrord. You’ll learn how to set up and use mirrord with IntelliJ IDEA and the command-line Java Debugger (jdb).&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tip:&lt;/em&gt;&lt;/strong&gt; You can use &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;  mirrord&#xA;&lt;/a&gt;&#xA;  to debug, test, and troubleshoot your applications locally with Kubernetes context, without needing to build or deploy each time.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;common-debugging-techniques-for-microservices-in-java&#34;&gt;Common debugging techniques for microservices in Java &lt;a href=&#34;#common-debugging-techniques-for-microservices-in-java&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Debugging microservices in Kubernetes can be quite cumbersome, especially due to the lack of a structured debugging workflow for applications with runtime dependencies. This complexity makes the debugging process even more challenging. Let’s explore a few common methods for debugging microservices that have strict runtime environment dependencies: &lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Debug Ruby Microservices in Kubernetes</title>
-      <link>http://localhost:54350/guides/how-to-debug-a-ruby-microservice/</link>
+      <link>http://localhost:1313/guides/how-to-debug-a-ruby-microservice/</link>
       <pubDate>Wed, 15 Jan 2025 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/guides/how-to-debug-a-ruby-microservice/</guid>
+      <guid>http://localhost:1313/guides/how-to-debug-a-ruby-microservice/</guid>
       <description>&lt;h1 id=&#34;how-to-debug-a-ruby-microservice&#34;&gt;How to Debug a Ruby Microservice &lt;a href=&#34;#how-to-debug-a-ruby-microservice&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;In this guide, we’ll cover how to debug a Ruby microservice running in a Kubernetes environment using mirrord. You’ll learn how to set up and use mirrord with the RubyMine IDE and the command line.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tip:&lt;/em&gt;&lt;/strong&gt; You can use &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;  mirrord&#xA;&lt;/a&gt;&#xA; to debug, test, and troubleshoot your applications locally with Kubernetes context, without needing to build or deploy each time.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;common-debugging-techniques-for-microservices-in-ruby&#34;&gt;Common debugging techniques for microservices in Ruby &lt;a href=&#34;#common-debugging-techniques-for-microservices-in-ruby&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;It can be cumbersome to debug microservices on Kubernetes. The lack of a debugging workflow for applications with multiple runtime dependencies in the context of Kubernetes makes it even harder. Why does it even make it harder? The following are common ways of debugging microservices with strict runtime environment dependencies:&lt;/p&gt;</description>
     </item>
   </channel>

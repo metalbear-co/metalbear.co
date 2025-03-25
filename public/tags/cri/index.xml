@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cri on </title>
-    <link>http://localhost:54350/tags/cri/</link>
+    <link>http://localhost:1313/tags/cri/</link>
     <description>Recent content in Cri on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 04 Mar 2024 06:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/cri/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cri/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On Pausing Containers - how we built, and why we deprecated, our container pause feature</title>
-      <link>http://localhost:54350/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</link>
+      <link>http://localhost:1313/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</link>
       <pubDate>Mon, 04 Mar 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</guid>
+      <guid>http://localhost:1313/blog/on-pausing-containers-how-we-built-and-why-we-deprecated-our-container-pause-feature/</guid>
       <description>&lt;p&gt;Did you know that you can ”freeze” running containers? We found out about this feature while developing a particularly handy capability for mirrord.&#xA;mirrord lets developers run local code in the context of a remote Kubernetes pod. This lets them test their code in cloud conditions without going through CI and deployment. In most cases, stealing or mirroring incoming traffic from the remote pod to the local process is good enough. However, when you have applications that consume tasks and do more than react to incoming requests, the user might want to &lt;a href=&#34;https://github.com/metalbear-co/mirrord/discussions/2016&#34;   target=&#34;_blank&#34; &gt;&#xA;    pause the remote application completely&#xA;  &lt;/a&gt;&#xA;  , so that it doesn’t compete with their local process for tasks.&lt;/p&gt;</description>
     </item>
   </channel>

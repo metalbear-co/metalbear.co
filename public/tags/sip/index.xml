@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sip on </title>
-    <link>http://localhost:54350/tags/sip/</link>
+    <link>http://localhost:1313/tags/sip/</link>
     <description>Recent content in Sip on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Jan 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/sip/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/sip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fun with macOS&#39;s SIP</title>
-      <link>http://localhost:54350/blog/fun-with-macoss-sip/</link>
+      <link>http://localhost:1313/blog/fun-with-macoss-sip/</link>
       <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/fun-with-macoss-sip/</guid>
+      <guid>http://localhost:1313/blog/fun-with-macoss-sip/</guid>
       <description>&lt;p&gt;While developing mirrord, which heavily relies on injecting itself into other people&amp;rsquo;s binaries, we ran into some challenges posed by macOS’s SIP (System Integrity Protection). This post details how we ultimately overcame these challenges, and we hope it can be of help to other people hoping to learn about SIP, as we&amp;rsquo;ve learned the hard way that there&amp;rsquo;s very little written about this subject on the internet.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-mirrord&#34;&gt;What is mirrord? &lt;a href=&#34;#what-is-mirrord&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mirrord.dev&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord&#xA;  &lt;/a&gt;&#xA;   lets you run a local process in the context of a cloud service, which means we can test our code on our staging cluster without actually deploying it there. This leads to shorter feedback loops (you don’t have to wait on long CI processes to test your code in staging conditions) and a more stable staging environment (since untested services aren’t being deployed there). There is a detailed overview of mirrord in &lt;a href=&#34;https://metalbear.co/blog/mirrord-3.0-is-out/&#34;   target=&#34;_blank&#34; &gt;&#xA;    this&#xA;  &lt;/a&gt;&#xA;   blog post.&lt;/p&gt;</description>
     </item>
   </channel>

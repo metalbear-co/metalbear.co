@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Devcontainers on </title>
-    <link>http://localhost:54350/tags/devcontainers/</link>
+    <link>http://localhost:1313/tags/devcontainers/</link>
     <description>Recent content in Devcontainers on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/devcontainers/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/devcontainers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scaling Out Development Environments</title>
-      <link>http://localhost:54350/blog/scaling-out-development-environments/</link>
+      <link>http://localhost:1313/blog/scaling-out-development-environments/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/scaling-out-development-environments/</guid>
+      <guid>http://localhost:1313/blog/scaling-out-development-environments/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Cross-posted from &lt;a href=&#34;https://audacioustux.com/Scaling-Out-Development-Environment-ceb823260a1f4a10b717a87e998480de&#34;   target=&#34;_blank&#34; &gt;&#xA;    https://audacioustux.com/Scaling-Out-Development-Environment-ceb823260a1f4a10b717a87e998480de&#xA;  &lt;/a&gt;&#xA;  &lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Once upon a time, there was LAMP Stack… &lt;strong&gt;L&lt;/strong&gt;inux, &lt;strong&gt;A&lt;/strong&gt;pache, &lt;strong&gt;M&lt;/strong&gt;ysql, &lt;strong&gt;P&lt;/strong&gt;hp/&lt;strong&gt;P&lt;/strong&gt;ython/&lt;strong&gt;P&lt;/strong&gt;erl - That’s what I’ve used to start my Software Engineering journey. Things were simple, in a sense that there were less “options” to choose from. But today, I have to deploy multiple types of databases, event store + processing pipeline, and other behemoths to work on my application locally.&lt;/p&gt;&#xA;&lt;p&gt;Well, maybe I can use docker-compose to keep things clean and tidy, re-producible for the other team members, but what about the compute resources usage? I don’t know about the M2/M3 users out there, but my Linux laptop either halts or burns my lap.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backend on </title>
-    <link>http://localhost:54350/tags/backend/</link>
+    <link>http://localhost:1313/tags/backend/</link>
     <description>Recent content in Backend on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/backend/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/backend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Starting a Backend Developers Community</title>
-      <link>http://localhost:54350/blog/starting-a-backend-developers-community/</link>
+      <link>http://localhost:1313/blog/starting-a-backend-developers-community/</link>
       <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/starting-a-backend-developers-community/</guid>
+      <guid>http://localhost:1313/blog/starting-a-backend-developers-community/</guid>
       <description>&lt;p&gt;Hey all, this blog post is a bit meta. tl;dr - we’re starting a &lt;a href=&#34;https://discord.gg/metalbear&#34;   target=&#34;_blank&#34; &gt;&#xA;    backend developers community on Discord&#xA;  &lt;/a&gt;&#xA;  . Its purpose is to have a place for backend developers to have discussions, share ideas, and collaborate.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-do-we-need-another-community&#34;&gt;Why do we need another community? &lt;a href=&#34;#why-do-we-need-another-community&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Most developer communities are dedicated to languages (Go, Python, Rust) or frameworks (FastAPI, Tokio). However, most modern backend developers work on complex cloud architectures combining multiple languages and ecosystems, and this is only becoming more common as microservice architectures become more prevalent. The modern backend engineer is a &lt;a href=&#34;https://medium.com/soluto-nashville/why-be-a-polyglot-software-engineer-29cf53465d15&#34;   target=&#34;_blank&#34; &gt;&#xA;    polyglot&#xA;  &lt;/a&gt;&#xA;  , making them more versatile and equipped to solve a wider array of problems. Besides, backend developers face many common issues &lt;em&gt;unrelated&lt;/em&gt; to the language or ecosystem they use - things to do with architecture, databases and other third party services, CI/CD and SDLC, even development methodology and team management.&lt;/p&gt;</description>
     </item>
   </channel>

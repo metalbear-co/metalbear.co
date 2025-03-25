@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Application-Testing on </title>
-    <link>http://localhost:54350/tags/application-testing/</link>
+    <link>http://localhost:1313/tags/application-testing/</link>
     <description>Recent content in Application-Testing on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/application-testing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/application-testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discover mirrord’s approach to fast, cloud-connected local dev at KubeCon</title>
-      <link>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
+      <link>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</link>
       <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
+      <guid>http://localhost:1313/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/</guid>
       <description>&lt;p&gt;We get it—“Another blog about a company’s KubeCon booth?” These posts can be a bit predictable. So, we’ll keep this one brief and focused on how &lt;a href=&#34;https://mirrord.dev/&#34;   target=&#34;_blank&#34; &gt;&#xA;    mirrord&#xA;  &lt;/a&gt;&#xA;   can actually make cloud development easier.&lt;/p&gt;&#xA;&lt;p&gt;As one CTO put it, “&lt;em&gt;at our company, mirrord is doing as much for developer productivity as AI is&lt;/em&gt;.” That’s high praise, and while we’re not here to boast, we do think it’s worth checking out if you’re looking for a smoother development process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>KubeCon 2024 Takeaways</title>
-      <link>http://localhost:54350/blog/kubecon-2024-takeaways/</link>
+      <link>http://localhost:1313/blog/kubecon-2024-takeaways/</link>
       <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/kubecon-2024-takeaways/</guid>
+      <guid>http://localhost:1313/blog/kubecon-2024-takeaways/</guid>
       <description>&lt;p&gt;Last month marked a huge milestone for us as we attended our first KubeCon! This was KubeCon Europe, which took place in Paris, city of lights and cloud orchestration. Below is a summary of our collective impressions and insights.&lt;/p&gt;&#xA;&lt;h2 id=&#34;co-located-events-and-surprising-highlights&#34;&gt;Co-Located Events and Surprising Highlights &lt;a href=&#34;#co-located-events-and-surprising-highlights&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;We arrived a day before KubeCon proper started so we could attend the co-located events. We ended up mostly going to AppDeveloperCon sessions, and it was surprisingly crowded. Our highlight from the first day was Daniel Bryant’s excellent talk &lt;strong&gt;“&lt;a href=&#34;https://www.youtube.com/watch?v=3tP31j_T6IE&#34;   target=&#34;_blank&#34; &gt;&#xA;    Testing Cloud Apps: Mocks vs. Service Virtualization vs. Remocal Tools&#xA;  &lt;/a&gt;&#xA;  ”&lt;/strong&gt;. Daniel covered our favorite pain - being unable to work against a real environment and iterate with it as part of the development workflow. We were pleased to see a very friendly shoutout to mirrord and our to talk later in the convention!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Five Talks We&#39;re Waiting for at KubeCon Europe 2024</title>
-      <link>http://localhost:54350/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</link>
+      <link>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</link>
       <pubDate>Thu, 22 Feb 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</guid>
-      <description>&lt;p&gt;Bonjour Kubernauts! Kubecon Europe is less than a month away, and it’s coming to the city of lights. The MetalBear team will be joining the fun in Paris this year, and we’ve prepared a list of five talks that we’re particularly excited about.&lt;/p&gt;&#xA;&lt;figure class=&#34;center mid-width&#34;&gt;&lt;img src=&#34;http://localhost:54350/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/kubecon-paris.png&#34;&#xA;    alt=&#34;mirrord at KubeCon Europe 2024&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;whats-new-at-kubecon-this-year&#34;&gt;What’s New at KubeCon This Year? &lt;a href=&#34;#whats-new-at-kubecon-this-year&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Every year, the event unveils transformative tech trends that are making waves in the tech ecosystem, causing end-users, developers, engineers, and stakeholders to reflect on the past and how these trends can impact their future.&#xA;KubeCon + CloudNativeCon 2024 promises to spotlight several groundbreaking projects that have flourished within the Kubernetes ecosystem. Unsurprisingly, the main buzzword this year is AI.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/</guid>
+      <description>&lt;p&gt;Bonjour Kubernauts! Kubecon Europe is less than a month away, and it’s coming to the city of lights. The MetalBear team will be joining the fun in Paris this year, and we’ve prepared a list of five talks that we’re particularly excited about.&lt;/p&gt;&#xA;&lt;figure class=&#34;center mid-width&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/five-talks-were-waiting-for-at-kubecon-europe-2024/kubecon-paris.png&#34;&#xA;    alt=&#34;mirrord at KubeCon Europe 2024&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;whats-new-at-kubecon-this-year&#34;&gt;What’s New at KubeCon This Year? &lt;a href=&#34;#whats-new-at-kubecon-this-year&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Every year, the event unveils transformative tech trends that are making waves in the tech ecosystem, causing end-users, developers, engineers, and stakeholders to reflect on the past and how these trends can impact their future.&#xA;KubeCon + CloudNativeCon 2024 promises to spotlight several groundbreaking projects that have flourished within the Kubernetes ecosystem. Unsurprisingly, the main buzzword this year is AI.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

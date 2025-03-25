@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Operator on </title>
-    <link>http://localhost:54350/tags/operator/</link>
+    <link>http://localhost:1313/tags/operator/</link>
     <description>Recent content in Operator on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/operator/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/operator/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Writing a Kubernetes Operator</title>
-      <link>http://localhost:54350/blog/writing-a-kubernetes-operator/</link>
+      <link>http://localhost:1313/blog/writing-a-kubernetes-operator/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/writing-a-kubernetes-operator/</guid>
+      <guid>http://localhost:1313/blog/writing-a-kubernetes-operator/</guid>
       <description>&lt;p&gt;As part of mirrord For Teams, we wanted to build a persistent component that would run in our user’s cluster and synchronize independent uses of mirrord. It quickly became apparent that we needed a component that was both:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Kubernetes-native&lt;/strong&gt; - meaning it leverages the Kubernetes APIs and ecosystem&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cluster-synchronized&lt;/strong&gt; - Manage and synchronize the use of our open-source project, mirrord, from the cluster’s point of view.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Some research pointed us in the direction of the Kubernetes Operator/Controller pattern.&#xA;The operator pattern can be quite ambiguous, and we found the guides that currently exist for it to be quite dense and technical. In this post, I want to instead take a step-by-step approach and provide a quick start for newcomers looking to explore the operator pattern.&lt;/p&gt;</description>
     </item>
   </channel>

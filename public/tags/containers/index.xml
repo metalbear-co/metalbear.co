@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Containers on </title>
-    <link>http://localhost:54350/tags/containers/</link>
+    <link>http://localhost:1313/tags/containers/</link>
     <description>Recent content in Containers on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 27 Jul 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/containers/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/containers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started With Ephemeral Containers</title>
-      <link>http://localhost:54350/blog/getting-started-with-ephemeral-containers/</link>
+      <link>http://localhost:1313/blog/getting-started-with-ephemeral-containers/</link>
       <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/getting-started-with-ephemeral-containers/</guid>
+      <guid>http://localhost:1313/blog/getting-started-with-ephemeral-containers/</guid>
       <description>&lt;p&gt;If you’re following the latest news on Kubernetes, you probably would have heard about Ephemeral Containers. Not sure? Fear not! In this blog post we will try to shed some light on this new feature soon to be stable&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; in Kubernetes v1.25.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-ephemeral-containers&#34;&gt;What are Ephemeral Containers? &lt;a href=&#34;#what-are-ephemeral-containers&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/&#34;   target=&#34;_blank&#34; &gt;&#xA;    Ephemeral containers&#xA;  &lt;/a&gt;&#xA;   let us run a container with a specific image in the context of an already running container in a Pod. This comes in handy when debugging/troubleshooting distroless images or images that lack certain utilities, where &lt;code&gt;kubectl exec&lt;/code&gt; won’t be helpful.&lt;/p&gt;</description>
     </item>
   </channel>

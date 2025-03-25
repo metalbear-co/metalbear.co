@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Frida on </title>
-    <link>http://localhost:54350/tags/frida/</link>
+    <link>http://localhost:1313/tags/frida/</link>
     <description>Recent content in Frida on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 17 Aug 2022 15:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/frida/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/frida/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hooking Go from Rust - Hitchhiker’s Guide to the Go-laxy</title>
-      <link>http://localhost:54350/blog/hooking-go-from-rust-hitchhikers-guide-to-the-go-laxy/</link>
+      <link>http://localhost:1313/blog/hooking-go-from-rust-hitchhikers-guide-to-the-go-laxy/</link>
       <pubDate>Wed, 17 Aug 2022 15:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/hooking-go-from-rust-hitchhikers-guide-to-the-go-laxy/</guid>
+      <guid>http://localhost:1313/blog/hooking-go-from-rust-hitchhikers-guide-to-the-go-laxy/</guid>
       <description>&lt;p&gt;Most mainstream programming languages strive to fit into a few common standards, to increase interoperability and decrease adoption friction. Golang isn’t one of those (there &lt;a href=&#34;https://spectralops.io/blog/rust-vs-go-why-not-use-both/&#34;   target=&#34;_blank&#34; &gt;&#xA;    are&#xA;  &lt;/a&gt;&#xA;   &lt;a href=&#34;https://words.filippo.io/rustgo/&#34;   target=&#34;_blank&#34; &gt;&#xA;    several&#xA;  &lt;/a&gt;&#xA;   &lt;a href=&#34;https://fasterthanli.me/articles/lies-we-tell-ourselves-to-keep-using-golang&#34;   target=&#34;_blank&#34; &gt;&#xA;    articles&#xA;  &lt;/a&gt;&#xA;   on the subject). In this blog post we’ll demonstrate how to overcome Go’s isolationist design and integrate with it from another language (in our case Rust).&lt;/p&gt;&#xA;&lt;p&gt;Why do we need to interop with Go? mirrord&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; works by &lt;a href=&#34;https://metalbear.co/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/&#34;   target=&#34;_blank&#34; &gt;&#xA;    hooking system calls to the operating systems&#xA;  &lt;/a&gt;&#xA;   and applying logic that decides whether to execute locally or remotely. To do that, mirrord side-loads (using &lt;code&gt;LD_PRELOAD&lt;/code&gt;) into the process, then hooks relevant functions.&#xA;To cover most common scenarios, mirrord hooks libc functions and this works for most common languages (Python, Go on macOS, Rust, Node to name a few) as they all rely on libc.&lt;/p&gt;</description>
     </item>
   </channel>

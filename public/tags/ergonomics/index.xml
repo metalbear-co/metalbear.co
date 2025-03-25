@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ergonomics on </title>
-    <link>http://localhost:54350/tags/ergonomics/</link>
+    <link>http://localhost:1313/tags/ergonomics/</link>
     <description>Recent content in Ergonomics on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Oct 2022 06:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/ergonomics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ergonomics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mirrord for Teams – a Step Into the Remocal Future</title>
-      <link>http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/</link>
+      <link>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</link>
       <pubDate>Mon, 17 Jun 2024 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:54350/blog/mirrord-for-teams-a-step-into-the-remocal-future/mftlaunch.png&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;      Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing &lt;em&gt;mirrord for Teams&lt;/em&gt; to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – &lt;em&gt;Remote&lt;/em&gt; development, where you maintain no local environment and everything is cloud dependent, and &lt;em&gt;Local&lt;/em&gt; development, where you develop software on your computer, sync code to staging and production, and test. &lt;em&gt;Remocal&lt;/em&gt; development allows developers to work locally while their process &lt;em&gt;thinks&lt;/em&gt; it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for backend developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in &lt;em&gt;mirrord for Teams&lt;/em&gt;. But first, a bit about how we got there.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/blog/mirrord-for-teams-a-step-into-the-remocal-future/mftlaunch.png&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;      Today we’re excited to announce that after two years of development on mirrord Open Source, our tool that enables Remocal development for Backend engineers, we’re releasing &lt;em&gt;mirrord for Teams&lt;/em&gt; to bring that awesome power to entire Engineering organizations. If you’re new to the term, Remocal development combines the best of both worlds of the dominant modern cloud software engineering paradigms – &lt;em&gt;Remote&lt;/em&gt; development, where you maintain no local environment and everything is cloud dependent, and &lt;em&gt;Local&lt;/em&gt; development, where you develop software on your computer, sync code to staging and production, and test. &lt;em&gt;Remocal&lt;/em&gt; development allows developers to work locally while their process &lt;em&gt;thinks&lt;/em&gt; it is running remotely on Staging – and it’s done via a bit of magic we call mirrord. If a tool for shortened software development lifecycles and better collaboration for backend developers, packaged as an enterprise-ready platform with security and governance features included could help you, read on – we think you’ll be very interested in &lt;em&gt;mirrord for Teams&lt;/em&gt;. But first, a bit about how we got there.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Approaches in Cloud Development Ergonomics</title>
-      <link>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</link>
+      <link>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</link>
       <pubDate>Mon, 31 Oct 2022 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</guid>
+      <guid>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</guid>
       <description>&lt;p&gt;The advent of microservice architectures and cloud-native has taken some pretty severe tolls on developer ergonomics. It feels as if the tools cloud developers have at their disposal haven’t evolved fast enough to keep up with the rapid progress in infrastructure, and this tool debt is readily apparent in the day-to-day of the modern developer.&lt;/p&gt;&#xA;&lt;p&gt;The clearest example of this is that it’s now &lt;strong&gt;really hard to just run your application&lt;/strong&gt;. Not the one microservice you’re currently working on, but your actual entire application, which you ultimately deploy to the cloud and serves your customers. You used to be able to fire up your monolith right there on your laptop from within your IDE (crash, change some code, run it again), but architectures today have become resource-intensive, reliant on third-party services, and mostly just plain convoluted to the point where local execution is no longer a viable option.&lt;/p&gt;</description>
     </item>
     <item>
       <title>mirrord 3.0 is out!</title>
-      <link>http://localhost:54350/blog/mirrord-3.0-is-out/</link>
+      <link>http://localhost:1313/blog/mirrord-3.0-is-out/</link>
       <pubDate>Thu, 20 Oct 2022 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/mirrord-3.0-is-out/</guid>
+      <guid>http://localhost:1313/blog/mirrord-3.0-is-out/</guid>
       <description>&lt;p&gt;Today we’re very excited to launch the first full, stable version of mirrord! Full because it’s the first version where mirrord completely wraps your process in the context of your Kubernetes cluster - it connects everything, from network traffic to file access to environment variables, so that you can keep running your process from the familiar comfort of your local environment, but with input, configuration, and state from the cloud.&lt;/p&gt;</description>
     </item>
     <item>
       <title>(Re)Introducing mirrord</title>
-      <link>http://localhost:54350/blog/reintroducing-mirrord/</link>
+      <link>http://localhost:1313/blog/reintroducing-mirrord/</link>
       <pubDate>Mon, 30 May 2022 15:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/reintroducing-mirrord/</guid>
-      <description>&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:54350/blog/reintroducing-mirrord/mirrord.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;the-dev-loop-or-know-your-enemy&#34;&gt;The Dev Loop (or: know your enemy) &lt;a href=&#34;#the-dev-loop-or-know-your-enemy&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:54350/blog/reintroducing-mirrord/loop.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Imagine you’re a backend developer at post series B SaaS soonicorn. You’ve spent half a sprint adding a new feature to your microservice. You’ve thoroughly researched possible inputs and database states and built an elaborate test suite. Your code was mercilessly reviewed by two of your teammates. Finally, the tests pass, the pull request is approved, and as a final verification, you deploy your new code to the staging environment…&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/reintroducing-mirrord/</guid>
+      <description>&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/reintroducing-mirrord/mirrord.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;the-dev-loop-or-know-your-enemy&#34;&gt;The Dev Loop (or: know your enemy) &lt;a href=&#34;#the-dev-loop-or-know-your-enemy&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;http://localhost:1313/blog/reintroducing-mirrord/loop.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Imagine you’re a backend developer at post series B SaaS soonicorn. You’ve spent half a sprint adding a new feature to your microservice. You’ve thoroughly researched possible inputs and database states and built an elaborate test suite. Your code was mercilessly reviewed by two of your teammates. Finally, the tests pass, the pull request is approved, and as a final verification, you deploy your new code to the staging environment…&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

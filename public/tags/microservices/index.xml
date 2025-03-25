@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Microservices on </title>
-    <link>http://localhost:54350/tags/microservices/</link>
+    <link>http://localhost:1313/tags/microservices/</link>
     <description>Recent content in Microservices on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mirrord as an alternative to Telepresence</title>
-      <link>http://localhost:54350/blog/mirrord-as-an-alternative-to-telepresence/</link>
+      <link>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/mirrord-as-an-alternative-to-telepresence/</guid>
+      <guid>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</guid>
       <description>&lt;p&gt;A question that comes up often from those already familiar with local Kubernetes development is how mirrord compares to Telepresence. The idea at the base of both products is indeed similar: instead of deploying your new code to the cloud and testing it there, connect it to the cloud from your local machine. By shifting left on cloud testing this way you utilize your cloud environment much more effectively and speed up your development process. The people at Ambassador Labs &lt;a href=&#34;https://www.getambassador.io/docs/telepresence-oss/latest/concepts/devworkflow&#34;   target=&#34;_blank&#34; &gt;&#xA;    wrote about it at length&#xA;  &lt;/a&gt;&#xA;  .&lt;/p&gt;</description>
     </item>
     <item>
       <title>Easy K8S Connectivity for Local Utils</title>
-      <link>http://localhost:54350/blog/easy-k8s-connectivity-for-local-utils/</link>
+      <link>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/easy-k8s-connectivity-for-local-utils/</guid>
+      <guid>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</guid>
       <description>&lt;p&gt;With the new targetless mode of mirrord, you can run a program locally on your machine, and mirrord will forward&#xA;network connections initiated by the program to the cluster, such that the program gets the connectivity it would&#xA;have if it were deployed to the cluster. Together with the secret sauce of in-cluster DNS resolution, you can run a&#xA;program on your computer and have it access cluster-internal services that do not have any external IP. The&#xA;program would also have access to third-party services that are open to IPs from your cluster, but not to your&#xA;local IP.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Approaches in Cloud Development Ergonomics</title>
-      <link>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</link>
+      <link>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</link>
       <pubDate>Mon, 31 Oct 2022 06:00:00 +0000</pubDate>
-      <guid>http://localhost:54350/blog/approaches-in-cloud-development-ergonomics/</guid>
+      <guid>http://localhost:1313/blog/approaches-in-cloud-development-ergonomics/</guid>
       <description>&lt;p&gt;The advent of microservice architectures and cloud-native has taken some pretty severe tolls on developer ergonomics. It feels as if the tools cloud developers have at their disposal haven’t evolved fast enough to keep up with the rapid progress in infrastructure, and this tool debt is readily apparent in the day-to-day of the modern developer.&lt;/p&gt;&#xA;&lt;p&gt;The clearest example of this is that it’s now &lt;strong&gt;really hard to just run your application&lt;/strong&gt;. Not the one microservice you’re currently working on, but your actual entire application, which you ultimately deploy to the cloud and serves your customers. You used to be able to fire up your monolith right there on your laptop from within your IDE (crash, change some code, run it again), but architectures today have become resource-intensive, reliant on third-party services, and mostly just plain convoluted to the point where local execution is no longer a viable option.&lt;/p&gt;</description>
     </item>
   </channel>

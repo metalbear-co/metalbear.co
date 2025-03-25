@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>General on </title>
-    <link>http://localhost:54350/tags/general/</link>
+    <link>http://localhost:1313/tags/general/</link>
     <description>Recent content in General on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 17 May 2022 09:19:42 +0100</lastBuildDate>
-    <atom:link href="http://localhost:54350/tags/general/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/general/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Metal-who?</title>
-      <link>http://localhost:54350/blog/metal-who/</link>
+      <link>http://localhost:1313/blog/metal-who/</link>
       <pubDate>Thu, 12 May 2022 09:19:42 +0100</pubDate>
-      <guid>http://localhost:54350/blog/metal-who/</guid>
+      <guid>http://localhost:1313/blog/metal-who/</guid>
       <description>&lt;h1 id=&#34;metalbear&#34;&gt;MetalBear!🐻 &lt;a href=&#34;#metalbear&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;A huge omnivore that also conducts electricity. In the present context, though, a new startup that’s working on developing a new toolset for backend engineers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-&#34;&gt;Why ⏪ &lt;a href=&#34;#why-&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Like many devtools startups, MetalBear was born out of frustration. We&amp;rsquo;ve both spent years building cloud services, splitting up monoliths, wrangling configurations, writing endless tests only to break production because of that one edge case.&lt;/p&gt;&#xA;&lt;p&gt;We finally came to the realization that while tools tailored to devops engineers, frontend developers, QA engineers, and more, we, the backend developers, were being underserved. So much of our day to day work seemed needlessly slow or complicated, begging for automation or even fundamental disruption, and yet no company seemed willing to rise up to the challenge. So we decided to start MetalBear 🐻&lt;/p&gt;</description>
     </item>
   </channel>

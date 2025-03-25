@@ -173,8 +173,8 @@
         </div>
       </div>
     </div>
-    <div class="container pt-60 pt-lg-80 pt-xxl-106"> <!-- pb-68 pb-lg-86 pb-xxl-116 -->
-      <div class="w-lg-54 mx-auto px-3 px-lg-0">
+    <div class="container pt-60 pt-lg-80 pt-xxl-106 pb-68 pb-lg-86 pb-xxl-116"> <!-- pb-68 pb-lg-86 pb-xxl-116 -->
+      <div class="w-lg-58 mx-auto px-3 px-lg-0">
         <div class="fs-18 fs-xxl-24 text-black lh-[1.5] text-center border-b-xxl-[1.5]">
           <p class="mb-20 mb-xxl-24">“One of the biggest outcomes of using mirrord is that it didn’t just improve
             developer efficiency—it
@@ -196,9 +196,9 @@
           </div>
         </div>
       </div>
-      <div class="home-arrow__box-2-wrapper">
+      {{/*  <div class="home-arrow__box-2-wrapper">
         <div class="home-arrow__box-2"></div>
-      </div>
+      </div>  */}}
     </div>
   </section>
   <section id="home-section-arrow3" class="home-section-arrow3 border-b-3">
@@ -207,7 +207,7 @@
         <h2 class="fs-30 fs-xxl-40 text-black fw-medium font-unbounded lh-[1.5] mt-0 mb-32 mb-lg-85 mb-xxl-114">With
           mirrord, your local code runs in cloud conditions—no setup, no waiting</h2>
       </header>
-      <div class="row align-items-center justify-content-center mb-lg-68 mb-xxl-92">
+      <div class="row align-items-center justify-content-center">
         <div class="col-12 col-lg-8 mb-32 mb-lg-40 mb-xxl-54">
           <div class="d-lg-flex justify-content-lg-between">
             <div
@@ -258,15 +258,6 @@
           </div>
         </div>
       </div>
-      <div class="text-center d-none d-lg-block">
-        <div class="d-inline-block border-b">
-          <a class="link-text text-black fs-xxl-20 lh-[1.5] link-underline-opacity-0" href="https://mirrord.dev/" target="_blank">See how mirrord speeds up
-            your dev loop</a>
-        </div>
-      </div>
-
-      <div class="home-arrow__box-3"></div>
-
     </div>
   </section>
   <section class="bg-image--right-top border-b-3" style="background-image: url(/home-section-7-bg.png);">
@@ -455,7 +446,7 @@
 </div>
 
 <!-- GSAP Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+{{/*  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -482,7 +473,7 @@
       ease: "power1.inOut"
     });
   });
-</script>
+</script>  */}}
 <script>
   const texts = document.querySelectorAll(".rotating-text");
   let index = 0;
@@ -552,6 +543,10 @@
           perPage: 1,
         },
         992: {
+          perPage: 3,
+          gap: '50px',
+        },
+        1200: {
           perPage: 3,
           gap: '80px',
         },
