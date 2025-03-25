@@ -105,7 +105,8 @@
       }
       const json = JSON.stringify(object);
       updateResult("Submitting your message...");
-
+      posthog.identify(formData.get('email'))
+      posthog.capture("Submitted Contact Us Form")
       fetch('https://forms-eu1.hsforms.com/submissions/v3/integration/submit/143742664/0385d4b8-0e75-4dbb-b70c-9987c4a0e4b3', {
         method: 'POST',
         headers: {
