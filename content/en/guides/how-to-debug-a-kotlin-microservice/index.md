@@ -52,7 +52,6 @@ minikube start
 1. Clone the repo with the sample Kotlin application.
 
 ```
-
 git clone https://github.com/waveywaves/mirrord-kotlin-debug-example
 cd mirrord-kotlin-debug-example
 ```
