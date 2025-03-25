@@ -46,7 +46,6 @@ Set up the Kubernetes cluster to test our application setup.
 
 ```
 minikube start
-
 ```
 
 1. Clone the repo with the sample Kotlin application.
