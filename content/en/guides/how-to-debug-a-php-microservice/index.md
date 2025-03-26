@@ -114,7 +114,7 @@ minikube service php-guestbook
 Now we have access to the Guestbook application on http://localhost:57485.
 Let’s access this URL from the browser.
 
-![alt text](<Screenshot 2025-03-24 at 12.29.07 PM.png>)
+![console output](<Screenshot 2025-03-24 at 12.29.07 PM.png>)
 
 We have our staging application deployed now. Let’s run the microservice with mirrord next. This will allow us to run the local PHP application in the context of Kubernetes without having to build and deploy it over and over again for testing. 
 ## Debug in the CLI with php and mirrord
