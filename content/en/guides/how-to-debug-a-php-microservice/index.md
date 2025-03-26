@@ -172,7 +172,7 @@ You should see the following output which will let you know that the guestbook h
 
 The target impersonated Pod here is the Guestbook Pod. In this diagram, you can see how mirrord allows the user to use the mirrord-agent Pod as the execution context.
 
-![alt text](<Screenshot 2025-03-24 at 12.32.04 PM.png>)
+![application diagram with mirrord](<Screenshot 2025-03-24 at 12.32.04 PM.png>)
 
 After you have run the guestbook program with mirrord you should be able to make your changes and rerun the service as necessary. You can even run the program in debug mode and attach a debugger if required.
 
