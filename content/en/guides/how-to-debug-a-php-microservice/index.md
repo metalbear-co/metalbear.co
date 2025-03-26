@@ -132,7 +132,7 @@ On the run above we can see that the application run fails because this local ex
 
 The microservice needs access to the “redis” service hosted on the cluster. To run the PHP microservice with Kubernetes, we can use the mirrord CLI tool.
 
-1. Installing mirrord
+2. Installing mirrord
 
 Install the mirrord CLI tool and run Guestbook with the required Kubernetes context. Follow the installation guide for mirrord [here](https://mirrord.dev/docs/overview/quick-start/#installation) .
 
