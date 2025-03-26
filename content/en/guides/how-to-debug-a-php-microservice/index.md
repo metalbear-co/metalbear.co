@@ -63,7 +63,7 @@ cd mirrord-php-debug-example
 ```
 
 
-1. Deploy our application which will act as our staging environment.
+3. Deploy our application which will act as our staging environment.
 
 ```
 kubectl create -f ./kube
