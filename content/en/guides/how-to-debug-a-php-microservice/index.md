@@ -128,7 +128,7 @@ php -S localhost:8080 -t src/
 
 On the run above we can see that the application run fails because this local execution doesn’t have access to the Redis instance running inside the Kubernetes cluster we have created. 
 
-![alt text](<Screenshot 2025-03-24 at 12.31.48 PM.png>)
+![guestbook application failure](<Screenshot 2025-03-24 at 12.31.48 PM.png>)
 
 The microservice needs access to the “redis” service hosted on the cluster. To run the PHP microservice with Kubernetes, we can use the mirrord CLI tool.
 
