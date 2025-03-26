@@ -107,7 +107,7 @@ minikube service php-guestbook
 🎉  Opening service default/guestbook in default browser...
 ❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
 ```
-![alt text](<Screenshot 2025-03-24 at 12.28.46 PM.png>)
+![guestbook application webpage](<Screenshot 2025-03-24 at 12.28.46 PM.png>)
 
 
 
