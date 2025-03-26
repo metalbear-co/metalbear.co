@@ -48,14 +48,14 @@ Set up the Kubernetes cluster to test our application setup.
 minikube start
 ```
 
-1. Clone the repo with the sample Kotlin application.
+2. Clone the repo with the sample Kotlin application.
 
 ```
 git clone https://github.com/waveywaves/mirrord-kotlin-debug-example
 cd mirrord-kotlin-debug-example
 ```
 
-1. Deploy our application which will act as our staging environment.
+3. Deploy our application which will act as our staging environment.
 
 ```
 kubectl create -f ./kube
@@ -76,7 +76,7 @@ minikube service kotlin-guestbook
 
 The above minikube service command automatically sets up a port forwarding session to the specified service and opens it in the default web browser. With the tunnel to our microservice setup, our application architecture now looks like this. 
 
-![alt text](<Screenshot 2025-03-14 at 4.07.40 PM.png>)
+![kotlin application architecture](<Screenshot 2025-03-14 at 4.07.40 PM.png>)
 
 Once we run the command minikube service command, we get this output. 
 
@@ -116,27 +116,27 @@ To get started, install mirrord in IntelliJ IDEA.
 
 You can install the plugin by searching for the Plugin in the Plugins settings. 
 
-![alt text](<Screenshot 2025-03-14 at 4.07.03 PM.png>)
+![screenshot of mirrord plugin](<Screenshot 2025-03-14 at 4.07.03 PM.png>)
 
 After installing the plugin and restarting the IDE, a dialog box like the one below will appear.
 
-![alt text](<Screenshot 2025-03-14 at 4.06.35 PM.png>)
+![screenshot of mirrord icon](<Screenshot 2025-03-14 at 4.06.35 PM.png>)
 
 You will see a mirrord button and a dropdown menu in the top right corner of the screen.
 
 This dialog box appears as mirrord is successfully installed. It contains the directions for how to use mirrord in the IntelliJ IDEA IDE. Let’s set up the mirrord configuration.
 
-![alt text](<Screenshot 2025-03-14 at 4.06.17 PM.png>)
+![mirrord configurations](<Screenshot 2025-03-14 at 4.06.17 PM.png>)
 
 #### mirrord configuration
 You will see a mirrord button and a dropdown menu in the top right corner of the screen.
 
 
-![alt text](<Screenshot 2025-03-14 at 4.06.06 PM.png>)
+![setting up mirrord](<Screenshot 2025-03-14 at 4.06.06 PM.png>)
 
 If you don’t already have a .mirrord/.mirrord.json configuration file for this application, you can create one using the Settings option in the plugin dropdown menu.
 
-![alt text](<Screenshot 2025-03-14 at 4.05.54 PM.png>)
+![creating mirrord config file](<Screenshot 2025-03-14 at 4.05.54 PM.png>)
 
 As a new config file is opened up in your editor, you can update the contents of the file to the ones below so that you choose the kotlin-guestbook pod deployed to the default namespace as your mirrord target. This will ensure that your mirrord debug process will run in the context of the kotlin-guestbook deployment.
 
@@ -172,30 +172,30 @@ mvn compile exec:java
 
 A disabled mirrord button will be shown with a slash in front of if mirrord is disabled.
 
-![alt text](<Screenshot 2025-03-14 at 4.05.34 PM.png>)
+![screenshot of mirrord diabled](<Screenshot 2025-03-14 at 4.05.34 PM.png>)
 
 After running the above command you should see that the application fails to start because it’s not able to connect to the “redis” service.
 
-![alt text](<Screenshot 2025-03-14 at 4.05.19 PM.png>)
+![unable to connect to redis](<Screenshot 2025-03-14 at 4.05.19 PM.png>)
 
 #### Running the application with the mirrord plugin enabled
 Click the “mirrord” button to enable it. You’ll see a “mirrord enabled” notification in the bottom-right corner of your screen.
 
-![alt text](<Screenshot 2025-03-14 at 4.05.02 PM.png>)
+![screenshot of mirrord enabled](<Screenshot 2025-03-14 at 4.05.02 PM.png>)
 Once mirrord is enabled, let’s run the application once again. 
 Below you can see the successful run of the kotlin-guestbook application. 
 
-![alt text](<Screenshot 2025-03-14 at 4.04.45 PM.png>)
+![screnshot of kotlin application](<Screenshot 2025-03-14 at 4.04.45 PM.png>)
 As the application starts successfully, you should be able to access the Kotlin application listening on http://localhost:8080 on your local machine. Let’s access the endpoint in the browser.
 
-![alt text](<Screenshot 2025-03-14 at 4.04.20 PM.png>)
+![accessing endpoint in browser](<Screenshot 2025-03-14 at 4.04.20 PM.png>)
 
 We can see that this debuggable instance of Guestbook also has access to the stored notes in Redis which are reflected in the Notes section of the application. 
 
 ### 3. Debugging the application with the mirrord plugin
 Now that we can run the application, let’s understand what our setup looks like with the mirrord-agent working with the target-impersonated Pod. The target impersonated Pod here is the Guestbook Pod.
 
-![alt text](<Screenshot 2025-03-14 at 4.04.09 PM.png>)
+![debugging apps in mirrord](<Screenshot 2025-03-14 at 4.04.09 PM.png>)
 
 
 If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference [here](https://mirrord.dev/docs/reference/architecture/#mirrord-agent).
@@ -204,16 +204,16 @@ We can now be sure that mirrord is working properly.
 
 Moving forward, let’s set a debug breakpoint in the application and see how it runs. I want to put a breakpoint in the application every time I create a note with the Guestbook application. The below line of code is where I am going to put the breakpoint.
 
-![alt text](<Screenshot 2025-03-14 at 4.03.53 PM.png>)
+![screenshot setting a debug breakpoint](<Screenshot 2025-03-14 at 4.03.53 PM.png>)
 
 Start debugging by pressing the debug button below.
 
-![alt text](<Screenshot 2025-03-14 at 4.03.35 PM.png>)
+![screenshor of starting debugging in mirrord](<Screenshot 2025-03-14 at 4.03.35 PM.png>)
 
 From http://localhost:8080 create a new note and publish it. 
 On the application run, you should hit the breakpoint as shown below:
 
-![alt text](<Screenshot 2025-03-14 at 4.03.04 PM.png>)
+![hitting breakpoint in running app](<Screenshot 2025-03-14 at 4.03.04 PM.png>)
 
 We can debug the issue now as the breakpoint is hit. 
 
