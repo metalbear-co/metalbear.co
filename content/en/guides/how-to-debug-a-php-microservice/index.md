@@ -55,7 +55,7 @@ Set up the Kubernetes cluster to test our application setup.
 minikube start
 ```
 
-1. Clone the repo with the sample PHP application.
+2. Clone the repo with the sample PHP application.
 
 ```
 git clone https://github.com/waveywaves/mirrord-php-debug-example
