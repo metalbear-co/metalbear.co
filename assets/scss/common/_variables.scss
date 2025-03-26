@@ -21,11 +21,10 @@ $gray-900: #212529;
 $black:    #000;
 
 $yellow:   #ffe000;
-$black:    #1d2d35;
 $beige:    #fbf7f0;
 
 // $red:      #e55235;
-$purple:   #5d2f86;
+$purple:   #756DF3;
 $brown:    #aa9c84;
 
 $blue-300: #8ed6fb;
@@ -33,6 +32,8 @@ $pink-100: #fcfaff;
 $pink-500: #d32e9d;
 
 $primary: #F46262;
+$secondary: #FFCB7D;
+$tertiary: #E4E3FD;
 
 
 $color-btn-bg: $pink-500;
@@ -82,6 +83,25 @@ $body-color:                $black;
 $link-color:                              #333840;
 $link-decoration:                         none;
 
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px
+) !default;
+// scss-docs-end grid-breakpoints
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
@@ -91,10 +111,10 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1240px,
-  xxl: 1320px
+  xxl: 1720px //1320px
 );
 
-@include _assert-ascending($container-max-widths, "$container-max-widths");
+@include _assert-ascending($container-max-widths, "$container-max-widths"); 
 
 // Grid columns
 //

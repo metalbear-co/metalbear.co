@@ -6,10 +6,4 @@ date: 2022-05-12T16:35:10.183+0300
 lastmod: 2022-05-12T16:35:10.183+0300
 draft: false
 images: []
-menu:
-  main:
-    weight: 130
-    name: "Home"
-    url: "/"
-    weight: 10
 ---

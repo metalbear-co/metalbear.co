@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contributors on </title>
+    <link>http://localhost:1313/contributors/</link>
+    <description>Recent content in Contributors on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Oct 2024 14:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/contributors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gemma Tipper</title>
+      <link>http://localhost:1313/contributors/gemma-tipper/</link>
+      <pubDate>Mon, 21 Oct 2024 14:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/gemma-tipper/</guid>
+      <description>&lt;p&gt;Software Engineer @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lorena Martínez</title>
+      <link>http://localhost:1313/contributors/lorena-mart%C3%ADnez/</link>
+      <pubDate>Mon, 21 Oct 2024 14:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/lorena-mart%C3%ADnez/</guid>
+      <description>&lt;p&gt;Head of Marketing @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anita Ihuman</title>
+      <link>http://localhost:1313/contributors/anita-ihuman/</link>
+      <pubDate>Thu, 22 Feb 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/anita-ihuman/</guid>
+      <description>&lt;p&gt;Developer Advocate @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dmitry Dodzin</title>
+      <link>http://localhost:1313/contributors/dmitry-dodzin/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/dmitry-dodzin/</guid>
+      <description>&lt;p&gt;Software Engineer @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alexandre Cavalcante</title>
+      <link>http://localhost:1313/contributors/alexandre-cavalcante/</link>
+      <pubDate>Thu, 12 May 2022 08:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/alexandre-cavalcante/</guid>
+      <description>&lt;p&gt;Software Engineer @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Aviram Hassan</title>
+      <link>http://localhost:1313/contributors/aviram-hassan/</link>
+      <pubDate>Thu, 12 May 2022 08:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/aviram-hassan/</guid>
+      <description>&lt;p&gt;CEO &amp;amp; Co-founder @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eyal Bukchin</title>
+      <link>http://localhost:1313/contributors/eyal-bukchin/</link>
+      <pubDate>Thu, 12 May 2022 08:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/eyal-bukchin/</guid>
+      <description>&lt;p&gt;CTO &amp;amp; Co-founder @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mehul Arora</title>
+      <link>http://localhost:1313/contributors/mehul-arora/</link>
+      <pubDate>Thu, 12 May 2022 08:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/mehul-arora/</guid>
+      <description>&lt;p&gt;Software Engineer @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tal Zwick</title>
+      <link>http://localhost:1313/contributors/tal-zwick/</link>
+      <pubDate>Thu, 12 May 2022 08:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/tal-zwick/</guid>
+      <description>&lt;p&gt;Software Engineer @ MetalBear.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tanjim Hossain</title>
+      <link>http://localhost:1313/contributors/tanjim-hossain/</link>
+      <pubDate>Thu, 12 May 2022 08:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/tanjim-hossain/</guid>
+      <description>&lt;p&gt;Researcher @ ĀloLabs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The MetalBear Team</title>
+      <link>http://localhost:1313/contributors/the-metalbear-team/</link>
+      <pubDate>Thu, 12 May 2022 08:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/the-metalbear-team/</guid>
+      <description>&lt;p&gt;Metal Bears.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vibhav Bobade</title>
+      <link>http://localhost:1313/contributors/vibhav-bobade/</link>
+      <pubDate>Thu, 12 May 2022 08:50:45 +0000</pubDate>
+      <guid>http://localhost:1313/contributors/vibhav-bobade/</guid>
+      <description>&lt;p&gt;Technical Writer | MetalBear&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

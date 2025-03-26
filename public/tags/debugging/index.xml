@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debugging on </title>
+    <link>http://localhost:1313/tags/debugging/</link>
+    <description>Recent content in Debugging on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/debugging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mirrord as an alternative to Telepresence</title>
+      <link>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/mirrord-as-an-alternative-to-telepresence/</guid>
+      <description>&lt;p&gt;A question that comes up often from those already familiar with local Kubernetes development is how mirrord compares to Telepresence. The idea at the base of both products is indeed similar: instead of deploying your new code to the cloud and testing it there, connect it to the cloud from your local machine. By shifting left on cloud testing this way you utilize your cloud environment much more effectively and speed up your development process. The people at Ambassador Labs &lt;a href=&#34;https://www.getambassador.io/docs/telepresence-oss/latest/concepts/devworkflow&#34;   target=&#34;_blank&#34; &gt;&#xA;    wrote about it at length&#xA;  &lt;/a&gt;&#xA;  .&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Easy K8S Connectivity for Local Utils</title>
+      <link>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</link>
+      <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/easy-k8s-connectivity-for-local-utils/</guid>
+      <description>&lt;p&gt;With the new targetless mode of mirrord, you can run a program locally on your machine, and mirrord will forward&#xA;network connections initiated by the program to the cluster, such that the program gets the connectivity it would&#xA;have if it were deployed to the cluster. Together with the secret sauce of in-cluster DNS resolution, you can run a&#xA;program on your computer and have it access cluster-internal services that do not have any external IP. The&#xA;program would also have access to third-party services that are open to IPs from your cluster, but not to your&#xA;local IP.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

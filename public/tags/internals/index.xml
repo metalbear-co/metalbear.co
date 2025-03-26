@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Internals on </title>
+    <link>http://localhost:1313/tags/internals/</link>
+    <description>Recent content in Internals on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/internals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mirrord internals - hooking libc functions in Rust and fixing bugs</title>
+      <link>http://localhost:1313/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Is mirrord some kind of &lt;a href=&#34;https://man7.org/linux/man-pages/man2/ptrace.2.html&#34;   target=&#34;_blank&#34; &gt;&#xA;    ptrace&#xA;  &lt;/a&gt;&#xA;   magic?”, that’s what I exactly thought when I was introduced to this idea of “mirroring traffic”. To my surprise, the idea and design behind mirrord are based on simple concepts implemented in a novel way! This is what I want to discuss in this blog post along with my experience as a Junior Engineer learning how to tackle bugs working on this badass project.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

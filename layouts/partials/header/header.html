@@ -8,9 +8,9 @@
 
 <div class="header-bar"></div>
 
-<header class="header__site">
+<header class="header__site border-b-3">
   <div class="navbar navbar-expand-lg navbar-light doks-navbar">
-    <nav class="container-xl flex-wrap flex-md-nowrap align-items-center" aria-label="Main navigation">
+    <nav class="container flex-wrap flex-md-nowrap align-items-center" aria-label="Main navigation">
       <a class="navbar-brand p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
         <img class="img-fluid" src="/metalbear-header-logo.svg"/>
       </a>
@@ -26,9 +26,9 @@
           </a>
           <button type="button" id="menuDismissButton" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
         </div>
-        <div class="offcanvas-body justify-content-center">
+        <div class="offcanvas-body justify-content-center align-items-center">
           <div class="flex-grow-1">
-            <ul class="nav flex-column flex-lg-row justify-content-center align-items-center">
+            <ul class="nav flex-column flex-lg-row justify-content-center justify-content-lg-start align-items-center">
               {{- $current := . -}}
               {{- $section := $current.Section -}}
               {{ range .Site.Menus.main -}}
@@ -39,8 +39,8 @@
                 {{- $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) -}}
                 {{- $active = or $active (and (eq .Name "Community") (eq $current.Title "Writers Program" "CFP Program")) -}}
                 {{ if .HasChildren }}
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle py-1{{ if $active }} active{{ end }}" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <li class="nav-item dropdown ms-lg-0">
+                    <a class="nav-link dropdown-toggle px-lg-14 px-xl-21 px-xxl-28 py-1{{ if $active }} active{{ end }}" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       {{ .Name }}
                       <span class="dropdown-caret">
                         <svg width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,26 +52,34 @@
                       {{ range .Children -}}
                       {{- $active = eq .Name $current.Title -}}
                         <li>
-                          <a class="dropdown-item{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="true"{{ end }}>{{ .Name }}</a>
+                          <a class="dropdown-item px-lg-14 px-xl-21 px-xxl-28 {{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="true"{{ end }}>{{ .Name }}</a>
                         </li>
                       {{ end -}}
                     </ul>
                   </li>
                 {{ else }}
-                  <li class="nav-item nav-item-non-children ms-lg-2">
-                    <a class="nav-link px-3 px-lg-2 px-xl-3 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                  <li class="nav-item nav-item-non-children ms-lg-0">
+                    <a class="nav-link px-3 px-lg-14 px-xl-21 px-xxl-28 py-2{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
                   </li>
                 {{ end }}
               {{ end -}}
             </ul>
           </div>
           <hr class="my-4 d-lg-none" style="color:#222222;">
-          <ul class="nav nav__social justify-content-center">
+          {{/*  <ul class="nav nav__social justify-content-center">
             {{ range .Site.Menus.social -}}
               <li class="nav-item nav-item__social">
                 <a class="nav-link nav__social-link px-2 py-1 mx-1" target="_blank" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
               </li>
             {{ end -}}
+          </ul>  */}}
+          <ul class="nav justify-content-center justify-content-lg-start align-items-center">
+            <li>
+              <a class="button button-primary button-menu-cta" href="https://mirrord.dev/" target="_blank">Try mirrord for free</a>
+            </li>
+            <li class="nav-item nav-item-non-children ms-lg-0">
+              <a class="nav-link px-3 px-lg-14 px-xl-21 px-xxl-28 py-2 link-underline link-hover-underline" href="https://mirrord.dev/">Sign in</a>
+            </li>
           </ul>
         </div>
       </div>

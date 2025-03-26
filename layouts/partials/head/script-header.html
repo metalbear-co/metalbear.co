@@ -6,6 +6,10 @@
 {{ $alertInit := resources.Get "js/alert-init.js" | js.Build | minify -}}
 <script>{ { $alertInit.Content | safeJS } }</script>
 {{- end -}}
+{{ if .IsHome }}
+{{ $splide := resources.Get "js/splide.min.js" -}}
+<script src="{{ $splide.RelPermalink }}"></script>
+{{ end -}}
 <!-- Start of Reo Javascript -->
 <script type="text/javascript">
   !function () { var e, t, n; e = "0e0f4d642e9f23a", t = function () { Reo.init({ clientID: "0e0f4d642e9f23a" }) }, (n = document.createElement("script")).src = "https://static.reo.dev/" + e + "/reo.js", n.defer = !0, n.onload = t, document.head.appendChild(n) }();
