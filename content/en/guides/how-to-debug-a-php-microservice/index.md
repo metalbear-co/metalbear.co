@@ -83,7 +83,7 @@ minikube service php-guestbook
 
 
 The minikube service command automatically sets up a port forwarding session to the specified service and opens it in the default web browser. With the tunnel to our microservice setup, our application architecture now looks like this. 
-![alt text](<Screenshot 2025-03-24 at 12.28.34 PM.png>)
+![php application architecture](<Screenshot 2025-03-24 at 12.28.34 PM.png>)
 
 
 
