@@ -9,7 +9,7 @@ tags:
 date: 2025-03-15T06:00:00+00:00
 draft: false
 weight: 50
-images: []
+images: ["kotlin.png"]
 contributors: ["Vibhav Bobade"]
 ---
 
