@@ -9,6 +9,7 @@ languageCode = "en-US"
 [pagination]
   pagerSize = 6
 rssLimit = 10
+timeout = "120s"
 
 # Multilingual
 defaultContentLanguage = "en"

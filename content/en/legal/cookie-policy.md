@@ -13,7 +13,9 @@ contributors: []
 
 ## Cookies Notice
 
-We use in our site https://mirrord.dev, https://metalbear.co and https://app.metalbear.co/ ("Site") cookies and similar files or technologies to automatically collect and store information about your computer, device, and Site usage, in order to improve their performance and enhance your user experience. We use the general term "cookies" in this notice to refer to these technologies and all such similar technologies that collect information automatically when you are using our Site where this notice is posted.  You can find out more about cookies and how to control them in the information below. 
+TL;DR: We don't use cookies in our public site. Our app https://app.metalbear.co/ uses cookies to remember your login session.
+
+We use in our site https://app.metalbear.co/ ("Site") cookies and similar files or technologies to automatically collect and store information about your computer, device, and Site usage, in order to improve their performance and enhance your user experience. We use the general term "cookies" in this notice to refer to these technologies and all such similar technologies that collect information automatically when you are using our Site where this notice is posted.  You can find out more about cookies and how to control them in the information below. 
 
 If you do not accept the use of these cookies, please disable them using the instructions in this cookie notice or by changing your browser settings so that cookies from this Site cannot be placed on your computer or mobile device. Important: disabling cookies on this Site may impair certain Site features.
 In this cookie notice (“Cookies Notice”), we use the term MetalBear (and "we", "us" and "our") to refer to MetalBear Tech Ltd. Our Privacy Policy is available at [here]({{< relref "privacy-policy.md" >}}).
