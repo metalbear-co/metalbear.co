@@ -66,8 +66,16 @@
     font-size: 1.5rem;
 }
 
+.fs-27 {
+    font-size: 1.688rem;
+}
+
 .fs-30 {
     font-size: 1.875rem;
+}
+
+.fs-32 {
+    font-size: 2rem;
 }
 
 .fs-40 {
@@ -111,12 +119,22 @@
         font-size: 1.875rem;
     }
 
+    .fs-lg-33 {
+        font-size: 2.063rem;
+    }
+
     .fs-lg-38 {
         font-size: 2.313rem;
     }
 
     .fs-lg-45 {
         font-size: 2.813rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .fs-xl-24 {
+        font-size: 1.5rem;
     }
 }
 
@@ -141,6 +159,10 @@
         font-size: 1.875rem;
     }
 
+    .fs-xxl-32 {
+        font-size: 2rem;
+    }
+
     .fs-xxl-40 {
         font-size: 2.5rem;
     }
@@ -149,9 +171,18 @@
         font-size: 3.125rem;
     }
 
+    .fs-xxl-55 {
+        font-size: 3.438rem;
+    }
+
     .fs-xxl-60 {
         font-size: 3.75rem;
     }
+}
+
+.py-14 {
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 
 .py-26 {
@@ -280,6 +311,10 @@
     margin-bottom: 50px;
 }
 
+.w-70 {
+    width: 70%;
+}
+
 .w-78 {
     width: 78%;
 }
@@ -347,6 +382,11 @@
     .py-lg-19 {
         padding-top: 19px;
         padding-bottom: 19px;
+    }
+
+    .py-lg-10 {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .px-lg-21 {
@@ -436,6 +476,14 @@
         padding-left: 30px;
     }
 
+    .ps-lg-54 {
+        padding-left: 54px;
+    }
+
+    .ps-lg-72 {
+        padding-left: 72px;
+    }
+
     .pe-lg-62 {
         padding-right: 68px;
     }
@@ -508,12 +556,28 @@
         width: 48%;
     }
 
+    .w-lg-50 {
+        width: calc(50% - 16px);
+    }
+
     .w-lg-54 {
         width: 54%;
     }
 
     .w-lg-58 {
         width: 58%;
+    }
+
+    .w-lg-65 {
+        width: 65%;
+    }
+
+    .w-lg-70 {
+        width: 70%;
+    }
+
+    .w-lg-75 {
+        width: 75%;
     }
 
     .w-lg-80 {
@@ -526,6 +590,10 @@
 
     .w-lg-86 {
         width: 86%;
+    }
+
+    .w-lg-100 {
+        width: 100%;
     }
 
     .w-lg-52px {
@@ -582,9 +650,26 @@
         padding-left: 21px !important;
         padding-right: 21px !important;
     }
+
+    .ps-xl-68 {
+        padding-left: 68px;
+    }
+
+    .ps-xl-90 {
+        padding-left: 90px;
+    }
+
+    .mb-xl-45 {
+        margin-bottom: 45px;
+    }
 }
 
 @include media-breakpoint-up(xxl) {
+    .py-xxl-12 {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
     .py-xxl-25 {
         padding-top: 25px;
         padding-bottom: 25px;
@@ -671,6 +756,14 @@
 
     .ps-xxl-40 {
         padding-left: 40px;
+    }
+
+    .ps-xxl-90 {
+        padding-left: 90px;
+    }
+
+    .ps-xxl-120 {
+        padding-left: 120px;
     }
 
     .pe-xxl-80 {

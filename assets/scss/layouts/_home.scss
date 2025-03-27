@@ -56,35 +56,45 @@
 
 @include media-breakpoint-up(md) {
     .logo-slider {
-        height: 125px;
+        height: 72px;
     }
 
     .logo-track {
         gap: 40px;
-        height: 125px;
+        height: 72px;
     }
 }
 
 @include media-breakpoint-up(lg) {
+    .logo-slider {
+        height: 72px;
+    }
+
     .logo-track {
         gap: 57px;
+        height: 72px;
     }
 }
 
 @include media-breakpoint-up(xl) {
+    .logo-slider {
+        height: 90px;
+    }
+
     .logo-track {
         gap: 65px;
+        height: 90px;
     }
 }
 
 @include media-breakpoint-up(xxl) {
     .logo-slider {
-        height: 168px;
+        height: 120px;
     }
 
     .logo-track {
         gap: 76px;
-        height: 168px;
+        height: 120px;
     }
 }
 
@@ -125,7 +135,7 @@
 
 .home-arrow {
     translate: -24px;
-    height: 140px;
+    height: 108px;
 }
 
 .home-arrow__image-wrapper {
@@ -136,7 +146,7 @@
 
 @include media-breakpoint-up(md) {
     .home-arrow {
-        height: 200px;
+        height: 108px;
     }
 }
 
