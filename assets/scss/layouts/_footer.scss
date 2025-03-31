@@ -1,5 +1,5 @@
 .footer {
-  padding-top: 114px;
+  padding-top: 46px;
   padding-bottom: 28px;
 }
 
@@ -8,7 +8,32 @@
 }
 
 .footer__info {
-  margin-bottom: 48px;
+  margin-bottom: 56px;
+  order: 2;
+}
+
+.footer__navigation {
+  order: 1;
+}
+
+@include media-breakpoint-up(lg) {
+  .footer {
+    padding-top: 64px;
+  }
+
+  .footer__info {
+    order: 1;
+  }
+
+  .footer__navigation {
+    order: 2;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .footer {
+    padding-top: 84px;
+  }
 }
 
 .footer__menu-title {
@@ -42,18 +67,57 @@
   padding-top: 40px;
 }
 
-.footer__social {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid $brand-black;
+.footer__social .nav-link {
+  width: 20px;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer__social .nav-link.github {
+  width: 17px;
+}
+
+.footer__social .nav-link.linkedin {
+  width: 17px;
+}
+
+.footer__copyright {
+  color: #222222;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.footer__copyright a {
+  color: #222222;
+  text-decoration: underline;
 }
 
 @include media-breakpoint-up(lg) {
+  .footer__social .nav-link {
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .footer__social .nav-link.github {
+    width: 17px;
+  }
+
+  .footer__social .nav-link.linkedin {
+    width: 17px;
+  }
+
   .footer__navigation {
     flex: 1 1 0%;
   }
 
   .footer__menu-wrapper {
     width: 85%;
+  }
+
+  .footer__menu-title {
+    font-size: 1rem;
   }
 
   .footer__menu {
@@ -71,16 +135,61 @@
     padding-bottom: 0;
     border-bottom: none;
   }
+
+  .footer__copyright {
+    padding-top: 46px;
+  }
 }
 
-.footer__copyright {
-  color: #222222;
-  font-size: 0.875rem;
-  font-weight: 300;
-  padding-top: 104px;
+@include media-breakpoint-up(xl) {
+  .footer__social .nav-link {
+    width: 22px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .footer__social .nav-link.github {
+    width: 19px;
+  }
+
+  .footer__social .nav-link.linkedin {
+    width: 19px;
+  }
+
+  .footer__menu-title {
+    font-size: 1rem;
+  }
 }
 
-.footer__copyright a {
-  color: #222222;
-  text-decoration: underline;
+@include media-breakpoint-up(xxl) {
+  .footer__social .nav-link {
+    width: 32px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .footer__social .nav-link.github {
+    width: 28px;
+  }
+
+  .footer__social .nav-link.linkedin {
+    width: 28px;
+  }
+
+  .footer__logo {
+    width: 301px;
+  }
+
+  .footer__menu-title {
+    font-size: 1.25rem;
+  }
+
+  .footer__menu-link {
+    font-size: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 1rem;
+    padding-top: 46px;
+  }
 }
