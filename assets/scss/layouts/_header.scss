@@ -57,32 +57,34 @@
 @include media-breakpoint-up(lg) {
   .navbar {
     z-index: 100;
-    padding-top: 4px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .navbar-brand {
-    width: 180px;
+    width: 98px;
   }
 }
 
 @include media-breakpoint-up(xl) {
   .navbar {
-    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .navbar-brand {
-    width: 216px;
+    width: 122px;
   }
 }
 
 @include media-breakpoint-up(xxl) {
   .navbar {
-    padding-bottom: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 
   .navbar-brand {
-    width: 290px;
+    width: 164px;
   }
 }
 
@@ -105,6 +107,7 @@
 @include media-breakpoint-up(lg) {
   .nav-item {
     margin-left: 0.5rem;
+    margin-bottom: 0;
   }
 }
 
@@ -146,13 +149,31 @@ button#doks-versions {
 
 @include media-breakpoint-up(lg) {
   .navbar .offcanvas .nav-link {
-    font-size: 0.875rem; //14px
+    font-size: 0.813rem; //13px
+  }
+
+  .navbar-expand-lg .offcanvas {
+    padding-left: 48px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar .offcanvas .nav-link {
+    font-size: 0.813rem; //13px
+  }
+
+  .navbar-expand-lg .offcanvas {
+    padding-left: 60px;
   }
 }
 
 @include media-breakpoint-up(xxl) {
   .navbar .offcanvas .nav-link {
-    font-size: 1.125rem;
+    font-size: 0.938rem; //15px
+  }
+
+  .navbar-expand-lg .offcanvas {
+    padding-left: 80px;
   }
 }
 
@@ -585,13 +606,13 @@ button#doks-versions {
 
 @include media-breakpoint-up(lg) {
   .dropdown-menu-main .dropdown-item {
-    font-size: 0.875rem; //14px
+    font-size: 0.813rem; //13px
   }
 }
 
 @include media-breakpoint-up(xxl) {
   .dropdown-menu-main .dropdown-item {
-    font-size: 1.125rem;
+    font-size: 0.938rem; //15px
   }
 }
 

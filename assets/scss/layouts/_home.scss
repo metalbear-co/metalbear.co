@@ -43,7 +43,7 @@
     gap: 30px;
     height: 72px;
     position: absolute;
-    animation: scroll 20s linear infinite;
+    animation: scroll 30s linear infinite;
 }
 
 .logo-track li {
@@ -67,34 +67,34 @@
 
 @include media-breakpoint-up(lg) {
     .logo-slider {
-        height: 72px;
+        height: 58px;
     }
 
     .logo-track {
         gap: 57px;
-        height: 72px;
+        height: 58px;
     }
 }
 
 @include media-breakpoint-up(xl) {
     .logo-slider {
-        height: 90px;
+        height: 72px;
     }
 
     .logo-track {
         gap: 65px;
-        height: 90px;
+        height: 72px;
     }
 }
 
 @include media-breakpoint-up(xxl) {
     .logo-slider {
-        height: 120px;
+        height: 96px;
     }
 
     .logo-track {
         gap: 76px;
-        height: 120px;
+        height: 96px;
     }
 }
 
