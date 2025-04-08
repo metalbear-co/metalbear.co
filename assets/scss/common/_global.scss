@@ -61,7 +61,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  color: $primary;
+  color: $purple;
   margin: 2rem 0 1rem;
   font-family: $font-family;
   font-weight: 700;
@@ -322,5 +322,55 @@ body {
 }
 
 a {
-  color: $secondary;
+  color: #6c757d;
+}
+
+.bg-image--left-top {
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: auto;
+}
+
+.bg-image--right-top {
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 180%;
+}
+
+.bg-image--left-bottom {
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: auto;
+}
+
+@include media-breakpoint-up(lg) {
+  .bg-image--left-top {
+    background-size: 100%;
+  }
+
+  .bg-image--right-top {
+    background-size: 100%;
+  }
+  
+  .bg-image--left-bottom {
+    background-size: 100%;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .bg-image--left-top {
+    background-size: auto;
+  }
+
+  .bg-image--right-top {
+    background-size: auto;
+  }
+  
+  .bg-image--left-bottom {
+    background-size: auto;
+  }
+
+  .home-section-3 {
+    background-image: url(/home-section-3-bg.png);
+  }
 }

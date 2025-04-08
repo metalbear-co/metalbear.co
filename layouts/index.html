@@ -1,472 +1,578 @@
 {{ define "main" }}
 <div class="homepage">
-  <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=dcb0e56d-4a49-410c-9b10-71751b5d2f48" />
+  <img referrerpolicy="no-referrer-when-downgrade"
+    src="https://static.scarf.sh/a.png?x-pxid=dcb0e56d-4a49-410c-9b10-71751b5d2f48" />
   <section>
-    <div class="position-relative">
-      <div class="position-absolute top-0 start-0 hero-bg-top-wrapper">
-        <img class="img-fluid" src="/hero-bg-top.svg" alt="bg">
+    <div class="container flex-wrap flex-md-nowrap pt-36 pt-lg-3 pb-68 pb-lg-36 pb-xxl-60">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-7 ps-lg-30 ps-xxl-40 pe-lg-0 mb-40 mb-lg-0">
+          <h2
+            class="fs-30 fs-lg-33 fs-xxl-55 text-center text-lg-start text-black font-unbounded lh-[1.2] mt-0 mb-40 mb-lg-24 mb-xl-36 mb-xxl-48">
+            <span class="d-none d-lg-block fw-medium">We created mirrord <br>so you can focus on <br>writing code,
+              not</span>
+            <span class="d-lg-none fw-normal">We created <br>mirrord so you can <br><span class="font-medium">focus on
+                writing code</span>, not</span>
+
+            <div class="position-relative h-72 h-lg-50 h-xxl-68 overflow-hidden">
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text active">setting up
+                environments</span>
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">waiting for CI</span>
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">fixing flakey tests</span>
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">rebuilding Docker
+                images</span>
+              <span class="fw-semibold text-primary font-unbounded lh-[1.2] rotating-text">loading test data</span>
+            </div>
+          </h2>
+          <div class="w-lg-65">
+            <p class="fs-22 fs-xxl-30 text-black text-center text-lg-start lh-[1.5] mb-26 mb-lg-36 mb-xl-45 mb-xxl-60">Run local
+              code like it’s in your Kubernetes cluster without deploying it first.</p>
+          </div>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <div class="text-center">
+              <a class="button button-hero button-primary mr-md-24 mr-lg-24 mr-xxl-32 mb-24 mb-lg-0 w-263px w-lg-auto"
+                href="https://app.metalbear.co/" target="_blank">Try it now For Free</a>
+              <a class="button button-hero button-secondary w-263px w-lg-auto" href="https://mirrord.dev/" target="_blank">Learn
+                More About
+                mirrord</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5 ps-lg-54 ps-xl-68 ps-xxl-90">
+          <div class="w-78 w-lg-75 ms-auto me-auto ms-lg-0">
+            <img class="img-fluid" src="/new-hero-image.png" alt="hero image" />
+          </div>
+        </div>
       </div>
     </div>
-    <div class="section section__hero">
-      <div class="container-xl flex-wrap flex-md-nowrap">
+  </section>
+  <section>
+    <div class="bg-primary border-y-2">
+      <div class="container py-14 py-lg-10 py-xxl-12">
+        <div class="text-center">
+          <h3 class="fs-16 fs-lg-20 fs-xl-24 fs-xxl-32 text-white fw-bold font-unbounded mt-0 mb-0">Some of the companies
+            shipping code faster & better</h3>
+        </div>
+      </div>
+    </div>
+    <div class="shadow-card">
+      <div class="logo-slider">
+        <ul class="logo-track">
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/zooplus.png">
+              <source media="(min-width:330px)" srcset="/zooplus-sm.png">
+              <img src="/zooplus.png" alt="zooplus">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/sentinel-one.png">
+              <source media="(min-width:330px)" srcset="/sentinel-one-sm.png">
+              <img src="/sentinel-one.png" alt="sentinel-one">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/colab.png">
+              <source media="(min-width:330px)" srcset="/colab-sm.png">
+              <img src="/colab.png" alt="colab">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/survey-monkey.png">
+              <source media="(min-width:330px)" srcset="/survey-monkey-sm.png">
+              <img src="/survey-monkey.png" alt="survey-monkey">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/cadence.png">
+              <source media="(min-width:330px)" srcset="/cadence-sm.png">
+              <img src="/cadence.png" alt="cadence">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/augury.png">
+              <source media="(min-width:330px)" srcset="/augury-sm.png">
+              <img src="/augury.png" alt="augury">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/imprint.png">
+              <source media="(min-width:330px)" srcset="/imprint-sm.png">
+              <img src="/imprint.png" alt="imprint">
+            </picture>
+          </li>
+          <!-- Duplicate logos for seamless scrolling -->
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/zooplus.png">
+              <source media="(min-width:330px)" srcset="/zooplus-sm.png">
+              <img src="/zooplus.png" alt="zooplus">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/sentinel-one.png">
+              <source media="(min-width:330px)" srcset="/sentinel-one-sm.png">
+              <img src="/sentinel-one.png" alt="sentinel-one">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/colab.png">
+              <source media="(min-width:330px)" srcset="/colab-sm.png">
+              <img src="/colab.png" alt="colab">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/survey-monkey.png">
+              <source media="(min-width:330px)" srcset="/survey-monkey-sm.png">
+              <img src="/survey-monkey.png" alt="survey-monkey">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/cadence.png">
+              <source media="(min-width:330px)" srcset="/cadence-sm.png">
+              <img src="/cadence.png" alt="cadence">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/augury.png">
+              <source media="(min-width:330px)" srcset="/augury-sm.png">
+              <img src="/augury.png" alt="augury">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source media="(min-width:1200px)" srcset="/imprint.png">
+              <source media="(min-width:330px)" srcset="/imprint-sm.png">
+              <img src="/imprint.png" alt="imprint">
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="home-section-arrow1" class="home-section-3 bg-image--left-top">
+    <div class="container flex-wrap flex-md-nowrap pt-70 pt-lg-60 pt-xxl-80"> <!-- pb-140 pb-lg-190 pb-xxl-254 -->
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-5 ps-lg-30 ps-xxl-40 d-none d-lg-block">
+          <div class="w-lg-82">
+            <img class="img-fluid" src="/home-section-3.png" alt="hero image" />
+          </div>
+        </div>
+        <div class="col-12 col-lg-7 ps-lg-30 ps-xxl-40">
+          <h2 class="fs-30 fs-xxl-40 text-black fw-medium font-unbounded lh-[1.5] mt-0 mb-28 mb-lg-34 mb-xxl-46">
+            Hey! We’re MetalBear,<br>
+            <span class="fw-normal">the team behind mirrord.</span>
+          </h2>
+          <div class="fs-18 fs-xxl-24 text-black lh-[1.5]">
+            <p class="mb-28 mb-lg-34 mb-xxl-46">We’re a team
+              of developers who understand the challenges of working in the cloud: slow feedback loops, complex setups,
+              the environment breaking and blocking the team—just to name a few.</p>
+            <p><strong>That’s why we built mirrord,</strong> so you can ship better, more reliable code, without the
+              hassle, and in less
+              time.</p>
+          </div>
+        </div>
+      </div>
+      <div class="position-relative home-arrow">
+        <div class="home-arrow__inner position-absolute top-0 start-0 w-100">
+          <div class="home-arrow__image-wrapper">
+            <div class="home-arrow__image ms-auto">
+              <img class="img-fluid d-lg-none" src="/home-arrow-sm.svg" alt="arrow">
+              <img class="img-fluid d-none d-lg-block" src="/home-arrow-lg.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="home-section-arrow2" class="home-section-arrow2 border-b-3">
+    <div class="container flex-wrap flex-md-nowrap">
+      <div class="border-card bg-white pt-36 pt-lg-70 pt-xxl-94 pb-52 pb-lg-62 pb-xxl-82 ps-18 ps-lg-0 pe-18 pe-lg-0">
         <div class="row align-items-center">
-          <div class="col-12 col-lg-6 section__hero-body">
-            <h2 class="text-center text-lg-start">We’re developing tools for the modern backend engineer</h2>
-            <p class="section__hero-desc text-center text-lg-start">{{ .Params.lead | safeHTML }}</p>
-            <div class="button-wrapper d-flex justify-content-center justify-content-lg-start pt-3">
-              <div class="text-center">
-                <a class="section-button" href="https://mirrord.dev/">Learn more about mirrord</a>
+          <div class="col-12 col-lg-5">
+            <div class="w-lg-80 ms-lg-auto">
+              <h2 class="fs-30 fs-xxl-40 text-black fw-medium font-unbounded lh-[1.5] mt-0 mb-28 mb-lg-34 mb-xxl-46">
+                How mirrord works
+              </h2>
+              <div class="fs-18 fs-xxl-24 text-black lh-[1.5]">
+                <p class="mb-28 mb-lg-34 mb-xxl-46"><strong>mirrord</strong> lets cloud developers run local code as if
+                  it were part of
+                  their remote environment. It simplifies coding, debugging, testing, and troubleshooting by making
+                  remote services feel local.</p>
+              </div>
+              <div>
+                <a class="button button-secondary w-263px w-lg-auto" href="https://mirrord.dev/">Learn more about
+                  mirrord</a>
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-6">
-            <div class="hero-image-wrapper">
-              <img class="img-fluid" src="/hero.png" alt="hero image" />
+          <div class="col-12 col-lg-7 ps-lg-30 ps-xxl-40 pt-44 pt-lg-0">
+            <div class="w-lg-86">
+              <img class="img-fluid" src="/home-section-4.png" alt="image" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="position-relative">
-      <div class="position-absolute bottom-0 end-0 hero-bg-bottom-wrapper">
-        <img class="img-fluid" src="/hero-bg-bottom.svg" alt="bg">
-      </div>
-    </div>
-  </section>
-  <section class="section section-2">
-    <div class="container-xl flex-wrap flex-md-nowrap px-4 px-xl-0">
-      <div class="row align-items-center">
-        <div class="col-12 col-lg-5">
-          <div class="section-2-image-wrapper">
-            <img class="img-fluid" src="/section-2.png" alt="section 2">
-          </div>
+    <div class="container pt-60 pt-lg-80 pt-xxl-106 pb-68 pb-lg-86 pb-xxl-116"> <!-- pb-68 pb-lg-86 pb-xxl-116 -->
+      <div class="w-lg-58 mx-auto px-3 px-lg-0">
+        <div class="fs-18 fs-xxl-24 text-black lh-[1.5] text-center border-b-xxl-[1.5]">
+          <p class="mb-20 mb-xxl-24">“One of the biggest outcomes of using mirrord is that it didn’t just improve
+            developer efficiency—it
+            significantly improved product quality as well.”</p>
+          <p class="d-lg-none"><strong>Eric Hauser</strong> CTO | Cadence</p>
         </div>
-        <div class="col-12 col-lg-7">
-          <div class="text-center text-lg-start">
-            <header>
-              <h2 class="section-title">Who we are</h2>
-            </header>
-            <div class="section-content">
-              <p>We’re a team of developers who understand the challenges of working in the cloud. Cloud development can
-                be complex and time-consuming.</p>
-              <p><span class="text-primary fw-bold">That’s why we build tools like mirrord</span>, designed to
-                seamlessly
-                integrate into your workflow, making cloud
-                development easier and more efficient.</p>
+        <div class="pt-lg-14 pt-xxl-18 d-none d-lg-flex justify-content-lg-between align-items-lg-center">
+          <div class="d-flex align-items-center">
+            <div class="w-lg-52px w-xxl-70px mr-lg-27 mr-xxl-36">
+              <img class="img-fluid" src="/home-section-5.png" alt="">
+            </div>
+            <div class="fs-18 fs-xxl-24 text-black lh-[1.5]">
+              <h4 class="fs-18 fs-xxl-24 text-black lh-[1.5] mt-0 mb-0">Eric Hauser</h4>
+              <p>CTO | Cadence</p>
             </div>
           </div>
+          <div>
+            <img class="img-fluid" src="home-section-5-2.png" alt="">
+          </div>
         </div>
       </div>
+      {{/*  <div class="home-arrow__box-2-wrapper">
+        <div class="home-arrow__box-2"></div>
+      </div>  */}}
     </div>
   </section>
-  <section class="section section-3">
-    <div class="container-xl flex-wrap flex-md-nowrap px-4 px-xl-0">
-      <div class="section-3-wrapper text-center">
-        <header>
-          <h2 class="section-title">What we’re building</h2>
-        </header>
-        <div class="section-content">
-          <p><strong>mirrord</strong> lets cloud developers run local code as if it were part of their remote
-            environment.
-            It simplifies
-            coding, debugging, testing, and troubleshooting by making remote services feel local.</p>
-        </div>
-        <div class="button-wrapper d-flex justify-content-center pt-3">
-          <div class="text-center">
-            <a class="section-button section-button-primary" href="https://mirrord.dev/">Learn more about mirrord</a>
-          </div>
-        </div>
-      </div>
-      <div class="position-relative">
-        <div class="position-absolute bottom-0 end-0 section-3-bg-wrapper">
-          <img class="img-fluid" src="/section-3-bg.svg" alt="bg">
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-4">
-    <div class="container-xl flex-wrap flex-md-nowrap">
-      <div class="section-4-wrapper text-center">
-        <header>
-          <h2 class="section-title">Some of the companies using mirrord</h2>
-        </header>
-        <div
-          class="d-flex justify-content-center justify-content-lg-between align-items-center flex-wrap flex-lg-nowrap">
-          <div class="px-3 px-lg-0 mb-5 mb-lg-0">
-            <img class="img-fluid" src="/flexport.png" alt="flexport">
-          </div>
-          <div class="px-3 px-lg-0 mb-5 mb-lg-0 align-self-end">
-            <img class="img-fluid" src="/rockspoon.png" alt="rockspoon">
-          </div>
-          <div class="px-3 px-lg-0 mb-5 mb-lg-0">
-            <img class="img-fluid" src="/sentinel-one.png" alt="sentinel-one">
-          </div>
-          <div class="px-3 px-lg-0 mb-5 mb-lg-0">
-            <img class="img-fluid" src="/birdbuddy.png" alt="birdbuddy">
-          </div>
-          <div class="px-3 px-lg-0 mb-5 mb-lg-0">
-            <img class="img-fluid" src="/salt.png" alt="salt">
-          </div>
-          <div class="px-3 px-lg-0 mb-5 mb-lg-0">
-            <img class="img-fluid" src="/run-ai.png" alt="run-ai">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section pb-0">
-    <div class="section__blog">
-      <div class="container-xl flex-wrap flex-md-nowrap">
-        <header class="section__blog-header text-center">
-          <h2 class="section-title">Insights and tutorials <span class="d-none d-lg-inline-block">from developers like you</span></h2>
-          <div class="section-content px-4 px-xl-0">
-            <p class="mb-0">Check out our blog for technical insights, hands-on tutorials, and best practices.</p>
-          </div>
-        </header>
-        <div class="px-4 px-xl-0">
-          <div class="section__blog-row row row-cols-1 row-cols-md-2 row-cols-lg-3">
-            {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") -}}
-            <div class="col mb-5 mb-lg-0">
-              <div class="blog-card d-flex flex-column position-relative align-content-between justify-content-between">
-                <div class="blog-card__body">
-                  <h3><a class="stretched-link" style="color: #222222;" href="{{ .RelPermalink }}">{{ .Params.title }}{{
-                      with
-                      .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
-                  <div class="blog-card__summary">
-                    <p class="summary">{{ .Params.lead | safeHTML }}</p>
-                  </div>
+  <section id="home-section-arrow3" class="home-section-arrow3 border-b-3">
+    <div class="container pt-44 pt-lg-108 pt-xxl-144 pb-72 pb-lg-138 pb-xxl-184">
+      <header class="w-lg-58 mx-auto text-center">
+        <h2 class="fs-30 fs-xxl-40 text-black fw-medium font-unbounded lh-[1.5] mt-0 mb-32 mb-lg-85 mb-xxl-114">With
+          mirrord, your local code runs in cloud conditions—no setup, no waiting</h2>
+      </header>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-lg-8 mb-32">
+          <div class="d-lg-flex justify-content-lg-between">
+            <div
+              class="w-lg-50 flex-none border-card shadow-card bg-primary ps-24 ps-lg-30 ps-xxl-40 pe-50 pe-lg-62 pe-xxl-80 pb-18 pb-lg-36 pb-xxl-48 mb-32 mb-lg-0">
+              <div class="h-116 h-lg-144 h-xxl-192 d-flex align-items-end">
+                <div class="w-70px w-lg-84px w-xxl-112px">
+                  <img class="img-fluid" src="home-section-6-1.png" alt="">
                 </div>
-                <div class="block-card__footer pt-2 d-flex flex-column justify-content-between">
-                  <div>
-                    {{ partial "main/blog-meta.html" . -}}
+              </div>
+              <div class="text-white fs-18 fs-xxl-24 lh-[1.5]">
+                <h3 class="text-secondary fs-18 fs-lg-20 fs-xxl-26 fw-bold">Stay Local</h3>
+                <p class="mb-0">Use our CLI or VS Code & IntelliJ plugins to tap into your cloud environment—without
+                  leaving your
+                  local setup.</p>
+              </div>
+            </div>
+            <div
+              class="w-lg-50 flex-none border-card shadow-card bg-primary ps-24 ps-lg-30 ps-xxl-40 pe-50 pe-lg-62 pe-xxl-80 pb-18 pb-lg-36 pb-xxl-48">
+              <div class="h-116 h-lg-144 h-xxl-192 d-flex align-items-end">
+                <div class="w-80px w-lg-94px w-xxl-126px">
+                  <img class="img-fluid" src="home-section-6-2.png" alt="">
+                </div>
+              </div>
+              <div class="text-white fs-18 fs-xxl-24 lh-[1.5]">
+                <h3 class="text-secondary fs-18 fs-lg-20 fs-xxl-26 fw-bold">Staging for everyone</h3>
+                <p class="mb-0">Everyone gets access to single shared testing environments throughout development, not
+                  just when it’s "ready for staging."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div
+            class="border-card shadow-card bg-primary ps-24 ps-lg-30 ps-xxl-40 pe-28 pe-lg-62 pe-xxl-80 pb-18 pb-lg-36 pb-xxl-48">
+            <div class="h-116 h-lg-144 h-xxl-192 d-flex align-items-end justify-content-between">
+              <div class="w-85px w-lg-111px w-xxl-149px">
+                <img class="img-fluid" src="home-section-6-3.png" alt="">
+              </div>
+              <div class="w-106px w-lg-111px w-lg-138px w-xxl-185px">
+                <img class="img-fluid" src="home-section-6-4.png" alt="">
+              </div>
+            </div>
+            <div class="text-white fs-18 fs-xxl-24 lh-[1.5]">
+              <h3 class="text-secondary fs-18 fs-lg-20 fs-xxl-26 fw-bold">Put an end to `git push` testing</h3>
+              <p class="mb-0">No more building Docker images, waiting on CI, or deploying just to test. Just run your
+                code locally, but in cloud conditions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-image--right-top border-b-3" style="background-image: url(/home-section-7-bg.png);">
+    <div class="container pt-42 pt-lg-82 pt-xxl-110 pb-52 pb-lg-78 pb-xxl-104">
+      <header class="mx-auto text-center mb-32 mb-lg-62 mb-xxl-82">
+        <div class="px-3 px-lg-0">
+          <h2 class="fs-30 fs-xxl-40 text-black fw-medium font-unbounded lh-[1.5] mt-0 mb-24 mb-lg-32 mb-xxl-42">
+            <span class="position-relative">
+              <span class="position-absolute w-100 top-10 start-left-8 d-lg-none">
+                <svg width="157" height="18" viewBox="0 0 157 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M155.047 4.27271C135.418 1.56853 115.704 0.355936 95.9809 0.0662024C76.2348 -0.212801 56.4888 0.420322 36.7583 1.39683C25.6668 1.94411 14.5752 2.59869 3.48368 3.24255C0.976368 3.39278 0.968557 8.75822 3.48368 8.60799C20.6443 7.59929 37.805 6.61204 54.9734 6.00038C48.4435 6.56912 41.9135 7.2237 35.3914 7.97487C24.2296 9.26257 13.0755 10.8078 1.95274 12.6213C0.90607 12.793 0 13.7374 0 15.3041C0 16.624 0.898259 18.1585 1.95274 17.9868C21.7769 14.7675 41.6636 12.3745 61.5971 10.8078C81.5228 9.25184 101.488 8.53287 121.445 8.64018C132.645 8.70457 143.846 9.03722 155.047 9.62742C156.102 9.68108 157 8.35045 157 6.9447C157 5.37799 156.102 4.41221 155.047 4.26198V4.27271Z"
+                    fill="#FFD18C" />
+                </svg>
+              </span>
+              <span class="position-absolute w-100 top-25 start-0 d-none d-lg-block">
+                <svg class="w-auto" viewBox="0 0 544 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M537.234 6.88381C469.22 2.52707 400.909 0.573453 332.571 0.106659C264.151 -0.342846 195.732 0.677185 127.366 2.25045C88.9345 3.13217 50.5027 4.18678 12.0708 5.2241C3.38308 5.46614 3.35602 14.1105 12.0708 13.8684C71.5319 12.2433 130.993 10.6527 190.481 9.66728C167.855 10.5836 145.229 11.6382 122.63 12.8484C83.9546 14.923 45.3063 17.4126 6.76617 20.3344C3.1395 20.611 0 22.1324 0 24.6565C0 26.7831 3.11244 29.2553 6.76617 28.9787C75.4563 23.7921 144.363 19.9367 213.432 17.4126C282.474 14.9057 351.651 13.7474 420.802 13.9203C459.612 14.024 498.423 14.56 537.234 15.5108C540.888 15.5973 544 13.4535 544 11.1887C544 8.66454 540.888 7.10856 537.234 6.86652V6.88381Z"
+                    fill="#FFD18C" />
+                </svg>
+              </span>
+              <span class="position-relative">Insights and tutorials</span>
+            </span> from developers like you
+          </h2>
+        </div>
+        <div class="fs-18 fs-xxl-24 text-black lh-[1.5] text-center px-2 px-lg-0">
+          <p class="mb-0">Check out our blog for technical insights, hands-on tutorials, and best practices.
+          </p>
+        </div>
+      </header>
+      <div class="mb-48 mb-lg-52 mb-xxl-68">
+        <div class="splide splide-story">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {{- range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") -}}
+              <li class="splide__slide pb-3">
+                <div
+                  class="border-card bg-white h-100 d-flex flex-column position-relative align-content-center justify-content-between pt-50 pt-lg-55 pt-xxl-74 px-30 px-lg-37 px-xxl-50 pb-44 pb-lg-50 pb-xxl-66">
+                  <div class="text-center">
+                    <div class="min-h-82 min-h-lg-88 min-h-xxl-118 mb-lg-24 mb-xxl-34">
+                      <h3 class="text-black fs-18 fs-lg-20 fs-xxl-26 fw-bold lh-[1.5] mt-0 mb-0"><a
+                          class="stretched-link text-black" href="{{ .RelPermalink }}">{{
+                          .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+                    </div>
+                    <div class="text-black fs-18 fs-xxl-24 lh-[1.5] min-h-160 min-h-lg-180 min-h-xxl-242">
+                      <p class="summary mb-0">{{ .Params.lead | safeHTML }}</p>
+                    </div>
                   </div>
-                  <div class="button-wrapper d-flex justify-content-center pt-3">
+                  <div class="d-flex flex-column justify-content-between">
+                    <div class="min-h-45 min-h-lg-52 min-h-xxl-62 text-center border-t pt-8 mb-2">
+                      {{ partial "main/home-blog-meta.html" . -}}
+                    </div>
                     <div class="text-center">
-                      <a class="section-button position-relative btn-reading" href="{{ .RelPermalink }}">
-                        <span class="d-lg-none">Continue Reading</span>
-                        <span class="d-none d-lg-inline-block">Read Post</span>
-                      </a>
+                      <a class="button button-primary button-widest position-relative z-10"
+                        href="{{ .RelPermalink }}">Read Post</a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            {{ end -}}
-          </div>
-        </div>
-        <div class="button-wrapper d-flex justify-content-center">
-          <div class="text-center">
-            <a class="section-button section-button-primary" href="/blog/">Read more</a>
+              </li>
+              {{- end -}}
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-    <div class="position-relative">
-      <div class="position-absolute bottom-0 start-0 section-blog-bg-wrapper">
-        <img class="img-fluid" src="/blog-bg.svg" alt="bg">
-      </div>
-    </div>
-    <div class="container-xl flex-wrap flex-md-nowrap">
-      <div class="position-relative">
-        <div class="position-absolute bottom-0 start-0 section-blog-logo-wrapper">
-          <img class="img-fluid" src="/section-blog-logo-bg.svg" alt="bg">
+      <div class="text-center">
+        <div class="d-inline-block border-b">
+          <a class="link-text text-black fs-xxl-20 lh-[1.5] link-underline-opacity-0" href="/blog/">Read More</a>
         </div>
       </div>
     </div>
   </section>
-  <section class="section section-6">
-    <div class="container-xl flex-wrap flex-md-nowrap px-4 px-xl-0">
-      <header class="section-6-header text-center">
-        <h2 class="section-title text-primary">Join the MetalBear developer community</h2>
-        <div class="section-content">
-          <p class="mb-0">We are a community of backend engineers where we share ideas, thoughts, and solutions to
-            collaborate and grow together.</p>
-        </div>
-      </header>
-      <div class="row">
-        <div class="community-card__col col-12 col-md-6">
-          <div class="community-card d-flex">
-            <div class="community-card__icon">
-              <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="41" height="41" rx="20.5" fill="#D3E5E4" />
-                <path
-                  d="M22.5 27.5L21.4425 26.4425L27.1275 20.75H12V19.25H27.1275L21.4425 13.5575L22.5 12.5L30 20L22.5 27.5Z"
-                  fill="#222222" />
-              </svg>
-            </div>
-            <div
-              class="community-card__body d-flex flex-column position-relative align-content-between justify-content-between">
-              <div>
-                <header class="community-card__header">
-                  <h3>Join our Discord community</h3>
-                </header>
-                <div class="community-card__content">
-                  <p>Engage in real-time discussions, share your experiences, and get help from our team and other
-                    developers working on similar challenges.</p>
-                </div>
-              </div>
-              <div class="button-wrapper">
-                <a class="section-button position-relative btn-reading" href="https://discord.com/invite/metalbear">
-                  Join now
-                </a>
-              </div>
+  <section class="bg-tertiary bg-image--left-bottom border-b-3" style="background-image: url(/home-section-8-bg.png);">
+    <div class="container pt-42 pt-lg-82 pt-xxl-110 pb-72 pb-lg-86 pb-xxl-116">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-lg-6 px-0">
+          <header class="w-70 w-lg-100 mx-auto text-center mb-42 mb-lg-36 mb-xxl-48">
+            <h2 class="fs-32 fs-lg-38 fs-xxl-50 text-black fw-bold font-unbounded lh-[1.2] mt-0 mb-2 mb-lg-3">Code
+              faster, ship better</h2>
+            <h3 class="fs-27 fs-lg-38 fs-xxl-50 text-black fw-normal font-unbounded lh-[1.2] mt-0 mb-0">by testing in
+              the cloud earlier</h3>
+          </header>
+          <div class="text-black fs-18 fs-xxl-24 fw-light lh-[1.5] text-center px-4 px-lg-0 mb-40 mb-lg-45 mb-xxl-60">
+            <p class="mb-0">Start testing in the Cloud, right from your Local Machine</p>
+          </div>
+          <div class="d-flex justify-content-center mb-42 mb-lg-24 mb-xxl-34">
+            <div class="text-center">
+              <a class="button button-primary mr-md-24 mr-lg-30 mr-xxl-40 mb-24 mb-lg-0 w-263px w-lg-auto"
+                href="https://app.metalbear.co/">Try mirrord
+                For Free</a>
+              <a class="button button-secondary w-263px w-lg-auto" href="https://mirrord.dev/">Learn More About
+                mirrord</a>
             </div>
           </div>
-        </div>
-        <div class="community-card__col col-12 col-md-6">
-          <div class="community-card d-flex">
-            <div class="community-card__icon">
-              <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="41" height="41" rx="20.5" fill="#D3E5E4" />
-                <path
-                  d="M22.5 27.5L21.4425 26.4425L27.1275 20.75H12V19.25H27.1275L21.4425 13.5575L22.5 12.5L30 20L22.5 27.5Z"
-                  fill="#222222" />
-              </svg>
-            </div>
-            <div
-              class="community-card__body d-flex flex-column position-relative align-content-between justify-content-between">
-              <div>
-                <header class="community-card__header">
-                  <h3>Contribute to our writers program</h3>
-                </header>
-                <div class="community-card__content">
-                  <p>Write technical articles and share your expertise with a broader audience. Earn rewards while
-                    helping
-                    others in the community learn and grow.</p>
-                </div>
-              </div>
-              <div class="button-wrapper">
-                <a class="section-button position-relative btn-reading" href="https://metalbear.co/writers-program/">
-                  Write for MetalBear
-                </a>
-              </div>
-            </div>
+          <div class="text-center text-black fs-14 fs-lg-16 fs-xxl-20 lh-[1.5] mb-50 mb-lg-40 mb-xxl-52">
+            <p class="mb-0">or if you have any questions, <a
+                class="text-black fs-xxl-20 fw-medium lh-[1.5] link-underline" href="/contact/">send us a message</a>
+            </p>
           </div>
-        </div>
-        <div class="community-card__col col-12 col-md-6">
-          <div class="community-card d-flex">
-            <div class="community-card__icon">
-              <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="41" height="41" rx="20.5" fill="#D3E5E4" />
-                <path
-                  d="M22.5 27.5L21.4425 26.4425L27.1275 20.75H12V19.25H27.1275L21.4425 13.5575L22.5 12.5L30 20L22.5 27.5Z"
-                  fill="#222222" />
-              </svg>
-            </div>
-            <div
-              class="community-card__body d-flex flex-column position-relative align-content-between justify-content-between">
-              <div>
-                <header class="community-card__header">
-                  <h3>Talk about mirrord at conferences</h3>
-                </header>
-                <div class="community-card__content">
-                  <p>Interested in speaking about mirrord? We’ll sponsor you to present at conferences. Share your
-                    expertise, gain exposure, and become a recognized voice in the community.</p>
-                </div>
+          <div class="d-lg-flex justify-content-lg-between">
+            <div class="mb-42 mb-lg-0">
+              <div class="text-center mb-3">
+                <svg class="d-inline-block" width="47" height="32" viewBox="0 0 47 32" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M43.1392 0.320956C43.9994 3.74143 48.0681 15.5437 46.7336 18.3144C45.3991 21.0852 39.596 19.4701 39.0334 19.897C38.4196 20.8578 38.587 21.9623 37.8942 22.9462C36.9642 24.2643 35.1833 24.1668 34.9601 24.4314C34.6951 24.747 35.0671 25.833 34.2161 26.7009C33.4861 27.4434 31.9005 27.4574 31.7052 27.6801C31.3286 28.1118 31.575 31.0403 29.4361 31.6808C26.6508 32.5115 23.4331 29.8754 22.638 29.9914C21.4244 30.1724 19.7272 33.0963 16.7327 31.5508C15.812 31.0728 15.9933 29.7779 15.719 29.5505C15.4121 29.2906 14.1008 29.4484 13.2964 28.9518C12.3153 28.3392 12.3385 27.0072 11.9898 26.7705C11.6597 26.5431 10.818 26.6916 10.2694 26.4224C8.10717 25.3596 8.60005 22.3151 9.76717 20.6443C8.53495 20.9181 7.23764 18.9224 6.67966 18.825C6.04728 18.7182 5.40095 20.1802 3.23876 19.4979C2.56918 19.2891 0.30005 17.7389 0.0861565 17.066C-0.546225 15.0285 2.47154 4.82281 3.62935 2.67399C6.40997 -2.48226 10.818 6.32652 13.3476 7.08301C14.3798 7.39397 19.876 7.33363 21.1314 7.14799C22.5729 6.9345 24.0934 5.76495 25.8138 5.77887C28.3015 5.79743 30.4683 8.35467 33.2164 7.66315C33.6163 7.59353 33.528 6.11303 33.8302 5.44007C34.5602 3.82497 41.5908 -1.32663 43.1346 0.320956H43.1392ZM41.3862 2.53475C40.9212 2.10313 35.8668 6.2569 35.8157 7.39397C35.7924 8.56816 41.1491 17.5579 42.0605 17.674C42.5487 17.7343 44.4691 17.247 44.59 16.6576L41.3862 2.53475ZM11.1621 8.10869C9.39983 8.33146 6.59131 2.73432 5.59159 3.45833C5.14986 5.68605 1.40672 14.8104 2.40644 16.3791L4.42913 17.2516L11.1621 8.10869ZM19.5365 12.2764C21.8289 13.367 24.8141 10.7031 26.6369 10.9769C27.7621 11.144 31.5099 13.8497 32.7096 14.6805C33.1606 14.9961 38.5405 20.1569 38.5917 17.6229L33.6814 9.57063C30.4312 11.2043 27.8133 7.74669 24.9304 8.11334C23.7679 8.26185 18.5368 10.8701 19.5412 12.2764H19.5365ZM17.7928 14.0168C16.9047 13.07 16.8768 10.5267 18.1276 9.72379C18.1276 8.74916 14.0636 9.1483 13.0453 8.5728L7.43759 17.841C8.84184 17.363 10.9575 19.0756 11.855 19.0663C13.1569 19.0524 13.9985 17.4373 16.449 18.8296C17.7835 19.5861 17.8672 21.2105 18.2299 21.4611C18.7089 21.786 19.8295 21.359 20.499 22.2222C21.5639 23.5867 20.1503 23.8512 23.5075 24.3107C24.0236 25.0811 23.382 26.673 23.9306 27.6012C24.7397 28.9564 30.0452 29.9775 29.2454 27.4063C29.0083 26.6498 22.345 23.1597 22.7775 20.635C26.2416 19.6418 28.1202 25.0162 31.4727 25.2064C32.4817 25.2621 33.0258 23.8698 32.2306 23.4196C30.7659 23.6749 23.0844 18.0731 26.2742 17.3862C26.9763 17.2331 31.2263 20.6164 32.6863 21.1873C33.4071 21.4657 36.0063 22.5285 36.2574 21.3265C36.5364 19.9852 28.3294 14.5412 27.0972 13.2696C24.5026 14.0075 20.1503 16.5462 17.7835 14.0214L17.7928 14.0168ZM16.277 21.1037C14.0497 19.9203 11.39 21.3404 11.1668 23.8791L13.1895 23.35L16.2723 21.0991L16.277 21.1037ZM18.1369 22.9555C17.5138 22.2872 13.9381 25.4199 14.4217 26.6637C15.2866 27.4713 18.946 23.8234 18.1369 22.9555ZM21.3918 25.7402C20.964 25.2807 17.2813 28.0514 18.1416 29.4484C20.0108 29.3184 21.5174 27.6198 21.3918 25.7402Z"
+                    fill="black" />
+                </svg>
               </div>
-              <div class="button-wrapper">
-                <a class="section-button position-relative btn-reading" href="https://metalbear.co/cfp-program/">
-                  Apply to speak
-                </a>
+              <div class="text-center text-black fs-16 fs-lg-16 fs-xxl-20 fw-light lh-[1.5]">
+                <p class="mb-0">VS Code, IntelliJ, <br class="d-none d-lg-block">or in the CLI</p>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="community-card__col col-12 col-md-6">
-          <div class="community-card d-flex">
-            <div class="community-card__icon">
-              <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="41" height="41" rx="20.5" fill="#D3E5E4" />
-                <path
-                  d="M22.5 27.5L21.4425 26.4425L27.1275 20.75H12V19.25H27.1275L21.4425 13.5575L22.5 12.5L30 20L22.5 27.5Z"
-                  fill="#222222" />
-              </svg>
-            </div>
-            <div
-              class="community-card__body d-flex flex-column position-relative align-content-between justify-content-between">
-              <div>
-                <header class="community-card__header">
-                  <h3>Sign up for our newsletter</h3>
-                </header>
-                <div class="community-card__content">
-                  <p>Stay in the loop with the latest updates on mirrord, tools, and practical tips for tackling cloud
-                    development challenges.</p>
-                </div>
+            <div class="mb-42 mb-lg-0">
+              <div class="text-center mb-3">
+                <svg class="d-inline-block" width="42" height="37" viewBox="0 0 42 37" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M32.99 32.9559C32.8044 33.1091 36.2336 35.949 33.2127 36.7007C30.8972 36.7657 30.4099 33.3225 28.5723 32.9606C21.1431 32.5383 13.1849 33.4896 5.82523 32.9698C-1.5344 32.4501 0.860027 30.4408 0.525921 24.348C0.465596 23.2483 0.0479615 22.232 0.0247596 21.1369C-0.0912497 15.7819 0.196454 10.3991 0.971396 5.10905H7.93195C7.17093 3.65661 5.29622 1.7587 5.84842 0C8.47488 0.194896 9.93659 4.72854 11.8902 5.09513L39.505 5.32251C39.9552 5.61949 40.2939 7.10905 40.3682 7.70766C41.0689 13.2019 41.6118 25.6102 40.9018 30.8863C40.8183 31.4988 40.3078 32.9513 39.7185 32.9513H32.99V32.9559ZM12.1083 10.6821C10.2707 6.47796 6.83219 6.80743 2.82291 6.9652V10.6821H12.1083ZM38.0944 7.43388H13.0364L15.5886 10.6821H38.0944V7.43388ZM15.3566 14.3944H2.82754V30.6357L26.9575 30.1671C23.2591 24.8167 18.7487 19.884 15.3566 14.3944ZM38.0944 14.3944H18.6048C20.7719 16.5429 29.7046 30.0279 31.4633 30.5383C32.5399 30.8538 38.1501 30.9838 38.5167 29.8701L38.099 14.3944H38.0944Z"
+                    fill="black" />
+                  <path
+                    d="M5.90709 23.7402L12.5985 23.8794C14.682 29.601 9.00222 27.3365 5.58226 27.188C4.87229 26.7147 4.80732 24.0743 5.90709 23.7402Z"
+                    fill="black" />
+                </svg>
               </div>
-              <div class="button-wrapper">
-                <button class="subscribe-button section-button position-relative btn-reading">
-                  Subscribe now
-                </button>
+              <div class="text-center text-black fs-16 fs-lg-16 fs-xxl-20 fw-light lh-[1.5]">
+                <p class="mb-0">No credit card needed <br class="d-none d-lg-block">to get started</p>
+              </div>
+            </div>
+            <div class="mb-42 mb-lg-0">
+              <div class="text-center mb-3">
+                <svg class="d-inline-block" width="35" height="42" viewBox="0 0 35 42" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M21.6477 5.59636C21.1604 6.06504 20.121 6.00936 19.4806 6.21353L19.6987 9.00239L25.6291 11.1973C28.8449 9.5314 26.7242 8.42235 26.9191 7.39219C27.5827 3.89335 33.9493 11.1694 34.2138 12.065C34.4505 12.8539 34.1117 13.9722 33.3553 14.3156C32.7567 14.5848 30.8913 12.5012 29.7498 15.2112C36.998 24.2692 31.2068 39.8748 19.6198 41.3968C-2.71428 44.3296 -7.58667 13.8701 13.3971 8.94671L12.9238 6.17177L10.9145 6.10216L10.2138 5.40611C10.1396 2.57084 9.23468 0.524435 12.6918 0.125363C13.9632 -0.023129 20.0514 -0.0880942 20.9795 0.20889C22.4551 0.682208 22.6314 4.64973 21.6477 5.59636ZM19.8936 2.45483H12.005C11.4203 5.65205 13.7266 3.93047 15.4899 3.85158C16.9563 3.78662 18.4365 3.88871 19.8983 3.84694V2.45483H19.8936ZM17.1094 6.16249H15.2579L15.7637 8.44555L17.1094 8.48731V6.16249ZM13.2764 11.3783C9.72191 11.9769 5.74048 15.2855 4.10243 18.4456C-2.59363 31.3736 12.1024 44.7472 24.2231 36.7101C36.5757 28.5198 29.1744 8.69149 13.2718 11.3736L13.2764 11.3783ZM28.9516 11.2715C28.4087 12.0001 26.6454 12.7101 28.0143 13.5778L30.0978 11.963L28.9516 11.2669V11.2715Z"
+                    fill="black" />
+                  <path
+                    d="M22.6811 24.7331L22.4723 26.1437L21.9108 26.5103C20.7739 26.7795 19.4607 26.3433 18.3609 26.6727C17.3679 26.9697 16.4445 29.0997 14.5141 27.5498C12.7368 26.1298 14.5558 24.2505 14.7693 23.0811C14.9827 21.9117 14.4537 19.9952 15.0059 19.1414C16.5883 16.7099 17.0941 22.6171 17.2194 22.9929C18.0871 25.6101 20.6672 23.9628 22.6811 24.7331Z"
+                    fill="black" />
+                  <path
+                    d="M15.2591 12.1949C17.6582 11.8701 18.0712 15.2158 16.4099 16.3713C14.5027 15.8794 14.9853 13.5778 15.2591 12.1949Z"
+                    fill="black" />
+                  <path
+                    d="M20.3607 17.7632C19.9106 16.4686 21.4558 14.1437 22.9036 14.5196C25.0289 15.0718 21.1542 18.5892 20.3607 17.7632Z"
+                    fill="black" />
+                  <path d="M29.1726 24.7286L28.9684 26.1439C27.4974 28.2553 21.8361 24.3249 29.1726 24.7286Z"
+                    fill="black" />
+                  <path
+                    d="M26.2548 18.7703C26.3941 18.7425 26.524 18.6915 26.6446 18.6961C30.9648 18.7889 22.5147 23.4154 24.2873 20.0743C24.8163 19.5685 25.5263 18.9049 26.2548 18.7703Z"
+                    fill="black" />
+                  <path
+                    d="M24.7745 29.3642C27.2664 28.8723 28.4404 34.812 24.2919 30.7656C23.7072 30.3433 24.4497 29.4291 24.7745 29.3642Z"
+                    fill="black" />
+                  <path
+                    d="M9.68865 35.8607C9.38702 34.5475 10.2501 32.7517 11.7675 33.0811C13.3174 33.4152 10.9972 36.5985 9.68865 35.8607Z"
+                    fill="black" />
+                  <path
+                    d="M20.9286 35.7494C20.3763 35.1508 20.3439 33.8793 20.3578 33.0812C23.5411 32.6543 22.8821 37.8608 20.9286 35.7494Z"
+                    fill="black" />
+                  <path
+                    d="M3.65625 26.1113C4.25486 24.5939 6.25949 24.0834 7.3639 25.4291C7.01588 27.3827 4.92771 26.4129 3.65625 26.1113Z"
+                    fill="black" />
+                  <path
+                    d="M5.51493 31.6845C4.78639 30.3806 7.94648 28.0604 8.29451 29.6056C8.64253 31.1509 6.67038 31.7959 5.51493 31.6845Z"
+                    fill="black" />
+                  <path
+                    d="M15.9572 34.4733C17.3122 34.2041 17.6184 37.0812 16.4073 37.7169C15.0523 37.986 14.746 35.109 15.9572 34.4733Z"
+                    fill="black" />
+                  <path
+                    d="M6.21331 19.1554C7.77248 18.8538 9.211 21.5963 7.58687 21.9397C6.63095 22.1438 4.54278 19.4803 6.21331 19.1554Z"
+                    fill="black" />
+                  <path
+                    d="M12.0069 17.7635L10.2204 17.6985L9.69141 14.9839C10.9397 15.5407 12.2807 16.1486 12.0069 17.7635Z"
+                    fill="black" />
+                </svg>
+              </div>
+              <div class="text-center text-black fs-16 fs-lg-16 fs-xxl-20 fw-light lh-[1.5]">
+                <p class="mb-0">Fast setup, without <br class="d-none d-lg-block">configuring anything </p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-newsletter">
-    <div class="section-newsletter-popup">
-      <div class="container">
-        <div class="section-newsletter__message px-2 pt-4 pt-lg-0">
-          <div id="newsletter-error-message" class="section-newsletter__message-error py-2 px-2 mb-3 d-none">
-            <svg width="24" height="24" viewBox="0 0 512 512" class="section-newsletter__error-icon">
-              <path
-                d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-            </svg>
-            <span class="section-newsletter__error-text">
-              Your subscription could not be saved. Please try again.
-            </span>
-          </div>
-          <div id="newsletter-success-message" class="section-newsletter__message-success py-2 px-2 mb-3 d-none">
-            <svg width="24" height="24" viewBox="0 0 512 512" class="section-newsletter__success-icon">
-              <path
-                d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-            </svg>
-            <span class="section-newsletter__success-text">
-              Your subscription has been successful.
-            </span>
-          </div>
-        </div>
-
-        <div class="section-newsletter__wrapper d-flex justify-content-center align-items-center">
-          <div class="section-newsletter__logo">
-            <img class="img-fluid" src="/metalbear-newsletter.svg" alt="img" />
-          </div>
-
-          <div class="section-newsletter__form">
-            <div class="section-newsletter__form-wrapper py-4 px-2">
-              <form id="newsletter-form" method="POST" action="">
-                <div class="section-newsletter__header">
-                  <h4 class="m-0">Sign up for our newsletter</h4>
-                </div>
-                <div class="section-newsletter__email position-relative">
-                  <input class="section-newsletter__input input px-4 py-2 py-lg-3" type="text" id="email" name="email"
-                    autocomplete="off" placeholder="Your Email" data-required="true" required />
-                  <div class="section-newsletter__button-wrapper position-absolute top-50">
-                    <button class="section-newsletter__button" form="newsletter-form" type="submit">
-                      <svg width="27" height="26" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M1.76174 0.589253L28.633 13.8298C28.7795 13.902 28.9029 14.0137 28.9892 14.1525C29.0755 14.2912 29.1212 14.4513 29.1212 14.6146C29.1212 14.778 29.0755 14.9381 28.9892 15.0768C28.9029 15.2155 28.7795 15.3273 28.633 15.3995L1.75999 28.64C1.60944 28.714 1.44081 28.7431 1.27417 28.7239C1.10754 28.7047 0.949926 28.6381 0.820107 28.5319C0.690288 28.4256 0.593733 28.2844 0.541943 28.1248C0.490153 27.9653 0.48531 27.7942 0.52799 27.632L3.97374 14.6225L0.52624 1.599C0.482853 1.43645 0.487247 1.26484 0.538897 1.10473C0.590547 0.944612 0.687261 0.802781 0.817455 0.696225C0.947649 0.589669 1.1058 0.522907 1.27297 0.503934C1.44014 0.484962 1.60923 0.514584 1.75999 0.589253H1.76174ZM2.71199 3.0095L5.52949 13.653L5.63799 13.632L5.74999 13.625H18C18.2186 13.6246 18.4295 13.7061 18.5911 13.8534C18.7527 14.0007 18.8533 14.2032 18.873 14.4209C18.8928 14.6387 18.8303 14.856 18.6979 15.03C18.5654 15.2039 18.3726 15.322 18.1575 15.361L18 15.375H5.74999C5.69601 15.3753 5.64212 15.3706 5.58899 15.361L2.71374 26.2215L26.2652 14.6155L2.71199 3.0095Z"
-                          fill="currentColor" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="section-newsletter__entry-error px-2 py-1 mx-2 mt-2 d-none">
-                  <p class="m-0">This field cannot be left blank.</p>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-7">
-    <div class="container-xl flex-wrap flex-md-nowrap">
-      <div class="section-7-wrapper">
-        <div class="section-7-cover">
-          <img class="img-fluid" src="/section-7-cover.png" alt="cover">
-        </div>
-        <header class="section-7-header text-center">
-          <h2 class="section-title">Ship Better, Ship Faster</h2>
-        </header>
-        <div class="section-content fw-light text-center">
-          <p>Spend more time coding and less time waiting for CI</p>
-        </div>
-        <div class="button-wrapper d-md-flex justify-content-md-center">
-          <div class="text-center mb-4 mb-md-0">
-            <a class="section-button cta-button-primary" href="https://app.metalbear.co/account/sign-up" target="_blank">Try mirrord for free</a>
-          </div>
-          <div class="text-center">
-            <a class="section-button" href="https://mirrord.dev/" target="_blank">Learn more about mirrord</a>
-          </div>
-        </div>
-        <div class="section-7-footer-text text-center">
-          <p class="mb-0">or if you have any questions, <a class="text-underline" href="/contact/">send us a message</a></p>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<script type="text/javascript">
-  window.addEventListener("load", () => {
-    function sendData(form, successElement, errorElement) {
-      const XHR = new XMLHttpRequest();
+<!-- GSAP Library -->
+{{/*  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const arrow = document.querySelector('.home-arrow');
+    const target = document.querySelector('.home-arrow__box-2');
 
-      const FD = new FormData(form);
+    // Pastikan elemen ditemukan
+    if (!arrow || !target) return;
 
-      XHR.addEventListener("load", (event) => {
-        if (event.target.status === 200) {
-          if (!errorElement.classList.contains("d-none")) {
-            errorElement.classList.add("d-none");
-          }
-          successElement.classList.remove("d-none");
-        } else {
-          if (!successElement.classList.contains("d-none")) {
-            successElement.classList.add("d-none");
-          }
-          errorElement.classList.remove("d-none");
-        }
-      });
+    // Hitung jarak yang akan ditempuh
+    const deltaX = target.getBoundingClientRect().left - arrow.getBoundingClientRect().left;
+    const deltaY = target.getBoundingClientRect().top - arrow.getBoundingClientRect().top;
 
-      XHR.addEventListener("error", (event) => {
-        errorElement.classList.remove("d-none");
-        if (!successElement.classList.contains("d-none")) {
-          successElement.classList.add("d-none");
-        }
-      });
-
-      const object = {
-        context: {
-          pageUri: window.location.href,
-          pageName: document.title
-        },
-        fields: [
-          {
-            "objectTypeId": "0-1",
-            "name": "email",
-            "value": FD.get('email')
-          }
-        ],
-
-      }
-      XHR.open("POST", "https://forms-eu1.hsforms.com/submissions/v3/integration/submit/143742664/297a4bbc-0f7e-471a-9ac7-cee951a8d8aa");
-      XHR.setRequestHeader("Content-Type", "application/json");
-      XHR.setRequestHeader("Accept", "application/json");
-      XHR.send(JSON.stringify(object));
-    }
-
-    function addForm(prefix) {
-      const form = document.getElementById(`${prefix}-form`);
-      const errorElement = document.getElementById(`${prefix}-error-message`);
-      const successElement = document.getElementById(`${prefix}-success-message`);
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        sendData(form, successElement, errorElement);
-      });
-    }
-
-    addForm("newsletter");
+    gsap.to(arrow, {
+      scrollTrigger: {
+        trigger: ".home-section-arrow2",
+        start: "top center",
+        end: "bottom center",
+        scrub: 1,
+        markers: false,
+      },
+      x: deltaX,
+      y: deltaY,
+      ease: "power1.inOut"
+    });
   });
+</script>  */}}
+<script>
+  const texts = document.querySelectorAll(".rotating-text");
+  let index = 0;
+
+  function rotateText() {
+    const currentText = texts[index];
+    currentText.classList.remove("active");
+    currentText.classList.add("exit");
+
+    index = (index + 1) % texts.length; // Reset ke awal setelah teks terakhir
+
+    const nextText = texts[index];
+    nextText.classList.remove("exit");
+    nextText.classList.add("active");
+
+    setTimeout(() => {
+      currentText.classList.remove("exit");
+    }, 500);
+  }
+
+  setInterval(rotateText, 2000);
 </script>
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function () {
-    const subscribeButton = document.querySelector('.subscribe-button');
-    const newsletterPopup = document.querySelector('.section-newsletter');
-    const newsletterWrapper = document.querySelector('.section-newsletter__wrapper');
-
-    subscribeButton.addEventListener('click', function () {
-      newsletterPopup.style.display = 'block';
-    });
-
-    document.addEventListener('click', function (event) {
-      if (!newsletterWrapper.contains(event.target) && !subscribeButton.contains(event.target)) {
-        newsletterPopup.style.display = 'none';
-      }
-    });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    new Splide('.splide-story', {
+      mediaQuery: 'min',
+      breakpoints: {
+        320: {
+          perPage: 1,
+        },
+        992: {
+          perPage: 3,
+          gap: '50px',
+        },
+        1200: {
+          perPage: 3,
+          gap: '80px',
+        },
+        1600: {
+          perPage: 3,
+          gap: '106px',
+        },
+      },
+      padding: { left: '0.75rem', right: '0.75rem' },
+      gap: '1.5rem',
+      arrows: false,
+      pagination: true,
+    }).mount();
   });
 </script>
 {{ end }}

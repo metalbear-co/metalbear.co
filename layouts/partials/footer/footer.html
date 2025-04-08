@@ -1,6 +1,6 @@
 <footer class="footer">
-  <div class="container-xl">
-    <div class="footer__content d-lg-flex">
+  <div class="container">
+    <div class="footer__content d-flex flex-column flex-lg-row">
       <div class="footer__info">
         <div class="d-flex justify-content-center">
           <a class="footer__logo p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
@@ -8,10 +8,10 @@
           </a>
         </div>
         <div class="footer__social-wrapper">
-          <ul class="footer__social nav d-inline-flex justify-content-center">
+          <ul class="footer__social nav d-inline-flex justify-content-center align-items-center">
             {{ range .Site.Menus.footer_social -}}
             <li class="nav-item">
-              <a class="nav-link py-1 px-2" target="_blank" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
+              <a class="nav-link {{ urlize .Name }}" target="_blank" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}</a>
             </li>
             {{ end -}}
           </ul>

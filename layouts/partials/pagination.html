@@ -5,8 +5,8 @@
 {{ if and (gt $paginator.TotalPages 1) ($paginator.HasNext) }}
 <a href="{{- $paginator.Next.URL }}" class="pagination__page"></a>
 
-<div>
-    <button class="view-more-button button-primary">Show Me More</button>
+<div class="text-center">
+    <button class="view-more-button button button-primary">Show Me More</button>
 </div>
 
 <script>
@@ -18,7 +18,7 @@
         button: '.view-more-button',
         // using button, disable loading on scroll 
         scrollThreshold: false,
-       // status: '.page-load-status',
+        // status: '.page-load-status',
     });
 </script>
 {{- end }}
