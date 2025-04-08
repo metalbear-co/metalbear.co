@@ -2,9 +2,9 @@
 
 ## Homepage
 title = "MetalBear 🐻"
-titleSeparator = "-"
-titleAddition = "Tools for Backend Engineers"
-description = "MetalBear is an open-core company, focusing on the backend engineering experience."
+titleSeparator = "|"
+titleAddition = "Creators of mirrord"
+description = "Build cloud-native apps better and faster with mirrord. Run local code in your Kubernetes cluster — no deploying needed."
 
 ## Documentation
 # docsVersion = "0.3"
