@@ -121,6 +121,7 @@ We use log files. We use such information to analyze trends, administer the Site
 
 ● **Amplitude****. **The Site uses a tool called "**Amplitude**" to collect information about use of the Site. Amplitude collects information such as how often users visit this Site and what pages they visit when they do so. We use the information we get from Amplitude to maintain and improve the Site and our services. Amplitude's ability to use and share information collected by Amplitude about your visits to this Site is restricted by the Amplitude Terms of Service, available at <https://amplitude.com/terms>, and Amplitude Privacy Notice, available at <https://amplitude.com/privacy>.
 
+● **PostHog****. **The Site uses a tool called "**PostHog**" to collect information about use of the Site. PostHog collects information such as how often users visit this Site and what pages they visit when they do so. We use the information we get from PostHog to maintain and improve the Site and our services. PostHog's ability to use and share information collected by PostHog about your visits to this Site is restricted by the PostHog Terms of Service, available at <https://posthog.com/terms>, and Amplitude Privacy Notice, available at <hhttps://posthog.com/privacy>.
 We reserve the right to remove or add new analytic tools.
 
 **9. SPECIFIC PROVISIONS APPLICABLE UNDER CALIFORNIA PRIVACY LAW**
