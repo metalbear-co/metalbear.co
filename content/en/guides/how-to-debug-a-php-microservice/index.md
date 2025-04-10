@@ -134,7 +134,7 @@ The microservice needs access to the “redis” service hosted on the cluster. 
 
 2. Installing mirrord
 
-Install the mirrord CLI tool and run Guestbook with the required Kubernetes context. Follow the installation guide for mirrord [here](https://mirrord.dev/docs/overview/quick-start/#installation) .
+Install the mirrord CLI tool and run Guestbook with the required Kubernetes context. Follow the installation guide for mirrord [here](/mirrord/docs/overview/quick-start/#installation) .
 
 3. Run the Guestbook application with php and mirrord in the CLI
 
@@ -177,9 +177,9 @@ The target impersonated Pod here is the Guestbook Pod. In this diagram, you can 
 After you have run the guestbook program with mirrord you should be able to make your changes and rerun the service as necessary. You can even run the program in debug mode and attach a debugger if required.
 
 ## Debugging with mirrord vs. other debugging techniques
-[mirrord](https://mirrord.dev/) distinguishes itself by eliminating the need for repeated building and deployment cycles. It allows developers to run the application locally while providing the necessary network and execution context of the target Kubernetes Pod. In this case, the local application behaves as if it were running within the cluster, enabling developers to debug using familiar tools without the overhead to build and deploy.
+[mirrord](/mirrord/) distinguishes itself by eliminating the need for repeated building and deployment cycles. It allows developers to run the application locally while providing the necessary network and execution context of the target Kubernetes Pod. In this case, the local application behaves as if it were running within the cluster, enabling developers to debug using familiar tools without the overhead to build and deploy.
 Conclusion
 
 This guide explored how we can use mirrord in the command line for debugging PHP applications.
 By enabling local execution with Kubernetes context, mirrord helps developers save substantial time during debugging.
-Curious to try it out? Give [mirrord](https://mirrord.dev/) a go and see how it works for you. Got questions? Hop into our [Discord](https://discord.com/invite/metalbear) and let us know!
+Curious to try it out? Give [mirrord](/mirrord/) a go and see how it works for you. Got questions? Hop into our [Discord](https://discord.com/invite/metalbear) and let us know!

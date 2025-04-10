@@ -1,0 +1,13 @@
+<div class="text-center">
+    <div
+        class="inline-flex lg:hidden items-center justify-center lg:justify-end space-x-6 border-t border-solid border-primary-text pt-8 mt-8">
+        {{- range .Site.Menus.social }}
+        <a class="text-primary-text hover:no-underline" href="{{ .URL | relURL }}" title="{{ .Name }}" target="_blank"
+            rel="noopener">
+            {{ with .Pre }}
+            {{ partial (printf "svg/icon-%s-solid.svg" .) (dict "class" "w-6 h-[22px] text-current") }}
+            {{ end }}
+        </a>
+        {{- end }}
+    </div>
+</div>

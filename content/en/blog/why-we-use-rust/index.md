@@ -35,7 +35,7 @@ mirrord has four main components:
 
 ## Agent
 
-This component is shipped as a container image. The layer creates a job with this image, providing it with elevated permissions on the same node as the [impersonated pod](https://mirrord.dev/docs/reference/architecture/#mirrord-agent). The job then enters the impersonated pod's namespaces in order to be able to access its file system and network interfaces.
+This component is shipped as a container image. The layer creates a job with this image, providing it with elevated permissions on the same node as the [impersonated pod](/mirrord/docs/reference/architecture/#mirrord-agent). The job then enters the impersonated pod's namespaces in order to be able to access its file system and network interfaces.
 
 ### Switching Namespaces
 
@@ -75,7 +75,7 @@ The load method is fairly simple, but if in the future we'd want to introduce a 
 
 ### Standalone
 
-Rust generates standalone binaries (apart from libc). On top of that, using Cargo's new `bindeps` feature we could embed [mirrord-](https://mirrord.dev/docs/reference/architecture/#mirrord-layer)[layer](https://mirrord.dev/docs/reference/architecture/#mirrord-layer) into the CLI, creating a smooth and transparent experience instead of having to ship two files or downloading dependencies at runtime.
+Rust generates standalone binaries (apart from libc). On top of that, using Cargo's new `bindeps` feature we could embed [mirrord-](/mirrord/docs/reference/architecture/#mirrord-layer)[layer](/mirrord/docs/reference/architecture/#mirrord-layer) into the CLI, creating a smooth and transparent experience instead of having to ship two files or downloading dependencies at runtime.
 
 ## VS Code Extension
 
@@ -93,6 +93,6 @@ Do you have any questions/corrections? Our website is completely open-source, so
 
 Want to help mirrord? Have a look at our open issues in the [GitHub issue tracker](https://github.com/metalbear-co/mirrord/issues) and feel free to contribute.
 
-[^1]: [https://mirrord.dev/docs/overview/introduction/](https://mirrord.dev/docs/overview/introduction/)
+[^1]: [/mirrord/docs/overview/introduction/](/mirrord/docs/overview/introduction/)
 
 [^2]: A software layer that connects the low level C run time with the JS runtime (translating the hooks into JS function calls)

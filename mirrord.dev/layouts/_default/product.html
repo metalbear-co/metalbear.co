@@ -1,0 +1,442 @@
+{{- define "main" }}
+<main id="site-main" class="site__main single-page bg-[#FFFFFF] overflow-hidden">
+    <div class="bg-[#FAFAFD] rounded-bl-[60px] lg:rounded-bl-[270px] overflow-hidden relative z-10">
+        <div class="container w-full max-w-screen-xl mx-auto px-6 pt-6 lg:pt-20 pb-10">
+            <header class="text-center max-w-[1000px] mx-auto">
+                <p class="text-[#756DF3] text-base lg:text-[1.75rem] lg:leading-normal font-bold mb-0">mirrord Makes It
+                    Easy</p>
+                <h1 class="text-black text-2xl lg:text-[2.875rem] lg:leading-normal font-bold mb-6">mirrord on every
+                    developer’s laptop
+                    makes
+                    local Cloud Dev better.</h1>
+            </header>
+            <div class="max-w-[75%] lg:max-w-[65%] mx-auto">
+                <picture>
+                    <source media="(max-width: 1024px)" srcset="/mirrord/product-page-1-mobile.png">
+                    <source media="(min-width: 1025px)" srcset="/mirrord/product-page-1.png">
+                    <img class="max-w-full h-auto md:translate-x-8 lg:translate-x-[70px]" src="/mirrord/product-page-1.png"
+                        alt="page">
+                </picture>
+            </div>
+            <div class="flex items-center justify-center space-x-2 text-center pt-6 lg:pt-16">
+                <a class="text-[#222222] text-sm lg:text-xl hover:font-medium border-b hover:border-b-2 border-solid border-[#222222] pb-1"
+                    href="#how-it-work">Here’s
+                    how it
+                    works</a>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4.5 13.5L5.5575 12.4425L11.25 18.1275L11.25 3L12.75 3L12.75 18.1275L18.4425 12.4425L19.5 13.5L12 21L4.5 13.5Z"
+                        fill="#222222" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative">
+        <div class="absolute -top-[380px] left-0 w-full h-full hidden lg:block z-0">
+            <img class="w-full h-auto" src="/mirrord/product-bg.png" alt="page">
+        </div>
+        <div class="absolute -top-[150px] left-0 w-full h-full lg:hidden z-0">
+            <img class="w-full h-auto" src="/mirrord/product-bg-mobile.png" alt="page">
+        </div>
+        <div id="how-it-work" class="container w-full max-w-screen-2xl mx-auto px-6 lg:px-2 xl:px-0 pt-12 pb-12 lg:pt-24 lg:pb-36">
+            <div class="grid grid-cols-12 relative z-20">
+                <div class="col-span-12 lg:col-span-5 flex lg:justify-end lg:order-2">
+                    <div class="lg:pl-10">
+                        <h2
+                            class="text-[2.1875rem] lg:text-[6rem] xl:text-[7.75rem] text-black font-semibold leading-[0.95] mb-8">
+                            CLI or
+                            IDE, Your Choice</h2>
+                        <h3
+                            class="text-2xl lg:text-[1.85rem] xl:text-[2rem] lg:leading-normal text-[#756DF3] font-semibold leading-[1.43]">
+                            mirrord meets
+                            your
+                            developers where they are</h3>
+                        <div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-5 flex-none pt-1">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.6 11.8L6.425 9.625C6.24167 9.44167 6.01267 9.35433 5.738 9.363C5.46267 9.371 5.23333 9.46667 5.05 9.65C4.86667 9.83333 4.775 10.0667 4.775 10.35C4.775 10.6333 4.86667 10.8667 5.05 11.05L7.9 13.9C8.08333 14.0833 8.31667 14.175 8.6 14.175C8.88333 14.175 9.11667 14.0833 9.3 13.9L14.975 8.225C15.1583 8.04167 15.246 7.81233 15.238 7.537C15.2293 7.26233 15.1333 7.03333 14.95 6.85C14.7667 6.66667 14.5333 6.575 14.25 6.575C13.9667 6.575 13.7333 6.66667 13.55 6.85L8.6 11.8ZM10 20C8.61667 20 7.31667 19.7373 6.1 19.212C4.88333 18.6873 3.825 17.975 2.925 17.075C2.025 16.175 1.31267 15.1167 0.788 13.9C0.262667 12.6833 0 11.3833 0 10C0 8.61667 0.262667 7.31667 0.788 6.1C1.31267 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.31233 6.1 0.787C7.31667 0.262333 8.61667 0 10 0C11.3833 0 12.6833 0.262333 13.9 0.787C15.1167 1.31233 16.175 2.025 17.075 2.925C17.975 3.825 18.6873 4.88333 19.212 6.1C19.7373 7.31667 20 8.61667 20 10C20 11.3833 19.7373 12.6833 19.212 13.9C18.6873 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6873 13.9 19.212C12.6833 19.7373 11.3833 20 10 20ZM10 18C12.2167 18 14.1043 17.221 15.663 15.663C17.221 14.1043 18 12.2167 18 10C18 7.78333 17.221 5.89567 15.663 4.337C14.1043 2.779 12.2167 2 10 2C7.78333 2 5.896 2.779 4.338 4.337C2.77933 5.89567 2 7.78333 2 10C2 12.2167 2.77933 14.1043 4.338 15.663C5.896 17.221 7.78333 18 10 18Z"
+                                            fill="#756DF3" />
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-black text-base lg:text-lg font-normal leading-[1.43]">Extremely
+                                        simple to set up
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <div class="w-5 flex-none pt-1">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.6 11.8L6.425 9.625C6.24167 9.44167 6.01267 9.35433 5.738 9.363C5.46267 9.371 5.23333 9.46667 5.05 9.65C4.86667 9.83333 4.775 10.0667 4.775 10.35C4.775 10.6333 4.86667 10.8667 5.05 11.05L7.9 13.9C8.08333 14.0833 8.31667 14.175 8.6 14.175C8.88333 14.175 9.11667 14.0833 9.3 13.9L14.975 8.225C15.1583 8.04167 15.246 7.81233 15.238 7.537C15.2293 7.26233 15.1333 7.03333 14.95 6.85C14.7667 6.66667 14.5333 6.575 14.25 6.575C13.9667 6.575 13.7333 6.66667 13.55 6.85L8.6 11.8ZM10 20C8.61667 20 7.31667 19.7373 6.1 19.212C4.88333 18.6873 3.825 17.975 2.925 17.075C2.025 16.175 1.31267 15.1167 0.788 13.9C0.262667 12.6833 0 11.3833 0 10C0 8.61667 0.262667 7.31667 0.788 6.1C1.31267 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.31233 6.1 0.787C7.31667 0.262333 8.61667 0 10 0C11.3833 0 12.6833 0.262333 13.9 0.787C15.1167 1.31233 16.175 2.025 17.075 2.925C17.975 3.825 18.6873 4.88333 19.212 6.1C19.7373 7.31667 20 8.61667 20 10C20 11.3833 19.7373 12.6833 19.212 13.9C18.6873 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6873 13.9 19.212C12.6833 19.7373 11.3833 20 10 20ZM10 18C12.2167 18 14.1043 17.221 15.663 15.663C17.221 14.1043 18 12.2167 18 10C18 7.78333 17.221 5.89567 15.663 4.337C14.1043 2.779 12.2167 2 10 2C7.78333 2 5.896 2.779 4.338 4.337C2.77933 5.89567 2 7.78333 2 10C2 12.2167 2.77933 14.1043 4.338 15.663C5.896 17.221 7.78333 18 10 18Z"
+                                            fill="#756DF3" />
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-black text-base lg:text-lg font-normal leading-[1.43]">Works With
+                                        VSCode and IntelliJ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <div class="w-5 flex-none pt-1">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.6 11.8L6.425 9.625C6.24167 9.44167 6.01267 9.35433 5.738 9.363C5.46267 9.371 5.23333 9.46667 5.05 9.65C4.86667 9.83333 4.775 10.0667 4.775 10.35C4.775 10.6333 4.86667 10.8667 5.05 11.05L7.9 13.9C8.08333 14.0833 8.31667 14.175 8.6 14.175C8.88333 14.175 9.11667 14.0833 9.3 13.9L14.975 8.225C15.1583 8.04167 15.246 7.81233 15.238 7.537C15.2293 7.26233 15.1333 7.03333 14.95 6.85C14.7667 6.66667 14.5333 6.575 14.25 6.575C13.9667 6.575 13.7333 6.66667 13.55 6.85L8.6 11.8ZM10 20C8.61667 20 7.31667 19.7373 6.1 19.212C4.88333 18.6873 3.825 17.975 2.925 17.075C2.025 16.175 1.31267 15.1167 0.788 13.9C0.262667 12.6833 0 11.3833 0 10C0 8.61667 0.262667 7.31667 0.788 6.1C1.31267 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.31233 6.1 0.787C7.31667 0.262333 8.61667 0 10 0C11.3833 0 12.6833 0.262333 13.9 0.787C15.1167 1.31233 16.175 2.025 17.075 2.925C17.975 3.825 18.6873 4.88333 19.212 6.1C19.7373 7.31667 20 8.61667 20 10C20 11.3833 19.7373 12.6833 19.212 13.9C18.6873 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6873 13.9 19.212C12.6833 19.7373 11.3833 20 10 20ZM10 18C12.2167 18 14.1043 17.221 15.663 15.663C17.221 14.1043 18 12.2167 18 10C18 7.78333 17.221 5.89567 15.663 4.337C14.1043 2.779 12.2167 2 10 2C7.78333 2 5.896 2.779 4.338 4.337C2.77933 5.89567 2 7.78333 2 10C2 12.2167 2.77933 14.1043 4.338 15.663C5.896 17.221 7.78333 18 10 18Z"
+                                            fill="#756DF3" />
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-black text-base lg:text-lg font-normal leading-[1.43]">Or stay in the
+                                        terminal and hack
+                                        with the CLI</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-7 pt-4 lg:order-1">
+                    <div class="lg:w-[95%]">
+                        <img class="max-w-full" src="/mirrord/product-page-2.png" alt="page">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="absolute -top-[200px] lg:-top-[200px] left-0 w-full h-full hidden lg:block z-0 bg-red-200">
+                <img class="w-full h-auto" src="/mirrord/homepage-footer-bg.png" alt="home">
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-[#756DF3] rounded-tr-[125px] lg:rounded-tr-[270px] relative z-20">
+        <div class="container w-full max-w-screen-2xl mx-auto px-6 pt-16 lg:pt-24 xl:pt-32 pb-16 lg:pb-16">
+            <header class="mb-6 lg:mb-24">
+                <h2
+                    class="text-[2.1875rem] lg:text-[6.15rem] xl:text-[8rem] text-white font-semibold leading-[0.95] mb-6 lg:mb-16">
+                    Hack
+                    Locally, Works Remotely
+                </h2>
+                <h3 class="text-2xl lg:text-[2.25rem] text-white font-semibold leading-[1.43]">Configure once, use
+                    everywhere.</h3>
+            </header>
+            <div class="lg:max-w-[1000px] xl:max-w-[1280px]">
+                <div class="grid grid-cols-12 gap-y-10 lg:gap-y-0 lg:gap-x-6 xl:gap-x-10 mb-12 lg:mb-24">
+                    <div
+                        class="col-span-12 lg:col-span-3 min-h-[168px] pt-6 pb-3 px-4 rounded-[10px] border border-solid border-white flex flex-col justify-between">
+                        <div>
+                            <p class="text-white text-sm lg:text-base">Access to everything in-development services need
+                                -
+                                network traffic, disks,
+                                environment
+                                variables, queues, and more
+                            </p>
+                        </div>
+                        <div class="h-[46px] flex justify-end items-end">
+                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M28.8351 15.4135C28.8139 15.4135 28.7927 15.4135 28.7714 15.4138C28.7762 15.302 28.7786 15.1899 28.7786 15.0778C28.7786 10.7653 25.2701 7.25684 20.9576 7.25684C19.2242 7.25684 17.582 7.81239 16.2084 8.86349C15.2525 9.59507 14.475 10.5465 13.9433 11.619C13.0458 11.1297 12.0345 10.8686 10.9954 10.8686C7.59609 10.8686 4.83055 13.6342 4.83055 17.0335C4.83055 17.1076 4.83185 17.1816 4.83451 17.2556C2.13315 17.469 0 19.7356 0 22.4911C0 25.3871 2.35601 27.7431 5.25198 27.7431H28.8351C32.2345 27.7431 35 24.9776 35 21.5783C35 18.179 32.2345 15.4135 28.8351 15.4135Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div
+                        class="col-span-12 lg:col-span-3 min-h-[168px] pt-6 pb-3 px-4 rounded-[10px] border border-solid border-white flex flex-col justify-between">
+                        <div class="">
+                            <p class="text-white text-sm lg:text-base">Developers don’t have to maintain their own
+                                personal
+                                k8s
+                                environment - they
+                                can just use the existing shared environment.
+                            </p>
+                        </div>
+                        <div class="flex justify-end">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_88_179)">
+                                    <path
+                                        d="M13.3205 16.6584C10.8498 16.6584 3.57792 16.6584 3.57792 16.6584C2.80597 16.6584 2.17432 17.29 2.17432 18.0619V28.5967C2.17432 29.3686 2.80597 30.0002 3.57792 30.0002C3.57792 30.0002 11.0019 30.0002 13.4844 30.0002C13.8146 30.0002 13.8146 29.6454 13.8146 29.6454V17.1354C13.8146 17.1354 13.8144 16.6584 13.3205 16.6584Z"
+                                        fill="white" />
+                                    <path
+                                        d="M26.4216 16.6584C26.4216 16.6584 19.122 16.6584 16.6889 16.6584C16.0961 16.6584 16.1849 17.2758 16.1849 17.2758V29.6569C16.1849 29.6569 16.1801 29.9999 16.5367 29.9999C19.0078 29.9999 26.4214 29.9999 26.4214 29.9999C27.1934 29.9999 27.825 29.3683 27.825 28.5964V18.0619C27.8252 17.29 27.1936 16.6584 26.4216 16.6584Z"
+                                        fill="white" />
+                                    <path
+                                        d="M13.8145 8.36941C13.8145 8.36941 13.8145 7.8938 13.3445 7.8938C10.5302 7.8938 1.99296 7.8938 1.99296 7.8938C1.22101 7.8938 0.589355 8.52545 0.589355 9.2973V13.6786C0.589355 14.4505 1.22101 15.0821 1.99296 15.0821C1.99296 15.0821 10.5685 15.0821 13.383 15.0821C13.8145 15.0821 13.8145 14.7078 13.8145 14.7078V8.36941Z"
+                                        fill="white" />
+                                    <path
+                                        d="M28.0065 7.8938C28.0065 7.8938 19.4657 7.8938 16.6187 7.8938C16.1851 7.8938 16.1851 8.30703 16.1851 8.30703V14.7165C16.1851 14.7165 16.1851 15.0821 16.7123 15.0821C19.5358 15.0821 28.0065 15.0821 28.0065 15.0821C28.7784 15.0821 29.4101 14.4505 29.4101 13.6786V9.2973C29.4101 8.52545 28.7784 7.8938 28.0065 7.8938Z"
+                                        fill="white" />
+                                    <path
+                                        d="M9.04066 6.85544C8.39848 6.85544 7.81192 6.80451 7.29756 6.70399C5.9911 6.44875 5.09316 5.95198 4.55242 5.18545C4.06791 4.49847 3.91964 3.65156 4.11158 2.66814C4.44781 0.947531 5.60333 0 7.36505 0C7.73788 0 8.14733 0.043051 8.58213 0.128028C9.68817 0.344101 11.1028 0.978311 12.3664 1.8245C14.5103 3.26032 14.6163 4.15294 14.5096 4.69951C14.3526 5.50265 13.6019 6.07653 12.2146 6.45407C11.2773 6.7091 10.1204 6.85544 9.04066 6.85544ZM7.36515 2.24959C6.68288 2.24959 6.4484 2.4402 6.31965 3.09947C6.21433 3.63847 6.34716 3.82673 6.39072 3.8886C6.57315 4.14731 7.04835 4.36308 7.72888 4.49591C8.0961 4.5677 8.54982 4.60564 9.04056 4.60564C10.1197 4.60564 11.0704 4.44213 11.7012 4.26328C11.7471 4.25029 11.8184 4.19599 11.742 4.15048C10.9173 3.47864 9.40849 2.58153 8.1508 2.3358C7.85783 2.27874 7.59339 2.24959 7.36515 2.24959Z"
+                                        fill="white" />
+                                    <path
+                                        d="M20.9916 6.85534C20.9916 6.85534 20.9916 6.85534 20.9914 6.85534C19.9117 6.85534 18.7549 6.709 17.8176 6.45397C16.4302 6.07653 15.6796 5.50255 15.5226 4.69951C15.416 4.15294 15.5218 3.26032 17.6659 1.8245C18.9293 0.978311 20.3439 0.344101 21.4502 0.128028C21.885 0.043051 22.2944 0 22.6669 0C24.4291 0 25.5845 0.947633 25.9204 2.66824C26.1125 3.65156 25.9644 4.49847 25.4798 5.18545C24.939 5.95208 24.0412 6.44875 22.7344 6.70399C22.2203 6.80431 21.6337 6.85534 20.9916 6.85534ZM18.3081 4.13648C18.235 4.17891 18.2704 4.24589 18.3084 4.25683C18.9389 4.43814 19.8996 4.60564 20.9914 4.60564C21.4824 4.60564 21.9359 4.5677 22.3032 4.49592C22.9836 4.36298 23.459 4.14731 23.6414 3.8886C23.6851 3.82673 23.8181 3.63847 23.7124 3.09947C23.5838 2.4402 23.3492 2.24959 22.6668 2.24959C22.4387 2.24959 22.1745 2.27864 21.8813 2.3359C20.6235 2.58153 19.1329 3.46453 18.3081 4.13648Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_88_179">
+                                        <rect width="30" height="30" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div
+                        class="col-span-12 lg:col-span-3 min-h-[168px] pt-6 pb-3 px-4 rounded-[10px] border border-solid border-white flex flex-col justify-between">
+                        <div class="">
+                            <p class="text-white text-sm lg:text-base">Debug in the cloud directly from your IDE,
+                                without
+                                clunky
+                                remote debuggers or
+                                adding temporary logs
+                            </p>
+                        </div>
+                        <div class="flex justify-end">
+                            <svg width="35" height="32" viewBox="0 0 35 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M30.625 22.75C30.1417 22.75 29.75 22.3582 29.75 21.875C29.75 21.3917 29.3583 21 28.875 21H25.375C24.8918 21 24.5 21.3917 24.5 21.875C24.5 22.3582 24.1083 22.75 23.625 22.75H21.25C20.1454 22.75 19.25 21.8545 19.25 20.75V11.5915C19.25 10.7306 19.8273 9.99829 20.5377 9.51208C21.9027 8.57787 22.75 7.01983 22.75 5.25C22.75 2.27497 20.4751 0 17.5 0C14.525 0 12.25 2.27497 12.25 5.25C12.25 7.01983 13.0974 8.57787 14.4624 9.51208C15.1728 9.99829 15.7501 10.7306 15.7501 11.5915V20.75C15.7501 21.8545 14.8546 22.75 13.7501 22.75H2C0.895432 22.75 0 23.6454 0 24.75V29.5C0 30.6045 0.895431 31.5 2 31.5H33C34.1046 31.5 35 30.6045 35 29.5V24.75C35 23.6454 34.1046 22.75 33 22.75H30.625Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-span-12 lg:col-span-3">
+                        <div class="relative w-full h-full hidden lg:block">
+                            <div
+                                class="absolute left-0 bottom-0 lg:-bottom-4 w-full h-full lg:w-[130%] xl:w-[140%] lg:h-[170%] flex justify-end items-end">
+                                <div class="w-[90%]">
+                                    <img class="w-full h-auto" src="/mirrord/product-page-3.png" alt="page">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[90%] mx-auto lg:hidden">
+                            <img class="w-full h-auto" src="/mirrord/product-page-3.png" alt="page">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-[#444083] relative z-20" id="speedrun">
+        <div class="container w-full max-w-screen-2xl mx-auto px-6 pt-16 lg:pt-24 xl:pt-32 pb-32 lg:pb-40">
+            <header class="mb-6 lg:mb-24">
+                <h3 class="text-2xl lg:text-[5.25rem] text-white font-normal leading-[1.35]">The mirrord for Teams</h3>
+                <h2
+                    class="text-[2.1875rem] lg:text-[6.5rem] xl:text-[8rem] text-[#AEA9FF] font-semibold leading-[0.95] mb-6 lg:mb-16">
+                    Speedrun Challenge
+                </h2>
+                <p class="text-base lg:text-[2.125rem] text-[#FAFAFD] font-semibold leading-[1.4]">We can get mirrord
+                    for Teams running in minutes in any environment -- no matter how complex.</p>
+            </header>
+
+            <div class="relative hidden xl:block">
+                <div class="absolute top-0 right-0 w-full flex justify-end">
+                    <div class="w-[80px] flex space-x-3 mb-4">
+                        <div class="flex-none w-[18px] pt-2 hidden lg:block">
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.5 -6.48499e-05L8.5575 0.983859L2.8725 6.2803L18 6.2803V7.67594L2.8725 7.67594L8.5575 12.9724L7.5 13.9563L0 6.97812L7.5 -6.48499e-05Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                        <div class="flex-1 text-center lg:text-left">
+                            <h3 class="text-white text-2xl lg:text-xl font-semibold leading-[1.43] mb-0">See how
+                                it’s done</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div x-data="{ openVideo: false, toggleVideo() { this.openVideo = !this.openVideo; if (this.openVideo) { this.$refs.video.play(); } else { this.$refs.video.pause(); this.$refs.video.currentTime = 0; } } }"
+                class="max-w-[1100px] mx-auto mb-12 lg:mb-24">
+                <div
+                    class="aspect-w-16 aspect-h-9 bg-[#AEA9FF] rounded-[18px] cursor-pointer border border-solid border-[#222222] drop-shadow-[13.7088px_13.7088px_0px_#222222]">
+                    <div @click="toggleVideo" class="absolute w-full h-full top-0 left-0 flex justify-center items-center z-50">
+                        <div class="w-[48px] md:w-[86px] lg:w-[110px] relative">
+                            {{- partial "svg/product-play-icon.svg" (dict "class" "w-[48px] md:w-[86px] lg:w-[110px]") }}
+                        </div>
+                    </div>
+                    <div class="absolute w-full h-full top-0 left-0 z-40">
+                        <div class="w-[80%] h-[74%] mx-auto relative top-[20%] flex flex-col justify-between">
+                            <div>
+                                <img class="w-full h-auto" src="/mirrord/product-play-image.png" alt="play">
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <h3
+                                        class="text-xl md:text-[3.25rem] lg:text-[5.125rem] text-white font-semibold leading-[1] lg:leading-[0.9]">
+                                        mirrord<br>
+                                        Speedrun</h3>
+                                </div>
+                                <div>
+                                    <div
+                                        class="w-[96px] md:w-[280px] lg:w-[350px] translate-x-4 md:translate-x-8 lg:translate-x-16">
+                                        <img class="w-full h-auto" src="/mirrord/product-play-clock.gif" alt="gif">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-show="openVideo" x-cloak x-transition
+                        class="video-box w-full h-full top-0 left-0 rounded-[18px] bg-black transition-all duration-300 ease-[ease] z-[100] flex items-center justify-center">
+                        <video x-ref="video" id="my-video" class="video-js w-full h-full border-0 rounded-[18px]"
+                            controls preload="auto" width="1280" height="960"
+                            data-setup='{"controls": true, "autoplay": true, "preload": "auto"}'>
+                            <source
+                                src="https://descriptusercontent.com/published/1f401de8-15a8-4457-86bd-2fb9038105e2/original.mp4"
+                                type="video/mp4" />
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser
+                                that
+                                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                    video</a>
+                            </p>
+                        </video>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="max-w-[860px] mx-auto">
+                <div class="text-center mb-12">
+                    <p class="text-base lg:text-[2.125rem] text-[#FAFAFD] leading-[1.4]">Curious about
+                        mirrord for Teams but don't want to set anything up? We'll do it for you --
+                        <strong>fast</strong>.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <a class="w-[252px] lg:w-[400px] h-[50px] lg:h-[86px] flex items-center justify-center text-[#444083] text-base lg:text-2xl font-semibold bg-[#FFD18C] hover:bg-[#E4E3FD] border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-7px_6px_0px_#000000] lg:shadow-[-12px_11px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                        href="https://meetings-eu1.hubspot.com/aviram-hassan/speed-run">Book Your Speedrun</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div x-data="{ open: false }" class="overflow-hidden pb-10 lg:pb-24">
+        <div class="bg-[#FAFAFD] rounded-bl-[60px] lg:rounded-bl-[270px] relative z-20">
+            <div class="container w-full max-w-screen-xl mx-auto px-6 lg:px-3 xl:px-0 pt-16 lg:pt-20 pb-8 lg:pb-24">
+                <header class="relative text-center px-12 lg:px-0">
+                    <h2
+                        class="text-[2.1875rem] lg:text-[6.75rem] text-black font-semibold leading-[1.43] mb-4 lg:mb-16">
+                        Ship <span class="text-[#756DF3]">Faster</span>, Ship
+                        <span class="text-[#756DF3]">Better</span>
+                    </h2>
+                </header>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="col-span-2 lg:col-span-1 hidden lg:block">
+                        <video autoplay="" loop="" muted="" playsinline="">
+                            <source src="/mirrord/hero_image.webm" type="video/webm">
+                            <source src="/mirrord/hero_image.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="col-span-2 lg:col-span-1">
+                        <div class="text-center lg:text-left">
+                            <h3 class="text-sm lg:text-2xl text-black font-semibold leading-[1.43]">No more ‘git push’
+                                to test.</h3>
+                        </div>
+                        <div>
+                            <div
+                                class="h-[96px] mb-6 lg:mb-8 flex items-center rounded-[10px] bg-[#E4E3FD] border border-solid border-[#444083] bg-opacity-40 border-opacity-40 px-6 lg:px-8">
+                                <div class="w-[94%] lg:w-[90%] mx-auto">
+                                    <p class="text-sm lg:text-lg text-[#222222] leading-[1.43] opacity-100 mb-0">Cloud
+                                        developers have
+                                        too
+                                        many hoops to jump through to test and deploy code</p>
+                                </div>
+                            </div>
+                            <div
+                                class="h-[96px] mb-6 lg:mb-8 flex items-center rounded-[10px] bg-[#E4E3FD] border border-solid border-[#444083] bg-opacity-40 border-opacity-40 px-6 lg:px-8">
+                                <div class="w-[94%] lg:w-[90%] mx-auto">
+                                    <p class="text-sm lg:text-lg text-[#222222] leading-[1.43] opacity-100 mb-0">Shorter
+                                        feedback loops
+                                        means more and better feedback
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="h-[96px] mb-6 lg:mb-8 flex items-center rounded-[10px] bg-[#E4E3FD] border border-solid border-[#444083] bg-opacity-40 border-opacity-40 px-6 lg:px-8">
+                                <div class="w-[94%] lg:w-[90%] mx-auto">
+                                    <p class="text-sm lg:text-lg text-[#222222] leading-[1.43] opacity-100 mb-0">Skip
+                                        Docker Build, CI
+                                        and deployment when you want to test in the cloud
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="h-[96px] mb-6 lg:mb-8 flex items-center rounded-[10px] bg-[#E4E3FD] border border-solid border-[#444083] bg-opacity-40 border-opacity-40 px-6 lg:px-8">
+                                <div class="w-[94%] lg:w-[90%] mx-auto">
+                                    <p class="text-sm lg:text-lg text-[#222222] leading-[1.43] opacity-100 mb-0">More
+                                        and better
+                                        feedback means higher quality code
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 lg:pt-10 flex justify-center">
+                            <a class="w-[246px] lg:w-[286px] h-[50px] lg:h-[58px] flex items-center justify-center text-white hover:text-[#444083] font-semibold bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                href="https://app.metalbear.co">Try It Now</a>
+                        </div>
+
+                        <div class="pt-6 lg:pt-10">
+                            <div class="relative">
+                                <p class="flex items-center justify-center space-x-2 text-center text-xs lg:text-base">
+                                    <span class="border-b hover:border-b-2 border-solid border-[#FAFAFD] pb-[2px]">*What’s
+                                        Remocal?</span>
+                                    <span @click="open = true;"
+                                        class="text-[#222222] text-xs lg:text-base hover:font-medium cursor-pointer border-b hover:border-b-2 border-solid border-[#222222] pb-[2px]">More
+                                        here</span>
+                                </p>
+                                <div x-show="open" @click.outside="open = false"
+                                    class="absolute left-0 bottom-8 lg:bottom-12 w-full lg:w-[90%] bg-primary z-[100] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000]">
+                                    <div class="relative p-8 lg:p-16">
+                                        <div class="text-left pb-16 lg:pb-4 pr-8 lg:pr-3">
+                                            <h3 class="text-[1.5rem] text-white font-extrabold font-heading">*What’s
+                                                Remocal?
+                                            </h3>
+                                            <p class="text-sm text-white font-semibold leading-[1.5]">Remote + Local =
+                                                Remocal.
+                                            </p>
+                                            <p class="text-sm text-white font-normal leading-[1.5]">mirrord makes your
+                                                local
+                                                development experience feel 100% remote by making the
+                                                running process think it's running in Staging. That means when you run
+                                                your code
+                                                with mirrord, it's the same as running it in Staging, without having to
+                                                move
+                                                your code around, 'git push' to test, or do anything more than work
+                                                directly
+                                                from your CLI or IDE as you always have.</p>
+                                            <div class="absolute w-[120px] bottom-4 right-4">
+                                                <img class="w-[120px] h-auto" src="/mirrord/popup-image.png" alt="popup-image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="absolute -top-[400px] left-0 w-full h-full z-10 hidden lg:block">
+                <img class="w-full h-auto" src="/mirrord/product-bg.png" alt="page">
+            </div>
+            <div class="absolute -top-[100px] left-0 w-full h-full z-10 lg:hidden">
+                <img class="w-full h-auto" src="/mirrord/product-footer-bg-mobile.png" alt="page">
+            </div>
+        </div>
+    </div>
+</main>
+{{- end }}

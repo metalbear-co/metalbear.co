@@ -38,7 +38,7 @@ At the implementation level, you can see that this conversion happens by using i
 
 You're not even limited by which direction you can forward traffic, because mirrord can do it both ways. When forwarding in reverse (backwarding?), mirrord establishes a connection with the agent and eagerly steals or mirrors traffic (according to your configuration file, if provided) at a specified target port, channels it through the agent, and sends to your preferred local destination.
 
-There are a few differences between the two directions of forwarding - that the lazy connections of regular forwarding differ from the eager strategy in reverse, and that reverse port forwarding requires a target pod to be set explicitly, whereas regular port forwarding can run in [targetless mode](https://mirrord.dev/docs/using-mirrord/targetless/). It is also only possible to specify the network configuration when reverse forwarding, allowing you to choose between mirroring, stealing or filtered stealing mode. You can read more about this in [the docs](https://mirrord.dev/docs/using-mirrord/port-forwarding/).
+There are a few differences between the two directions of forwarding - that the lazy connections of regular forwarding differ from the eager strategy in reverse, and that reverse port forwarding requires a target pod to be set explicitly, whereas regular port forwarding can run in [targetless mode](/mirrord/docs/using-mirrord/targetless/). It is also only possible to specify the network configuration when reverse forwarding, allowing you to choose between mirroring, stealing or filtered stealing mode. You can read more about this in [the docs](/mirrord/docs/using-mirrord/port-forwarding/).
 
 Other than that, the only difference is in the internal mechanism - in the code, reverse forwarding leverages the IncomingProxy struct rather than custom tokio tasks to communicate with the local machine. The forward and reverse PortForwarder tasks run at the same time, meaning you can specify as many forward and/or backward routes as you want in the same command, and mirrord will handle it all without complaint.
 
@@ -58,7 +58,7 @@ Enough theory, let's see how to actually forward some data. We're only going to 
 
 Requirements: 
 
-- **mirrord CLI**, at least version 3.114.0 ([install here](https://mirrord.dev/docs/overview/quick-start/#cli-tool))
+- **mirrord CLI**, at least version 3.114.0 ([install here](/mirrord/docs/overview/quick-start/#cli-tool))
 - a Kubernetes **cluster** in which you have sufficient permissions - this tutorial uses a minikube instance ([install here](https://minikube.sigs.k8s.io/docs/start/))
 
 Firstly, we need to deploy a suitable app that can receive and respond to a message. You can do so with the following manifest:
@@ -131,8 +131,8 @@ On that final line we can see the log that was emitted when processing the reque
 
 ### In conclusion
 
-And that's all there is to it: mirrord port-forward is an alternative to kubectl port-forward for accessing your cluster locally. It offers more options for what you can access and allows for multiple ports to be forwarded with the same command. You can read the official documentation for this feature [here](https://mirrord.dev/docs/using-mirrord/port-forwarding/). Happy forwarding!
+And that's all there is to it: mirrord port-forward is an alternative to kubectl port-forward for accessing your cluster locally. It offers more options for what you can access and allows for multiple ports to be forwarded with the same command. You can read the official documentation for this feature [here](/mirrord/docs/using-mirrord/port-forwarding/). Happy forwarding!
 
 ### It's close, but I need something slightly different...
 
-Maybe all of these features are sounding good but they don't quite fit your use case - if you like the look of hijacking pod permissions and combining your local and remote environments to speed up development, check out mirrord's other commands like [the standard mirrord exec command](https://mirrord.dev/docs/overview/introduction/) or [the mirrord container command](https://mirrord.dev/docs/using-mirrord/local-container/). If you're not sure, jump into our [Discord server](https://discord.gg/metalbear) and ask!
+Maybe all of these features are sounding good but they don't quite fit your use case - if you like the look of hijacking pod permissions and combining your local and remote environments to speed up development, check out mirrord's other commands like [the standard mirrord exec command](/mirrord/docs/overview/introduction/) or [the mirrord container command](/mirrord/docs/using-mirrord/local-container/). If you're not sure, jump into our [Discord server](https://discord.gg/metalbear) and ask!

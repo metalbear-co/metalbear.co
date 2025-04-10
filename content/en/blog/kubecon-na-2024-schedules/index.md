@@ -159,7 +159,7 @@ your age, make some conference friends, and get some relevant information and ti
 the [Solutions Showcase](https://kccncna2024.sched.com/event/1iGWJ/solutions-showcase) (that’s the area with the sponsor
 booths, coffee, and other fun stuff) is open. So head over to that area, and obviously come directly
 to [our booth](#our-booth) first, #R51. Say hi, let us know if this schedule is helpful, ask us any questions you might
-have about [mirrord](https://mirrord.dev/), and secure some nice swag before the good stuff is gone.
+have about [mirrord](/mirrord), and secure some nice swag before the good stuff is gone.
 
 **11:15am:**
 [Behind Schedule: Pod Resource Configuration from Beginning to... Huh? - Joe Thompson, Independent](https://sched.co/1i7kb)
@@ -304,7 +304,7 @@ found [here](https://kccncna2024.sched.com/2024-11-13/overview/type/Keynote%20Se
 **10:45am:** Now the [Solutions Showcase](https://kccncna2024.sched.com/event/1iGWJ/solutions-showcase) (that’s the area
 with the sponsor booths, coffee, and other fun stuff) is open. So head over to that area, and obviously come directly
 to [our booth](#our-booth) first, #R51. Say hi, let us know if this schedule is helpful, ask us any questions you might
-have about [mirrord](https://mirrord.dev/), and secure some nice swag before the good stuff is gone.
+have about [mirrord](/mirrord/), and secure some nice swag before the good stuff is gone.
 
 **11:15am:** [GitOops... I Did It Again! Protecting Your GitOps System from Being Used for Privilege Escalation - Oreen 
 Livni & Elad Pticha, Cycode](https://sched.co/1i7nd)
@@ -427,7 +427,7 @@ found [here](https://kccncna2024.sched.com/2024-11-13/overview/type/Keynote%20Se
 **10:45am:** Now the [Solutions Showcase](https://kccncna2024.sched.com/event/1iGWJ/solutions-showcase) (that’s the area
 with the sponsor booths, coffee, and other fun stuff) is open. So head over to that area, and obviously come directly
 to [our booth](#our-booth) first, #R51. Say hi, let us know if this schedule is helpful, ask us any questions you might
-have about [mirrord](https://mirrord.dev/), and secure some nice swag before the good stuff is gone.
+have about [mirrord](/mirrord/), and secure some nice swag before the good stuff is gone.
 
 **11:15am:** [Advanced Model Serving Techniques with Ray on Kubernetes - Andrew Sy Kim, Google & Kai-Hsun Chen, 
 Anyscale](https://sched.co/1i7kg)
@@ -560,7 +560,7 @@ found [here](https://kccncna2024.sched.com/2024-11-13/overview/type/Keynote%20Se
 **10:45am:** Now the [Solutions Showcase](https://kccncna2024.sched.com/event/1iGWJ/solutions-showcase) (that’s the area
 with the sponsor booths, coffee, and other fun stuff) is open. So head over to that area, and obviously come directly
 to [our booth](#our-booth) first, #R51. Say hi, let us know if this schedule is helpful, ask us any questions you might
-have about [mirrord](https://mirrord.dev/), and secure some nice swag before the good stuff is gone.
+have about [mirrord](/mirrord/), and secure some nice swag before the good stuff is gone.
 
 **11:15am:** [All-Your-GPUs-Are-Belong-to-Us: An Inside Look at NVIDIA's Self-Healing GeForce NOW Infrastructure - Ryan 
 Hallisey & Piotr Prokop PL, NVIDIA](https://sched.co/1i7kJ)

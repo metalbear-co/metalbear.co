@@ -1,0 +1,21 @@
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__wrapper">
+            <div class="footer__social">
+                <div class="footer__social-wrapper">
+                    {{- partial "footer/social.html" . }}
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <p class="text-xs text-right lg:text-left mb-0">© <span x-text="new Date().getFullYear()"></span> MetalBear</p>
+            </div>
+            <span class="footer__spacer"></span>
+            <div class="footer__designer">
+                <p class="text-xs lg:text-right mb-0">Designed by <a class="text-[#222222] underline" href="http://studioartik.com/">ARTIK Studio</a></p>
+            </div>
+        </div>
+    </div>
+   
+</footer>
+
+{{- partial "extend_footer.html" . }}

@@ -1,0 +1,600 @@
+{{- define "main" }}
+<main id="site-main" class="site__main single-page">
+    <div class="section-header">
+        <div class="container w-full max-w-screen-xl mx-auto px-4 lg:px-6 pb-12 lg:pb-28">
+            <div class="text-center lg:text-left pt-6 lg:pt-24 mb-24">
+                <h3 class="text-[#756DF3] text-sm lg:text-[1.9rem] lg:leading-normal font-normal mb-2 lg:mb-4">mirrord
+                    For
+                    Teams
+                </h3>
+                <h2 class="text-[1.75rem] lg:text-[4.75rem] text-[#222222] font-semibold leading-[0.64] mb-3 lg:mb-6">
+                    <span class="block leading-[1.2]">Pricing Plans</span>
+                    <span class="block relative z-20">you can see yourself in</span>
+                    <span class="block pricing-page-title text-[#E4E3FD] translate-y-[17rem]">you can see yourself
+                        in</span>
+                </h2>
+                <p class="text-[#222222] text-sm lg:text-lg font-body font-normal mb-0">The local development experience
+                    you
+                    love with
+                    mirrord, now for Teams, including:</p>
+            </div>
+            <div class="max-w-[1100px] mx-auto">
+                <div x-data="{ isMontly: $persist(true) }" class="grid grid-cols-2 gap-6">
+                    <div
+                        class="col-span-2 lg:col-span-1 pt-6 lg:pt-12 pb-6 lg:pb-12 px-8 rounded-[8px] lg:rounded-[14px] bg-[#756DF3] border-2 border-[#222222] drop-shadow-[-8.18514px_-8.18514px_0px_#222222] lg:drop-shadow-[-15px_15px_0px_#222222] transition-all duration-200 ease-[ease]">
+                        <div class="lg:h-[112px] flex justify-center mb-2">
+                            {{- partial "svg/pricing-team-icon.svg" (dict "class" "w-[62px] lg:w-[100px]") }}
+                        </div>
+                        <div class="h-[312px] lg:h-[384px] border-b border-dashed border-[#D9D9D9]">
+                            <div class="text-center">
+                                <h3
+                                    class="text-[#FFFFFF] text-[1.875rem] lg:text-[2.85rem] leading-normal font-heading font-semibold mb-0 lg:mb-2">
+                                    Team
+                                </h3>
+                                <p class="text-white font-semibold text-sm lg:text-lg leading-[1.2] mb-0 lg:mb-4">
+                                    Everything
+                                    you
+                                    love about mirrord OSS
+                                    plus...</p>
+                                <div class="px-6 pt-6">
+                                    <p class="text-white font-normal text-sm lg:text-lg leading-[1.3]">mirrord for Teams
+                                        includes the
+                                        mirrord Operator which runs in your staging k8s cluster,
+                                        unlocking concurrent access to mirrord targets, RBAC, session
+                                        management,
+                                        and
+                                        more.</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center space-x-3 mb-2 pt-2 lg:pt-8 pb-4">
+                                <p class="text-white text-xs lg:text-sm leading-[26px] mb-0">Monthly</p>
+                                <div
+                                    class="w-[34px] lg:w-[55px] h-[18px] lg:h-[28px] relative bg-white rounded-[21px] flex items-center p-[1px]">
+                                    <button @click="isMontly = !isMontly" class="w-full">
+                                        <span
+                                            class="w-[16px] h-[16px] lg:w-[26px] lg:h-[26px] flex items-center justify-center bg-[#444083] rounded-full transition-all duration-300 ease-[ease]"
+                                            :class="{ 'translate-x-0': isMontly, 'translate-x-[16px] lg:translate-x-[27px]': !isMontly }">
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="text-white text-sm leading-[26px] mb-0">Annually</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 lg:pt-6 px-2 lg:px-6">
+                            <div class="h-[80px] lg:h-[140px] xl:h-[125px] text-center mb-6 lg:mb-8">
+                                <h2 class="text-white text-[2.125rem] lg:text-[3.25rem] font-normal leading-[1.5] mb-1 lg:mb-2"
+                                    x-text="isMontly ? '$50' : '$40'">$50</h2>
+                                <div
+                                    class="text-white text-xl lg:text-[1.8rem] font-normal leading-normal mb-0 relative flex justify-center items-center space-x-1">
+                                    <span>Seat</span>
+                                    <div class="w-[14px] h-[14px] cursor-pointer group">
+                                        <div
+                                            class="relative hidden group-hover:block transition-all duration-200 ease-[ease] before:empty-content before:absolute before:w-4 before:h-4 before:-left-[2px] before:bottom-[5px] before:border before:border-solid before:border-[#222222] before:transform before:rotate-45 before:z-30 after:empty-content after:absolute after:w-4 after:h-4 after:bg-white after:-left-[2px] after:bottom-[6px] after:transform after:rotate-45 after:z-40">
+                                        </div>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.9959 5.43761C7.5208 5.43761 7.94728 5.86409 7.94728 6.38899V10.3011C7.94728 10.8178 7.5208 11.2443 6.9959 11.2443C6.4792 11.2443 6.05272 10.8178 6.05272 10.3011V6.38899C6.05272 5.86409 6.4792 5.43761 6.9959 5.43761ZM1.16462 6.9959C1.16462 5.3884 1.81254 3.92853 2.87053 2.87053C3.92853 1.81254 5.3884 1.16462 6.9959 1.16462C8.6116 1.16462 10.0715 1.81254 11.1213 2.87053C12.1793 3.92853 12.8354 5.3884 12.8354 6.9959C12.8354 8.6116 12.1793 10.0715 11.1213 11.1213C10.0715 12.1793 8.6116 12.8354 6.9959 12.8354C5.3884 12.8354 3.92853 12.1793 2.87053 11.1213C1.81254 10.0715 1.16462 8.6116 1.16462 6.9959ZM11.9496 2.05038C10.6784 0.787346 8.93146 0 6.9959 0C5.06854 0 3.31342 0.787346 2.05038 2.05038C0.787346 3.31342 0 5.06854 0 6.9959C0 8.93146 0.787346 10.6784 2.05038 11.9496C3.31342 13.2127 5.06854 14 6.9959 14C8.93146 14 10.6784 13.2127 11.9496 11.9496C13.2127 10.6784 14 8.93146 14 6.9959C14 5.06854 13.2127 3.31342 11.9496 2.05038ZM6.9959 2.75571C7.5208 2.75571 7.94728 3.18219 7.94728 3.70709C7.94728 3.96954 7.84066 4.20738 7.66842 4.37961C7.49619 4.55185 7.25835 4.65026 6.9959 4.65026C6.73345 4.65026 6.49561 4.55185 6.32337 4.37961C6.15114 4.20738 6.04452 3.96954 6.04452 3.70709C6.04452 3.18219 6.471 2.75571 6.9959 2.75571Z"
+                                                fill="white" />
+                                        </svg>
+                                        <div
+                                            class="absolute hidden group-hover:block left-0 bottom-10 w-full text-left bg-white rounded-[4px] border border-solid border-[#222222] py-3 px-3">
+                                            <p class="text-[#222222] text-xs mb-2">Seats are calculated by
+                                                monthly activity. Any user that used mirrord in a calendar month
+                                                is counted towards your seat count.</p>
+                                            <p class="text-[#222222] text-xs mb-0">mirrord identifies users with
+                                                a unique file it creates on the machine it runs on. If this does
+                                                not represent distinct users in your organization, or if you use
+                                                mirrord on cloud workers (e.g. for CI, or cloud development
+                                                environments), please <a class="underline text-[#222222]"
+                                                    href="/mirrord/contact/">contact us</a> </p>
+                                        </div>
+                                    </div>
+                                    <span>/Month</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-center mb-6">
+                                <a class="w-[92%] h-[48px] lg:h-[76px] flex items-center justify-center text-[#756DF3] text-base lg:text-xl bg-white hover:bg-[#E4E3FD] border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-7px_6px_0px_#000000] lg:shadow-[-12px_11px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                    href="https://app.metalbear.co/">Start a 7-day Free Trial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="col-span-2 lg:col-span-1 pt-6 lg:pt-12 pb-6 lg:pb-12 px-8 rounded-[8px] lg:rounded-[14px] bg-[#444083] border-2 border-[#222222] drop-shadow-[8.18711px_8.18711px_0px_#222222] lg:drop-shadow-[15px_15px_0px_#222222] transition-all duration-200 ease-[ease]">
+                        <div class="lg:h-[112px] flex justify-center mb-2">
+                            {{- partial "svg/pricing-enterprice-icon.svg" (dict "class" "w-[62px] lg:w-[100px]") }}
+                        </div>
+                        <div class="h-[312px] lg:h-[384px] text-center border-b border-dashed border-[#D9D9D9]">
+                            <h3
+                                class="text-[#FFFFFF] text-[1.875rem] lg:text-[2.85rem] leading-normal font-heading font-semibold mb-0 lg:mb-2">
+                                Enterprise
+                            </h3>
+                            <p class="text-white font-semibold text-sm lg:text-lg leading-[1.2] mb-0 lg:mb-4">Everything
+                                in Team, plus...</p>
+                            <div class="px-6 pt-6">
+                                <p class="text-white font-normal text-sm lg:text-lg leading-[1.3]">The mirrord for Teams
+                                    Enterprise plan brings heightened security features such as support for
+                                    airgapped clusters, and premium support.</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 lg:pt-6 px-2 lg:px-6">
+                            <div
+                                class="h-[80px] lg:h-[140px] xl:h-[125px] text-center flex justify-center items-center mb-6 lg:mb-8">
+                                <div class="text-white text-xl lg:text-[1.8rem] font-normal leading-normal">
+                                    <span>Custom</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-center mb-6">
+                                <a class="w-[92%] h-[48px] lg:h-[76px] flex items-center justify-center text-[#756DF3] text-base lg:text-xl bg-white hover:bg-[#E4E3FD] border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-7px_6px_0px_#000000] lg:shadow-[-12px_11px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                    href="https://meetings-eu1.hubspot.com/mirrord/schedule-a-demo-pricing-1">Schedule A Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-compare-plan bg-[#FAFAFD] rounded-tl-[60px] lg:rounded-tl-[180px] xl:rounded-tl-[270px]">
+        <div class="container w-full max-w-screen-xl mx-auto px-6 pb-[70px] md:pb-[120px] lg:pb-[160px]">
+            <div class="text-center lg:text-left pt-16 lg:pt-24 mb-6 lg:mb-24">
+                <h2 class="text-[1.75rem] lg:text-[4.75rem] text-[#222222] font-semibold leading-[0.64] mb-3 lg:mb-6">
+                    <span class="block leading-[1.2]">Compare our plans</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-12 mb-6 lg:mb-20">
+                <div class="col-span-3 col-start-7 flex justify-end">
+                    <div class="text-center">
+                        <h3
+                            class="text-[#756DF3] text-sm lg:text-[2.85rem] leading-normal font-heading font-semibold mb-0 lg:mb-2">
+                            Team
+                        </h3>
+                        <div class="pt-1 lg:pt-4 flex justify-center items-center mx-auto">
+                            <a class="w-[95%] lg:w-[230px] h-[41px] lg:h-[56px] flex justify-center items-center text-[10px] lg:text-xl text-white hover:text-[#222222] bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                href="https://app.metalbear.co/">
+                                <span>Start your <span class="font-semibold lg:mx-1">FREE</span> trial</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end">
+                    <div class="text-center">
+                        <h3
+                            class="text-[#756DF3] text-sm lg:text-[2.85rem] leading-normal font-heading font-semibold mb-0 lg:mb-2">
+                            Enterprise
+                        </h3>
+                        <div class="pt-1 lg:pt-4 flex justify-center items-center mx-auto">
+                            <a class="w-[95%] lg:w-[230px] h-[41px] lg:h-[56px] flex justify-center items-center text-[10px] lg:text-xl text-white hover:text-[#222222] bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                target="_blank" href="https://meetings-eu1.hubspot.com/mirrord/schedule-a-demo-pricing-2">Schedule a demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- table 1 -->
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 bg-[#756DF3] bg-opacity-20 h-[29px] lg:h-[70px] flex items-center pl-1 lg:pl-6">
+                    <h3 class="text-[#222222] text-sm lg:text-xl font-semibold font-body mb-0">Collaboration</h3>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Unlimited concurrent work on
+                        the same
+                        target</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Conflict Resolution</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0"><a target="_blank"
+                        href="/mirrord/docs/using-mirrord/queue-splitting/">Queue Splitting</a></p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- table 2 -->
+            <div class="grid grid-cols-12 mt-3 lg:mt-8">
+                <div class="col-span-12 bg-[#756DF3] bg-opacity-20 h-[29px] lg:h-[70px] flex items-center pl-1 lg:pl-6">
+                    <h3 class="text-[#222222] text-sm lg:text-xl font-semibold font-body mb-0">Governance</h3>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0"><a target="_blank"
+                            href="/mirrord/docs/managing-mirrord/monitoring/">Usage Monitoring</a></p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0"><a target="_blank"
+                            href="/mirrord/docs/managing-mirrord/monitoring/">Logging/Auditing</a></p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0"><a target="_blank"
+                            href="/mirrord/docs/using-mirrord/sessions/">Session Management</a></p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- table 3 -->
+            <div class="grid grid-cols-12 mt-3 lg:mt-8">
+                <div class="col-span-12 bg-[#756DF3] bg-opacity-20 h-[29px] lg:h-[70px] flex items-center pl-1 lg:pl-6">
+                    <h3 class="text-[#222222] text-sm lg:text-xl font-semibold font-body mb-0">Security</h3>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0"><a target="_blank" ,
+                            href="/mirrord/docs/managing-mirrord/policies/">mirrord Policies</a>
+                    </p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0"><a target="_blank"
+                            href="/mirrord/docs/managing-mirrord/security/#how-do-i-configure-role-based-access-control-for-mirrord-for-teams">Role
+                            Based Access Control</a></p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Support for airgapped
+                        clusters</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- table 3.5 -->
+            <div class="grid grid-cols-12 mt-3 lg:mt-8">
+                <div class="col-span-12 bg-[#756DF3] bg-opacity-20 h-[29px] lg:h-[70px] flex items-center pl-1 lg:pl-6">
+                    <h3 class="text-[#222222] text-sm lg:text-xl font-semibold font-body mb-0">Advanced</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Support for live scaling</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Support for deployments with
+                        multiple pods</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Support for targeting Jobs
+                        and CronJobs</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Support for targeting
+                        StatefulSets</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- table 4 -->
+            <div class="grid grid-cols-12 mt-3 lg:mt-8">
+                <div class="col-span-12 bg-[#756DF3] bg-opacity-20 h-[29px] lg:h-[70px] flex items-center pl-1 lg:pl-6">
+                    <h3 class="text-[#222222] text-sm lg:text-xl font-semibold font-body mb-0">Support</h3>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Service Level Agreement</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center text-center">
+                        <p class="text-primary text-xs lg:text-lg font-normal font-body mb-0">48h</p>
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        <p class="text-primary text-xs lg:text-lg font-normal font-body mb-0">Custom (< 24h)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Support tickets, email,
+                        public Discord
+                    </p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Support tickets, email,
+                        private
+                        Discord, Slack, or Teams</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Customer success team and
+                        Professional
+                        services</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- table 5 -->
+            <div class="grid grid-cols-12 mt-3 lg:mt-8">
+                <div class="col-span-12 bg-[#756DF3] bg-opacity-20 h-[29px] lg:h-[70px] flex items-center pl-1 lg:pl-6">
+                    <h3 class="text-[#222222] text-sm lg:text-xl font-semibold font-body mb-0">Billing</h3>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Monthly or Annual with
+                        Credit Card</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center text-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 border-b border-solid border-[#DFDEFB]">
+                <div class="col-span-6 flex items-center pl-1 lg:pl-6 py-1 lg:py-2">
+                    <p class="text-[#222222] text-xs lg:text-lg font-normal font-body mb-0">Annual billing via Invoice,
+                        custom
+                        contracts</p>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="col-span-3 flex justify-end items-center py-1 lg:py-2">
+                    <div class="w-[164px] lg:w-[230px] flex justify-center">
+                        {{- partial "svg/pricing-check-icon.svg" (dict "class" "w-[13px] lg:w-[22px]") }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white">
+        <div class="container w-full max-w-screen-xl mx-auto px-6 pt-[60px] md:pt-[70px] lg:pt-[80px] pb-[80px]">
+            <header class="text-center">
+                <h3 class="text-[#222222] text-[1.875rem] lg:text-[2.25rem] font-heading font-bold leading-[1.16]">
+                    Frequently asked questions</h3>
+            </header>
+            <div x-data="{ open: [] }">
+                {{- $lastIndex := sub (len .Params.questions) 1 }}
+                {{- range $index, $qa := .Params.questions }}
+                <div class="border-b border-[#E4E3FD]" :class="{ 'border-none': {{ $index }} === {{ $lastIndex }} }">
+                    <div class="flex justify-between items-center space-x-6 cursor-pointer py-4"
+                        @click="open.includes({{ $index }}) ? open = open.filter(i => i !== {{ $index }}) : open.push({{ $index }})">
+                        <div class="flex-1">
+                            <h2 class="text-sm lg:text-lg text-[#222222] font-semibold font-body mb-0">
+                                {{ .title | safeHTML }}
+                            </h2>
+                        </div>
+                        <div class="w-[16px] flex-none text-primary">
+                            <svg class="w-[12px] lg:w-[15px]" :class="{'-rotate-180': open.includes({{ $index }}) }"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path fill="currentColor"
+                                    d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content-accordion text-sm lg:text-base text-primary font-body leading-[1.25] pb-4"
+                        x-show="open.includes({{ $index }})" x-collapse class="p-4 text-gray-700">
+                        {{ .content | markdownify }}
+                    </div>
+                </div>
+                {{- end }}
+            </div>
+        </div>
+    </div>
+    <div class="mb-12">
+        <div class="bg-[#756DF3] rounded-br-[123px] lg:rounded-br-[183px] relative">
+            <div class="hidden lg:block absolute top-0 left-0 w-full h-[21%] xl:h-[25%] bg-[#FFFFFF] z-10"></div>
+            <div class="container w-full max-w-screen-xl mx-auto px-6 pt-12 lg:pt-12 pb-16 lg:pb-20">
+                <div class="grid grid-cols-12 lg:gap-6">
+                    <div class="col-span-12 lg:col-span-3 flex justify-center items-end order-3 lg:order-1">
+                        <div class="relative z-20">
+                            <img class="scale-[0.85] lg:scale-[1.15] xl:scale-[1.2] translate-y-8 lg:-translate-x-6 lg:translate-y-8 xl:-translate-x-16 xl:translate-y-8"
+                                src="/mirrord/about-section.png" alt="about">
+                        </div>
+                    </div>
+                    <div class="col-span-12 lg:col-span-4 flex items-end order-1 lg:order-2 text-center lg:text-start">
+                        <div class="w-[60%] lg:w-full mx-auto lg:pb-8">
+                            <p class="text-white text-base lg:text-xl font-medium mb-4 lg:mb-2">mirrord Open
+                                Source</p>
+                            <h3 class="text-white text-[1.375rem] lg:text-[2.5rem] xl:text-[2.8rem] lg:leading-tight font-bold mb-4 lg:mb-0">Get
+                                Started Now
+                                For Free</h3>
+                        </div>
+                    </div>
+                    <div class="col-span-12 lg:col-span-5 flex justify-center items-end pb-4 order-2 lg:order-3">
+                        <div class="lg:pl-8">
+                            <div class="text-center lg:text-left">
+                                <p class="text-sm lg:text-lg text-white font-body mb-0">Run local code in the context of
+                                    your cloud environment!</p>
+                                <p class="text-sm lg:text-lg text-white font-body font-bold mb-0">Free Forever.</p>
+                            </div>
+                            <div class="flex justify-center lg:justify-start pt-4">
+                                <a target="_blank" class="w-[246px] h-[50px] lg:w-[286px] lg:h-[58px] text-base lg:text-xl text-[#222222] font-body inline-flex justify-center items-center bg-[#FBFBFD] hover:bg-[#E4E3FD] border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                    href="https://github.com/metalbear-co/mirrord">Try It Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+{{- end }}

@@ -1,0 +1,9 @@
+---
+fonts:
+  font_heading: Poppins
+  font_body: Poppins
+palette: custom
+colors:
+  primary: "#756DF3"
+  secondary: "#756DF3"
+  tertiary: "#F46262"

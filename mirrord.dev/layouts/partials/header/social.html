@@ -1,0 +1,12 @@
+{{- $currentPage := . }}
+{{- $page_url := $currentPage.RelPermalink | relLangURL }}
+<div class="hidden lg:flex items-center justify-center lg:justify-end space-x-4 lg:space-x-7">
+    {{- range .Site.Menus.social }}
+    <a class="text-[#222222] hover:no-underline last:hidden" href="{{ .URL | relURL }}" title="{{ .Name }}" target="_blank"
+        rel="noopener">
+        {{ with .Pre }}
+        {{ partial (printf "svg/icon-%s-solid.svg" .) (dict "class" "w-[28px] h-[28px] text-current") }}
+        {{ end }}
+    </a>
+    {{- end }}
+</div>
