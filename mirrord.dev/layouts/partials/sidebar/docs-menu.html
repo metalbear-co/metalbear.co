@@ -38,7 +38,7 @@
                   <a class="docs__submenu-link relative z-10 block text-sm font-medium hover:font-bold transition-all duration-200 ease-[ease] {{ if $active_link }}docs__submenu-link-active {{ else }}text-primary-text{{ end }}" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
                   <span class="docs__taxonomy-tags relative z-10">
                     {{ range .Params.tags }}
-                    <a class="docs__taxonomy-tag text-primary-text" href="/tags/{{ . | urlize }}">
+                    <a class="docs__taxonomy-tag text-primary-text" href="/mirrord/tags/{{ . | urlize }}">
                       {{- if eq . "open source" }}
                       {{ partial (printf "svg/icon-%s.svg" "open-source") (dict "class" "inline-block text-current mr-1 w-[12px] h-[12px]") }}
                       {{- else if eq . "team" }}

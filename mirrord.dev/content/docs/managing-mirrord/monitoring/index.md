@@ -78,13 +78,13 @@ operator:
 
 We offer a DataDog dashboard you can import to track statistics.
 
-Download it <a href="/datadog/Mirrord_Operator_Dashboard.json" download>here</a>
+Download it <a href="/mirrord/datadog/Mirrord_Operator_Dashboard.json" download>here</a>
 
 ## Grafana Dashboard
 
 Alternatively there is a Grafana dashboard you can import to track statistics.
 
-Download it <a href="/grafana/Mirrord_Operator_Dashboard.json" download>here</a>
+Download it <a href="/mirrord/grafana/Mirrord_Operator_Dashboard.json" download>here</a>
 
 
 ## fluentd
@@ -109,4 +109,4 @@ This will expand all the extra fields stored in "log" field.
 
 Assuming you are using `logstash_format true` and the connected mapping will store the extra fields in a `keyword` type, we have a ready made dashboard you can simply import.
 
-Download it <a href="/operator-fluentd-kibana.ndjson" download>here</a> (use Saved Objects to import).
+Download it <a href="/mirrord/operator-fluentd-kibana.ndjson" download>here</a> (use Saved Objects to import).
