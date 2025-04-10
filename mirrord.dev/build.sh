@@ -3,9 +3,9 @@
 set -e
 
 if [ "$HUGO_ENVIRONMENT" == "production" ]; then
-    npm run build;
+    npm run build
 else
-    npm run build -- -b $CF_PAGES_URL/mirrord;
+    npm run build -- -b $CF_PAGES_URL/mirrord -e $HUGO_ENVIRONMENT
 fi;
 
 npx pagefind --site public/docs --output-path public/pagefind
