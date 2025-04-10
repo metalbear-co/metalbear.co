@@ -16,11 +16,11 @@ weight: 50
 contributors: ["Tal Zwick"]
 ---
 
-One of the reasons [mirrord for Teams](https://mirrord.dev/docs/overview/teams/) is a gamechanger for many 
+One of the reasons [mirrord for Teams](/mirrord/docs/overview/teams/) is a gamechanger for many 
 organizations is that it makes it possible for a whole team to work with one shared cloud environment. They don’t 
 need to run the whole environment for each developer, they don’t need to have their entire architecture running on 
 their laptops, and they don't need to redeploy to Kubernetes to test new code or debug it. Developers just press 
-“run” in their IDE, and their code is executed [remocally](https://mirrord.dev/): the code runs locally, but with 
+“run” in their IDE, and their code is executed [remocally](/mirrord/): the code runs locally, but with 
 access to any required resources in the Kubernetes cluster or outside of it. With mirrord for Teams, developers can 
 even work on the same service at the same time, and control how to divide between them consumable data like 
 incoming HTTP requests, and now also queue messages.
@@ -36,10 +36,10 @@ queue service is Amazon Simple Queue Service, with support for Apache Kafka and 
 ## How Queue Splitting Works In a Nutshell
 
 In order to enable queue splitting, there is some initial setup (
-[explained in the documentation](https://mirrord.dev/docs/using-mirrord/queue-splitting/)) that has to be done by 
+[explained in the documentation](/mirrord/docs/using-mirrord/queue-splitting/)) that has to be done by 
 someone with the appropriate permissions for the Kubernetes cluster and the AWS account.
 Once that is set up, developers can set their 
-[filters in their mirrord configuration file](https://mirrord.dev/docs/reference/configuration/#feature-split_queues)
+[filters in their mirrord configuration file](/mirrord/docs/reference/configuration/#feature-split_queues)
 and start mirrord runs with queue splitting. For now, the application reading from the queue has to define the name
 of the queue it reads from in an environment variable defined directly in the Kubernetes deployment definition or 
 in the [Argo rollout](https://argoproj.github.io/rollouts/). When a session starts, the mirrord operator will 

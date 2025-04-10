@@ -614,7 +614,7 @@ on process execution, delaying the layer startup and connection to the external 
 Controls mirrord features.
 
 See the
-[technical reference, Technical Reference](https://mirrord.dev/docs/reference/)
+[technical reference, Technical Reference](/mirrord/docs/reference/)
 to learn more about what each feature does.
 
 The [`env`](#feature-env), [`fs`](#feature-fs) and [`network`](#feature-network) options
@@ -667,7 +667,7 @@ have support for a shortened version, that you can see [here](#root-shortened).
 ## feature.copy_target {#feature-copy_target}
 
 Creates a new copy of the target. mirrord will use this copy instead of the original target
-(e.g. intercept network traffic). This feature requires a [mirrord operator](https://mirrord.dev/docs/overview/teams/?utm_source=copytarget).
+(e.g. intercept network traffic). This feature requires a [mirrord operator](/mirrord/docs/overview/teams/?utm_source=copytarget).
 
 This feature is not compatible with rollout targets and running without a target
 (`targetless` mode).
@@ -719,7 +719,7 @@ Can be set to one of the options:
 Which environment variables to load from the remote pod are controlled by setting either
 [`include`](#feature-env-include) or [`exclude`](#feature-env-exclude).
 
-See the environment variables [reference](https://mirrord.dev/docs/reference/env/) for more details.
+See the environment variables [reference](/mirrord/docs/reference/env/) for more details.
 
 ```json
 {
@@ -871,7 +871,7 @@ The logic for choosing the behavior is as follows:
 4. If none of the above match, use the default behavior (mode).
 
 For more information, check the file operations
-[technical reference](https://mirrord.dev/docs/reference/fileops/).
+[technical reference](/mirrord/docs/reference/fileops/).
 
 ```json
 {
@@ -945,7 +945,7 @@ Should mirrord return the hostname of the target pod when calling `gethostname`
 
 Controls mirrord network operations.
 
-See the network traffic [reference](https://mirrord.dev/docs/reference/traffic/)
+See the network traffic [reference](/mirrord/docs/reference/traffic/)
 for more details.
 
 ```json
@@ -1057,7 +1057,7 @@ Valid values follow this pattern: `[name|address|subnet/mask][:port]`.
 
 Controls the incoming TCP traffic feature.
 
-See the incoming [reference](https://mirrord.dev/docs/reference/traffic/#incoming) for more
+See the incoming [reference](/mirrord/docs/reference/traffic/#incoming) for more
 details.
 
 Incoming traffic supports 3 [modes](#feature-network-incoming-mode) of operation:
@@ -1434,7 +1434,7 @@ or connects to other services over IPv6.
 
 Tunnel outgoing network operations through mirrord.
 
-See the outgoing [reference](https://mirrord.dev/docs/reference/traffic/#outgoing) for more
+See the outgoing [reference](/mirrord/docs/reference/traffic/#outgoing) for more
 details.
 
 The `remote` and `local` config for this feature are **mutually** exclusive.

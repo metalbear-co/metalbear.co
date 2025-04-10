@@ -44,7 +44,7 @@ Fields:
 |session_id|unique id for individual mirrord sessions|`Port Steal` `Port Mirrored` `Port Released` `Session Started` `Session Ended`|
 |session_duration|the session's duration in seconds|`Session Ended`|
 |port|port number|`Port Stolen` `Port Mirrored` `Port Released`|
-|http_filter|the client's configured [HTTP Filter](https://mirrord.dev/docs/reference/configuration/#feature-network-incoming-http-filter)|`Port Stolen`|
+|http_filter|the client's configured [HTTP Filter](/mirrord/docs/reference/configuration/#feature-network-incoming-http-filter)|`Port Stolen`|
 |scale_down|whether the session's target was scaled down|`Target Copied`|
 
 

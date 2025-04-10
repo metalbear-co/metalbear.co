@@ -18,6 +18,6 @@ There are a lot of ways you can contribute to mirrord, like:
 - Report a bug you found in our [issue tracker](https://github.com/metalbear-co/mirrord/issues).
 - Suggest a feature or improvement in a discussion on our [GitHub discussions](https://github.com/metalbear-co/mirrord/discussions).
 - Write a blog post about your experience with mirrord. We'd be happy to share it, or even host it on the [MetalBear blog](https://metalbear.co/blog/) - just open a PR with the new post the [MetalBear website repo](https://github.com/metalbear-co/metalbear.co).
-- Contribute to our docs and website by sending in a PR to the [mirrord website repo](https://github.com/metalbear-co/mirrord.dev).
+- Contribute to our docs and website by sending in a PR to the [mirrord website repo](https://github.com/metalbear-co/metalbear.co).
 
 Community is at the core of the mirrord project, and we welcome anyone and everyone that wants to join. We mainly hang out on [Discord](https://discord.gg/metalbear) - if you need help or want to chat, feel free to join us there!

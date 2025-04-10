@@ -45,4 +45,4 @@ And in the IDE - enable mirrord, run or debug your code, and select a target. Fo
 
 ## Try it out!
 
-If you want to take mirrord for a spin, check out the [quick start guide](https://mirrord.dev/docs/overview/quick-start/). We’d love to hear about your experience or just general thoughts - chat us up on our [Discord](https://discord.gg/metalbear) or open an issue or discussion on [GitHub](https://github.com/metalbear-co/mirrord).
+If you want to take mirrord for a spin, check out the [quick start guide](/mirrord/docs/overview/quick-start/). We’d love to hear about your experience or just general thoughts - chat us up on our [Discord](https://discord.gg/metalbear) or open an issue or discussion on [GitHub](https://github.com/metalbear-co/mirrord).

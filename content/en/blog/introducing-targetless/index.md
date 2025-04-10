@@ -85,7 +85,7 @@ while it is communicating as if it is running in your cluster.
 “Targetless” is a new mode for mirrord, which up until now always had to have a target to operate. In the normal
 mode of operation of mirrord, you specify a target container on your cluster (you can specify it by the pod or
 even the deployment, you do not have to know the specific container name). mirrord then spawns an
-[agent](https://mirrord.dev/docs/reference/architecture/#mirrord-agent) on the same node as the target, which helps
+[agent](/mirrord/docs/reference/architecture/#mirrord-agent) on the same node as the target, which helps
 your local program impersonate that container - mirror or steal its incoming traffic, send out network requests
 over it, access the same filesystem and read its environment variables.
 
@@ -120,9 +120,9 @@ Or you can install it as a [VS Code extension](vscode:extension/MetalBear.mirror
 Of course, as mirrord is completely [open source](https://github.com/metalbear-co/mirrord) you can also 
 [build it from source](https://github.com/metalbear-co/mirrord/blob/main/CONTRIBUTING.md#build-and-run-mirrord).
 
-Check out the [mirrord docs](https://mirrord.dev/docs/overview/introduction/), especially the 
-[mirrord configuration docs](https://mirrord.dev/docs/reference/configuration/), and the target reference for 
-[how to run targetless](https://mirrord.dev/docs/reference/targets/#running-without-a-target).
+Check out the [mirrord docs](/mirrord/docs/overview/introduction/), especially the 
+[mirrord configuration docs](/mirrord/docs/reference/configuration/), and the target reference for 
+[how to run targetless](/mirrord/docs/reference/targets/#running-without-a-target).
 Reach out to us on [Discord](https://discord.gg/metalbear) or [GitHub](https://github.com/metalbear-co/mirrord) 
 for help, questions, feedback or just to say hi.
 

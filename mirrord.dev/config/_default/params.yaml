@@ -1,8 +1,8 @@
-author: mirrord.dev
+author: MetalBear
 repoHost: GitHub
-docsRepo: 'https://github.com/metalbear-co/mirrord.dev'
+docsRepo: 'https://github.com/metalbear-co/metalbear.co'
 docsRepoBranch: master
-docsRepoSubPath: ''
+docsRepoSubPath: 'mirrord.dev'
 title: Faster, Simpler Kubernetes Development
 titleSeparator: '-'
 titleAddition: Rethinking cloud development
@@ -12,7 +12,7 @@ description: >-
 images:
   - logo.jpg
 ogLocale: en_US
-domainTLD: mirrord.dev
+domainTLD: metalbear.co
 titleHome: mirrord
 twitterSite: '@metalbearco'
 twitterCreator: '@metalbearco'

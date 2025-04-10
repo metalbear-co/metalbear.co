@@ -154,7 +154,7 @@ Let’s add a new config file for mirrord, which we can use with VSCode for debu
 ```
 
 
-If you want to mirror traffic from a multipod deployment, you can learn more about mirrord for teams https://mirrord.dev/docs/overview/teams/ which provides this feature. Right now, we only have one pod in this deployment, and mirrord’s OSS features should work perfectly for us.
+If you want to mirror traffic from a multipod deployment, you can learn more about mirrord for teams /mirrord/docs/overview/teams/ which provides this feature. Right now, we only have one pod in this deployment, and mirrord’s OSS features should work perfectly for us.
 
 To ensure that the configuration file created is read by the VSCode mirrord extension, hover over the mirrord button we mentioned earlier and press the ‘Select active config` option. From the given prompt, enter the location of the configuration to be consumed by the plugin.
 
@@ -219,7 +219,7 @@ Now that we can run the application, let’s understand what our setup looks lik
 ![alt text](<Architecture Diagram - with mirrord.png>)
 
 
-If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference here https://mirrord.dev/docs/reference/architecture/#mirrord-agent.
+If you would like to learn more about how the mirrord-agent in the above architecture works, go check out the reference here /mirrord/docs/reference/architecture/#mirrord-agent.
 
 We can now be sure that mirrord is working properly. 
 
@@ -271,7 +271,7 @@ The error states that the application is not able to connect to the Redis servic
 
 ## Installing mirrord
 
-Install the mirrord CLI tool and run Guestbook with the required Kubernetes context. Follow the installation guide for mirrord here https://mirrord.dev/docs/overview/quick-start/#installation.
+Install the mirrord CLI tool and run Guestbook with the required Kubernetes context. Follow the installation guide for mirrord here /mirrord/docs/overview/quick-start/#installation.
 
 
 ## Run the guestbook application with Node.js and mirrord in the CLI
@@ -307,7 +307,7 @@ After you have run the Guestbook program with mirrord you should be able to make
 
 # Debugging with mirrord vs. other debugging techniques
 
-[mirrord](https://mirrord.dev/) distinguishes itself by eliminating the need for repeated building and deployment cycles. It allows developers to run the application locally while providing the necessary network and execution context of the target Kubernetes Pod. In this case, the local application behaves as if it were running within the cluster, enabling developers to debug using familiar tools without the overhead to build and deploy.
+[mirrord](/mirrord/) distinguishes itself by eliminating the need for repeated building and deployment cycles. It allows developers to run the application locally while providing the necessary network and execution context of the target Kubernetes Pod. In this case, the local application behaves as if it were running within the cluster, enabling developers to debug using familiar tools without the overhead to build and deploy.
 
 # Conclusion
 

@@ -21,7 +21,7 @@ contributors: ["Lorena Martínez"]
 
 
 
-We get it—“Another blog about a company’s KubeCon booth?” These posts can be a bit predictable. So, we’ll keep this one brief and focused on how [mirrord](https://mirrord.dev/) can actually make cloud development easier.
+We get it—“Another blog about a company’s KubeCon booth?” These posts can be a bit predictable. So, we’ll keep this one brief and focused on how [mirrord](/mirrord/) can actually make cloud development easier.
 
 As one CTO put it, “*at our company, mirrord is doing as much for developer productivity as AI is*.” That’s high praise, and while we’re not here to boast, we do think it’s worth checking out if you’re looking for a smoother development process. 
 
@@ -32,7 +32,7 @@ If you’ve ever found yourself going to the kitchen for your fifth cup of coffe
 Here’s why we’re excited to be at KubeCon and why Booth #R51 might be worth a visit:
 
 ### 1.  mirrord can completely transform your cloud development workflow
-By making the [staging environment immediately usable](https://mirrord.dev/docs/using-mirrord/) from the first step of the development cycle, we’ve seen mirrord dramatically increase developer velocity, reduce onboarding times for new teammates, and generally make everyone in the R&D just a little bit happier—and we want you to feel the impact yourself. 
+By making the [staging environment immediately usable](/mirrord/docs/using-mirrord/) from the first step of the development cycle, we’ve seen mirrord dramatically increase developer velocity, reduce onboarding times for new teammates, and generally make everyone in the R&D just a little bit happier—and we want you to feel the impact yourself. 
 
 As one engineer put it, *“This is a huge time saving boon for full stack & BE developers and helps us deliver a better product because we’re able to test end-to-end changes before code submission.”*
 
@@ -41,7 +41,7 @@ Now, we know the word “transform” might sound like a six-month project with 
 Come by the booth for:
 
 * **Live demos**. We’ll demonstrate how you can code, test, and debug with mirrord—seamlessly connecting your local setup to the cloud.
-* **A look at our [new Queue Splitting feature](https://mirrord.dev/docs/using-mirrord/queue-splitting/)**. Picture this—multiple developers testing the same queue-based service on their staging environment at once, without conflicts. This utopian fantasy is made reality by the new queue splitting feature, which lets mirrord split incoming messages from remote queues like AWS SQS and Kafka between your local processes and the cloud.
+* **A look at our [new Queue Splitting feature](/mirrord/docs/using-mirrord/queue-splitting/)**. Picture this—multiple developers testing the same queue-based service on their staging environment at once, without conflicts. This utopian fantasy is made reality by the new queue splitting feature, which lets mirrord split incoming messages from remote queues like AWS SQS and Kafka between your local processes and the cloud.
 * **A space to share your Kubernetes frustrations** with a team that truly understands (and can do something about it). We’re here to listen and improve based on your needs—whether it’s new features, tweaks, or simply understanding your workflow better.
 
 

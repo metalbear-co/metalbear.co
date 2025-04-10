@@ -17,7 +17,7 @@ intention:
 1. Running your application with mirrord without any special configuration will result in your local application
    competing with the remote target (and potentially other mirrord runs by teammates) for queue messages.
 2. Running your application with
-   [`copy_target` + `scale_down`](https://mirrord.dev/docs/using-mirrord/copy-target/#replacing-a-whole-deployment-using-scale_down)
+   [`copy_target` + `scale_down`](/mirrord/docs/using-mirrord/copy-target/#replacing-a-whole-deployment-using-scale_down)
    will result in the deployed application not consuming any messages, and your local application being the
    exclusive consumer of queue messages.
 3. **If you want to control which messages will be consumed by the deployed application, and which ones will reach your

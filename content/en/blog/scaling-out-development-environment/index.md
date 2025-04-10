@@ -78,7 +78,7 @@ The other thing is the learning curve. That’s a very valid argument but, ideal
 
 ---
 
-One of the first problem of switching to K8s would be, now the feedback loop of your application changes takes too long. With Tilt, that can be reduced in great extent, but not the same as building and running the application as a local process. That’s where mirrord comes into play! [mirrord](https://mirrord.dev/)
+One of the first problem of switching to K8s would be, now the feedback loop of your application changes takes too long. With Tilt, that can be reduced in great extent, but not the same as building and running the application as a local process. That’s where mirrord comes into play! [mirrord](/mirrord/)
 
 Tilt helps you to take your application closer to the platform, on the other hand, mirrord brings the platform closer to the application. As a result, it becomes much easier to debug application, integrate with IDEs, avoid redundant compute usage.
 

@@ -127,4 +127,4 @@ By using either your own certificate or one provided by a certificate manager, y
 
 Access to the operator can be further restricted by setting up
 [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
-in the cluster to limit the operator to communicate only with mirrord agents (this is not possible if running agents in [ephemeral mode](https://mirrord.dev/docs/reference/configuration/#agent-ephemeral)).
+in the cluster to limit the operator to communicate only with mirrord agents (this is not possible if running agents in [ephemeral mode](/mirrord/docs/reference/configuration/#agent-ephemeral)).
