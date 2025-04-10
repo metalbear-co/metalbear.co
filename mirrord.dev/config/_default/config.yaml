@@ -1,0 +1,91 @@
+---
+title: mirrord
+baseURL: https://metalbear.co/mirrord/
+languageCode: en-US
+defaultContentLanguage: en
+canonifyURLs: false
+disableAliases: true
+disableHugoGeneratorInject: true
+enableEmoji: true
+enableGitInfo: false
+enableRobotsTXT: true
+paginate: 6
+rssLimit: 10
+preserveTaxonomyNames: true
+metaDataFormat: yaml
+summaryLength: 8
+permalinks:
+  pages: "/:slug/"
+  page: /:slug/
+  blog: "/:slug/"
+disableKinds:
+- RSS
+imaging:
+  quality: 100
+build:
+  writeStats: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    style: solarized-dark256
+    tabWidth: 4
+outputs:
+  home:
+    - HTML
+    - RSS
+    - REDIRECTS
+    - HEADERS
+  section:
+    - HTML
+mediaTypes:
+  text/netlify:
+    suffixes:
+      - ''
+    delimiter: ''
+outputFormats:
+  REDIRECTS:
+    mediaType: text/netlify
+    baseName: _redirects
+    isPlainText: true
+    notAlternative: true
+  HEADERS:
+    mediaType: text/netlify
+    baseName: _headers
+    isPlainText: true
+    notAlternative: true
+  SITEMAP:
+    mediaType: application/xml
+    baseName: sitemap
+    isHTML: false
+    isPlainText: true
+    noUgly: true
+    rel: sitemap
+caches:
+  getjson:
+    dir: ':cacheDir/:project'
+    maxAge: 10s
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+minify:
+  tdewolff:
+    html:
+      keepWhitespace: false
+module:
+  hugoVersion:
+    extended: true
+    min: 0.120.0
+    max: ''
+  mounts:
+    - source: assets
+      target: assets
+    - source: static
+      target: static
+    - source: node_modules/alpinejs
+      target: assets/js/vendor/alpinejs
+    - source: node_modules/clipboard
+      target: assets/js/vendor/clipboard

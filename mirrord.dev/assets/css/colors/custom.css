@@ -1,0 +1,21 @@
+:root {
+  --primary: {{ .Site.Data.theme.colors.primary | default "#756DF3" }};
+  --secondary: {{ .Site.Data.theme.colors.secondary | default "#756DF3" }};
+  --tertiary: {{ .Site.Data.theme.colors.tertiary | default "#F46262" }};
+  --primary-text: #222222;
+  --body-color: #FBFBFD;
+  --body-hover-color: #f3f4f6;
+  --border-color: #C9C9C9;
+  --font-heading: {{ .Site.Data.theme.fonts.font_heading | default "Poppins" }}, 'sans-serif';
+  --font-body: {{ .Site.Data.theme.fonts.font_body | default "Poppins" }}, 'sans-serif';
+  --font-code: 'IBM Plex Mono', monospace;
+  --active-docs-menu: #EBEBEB;
+}
+
+[data-theme="dark"] {
+  --primary-text: #FFFFFF;
+  --body-color: #202020;
+  --body-hover-color: #ffffff33;
+  --border-color: #C9C9C9;
+  --active-docs-menu: rgba(255,_255,_255,_0.2);
+}

@@ -1,18 +1,17 @@
 [[main]]
   name = "mirrord"
   weight = 10
-  url = "https://mirrord.dev"
+  url = "/mirrord/"
 
 [[main]]
   name = "Pricing"
   weight = 20
-  url = "https://mirrord.dev/pricing/"
+  url = "/mirrord/pricing/"
 
 [[main]]
   name = "Resources"
   weight = 30
   identifier = "resources"
-  url = "https://mirrord.dev"
 
 [[main]]
   name = "Blog"
@@ -30,7 +29,6 @@
   name = "Developers"
   identifier = "community"
   weight = 40
-  url = "/#community"
 
 [[main]]
   name = "Contact us"
@@ -52,22 +50,22 @@
 [[footer_left]]
   name = "Product Overview"
   weight = 10
-  url = "https://mirrord.dev/"
+  url = "/mirrord/"
 
 [[footer_left]]
   name = "User Stories"
   weight = 20
-  url = "https://mirrord.dev/stories/"
+  url = "/mirrord/stories/"
 
 [[footer_left]]
   name = "Pricing"
   weight = 30
-  url = "https://mirrord.dev/pricing/"
+  url = "/mirrord/pricing/"
 
 [[footer_left]]
   name = "Contact us"
   weight = 40
-  url = "https://mirrord.dev/contact/"
+  url = "/mirrord/contact/"
 
 [[footer_center]]
   name = "Blog"
@@ -77,17 +75,17 @@
 [[footer_center]]
   name = "Docs"
   weight = 20
-  url = "https://mirrord.dev/docs/overview/introduction/"
+  url = "/mirrord/docs/overview/introduction/"
 
 [[footer_center]]
   name = "vs Telepresence"
   weight = 30
-  url = "https://mirrord.dev/compare/telepresence/"
+  url = "/mirrord/compare/telepresence/"
 
 [[footer_center]]
   name = "vs Bridge to Kubernetes"
   weight = 40
-  url = "https://mirrord.dev/compare/telepresence/"
+  url = "/mirrord/compare/telepresence/"
 
 [[footer_right]]
   name = "How to Debug a Java Microservice"

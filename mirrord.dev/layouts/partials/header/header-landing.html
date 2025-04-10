@@ -1,0 +1,67 @@
+{{- $site := .Site }}
+{{- $currentPage := . }}
+{{- $page_url := $currentPage.RelPermalink | relLangURL }}
+<header x-data="{sideNav: false}"
+    class="header bg-[#FAFAFD] pt-[35px] md:pt-[45px] lg:pt-[35px] xl:pt-[45px] 2xl:pt-[50px] 3xl:pt-[60px]">
+    <div
+        class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto px-5 lg:px-0">
+        <div class="grid grid-cols-12 items-center gap-5 lg:gap-[23px] xl:gap-[30px] 2xl:gap-[33px] 3xl:gap-10">
+            <div class="nav__brand col-span-11 lg:col-span-2 lg:col-start-2">
+                <a class="navbar__logo flex items-center" href="{{ "/" | relLangURL }}"
+                    aria-label="{{ .Site.Params.Title }}" title="Back to home">
+                    {{- partial "svg/logo.svg" . }}
+                </a>
+            </div>
+            <div class="nav__toggle col-span-1 h-8 flex items-center justify-end lg:hidden">
+                <button @click="sideNav = !sideNav" aria-label="Menu"
+                    class="text-[#222222] cursor-pointer border-none outline-none focus:outline-none focus:bg-transparent transition-all duration-300 ease-[ease] z-50">
+                    <svg class="fill-current transition duration-300 ease-in-out transform" width="22" height="24">
+                        <line class="stroke-current stroke-2 transition duration-500 ease-in-out transform"
+                            :class="{ 'translate-x-1.5 translate-y-0 rotate-45': sideNav === true }" id="top" x1="0"
+                            x2="22" y1="6" y2="6"></line>
+                        <line class="stroke-current stroke-2 transition duration-500 ease-in-out transform"
+                            :class="{ 'opacity-0': sideNav === true }" id="middle" x1="0" x2="22" y1="12" y2="12">
+                        </line>
+                        <line class="stroke-current stroke-2 transition duration-500 ease-in-out transform"
+                            :class="{ '-translate-x-[11px] translate-y-[7px] -rotate-45': sideNav === true }"
+                            id="bottom" x1="0" x2="22" y1="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div x-cloak="mobile"
+                class="nav__wrapper col-span-8 fixed lg:static w-full h-screen lg:h-auto left-0 top-0 flex justify-end lg:block transition-all duration-300 ease-[ease] z-40"
+                :class="sideNav ? 'nav__wrapper-active' : 'nav__wrapper-not-active'">
+                <nav x-data="{ selectedMenu: null }"
+                    class="nav__menu w-full h-full lg:h-auto lg:flex lg:items-center lg:justify-end transition-all duration-300 ease-[ease]"
+                    :class="sideNav ? 'mr-0' : '-mr-[100%]'">
+                    <div class="nav__brand-mobile lg:hidden px-6 pt-12 mb-10">
+                        <a class="navbar__logo flex items-center justify-center" href="{{ "/" | relLangURL }}"
+                            aria-label="{{ .Site.Params.Title }}" title="Back to home">
+                            {{- partial "svg/logo-mobile.svg" . }}
+                        </a>
+                    </div>
+
+                    <div class="text-center lg:mr-8">
+                        <a class="text-[#756DF3] hover:text-[#222222] hover:bg-[#E4E3FD] text-sm md:text-base lg:text-sm xl:text-base 2xl:text-[1.0625rem] 3xl:text-[1.25rem] leading-none border border-solid border-[#222222] rounded-full py-[6px] md:py-[8px] lg:py-[6px] xl:py-[8px] 2xl:py-[10px] 3xl:py-[10px] px-5 md:px-[22px] lg:px-5 xl:px-[22px] 2xl:px-[25px] 3xl:px-[30px]"
+                            href="https://app.metalbear.co">Try mirrord for free</a>
+                    </div>
+
+                    <div class="col-span-2">
+                        {{- partial "header/social.html" . }}
+                        <div class="flex lg:hidden items-center justify-center space-x-6 lg:space-x-7 pt-8">
+                            {{- range .Site.Menus.social }}
+                            <a class="text-primary-text hover:no-underline" href="{{ .URL | relURL }}"
+                                title="{{ .Name }}" target="_blank" rel="noopener">
+                                {{ with .Pre }}
+                                {{ partial (printf "svg/icon-%s-solid.svg" .) (dict "class" "w-6 h-[22px] text-current")
+                                }}
+                                {{ end }}
+                            </a>
+                            {{- end }}
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

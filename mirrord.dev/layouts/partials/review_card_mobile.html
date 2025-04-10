@@ -1,0 +1,37 @@
+{{- $card := .Card -}}
+{{- $i2 := .Index2 -}}
+<div
+    class="bg-white relative border border-solid border-[#222222] rounded-md shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]">
+    <header class="bg-[#E4E3FD] py-1 px-2 flex justify-between rounded-t-md border-b border-solid border-[#222222]">
+        {{ with $card.icon }}
+        <div>
+            {{ partial (printf "svg/icon-card-%s.svg" . ) (dict "class"
+            "text-current") }}
+        </div>
+        {{ end }}
+        <div class="flex items-center">
+            <div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.51562 12H20.4862" stroke="black" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </header>
+    <div class="px-4 pb-10">
+        {{- $url := $card.url }}
+        {{- $name := $card.name }}
+        {{- range $i3, $text := $card.text }}
+        <p class="text-[#222222] font-code font-medium mb-0 mt-3">{{ if eq $i3 0
+            }}<a class="text-[#222222] underline" href="{{ $url }}" target="_blank">@{{ $name }}:</a>{{ end }} {{ . |
+            safeHTML }}
+        </p>
+        {{- end }}
+    </div>
+</div>

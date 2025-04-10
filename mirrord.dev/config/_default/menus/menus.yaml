@@ -1,0 +1,110 @@
+main:
+- name: Home
+  url: /mirrord/
+  params:
+    class: "text-upper lg:hidden"
+  weight: 10
+- name: Product
+  url: /product/
+  params:
+    class: "text-upper"
+  weight: 10
+- name: Pricing
+  url: /pricing/
+  params:
+    class: "text-upper"
+  weight: 20
+- name: Docs
+  url: /docs/overview/introduction/
+  params:
+    class: "text-upper"
+  weight: 30
+- name: Login/Sign Up
+  url: "https://app.metalbear.co/"
+  params:
+    class: "menu-item-desktop"
+  weight: 30
+- name: Schedule A Demo
+  url: "https://meetings-eu1.hubspot.com/mirrord/schedule-a-demo"
+  params:
+    class: "button menu-item-desktop"
+    target: "_blank"
+  weight: 50
+
+main_mobile:
+- name: Login/Sign Up
+  url: "https://app.metalbear.co/"
+  weight: 10
+- name: Contact us
+  url: "/contact/"
+  weight: 20
+- name: Schedule A Demo
+  url: "https://meetings-eu1.hubspot.com/mirrord/schedule-a-demo"
+  weight: 30
+
+docs:
+  - name: Overview
+    weight: 10
+    identifier: overview
+    url: /docs/overview/
+  - name: Help
+    weight: 60
+    identifier: help
+    url: /docs/help/
+footer_menu:
+- name: Get Started
+  url: https://app.metalbear.co
+  weight: 10
+- name: Docs
+  url: /docs/overview/introduction/
+  weight: 20
+- name: User Stories
+  url: /stories/
+  weight: 30
+- name: Blog
+  url: "https://metalbear.co/blog"
+  weight: 40
+- name: vs Telepresence
+  url: /compare/telepresence/
+  weight: 50
+- name: vs Bridge to Kubernetes
+  url: /compare/bridge-to-kubernetes/
+  weight: 60
+- identifier: contact
+  name: Contact Us
+  url: /contact
+  weight: 70
+social:
+- name: Discord
+  pre: discord
+  url: https://discord.gg/metalbear
+  weight: 10
+- name: Github
+  pre: github
+  url: https://github.com/metalbear-co/mirrord
+  weight: 20
+- name: Twitter
+  pre: twitter
+  url: https://twitter.com/metalbearco
+  weight: 30
+- name: Linkedin
+  pre: linkedin
+  url: https://www.linkedin.com/company/metalbearco/
+  weight: 40
+footer_social:
+- name: Discord
+  pre: discord-solid
+  url: https://discord.gg/metalbear
+  weight: 10
+- name: Github
+  pre: github-solid
+  url: https://github.com/metalbear-co/mirrord
+  weight: 20
+- name: Twitter
+  pre: twitter-solid
+  url: https://twitter.com/metalbearco
+  weight: 30
+- name: Linkedin
+  pre: linkedin-solid
+  url: https://www.linkedin.com/company/metalbearco/
+  weight: 40
