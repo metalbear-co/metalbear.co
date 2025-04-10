@@ -85,7 +85,7 @@
 [[footer_center]]
   name = "vs Bridge to Kubernetes"
   weight = 40
-  url = "/mirrord/compare/telepresence/"
+  url = "/mirrord/compare/bridge-to-kubernetes/"
 
 [[footer_right]]
   name = "How to Debug a Java Microservice"
