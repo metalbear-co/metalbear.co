@@ -20,10 +20,13 @@ tags: ["team", "enterprise"]
 - mirrord for Teams uses Kubernetes RBAC, meaning it doesn't add a new attack vector to your cluster.
 - The Kubernetes operator installed in the cluster as part of mirrord for Teams is licensed as Source Available (but not yet public) and we'll be happy to share the code if needed for review.
 - mirrord for Teams defines a new CRD that can be used to limit access and use of mirrord, with plans of more fine-grained permissions in the future.
-- The operator requires permissions to create a job with the following capabilities in its Kubernetes namespace:
+- The operator requires permissions to create a pod with the following capabilities in its Kubernetes namespace:
     - `CAP_NET_ADMIN` - for modifying routing tables
     - `CAP_SYS_PTRACE` - for reading the target pod's environment variables
     - `CAP_SYS_ADMIN` - for joining the target pod's network namespace
+- The operator requires exclusions from the following gatekeeper policies:
+    - `runAsNonRoot` - to access target pod's filesystem
+    - `HostPath volume`/`Sharing the host namespace` - to access target pod's file system and networking
 - mirrord doesn't copy remote files or secrets to the local filesystem. The local app only gets access to remote files and secrets in memory, and so they'll only be written to the local filesystem if done by the local app, or if mirrord was explicitly configured to log to files with a log level of debug/trace.
 - Missing anything? Feel free to ask us on Discord or hi@metalbear.co
 
