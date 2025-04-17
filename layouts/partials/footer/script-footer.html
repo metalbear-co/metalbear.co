@@ -120,15 +120,21 @@ images.forEach(img => {
 });
 </script>
 
-{{- if eq .Section "guides" }}
+{{- if or (eq .Section "guides") (eq .Section "mirrord") }}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Memendekkan teks link (hanya ambil sebelum tanda ':')
+    document.querySelectorAll('#TableOfContents a').forEach(link => {
+      const originalText = link.textContent;
+      const shortenedText = originalText.split(':')[0];
+      link.textContent = shortenedText;
+    });
+  
+    // Menangani klik pada item ToC
     const tocLinks = document.querySelectorAll('#TableOfContents li');
-
     tocLinks.forEach(link => {
       link.addEventListener('click', function (event) {
         tocLinks.forEach(item => item.classList.remove('toc-active'));
-
         this.classList.add('toc-active');
       });
     });

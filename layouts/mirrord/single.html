@@ -1,0 +1,110 @@
+{{ define "main" }}
+<div class="mirrord-single">
+  <div class="page-demo__header-wrapper border-b-3 bg-image--right-top" style="background-image: url(/demo-page-header.png);">
+    <div class="container">
+      <header class="page-demo__header px-3 px-xl-0">
+        <div class="page-demo__header-info pe-lg-2 pe-xl-4">
+          <div class="page-demo__header-logo">
+            <img class="img-fluid" src="/mirrord-by-metalbear.png" alt="mirrord">
+          </div>
+          <div>
+            {{- with .Params.header.title }}
+            <h1 class="page-demo__header-title text-black fw-semibold font-unbounded lh-[1.4]">{{ . | safeHTML }}</h1>
+            {{- end }}
+            {{- with .Params.header.description }}
+            <div class="page-demo__header-desc">
+              <p>{{ . | safeHTML }}</p>
+            </div>
+            {{- end }}
+          </div>
+        </div>
+        <div class="page-demo__header-box">
+          <div class="position-relative">
+            {{- with .Params.header.logo }}
+            <div class="page-demo__textbox-logo">
+              <img class="img-fluid" src="{{ . | relURL }}" alt="mirrord">
+            </div>
+            {{- end }}
+            <div class="page-demo__header-textbox">
+              <div class="page-demo__header-block px-3">
+                <h4 class="text-black fs-14 fs-xl-16 fs-xxl-18 fw-bold mt-0 mb-2">Company</h4>
+                <div>
+                  {{- with .Params.header.company }}
+                  <p class="text-black fs-14 fs-xl-16 fs-xxl-18 lh-[1.5] mb-1">{{ . | safeHTML }}</p>
+                  {{- end }}
+                  {{- with .Params.header.site }}
+                  {{- $site := . | urlize }}
+                  {{- if not (hasPrefix $site "http") }}
+                  {{- $site = printf "https://%s" $site }}
+                  {{- end }}
+                  <p class="text-black fs-14 fs-xl-16 fs-xxl-18 lh-[1.5] mb-3"><a
+                      class="text-black text-decoration-underline" href="{{ $site }}" target="_blank"
+                      rel="noopener noreferrer">{{ . }}</a></p>
+                  {{- end }}
+                </div>
+              </div>
+              {{- with .Params.header.employees }}
+              <div class="page-demo__header-block px-3">
+                <h4 class="text-black fs-14 fs-xl-16 fs-xxl-18 fw-bold mb-2">Employees</h4>
+                <div>
+                  <p>{{ . | safeHTML }}</p>
+                </div>
+              </div>
+              {{- end }}
+              {{- with .Params.header.using_since }}
+              <div class="px-3">
+                <h4 class="text-black fs-14 fs-xl-16 fs-xxl-18 fw-bold mb-2">Using mirrord since</h4>
+                <div>
+                  <p>{{ . | safeHTML }}</p>
+                </div>
+              </div>
+              {{- end }}
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="border-b-3">
+    <div class="container guides-single__wrapper">
+      <div class="d-lg-flex align-items-start px-xl-0">
+        <div class="guides-single__main px-3 px-lg-0">
+          <div class="page-demo__story">
+            {{- with .Params.story.content }}
+            <div class="page-demo__story-content mb-2">
+              <p class="text-black fs-18 fs-xl-22 fs-xxl-30 fw-bold lh-[1.67] mb-4">“{{ . | safeHTML }}”</p>
+            </div>
+            {{- end }}
+            <div class="d-flex align-items-center pt-4">
+              {{- with .Params.story.image }}
+              <div class="page-demo__story-image">
+                <img class="img-fluid" src="{{ . | relURL }}" alt="mirrord">
+              </div>
+              {{- end }}
+              <div class="page-demo__story-text ps-3 ps-xxl-4">
+                {{- with .Params.story.name }}
+                <h4 class="mt-0 mb-1">{{ . | safeHTML }}</h4>
+                {{- end }}
+                {{- with .Params.story.position }}
+                <p class="mb-0">{{ . | safeHTML }}</p>
+                {{- end }}
+              </div>
+            </div>
+          </div>
+          <article class="guides-content__wrapper">
+            <div class="demo-single-content">
+              {{ .Content }}
+            </div>
+          </article>
+        </div>
+        <div class="guides-single__sidebar d-none d-lg-block">
+          {{ partial "demo-toc.html" . }}
+          {{ partial "demo-widget-cta.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ partial "demo-page-cta.html" . }}
+</div>
+{{ end }}
