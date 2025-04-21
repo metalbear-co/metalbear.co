@@ -25,7 +25,7 @@ main:
     class: "menu-item-desktop"
   weight: 30
 - name: Schedule A Demo
-  url: "https://meetings-eu1.hubspot.com/mirrord/schedule-a-demo"
+  url: "/mirrord/demo"
   params:
     class: "button menu-item-desktop"
     target: "_blank"
@@ -39,7 +39,7 @@ main_mobile:
   url: "/contact/"
   weight: 20
 - name: Schedule A Demo
-  url: "https://meetings-eu1.hubspot.com/mirrord/schedule-a-demo"
+  url: "/mirrord/demo"
   weight: 30
 
 docs:
