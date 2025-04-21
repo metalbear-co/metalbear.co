@@ -10,11 +10,11 @@
 {{- $search := resources.Get "css/partials/search.css" }}
 {{- $alert := resources.Get "css/alert.css" }}
 {{- $bundle := slice $color $highlighter $splide $search $styles $alert | resources.Concat "css/main.css" }}
-{{- $styles = $bundle | resources.PostCSS $options }}
+{{- $styles = $bundle | css.PostCSS $options }}
 {{- if  hugo.IsProduction }}
-{{- $styles = $styles | minify | fingerprint | resources.PostProcess }}
+{{- $styles = $styles | minify | fingerprint | css.PostCSS }}
 {{- end }}
-<link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+<link href="{{ $styles.RelPermalink | relURL }}" rel="stylesheet" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

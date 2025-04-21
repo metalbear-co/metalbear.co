@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .contributors .content,
 .blog .content,
 .page .content,
@@ -343,6 +347,18 @@ a {
   background-size: auto;
 }
 
+.demo-bg-image--left-bottom {
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: auto;
+}
+
+.demo-bg-image--right-bottom {
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: auto;
+}
+
 @include media-breakpoint-up(lg) {
   .bg-image--left-top {
     background-size: 100%;
@@ -353,6 +369,14 @@ a {
   }
   
   .bg-image--left-bottom {
+    background-size: 100%;
+  }
+
+  .demo-bg-image--left-bottom {
+    background-size: 80% auto;
+  }
+
+  .demo-bg-image--right-bottom {
     background-size: 100%;
   }
 }

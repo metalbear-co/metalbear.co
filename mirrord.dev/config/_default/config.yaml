@@ -1,6 +1,6 @@
 ---
 title: mirrord
-baseURL: https://metalbear.co/mirrord/
+baseURL: "https://metalbear.co/mirrord/"
 languageCode: en-US
 defaultContentLanguage: en
 canonifyURLs: false
@@ -9,7 +9,8 @@ disableHugoGeneratorInject: true
 enableEmoji: true
 enableGitInfo: false
 enableRobotsTXT: true
-paginate: 6
+pagination:
+  pagerSize: 6
 rssLimit: 10
 preserveTaxonomyNames: true
 metaDataFormat: yaml
