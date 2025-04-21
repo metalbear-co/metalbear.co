@@ -2,8 +2,8 @@
 title: "Carousell User Story | Praveen Sanap"
 card_title: "Praveen Sanap"
 description: "The key improvement was that debugging a process locally, using familiar tools like IntelliJ, made it much easier to handle egress traffic."
-date: 2025-1-20T06:00:00+00:00
-lastmod: 2025-1-20T06:00:00+00:00
+date: 2025-01-20T06:00:00+00:00
+lastmod: 2025-01-20T06:00:00+00:00
 position: "Software Engineer | Carousell"
 avatar: "praveen-sanap.png"
 logo: "carousell.png"
