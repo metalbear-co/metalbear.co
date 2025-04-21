@@ -25,7 +25,7 @@ main:
     class: "menu-item-desktop"
   weight: 30
 - name: Schedule A Demo
-  url: "/mirrord/demo"
+  url: "/demo"
   params:
     class: "button menu-item-desktop"
     target: "_blank"
@@ -39,7 +39,7 @@ main_mobile:
   url: "/contact/"
   weight: 20
 - name: Schedule A Demo
-  url: "/mirrord/demo"
+  url: "/demo"
   weight: 30
 
 docs:
