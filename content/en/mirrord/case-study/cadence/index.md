@@ -1,9 +1,9 @@
 ---
 title: "mirrord Case Study: Cadence"
-description: "Speak to a technical expert and learn how we can help you and your team speed up development and testing."
-lead: "Speak to a technical expert and learn how we can help you and your team speed up development and testing."
+description: "Cadence saved hours each week for every engineer and enhanced product outcomes. Read on to learn how they made it happen."
+lead: "Cadence saved hours each week for every engineer and enhanced product outcomes. Read on to learn how they made it happen."
 url:  mirrord/case-study/cadence
-date: 2025-01-15T06:00:00+00:00
+date: 2025-04-21T06:00:00+00:00
 draft: false
 weight: 30
 header:

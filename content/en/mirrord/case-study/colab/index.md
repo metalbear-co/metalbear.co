@@ -3,7 +3,7 @@ title: "mirrord Case Study: Colab"
 description: "Colab made development faster, onboarding easier, and developers happier with mirrord. Read the the full story — and try mirrord free."
 lead: "Colab made development faster, onboarding easier, and developers happier with mirrord. Read the the full story — and try mirrord free."
 url:  mirrord/case-study/colab
-date: 2025-01-15T06:00:00+00:00
+date: 2025-04-21T06:00:00+00:00
 draft: false
 weight: 20
 header:
