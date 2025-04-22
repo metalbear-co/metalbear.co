@@ -7,8 +7,8 @@ date: 2025-04-21T06:00:00+00:00
 draft: false
 weight: 20
 header:
-  title: 'How CoLab <span class="text-primary">saved hours</span> across their development cycle with mirrord'
-  description: "CoLab cut the time to get changes running in the cloud from over 15 minutes down to just seconds. Read on to discover how they achieved it."
+  title: 'How CoLab <span class="text-primary">cut dev cycle time by up to 98%</span> with mirrord'
+  description: "CoLab cut the time to get changes running in the cloud from over 15 minutes down to 10 seconds. Read on to discover how they achieved it."
   company: CoLab makes it easy for anyone to review CAD and automates issue tracking, so that engineering teams can design better products faster.  
   site: colabsoftware.com
   logo: page-demo-colab.png
