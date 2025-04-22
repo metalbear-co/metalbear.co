@@ -302,6 +302,11 @@ pre {
   background-color: #E4E3FD;
 }
 
+.button-widget__cta {
+  font-size: 0.875rem; //14px
+  padding: 11px 16px;
+}
+
 @include media-breakpoint-up(md) {
   .button {
     font-size: 1rem;
@@ -340,6 +345,11 @@ pre {
     box-shadow: none;
     padding: 8px 17px;
   }
+
+  .button-widget__cta {
+    font-size: 15px;
+    padding: 12px 0px;
+  }
 }
 
 @include media-breakpoint-up(xl) {
@@ -363,6 +373,11 @@ pre {
     box-shadow: none;
     padding: 8px 17px;
   }
+
+  .button-widget__cta {
+    font-size: 1rem;
+    padding: 12px 0px;
+  }
 }
 
 @include media-breakpoint-up(xxl) {
@@ -385,5 +400,10 @@ pre {
     font-size: 0.938rem; //15px
     box-shadow: none;
     padding: 9px 15px;
+  }
+
+  .button-widget__cta {
+    font-size: 1.188rem; //19px
+    padding: 12px 0px;
   }
 }

@@ -2,14 +2,8 @@
 
 set -e
 
-cd mirrord.dev
-./build.sh
-cd ..
-
 if [ "$HUGO_ENVIRONMENT" == "production" ]; then
-    npm run build;
+    npm run build:with-subsite;
 else
-    npm run build -- -b $CF_PAGES_URL;
+    HUGO_BASE_URL=$CF_PAGES_URL npm run build:with-subsite;
 fi;
-
-mv mirrord.dev/public ./public/mirrord
