@@ -127,7 +127,7 @@ Let’s explore how to debug Kafka consumers using a simple example application.
 
 The following architecture diagram shows the basic setup of our Kafka application in Kubernetes without mirrord. It illustrates how the producer sends messages to the Kafka broker, and how the consumer reads these messages in a standard deployment:
 
-![Architecture Diagram - Setup without mirrord](./setup-without-mirrord.png)
+![Architecture Diagram - Setup without mirrord](setup-without-mirrord.png)
 
 ### Understanding the application components
 
@@ -175,7 +175,7 @@ kubectl apply -f kube/
 
 After running this command, you’ll see output similar to this:
 
-![Kubernetes Apply Command](./k8s-apply-output.png)
+![Kubernetes Apply Command](k8s-apply-output.png)
 
 This deploys the Kafka broker, producer, and consumer to your Kubernetes cluster. Once everything is up and running, we can proceed with debugging.
 
@@ -210,7 +210,7 @@ kubectl port-forward deployment/kafka-producer 8080:
 
 Once you navigate here using your browser you should be able to access the producer UI.
 
-![Kafka Producer UI](./producer-ui.png)
+![Kafka Producer UI](producer-ui.png)
 
 Now that we know how to access the producer, let’s dive into two effective approaches for debugging Kafka consumers with mirrord:
 
@@ -245,7 +245,7 @@ This configuration:
 
 This approach is illustrated in the following diagram:
 
-![Architecture Diagram - Copy Target with Scale Down](./arch-copy-target-with-scale-down.png)
+![Architecture Diagram - Copy Target with Scale Down](arch-copy-target-with-scale-down.png)
 
 1. Here the kafka-producer sends messages to the test-topic topic
 
@@ -265,7 +265,7 @@ APP_MODE=consumer PYTHONUNBUFFERED=1 mirrord exec --config .mirrord/copytarget_p
 
 When you run this command, you can use the producer to send messages which will then be picked up by your local consumer after which, you’ll see output similar to:
 
-![Terminal Output for Copy Target](./terminal-copy-target.png)
+![Terminal Output for Copy Target](terminal-copy-target.png)
 
 **Tip:** This approach is perfect for isolated debugging, but be aware that it temporarily stops the original consumer from processing messages. Use it in development or testing environments rather than production.
 
@@ -279,7 +279,7 @@ Before we get into how to use queue splitting, let’s go through the following 
 
 Initial setup with the mirrord operator intercepting messages:
 
-![Architecture Diagram - Queue Splitting with single debug consumer](./queue-splitting-single.png)
+![Architecture Diagram - Queue Splitting with single debug consumer](queue-splitting-single.png)
 
 The mirrord operator intercepts messages at the Kafka broker level before they are delivered to consumers. It makes copies of these messages and delivers them to both the remote consumers and your local application.
 
@@ -293,7 +293,7 @@ When multiple debug consumers are active, the mirrord operator creates temporary
 
 In case of multiple debug consumers, a new temporary mirrord topic and mirrord-copy Pod is created for every new debug consumer. Setup with two distinct debug consumers:
 
-![Architecture Diagram - Queue Splitting with two distinct consumers](./queue-splitting-multiple.png)
+![Architecture Diagram - Queue Splitting with two distinct consumers](queue-splitting-multiple.png)
 
 mirrord allows multiple debug consumers to run simultaneously. Each developer can run their own local consumer, and all will receive copies of the same messages. The mirrord operator also ensures that each local debug consumer gets a complete copy of the message stream, without any competition between them or with the production consumers.
 
@@ -394,15 +394,15 @@ APP_MODE=consumer PYTHONUNBUFFERED=1 mirrord exec -f .mirrord/mirrord.json -- py
 
 After running with queue splitting and specific message filtering, you’ll see output like this:
 
-![Terminal Screenshot for Filter Queue Splitting](./terminal-queue-splitting.png)
+![Terminal Screenshot for Filter Queue Splitting](terminal-queue-splitting.png)
 
 You’ll see that the consumer and the copy Pods are both available ensuring that the original consumer doesn’t stop consuming the messages whereas the copy Pods will received the filtered messages:
 
-![mirrord Exec Queue Splitting 1](./terminal-single.png)
+![mirrord Exec Queue Splitting 1](terminal-single.png)
 
 Similarly multiple debug consumers can consume these messages without disrupting the original consumer by creating more copy Pods and temporary mirrord topics as required:
 
-![mirrord Exec Queue Splitting 2](./terminal-multiple.png)
+![mirrord Exec Queue Splitting 2](terminal-multiple.png)
 
 Here, each instance creates its own mirrord-copy pod and receives the same messages, demonstrating how multiple developers can debug simultaneously. Notice in the second screenshot how multiple debug consumers are actively receiving messages in parallel. This collaborative debugging is made possible by [mirrord for Teams](https://mirrord.dev/docs/overview/teams/), which enables concurrent use of mirrord on the same environment.
 
