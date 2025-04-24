@@ -325,7 +325,7 @@
       })
       .then(function () {
         posthog.identify(formData.get('email'));
-        posthog.capture_event('Book a demo submission', {
+        posthog.capture('Book a demo submission', {
           'email': formData.get('email'),
           'company': formData.get('company'),
           'role': formData.get('role')

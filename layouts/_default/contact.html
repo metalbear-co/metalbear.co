@@ -132,7 +132,7 @@
             'name': formData.get('name'),
             'email': formData.get('email'),
           });
-          posthog.capture_event('Sent contact us form');
+          posthog.capture('Sent contact us form');
           form.reset();
           setTimeout(() => {
             resetResult()
