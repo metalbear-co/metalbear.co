@@ -128,6 +128,11 @@
           updateResult("Failed to submit your message. Please contact us at support@metalbear.co");
         })
         .then(function () {
+          posthog.identify(formData.get('email'), {
+            'name': formData.get('name'),
+            'email': formData.get('email'),
+          });
+          posthog.capture_event('Sent contact us form');
           form.reset();
           setTimeout(() => {
             resetResult()
