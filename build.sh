@@ -5,5 +5,5 @@ set -e
 if [ "$HUGO_ENVIRONMENT" == "production" ]; then
     npm run build:with-subsite;
 else
-    HUGO_BASE_URL=$CF_PAGES_URL npm run build:with-subsite;
+    HUGO_BASEURL=$CF_PAGES_URL npm run build:with-subsite;
 fi;
