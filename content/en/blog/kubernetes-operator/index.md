@@ -29,7 +29,10 @@ Using  Kubernetes operators and CRDs can make it easier for your users to setup 
 
 A **controller** is a software component that tracks Kubernetes objects and interacts with them. The objects themselves are managed by Kubernetes itself. For example, Admission Controllers watch new objects being created and enforce policies on them. The objects the controller manages can be existing objects. Note that the controller is a pattern. It doesn’t dictate how the controller should run - it can be from a desktop, server, cluster, or anywhere else where it can interact with the Kubernetes API. 
 
-An **APIService** is an extension to actual kubelet-api that allows you to create virtual CustomResourceDefinitions that don't exist in etcd and allows you to implement more advanced verbs manualy or use the kubernetes api to expose more advanced api's like `kubectl auth can-i` api that uses `SelfSubjectAccessReview` (it's a `create` only api that expects no or an empty `metadata` field).
+An **APIService** is an extension to actual Kubelet API that allows you to:
+- Create virtual CustomResourceDefinitions that don't exist in etcd 
+- Implement more advanced verbs manually 
+- Use the Kubernetes API to expose more APIs like `kubectl auth can-i` api that uses `SelfSubjectAccessReview` (a `create` only api that expects no or an empty `metadata` field).
 
 For "mirrord for Teams" we use a mixture of the APIService and Controller patterns where some of our CustomResourceDefinitions are managed by Controllers and some are exposed via an APIService.
 
