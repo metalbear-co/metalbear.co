@@ -7,7 +7,7 @@ tags:
   - operator
   - cloud
 date: 2023-03-09T0:00:00+00:00
-lastmod: 2024-10-22T0:00:00+00:00
+lastmod: 2025-04-27T0:00:00+00:00
 draft: false
 weight: 50
 contributors: ["Dmitry Dodzin"]
@@ -29,10 +29,10 @@ Using  Kubernetes operators and CRDs can make it easier for your users to setup 
 
 A **controller** is a software component that tracks Kubernetes objects and interacts with them. The objects themselves are managed by Kubernetes itself. For example, Admission Controllers watch new objects being created and enforce policies on them. The objects the controller manages can be existing objects. Note that the controller is a pattern. It doesn’t dictate how the controller should run - it can be from a desktop, server, cluster, or anywhere else where it can interact with the Kubernetes API. 
 
-An **APIService** is an extension to actual Kubelet API that allows you to:
-- Create virtual CustomResourceDefinitions that don't exist in etcd 
-- Implement more advanced verbs manually 
-- Use the Kubernetes API to expose more APIs like `kubectl auth can-i` api that uses `SelfSubjectAccessReview` (a `create` only api that expects no or an empty `metadata` field).
+An **APIService** is an extension to the actual Kubelet API, this allows you to:
+- Create virtual CustomResourceDefinitions that don't exist in etcd
+- Use the Kubernetes API to expose more unique interfaces simmilar to `kubectl auth can-i`, that uses `SelfSubjectAccessReview` which is a stateless `create` only api that expects no or an empty `metadata`.
+- Implement custom or more advanced verbs like `proxy` (Some requests classified as "long-running" in [API Priority and Fairness](https://kubernetes.io/docs/concepts/cluster-administration/flow-control/) filter, this classification may be important for you and it is automaticlly checked against Kubelet's built-in rules)
 
 For "mirrord for Teams" we use a mixture of the APIService and Controller patterns where some of our CustomResourceDefinitions are managed by Controllers and some are exposed via an APIService.
 
