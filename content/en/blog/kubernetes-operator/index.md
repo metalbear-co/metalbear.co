@@ -7,7 +7,7 @@ tags:
   - operator
   - cloud
 date: 2023-03-09T0:00:00+00:00
-lastmod: 2023-03-09T0:00:00+00:00
+lastmod: 2025-04-27T0:00:00+00:00
 draft: false
 weight: 50
 contributors: ["Dmitry Dodzin"]
@@ -17,20 +17,24 @@ As part of mirrord For Teams, we wanted to build a persistent component that wou
 1. **Kubernetes-native** - meaning it leverages the Kubernetes APIs and ecosystem
 2. **Cluster-synchronized** - Manage and synchronize the use of our open-source project, mirrord, from the cluster’s point of view.
 
-Some research pointed us in the direction of the Kubernetes Operator/Controller pattern.
-The operator pattern can be quite ambiguous, and we found the guides that currently exist for it to be quite dense and technical. In this post, I want to instead take a step-by-step approach and provide a quick start for newcomers looking to explore the operator pattern.
+Some research pointed us in the direction of the Kubernetes Operator pattern.
+The operator pattern can be quite ambiguous, and we found the guides that currently exist for it to be quite dense and technical. In this post, I want to instead take a step-by-step approach and provide a quick start for newcomers looking to explore the APIService flavor of the operator pattern.
 
 ## Why would you need to write an operator/controller?
 On many occasions, the Deployment or StatefulSet at the core of your product will not be self-sufficient but need to access other resources in the cluster. For example, it might need to share a persistent volume across deployments, read a certificate from a Secret, or rely on a headless service for discovery logic. These can be achieved through manual configurations or using a Helm chart or Kustomize template, but then your component is poorly abstracted, so prone to misconfiguration by your users and harder to update.
 
-Using a Kubernetes operator/controller can make it easier for your users to setup and configure your product on their cluster. Let’s illustrate this with an example: [CockroachDB](https://www.cockroachlabs.com/) is a sharded database with a Postgres-compatible API. Unlike PostgreSQL, it has some safety features enabled by default like requiring SSL encrypted connections for writes, so to deploy CockroachDB you would theoretically need to create and maintain a certificate for each of its Deployments on your Kubernetes cluster. For this reason, they created cockroach-operator. Once installed, a new resource named CrdbCluster becomes available. Whenever the user wants to create a new CockroachDB cluster, they now only have to create a new CrdbCluster object, and the [cockroach-operator](https://github.com/cockroachdb/cockroach-operator) takes care of the rest. 
+Using  Kubernetes operators and CRDs can make it easier for your users to setup and configure your product on their cluster. Let’s illustrate this with an example: [CockroachDB](https://www.cockroachlabs.com/) is a sharded database with a Postgres-compatible API. Unlike PostgreSQL, it has some safety features enabled by default like requiring SSL encrypted connections for writes, so to deploy CockroachDB you would theoretically need to create and maintain a certificate for each of its Deployments on your Kubernetes cluster. For this reason, they created cockroach-operator. Once installed, a new resource named CrdbCluster becomes available. Whenever the user wants to create a new CockroachDB cluster, they now only have to create a new CrdbCluster object, and the [cockroach-operator](https://github.com/cockroachdb/cockroach-operator) takes care of the rest. 
 
-## Operator vs. Controller
+## APIService vs. Controller
 
 A **controller** is a software component that tracks Kubernetes objects and interacts with them. The objects themselves are managed by Kubernetes itself. For example, Admission Controllers watch new objects being created and enforce policies on them. The objects the controller manages can be existing objects. Note that the controller is a pattern. It doesn’t dictate how the controller should run - it can be from a desktop, server, cluster, or anywhere else where it can interact with the Kubernetes API. 
 
-An **operator** is a controller that tracks new resources you can add by using CustomResourceDefinition. 
-An operator can use the Kubernetes API to manage these resources; alternatively, a third component called APIService can be leveraged for handling requests to these resources to the Kubernetes API.
+An **APIService** is an extension to the actual Kubelet API, this allows you to:
+- Create virtual CustomResourceDefinitions that don't exist in etcd
+- Use the Kubernetes API to expose more unique interfaces simmilar to `kubectl auth can-i`, that uses `SelfSubjectAccessReview` which is a stateless `create` only api that expects no or an empty `metadata`.
+- Implement custom or more advanced verbs like `proxy` (Some requests classified as "long-running" in [API Priority and Fairness](https://kubernetes.io/docs/concepts/cluster-administration/flow-control/) filter, this classification may be important for you and it is automaticlly checked against Kubelet's built-in rules)
+
+For "mirrord for Teams" we use a mixture of the APIService and Controller patterns where some of our CustomResourceDefinitions are managed by Controllers and some are exposed via an APIService.
 
 ## Possible languages and frameworks
 
@@ -57,7 +61,7 @@ For the example in this post, we will use Rust + kube-rs. Here are a few reasons
 
 ## This is where the tutorial starts
 
-In the sections that follow, we’ll be creating an operator with an APIService. We’ll use Rust, but implementations in other languages can be extrapolated from it fairly easily. First, clone our [example repository](https://github.com/metalbear-co/farm-operator):
+In the sections that follow, we’ll be creating an operator with an APIService. The Controller pattern is pretty well documented and is the more popular approach for writing operator, but if you do need the extra flexibility or unique features that APIService provides, this tutorial will explain what Kubernetes expects of your operator to be a valid APIService. We’ll use Rust, but implementations in other languages can be extrapolated from it fairly easily, as it's mainly an HTTPS server that is very similar to the actual Kubernetes API. First, clone our [example repository](https://github.com/metalbear-co/farm-operator):
 
 ```bash
 git clone https://github.com/metalbear-co/farm-operator.git
