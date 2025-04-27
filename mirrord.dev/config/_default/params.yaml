@@ -1,0 +1,40 @@
+author: MetalBear
+repoHost: GitHub
+docsRepo: 'https://github.com/metalbear-co/metalbear.co'
+docsRepoBranch: master
+docsRepoSubPath: 'mirrord.dev'
+title: Faster, Simpler Kubernetes Development
+titleSeparator: '-'
+titleAddition: Rethinking cloud development
+description: >-
+  mirrord is a cli/IDE extension that lets backend developers run their local
+  code in the context of the remote environment.
+images:
+  - logo.jpg
+ogLocale: en_US
+domainTLD: metalbear.co
+titleHome: mirrord
+twitterSite: '@metalbearco'
+twitterCreator: '@metalbearco'
+schemaType: Organization
+schemaName: mirrord
+schemaAuthor: MetalBear
+schemaAuthorTwitter: 'https://twitter.com/metalbearco'
+schemaAuthorLinkedIn: 'https://www.linkedin.com/company/metalbearco/'
+schemaAuthorGitHub: 'https://github.com/metalbear-co'
+schemaLocale: en-US
+schemaLogo: logo.jpg
+schemaLogoWidth: 512
+schemaLogoHeight: 512
+schemaImage: logo.jpg
+schemaImageWidth: 1280
+schemaImageHeight: 640
+schemaTwitter: 'https://twitter.com/metalbearco'
+schemaLinkedIn: 'https://www.linkedin.com/company/metalbearco/'
+schemaGitHub: 'https://github.com/metalbear-co/mirrord'
+schemaSection: blog
+
+
+alert: false
+alertDismissable: true
+alertText: "mirrord for Teams is live on Product Hunt! <a class=\"alert-link stretched-link\" href=\"https://www.producthunt.com/posts/mirrord-for-teams\" rel=\"noopener\" target=\"_blank\">Check out the launch and share your feedback!</a>"

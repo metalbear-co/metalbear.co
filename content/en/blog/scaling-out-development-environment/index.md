@@ -56,7 +56,9 @@ I think we should talk / discuss more about the development environments of our 
 
 Kubernetes, without any doubts, has a steep learning curve. Not everyone involved in a project should be well-versed in 100s of CRDs and yaml manifests!
 
-{{< tweet user="kelseyhightower" id="935252923721793536" >}}
+> Kubernetes is a platform for building platforms. It's a better place to start; not the endgame.
+>
+> \- Kelsey Hightower (@kelseyhightower) Nov 27, 2017
 
 But after all these years, people still write Deployment, Service, Ingress manifests manually, under-utilizing projects like Kubevela(OAM)… anyway, that’s a different long discussion. This post is only about Dev Env & Dev Experience (DevX), and the first question someone may ask, WHY!? and the context of the question is I think obvious… if you’re working on a single application or ~~micro~~-service, what’s the point of bringing all the overhead that comes with Kubernetes? Yes, [K3s](https://k3s.io/), [minikube](https://minikube.sigs.k8s.io/docs/) (with docker driver) like lightweight Kubernetes distributions are there, but still, it sounds like an overkill.
 
@@ -76,7 +78,7 @@ The other thing is the learning curve. That’s a very valid argument but, ideal
 
 ---
 
-One of the first problem of switching to K8s would be, now the feedback loop of your application changes takes too long. With Tilt, that can be reduced in great extent, but not the same as building and running the application as a local process. That’s where mirrord comes into play! [mirrord](https://mirrord.dev/)
+One of the first problem of switching to K8s would be, now the feedback loop of your application changes takes too long. With Tilt, that can be reduced in great extent, but not the same as building and running the application as a local process. That’s where mirrord comes into play! [mirrord](/mirrord/)
 
 Tilt helps you to take your application closer to the platform, on the other hand, mirrord brings the platform closer to the application. As a result, it becomes much easier to debug application, integrate with IDEs, avoid redundant compute usage.
 

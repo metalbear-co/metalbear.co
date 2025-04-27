@@ -1,0 +1,150 @@
+{{- define "main" }}
+<main id="site-main" class="site__main single-page bg-white -translate-y-[1px]">
+  <div class="pt-16 pb-6 lg:pb-32 lg:pt-24 overflow-hidden" id="contact-us">
+    <div class="container w-full max-w-screen-xl mx-auto px-6">
+      <div class="max-w-[884px] mx-auto pb-6">
+        <div
+          class="border border-solid border-[#222222] rounded-[6px] lg:rounded-[25px] shadow-[-7px_6px_0px_#000000] lg:shadow-[-8px_10px_0px_#000000]">
+          <div class="max-w-[734px] mx-auto py-5 lg:py-10">
+            <header class="text-center mb-5 lg:mb-10">
+              <h2 class="text-[#222222] text-base lg:text-[1.75rem] font-semibold mb-0">Feel free to leave us a message
+              </h2>
+            </header>
+            <div class="px-[40px] lg:px-0">
+              <form id="contact-form">
+                <div class="mb-5">
+                  <label class="hidden" for="name">Name*</label>
+                  <input
+                    class="contact-us__input w-full h-[45px] lg:h-[60px] bg-[#E4E3FD] bg-opacity-50 border border-solid border-[#222222] rounded-[5px] lg:rounded-[10px] text-base lg:text-[1.3125rem] text-[#222222] outline-none focus:outline-none placeholder:text-[#222222] focus:placeholder:text-transparent focus-within:text-[#222222] placeholder:font-light placeholder:leading-[1.2] px-8 py-[10px] lg:py-4"
+                    type="text" id="name" name="name" placeholder="Name" required="">
+                </div>
+                <div class="mb-5">
+                  <label class="hidden" for="email">Email*</label>
+                  <input
+                    class="contact-us__input w-full h-[45px] lg:h-[60px] bg-[#E4E3FD] bg-opacity-50 border border-solid border-[#222222] rounded-[5px] lg:rounded-[10px] text-base lg:text-[1.3125rem] text-[#222222] outline-none focus:outline-none placeholder:text-[#222222] focus:placeholder:text-transparent focus-within:text-[#222222] placeholder:font-light placeholder:leading-[1.2] px-8 py-[10px] lg:py-4"
+                    type="email" id="email" name="email" placeholder="Email" required="">
+                </div>
+                <div class="mb-6 lg:mb-8">
+                  <label class="hidden" for="message">Message*</label>
+                  <textarea
+                    class="contact-us__input w-full h-[124px] lg:h-[170px] bg-[#E4E3FD] bg-opacity-50 border border-solid border-[#222222] rounded-[5px] lg:rounded-[10px] text-base lg:text-[1.3125rem] text-[#222222] outline-none focus:outline-none placeholder:text-[#222222] focus:placeholder:text-transparent focus-within:text-[#222222] placeholder:font-light placeholder:leading-[1.2] px-8 py-[10px] lg:py-4"
+                    name="message" id="message" placeholder="Message" rows="4" required=""></textarea>
+                </div>
+                <div class="flex justify-center">
+                  <button
+                    class="w-full md:w-[260px] lg:w-[400px] h-[50px] lg:h-[82px] flex justify-center items-center text-base lg:text-[1.5625rem] text-white hover:text-[#222222] bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                    aria-label="Submit" form="contact-form" type="submit">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="result" class="display: none">
+          <span id="resultText"></span>
+        </div>
+        <div class="text-center pt-8">
+          <p class="text-sm lg:text-lg text-[#222222] font-body mb-0">Or if you prefer,
+            <a class="text-[#222222] underline" target="_blank" href="/mirrord/demo">schedule a
+              meeting</a> or chat with us on <a class="text-[#222222] underline" target="_blank" href="https://discord.gg/metalbear">Discord</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // taken from https://docs.web3forms.com/how-to-guides/html-and-javascript#javascript
+    const form = document.getElementById('contact-form');
+
+    function updateResult(message) {
+      document.getElementById('resultText').innerHTML = message;
+      document.getElementById('result').style.display = 'inline';
+    }
+
+    function resetResult(message) {
+      document.getElementById('result').style.display = 'none';
+    }
+
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      let firstname = "";
+      let lastname = "";
+      const names = formData.get('name').split(/\s+/);
+      if (names.length > 1) {
+        firstname = names[0];
+        lastname = names.slice(1).join(' ');
+      } else {
+        firstname = names[0]
+        lastname
+      };
+
+      const object = {
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title
+        },
+        fields: [
+          {
+            "objectTypeId": "0-1",
+            "name": "email",
+            "value": formData.get('email')
+          },
+          {
+            "objectTypeId": "0-1",
+            "name": "firstname",
+            "value": firstname,
+          },
+          {
+            "objectTypeId": "0-1",
+            "name": "lastname",
+            "value": lastname,
+          },
+          {
+            "objectTypeId": "0-1",
+            "name": "message",
+            "value": formData.get('message')
+          },
+        ],
+
+      }
+      const json = JSON.stringify(object);
+      updateResult("Submitting your message...");
+
+      fetch('https://forms-eu1.hsforms.com/submissions/v3/integration/submit/143742664/0385d4b8-0e75-4dbb-b70c-9987c4a0e4b3', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            updateResult("Thank you for contacting us! We will get back to you soon.");
+          } else {
+            console.log(response);
+            updateResult(`Failed to submit message, got error response from server: ${json.message}. Please contact us at support@metalbear.co`);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          updateResult("Failed to submit your message. Please contact us at support@metalbear.co");
+        })
+        .then(function () {
+          form.reset();
+          setTimeout(() => {
+            resetResult()
+          }, 15000);
+        });
+    });
+  </script>
+
+
+</main>
+{{- end }}

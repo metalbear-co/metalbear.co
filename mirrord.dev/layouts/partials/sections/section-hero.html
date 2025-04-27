@@ -1,0 +1,69 @@
+<div x-data="{ open: false }"
+    class="bg-[#FAFAFD] rounded-bl-[60px] lg:rounded-bl-[180px] xl:rounded-bl-[270px] relative z-10">
+    <div class="container w-full max-w-screen-xl mx-auto px-6 pt-4 lg:pt-4 lg:pb-18">
+        <div class="grid grid-cols-2 items-center gap-y-6">
+            <div class="col-span-2 lg:col-span-1">
+                <div class="text-center lg:text-start">
+                    <h3 class="text-lg lg:text-[3rem] xl:text-[3.15rem] text-primary font-heading font-semibold mb-2">
+                        The Future is
+                    </h3>
+                    <h1
+                        class="text-[2.75rem] lg:text-[4.8rem] xl:text-[6rem] text-black font-normal font-['Audiowide'] uppercase leading-tight">
+                        Rem<span class="text-primary">ocal*</span></h1>
+                    <div class="w-[260px] lg:w-full mx-auto">
+                        <p class="text-sm lg:text-base text-[#222222] font-body leading-normal mb-2 lg:mb-4">mirrord
+                            solves
+                            the problems every modern
+                            cloud developer faces during
+                            microservice development <strong class="font-extrabold">by making remote services feel
+                                local.</strong></p>
+                        <div class="flex flex-wrap lg:flex-nowrap justify-center lg:justify-start lg:space-x-8 pt-2 lg:pt-12 mb-4 lg:mb-3">
+                            <a class="flex-none w-full lg:w-1/2 h-[50px] lg:h-[64px] mb-5 text-base lg:text-xl text-white hover:text-[#000000] font-body font-medium flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                href="https://app.metalbear.co/">Try it now for free</a>
+                            <a class="flex-none w-full lg:w-1/2 h-[50px] lg:h-[64px] mb-5 text-base lg:text-xl text-[#000000] font-body flex justify-center items-center bg-white hover:bg-[#E4E3FD] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                href="/mirrord/demo">Schedule a demo</a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <p class="text-xs lg:text-base text-[#222222] font-body leading-loose">
+                            <span @click="open = true;"
+                                class="cursor-pointer hover:font-medium border-b hover:border-b-2 border-solid border-[#222222] pb-1">*What’s
+                                Remocal?</span>
+                        </p>
+                        <div x-show="open" @click.outside="open = false"
+                            class="absolute left-0 -bottom-[220px] lg:bottom-12 w-full lg:w-[90%] bg-primary z-[100] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000]">
+                            <div class="relative p-8 lg:p-16">
+                                <div class="text-left pb-16 lg:pb-4 pr-8 lg:pr-3">
+                                    <h3 class="text-[1.5rem] text-white font-extrabold font-heading">*What’s
+                                        Remocal?</h3>
+                                    <p class="text-sm text-white font-semibold leading-[1.5]">Remote + Local =
+                                        Remocal.
+                                    </p>
+                                    <p class="text-sm text-white font-normal leading-[1.5]">mirrord makes your local
+                                        development experience feel 100% remote by making the
+                                        running process think it's running in Staging. That means when you run your
+                                        code
+                                        with mirrord, it's the same as running it in Staging, without having to move
+                                        your code around, 'git push' to test, or do anything more than work
+                                        directly
+                                        from your CLI or IDE as you always have.</p>
+                                    <div class="absolute w-[120px] bottom-4 right-4">
+                                        <img class="w-[120px] h-auto" src="popup-image.png" alt="popup-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-2 lg:col-span-1 relative">
+                <div
+                    class="absolute left-[17%] lg:left-[10%] top-[34%] lg:top-4 w-[200%] h-[66%] lg:h-[86%] bg-[#E4E3FD] bg-opacity-30 rounded-tl-[60px] lg:rounded-tl-[200px] xl:rounded-tl-[280px]">
+                </div>
+                <div class="w-[60%] lg:w-[80%] ml-auto mr-auto lg:mr-0 lg:-translate-y-10 relative">
+                    <img class="w-full h-auto" src="hero-section.png" alt="hero">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,10 +13,13 @@
 /** Import KaTeX */
 @import "katex/dist/katex";
 
+@import "vendor/splide";
+
 /** Import theme styles */
 @import "common/fonts";
 @import "common/global";
 @import "common/dark";
+@import "common/utilities";
 @import "components/alerts";
 @import "components/buttons";
 @import "components/code";

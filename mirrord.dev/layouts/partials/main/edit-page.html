@@ -1,0 +1,32 @@
+{{ $parts := slice .Site.Params.docsRepo }}
+
+{{ if (eq .Site.Params.repoHost "GitHub") }}
+  {{ $parts = $parts | append "blob" .Site.Params.docsRepoBranch }}
+{{ else if (eq .Site.Params.repoHost "Gitea") }}
+  {{ $parts = $parts | append "_edit" .Site.Params.docsRepoBranch }}
+{{ else if (eq .Site.Params.repoHost "GitLab") }}
+  {{ $parts = $parts | append "-/blob" .Site.Params.docsRepoBranch }}
+{{ else if (eq .Site.Params.repoHost "Bitbucket") }}
+  {{ $parts = $parts | append "src" .Site.Params.docsRepoBranch }}
+{{ else if (eq .Site.Params.repoHost "BitbucketServer") }}
+  {{ $parts = $parts | append "browse" .Site.Params.docsRepoBranch }}
+{{ end }}
+
+{{ if isset .Site.Params "docsreposubpath" }}
+  {{ if not (eq .Site.Params.docsRepoSubPath "") }}
+    {{ $parts = $parts | append .Site.Params.docsRepoSubPath }}
+  {{ end }}
+{{ end }}
+
+{{ $filePath := replace .File.Path "\\" "/" }}
+
+{{ $parts = $parts | append "content" $filePath }}
+
+{{ $url := delimit $parts "/" }}
+
+<div class="pt-6 mt-12 border-t border-dashed border-[#9B9B9B]">
+  <a class="text-primary-text text-sm flex items-center space-x-3" href="{{ $url }}">
+    {{ partial (printf "svg/icon-%s.svg" "github") (dict "class" "w-4 h-4 text-current") }}
+    <span>Edit this page on {{ .Site.Params.repoHost }}</span>
+  </a>
+</div>

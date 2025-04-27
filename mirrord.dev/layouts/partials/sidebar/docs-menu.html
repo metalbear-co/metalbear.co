@@ -1,0 +1,60 @@
+{{- $currentPage := . -}}
+{{- $section := $currentPage.Section -}}
+<ul x-data="{selected: $persist(document.querySelector('.submenu-active').getAttribute('data-id'))}" class="docs__menu list-none lg:h-full lg:border-r lg:border-solid lg:border-[#C9C9C9]">
+  {{- range (where .Site.Sections "Section" "in" $section) }}
+    {{- range $index, $el := .Sections.ByWeight.Reverse }}
+      {{- $active := in $currentPage.RelPermalink .RelPermalink }}
+      <li class="docs__menu-item">
+        <div class="pl-4 pr-4 lg:pr-0">
+          <button  @click="selected !== {{ $index }} ? selected = {{ $index }} : selected = null" class="w-full flex items-center lg:justify-between text-current cursor-pointer focus:outline-none" aria-expanded="{{ if $active }}true{{ else }}false{{ end }}">
+            <svg class="lg:order-1 w-3 h-3 mr-3 lg:ml-2" :class="{'-rotate-180': selected == {{ $index }} }" aria-hidden="true" focusable="false" data-prefix="far"
+              data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path fill="currentColor" d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z"
+                class=""></path>
+            </svg>
+            <span class="lg:order-0 text-sm text-current uppercase font-heading font-bold text-left">{{ .Title }}</span>
+          </button>
+        </div>
+
+        <ul class="docs__submenu whitespace-nowrap list-none transition-all duration-300 ease-[ease] z-10 lg:pl-4" :class="selected == {{ $index }} ? 'show' : ''">
+          {{ range .Pages }}
+            {{ if .IsNode }}
+              {{ $active_link := in $currentPage.RelPermalink .RelPermalink }}
+              <li class="docs__submenu-item">
+                <button class="w-full text-current text-left cursor-pointer focus:outline-none">
+                  <span class="text-base text-current uppercase font-heading font-bold">{{ .Title }}</span>
+                </button>
+                <ul class="list-none p-0">
+                  {{ range .Pages }}
+                      {{ $active_link2 := in $currentPage.RelPermalink .RelPermalink }}
+                      <li><a class="block text-sm font-medium hover:font-bold py-3 transition-all duration-200 ease-[ease] {{ if $active_link2 }}text-primary{{ else }}text-primary-text{{ end }}" href="{{ .Permalink }}">{{ .Title }}</a></li>
+                  {{ end }}
+                </ul>
+              </li>
+            {{ else }}
+              {{ $active_link := in $currentPage.RelPermalink .RelPermalink }}
+              <li data-id="{{ $index }}" class="docs__submenu-item relative {{ if $active_link }}submenu-active {{ end }}">
+                <div class="flex justify-between items-center pr-6 lg:pr-3 before:absolute before:content-[''] before:right-0 before:top-0 before:w-[300%] before:h-full before:z-0 {{ if $active_link }}before:bg-active-docs-menu{{ end }}">
+                  <a class="docs__submenu-link relative z-10 block text-sm font-medium hover:font-bold transition-all duration-200 ease-[ease] {{ if $active_link }}docs__submenu-link-active {{ else }}text-primary-text{{ end }}" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+                  <span class="docs__taxonomy-tags relative z-10">
+                    {{ range .Params.tags }}
+                    <a class="docs__taxonomy-tag text-primary-text" href="/mirrord/tags/{{ . | urlize }}">
+                      {{- if eq . "open source" }}
+                      {{ partial (printf "svg/icon-%s.svg" "open-source") (dict "class" "inline-block text-current mr-1 w-[12px] h-[12px]") }}
+                      {{- else if eq . "team" }}
+                      {{ partial (printf "svg/icon-%s.svg" "team") (dict "class" "inline-block text-current mr-1 w-[15px] h-[12px]") }}
+                      {{- else }}
+                      {{ partial (printf "svg/icon-%s.svg" "enterprise") (dict "class" "inline-block text-current mr-1 w-[12px] h-[12px]") }}
+                      {{- end }}
+                    </a>
+                  {{ end }}
+                  </span>
+                </div>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </li>
+    {{- end }}
+  {{- end }}
+</ul>

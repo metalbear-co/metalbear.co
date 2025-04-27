@@ -1,0 +1,21 @@
+{{/* styles */}}
+{{- $options := dict "inlineImports" true }}
+{{- $palette := print "css/colors/" .Site.Data.theme.palette ".css" }}
+{{- $colors := resources.Get $palette }}
+{{- $color := $colors | resources.ExecuteAsTemplate "_colors.css" . }}
+{{- $styles := resources.Get "css/site.css" }}
+{{- $highlighter := resources.Get "css/partials/highlighter.css" }}
+{{- $splide := resources.Get "css/partials/splide.min.css" }}
+{{- $video := resources.Get "css/partials/video-js.css" }}
+{{- $search := resources.Get "css/partials/search.css" }}
+{{- $alert := resources.Get "css/alert.css" }}
+{{- $bundle := slice $color $highlighter $splide $search $styles $alert | resources.Concat "css/main.css" }}
+{{- $styles = $bundle | css.PostCSS $options }}
+{{- if  hugo.IsProduction }}
+{{- $styles = $styles | minify | fingerprint | css.PostCSS }}
+{{- end }}
+<link href="{{ $styles.RelPermalink | relURL }}" rel="stylesheet" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">

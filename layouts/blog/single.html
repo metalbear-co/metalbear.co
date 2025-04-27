@@ -1,5 +1,6 @@
 {{ define "main" }}
 <div class="blog-single">
+  <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=2d0d178f-001f-403c-8329-411bb6edd26b" />
   <div class="container blog-single__wrapper">
     <div class="row position-relative">
       <div class="blog-single__main col-12 col-lg-10 col-xl-11 px-3 px-lg-5">
@@ -37,7 +38,6 @@
             {{ partial "share-buttons.html" . }}
           </div>
         </div>
-        {{ partial "blog-newsletter.html" . }}
       </div>
       <div class="blog-single__sidebar col-12 col-lg-6 col-xl-5 d-none d-lg-block">
         {{ partial "blog-contributor.html" . }}
@@ -50,5 +50,6 @@
       </div>
     </div>
   </div>
+  {{ partial "blog-page-cta.html" . }}
 </div>
 {{ end }}

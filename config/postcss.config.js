@@ -30,6 +30,7 @@ module.exports = {
           './assets/scss/components/_syntax.scss',
           './assets/scss/components/_search.scss',
           './assets/scss/common/_dark.scss',
+          './assets/scss/vendor/_splide.scss',
           './node_modules/bootstrap/scss/_dropdown.scss',
           './node_modules/katex/dist/katex.css',
         ]),

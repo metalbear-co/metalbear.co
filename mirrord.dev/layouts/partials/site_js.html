@@ -1,0 +1,27 @@
+<!-- vendor -->
+{{- $alpine := resources.Get "js/vendor/alpinejs/dist/cdn.min.js" }}
+{{- $clipboard := resources.Get "js/vendor/clipboard/dist/clipboard.min.js" }}
+
+<!-- local js -->
+{{- $splide := resources.Get "js/splide.min.js" }}
+<!-- {{- $video := resources.Get "js/video.min.js" }} -->
+{{- $persist := resources.Get "js/persist.js" }}
+{{- $alpineClipboard := resources.Get "js/alpine-clipboard.js" }}
+{{- $copy := resources.Get "js/copy.js" }}
+{{- $darkmode := resources.Get "js/darkmode.js" }}
+{{- $alert := resources.Get "js/alert.js" }}
+{{- $indexTemplate := resources.Get "js/search.js" -}}
+{{- $search := $indexTemplate | resources.ExecuteAsTemplate "index.js" . -}}
+{{- $instantPage := resources.Get "js/instant.page.js" -}}
+{{- $instantPage := $instantPage | js.Build -}}
+
+{{- $js := slice $splide $alert $alpineClipboard $persist $alpine $instantPage | resources.Concat "js/main.js" }}
+{{- $js_min := $js | resources.Minify }}
+
+<script src="{{ $js_min.RelPermalink }}" defer></script>
+{{- if (eq .Section "docs") }}
+<script src="{{ $search.RelPermalink }}" defer></script>
+<script src="{{ $clipboard.RelPermalink }}" defer></script>
+<script src="{{ $copy.RelPermalink }}" defer></script>
+<!-- <script src="{{ $darkmode.RelPermalink }}" defer></script> -->
+{{- end }}

@@ -1,0 +1,11 @@
+<div class="blog max-w-4xl mx-auto">
+    <article class="post__article article">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl lg:text-4xl text-title font-heading font-extrabold leading-tight lg:leading-tight mb-4">
+                {{ .Title | safeHTML }}</h1>
+        </header>
+        <div class="post__content text-gray-700 pb-16">
+            {{ .Content }}
+        </div>
+    </article>
+</div>

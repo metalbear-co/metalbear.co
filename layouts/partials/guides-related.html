@@ -1,0 +1,23 @@
+{{- $related := .Site.RegularPages.Related . | first 2 }}
+{{- with $related }}
+<div class="guides__toc-widget">
+  <header class="guides__toc-header">
+    <h3 class="guides__toc-heading">Related guides</h3>
+    <div class="guides__toc-icon">
+      <svg class="guides__toc-svg" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.919922 0.855469L7.91951 7.71506L14.6391 1.12985" stroke="black" stroke-width="1.37192"
+          stroke-linecap="round"></path>
+      </svg>
+    </div>
+  </header>
+  <div class="guides__toc">
+    <nav id="TableOfContents">
+      <ul>
+        {{- range . }}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+  </div>
+</div>
+{{- end }}

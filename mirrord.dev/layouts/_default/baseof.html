@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default `en-US` }}">
+{{- partial "site_head.html" . }}
+<!-- <body x-data="{darkMode: $persist(true)}" class="font-body {{ if .IsHome }}bg-white {{ else }}bg-[#FBFBFD] dark:bg-[#202020]{{ end }}" :class="{ 'dark': darkMode }" :data-theme="darkMode ? 'dark' : 'light'"> -->
+
+{{- $currentPage := . }}
+{{- $page_url := $currentPage.RelPermalink | relLangURL }}
+
+<body class="font-body {{ if or .IsHome (eq .Section "stories") (eq $page_url "/pricing/") (eq $page_url "/contact/") }}bg-white{{ else }}bg-[#FBFBFD]{{ end }}">
+
+  <div class="overflow-hidden">
+
+    {{- if eq .Layout "compare" }}
+    {{- partial "header/header-landing.html" . }}
+    {{- else }}
+    {{- partial "header/header.html" . }}
+    {{- end }}
+
+    {{- block "main" . }}{{ end }}
+
+    <button id="backToTopBtn"
+      class="cursor-pointer p-[7px] bg-[#756DF3] rounded-full fixed bottom-0 right-0 mr-4 mb-4 z-50 hidden">
+      <svg class="w-[32px]" xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 40 40">
+        <path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"
+          fill="white" />
+      </svg>
+    </button>
+  </div>
+  <script>
+    // Get the FAB
+    var fabButton = document.getElementById("backToTopBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the FAB
+    window.onscroll = function () {
+      if (window.scrollY > 20) {
+        fabButton.style.display = "block";
+      } else {
+        fabButton.style.display = "none";
+      }
+    };
+
+    // When the user clicks on the FAB, scroll to the top of the document
+    fabButton.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+  {{- partial "footer/footer-landing.html" . }}
+
+</body>
+
+</html>

@@ -22,7 +22,7 @@ The clearest example of this is that it’s now **really hard to just run your a
 {{<figure src="ergonomics.jpg" class="center large-width">}}
 
 When we talk about something as elementary as running your application, it naturally applies to many aspects of the developer’s day-to-day: debugging, testing, even just writing new code to see if it works. Therefore, solutions that make your application even a little easier to run provide significant value, just by affecting so many routine activities.
-In this article, we’re going to discuss today’s dominant approaches to making microservice applications easier for developers to run, and we’re also going to make the case for our [own thing](https://mirrord.dev) - namely, a single shared environment in the cloud that the organization maintains, and that developers can plug in and out of non-intrusively as they develop their microservices.
+In this article, we’re going to discuss today’s dominant approaches to making microservice applications easier for developers to run, and we’re also going to make the case for our [own thing](/mirrord) - namely, a single shared environment in the cloud that the organization maintains, and that developers can plug in and out of non-intrusively as they develop their microservices.
 
 ## Contemporary Cloud Development Workflows
 In the frictionless microservice utopia, the development workflow goes something along these lines:
@@ -92,7 +92,7 @@ This is where shared environment tools like [Telepresence](https://telepresence.
 ## The Sell
 So local setups are easy to use but don’t support large deployments; personal cloud environments support large deployments but don’t really reflect production, don’t support components that can’t be containerized, and cost a lot; and shared environments reflect production for cheap, but don’t really support concurrency without sacrificing stability.
 
-[mirrord](https://mirrord.dev) lets you have all of these cakes and eat them too. We essentially took the shared environment approach and tacked on isolation. We do this by:
+[mirrord](/mirrord) lets you have all of these cakes and eat them too. We essentially took the shared environment approach and tacked on isolation. We do this by:
 * Letting developers mirror incoming traffic rather than just intercept it. This lets multiple developers work on the same service in the cloud, while the service is still running and handling requests.
 * Giving developers fine-grained control over what happens locally and what happens remotely. This way, for example, incoming traffic mirroring and file reads can happen remotely, but outgoing traffic and file writes can be local. Future versions of mirrord will include more advanced modes of configuration, letting users filter by e.g. hostname or protocol.
 * In future versions, supporting advanced features like copy-on-write for databases.
