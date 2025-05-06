@@ -1,0 +1,111 @@
+{{ define "main" }}
+<div class="careers-single">
+  <section class="border-b-3 border-b-black">
+    <div class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-5 xl:px-0">
+      <header
+        class="text-center pt-[71px] md:pt-[88px] lg:pt-[71px] xl:pt-[88px] 2xl:pt-[106px] pb-[60px] md:pb-[75px] lg:pb-[60px] xl:pb-[75px] 2xl:pb-[90px]">
+        <h3
+          class="text-black text-[1.688rem] md:text-[2.063rem] lg:text-[1.688rem] xl:text-[2.063rem] 2xl:text-[2.5rem] font-heading font-normal leading-tight md:leading-tight lg:leading-tight xl:leading-tight 2xl:leading-tight mb-[13px] md:mb-[17px] lg:mb-[13px] xl:mb-[17px] 2xl:mb-[20px]">
+          Job Description</h3>
+        <h2
+          class="text-black text-[2.5rem] md:text-[3.125rem] lg:text-[2.5rem] xl:text-[3.125rem] 2xl:text-6xl font-heading font-bold mb-[51px] md:mb-[63px] lg:mb-[51px] xl:mb-[63px] 2xl:mb-[76px]">
+          {{ .Params.career.title | safeHTML }}</h2>
+        <div class="flex flex-col lg:flex-row justify-center items-center">
+          <div class="flex items-center mb-4 lg:mb-0">
+            <span class="inline-block w-[17px] md:w-[22px] lg:w-[17px] xl:w-[22px] 2xl:w-[26px] mr-2">
+              <svg class="w-full h-auto" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.0031 3.94336C9.87826 3.94336 7.33594 6.48558 7.33594 9.61038C7.33594 12.7352 9.87826 15.2774 13.0031 15.2774C16.1279 15.2774 18.6702 12.7352 18.6702 9.61038C18.6702 6.48558 16.1279 3.94336 13.0031 3.94336ZM13.0031 13.753C10.7188 13.753 8.86023 11.8946 8.86023 9.61028C8.86023 7.32597 10.7188 5.46765 13.0031 5.46765C15.2874 5.46765 17.1459 7.32607 17.1459 9.61038C17.1459 11.8947 15.2875 13.753 13.0031 13.753Z"
+                  fill="#000002" />
+                <path
+                  d="M13.0004 0C7.70153 0 3.39062 4.31091 3.39062 9.60977C3.39062 12.6657 5.95347 17.2185 7.48112 19.6604C8.48624 21.2669 9.56636 22.7958 10.5224 23.9655C12.057 25.8428 12.6062 25.9999 13.0005 25.9999C13.4007 25.9999 13.9192 25.8427 15.449 23.9644C16.4072 22.7877 17.4878 21.2596 18.4919 19.6616C20.03 17.2138 22.6103 12.6528 22.6103 9.60966C22.6103 4.31091 18.2993 0 13.0004 0ZM17.4352 18.4748C15.4642 21.6741 13.6546 23.8359 12.9913 24.3878C12.3246 23.8529 10.5444 21.7424 8.54589 18.4848C6.23841 14.7234 4.91502 11.4885 4.91502 9.60977C4.91492 5.15141 8.54203 1.52429 13.0004 1.52429C17.4587 1.52429 21.0859 5.15141 21.0859 9.60977C21.086 11.4777 19.7553 14.7088 17.4352 18.4748Z"
+                  fill="#000002" />
+              </svg>
+            </span>
+            <p class="text-black text-xl md:text-[1.563rem] lg:text-xl xl:text-[1.563rem] 2xl:text-3xl">Location:
+              <strong>{{ .Params.career.location }}</strong>
+            </p>
+          </div>
+          <div class="hidden lg:block bg-black w-[2px] h-[90%] mx-[21px] md:mx-[27px] lg:mx-[21px] xl:mx-[27px] 2xl:mx-[32px]">
+            &nbsp;</div>
+          <div class="flex items-center">
+            <span class="inline-block w-[14px] md:w-[18px] lg:w-[14px] xl:w-[18px] 2xl:w-[21px] mr-2">
+              <svg class="w-full h-auto" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_596_622)">
+                  <path
+                    d="M10.5 0C4.69286 0 0 4.69286 0 10.5C0 16.3071 4.69286 21 10.5 21C16.3071 21 21 16.3071 21 10.5C21 4.69286 16.3071 0 10.5 0ZM10.5 19.2557C5.67429 19.2557 1.74429 15.3257 1.74429 10.5C1.74429 5.67429 5.67429 1.74429 10.5 1.74429C15.3257 1.74429 19.2557 5.67429 19.2557 10.5C19.2557 15.3257 15.3257 19.2557 10.5 19.2557Z"
+                    fill="black" />
+                  <path
+                    d="M12.4644 9.60337H11.393V5.49337C11.393 5.00051 10.9901 4.59766 10.4973 4.59766C10.0044 4.59766 9.60156 5.00051 9.60156 5.49337V10.4991C9.60156 10.9919 10.0044 11.3948 10.4973 11.3948H12.4644C12.9573 11.3948 13.3601 10.9919 13.3601 10.4991C13.3601 10.0062 12.953 9.60337 12.4644 9.60337Z"
+                    fill="black" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_596_622">
+                    <rect width="21" height="21" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <p class="text-black text-xl md:text-[1.563rem] lg:text-xl xl:text-[1.563rem] 2xl:text-3xl">Timezone(s):
+              <strong>{{ .Params.career.timezone }}</strong>
+            </p>
+          </div>
+        </div>
+      </header>
+    </div>
+  </section>
+  <section class="border-b-3 border-b-black career-bg-image--left-top relative"
+    style="background-image: url(/careers-top-left-bg.png);">
+    <div
+      class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-5 xl:px-0 pt-[89px] md:pt-[112px] lg:pt-[89px] xl:pt-[112px] 2xl:pt-[134px]">
+      <div class="lg:w-[83%] lg:mx-auto">
+        <div
+          class="lg:flex lg:items-center bg-[#E4E3FD] border border-solid border-black rounded-[7px] pt-[33px] md:pt-[42px] lg:pt-[33px] xl:pt-[42px] 2xl:pt-[50px] pb-[33px] md:pb-[42px] lg:pb-[33px] xl:pb-[42px] 2xl:pb-[50px] mb-[76px] md:mb-[95px] lg:mb-[76px] xl:mb-[95px] 2xl:mb-[114px]">
+          <div class="lg:w-[45%] lg:flex-none mb-8 lg:mb-0">
+            <div class="w-[60%] lg:w-[60%] mx-auto">
+              <img class="w-full h-auto" src="/careers-single.png" alt="careers-single">
+            </div>
+          </div>
+          <div class="lg:flex-1">
+            <div class="lg:w-[72%] px-6 lg:px-0">
+              <h3
+                class="text-black text-[1.688rem] md:text-[2.063rem] lg:text-[1.688rem] xl:text-[2.063rem] 2xl:text-[2.5rem] font-heading font-bold mb-[23px] md:mb-[28px] lg:mb-[23px] xl:mb-[28px] 2xl:mb-[34px]">
+                About MetalBear</h3>
+              <div
+                class="text-black text-sm md:text-base lg:text-sm xl:text-base 2xl:text-lg leading-[1.4] md:leading-[1.4] lg:leading-[1.4] xl:leading-[1.4] 2xl:leading-[1.4]">
+                <p>MetalBear builds open-source developer tools for cloud engineers. Our flagship product, mirrord,
+                  allows
+                  developers to run local processes as if they were inside their cloud environment—without the hassle
+                  of
+                  deployment or disrupting shared environments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <article class="lg:w-3/5 careers-article mb-[71px] md:mb-[88px] lg:mb-[71px] xl:mb-[88px] 2xl:mb-[106px]">
+          <div class="careers-content">
+            {{ .Content }}
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="border-t-3 bg-[#756DF3]">
+      <div
+        class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0 pt-[71px] md:pt-[88px] lg:pt-[71px] xl:pt-[88px] 2xl:pt-[106px] pb-[64px] md:pb-[80px] lg:pb-[64px] xl:pb-[80px] 2xl:pb-[96px]">
+        <div class="text-center lg:w-[41%] lg:mx-auto">
+          <h2
+            class="text-white text-[2.063rem] md:text-[2.625rem] lg:text-[2.063rem] xl:text-[2.625rem] 2xl:text-[3.125rem] font-heading font-semibold leading-[1.43] md:leading-[1.43] lg:leading-[1.43] xl:leading-[1.43] 2xl:leading-[1.43] mb-[15px] md:mb-[19px] lg:mb-[15px] xl:mb-[19px] 2xl:mb-[23px]">
+            How to apply?</h2>
+          <div
+            class="text-white text-[1.188rem] md:text-[1.438rem] lg:text-[1.188rem] xl:text-[1.438rem] 2xl:text-[1.75rem] font-light leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+            <p>Send your CV to cv+rnd@metalbear.co and any relevant links (LinkedIn, GitHub, etc.)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 w-4/5">
+      <img class="w-full h-auto opacity-5" src="/career-bottom-left-bg.png" alt="career-bottom-left-bg">
+    </div>
+  </section>
+</div>
+{{ end }}

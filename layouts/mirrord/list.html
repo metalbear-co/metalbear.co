@@ -1,17 +1,215 @@
 {{- define "main" }}
-<div class="demo-list__page">
-    <div class="container demo-list__wrapper">
-        <div class="row justify-content-center demo-list">
-            <div class="col-md-12 col-lg-10 col-xl-8">
-                {{ range .Paginator.Pages }}
-                <article>
-                    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                    {{ .Description }}
-                </article>
-                {{ end }}
-                {{ template "_internal/pagination.html" . }}
+<div class="case-studies__list-page">
+    <section class="border-b-3 border-b-black">
+        <div
+            class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0 pt-[80px] md:pt-[100px] lg:pt-[80px] xl:pt-[100px] 2xl:pt-[120px] pb-[128px] md:pb-[160px] lg:pb-[128px] xl:pb-[160px] 2xl:pb-[192px]">
+            <header class="mx-auto text-center mb-[80px] md:mb-[100px] lg:mb-[80px] xl:mb-[100px] 2xl:mb-[120px]">
+                <div class="px-3 lg:px-0">
+                    <h2
+                        class="text-[2.5rem] md:text-[3.125rem] lg:text-[2.5rem] xl:text-[3.125rem] 2xl:text-6xl text-black font-medium font-heading leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mt-0 mb-[47px] md:mb-[58px] lg:mb-[47px] xl:mb-[58px] 2xl:mb-[70px]">
+                        Business<br class="lg:hidden">
+                        <span class="relative">
+                            <span class="absolute w-full bottom-0 left-0">
+                                <svg class="w-auto" viewBox="0 0 544 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M537.234 6.88381C469.22 2.52707 400.909 0.573453 332.571 0.106659C264.151 -0.342846 195.732 0.677185 127.366 2.25045C88.9345 3.13217 50.5027 4.18678 12.0708 5.2241C3.38308 5.46614 3.35602 14.1105 12.0708 13.8684C71.5319 12.2433 130.993 10.6527 190.481 9.66728C167.855 10.5836 145.229 11.6382 122.63 12.8484C83.9546 14.923 45.3063 17.4126 6.76617 20.3344C3.1395 20.611 0 22.1324 0 24.6565C0 26.7831 3.11244 29.2553 6.76617 28.9787C75.4563 23.7921 144.363 19.9367 213.432 17.4126C282.474 14.9057 351.651 13.7474 420.802 13.9203C459.612 14.024 498.423 14.56 537.234 15.5108C540.888 15.5973 544 13.4535 544 11.1887C544 8.66454 540.888 7.10856 537.234 6.86652V6.88381Z"
+                                        fill="#FFD18C"></path>
+                                </svg>
+                            </span>
+                            <span class="relative">Case Studies</span>
+                        </span>
+                    </h2>
+                    <div
+                        class="lg:w-1/2 lg:mx-auto text-black text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-[59px] md:mb-[73px] lg:mb-[59px] xl:mb-[73px] 2xl:mb-[88px]">
+                        <p>See the kind of results you can get from using mirrord.</p>
+                    </div>
+                </div>
+            </header>
+            <div class="lg:w-[87%] mx-auto hidden lg:flex lg:gap-[60px] xl:gap-[73px] 2xl:gap-[88px] px-3 xl:px-0">
+                <div
+                    class="border-card lg:w-1/2 flex flex-col justify-between bg-[#FAFAFD] border border-solid border-black rounded-[7px] pt-[33px] md:pt-[42px] lg:pt-[33px] xl:pt-[42px] 2xl:pt-[50px] px-[27px] md:px-[33px] lg:px-[27px] xl:px-[33px] 2xl:px-[40px] pb-[16px] md:pb-[20px] lg:pb-[16px] xl:pb-[20px] 2xl:pb-[24px] transition-all duration-300 ease-[ease]">
+                    <div class="h-[280px] lg:h-[191px] xl:h-[238px] 2xl:h-[286px]">
+                        <div class="lg:w-[85%] mb-[25px] md:mb-[32px] lg:mb-[25px] xl:mb-[32px] 2xl:mb-[38px]">
+                            <h3
+                                class="text-black text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-0">
+                                CoLab cut dev cycle time by up to 98% with mirrord</h3>
+                        </div>
+                        <div
+                            class="text-midblack text-base lg:text-sm xl:text-base 2xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                            <p class="mb-0">“How long does it take to test a change in development? If you have to make
+                                a hundred of
+                                those changes,
+                                that would take you what? 15 minutes x 100 changes? [25 hours] With mirrord, you can do
+                                all that in 20
+                                minutes.”</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="w-[115px] md:w-[143px] lg:w-[115px] xl:w-[143px] 2xl:w-[172px]">
+                            <img class="img-fluid w-full h-auto" src="/demo-colab.png" alt="colab">
+                        </div>
+                        <div>
+                            <a class="text-primary text-sm md:text-[1.063rem] lg:text-sm xl:text-[1.063rem] 2xl:text-xl font-medium underline"
+                                href="/mirrord/case-study/colab/">Read The Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-card lg:w-1/2 flex flex-col justify-between bg-[#FAFAFD] border border-solid border-black rounded-[7px] pt-[33px] md:pt-[42px] lg:pt-[33px] xl:pt-[42px] 2xl:pt-[50px] px-[27px] md:px-[33px] lg:px-[27px] xl:px-[33px] 2xl:px-[40px] pb-[16px] md:pb-[20px] lg:pb-[16px] xl:pb-[20px] 2xl:pb-[24px] transition-all duration-300 ease-[ease]">
+                    <div class="h-[280px] lg:h-[191px] xl:h-[238px] 2xl:h-[286px]">
+                        <div class="lg:w-[84%] mb-[25px] md:mb-[32px] lg:mb-[25px] xl:mb-[32px] 2xl:mb-[38px]">
+                            <h3
+                                class="text-black text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-0">
+                                Cadence saved hours each week for every engineer while improving product quality.</h3>
+                        </div>
+                        <div
+                            class="text-midblack text-base lg:text-sm xl:text-base 2xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                            <p class="mb-0">“mirrord has had as big an impact on development productivity at Cadence as
+                                AI has”</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="w-[115px] md:w-[143px] lg:w-[115px] xl:w-[143px] 2xl:w-[172px]">
+                            <img class="img-fluid w-full h-auto" src="/demo-cadence.png" alt="cadence">
+                        </div>
+                        <div>
+                            <a class="text-primary text-sm md:text-[1.063rem] lg:text-sm xl:text-[1.063rem] 2xl:text-xl font-medium underline"
+                                href="/mirrord/case-study/cadence">Read The Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-[87%] mx-auto lg:hidden">
+                <div class="splide splide-case-studies">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide pb-3">
+                                <div
+                                    class="border-card flex flex-col justify-between bg-[#FAFAFD] border border-solid border-black rounded-[7px] pt-[33px] md:pt-[42px] lg:pt-[33px] xl:pt-[42px] 2xl:pt-[50px] px-[27px] md:px-[33px] lg:px-[27px] xl:px-[33px] 2xl:px-[40px] pb-[16px] md:pb-[20px] lg:pb-[16px] xl:pb-[20px] 2xl:pb-[24px] transition-all duration-300 ease-[ease]">
+                                    <div class="h-[280px] lg:h-[191px] xl:h-[238px] 2xl:h-[286px]">
+                                        <div
+                                            class="lg:w-[85%] mb-[25px] md:mb-[32px] lg:mb-[25px] xl:mb-[32px] 2xl:mb-[38px]">
+                                            <h3
+                                                class="text-black text-lg md:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-0">
+                                                CoLab cut dev cycle time by up to 98% with mirrord</h3>
+                                        </div>
+                                        <div
+                                            class="text-midblack text-base lg:text-sm xl:text-base 2xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                                            <p class="mb-0">“How long does it take to test a change in development? If
+                                                you have to make
+                                                a hundred of
+                                                those changes,
+                                                that would take you what? 15 minutes x 100 changes? [25 hours] With
+                                                mirrord, you can do
+                                                all that in 20
+                                                minutes.”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <div class="w-[115px] md:w-[143px] lg:w-[115px] xl:w-[143px] 2xl:w-[172px]">
+                                            <img class="img-fluid w-full h-auto" src="/demo-colab.png" alt="colab">
+                                        </div>
+                                        <div>
+                                            <a class="text-primary text-sm md:text-[1.063rem] lg:text-sm xl:text-[1.063rem] 2xl:text-xl font-medium underline"
+                                                href="/mirrord/case-study/colab/">Read The Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide pb-3">
+                                <div
+                                    class="border-card flex flex-col justify-between bg-[#FAFAFD] border border-solid border-black rounded-[7px] pt-[33px] md:pt-[42px] lg:pt-[33px] xl:pt-[42px] 2xl:pt-[50px] px-[27px] md:px-[33px] lg:px-[27px] xl:px-[33px] 2xl:px-[40px] pb-[16px] md:pb-[20px] lg:pb-[16px] xl:pb-[20px] 2xl:pb-[24px] transition-all duration-300 ease-[ease]">
+                                    <div class="h-[280px] lg:h-[191px] xl:h-[238px] 2xl:h-[286px]">
+                                        <div
+                                            class="lg:w-[84%] mb-[25px] md:mb-[32px] lg:mb-[25px] xl:mb-[32px] 2xl:mb-[38px]">
+                                            <h3
+                                                class="text-black text-lg md:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-0">
+                                                Cadence saved hours each week for every engineer while improving product
+                                                quality.</h3>
+                                        </div>
+                                        <div
+                                            class="text-midblack text-base lg:text-sm xl:text-base 2xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                                            <p class="mb-0">“mirrord has had as big an impact on development
+                                                productivity at Cadence as
+                                                AI has”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <div class="w-[115px] md:w-[143px] lg:w-[115px] xl:w-[143px] 2xl:w-[172px]">
+                                            <img class="img-fluid w-full h-auto" src="/demo-cadence.png" alt="cadence">
+                                        </div>
+                                        <div>
+                                            <a class="text-primary text-sm md:text-[1.063rem] lg:text-sm xl:text-[1.063rem] 2xl:text-xl font-medium underline"
+                                                href="/mirrord/case-study/cadence">Read The Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="demo-cta__section bg-[#E4E3FD] relative z-10 border-b-3 careers-bg-image--left-bottom"
+        style="background-image: url(/careers-section-7-bg.png);">
+        <div class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto relative">
+            <div
+                class="demo-cta__inner relative z-10 pt-[65px] md:pt-[82px] lg:pt-[65px] xl:pt-[82px] 2xl:pt-[98px] pb-[40px] md:pb-[60px] lg:pb-[69px] xl:pb-[87px] 2xl:pb-[104px]">
+                <header
+                    class="demo-cta__header text-center lg:w-[42%] mx-auto mb-[33px] md:mb-[42px] lg:mb-[33px] xl:mb-[42px] 2xl:mb-[50px]">
+                    <h2
+                        class="demo-cta__title font-heading text-[2.063rem] md:text-[2.625rem] lg:text-[2.063rem] xl:text-[2.625rem] 2xl:text-[3.125rem] font-bold text-black leading-[1.2] md:leading-[1.2] lg:leading-[1.2] xl:leading-[1.2] 2xl:leading-[1.2] mt-0 mb-[21px] md:mb-[27px] lg:mb-[21px] xl:mb-[27px] 2xl:mb-[32px]">
+                        Ready to <span class="text-primary">speed up</span> development?
+                    </h2>
+                    <div class="w-3/4 lg:w-full mx-auto">
+                        <p class="demo-cta__text text-base xl:text-xl 2xl:text-2xl font-light text-black">
+                            See how mirrord can help you cut dev time, improve code quality, and reduce cloud costs.</p>
+                    </div>
+                </header>
+                <div
+                    class="w-[68%] lg:w-full mx-auto flex flex-wrap lg:flex-nowrap justify-center lg:gap-[20px] xl:gap-[25px] 2xl:gap-[30px] mb-4 md:mb-5 lg:mb-4 xl:mb-5 2xl:mb-6">
+                    <a class="flex-none w-full lg:w-[188px] xl:w-[235px] 2xl:w-[282px] h-[50px] xl:h-[54px] 2xl:h-[65px] mb-5 text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body font-medium flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                        href="https://app.metalbear.co/">try it now for free</a>
+                    <a class="flex-none w-full lg:w-[220px] xl:w-[275px] 2xl:w-[330px] h-[50px] xl:h-[54px] 2xl:h-[65px] mb-5 text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl text-[#000000] capitalize font-body flex justify-center items-center bg-white hover:bg-[#E4E3FD] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                        href="/mirrord/demo">Schedule a demo</a>
+                </div>
+            </div>
+            <div
+                class="lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full flex justify-center lg:justify-end items-center z-0 mb-[60px] lg:mb-0">
+                <div class="w-3/4 lg:w-[26%]">
+                    <img class="w-full h-auto" src="/mirrord-case-studies.png" alt="mirrord-case-studies">
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        new Splide('.splide-case-studies', {
+            mediaQuery: 'min',
+            breakpoints: {
+                320: {
+                    perPage: 1,
+                },
+                1024: {
+                    perPage: 2,
+                    gap: '60px',
+                },
+                1200: {
+                    perPage: 2,
+                    gap: '73px',
+                },
+                1720: {
+                    perPage: 2,
+                    gap: '88px',
+                },
+            },
+            padding: { left: '0.75rem', right: '0.75rem' },
+            gap: '1.5rem',
+            arrows: false,
+            pagination: true,
+        }).mount();
+    });
+</script>
 {{- end }}
