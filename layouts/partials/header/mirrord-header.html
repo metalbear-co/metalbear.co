@@ -1,0 +1,109 @@
+{{ if .Site.Params.alert -}}
+{{ partial "header/alert.html" . }}
+{{ end -}}
+
+{{ if eq .Site.Params.options.flexSearch false -}}
+<div class="sticky-lg-top">
+    {{ end -}}
+
+    <div class="header-bar"></div>
+
+    <header class="header__site border-b-3">
+        <div class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto py-[22px] lg:py-[10px] xl:py-3 2xl:py-[18px] px-3">
+            <nav class="flex flex-wrap md:flex-nowrap justify-between items-center" aria-label="Main navigation">
+                <div class="w-[230px] lg:w-[98px] xl:w-[122px] 2xl:w-[164px] lg:flex-none">
+                    <a class="navbar-brand p-0 outline" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
+                        <img class="w-full h-auto" src="/metalbear-header-logo.svg" alt="mirrord" />
+                    </a>
+                </div>
+
+                <button class="btn btn-menu block lg:hidden order-5" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-menu">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
+                <div class="offcanvas offcanvas-end flex-1 lg:pl-12 xl:pl-[60px] 2xl:pl-[80px]" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true"
+                    aria-labelledby="offcanvasDoksLabel">
+                    <div class="offcanvas-header flex items-start lg:hidden p-4">
+                        <a class="navbar-brand flex-1 p-0" href="{{ "/" | relLangURL }}"
+                            aria-label="{{ .Site.Params.Title }}">
+                            <img class="navbar-brand__image-mobile d-block mx-auto" src="/metalbear-logo-mobile.svg"
+                                style="height: 112px; transform: translateX(1rem);" />
+                        </a>
+                        <button type="button" id="menuDismissButton" class="btn-close text-reset w-8 h-8 flex-none opacity-50 relative z-50"
+                            data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+                    </div>
+                    <div class="offcanvas-body lg:flex lg:justify-center lg:items-center p-4 lg:p-0">
+                        <div class="flex-grow-1">
+                            <ul
+                                class="nav flex flex-col lg:flex-row justify-center lg:justify-start items-center">
+                                {{- $current := . -}}
+                                {{- $section := $current.Section -}}
+                                {{- range .Site.Menus.main -}}
+                                {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+                                {{- $active = or $active (eq .Name $current.Title) -}}
+                                {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
+                                {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "contributors")) -}}
+                                {{- $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) -}}
+                                {{- $active = or $active (and (eq .Name "Community") (eq $current.Title "Writers Program" "CFP Program")) -}}
+                                {{- if .HasChildren }}
+                                <li class="nav-item has-submenu lg:ml-0 relative group w-full lg:w-auto text-center">
+                                    <a class="nav-link has-submenu-toggle flex justify-center items-center text-sm lg:text-[13px] xl:text-sm 2xl:text-[15px] px-4 lg:px-[21px] xl:px-[26px] 2xl:px-[35px] py-2{{ if $active }} active{{ end }}"
+                                        href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        {{ .Name }}
+                                        <span class="dropdown-caret pt-[2px] xl:pt-[3px]">
+                                            <svg class="rotate-180" width="17" height="7" viewBox="0 0 17 7" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.33594 6L8.33594 1L13.3359 6H3.33594Z" fill="black" />
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <ul class="submenu hidden group-hover:lg:block static lg:absolute lg:left-[21px] 2xl:left-[28px] bg-white min-w-[10rem] py-2 m-0 rounded-[0.375rem]"
+                                        aria-labelledby="navbarDropdownMenuLink">
+                                        {{- range .Children -}}
+                                        {{- $active = eq .Name $current.Title -}}
+                                        <li class="text-center lg:text-start w-full">
+                                            <a class="submenu-item dropdown-item block w-full whitespace-nowrap text-sm lg:text-[13px] xl:text-sm 2xl:text-[15px] lg:px-[14px] xl:px-[21px] 2xl:px-7 py-1 hover:underline {{ if $active }} active{{ end }}"
+                                                href="{{ .URL | relLangURL }}" {{ if $active }} aria-current="true" {{
+                                                end }}>{{ .Name }}</a>
+                                        </li>
+                                        {{- end }}
+                                    </ul>
+                                </li>
+                                {{- else }}
+                                <li class="nav-item nav-item-non-children lg:ml-0 w-full lg:w-auto text-center">
+                                    <a class="nav-link inline-block text-sm lg:text-[13px] xl:text-sm 2xl:text-[15px] px-4 lg:px-[21px] xl:px-[26px] 2xl:px-[35px] py-2{{ if $active }} active{{ end }}"
+                                        href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                                </li>
+                                {{- end }}
+                                {{- end -}}
+                            </ul>
+                        </div>
+                        <hr class="my-6 border-t border-solid border-t-[#222222] opacity-25 lg:hidden">
+                        <ul class="nav flex flex-col lg:flex-row justify-center lg:justify-start items-center">
+                            <li>
+                                <a class="text-white hover:text-midblack text-base lg:text-[0.813rem] 2xl:text-[0.938rem] text-center inline-block bg-primary hover:bg-tertiary border border-solid border-[#222222] rounded-[8px] lg:rounded-[7px] xl:rounded-[8px] 2xl:rounded-[9px] py-[11px] lg:py-[8px] 2xl:py-[9px] px-[21px] lg:px-[17px] 2xl:px-[15px] transition-all duration-300 ease-[ease]"
+                                    href="https://app.metalbear.co/account/sign-up" target="_blank">Try mirrord for
+                                    free</a>
+                            </li>
+                            <li class="nav-item nav-item-non-children text-center lg:ml-0">
+                                <a class="nav-link inline-block text-midblack text-sm lg:text-[0.813rem] 2xl:text-[0.938rem] px-4 lg:px-[14px] xl:px-[21px] 2xl:px-[28px] py-2 underline"
+                                    href="https://app.metalbear.co/">Sign in</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    {{ if eq .Site.Params.options.flexSearch false }}
+</div>
+{{ end -}}
+  
