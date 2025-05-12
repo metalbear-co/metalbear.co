@@ -1,0 +1,75 @@
+{{ define "main" }}
+<div class="careers-job-opening">
+    <section class="border-b-3 border-b-black">
+        <div class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-5 xl:px-0">
+            <header
+                class="text-center pt-[71px] md:pt-[88px] lg:pt-[71px] xl:pt-[88px] 2xl:pt-[106px] pb-[60px] md:pb-[75px] lg:pb-[60px] xl:pb-[75px] 2xl:pb-[90px]">
+                <h3
+                    class="text-black text-2xl md:text-[2.063rem] lg:text-[1.688rem] xl:text-[2.063rem] 2xl:text-[2.5rem] font-heading font-normal leading-tight md:leading-tight lg:leading-tight xl:leading-tight 2xl:leading-tight mb-[13px] md:mb-[17px] lg:mb-[13px] xl:mb-[17px] 2xl:mb-[20px]">
+                    Careers at MetalBear</h3>
+                <h2
+                    class="text-black text-[2.5rem] md:text-[3.125rem] lg:text-[2.5rem] xl:text-[3.125rem] 2xl:text-6xl font-heading font-bold mb-[51px] md:mb-[63px] lg:mb-[51px] xl:mb-[63px] 2xl:mb-[76px]">
+                    {{ .Title | safeHTML }}</h2>
+            </header>
+        </div>
+    </section>
+
+    <section class="border-b-3 border-b-black career-bg-image--left-top relative"
+        style="background-image: url(/careers-top-left-bg.png);">
+        <div
+            class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-5 xl:px-0 pt-[89px] md:pt-[112px] lg:pt-[89px] xl:pt-[112px] 2xl:pt-[134px]">
+            <div class="lg:w-[90%] xl:w-[85%] mx-auto">
+                <div
+                    class="lg:flex lg:items-center bg-[#E4E3FD] border border-solid border-black rounded-[7px] pt-[33px] md:pt-[42px] lg:pt-[33px] xl:pt-[42px] 2xl:pt-[50px] pb-[33px] md:pb-[42px] lg:pb-[33px] xl:pb-[42px] 2xl:pb-[50px] mb-[76px] md:mb-[95px] lg:mb-[76px] xl:mb-[95px] 2xl:mb-[114px]">
+                    <div class="lg:w-[45%] lg:flex-none mb-8 lg:mb-0">
+                        <div class="w-[60%] lg:w-[60%] mx-auto">
+                            <img class="w-full h-auto" src="/careers-single.png" alt="careers-single">
+                        </div>
+                    </div>
+                    <div class="lg:flex-1">
+                        <div class="lg:w-[72%] px-6 lg:px-0">
+                            <h3
+                                class="text-black text-[1.688rem] md:text-[2.063rem] lg:text-[1.688rem] xl:text-[2.063rem] 2xl:text-[2.5rem] font-heading font-bold mb-[23px] md:mb-[28px] lg:mb-[23px] xl:mb-[28px] 2xl:mb-[34px]">
+                                About MetalBear</h3>
+                            <div
+                                class="text-black text-sm md:text-base lg:text-sm xl:text-base 2xl:text-lg leading-[1.4] md:leading-[1.4] lg:leading-[1.4] xl:leading-[1.4] 2xl:leading-[1.4]">
+                                <p>MetalBear builds open-source developer tools for cloud engineers. Our flagship
+                                    product, mirrord,
+                                    allows
+                                    developers to run local processes as if they were inside their cloud
+                                    environment—without the hassle
+                                    of
+                                    deployment or disrupting shared environments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <article class="careers-article mb-[71px] md:mb-[88px] lg:mb-[71px] xl:mb-[88px] 2xl:mb-[106px]">
+                    <div id="whr_embed_hook" class="job-opening"></div>
+                </article>
+            </div>
+        </div>
+        <div class="border-t-3 bg-[#756DF3]">
+            <div
+                class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0 pt-[71px] md:pt-[88px] lg:pt-[71px] xl:pt-[88px] 2xl:pt-[106px] pb-[64px] md:pb-[80px] lg:pb-[64px] xl:pb-[80px] 2xl:pb-[96px]">
+                <div class="text-center lg:w-[41%] lg:mx-auto">
+                    <h2
+                        class="text-white text-[2.063rem] md:text-[2.625rem] lg:text-[2.063rem] xl:text-[2.625rem] 2xl:text-[3.125rem] font-heading font-semibold leading-[1.43] md:leading-[1.43] lg:leading-[1.43] xl:leading-[1.43] 2xl:leading-[1.43] mb-[15px] md:mb-[19px] lg:mb-[15px] xl:mb-[19px] 2xl:mb-[23px]">
+                        How to apply?</h2>
+                    <div
+                        class="text-white text-[1.188rem] md:text-[1.438rem] lg:text-[1.188rem] xl:text-[1.438rem] 2xl:text-[1.75rem] font-light leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                        <p>Send your CV to cv+rnd@metalbear.co and any relevant links (LinkedIn, GitHub, etc.)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-4/5">
+            <img class="w-full h-auto opacity-5" src="/career-bottom-left-bg.png" alt="career-bottom-left-bg">
+        </div>
+    </section>
+</div>
+<script src="https://www.workable.com/assets/embed.js" type="text/javascript"></script>
+<script type="text/javascript"
+    charset="utf-8"> whr(document).ready(() => { whr_embed(694208, { "base": "jobs", "detail": "titles", "zoom": "country", "grouping": "none" }); }); </script>
+
+{{ end }}

@@ -72,6 +72,16 @@ rel  = "sitemap"
 [minify.tdewolff.html]
   keepWhitespace = false
 
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
 [module]
   [module.hugoVersion]
     extended = true
@@ -92,6 +102,10 @@ rel  = "sitemap"
   [[module.mounts]]
     source = "node_modules/mermaid"
     target = "assets/js/vendor/mermaid"
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
 [params.shareButtons]
   size = "small"
   networks = ["twitter", "linkedin", "reddit", "copylink"]
