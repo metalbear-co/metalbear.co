@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "exec-bin node_modules/.bin/hugo/hugo server",
     "dev:with-subsite": "npm run build:subsite:dev && npm run dev",
-    "build": "exec-bin node_modules/.bin/hugo/hugo --gc --minify",
+    "build": "npm run clean && exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir",
     "build:with-subsite": "npm run build && npm run build:subsite:prod",
     "build:subsite:dev": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../static/mirrord",
     "build:subsite:prod": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../public/mirrord",
