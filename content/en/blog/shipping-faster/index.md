@@ -128,7 +128,7 @@ To do this, enable the `steal` mode in mirrord. This mode allows your local code
 
 To enable steal mode, create the following mirrord configuration file at the root of the repo:
 
-```bash
+```json
 # mirrordconfig.json
 {
   "target": "deployment/client",
