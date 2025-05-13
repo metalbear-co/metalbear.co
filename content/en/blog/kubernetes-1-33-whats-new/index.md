@@ -123,7 +123,7 @@ Here's the flow:
 2.  Behind the scenes, the CSI still creates the volume. The populator doesn't replace the CSI, it teams up with it. The CSI creates an empty volume as usual, and the populator fills it with whatever data you defined (could be a backup, a dataset, etc.).
 3.  PVCs only bind when they're fully populated. That means you can safely deploy your full app (Pods + PVCs) in one go. Your pods will wait until the data is ready, just like when cloning from a PVC or using a VolumeSnapshot.
 
-Powerul, yet simple 🦾
+Powerful, yet simple 🦾
 
 ## 🚀 Moving to Beta: Promising Features Getting Stronger
 
