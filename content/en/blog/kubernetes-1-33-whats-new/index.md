@@ -27,7 +27,7 @@ weight: 50
 images: [thumbnail.png]
 contributors: ["Nic Vermande"]
 ---
-Kubernetes 1.33, the "Octarine" release, introduces powerful new features that improve Kubernetes networking, workload identity, storage, and resource management. Key highlights include dynamic Service CIDR expansion, smarter service traffic distribution, volume populators for pre-filled PersistentVolumes, and improvement to both vertical and horizontal scaling configurations. Whether you're running multi-tenant clusters or managing edge workloads, Kubernetes 1.33 brings subtle but meaningful improvements that are easy to miss, unless you know where to look.
+[Kubernetes 1.33](https://kubernetes.io/blog/2025/04/23/kubernetes-v1-33-release/), the "[Octarine](https://wiki.lspace.org/Octarine)" release, introduces powerful new features that improve Kubernetes networking, workload identity, storage, and resource management. Key highlights include dynamic Service CIDR expansion, smarter service traffic distribution, volume populators for pre-filled PersistentVolumes, and improvement to both vertical and horizontal scaling configurations. Whether you're running multi-tenant clusters or managing edge workloads, Kubernetes 1.33 brings subtle but meaningful improvements that are easy to miss, unless you know where to look.
 
 For me, this release is a bit of a *madeleine de Proust*[^1], as we say in French. Just like the magical eighth color in Terry Pratchett's Discworld (visible only to wizards and cats), the best features hidden in the changelog might not be immediately apparent to everyone.
 
@@ -41,7 +41,7 @@ So let's dig in. What's new? What's stable? What's cooking in alpha? Here are my
 
 Coming from my Cisco networking days, IP exhaustion nightmares still haunt me (any IPv6 fans here? 🤗) . You're happily deploying services when suddenly you hit your Service IP ceiling, and traditionally this meant a disruptive migration.
 
-Not anymore. Multiple Service CIDRs is now stable in 1.33, allowing you to dynamically expand your Service IP pools without cluster recreation. I've been eagerly watching this since its alpha days in 1.29, and it's glorious to see it graduate.
+Not anymore. [Multiple Service CIDRs](https://github.com/kubernetes/enhancements/blob/master/keps/sig-network/1880-multiple-service-cidrs/README.md) is now stable in 1.33, allowing you to dynamically expand your Service IP pools without cluster recreation. I've been eagerly watching this since its alpha days in 1.29, and it's glorious to see it graduate.
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -59,7 +59,7 @@ What excites me about this graduation is how elegantly it solves a problem that 
 
 ### Traffic Distribution for Services: Smarter Routing at Last
 
-Another feature reaching full maturity is Traffic Distribution for Services, introducing the `trafficDistribution` field. As someone who's spent countless hours tweaking BGP preferences and reverse-engineering cloud networking quirks, I appreciate the ability to influence traffic patterns without writing a full dissertation in YAML.
+Another feature reaching full maturity is [Traffic Distribution for Services](https://github.com/kubernetes/enhancements/tree/master/keps/sig-network/4444-service-traffic-distribution), introducing the `trafficDistribution` field. As someone who's spent countless hours tweaking BGP preferences and reverse-engineering cloud networking quirks, I appreciate the ability to influence traffic patterns without writing a full dissertation in YAML.
 
 ```yaml
 apiVersion: v1
@@ -93,7 +93,7 @@ And yes, fallback is graceful. If no local endpoints are available, Kubernetes d
 
 ### Volume Populators: Pre-filled Volumes Made Easy
 
-This feature, now stable in 1.33, solves a persistent challenge: how to create volumes with pre-populated data without jumping through hoops. While perhaps less flashy than networking features, I've found it incredibly practical when building demo applications. Volume Populators enables the creation of PVCs from various data sources beyond the traditional PVC clones and snapshots. Want a volume pre-populated with a VM image? Or restored from a backup? Here's the standardized way to do it:
+This feature, now stable in 1.33, solves a persistent challenge: how to create volumes with pre-populated data without jumping through hoops. While perhaps less flashy than networking features, I've found it incredibly practical when building demo applications. [Volume Populators](https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1495-volume-populators/README.md) enables the creation of PVCs from various data sources beyond the traditional PVC clones and snapshots. Want a volume pre-populated with a VM image? Or restored from a backup? Here's the standardized way to do it:
 
 ```yaml
 apiVersion: v1
@@ -131,7 +131,7 @@ Powerful, yet simple 🦾
 
 Vertical scaling in Kubernetes has long been powerful in theory but clunky in practice. The traditional Vertical Pod Autoscaler (VPA) could monitor a pod's resource usage and recommend better cpu/memory settings, but those changes only took effect after a pod restart. That meant interruption, scheduling churn, and for many workloads, it wasn't worth the trouble.
 
-With In-Place Pod Vertical Scaling, now in beta as of Kubernetes 1.33, that story changes. You can now scale a pod's resource requests and limits live, without restarting the container. This is a huge leap toward efficient and responsive resource management.
+With [In-Place Pod Vertical Scaling](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/1287-in-place-update-pod-resources), now in beta as of Kubernetes 1.33, that story changes. You can now scale a pod's resource requests and limits live, without restarting the container. This is a huge leap toward efficient and responsive resource management.
 
 Before you jump in, a few caveats:
 
@@ -178,13 +178,13 @@ resizePolicy:
 
 VPA doesn't interpret these policies itself, it simply issues the /resize request, and the kubelet + container runtime handle it according to the specified `resizePolicy`.
 
-Looking ahead, it opens the doors to a synergy with Karpenter or custom autoscalers: imagine resizing pods before scaling nodes. That's real-time, cost-aware optimization at the pod level.
+Looking ahead, it opens the doors to a synergy with [Karpenter](https://karpenter.sh/docs/) or custom autoscalers: imagine resizing pods before scaling nodes. That's real-time, cost-aware optimization at the pod level.
 
 ## 🧪 Alpha Features: The Promising Newcomers
 
 ### Service Account Token for Image Pulls: Goodbye, Credential Headaches
 
-This alpha feature introduces the ability for pods to use their own Kubernetes Service Account (KSA) identity to authenticate and pull container images without relying on long-lived image pull secrets. It expands the kubelet credential provider configuration to support the use of service account tokens for image authentication. This is part of a broader Kubernetes initiative to eliminate static credentials from the API and adopt short-lived, workload-bound identities where possible. In practice, this mirrors the "secretless" patterns already seen in accessing cloud secrets, now applied to pulling images securely and dynamically, based on pod identity.
+[This alpha feature](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/4412-projected-service-account-tokens-for-kubelet-image-credential-providers/README.md) introduces the ability for pods to use their own Kubernetes Service Account (KSA) identity to authenticate and pull container images without relying on long-lived image pull secrets. It expands the kubelet credential provider configuration to support the use of service account tokens for image authentication. This is part of a broader Kubernetes initiative to eliminate static credentials from the API and adopt short-lived, workload-bound identities where possible. In practice, this mirrors the "secretless" patterns already seen in accessing cloud secrets, now applied to pulling images securely and dynamically, based on pod identity.
 
 When configured, the kubelet requests a token with a specific audience tied to the pod, and passes it along with selected service account annotations to a credential provider plugin. The plugin exchanges the token with an external system (like a cloud IAM or registry) to retrieve short-lived credentials. These are used for the image pull and creates a dynamic auth flow tied to workload identity. To optimize performance, credentials are cached based on the image and service account identity, avoiding redundant lookups while preserving isolation between workloads.
 
@@ -249,7 +249,7 @@ Once that's in place, everything becomes seamless for developers. Pods just need
 
 ### HPA Configurable Tolerance: Fine-Tune Your Autoscaling Precision
 
-This alpha feature introduces per-HPA configurable tolerance for the Horizontal Pod Autoscaler, allowing you to adjust how aggressively or conservatively each workload scales based on observed metrics. Tolerance defines the acceptable deviation between desired and actual metrics before triggering a scaling action. Rather than relying on the cluster-wide default tolerance (typically 10%), you can now set custom tolerances on individual HPAs, with different values for scaling up versus scaling down.
+[This alpha feature](https://github.com/kubernetes/enhancements/tree/master/keps/sig-autoscaling/4951-configurable-hpa-tolerance) introduces per-HPA configurable tolerance for the Horizontal Pod Autoscaler, allowing you to adjust how aggressively or conservatively each workload scales based on observed metrics. Tolerance defines the acceptable deviation between desired and actual metrics before triggering a scaling action. Rather than relying on the cluster-wide default tolerance (typically 10%), you can now set custom tolerances on individual HPAs, with different values for scaling up versus scaling down.
 
 The default 10% tolerance is often too coarse-grained for real-world scenarios. For large deployments, a 10% tolerance can mean hundreds of pods difference between desired and actual state before scaling occurs. This has been a longstanding issue raised in the Kubernetes community, where users need more responsive scaling for critical workloads or more conservative scaling for stable ones. The impact is especially significant for large-scale applications where resources are costly and for workloads with rapid traffic fluctuations where responsiveness is critical.
 
@@ -308,9 +308,11 @@ For very large deployments or mission-critical services, you might set even tigh
 
 This release delights us with a broad collection of tools that elevate every layer of our favorite orchestration platform. From networking and security to resource management, Kubernetes 1.33 brings a refreshing spring vibe to our clusters, full of growth, color, and possibility.
 
-If you're curious to try out these new capabilities without the friction of redeploying code, mirrord can be a helpful tool too. It lets you run your local processes (This binary you've just compiled with fear 😱 and love 😍) in the context of a live Kubernetes environment, so you can quickly validate things like autoscaling thresholds, image pull flows, or service mesh behavior. All from your own machine. It's a great way to explore what Kubernetes 1.33 introduces, while keeping your feedback loop tight.
+If you're curious to try out these new capabilities without the friction of redeploying code, [mirrord](https://metalbear.co/mirrord/docs/overview/introduction/) can be a helpful tool too. It lets you run your local processes (This binary you've just compiled with fear 😱 and love 😍) in the context of a live Kubernetes environment, so you can quickly validate things like autoscaling thresholds, image pull flows, or service mesh behavior. All from your own machine. It's a great way to explore what Kubernetes 1.33 introduces, while keeping your feedback loop tight.
 
-Like octarine, the magical eighth color visible only to wizards in Discworld, the true strength of Kubernetes 1.33 lies not in any single feature, but in how they come together, shifting us from static infrastructure to dynamic systems that respond to intent, not just configuration.
+> 🔔 [Try mirrord today](https://app.metalbear.co/account/sign-up) to test Kubernetes 1.33 features directly in your live cluster and streamline your development workflow!
+
+Like octarine, the magical eighth color visible only to wizards in [Discworld](https://en.wikipedia.org/wiki/Discworld), the true strength of Kubernetes 1.33 lies not in any single feature, but in how they come together, shifting us from static infrastructure to dynamic systems that respond to intent, not just configuration.
 
 As Terry Pratchett might say: any sufficiently advanced container orchestration is indistinguishable from magic. And with Kubernetes 1.33, we're all becoming a little more wizardly!
 
