@@ -13,22 +13,16 @@
   "scripts": {
     "dev": "exec-bin node_modules/.bin/hugo/hugo server",
     "dev:with-subsite": "npm run build:subsite:dev && npm run dev",
-  
     "build": "exec-bin node_modules/.bin/hugo/hugo --gc --minify",
     "build:with-subsite": "npm run build && npm run build:subsite:prod",
-  
     "build:subsite:dev": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../static/mirrord",
     "build:subsite:prod": "cd mirrord.dev && HUGO_BASEURL=$HUGO_BASEURL/mirrord exec-bin ../node_modules/.bin/hugo/hugo --destination ../public/mirrord",
-  
     "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json node_modules",
-  
     "start": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender",
     "server": "exec-bin node_modules/.bin/hugo/hugo server",
-  
     "check": "exec-bin node_modules/.bin/hugo/hugo version",
     "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo && cd mirrord.dev && npm install",
-
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
     "prestart": "npm run clean",
@@ -69,9 +63,17 @@
     "purgecss-whitelister": "^2.4",
     "shx": "^0.3.4",
     "stylelint": "^14.6",
-    "stylelint-config-standard-scss": "^3.0"
+    "stylelint-config-standard-scss": "^3.0",
+    "tailwindcss": "^4.1.5"
   },
   "otherDependencies": {
     "hugo": "0.141.0"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/cli": "^4.1.4",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }

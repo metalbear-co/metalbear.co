@@ -1,0 +1,107 @@
+<footer class="footer">
+    <div
+        class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0 pt-[46px] md:pt-[70px] lg:pt-[59px] xl:pt-[73px] 2xl:pt-[88px] pb-[56px] lg:pb-[35px] xl:pb-[43px] 2xl:pb-[52px]">
+        <div class="lg:w-[78%] lg:mx-auto flex flex-col lg:flex-row">
+            <div class="footer__info lg:flex-1 order-2 lg:order-1 flex justify-center lg:justify-start">
+                <div>
+                    <div
+                        class="w-[250px] lg:w-[200px] xl:w-[250px] 2xl:w-[300px] mb-[32px] md:mb-[40px] lg:mb-[32px] xl:mb-[40px] 2xl:mb-[48px]">
+                        <a class="footer__logo p-0" href="{{ "/" | relLangURL }}"
+                            aria-label="{{ .Site.Params.Title }}">
+                            <img class="w-full h-auto" src="/metalbear-header-logo.svg" />
+                        </a>
+                    </div>
+                    <div class="footer__social-wrapper lg:pl-[29px] xl:pl-[37px] 2xl:pl-[44px]">
+                        <ul
+                            class="footer__social nav flex justify-center lg:justify-start items-center gap-[13px] md:gap-[17px] lg:gap-[13px] xl:gap-[17px] 2xl:gap-[20px]">
+                            {{ range .Site.Menus.footer_social -}}
+                            <li class="nav-item w-[23px] md:w-[28px] lg:w-[23px] xl:w-[28px] 2xl:w-[34px] flex-none">
+                                <a class="nav-link {{ urlize .Name }}" target="_blank" href="{{ .URL | relURL }}">{{
+                                    .Pre |
+                                    safeHTML }}</a>
+                            </li>
+                            {{ end -}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__navigation lg:w-[66%] order-1 lg:order-2">
+                <div class="footer__menu-wrapper lg:flex lg:justify-between text-center lg:text-left">
+                    <div class="footer__menu mb-8 lg:mb-0">
+                        <h4
+                            class="footer__menu-title text-black text-base md:text-[1.063rem] lg:text-base xl:text-[1.063rem] 2xl:text-xl font-bold mt-0 mb-[16px] md:mb-[20px] lg:mb-[16px] xl:mb-[20px] 2xl:mb-[24px]">
+                            About</h4>
+                        <ul class="footer__menu-lists list-unstyled">
+                            {{- range .Site.Menus.footer_left }}
+                            <li class="footer__menu-list mb-[5px] md:mb-[7px] lg:mb-[5px] xl:mb-[7px] 2xl:mb-[8px]">
+                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base" {{
+                                    if findRE `^http` .URL }} target="_blank" rel="noopener" {{ end }} href="{{- if findRE `^#` .URL -}}
+                        {{- if not $.IsHome -}}
+                        {{- site.Home.RelPermalink -}}
+                        {{- end }}{{- .URL -}}
+                    {{- else -}}
+                        {{- .URL | relLangURL -}}
+                    {{- end -}}">{{ .Name }}</a>
+                            </li>
+                            {{- end }}
+                        </ul>
+                    </div>
+                    <div class="footer__menu mb-8 lg:mb-0">
+                        <h4
+                            class="footer__menu-title text-black text-base md:text-[1.063rem] lg:text-base xl:text-[1.063rem] 2xl:text-xl font-bold mt-0 mb-[16px] md:mb-[20px] lg:mb-[16px] xl:mb-[20px] 2xl:mb-[24px]">
+                            Resources</h4>
+                        <ul class="footer__menu-lists list-unstyled">
+                            {{- range .Site.Menus.footer_center }}
+                            <li class="footer__menu-list mb-[5px] md:mb-[7px] lg:mb-[5px] xl:mb-[7px] 2xl:mb-[8px]">
+                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base" {{
+                                    if findRE `^http` .URL }} target="_blank" rel="noopener" {{ end }} href="{{- if findRE `^#` .URL -}}
+                        {{- if not $.IsHome -}}
+                        {{- site.Home.RelPermalink -}}
+                        {{- end }}{{- .URL -}}
+                    {{- else -}}
+                        {{- .URL | relLangURL -}}
+                    {{- end -}}">{{ .Name }}</a>
+                            </li>
+                            {{- end }}
+                        </ul>
+                    </div>
+                    <div class="footer__menu mb-8 lg:mb-0">
+                        <h4
+                            class="footer__menu-title text-black text-base md:text-[1.063rem] lg:text-base xl:text-[1.063rem] 2xl:text-xl font-bold mt-0 mb-[16px] md:mb-[20px] lg:mb-[16px] xl:mb-[20px] 2xl:mb-[24px]">
+                            Guides</h4>
+                        <ul class="footer__menu-lists list-unstyled">
+                            {{- range .Site.Menus.footer_right }}
+                            <li class="footer__menu-list mb-[5px] md:mb-[7px] lg:mb-[5px] xl:mb-[7px] 2xl:mb-[8px]">
+                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base" {{
+                                    if findRE `^http` .URL }} target="_blank" rel="noopener" {{ end }} href="{{- if findRE `^#` .URL -}}
+                        {{- if not $.IsHome -}}
+                        {{- site.Home.RelPermalink -}}
+                        {{- end }}{{- .URL -}}
+                    {{- else -}}
+                        {{- .URL | relLangURL -}}
+                    {{- end -}}">{{ .Name }}</a>
+                            </li>
+                            {{- end }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright border-t-3 border-solid border-black">
+        <div class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0">
+            <div
+                class="flex justify-between text-black text-sm lg:text-sm xl:text-sm 2xl:text-base font-light py-[21px] md:py-[27px] lg:py-[21px] xl:py-[27px] 2xl:py-[32px]">
+                <div>
+                    <p class="mb-0">{{ .Site.Params.footer | safeHTML }}</p>
+                </div>
+                <div class="lg:text-end">
+                    <p class="mb-0">Designed by <a class="underline" target="_blank"
+                            href="https://studioartik.com">ARTIK
+                            STUDIO</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
