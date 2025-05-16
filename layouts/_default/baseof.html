@@ -13,9 +13,17 @@
     {{ .Scratch.Add "class" " list" -}}
   {{ end -}}
   <body class="{{ .Scratch.Get "class" }}">
+    {{- if or (eq .Section "mirrord") (eq .Section "careers") }}
+    {{ partial "header/mirrord-header.html" . }}
+    {{- else }}
     {{ partial "header/header.html" . }}
+    {{- end }}
     {{ block "main" . }}{{ end }}
+    {{- if or (eq .Section "mirrord") (eq .Section "careers") }}
+    {{ partial "footer/mirrord-footer.html" . }}
+    {{- else }}
     {{ partial "footer/footer.html" . }}
+    {{- end }}
     {{ partial "footer/script-footer.html" . }}
   </body>
 </html>

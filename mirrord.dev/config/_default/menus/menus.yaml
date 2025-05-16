@@ -1,35 +1,31 @@
 main:
-- name: Home
-  url: /mirrord/
-  params:
-    class: "text-upper lg:hidden"
-  weight: 10
-- name: Product
-  url: /product/
-  params:
-    class: "text-upper"
-  weight: 10
-- name: Pricing
-  url: /pricing/
-  params:
-    class: "text-upper"
-  weight: 20
-- name: Docs
-  url: /docs/overview/introduction/
-  params:
-    class: "text-upper"
-  weight: 30
-- name: Login/Sign Up
-  url: "https://app.metalbear.co/"
-  params:
-    class: "menu-item-desktop"
-  weight: 30
-- name: Schedule A Demo
-  url: "/demo"
-  params:
-    class: "button menu-item-desktop"
-    target: "_blank"
-  weight: 50
+  - name: mirrord
+    weight: 10
+    url: /
+  - name: Pricing
+    weight: 20
+    url: /pricing/
+  - name: Docs
+    weight: 30
+    url: /docs/overview/introduction/
+  - name: Resources
+    weight: 40
+    identifier: resources
+  - name: Blog
+    parent: resources
+    weight: 10
+    url: "https://metalbear.co/blog"
+  - name: Guides
+    parent: resources
+    weight: 20
+    url: "https://metalbear.co/guides/"
+  - name: Case Studies
+    parent: resources
+    weight: 30
+    url: "https://metalbear.co/mirrord/case-studies/"
+  - name: Contact us
+    weight: 50
+    url: /contact
 
 main_mobile:
 - name: Login/Sign Up

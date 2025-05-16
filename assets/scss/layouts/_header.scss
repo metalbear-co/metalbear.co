@@ -11,7 +11,7 @@
 }
 
 .navbar-brand {
-  font-weight: $headings-font-weight;
+  font-size: 1rem;
   width: 230px;
   flex: none;
   margin-right: 0;
@@ -43,10 +43,6 @@
   .navbar {
     padding-top: 22px;
     padding-bottom: 22px;
-  }
-
-  .navbar-brand {
-    font-size: $font-size-xl;
   }
 
   .navbar-text {
