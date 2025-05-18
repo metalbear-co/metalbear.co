@@ -16,7 +16,7 @@
     "build": "npm run clean && exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir",
     "build:with-subsite": "npm run build && npm run build:subsite:prod",
     "build:subsite:dev": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../static/mirrord",
-    "build:subsite:prod": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../public/mirrord",
+    "build:subsite:prod": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../public/mirrord --baseURL=/mirrord/",
     "clean": "shx rm -rf public resources static/mirrord mirrord.dev/public mirrord.dev/resources",
     "clean:install": "shx rm -rf package-lock.json node_modules",
     "start": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender",
