@@ -16,7 +16,7 @@
 {{- $instantPage := resources.Get "js/instant.page.js" -}}
 {{- $instantPage := $instantPage | js.Build -}}
 
-{{- $js := slice $splide $alert $alpineClipboard $persist $alpine $menu $instantPage | resources.Concat "js/main.js" }}
+{{- $js := slice $splide $alert $alpineClipboard $persist $alpine $menu $instantPage | resources.Concat "js/main.js" | resources.Minify | resources.Fingerprint -}}
 {{- $js_min := $js | resources.Minify }}
 
 <script src="{{ $js_min.RelPermalink }}" defer></script>
