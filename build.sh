@@ -7,3 +7,5 @@ if [ "$HUGO_ENVIRONMENT" == "production" ]; then
 else
     HUGO_BASEURL=$CF_PAGES_URL npm run build:with-subsite;
 fi;
+
+npx pagefind --site public/docs --output-path public/pagefind
