@@ -1,5 +1,5 @@
 ---
-title: "Enabling Developers To Ship Cloud-Native Applications Faster"
+title: "Ship Code to Kubernetes in Seconds: How mirrord Kills 30-Minute CI Loops"
 description: "For cloud-native applications, moving code from a developer’s local machine to a staging or testing environment is rarely straightforward. In this blog we'll learn about how mirrord changes that by shifting testing left."
 lead: "For cloud-native applications, moving code from a developer’s local machine to a staging or testing environment is rarely straightforward. In this blog we'll learn about how mirrord changes that by shifting testing left."
 tags:
