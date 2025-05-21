@@ -6,11 +6,18 @@ tags:
   - development
   - kubernetes
   - testing
+  - ci
+  - ci/cd
+  - pipelines
+  - devops
 date: 2025-05-13T00:00:00+00:00
 draft: false
 weight: 50
 images: [thumbnail.png]
 contributors: ["Arsh Sharma"]
+slug: enabling-developers-to-ship-cloud-native-applications-faster
+summary: "Learn how you can enable your developers to ship faster by avoiding slow CI loops with the help of mirrord."
+canonicalURL: "https://metalbear.co/blog/enabling-developers-to-ship-cloud-native-applications-faster/"
 ---
 
 For cloud-native applications, moving code from a developer’s local machine to a staging or testing environment is rarely straightforward. In a common setup, developers first commit their code to a version control system. Then, a CI system builds a container image with the latest changes. Finally, a CD system (like [Argo CD](https://argo-cd.readthedocs.io/en/stable/)) deploys that image to a [Kubernetes](https://kubernetes.io/) cluster. It is only after all of this that developers are able to test out their changes. This process, repeated multiple times per feature, can be really slow.
