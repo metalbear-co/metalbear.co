@@ -34,7 +34,7 @@
                         <ul class="footer__menu-lists list-unstyled">
                             {{- range .Site.Menus.footer_left }}
                             <li class="footer__menu-list mb-[5px] md:mb-[7px] lg:mb-[5px] xl:mb-[7px] 2xl:mb-[8px]">
-                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base" {{
+                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base hover:underline" {{
                                     if findRE `^http` .URL }} target="_blank" rel="noopener" {{ end }} href="{{- if findRE `^#` .URL -}}
                         {{- if not $.IsHome -}}
                         {{- site.Home.RelPermalink -}}
@@ -53,7 +53,7 @@
                         <ul class="footer__menu-lists list-unstyled">
                             {{- range .Site.Menus.footer_center }}
                             <li class="footer__menu-list mb-[5px] md:mb-[7px] lg:mb-[5px] xl:mb-[7px] 2xl:mb-[8px]">
-                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base" {{
+                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base hover:underline" {{
                                     if findRE `^http` .URL }} target="_blank" rel="noopener" {{ end }} href="{{- if findRE `^#` .URL -}}
                         {{- if not $.IsHome -}}
                         {{- site.Home.RelPermalink -}}
@@ -72,7 +72,7 @@
                         <ul class="footer__menu-lists list-unstyled">
                             {{- range .Site.Menus.footer_right }}
                             <li class="footer__menu-list mb-[5px] md:mb-[7px] lg:mb-[5px] xl:mb-[7px] 2xl:mb-[8px]">
-                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base" {{
+                                <a class="footer__menu-link text-black text-sm lg:text-sm xl:text-sm 2xl:text-base hover:underline" {{
                                     if findRE `^http` .URL }} target="_blank" rel="noopener" {{ end }} href="{{- if findRE `^#` .URL -}}
                         {{- if not $.IsHome -}}
                         {{- site.Home.RelPermalink -}}

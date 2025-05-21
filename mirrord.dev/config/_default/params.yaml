@@ -11,6 +11,7 @@ description: >-
   code in the context of the remote environment.
 images:
   - logo.jpg
+footer: © MetalBear
 ogLocale: en_US
 domainTLD: metalbear.co
 titleHome: mirrord

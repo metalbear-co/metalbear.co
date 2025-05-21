@@ -220,6 +220,20 @@
 			</div>
 			<div class="lg:w-[83%] mx-auto">
 				<div class="splide splide-case-studies">
+					<div class="splide__arrows">
+						<button class="splide__arrow splide__arrow--prev">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+								<path
+									d="M219.9 266.7L75.89 426.7c-5.906 6.562-16.03 7.094-22.59 1.188c-6.918-6.271-6.783-16.39-1.188-22.62L186.5 256L52.11 106.7C46.23 100.1 46.75 90.04 53.29 84.1C59.86 78.2 69.98 78.73 75.89 85.29l144 159.1C225.4 251.4 225.4 260.6 219.9 266.7z" />
+							</svg>
+						</button>
+						<button class="splide__arrow splide__arrow--next">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+								<path
+									d="M219.9 266.7L75.89 426.7c-5.906 6.562-16.03 7.094-22.59 1.188c-6.918-6.271-6.783-16.39-1.188-22.62L186.5 256L52.11 106.7C46.23 100.1 46.75 90.04 53.29 84.1C59.86 78.2 69.98 78.73 75.89 85.29l144 159.1C225.4 251.4 225.4 260.6 219.9 266.7z" />
+							</svg>
+						</button>
+					</div>
 					<div class="splide__track">
 						<ul class="splide__list">
 							<li class="splide__slide pb-3">
@@ -294,8 +308,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="w-[68%] lg:w-full mx-auto flex justify-center pt-[60px] md:pt-[60px] lg:pt-12 xl:pt-[60px] 2xl:pt-20">
-				<a class="w-full lg:w-[156px] xl:w-[195px] 2xl:w-[234px] h-[50px] xl:h-[54px] 2xl:h-[65px] text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body font-medium flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]" href="https://apply.workable.com/metalbear/">See open roles</a>
+			<div
+				class="w-[68%] lg:w-full mx-auto flex justify-center pt-[60px] md:pt-[60px] lg:pt-12 xl:pt-[60px] 2xl:pt-20">
+				<a class="w-full lg:w-[156px] xl:w-[195px] 2xl:w-[234px] h-[50px] xl:h-[54px] 2xl:h-[65px] text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body font-medium flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+					href="https://apply.workable.com/metalbear/">See open roles</a>
 			</div>
 		</div>
 	</section>
@@ -497,7 +513,8 @@
 							us a message</a></p>
 				</div>
 			</div>
-			<div class="lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full flex justify-center lg:justify-end items-center z-0 mb-[60px] lg:mb-0">
+			<div
+				class="lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full flex justify-center lg:justify-end items-center z-0 mb-[60px] lg:mb-0">
 				<div class="w-3/4 lg:w-[20%] 2xl:w-[26%]">
 					<img class="w-full h-auto" src="/careers-section-6.png" alt="careers-section-6">
 				</div>
@@ -520,7 +537,7 @@
 			},
 			padding: { left: '0.75rem', right: '0.75rem' },
 			gap: '1.5rem',
-			arrows: false,
+			arrows: true,
 			pagination: true,
 		}).mount();
 	});
