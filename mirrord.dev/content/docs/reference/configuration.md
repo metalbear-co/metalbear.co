@@ -444,16 +444,6 @@ Can be useful for collecting logs.
 
 Defaults to `1`.
 
-## connect_tcp {#root-connect_tcp}
-
-IP:PORT to connect to instead of using k8s api, for testing purposes.
-
-```json
-{
-  "connect_tcp": "10.10.0.100:7777"
-}
-```
-
 ## container {#root-container}
 
 Unstable: `mirrord container` command specific config.
@@ -487,6 +477,22 @@ Defaults to `"/opt/mirrord/lib/libmirrord_layer.so"`.
 ### container.cli_prevent_cleanup {#container-cli_extra_args}
 
 Don't add `--rm` to sidecar command to prevent cleanup.
+
+### container.override_host_ip {#container-override_host_ip}
+
+Allows to override the IP address for the internal proxy to use
+when connecting to the host machine from within the container.
+
+```json5
+{
+  "container": {
+    "override_host_ip": "172.17.0.1" // usual resolution of value from `host.docker.internal`
+  }
+}
+```
+
+This should be useful if your host machine is exposed with a different IP address than the
+one bound as host.
 
 ## experimental {#root-experimental}
 
@@ -533,13 +539,8 @@ DEPRECATED, WILL BE REMOVED
 
 ### _experimental_ readonly_file_buffer {#experimental-readonly_file_buffer}
 
-Sets buffer size for readonly remote files (in bytes, for example 4096).
-If set, such files will be read in chunks and buffered locally.
-This improves performace when the user application reads data in small portions.
-
-Setting to 0 disables file buffering.
-
-<https://github.com/metalbear-co/mirrord/issues/2069>
+DEPRECATED, WILL BE REMOVED: moved to `feature.fs.readonly_file_buffer` as part of
+stabilisation. See <https://github.com/metalbear-co/mirrord/issues/2069>.
 
 ### _experimental_ tcp_ping4_mock {#experimental-tcp_ping4_mock}
 
@@ -570,6 +571,13 @@ If you get `ConnectionRefused` errors, increasing the timeouts a bit might solve
 }
 ```
 
+### external_proxy.host_ip {#external_proxy-host_ip}
+
+Specify a custom host ip addr to listen on.
+
+This address must be accessible from within the container.
+If not specified, mirrord will try and resolve a local address to use.
+
 ### external_proxy.idle_timeout {#external_proxy-idle_timeout}
 
 How much time to wait while we don't have any active connections before exiting.
@@ -585,14 +593,26 @@ and don't connect to the proxy.
 }
 ```
 
+### external_proxy.json_log {#external_proxy-json_log}
+
+Whether the proxy should output logs in JSON format. If false, logs are output in
+human-readable format.
+
+Defaults to true.
+
 ### external_proxy.log_destination {#external_proxy-log_destination}
+
 Set the log file destination for the external proxy.
 
-### external_proxy.log_level {#external_proxy-log_level}
-Sets the log level for the external proxy.
+Defaults to a randomized path inside the temporary directory.
 
-Follows the `RUST_LOG` convention (i.e `mirrord=trace`), and will only be used if
-`external_proxy.log_destination` is set
+### external_proxy.log_level {#external_proxy-log_level}
+
+Set the log level for the external proxy.
+
+The value should follow the RUST_LOG convention (i.e `mirrord=trace`).
+
+Defaults to `mirrord=info,warn`.
 
 ### external_proxy.start_idle_timeout {#external_proxy-start_idle_timeout}
 
@@ -614,7 +634,7 @@ on process execution, delaying the layer startup and connection to the external 
 Controls mirrord features.
 
 See the
-[technical reference, Technical Reference](/mirrord/docs/reference/)
+[technical reference, Technical Reference](https://mirrord.dev/docs/reference/)
 to learn more about what each feature does.
 
 The [`env`](#feature-env), [`fs`](#feature-fs) and [`network`](#feature-network) options
@@ -667,7 +687,7 @@ have support for a shortened version, that you can see [here](#root-shortened).
 ## feature.copy_target {#feature-copy_target}
 
 Creates a new copy of the target. mirrord will use this copy instead of the original target
-(e.g. intercept network traffic). This feature requires a [mirrord operator](/mirrord/docs/overview/teams/?utm_source=copytarget).
+(e.g. intercept network traffic). This feature requires a [mirrord operator](https://mirrord.dev/docs/overview/teams/?utm_source=copytarget).
 
 This feature is not compatible with rollout targets and running without a target
 (`targetless` mode).
@@ -719,7 +739,7 @@ Can be set to one of the options:
 Which environment variables to load from the remote pod are controlled by setting either
 [`include`](#feature-env-include) or [`exclude`](#feature-env-exclude).
 
-See the environment variables [reference](/mirrord/docs/reference/env/) for more details.
+See the environment variables [reference](https://mirrord.dev/docs/reference/env/) for more details.
 
 ```json
 {
@@ -871,7 +891,7 @@ The logic for choosing the behavior is as follows:
 4. If none of the above match, use the default behavior (mode).
 
 For more information, check the file operations
-[technical reference](/mirrord/docs/reference/fileops/).
+[technical reference](https://mirrord.dev/docs/reference/fileops/).
 
 ```json
 {
@@ -937,6 +957,15 @@ if file matching the pattern is opened for writing or read/write it will be open
 
 Specify file path patterns that if matched will be read and written to the remote.
 
+### feature.fs.readonly_file_buffer {#feature-fs-readonly_file_buffer}
+
+Sets buffer size for read-only remote files in bytes. By default, the value is
+128000 bytes, or 128 kB.
+
+Setting the value to 0 disables file buffering.
+Otherwise, read-only remote files will be read in chunks and buffered locally.
+This improves performance when the user application reads data in small portions.
+
 ## feature.hostname {#feature-hostname}
 
 Should mirrord return the hostname of the target pod when calling `gethostname`
@@ -945,7 +974,7 @@ Should mirrord return the hostname of the target pod when calling `gethostname`
 
 Controls mirrord network operations.
 
-See the network traffic [reference](/mirrord/docs/reference/traffic/)
+See the network traffic [reference](https://mirrord.dev/docs/reference/traffic/)
 for more details.
 
 ```json
@@ -1057,7 +1086,7 @@ Valid values follow this pattern: `[name|address|subnet/mask][:port]`.
 
 Controls the incoming TCP traffic feature.
 
-See the incoming [reference](/mirrord/docs/reference/traffic/#incoming) for more
+See the incoming [reference](https://mirrord.dev/docs/reference/traffic/#incoming) for more
 details.
 
 Incoming traffic supports 3 [modes](#feature-network-incoming-mode) of operation:
@@ -1434,7 +1463,7 @@ or connects to other services over IPv6.
 
 Tunnel outgoing network operations through mirrord.
 
-See the outgoing [reference](/mirrord/docs/reference/traffic/#outgoing) for more
+See the outgoing [reference](https://mirrord.dev/docs/reference/traffic/#outgoing) for more
 details.
 
 The `remote` and `local` config for this feature are **mutually** exclusive.
@@ -1605,15 +1634,26 @@ and don't connect to the proxy.
 }
 ```
 
+### internal_proxy.json_log {#internal_proxy-json_log}
+
+Whether the proxy should output logs in JSON format. If false, logs are output in
+human-readable format.
+
+Defaults to true.
+
 ### internal_proxy.log_destination {#internal_proxy-log_destination}
 
 Set the log file destination for the internal proxy.
 
+Defaults to a randomized path inside the temporary directory.
+
 ### internal_proxy.log_level {#internal_proxy-log_level}
 
 Set the log level for the internal proxy.
-RUST_LOG convention (i.e `mirrord=trace`) will only be used if `log_destination`
-is set.
+
+The value should follow the RUST_LOG convention (i.e `mirrord=trace`).
+
+Defaults to `mirrord=info,warn`.
 
 ### internal_proxy.start_idle_timeout {#internal_proxy-start_idle_timeout}
 
@@ -1658,6 +1698,10 @@ Whether mirrord should use the operator.
 If not set, mirrord will first attempt to use the operator, but continue without it in case
 of failure.
 
+## profile {#root-profile}
+
+Name of the mirrord profile to use.
+
 ## sip_binaries {#root-sip_binaries}
 
 Binaries to patch (macOS SIP).
@@ -1670,7 +1714,7 @@ while `/usr/bin/bash` would apply only for that binary).
 
 ```json
 {
-  "sip_binaries": "bash;python"
+  "sip_binaries": ["bash", "python"]
 }
 ```
 
@@ -1685,19 +1729,44 @@ Build-Tools: `["as", "cc", "ld", "go", "air", "asm", "cc1", "cgo", "dlv", "gcc",
 "link", "math", "cargo", "hpack", "rustc", "compile", "collect2", "cargo-watch",
 "debugserver"]`
 
+## skip_extra_build_tools {#root-skip_build_tools}
+
+Allows mirrord to skip the specified build tools. Useful when running command lines that
+build and run the application in a single command.
+
+Must also enable [`skip_build_tools`](#root-skip_build_tools) for this to take an effect.
+
+It's similar to [`skip_processes`](#root-skip_processes), except that here it also skips
+SIP patching.
+
+Accepts a single value, or an array of values.
+
+```json
+{
+ "skip_extra_build_tools": ["bash", "node"]
+}
+```
+
 ## skip_processes {#root-skip_processes}
 
 Allows mirrord to skip unwanted processes.
 
 Useful when process A spawns process B, and the user wants mirrord to operate only on
 process B.
-Accepts a single value, or multiple values separated by `;`.
+Accepts a single value, or an array of values.
 
 ```json
 {
- "skip_processes": "bash;node"
+ "skip_processes": ["bash", "node"]
 }
 ```
+
+## skip_sip {#root-skip_sip}
+
+Allows mirrord to skip patching (macOS SIP) unwanted processes.
+
+When patching is skipped, mirrord will no longer be able to load into
+the process and its child processes.
 
 ## target {#root-target}
 
@@ -1817,4 +1886,3 @@ doing any network requests. This is useful when the system sets a proxy
 but you don't want mirrord to use it.
 This also applies to the mirrord process (as it just removes the env).
 If the remote pod sets this env, the mirrord process will still use it.
-
