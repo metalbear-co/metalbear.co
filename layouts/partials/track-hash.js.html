@@ -1,0 +1,51 @@
+<script>
+(() => {
+  let captured = false;
+
+  function captureSource() {
+    if (captured || typeof posthog === 'undefined') return;
+    captured = true;
+
+    try {
+      const hash = window.location.hash.toLowerCase().replace('#', '');
+      if (!hash) return;
+
+      const path = window.location.pathname;
+      const segments = path.split('/');
+      const idx = segments.indexOf('blog');
+      const slug = (idx !== -1 && idx < segments.length - 1) ? segments[idx + 1] : null;
+
+      const props = {
+        $current_url: window.location.href,
+        $pathname: path,
+        blog_post: slug,
+        source_hash: hash
+      };
+
+      const eventMap = {
+        reddit: 'visit_from_reddit',
+        hn: 'visit_from_hackernews',
+        hackernews: 'visit_from_hackernews',
+        x: 'visit_from_twitter',
+        twitter: 'visit_from_twitter',
+        linkedin: 'visit_from_linkedin'
+      };
+
+      const eventName = eventMap[hash];
+      if (eventName) {
+        posthog.capture(eventName, props);
+        // Clear the hash so it doesn't trigger again
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    } catch (err) {
+      console.error('Analytics capture error:', err);
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', captureSource);
+  } else {
+    captureSource();
+  }
+})();
+</script>
