@@ -151,7 +151,7 @@ body {
 /* hero section */
 
 .single__page {
-    @apply bg-[#FBFBFD] dark:bg-[#202020] transition-all duration-300 ease-[ease] lg:pt-[186px];
+    @apply bg-[#FBFBFD] dark:bg-[#202020] transition-all duration-300 ease-[ease] lg:pt-16;
 }
 
 .docs__content p,

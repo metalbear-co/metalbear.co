@@ -97,23 +97,29 @@ body {
     }
 }
 
-.logo-slider {
+.home .logo-slider {
     @apply overflow-hidden whitespace-nowrap relative w-full h-[72px] 2xl:h-[96px];
 }
 
-.logo-track {
+.home .logo-track {
     @apply flex items-center h-[72px] lg:h-[58px] xl:h-[72px] 2xl:h-[96px] gap-[30px] md:gap-[40px] lg:gap-[57px] xl:gap-[65px] 2xl:gap-[76px] absolute;
 
     animation: scroll 30s linear infinite;
 }
 
-.logo-track li {
+.home .logo-track li {
     list-style: none;
 }
 
-.logo-track img {
+.home .logo-track img {
     width: auto;
     max-width: none;
+}
+
+.mirrord-logo-track {
+    @apply h-[72px] lg:h-[58px] xl:h-[72px] 2xl:h-[96px] flex items-center gap-[30px] md:gap-[40px] lg:gap-[57px] xl:gap-[65px] 2xl:gap-[76px];
+
+    animation: scroll 15s linear infinite;
 }
 
 @keyframes scroll {
@@ -489,4 +495,20 @@ ol {
 
 .whr-date {
     @apply col-span-4 col-start-9;
+}
+
+.splide-case-studies .splide__arrow {
+    @apply bg-transparent;
+}
+
+.splide-case-studies .splide__arrow svg {
+    @apply w-9 h-9 xl:w-10 xl:h-10;
+}
+
+.splide-case-studies .splide__arrow--prev {
+    @apply -ml-9 xl:-ml-12;
+}
+
+.splide-case-studies .splide__arrow--next {
+    @apply -mr-9 xl:-mr-12;
 }
