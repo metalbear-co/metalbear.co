@@ -7,7 +7,7 @@ enableGitInfo = false
 enableRobotsTXT = true
 languageCode = "en-US"
 [pagination]
-  pagerSize = 6
+pagerSize = 6
 rssLimit = 10
 timeout = "120s"
 
@@ -47,51 +47,51 @@ baseName = "sitemap"
 isHTML = false
 isPlainText = true
 noUgly = true
-rel  = "sitemap"
+rel = "sitemap"
 
 [caches]
-  [caches.getjson]
-    dir = ":cacheDir/:project"
-    maxAge = "10s"
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "10s"
 
 [sitemap]
-  changefreq = "weekly"
-  filename = "sitemap.xml"
-  priority = 0.5
+changefreq = "weekly"
+filename = "sitemap.xml"
+priority = 0.5
 
 [taxonomies]
-  contributor = "contributors"
-  tag = "tags"
+contributor = "contributors"
+tag = "tags"
 
 [permalinks]
-  blog = "/blog/:title/"
-  guides = "/guides/:title/"
-  pages = "/:slug/"
+blog = "/blog/:slug/"
+guides = "/guides/:title/"
+pages = "/:slug/"
 # docs = "/docs/1.0/:sections[1:]/:title/"
 
 [minify.tdewolff.html]
-  keepWhitespace = false
+keepWhitespace = false
 
 [module]
-  [module.hugoVersion]
-    extended = true
-    min = "0.136.0"
-    max = ""
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.mounts]]
-    source = "static"
-    target = "static"
-  [[module.mounts]]
-    source = "node_modules/flexsearch"
-    target = "assets/js/vendor/flexsearch"
-  [[module.mounts]]
-    source = "node_modules/katex"
-    target = "assets/js/vendor/katex"
-  [[module.mounts]]
-    source = "node_modules/mermaid"
-    target = "assets/js/vendor/mermaid"
+[module.hugoVersion]
+extended = true
+min = "0.136.0"
+max = ""
+[[module.mounts]]
+source = "assets"
+target = "assets"
+[[module.mounts]]
+source = "static"
+target = "static"
+[[module.mounts]]
+source = "node_modules/flexsearch"
+target = "assets/js/vendor/flexsearch"
+[[module.mounts]]
+source = "node_modules/katex"
+target = "assets/js/vendor/katex"
+[[module.mounts]]
+source = "node_modules/mermaid"
+target = "assets/js/vendor/mermaid"
 [params.shareButtons]
-  size = "small"
-  networks = ["twitter", "linkedin", "reddit", "copylink"]
+size = "small"
+networks = ["twitter", "linkedin", "reddit", "copylink"]
