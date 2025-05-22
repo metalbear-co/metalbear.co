@@ -19,7 +19,6 @@ categories:
   - Releases
   - Infrastructure
 date: 2025-05-12T00:00:00+00:00
-slug: kubernetes-1-33-whats-new
 alias: /blog/new-features-in-kubernetes-1.33-octarine-the-discworld-inspired-release-you-didnt-know-you-needed
 summary: "From smarter traffic routing to in-place vertical scaling, Kubernetes 1.33 delivers magical improvements for modern clusters — inspired by Discworld’s elusive eighth color."
 canonicalURL: "https://metalbear.co/blog/kubernetes-1-33-whats-new"
