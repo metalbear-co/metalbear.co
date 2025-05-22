@@ -72,26 +72,40 @@ pages = "/:slug/"
 [minify.tdewolff.html]
 keepWhitespace = false
 
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
 [module]
-[module.hugoVersion]
-extended = true
-min = "0.136.0"
-max = ""
-[[module.mounts]]
-source = "assets"
-target = "assets"
-[[module.mounts]]
-source = "static"
-target = "static"
-[[module.mounts]]
-source = "node_modules/flexsearch"
-target = "assets/js/vendor/flexsearch"
-[[module.mounts]]
-source = "node_modules/katex"
-target = "assets/js/vendor/katex"
-[[module.mounts]]
-source = "node_modules/mermaid"
-target = "assets/js/vendor/mermaid"
+  [module.hugoVersion]
+    extended = true
+    min = "0.136.0"
+    max = ""
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "node_modules/flexsearch"
+    target = "assets/js/vendor/flexsearch"
+  [[module.mounts]]
+    source = "node_modules/katex"
+    target = "assets/js/vendor/katex"
+  [[module.mounts]]
+    source = "node_modules/mermaid"
+    target = "assets/js/vendor/mermaid"
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
 [params.shareButtons]
 size = "small"
 networks = ["twitter", "linkedin", "reddit", "copylink"]

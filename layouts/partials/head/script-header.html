@@ -14,7 +14,11 @@
     person_profiles: 'identified_only',
   })
 </script>
-{{ if .IsHome }}
-{{ $splide := resources.Get "js/splide.min.js" -}}
-<script src="{{ $splide.RelPermalink }}"></script>
-{{ end -}}
+{{- $splide := resources.Get "js/splide.min.js" -}}
+{{- if or .IsHome (eq .RelPermalink "/mirrord/") (eq .RelPermalink "/mirrord/case-studies/") (eq .RelPermalink "/careers/") }}
+  <script src="{{ $splide.RelPermalink }}"></script>
+{{- end }}
+{{- $alpinejs := resources.Get "js/alpinejs@3.14.8.min.js" -}}
+{{- if or .IsHome (eq .RelPermalink "/mirrord/") (eq .RelPermalink "/careers/") }}
+  <script src="{{ $alpinejs.RelPermalink }}" defer></script>
+{{- end }}

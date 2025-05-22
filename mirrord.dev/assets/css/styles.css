@@ -28,7 +28,7 @@ body {
 
 /* menu */
 
-.header__container {
+/* .header__container {
     @apply container w-full max-w-screen-xl relative mx-auto;
 }
 
@@ -80,11 +80,36 @@ body {
 
 .menu__item.menu-item-desktop {
     @apply hidden lg:block;
-}
+} */
 
 /* .active-link {
     @apply lg:before:absolute lg:before:left-0 lg:before:-bottom-[2px] lg:before:w-full lg:before:bg-tertiary lg:before:h-[4px];
 } */
+
+/* menu */
+
+.offcanvas {
+    @apply fixed lg:static z-30 bottom-0 top-0 right-0 w-[400px] lg:w-auto max-w-full bg-white lg:bg-transparent transition-all duration-300 ease-in-out invisible translate-x-full lg:visible lg:translate-x-0;
+
+    background-clip: padding-box;
+    outline: 0;
+}
+
+.offcanvas.show {
+    @apply visible translate-x-0;
+}
+
+.btn-close {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.submenu.submenu-active {
+    @apply block;
+}
 
 .none-line {
     @apply lg:before:bg-transparent;
@@ -126,7 +151,7 @@ body {
 /* hero section */
 
 .single__page {
-    @apply bg-[#FBFBFD] dark:bg-[#202020] transition-all duration-300 ease-[ease] lg:pt-[186px];
+    @apply bg-[#FBFBFD] dark:bg-[#202020] transition-all duration-300 ease-[ease] lg:pt-16;
 }
 
 .docs__content p,

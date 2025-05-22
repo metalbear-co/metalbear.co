@@ -3,7 +3,7 @@
 set -e
 
 if [ "$HUGO_ENVIRONMENT" == "production" ]; then
-    npm run build:with-subsite;
+    npm run build;
 else
-    HUGO_BASEURL=$CF_PAGES_URL npm run build:with-subsite;
+    npm run build:cf-preview;
 fi;
