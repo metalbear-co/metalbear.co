@@ -45,6 +45,7 @@
         "exec-bin": "^1.0.0",
         "hugo-installer": "^4.0.1",
         "instant.page": "^5.1.1",
+        "pagefind": "^1.3.0",
         "postcss": "^8.4.14",
         "postcss-cli": "^9.1.0",
         "postcss-import": "^14.1.0",
@@ -53,8 +54,5 @@
     },
     "otherDependencies": {
         "hugo": "0.141.0"
-    },
-    "dependencies": {
-        "pagefind": "^1.3.0"
     }
 }
