@@ -1,59 +1,72 @@
 {{ define "main" }}
 <div class="mirrord-single">
-  <div class="page-demo__header-wrapper border-b-3 bg-image--right-top" style="background-image: url(/demo-page-header.png);">
-    <div class="container">
-      <header class="page-demo__header px-3 px-xl-0">
-        <div class="page-demo__header-info pe-lg-2 pe-xl-4">
-          <div class="page-demo__header-logo">
-            <img class="img-fluid" src="/mirrord-by-metalbear.png" alt="mirrord">
+  <div
+    class="page-demo__header-wrapper bg-[#E4E3FD]/50 border-b-3 bg-image--right-top mb-[60px] xl:mb-[74px] 2xl:mb-[100px]"
+    style="background-image: url(/demo-page-header.png);">
+    <div class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0">
+      <header
+        class="page-demo__header lg:flex lg:justify-between px-3 xl:px-0 pt-[40px] xl:pt-[49px] 2xl:pt-[66px] pb-[82px] xl:pb-[102px] 2xl:pb-[136px]">
+        <div class="page-demo__header-info flex-1 xl:w-[784px] 2xl:w-[940px] lg:pl-2 lg:pr-6">
+          <div
+            class="page-demo__header-logo w-[112px] xl:w-[140px] 2xl:w-[188px] mb-[62px] xl:mb-[77px] 2xl:mb-[104px]">
+            <img class="img-fluid w-full h-auto" src="/mirrord-by-metalbear.png" alt="mirrord">
           </div>
           <div>
             {{- with .Params.header.title }}
-            <h1 class="page-demo__header-title text-black fw-semibold font-unbounded lh-[1.4]">{{ . | safeHTML }}</h1>
+            <h1
+              class="page-demo__header-title text-[2rem] xl:text-[2.438rem] 2xl:text-[3.313rem] text-black font-semibold font-heading leading-[1.4] md:leading-[1.4] lg:leading-[1.4] xl:leading-[1.4] 2xl:leading-[1.4] mb-[37px] xl:mb-[46px] 2xl:mb-[62px]">
+              {{ . | safeHTML }}</h1>
             {{- end }}
             {{- with .Params.header.description }}
-            <div class="page-demo__header-desc">
+            <div
+              class="page-demo__header-desc text-black text-base xl:text-[1.313rem] 2xl:text-[1.75rem] leading-[1.4] md:leading-[1.4] lg:leading-[1.4] xl:leading-[1.4] 2xl:leading-[1.4]">
               <p>{{ . | safeHTML }}</p>
             </div>
             {{- end }}
           </div>
         </div>
-        <div class="page-demo__header-box">
-          <div class="position-relative">
+        <div class="page-demo__header-box lg:w-2/5 lg:flex-none pt-[80px] xl:pt-[100px] 2xl:pt-[134px]">
+          <div class="relative">
             {{- with .Params.header.logo }}
-            <div class="page-demo__textbox-logo">
-              <img class="img-fluid" src="{{ . | relURL }}" alt="mirrord">
+            <div
+              class="page-demo__textbox-logo absolute z-20 top-[-31px] xl:top-[-39px] 2xl:top-[-51px] right-8 xl:right-10 2xl:right-[52px] h-[62px] xl:h-[78px] 2xl:h-[102px] w-[62px] xl:w-[78px] 2xl:w-[102px]">
+              <img class="img-fluid w-full h-auto" src="{{ . | relURL }}" alt="mirrord">
             </div>
             {{- end }}
-            <div class="page-demo__header-textbox">
-              <div class="page-demo__header-block px-3">
-                <h4 class="text-black fs-14 fs-xl-16 fs-xxl-18 fw-bold mt-0 mb-2">Company</h4>
+            <div
+              class="page-demo__header-textbox relative bg-[#FAFAFD] border pl-[25px] xl:pl-8 2xl:pl-[42px] pr-[30px] xl:pr-9 2xl:pr-12 py-[26px] xl:py-[33px] 2xl:py-11 rounded-[7px] border-solid border-[#C4C4C4]">
+              <div class="page-demo__header-block border-b-[#C4C4C4] border-b border-solid px-4">
+                <h4 class="text-black text-sm xl:text-base 2xl:text-lg font-bold mt-0 mb-2">Company</h4>
                 <div>
                   {{- with .Params.header.company }}
-                  <p class="text-black fs-14 fs-xl-16 fs-xxl-18 lh-[1.5] mb-1">{{ . | safeHTML }}</p>
+                  <p
+                    class="text-black text-sm xl:text-base 2xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-1">
+                    {{ . | safeHTML }}</p>
                   {{- end }}
                   {{- with .Params.header.site }}
                   {{- $site := . | urlize }}
                   {{- if not (hasPrefix $site "http") }}
                   {{- $site = printf "https://%s" $site }}
                   {{- end }}
-                  <p class="text-black fs-14 fs-xl-16 fs-xxl-18 lh-[1.5] mb-3"><a
-                      class="text-black text-decoration-underline" href="{{ $site }}" target="_blank"
-                      rel="noopener noreferrer">{{ . }}</a></p>
+                  <p
+                    class="text-black text-sm xl:text-base 2xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-4">
+                    <a class="text-black underline" href="{{ $site }}" target="_blank" rel="noopener noreferrer">{{ .
+                      }}</a>
+                  </p>
                   {{- end }}
                 </div>
               </div>
               {{- with .Params.header.employees }}
-              <div class="page-demo__header-block px-3">
-                <h4 class="text-black fs-14 fs-xl-16 fs-xxl-18 fw-bold mb-2">Employees</h4>
-                <div>
+              <div class="page-demo__header-block border-b-[#C4C4C4] border-b border-solid px-4">
+                <h4 class="text-black text-sm xl:text-base 2xl:text-lg font-bold mt-8 mb-2">Employees</h4>
+                <div class="mb-4">
                   <p>{{ . | safeHTML }}</p>
                 </div>
               </div>
               {{- end }}
               {{- with .Params.header.using_since }}
-              <div class="px-3">
-                <h4 class="text-black fs-14 fs-xl-16 fs-xxl-18 fw-bold mb-2">Using mirrord since</h4>
+              <div class="px-4">
+                <h4 class="text-black text-sm xl:text-base 2xl:text-lg font-bold mt-8 mb-2">Using mirrord since</h4>
                 <div>
                   <p>{{ . | safeHTML }}</p>
                 </div>
@@ -65,40 +78,44 @@
       </header>
     </div>
   </div>
-
   <div class="border-b-3">
-    <div class="container guides-single__wrapper">
-      <div class="d-lg-flex align-items-start px-xl-0">
-        <div class="guides-single__main px-3 px-lg-0">
-          <div class="page-demo__story">
+    <div
+      class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0 guides-single__wrapper mb-[114px]">
+      <div class="lg:flex items-start xl:px-0">
+        <div class="guides-single__main flex-1 lg:w-3/4 px-4 lg:px-0">
+          <div
+            class="page-demo__story border rounded-[7px] border-solid border-[#C4C4C4] lg:w-[90%] xl:w-[90%] mb-9 xl:mb-11 2xl:mb-[52px] pl-5 xl:pl-[25px] 2xl:pl-[34px] pr-9 xl:pr-[45px] 2xl:pr-[60px] pt-6 xl:pt-[30px] 2xl:pt-10 pb-[18px] xl:pb-[22px] 2xl:pb-7">
             {{- with .Params.story.content }}
-            <div class="page-demo__story-content mb-2">
-              <p class="text-black fs-18 fs-xl-22 fs-xxl-30 fw-bold lh-[1.67] mb-4">“{{ . | safeHTML }}”</p>
+            <div class="page-demo__story-content border-b-[#C4C4C4] border-b border-solid mb-2">
+              <p
+                class="text-black text-lg lg:text-[22px] 2xl:text-[30px] font-bold leading-[1.67] md:leading-[1.67] lg:leading-[1.67] xl:leading-[1.67] 2xl:leading-[1.67] mb-6">
+                “{{ . | safeHTML }}”</p>
             </div>
             {{- end }}
-            <div class="d-flex align-items-center pt-4">
+            <div class="flex items-center pt-6">
               {{- with .Params.story.image }}
-              <div class="page-demo__story-image">
-                <img class="img-fluid" src="{{ . | relURL }}" alt="mirrord">
+              <div class="page-demo__story-image w-[52px] xl:w-[63px] 2xl:w-[85px] flex-none">
+                <img class="img-fluid w-full h-auto" src="{{ . | relURL }}" alt="mirrord">
               </div>
               {{- end }}
-              <div class="page-demo__story-text ps-3 ps-xxl-4">
+              <div class="page-demo__story-text pl-4 xl:pl-6">
                 {{- with .Params.story.name }}
-                <h4 class="mt-0 mb-1">{{ . | safeHTML }}</h4>
+                <h4 class="text-black text-sm xl:text-base 2xl:text-xl font-bold mt-0 mb-1">{{ . | safeHTML }}</h4>
                 {{- end }}
                 {{- with .Params.story.position }}
-                <p class="mb-0">{{ . | safeHTML }}</p>
+                <p class="text-black text-sm xl:text-base 2xl:text-xl mb-0">{{ . | safeHTML }}</p>
                 {{- end }}
               </div>
             </div>
           </div>
-          <article class="guides-content__wrapper">
-            <div class="demo-single-content single-content">
+          <article class="guides-content__wrapper lg:w-[91%] overflow-hidden">
+            <div class="demo-single-content single-content break-words mb-12 lg:mb-0">
               {{ .Content }}
             </div>
           </article>
         </div>
-        <div class="guides-single__sidebar d-none d-lg-block">
+        <div
+          class="guides-single__sidebar pl-6 border-l-[1.5px] border-l-[#D6D6D6] border-solid lg:w-[35%] xl:w-1/4 lg:sticky lg:pr-5 xl:pr-0 lg:top-[1em] hidden lg:block">
           {{ partial "demo-toc.html" . }}
           {{ partial "demo-widget-cta.html" . }}
         </div>

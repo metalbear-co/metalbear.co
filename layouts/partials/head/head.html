@@ -4,9 +4,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   {{ block "head/resource-hints" . }}{{ partial "head/resource-hints.html" . }}{{ end }}
   {{ block "head/script-header" . }}{{ partial "head/script-header.html" . }}{{ end }}
-  {{ block "head/stylesheet" . }}{{ partial "head/stylesheet.html" . }}{{ end }}
   {{ block "head/seo" . }}{{ partial "head/seo.html" . }}{{ end }}
   {{ block "head/favicons" . }}{{ partial "head/favicons.html" . }}{{ end }}
+  {{- if or (eq .Section "mirrord") (eq .Section "careers") }}
+  {{ block "head/mirrord-styles" . }}{{ partial "head/mirrord-styles.html" . }}{{ end }}
+  {{- else }}
+  {{ block "head/stylesheet" . }}{{ partial "head/stylesheet.html" . }}{{ end }}
+  {{- end }}
   <!-- Start of Reo Javascript -->
   <script type="text/javascript">
     !function(){var e,t,n;e="0e0f4d642e9f23a",t=function(){Reo.init({clientID:"0e0f4d642e9f23a"})},(n=document.createElement("script")).src="https://static.reo.dev/"+e+"/reo.js",n.defer=!0,n.onload=t,document.head.appendChild(n)}();
