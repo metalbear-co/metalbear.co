@@ -1,3 +1,3 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-  new PagefindUI({ element: "#search", showSubResults: true, pageSize: 2, baseUrl: "/docs", showImages: false });
+  new PagefindUI({ element: "#search", showSubResults: true, pageSize: 5, baseUrl: "/mirrord/", showImages: false });
 });

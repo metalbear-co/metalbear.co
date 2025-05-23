@@ -7,3 +7,13 @@
   Feature-Policy: geolocation 'self'
   Cache-Control: public, max-age=31536000
   Access-Control-Allow-Origin: *
+
+# Fix MIME types for pagefind assets
+/mirrord/pagefind/*.css
+  Content-Type: text/css
+
+/mirrord/pagefind/*.js
+  Content-Type: application/javascript
+
+/mirrord/pagefind/*.wasm
+  Content-Type: application/wasm
