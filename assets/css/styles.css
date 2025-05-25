@@ -36,7 +36,7 @@ body {
 /* menu */
 
 .offcanvas {
-    @apply fixed lg:static z-20 bottom-0 top-0 right-0 w-[400px] lg:w-auto max-w-full bg-white transition-all duration-300 ease-in-out invisible translate-x-full lg:visible lg:translate-x-0;
+    @apply fixed lg:static z-20 bottom-0 top-0 right-0 w-[400px] lg:w-auto max-w-full bg-white lg:bg-transparent transition-all duration-300 ease-in-out invisible translate-x-full lg:visible lg:translate-x-0;
 
     background-clip: padding-box;
     outline: 0;

@@ -664,9 +664,9 @@ table td {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1240px) {
   .container {
-    max-width: 1280px;
+    max-width: 1240px;
   }
 }
 
@@ -1539,6 +1539,10 @@ table td {
   width: 230px;
 }
 
+.w-\[23px\] {
+  width: 23px;
+}
+
 .w-\[246px\] {
   width: 246px;
 }
@@ -1687,10 +1691,6 @@ table td {
   width: 100%;
 }
 
-.w-\[23px\] {
-  width: 23px;
-}
-
 .min-w-\[10rem\] {
   min-width: 10rem;
 }
@@ -1736,7 +1736,7 @@ table td {
 }
 
 .max-w-screen-xl {
-  max-width: 1280px;
+  max-width: 1240px;
 }
 
 .flex-1 {
@@ -1952,12 +1952,12 @@ table td {
   gap: 2rem;
 }
 
-.gap-\[23px\] {
-  gap: 23px;
-}
-
 .gap-\[13px\] {
   gap: 13px;
+}
+
+.gap-\[23px\] {
+  gap: 23px;
 }
 
 .gap-y-10 {
@@ -2253,10 +2253,6 @@ table td {
 .border-t-\[\#222222\] {
   --tw-border-opacity: 1;
   border-top-color: rgb(34 34 34 / var(--tw-border-opacity));
-}
-
-.border-t-\[\] {
-  border-top-color: ;
 }
 
 .border-opacity-40 {
@@ -3457,9 +3453,9 @@ body {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1240px) {
   .footer__container {
-    max-width: 1280px;
+    max-width: 1240px;
   }
 }
 
@@ -3981,9 +3977,9 @@ body {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1240px) {
   .docs__container {
-    max-width: 1280px;
+    max-width: 1240px;
   }
 }
 
@@ -4074,7 +4070,7 @@ body {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1240px) {
   .docs__sidebar-search {
     padding-right: 1rem;
   }
@@ -4424,7 +4420,7 @@ body {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1240px) {
   .review__arrow--prev {
     left: -10%;
   }
@@ -4461,7 +4457,7 @@ body {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1240px) {
   .review__arrow--next {
     right: -10%;
   }
@@ -5069,6 +5065,10 @@ body {
     width: 280px;
   }
 
+  .md\:w-\[28px\] {
+    width: 28px;
+  }
+
   .md\:w-\[315px\] {
     width: 315px;
   }
@@ -5113,10 +5113,6 @@ body {
     width: 96px;
   }
 
-  .md\:w-\[28px\] {
-    width: 28px;
-  }
-
   .md\:flex-none {
     flex: none;
   }
@@ -5144,12 +5140,12 @@ body {
     justify-content: flex-start;
   }
 
-  .md\:gap-\[33px\] {
-    gap: 33px;
-  }
-
   .md\:gap-\[17px\] {
     gap: 17px;
+  }
+
+  .md\:gap-\[33px\] {
+    gap: 33px;
   }
 
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
@@ -5994,6 +5990,10 @@ body {
     width: 230px;
   }
 
+  .lg\:w-\[23px\] {
+    width: 23px;
+  }
+
   .lg\:w-\[24px\] {
     width: 24px;
   }
@@ -6134,10 +6134,6 @@ body {
     width: 100%;
   }
 
-  .lg\:w-\[23px\] {
-    width: 23px;
-  }
-
   .lg\:max-w-\[1000px\] {
     max-width: 1000px;
   }
@@ -6262,12 +6258,12 @@ body {
     gap: 2rem;
   }
 
-  .lg\:gap-\[23px\] {
-    gap: 23px;
-  }
-
   .lg\:gap-\[13px\] {
     gap: 13px;
+  }
+
+  .lg\:gap-\[23px\] {
+    gap: 23px;
   }
 
   .lg\:gap-x-6 {
@@ -7118,7 +7114,7 @@ body {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1240px) {
   .xl\:sticky {
     position: sticky;
   }
@@ -7379,6 +7375,10 @@ body {
     width: 283px;
   }
 
+  .xl\:w-\[28px\] {
+    width: 28px;
+  }
+
   .xl\:w-\[31px\] {
     width: 31px;
   }
@@ -7395,16 +7395,12 @@ body {
     width: 89px;
   }
 
-  .xl\:w-\[28px\] {
-    width: 28px;
-  }
-
   .xl\:max-w-\[1280px\] {
     max-width: 1280px;
   }
 
   .xl\:max-w-screen-xl {
-    max-width: 1280px;
+    max-width: 1240px;
   }
 
   .xl\:-translate-x-16 {
@@ -7437,12 +7433,12 @@ body {
     gap: 5rem;
   }
 
-  .xl\:gap-\[30px\] {
-    gap: 30px;
-  }
-
   .xl\:gap-\[17px\] {
     gap: 17px;
+  }
+
+  .xl\:gap-\[30px\] {
+    gap: 30px;
   }
 
   .xl\:gap-x-10 {
@@ -8049,6 +8045,10 @@ body {
     width: 318px;
   }
 
+  .\32xl\:w-\[34px\] {
+    width: 34px;
+  }
+
   .\32xl\:w-\[35px\] {
     width: 35px;
   }
@@ -8063,10 +8063,6 @@ body {
 
   .\32xl\:w-\[96px\] {
     width: 96px;
-  }
-
-  .\32xl\:w-\[34px\] {
-    width: 34px;
   }
 
   .\32xl\:max-w-\[1720px\] {
@@ -8087,12 +8083,12 @@ body {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .\32xl\:gap-\[33px\] {
-    gap: 33px;
-  }
-
   .\32xl\:gap-\[20px\] {
     gap: 20px;
+  }
+
+  .\32xl\:gap-\[33px\] {
+    gap: 33px;
   }
 
   .\32xl\:space-x-\[102px\] > :not([hidden]) ~ :not([hidden]) {
