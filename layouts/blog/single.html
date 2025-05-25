@@ -53,4 +53,26 @@
   {{ partial "blog-page-cta.html" . }}
 </div>
 {{ partial "track-hash.js.html" . }}
+
+<!-- Include the flexible CTA modal partial with all configurable parameters -->
+{{ partial "blog-scroll-modal.html" (dict 
+  "Title" .Params.modalTitle 
+  "Description" .Params.modalDescription 
+  "ButtonText" .Params.modalButtonText 
+  "ButtonLink" .Params.modalButtonLink 
+  "SecondaryText" .Params.modalSecondaryText 
+  "SecondaryLink" .Params.modalSecondaryLink 
+  "SmallText" .Params.modalSmallText
+) }}
+
+<!-- Set data attributes for modal configuration -->
+<script>
+  // Set attributes directly on body
+  document.body.dataset.showScrollModal = "{{ if .Params.showScrollModal }}true{{ else }}false{{ end }}";
+  document.body.dataset.scrollThreshold = "{{ .Params.modalScrollThreshold | default `0.6` }}";
+  // Removed forceShowModal to ensure modal only shows on scroll
+</script>
+
+<!-- Load modal script after setting the attributes -->
+<script defer src="{{ "js/blog-scroll-modal.js" | relURL }}"></script>
 {{ end }}
