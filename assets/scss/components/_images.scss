@@ -6,12 +6,35 @@ figure {
   margin: 0.25rem 0 0.75rem;
 }
 
+figcaption {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption p {
+  font-size: 0.9rem !important;
+  font-style: italic;
+  color: #777 !important;
+  line-height: 1.2 !important;
+  font-weight: 400;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 figure.wide {
   margin: 2rem -1.5rem;
 }
 
 figure.wide .figure-caption {
   margin: 0.25rem 1.5rem 0.75rem;
+}
+
+figure.wide figcaption {
+  max-width: calc(100% - 3rem);
 }
 
 @include media-breakpoint-up(md) {
@@ -22,6 +45,10 @@ figure.wide .figure-caption {
   figure.wide .figure-caption {
     margin: 0.25rem 2.5rem 0.75rem;
   }
+  
+  figure.wide figcaption {
+    max-width: calc(100% - 5rem);
+  }
 }
 
 @include media-breakpoint-up(lg) {
@@ -31,6 +58,10 @@ figure.wide .figure-caption {
 
   figure.wide .figure-caption {
     margin: 0.25rem 5rem 0.75rem;
+  }
+  
+  figure.wide figcaption {
+    max-width: calc(100% - 10rem);
   }
 }
 
