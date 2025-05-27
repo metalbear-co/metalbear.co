@@ -80,7 +80,7 @@ module.exports = {
         md: "768px",
         lg: "1000px",
         '2lg': "1100px",
-        'xl': "1280px",
+        'xl': "1240px",
         '2xl': '1428px',
         '3xl': '1720px',
         '4xl': '2000px',
