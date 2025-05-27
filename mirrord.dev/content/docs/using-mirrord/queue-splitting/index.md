@@ -448,7 +448,7 @@ spec:
 > **_NOTE:_** By default, the operator will only have access to secrets in its own namespace (`mirrord` by default).
 
 
-#### Customizing mirrord created Kafka Topic Names
+### Customizing mirrord created Kafka Topic Names
 
 > **_NOTE:_** Available since chart version `1.27` and operator version 3.114.0
 
