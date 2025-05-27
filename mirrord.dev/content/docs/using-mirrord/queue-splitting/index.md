@@ -452,15 +452,20 @@ spec:
 
 > **_NOTE:_** Available since chart version `1.27` and operator version 3.114.0
 
-mirrord Operator creates temporary topic names, to distinguish its own topics, it has a format that looks like this by default:
-- `mirrord-tmp-1234567890-fallback-topic-original-topic` - For the fallback topic (unfiltered messages).
-- `mirrord-tmp-9183298231-original-topic` - For each user (with different random characters)
+To serve Kafka splitting sessions, mirrord Operator creates temporary topics in the Kafka cluster. The default format for their names is as follows:
+- `mirrord-tmp-1234567890-fallback-topic-original-topic` - for the fallback topic (unfiltered messages, consumed by the deployed workload).
+- `mirrord-tmp-9183298231-original-topic` - for the user topics (filtered messages, consumed by local applications running with mirrord).
 
-You can control the format of the created topic names to suit your infra needs (RBAC, Security, Policies, etc.) by the `OPERATOR_KAFKA_SPLITTING_TOPIC_FORMAT` environment variable of the operator, or `operator.kafkaSplittingTopicFormat` helm chart value. The default value is:
+Note that the random digits will be unique for each topic.
+
+You can adjust the format of the created topic names to suit your needs (RBAC, Security, Policies, etc.), using the `OPERATOR_KAFKA_SPLITTING_TOPIC_FORMAT` environment variable of the mirrord Operator, or `operator.kafkaSplittingTopicFormat` helm chart value. The default value is:
 
 `mirrord-tmp-{{RANDOM}}{{FALLBACK}}{{ORIGINAL_TOPIC}}`
 
-The provided format must contain the three variables - `{{RANDOM}}`, `{{FALLBACK}}` and `{{ORIGINAL_TOPIC}}`
+The provided format must contain the three variables: `{{RANDOM}}`, `{{FALLBACK}}` and `{{ORIGINAL_TOPIC}}`.
+- `{{RANDOM}}` will resolve to random digits.
+- `{{FALLBACK}}` will resolve either to `-fallback-` or `-` literal.
+- `{{ORIGINAL_TOPIC}}` will resolve to the name of the original topic that is being split.
 
 ## Setting a Filter for a mirrord Run
 
