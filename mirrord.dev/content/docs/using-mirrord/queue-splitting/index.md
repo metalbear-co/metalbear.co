@@ -456,7 +456,7 @@ To serve Kafka splitting sessions, mirrord Operator creates temporary topics in 
 - `mirrord-tmp-1234567890-fallback-topic-original-topic` - for the fallback topic (unfiltered messages, consumed by the deployed workload).
 - `mirrord-tmp-9183298231-original-topic` - for the user topics (filtered messages, consumed by local applications running with mirrord).
 
-Note that the random digits will be unique for each topic.
+Note that the random digits will be unique for each temporary topic created by the mirrord Operator.
 
 You can adjust the format of the created topic names to suit your needs (RBAC, Security, Policies, etc.), using the `OPERATOR_KAFKA_SPLITTING_TOPIC_FORMAT` environment variable of the mirrord Operator, or `operator.kafkaSplittingTopicFormat` helm chart value. The default value is:
 
