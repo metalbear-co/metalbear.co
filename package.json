@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "npm run build:subsite && exec-bin node_modules/.bin/hugo/hugo server",
     "build": "npm run build:subsite && exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir",
-    "build:cf-preview": "npm run build:subsite && HUGO_BASEURL=$CF_PAGES_URL exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir",
+    "build:cf-preview": "HUGO_BASEURL=$CF_PAGES_URL/mirrord npm run build:subsite && HUGO_BASEURL=$CF_PAGES_URL exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir",
     "build:subsite": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../static/mirrord",
     "clean": "shx rm -rf public resources static/mirrord mirrord.dev/public mirrord.dev/resources",
     "clean:install": "shx rm -rf package-lock.json node_modules",
