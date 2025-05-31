@@ -70,7 +70,7 @@ The most significant delays often come from misalignment, not bad code. These to
 {{<
 figure src="vcluster.png" class="no-resize"
 alt="vCluster Introduction"
-caption="vCluster spins up isolated Kubernetes control planes inside namespaces, enabling fast, conflict-free team environments."
+title="vCluster spins up isolated Kubernetes control planes inside namespaces, enabling fast, conflict-free team environments."
 >}}
 
 vCluster creates virtual clusters that are fully functional Kubernetes control planes running inside namespace-scoped pods in a host cluster. This enables powerful collaboration patterns that were previously impossible.
@@ -101,7 +101,7 @@ vCluster works well for collaborative Kubernetes development at scale. For a mor
 {{<
 figure src="devcontainers.png" class="no-resize"
 alt="Devcontainers Introduction"
-caption="Devcontainers standardize development environments using containerized toolchains and editor integration like VS Code."
+title="Devcontainers standardize development environments using containerized toolchains and editor integration like VS Code."
 >}}
 
 
@@ -151,7 +151,7 @@ Tools in this category help you connect your code to live infrastructure from yo
 {{<
 figure src="mirrord-remocal.png" class="no-resize"
 alt="Remocal Introduction"
-caption="mirrord connects your local process to a live Kubernetes pod for real-time debugging without redeploying."
+title="mirrord connects your local process to a live Kubernetes pod for real-time debugging without redeploying."
 >}}
 
 
@@ -184,7 +184,7 @@ If your team is building for Kubernetes and you want to adopt remocal developmen
 {{<
 figure src="tilt.png" class="no-resize"
 alt="Tilt Introduction"
-caption="Tilt automates rebuild and redeploy cycles with a unified dashboard for monitoring all services during development."
+title="Tilt automates rebuild and redeploy cycles with a unified dashboard for monitoring all services during development."
 >}}
 
 Tilt is a solid choice if you want to automate build, deployment, and live-update cycles for your local K8s development. Tilt is not constrained to Kubernetes only and can be used in many things related to microservice development. It helps to solve one of the main struggles of dev teams: the constant rebuild-deploy-test cycle that slows delivery.
@@ -231,7 +231,7 @@ Inconsistent setups and config drift create bugs that only show up after deploym
 {{<
 figure src="crossplane.png" class="no-resize"
 alt="Crossplane Introduction"
-caption="Crossplane provisions cloud resources across providers using Kubernetes-native infrastructure as code."
+title="Crossplane provisions cloud resources across providers using Kubernetes-native infrastructure as code."
 >}}
 
 
@@ -264,7 +264,7 @@ Now let's look at KubeVela, which brings a platform-agnostic approach to applica
 {{<
 figure src="kubevela.png" class="no-resize"
 alt="KubeVela Introduction"
-caption="KubeVela enables platform-agnostic application delivery through reusable, declarative deployment patterns."
+title="KubeVela enables platform-agnostic application delivery through reusable, declarative deployment patterns."
 >}}
 
 KubeVela is a CNCF project that focuses on making application delivery consistent and extensible across different environments. It provides an application-centric delivery platform that separates application definition from deployment.
