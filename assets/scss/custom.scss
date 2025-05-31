@@ -1,0 +1,41 @@
+/* Custom overrides for MetalBear website */
+
+/* Enhanced figure caption styling - targeting Hugo's figure-caption class */
+.figure-caption {
+  font-size: 0.75rem !important;
+  font-style: italic !important;
+  color: #777 !important;
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+  margin-top: 1em !important;
+  margin-bottom: 1.5em !important;
+  text-align: center !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+}
+
+/* Target any paragraph inside figure-caption */
+.figure-caption p {
+  font-size: 0.75rem !important;
+  font-style: italic !important;
+  color: #777 !important;
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Wide figure captions */
+figure.wide .figure-caption {
+  max-width: calc(100% - 3rem) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .figure-caption {
+    max-width: 90% !important;
+    font-size: 0.7rem !important;
+  }
+}
