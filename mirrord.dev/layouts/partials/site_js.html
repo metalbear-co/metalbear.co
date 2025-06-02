@@ -4,7 +4,6 @@
 
 <!-- local js -->
 {{- $splide := resources.Get "js/splide.min.js" }}
-<!-- {{- $video := resources.Get "js/video.min.js" }} -->
 {{- $persist := resources.Get "js/persist.js" }}
 {{- $alpineClipboard := resources.Get "js/alpine-clipboard.js" }}
 {{- $copy := resources.Get "js/copy.js" }}
@@ -24,6 +23,4 @@ resources.Concat "js/main.js" }}
 {{- if (eq .Section "docs") }}
 <script src="{{ $search.RelPermalink }}" defer></script>
 <script src="{{ $clipboard.RelPermalink }}" defer></script>
-<!-- <script src="{{ $copy.RelPermalink }}" defer></script> -->
-<!-- <script src="{{ $darkmode.RelPermalink }}" defer></script> -->
 {{- end }}
