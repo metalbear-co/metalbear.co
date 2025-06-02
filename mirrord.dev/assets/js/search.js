@@ -7,9 +7,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             pageSize: 5,
             baseUrl: '/mirrord/',
             showImages: false,
-            processResult: function(result) {
-                return result.replace(/#.*$/, '');
-            }
         });
     }
 });
