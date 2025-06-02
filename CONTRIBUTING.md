@@ -11,6 +11,9 @@ The applications are compiled separately, and their artifacts are merged manuall
 npm install
 CF_PAGES_URL=http://localhost:1337 ./build.sh
 cd public && python3 -m http.server --bind 127.0.0.1 1337
+
+# or, instead of the last line
+npm run dev
 ```
 
 The site will be available at http://localhost:1337.
