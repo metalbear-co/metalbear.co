@@ -447,6 +447,26 @@ spec:
 
 > **_NOTE:_** By default, the operator will only have access to secrets in its own namespace (`mirrord` by default).
 
+
+### Customizing mirrord created Kafka Topic Names
+
+> **_NOTE:_** Available since chart version `1.27` and operator version 3.114.0
+
+To serve Kafka splitting sessions, mirrord Operator creates temporary topics in the Kafka cluster. The default format for their names is as follows:
+- `mirrord-tmp-1234567890-fallback-topic-original-topic` - for the fallback topic (unfiltered messages, consumed by the deployed workload).
+- `mirrord-tmp-9183298231-original-topic` - for the user topics (filtered messages, consumed by local applications running with mirrord).
+
+Note that the random digits will be unique for each temporary topic created by the mirrord Operator.
+
+You can adjust the format of the created topic names to suit your needs (RBAC, Security, Policies, etc.), using the `OPERATOR_KAFKA_SPLITTING_TOPIC_FORMAT` environment variable of the mirrord Operator, or `operator.kafkaSplittingTopicFormat` helm chart value. The default value is:
+
+`mirrord-tmp-{{RANDOM}}{{FALLBACK}}{{ORIGINAL_TOPIC}}`
+
+The provided format must contain the three variables: `{{RANDOM}}`, `{{FALLBACK}}` and `{{ORIGINAL_TOPIC}}`.
+- `{{RANDOM}}` will resolve to random digits.
+- `{{FALLBACK}}` will resolve either to `-fallback-` or `-` literal.
+- `{{ORIGINAL_TOPIC}}` will resolve to the name of the original topic that is being split.
+
 ## Setting a Filter for a mirrord Run
 
 Once everything else is set, you can start using message filters in your mirrord configuration file.

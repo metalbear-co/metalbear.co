@@ -1,0 +1,212 @@
+<!-- Flexible CTA Modal for Blog Posts -->
+<style>
+  #blog-scroll-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 9999;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .modal-content {
+    position: relative;
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .modal-close-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(240,240,240,0.5);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.2s ease;
+  }
+  
+  .modal-close-btn:hover {
+    background-color: rgba(240,240,240,0.9);
+  }
+  
+  .modal-image-col {
+    flex: 0 0 170px;
+    background-color: #E4E3FD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  
+  .modal-image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+  }
+  
+  .modal-content-col {
+    flex: 1;
+    padding: 30px 24px;
+    position: relative;
+  }
+  
+  .modal-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: #756DF3;
+    z-index: 2;
+  }
+  
+  .modal-title {
+    font-size: 20px;
+    color: #1a202c;
+    margin: 0 0 12px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .modal-description {
+    color: #4a5568;
+    margin: 0 0 20px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .modal-cta-btn {
+    display: inline-block;
+    text-align: center;
+    background-color: #756DF3;
+    color: white;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 12px;
+  }
+  
+  .modal-cta-btn:hover {
+    background-color: #FFCB7D;
+    color: #000;
+  }
+  
+  .modal-secondary-link {
+    display: inline-block;
+    color: #4a5568;
+    margin-left: 12px;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .modal-secondary-link:hover {
+    background-color: #FFCB7D;
+    color: #000;
+  }
+  
+  .modal-small-text {
+    font-size: 13px;
+    color: #718096;
+    margin: 12px 0 0 0;
+  }
+  
+  @media (max-width: 640px) {
+    .modal-content {
+      flex-direction: column;
+      max-width: 90%;
+    }
+    
+    .modal-image-col {
+      flex: 0 0 auto;
+      padding: 16px;
+    }
+    
+    .modal-image {
+      max-width: 120px;
+    }
+    
+    .modal-content-col {
+      padding: 20px;
+    }
+  }
+</style>
+
+<div id="blog-scroll-modal">
+  <div class="modal-container">
+    <div class="modal-content">
+      <!-- Close Button (X) -->
+      <button class="modal-close-btn" onclick="document.getElementById('blog-scroll-modal').style.opacity='0'; setTimeout(() => {document.getElementById('blog-scroll-modal').style.display='none';}, 300); localStorage.setItem('blog-scroll-modal-seen', JSON.stringify({seen: true, expires: new Date().setDate(new Date().getDate() + 7), url: window.location.pathname}));" aria-label="Close modal">
+        ×
+      </button>
+      
+      <!-- Left Column - MetalBear Image -->
+      <div class="modal-image-col">
+        <img src="/images/metal-bear.png" alt="MetalBear" class="modal-image">
+      </div>
+      
+      <!-- Right Column - CTA Content -->
+      <div class="modal-content-col">
+        <!-- Accent Bar -->
+        <div class="modal-accent-bar"></div>
+        
+        <!-- Content Container -->
+        <div>
+          <!-- Main Heading -->
+          <h3 class="modal-title">{{ .Title | default "Want to try this yourself?" }}</h3>
+          
+          <!-- Subtitle -->
+          <p class="modal-description">{{ .Description | default "Get hands-on experience with a ready-to-use development environment." }}</p>
+          
+          <!-- Primary CTA Button -->
+          <a href="{{ .ButtonLink | default "#" }}" target="_blank" rel="noopener noreferrer" class="modal-cta-btn">{{ .ButtonText | default "Launch Interactive Demo" }}</a>
+        
+          <!-- Secondary Link (Optional) -->
+          {{ if .SecondaryLink }}
+          <a href="{{ .SecondaryLink }}" target="_blank" rel="noopener noreferrer" class="modal-secondary-link">{{ .SecondaryText | default "Learn more" }}</a>
+          {{ end }}
+          
+          <!-- Small Text (Optional) -->
+          {{ if .SmallText }}
+          <p class="modal-small-text">{{ .SmallText }}</p>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
