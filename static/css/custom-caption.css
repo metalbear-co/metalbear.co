@@ -1,0 +1,33 @@
+/* Custom styling for figure captions - loaded after all other styles */
+.figure-caption {
+  font-size: 0.75rem !important;
+  font-style: italic !important;
+  color: #777 !important;
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+  margin-top: 1em !important;
+  margin-bottom: 1.5em !important;
+  text-align: center !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+}
+
+/* For paragraphs inside captions */
+.figure-caption p {
+  font-size: inherit !important;
+  font-style: inherit !important;
+  color: inherit !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .figure-caption {
+    font-size: 0.7rem !important;
+    max-width: 90% !important;
+  }
+}
