@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             element: '#search',
             showSubResults: true,
             pageSize: 5,
-            baseUrl: '/mirrord/',
+            baseUrl: '/mirrord/docs',
             showImages: false,
         });
     }
