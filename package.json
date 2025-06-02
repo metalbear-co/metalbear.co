@@ -12,8 +12,8 @@
   },
   "scripts": {
     "dev": "npm run build:subsite && exec-bin node_modules/.bin/hugo/hugo server",
-    "build": "npm run build:subsite && exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir" && npm run pagefind:mirrord,
-    "build:cf-preview": "HUGO_BASEURL=$CF_PAGES_URL/mirrord npm run build:subsite && HUGO_BASEURL=$CF_PAGES_URL exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir" && npm run pagefind:mirrord,
+    "build": "npm run build:subsite && exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir && npm run pagefind:mirrord",
+    "build:cf-preview": "HUGO_BASEURL=$CF_PAGES_URL/mirrord npm run build:subsite && HUGO_BASEURL=$CF_PAGES_URL exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir && npm run pagefind:mirrord",
     "build:subsite": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../static/mirrord",
     "pagefind:mirrord": "npx pagefind --site public/mirrord --output-path public/mirrord/pagefind",
     "clean": "shx rm -rf public resources static/mirrord mirrord.dev/public mirrord.dev/resources",
