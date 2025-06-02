@@ -8,8 +8,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             pageSize: 5,
             baseUrl: '/mirrord/',
             showImages: false,
-            processTerm: function(term) {
-                return term.replace(/#.*$/, '');
+            processResult: function(result) {
+                return result.replace(/#.*$/, '');
             }
         });
     }
