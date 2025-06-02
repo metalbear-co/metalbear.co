@@ -39,7 +39,7 @@ This article argues that without better Developer Experience (DevX) tools, shift
 
 Development environments serve as an essential testing ground during the development cycle. However, for cloud-native applications, this environment has become a significant bottleneck that contradicts shift-left testing. Here’s why:
 
-- **Build delays**: Even though build caching helps, developers still face friction because the build itself, incremental or not, is required. Developers must wait for container builds, image pushes, and deployment, which slows down rapid iteration.
+- **Build delays**: Even though build caching helps, developers still face friction because the build itself, incremental or not, is still required. Developers must wait for container builds, image pushes, and deployment, which slows down rapid iteration.
 - **Feedback gaps**: A long feedback loop occurs when developers wait for the full build-deploy-test cycle to complete. This creates a significant delay between writing code and getting meaningful feedback, discouraging frequent software testing.
 - **Bottlenecks during testing**: When multiple team members need to test changes simultaneously, you must proceed one at a time to avoid interference.
 - **Resource and cost challenges**: Modern practices often adopt ephemeral environments per feature branch or isolated namespaces to enable parallel testing. While this solves interference issues, it comes at a cost: these environments consume significantly more resources and are more expensive to operate at scale. The increased operating expenses (OPEX) and infrastructure costs make this model unsustainable for many teams, as development velocity and team size increase.
