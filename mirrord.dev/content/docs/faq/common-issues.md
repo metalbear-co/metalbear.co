@@ -36,7 +36,7 @@ There are currently two known cases where mirrord cannot load into the applicati
 
 Another reason that mirrord might seem not to work is if your remote pod has more than one container. mirrord works at the level of the container, not the whole pod. If your pod runs multiple containers, you need to make sure mirrord targets the correct one by by specifying it explicitly in the [target configuration](/docs/reference/configuration/#root-target). Note that we filter out the proxy containers added by popular service meshes automatically.
 
-### Running a Go program on Linux network.outgoing.filter.local or DNS isn't affected by mirrord
+### DNS isn't affected at all or by `network.outgoing.filter.local` when Running a Go program on Linux
 
 This can be caused when Go resolves DNS without going through libc.
 Build your Go binary with the following environment variable:
