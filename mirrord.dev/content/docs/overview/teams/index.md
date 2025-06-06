@@ -35,6 +35,8 @@ In mirrord for Teams, we introduce a new component - the mirrord Operator. The O
 
 ## Supported Features
 The following functionality is currently available in mirrord for Teams that isn't available in the open-source version:
-- **Concurrent use** - multiple users can use mirrord on the same pod at the same time.
+- **Concurrent use** - mirrord for Teams includes various features that allow your entire team to work on a shared environment without conflicts.
 - **Better security and RBAC** - with the mirrord Operator, users no longer need permissions to create privileged pods - only the Operator does. In addition, permissions can be managed within Kubernetes to allow or prevent users from impersonating specific targets.
-- **Deployment-level mirroring/interception** - deployments with more than one pod can be mirrored/intercepted in their entirety.
+- **Advanced features** - support for new resource types like Jobs and StatefulSets, multi-pod deployments, and more.
+
+For the full list of features, see the mirrord for Teams [pricing page](https://metalbear.co/mirrord/pricing).
