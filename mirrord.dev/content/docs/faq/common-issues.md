@@ -158,4 +158,3 @@ For example, if you use Istio and have set the agent port to 5000, you can add t
 ```
 traffic.sidecar.istio.io/excludeInboundPorts: '50000'
 ```
-where 50000 = agent port
