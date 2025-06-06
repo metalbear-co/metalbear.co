@@ -148,3 +148,14 @@ To work around this issue (on macOS), you can use the following mirrord configur
 This configuration would make any certificate trusted for the process.
 
 Other alternatives are to either disable certificate validation in your application or import the problematic certificate (or its root CA) into your macOS Keychain. For guidance on how to do this, refer to this [Apple support article](https://support.apple.com/guide/keychain-access/change-the-trust-settings-of-a-certificate-kyca11871/mac).
+
+
+### Agent connection fails or drops when using Ephemeral agent with a mesh
+When running in ephemeral, the agent shares the network stack with the target pod.
+It means that the connections coming in to the agent are handled by the mesh, which might drop it for its own reasons (lack of TLS, not HTTP, etc.)
+To workaround that, you can add a port exclusion for the agent port (setting the agent.port to be static using `agent.port` in values.yaml when using the operator).
+For example with Istio you can add the following annotation for exclusion:
+```
+traffic.sidecar.istio.io/excludeInboundPorts: '50000'
+```
+where 50000 = agent port
