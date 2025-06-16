@@ -336,3 +336,4 @@ this usually means that the mirrord plugin has been installed only on one side (
 issue might also prevent mirrord from running inside WSL.
 
 To fix it, make sure that the mirrord plugin is installed on both the host and the client (WSL) IDE.
+Open the host IDE (or client IDE), navigate to the Plugins section, and install mirrord.
