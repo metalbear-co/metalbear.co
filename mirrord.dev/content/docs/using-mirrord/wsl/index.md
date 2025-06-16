@@ -23,7 +23,7 @@ mirrord works with any Kubernetes cluster, be it remote or local.
 
 You can read about the prerequisites and installation options on the official Microsoft
 documentation for
-[How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install). 
+[How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 The mirrord guide uses the default installation options, which has Ubuntu as the Linux distro.
 mirrord itself is not limited to any particular distro.
@@ -119,7 +119,7 @@ service/kubernetes   ClusterIP   10.96.0.1	     <none>    	       443/TCP    1d
 
 - If you got a `command not found` error instead, this means that `kubectl` is not installed.
  Some Kubernetes tools install it as part of their setup,
- but you can also manually install it directly, follow the 
+ but you can also manually install it directly, follow the
  [official guide](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
  for installing it on Linux.
  You can also [install it on Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/),
@@ -283,7 +283,7 @@ curl -fsSL https://raw.githubusercontent.com/metalbear-co/mirrord/main/scripts/i
 Now to execute your project with mirrord, just run the `mirrord exec` command:
 
 ```sh
-mirrord exec --target "<pod-target>" <process command> 
+mirrord exec --target "<pod-target>" <process command>
 ```
 
 - If you’re using this guide’s playground project your `mirrord exec` command should be:
@@ -328,3 +328,11 @@ And issuing the following command:
 ```sh
 keytool -importcert -trustcacerts -alias <alias-name> -file <path/to/file.crt> -keystore cacerts
 ```
+
+### IntelliJ mirrord does not launch and settings `Select Active` does not work {#root-troubleshooting-intellij-host}
+
+If you don't see the mirrord UI for selecting the active configuration when clicking `Select Active`,
+this usually means that the mirrord plugin has been installed only on one side (host or client). This
+issue might also prevent mirrord from running inside WSL.
+
+To fix it, make sure that the mirrord plugin is installed on both the host and the client (WSL) IDE.
