@@ -1,6 +1,7 @@
 ---
 title: "A Cloud Dev Hack: Connecting Local Code to Remote Clusters"
 description: "Learn how to run local code like it's inside your Kubernetes cluster. This guide shows you how to connect, debug, and test cloud-native apps."
+lead: "Cloud-native development is messy, but your workflow doesn’t have to be. This guide shows how to connect local code to your Kubernetes cluster so you can test, debug, and iterate without the usual slowdown."
 slug: "cloud-dev-hack"
 tags:
   - DevX
@@ -72,7 +73,9 @@ brew install metalbear-co/mirrord/mirrord
 
 If you don't use Homebrew,  you can install mirrord with the following install script:
 
-`curl -fsSL https://raw.githubusercontent.com/metalbear-co/mirrord/main/scripts/install.sh | bash`
+```
+curl -fsSL https://raw.githubusercontent.com/metalbear-co/mirrord/main/scripts/install.sh | bash
+```
 
 If you're on Windows, make sure [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) is set up first. Then run the same install script inside your WSL terminal.
 
@@ -189,7 +192,7 @@ Now you're fully debugging your local app with access to real cluster data from 
 
 By default, mirrord runs in *mirror* mode. That means traffic to your selected pod is duplicated and also sent to your local process. Your app can receive the traffic from the cluster but any responses sent by it will be discarded by mirrord.
 
-If you switch to *steal* mode, your local app gets all of the incoming traffic and is the one sending back responses as well. Use this when you want to test the response of your local code as well.
+If you switch to [*steal* mode](https://metalbear.co/mirrord/docs/using-mirrord/steal/?utm_source=blog&utm_medium=blog&utm_campaign=cloud-dev-hack-blog), your local app gets all of the incoming traffic and is the one sending back responses as well. Use this when you want to test the response of your local code as well.
 
 You can also use [outgoing filters](https://metalbear.co/mirrord/docs/using-mirrord/outgoing-filter/?utm_source=blog&utm_medium=blog&utm_campaign=cloud-dev-hack-blog) to control which requests go through the cluster and which stay local. For example, if your app talks to an external API or mock service, you can exclude those so they aren't routed through the cluster unnecessarily.
 
@@ -201,4 +204,4 @@ By connecting your local code to the cluster with mirrord, you keep the speed of
 
 It also gives your local app access to the same resources it would use in the cluster - whether that's internal APIs, queues, or mounted secrets - without needing to mock them. That alone can boost developer productivity significantly.
 
-For developers working on microservices or software that relies on shared infrastructure, especially where infrastructure management overlaps with development, mirrord is one of those tools that quietly upgrades your workflow without needing to commit to heavyweight *cloud development solutions*. Try it once on a single service. This will change how you build and test your application or software in cloud-native environments.  If you're ready to dive deeper, [check out the official mirrord website](https://metalbear.co/mirrord/?utm_source=blog&utm_medium=blog&utm_campaign=cloud-dev-hack-blog) to get started.
+For developers working on microservices or software that relies on shared infrastructure, especially where infrastructure management overlaps with development, mirrord is one of those tools that quietly upgrades your workflow without needing to commit to heavyweight *cloud development solutions*. Try it once on a single service. This will change how you build and test your application or software in cloud-native environments.  If you're ready to dive deeper, [check out the mirrord website](https://metalbear.co/mirrord/?utm_source=blog&utm_medium=blog&utm_campaign=cloud-dev-hack-blog) to get started.
