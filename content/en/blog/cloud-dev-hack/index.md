@@ -188,7 +188,7 @@ Now you're fully debugging your local app with access to real cluster data from 
 
 {{<figure src="debugger.png" alt="debugging with mirrord" height="100%" width="100%">}}
 
-## Mirror vs.steal mode
+## Mirror vs. steal mode
 
 By default, mirrord runs in *mirror* mode. That means traffic to your selected pod is duplicated and also sent to your local process. Your app can receive the traffic from the cluster but any responses sent by it will be discarded by mirrord.
 
