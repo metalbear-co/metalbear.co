@@ -159,7 +159,7 @@ helm install -f values.yaml mirrord-operator metalbear/mirrord-operator
 
 The use of an internal registry for storing mirrord images is useful for:
 1. Reducing startup time of agent and operator.
-2. Reducing cost of egress needed to download the images.
+2. Reducing cost of ingress traffic needed to download the images.
 3. Ensuring that even if our registry goes down (we use GitHub) your use of mirrord isn't interrupted.
 
 #### Copying images
