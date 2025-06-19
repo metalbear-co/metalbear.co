@@ -202,8 +202,6 @@ regctl image config ghcr.io/metalbear-co/operator:IMAGE_VERSION | jq -r '.config
 
 Copy agent image to your registry
 
-Copy the image to your registry
-
 ```sh
 regctl image copy ghcr.io/metalbear-co/mirrord:AGENT_IMAGE_VERSION your-registry/mirrord:AGENT_IMAGE_VERSION
 ```
