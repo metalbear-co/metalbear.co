@@ -186,24 +186,24 @@ regctl registry login REGISTRY
 Get the operator image relevant to the chart version you want to install:
 
 ```sh
-helm show chart metalbear/mirrord-operator | grep 'appVersion:' | awk '{print $2}'
+IMAGE_VERSION=$(helm show chart metalbear/mirrord-operator | grep 'appVersion:' | awk '{print $2}')
 ```
 
 Copy the image to your registry
 
 ```sh
-regctl image copy ghcr.io/metalbear-co/operator:IMAGE_VERSION your-registry/operator:IMAGE_VERSION
+regctl image copy ghcr.io/metalbear-co/operator:$IMAGE_VERSION your-registry/operator:$IMAGE_VERSION
 ```
 
 Extract agent version that is used with specific operator version:
 ```sh
-regctl image config ghcr.io/metalbear-co/operator:IMAGE_VERSION | jq -r '.config.Labels."metalbear.mirrord.version"'
+AGENT_IMAGE_VERSION=$(regctl image config ghcr.io/metalbear-co/operator:$IMAGE_VERSION | jq -r '.config.Labels."metalbear.mirrord.version"')
 ```
 
 Copy agent image to your registry
 
 ```sh
-regctl image copy ghcr.io/metalbear-co/mirrord:AGENT_IMAGE_VERSION your-registry/mirrord:AGENT_IMAGE_VERSION
+regctl image copy ghcr.io/metalbear-co/mirrord:$AGENT_IMAGE_VERSION your-registry/mirrord:$AGENT_IMAGE_VERSION
 ```
 
 
