@@ -2,7 +2,7 @@
 title: "Quick Start"
 description: "How to (very) quickly start using mirrord"
 date: 2020-11-16T13:59:39+01:00
-lastmod: 2020-11-16T13:59:39+01:00
+lastmod: 2025-06-19T10:59:39+01:00
 draft: false
 images: []
 menu:
@@ -154,6 +154,78 @@ Finally, install the chart:
 ```bash
 helm install -f values.yaml mirrord-operator metalbear/mirrord-operator 
 ```
+
+### Using Internal Registry (Optional)
+
+The use of an internal registry for storing mirrord images is useful for:
+1. Reducing startup time of agent and operator.
+2. Reducing cost of ingress traffic needed to download the images.
+3. Ensuring that even if our registry goes down (we use GitHub) your use of mirrord isn't interrupted.
+
+#### Copying images
+
+The first step would be to copy the needed images to your internal registry.
+We recommend using [regctl](https://regclient.org/) because it has a built in copy command, that supports copying multi-arch images so you can use mirrord on a mixed arm/x64 fleet at ease.
+
+Install `regctl`:
+```sh
+go install github.com/regclient/regclient/cmd/regctl@latest
+```
+or using script:
+```sh
+curl -L https://github.com/regclient/regclient/releases/latest/download/regctl-linux-amd64 >regctl
+chmod 755 regctl
+```
+
+Note - you might need to login to the registry (it automatically uses docker login if available)
+
+```
+regctl registry login REGISTRY
+```
+
+Get the operator image relevant to the chart version you want to install:
+
+```sh
+IMAGE_VERSION=$(helm show chart metalbear/mirrord-operator | grep 'appVersion:' | awk '{print $2}')
+```
+
+Copy the image to your registry
+
+```sh
+regctl image copy ghcr.io/metalbear-co/operator:$IMAGE_VERSION your-registry/operator:$IMAGE_VERSION
+```
+
+Extract agent version that is used with specific operator version:
+```sh
+AGENT_IMAGE_VERSION=$(regctl image config ghcr.io/metalbear-co/operator:$IMAGE_VERSION | jq -r '.config.Labels."metalbear.mirrord.version"')
+```
+
+Copy agent image to your registry
+
+```sh
+regctl image copy ghcr.io/metalbear-co/mirrord:$AGENT_IMAGE_VERSION your-registry/mirrord:$AGENT_IMAGE_VERSION
+```
+
+
+#### Setting chart to use internal registry
+
+In the operator chart, set the following values:
+```yaml
+operator:
+  image: ghcr.io/metalbear-co/operator # REPLACE TO YOUR REGISTRY.
+agent:
+  image:
+    registry: ghcr.io/metalbear-co/mirrord # REPLACE TO YOUR REGISTRY.
+```
+
+In the license server chart (if used), set the following values:
+
+```yaml
+server:
+  image: ghcr.io/metalbear-co/operator # REPLACE TO YOUR REGISTRY
+```
+
+Note: License server uses same image as operator for simplicity in deployment.
 
 ### OpenShift
 
