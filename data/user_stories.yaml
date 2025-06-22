@@ -8,7 +8,7 @@ user_stories:
     url: "mirrord/stories/vivint"
   - title: "Carousell User Story | Praveen Sanap"
     card_title: "Praveen Sanap"
-    description: "The key improvement was that debugging a process locally, using familiar tools like IntelliJ, made it much easier to handle egress traffic."
+    description: "dThe key improvement was that debugging a process locally, using familiar tools like IntelliJ, made it much easier to handle egress traffic."
     position: "Software Engineer | Carousell"
     avatar: "stories/praveen-sanap.png"
     logo: "stories/carousell.png"
