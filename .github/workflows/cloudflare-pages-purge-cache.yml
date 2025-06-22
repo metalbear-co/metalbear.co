@@ -1,0 +1,19 @@
+# purge cache after deployment
+name: Cloudflare Pages Purge Cache
+
+on:
+  deployment_status:
+
+jobs:
+  purge_cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge Cache
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Event action: ${{ github.event.action }}"
+          echo "Deployment status: ${{ github.event.deployment_status.state }}"
+          echo "Deployment environment: ${{ github.event.deployment_status.environment }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
