@@ -2,7 +2,7 @@
 name: Cloudflare Pages Purge Cache
 
 on:
-  deployment_status:
+  check_run:
 
 jobs:
   purge_cache:
