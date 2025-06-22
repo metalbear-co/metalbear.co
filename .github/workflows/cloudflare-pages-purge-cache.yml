@@ -12,15 +12,15 @@ jobs:
     steps:
       - name: Purge Cache
         run: |
-        echo "Check run data:"
-        echo "Event name: ${{ github.event_name }}"
-        echo "Check run ID: ${{ github.event.check_run.id }}"
-        echo "Check run name: ${{ github.event.check_run.name }}"
-        echo "Check run status: ${{ github.event.check_run.status }}"
-        echo "Check run conclusion: ${{ github.event.check_run.conclusion }}"
-        echo "Check run head SHA: ${{ github.event.check_run.head_sha }}"
-        echo "Check run URL: ${{ github.event.check_run.html_url }}"
-        echo "Repository: ${{ github.repository }}"
-        echo "Branch: ${{ github.ref_name }}"
-        echo "Full event data:"
-        echo '${{ toJSON(github.event) }}'
+          echo "Check run data:"
+          echo "Event name: ${{ github.event_name }}"
+          echo "Check run ID: ${{ github.event.check_run.id }}"
+          echo "Check run name: ${{ github.event.check_run.name }}"
+          echo "Check run status: ${{ github.event.check_run.status }}"
+          echo "Check run conclusion: ${{ github.event.check_run.conclusion }}"
+          echo "Check run head SHA: ${{ github.event.check_run.head_sha }}"
+          echo "Check run URL: ${{ github.event.check_run.html_url }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Full event data:"
+          echo '${{ toJSON(github.event) }}'
