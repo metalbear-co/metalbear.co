@@ -47,4 +47,4 @@ Sometimes, all you need to avoid clashes is just to see what other users are doi
 
 ## Conclusion
 
-Even though using mirrord with a shared cluster is already safer than actually deploying your code to it, we're constantly working to make it even safer and more seamless for multiple users to use mirrord concurrently on the same environment. If you have any questions or suggestions, please don't hesitate to reach out to us [here](/contact) or on our [Discord](discord.gg/metalbear). Happy mirroring!
+Even though using mirrord with a shared cluster is already safer than actually deploying your code to it, we're constantly working to make it even safer and more seamless for multiple users to use mirrord concurrently on the same environment. If you have any questions or suggestions, please don't hesitate to reach out to us [here](/contact) or on our [Slack](https://metalbear.co/slack). Happy mirroring!

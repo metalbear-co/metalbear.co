@@ -32,7 +32,7 @@ There are currently two known cases where mirrord cannot load into the applicati
 
    ```sudo codesign --remove-signature ./<your-binary>```
 
-   Please let us know if you're having trouble with SIP by opening an issue on [GitHub](https://github.com/metalbear-co/mirrord) or talking to us on [Discord](https://discord.gg/metalbear).
+   Please let us know if you're having trouble with SIP by opening an issue on [GitHub](https://github.com/metalbear-co/mirrord) or talking to us on [Slack](https://metalbear.co/slack).
 
 Another reason that mirrord might seem not to work is if your remote pod has more than one container. mirrord works at the level of the container, not the whole pod. If your pod runs multiple containers, you need to make sure mirrord targets the correct one by by specifying it explicitly in the [target configuration](/docs/reference/configuration/#root-target). Note that we filter out the proxy containers added by popular service meshes automatically.
 

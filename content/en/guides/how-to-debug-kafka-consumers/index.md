@@ -420,4 +420,4 @@ In this guide, we’ve explored how to use mirrord to debug Kafka consumer appli
 
 By leveraging mirrord, you can significantly improve your productivity when working with Kafka consumer applications and streamline your debugging workflow. For teams working together on Kafka applications, [mirrord for Teams](https://mirrord.dev/docs/overview/teams/) provides additional collaborative features that enable multiple developers to debug simultaneously.
 
-Curious to try it out? Give mirrord a go and see how it works for you. Got questions? Visit the [mirrord documentation](https://mirrord.dev/docs/) or join the community Discord channel!
+Curious to try it out? Give mirrord a go and see how it works for you. Got questions? Visit the [mirrord documentation](https://mirrord.dev/docs/) or join the community [Slack](https://metalbear.co/slack) channel!

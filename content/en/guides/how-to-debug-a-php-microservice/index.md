@@ -182,4 +182,4 @@ Conclusion
 
 This guide explored how we can use mirrord in the command line for debugging PHP applications.
 By enabling local execution with Kubernetes context, mirrord helps developers save substantial time during debugging.
-Curious to try it out? Give [mirrord](/mirrord/) a go and see how it works for you. Got questions? Hop into our [Discord](https://discord.com/invite/metalbear) and let us know!
+Curious to try it out? Give [mirrord](/mirrord/) a go and see how it works for you. Got questions? Hop into our [Slack](https://metalbear.co/slack) and let us know!
