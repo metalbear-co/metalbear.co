@@ -78,6 +78,10 @@
   width: 17px;
 }
 
+.footer__social .nav-link.slack {
+  width: 25px;
+}
+
 .footer__social .nav-link.linkedin {
   width: 17px;
 }
@@ -102,6 +106,10 @@
 
   .footer__social .nav-link.github {
     width: 17px;
+  }
+
+  .footer__social .nav-link.slack {
+    width: 25px;
   }
 
   .footer__social .nav-link.linkedin {
@@ -152,6 +160,10 @@
     width: 19px;
   }
 
+  .footer__social .nav-link.slack {
+    width: 27px;
+  }
+
   .footer__social .nav-link.linkedin {
     width: 19px;
   }
@@ -172,12 +184,12 @@
     width: 28px;
   }
 
-  .footer__social .nav-link.linkedin {
-    width: 28px;
+  .footer__social .nav-link.slack {
+    width: 36px;
   }
 
-  .nav-link.slack {
-    width: 30px;
+  .footer__social .nav-link.linkedin {
+    width: 28px;
   }
 
   .footer__logo {
