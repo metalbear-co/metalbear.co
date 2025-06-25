@@ -1,7 +1,7 @@
 ---
 title: "Inspecting Service Traffic with mirrord dump"
 description: "Learn how to capture and inspect traffic to your Kubernetes resources using mirrord dump which is a built-in tool for debugging."
-lead: "mirrord lets you inspect incoming TCP traffic to a Kubernetes resource, helping you troubleshoot and understand your application behavior."
+lead: "mirrord dump lets you inspect incoming TCP traffic to a Kubernetes resource, helping you troubleshoot and understand your application behavior."
 slug: "mirrord-dump"
 tags:
   - DevEx
@@ -25,9 +25,6 @@ images:
 contributors:
   - "Aviram Hassan"
 ---
-
-# Inspecting Your Service Traffic Using mirrord dump
-
 In the latest mirrord release, we introduced a new command: `mirrord dump`. This post covers the why behind it, some common use cases, and a peek under the hood at how it works.
 
 ## What is `mirrord dump`?
