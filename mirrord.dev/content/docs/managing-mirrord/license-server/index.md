@@ -55,7 +55,7 @@ You can customize the license server deployment further - all values.yaml config
 Next, install the license server on your cluster:
 
 ```bash
-helm install metalbear-co/mirrord-operator-license-server -f ./values.yaml --generate-name --wait
+helm install metalbear-co/mirrord-operator-license-server -f ./values.yaml --wait
 ```
 
 To make sure it's been installed successfully and is running:
@@ -79,5 +79,5 @@ license:
 
 Then run:
 ```bash
-helm install metalbear-co/mirrord-operator -f ./values.yaml --generate-name --wait
+helm install metalbear-co/mirrord-operator -f ./values.yaml --wait
 ```
