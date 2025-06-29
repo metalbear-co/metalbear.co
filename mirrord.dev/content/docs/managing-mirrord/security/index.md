@@ -18,7 +18,7 @@ tags: ["team", "enterprise"]
 
 - mirrord for Teams is completely on-prem. The only data sent to our cloud is analytics and license verification which can be customized or disabled upon request. The analytics don't contain PII or any sensitive information.
 - mirrord for Teams uses Kubernetes RBAC, meaning it doesn't add a new attack vector to your cluster.
-- The Kubernetes operator installed in the cluster as part of mirrord for Teams is licensed as Source Available (but not yet public) and we'll be happy to share the code if needed for review.
+- Communication between the mirrord client and the mirrord Operator takes place over your existing Kubernetes API. If you’ve configured your cluster to encrypt this communication (as is commonly done), then mirrord for Teams’ client-server communication is encrypted as well.
 - mirrord for Teams defines a new CRD that can be used to limit access and use of mirrord, with plans of more fine-grained permissions in the future.
 - The operator requires permissions to create a pod with the following capabilities in its Kubernetes namespace:
     - `CAP_NET_ADMIN` - for modifying routing tables
