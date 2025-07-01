@@ -31,6 +31,7 @@ The operator is able to report mirrord session times to the mirrord app installe
 |Application|Minimum Version|
 |---|---|
 |operator|3.116.1|
+|operator chart|1.29.1|
 |mirrord|3.145.0|
 |VSCode plugin|3.66.0|
 |IntelliJ plugin|3.68.0|
