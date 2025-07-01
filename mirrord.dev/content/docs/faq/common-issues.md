@@ -171,6 +171,6 @@ This error can occur on systems with Carbon Black Endpoint Detection and Respons
 
 mirrord, by design, extracts a temporary dynamic library at runtime — the `mirrord-layer` — which is written to a randomized path in `/tmp` (for example, `/tmp/11832501046814586937-libmirrord_layer.dylib`). This library is then dynamically injected into your local application so mirrord can intercept and redirect its network traffic transparently to a remote Kubernetes environment.
 
-Because this temporary `.dylib` is not code-signed in a way Carbon Black recognizes, and because it lives in `/tmp`, Carbon Black treats its load attempt as suspicious and blocks it. This results in the dynamic library failing to load, which breaks mirrord’s core functionality.
+Carbon Black typically does not trust binaries or dynamic libraries residing in ephemeral directories like /tmp. As a result, Carbon Black treats the loading attempt as potentially suspicious and blocks it, which prevents the library from being injected and disrupts mirrord’s operation.
 
 To resolve this problem, you can create an explicit exclusion policy in Carbon Black to permit loading of the `mirrord-layer` dynamic library. Your policy should permit loading dynamic libraries from a specific predictable directory, such as `/private/tmp/mirrord/**`.
