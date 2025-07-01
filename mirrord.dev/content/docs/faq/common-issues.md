@@ -158,3 +158,19 @@ For example, if you use Istio and have set the agent port to 5000, you can add t
 ```
 traffic.sidecar.istio.io/excludeInboundPorts: '50000'
 ```
+
+### My mirrord fails to load `mirrord-layer` dynamic library with Carbon Black installed
+
+When running mirrord, you might see an error indicating that it failed to load its required dynamic library, for example:
+
+```shell
+dyld[68792]: terminating because inserted dylib '/tmp/11832501046814586937-libmirrord_layer.dylib' could not be loaded: tried: '/tmp/11832501046814586937-libmirrord_layer.dylib' (code signing blocked mmap() of '/private/tmp/11832501046814586937-libmirrord_layer.dylib'), '/System/Volumes/Preboot/Cryptexes/OS/tmp/11832501046814586937-libmirrord_layer.dylib' (no such file), '/tmp/11832501046814586937-libmirrord_layer.dylib' (code signing blocked mmap() of '/private/tmp/11832501046814586937-libmirrord_layer.dylib'), '/private/tmp/11832501046814586937-libmirrord_layer.dylib' (code signing blocked mmap() of '/private/tmp/11832501046814586937-libmirrord_layer.dylib'), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/11832501046814586937-libmirrord_layer.dylib' (no such file), '/private/tmp/11832501046814586937-libmirrord_layer.dylib' (code signing blocked mmap() of '/private/tmp/11832501046814586937-libmirrord_layer.dylib')
+```
+
+This error can occur on systems with Carbon Black Endpoint Detection and Response (EDR) software installed. Carbon Black enforces strict controls over code execution, including blocking attempts to load dynamic libraries (shared objects) that are unsigned or located in potentially untrusted or ephemeral directories like `/tmp`.
+
+mirrord, by design, extracts a temporary dynamic library at runtime — the `mirrord-layer` — which is written to a randomized path in `/tmp` (for example, `/tmp/11832501046814586937-libmirrord_layer.dylib`). This library is then dynamically injected into your local application so mirrord can intercept and redirect its network traffic transparently to a remote Kubernetes environment.
+
+Carbon Black typically does not trust binaries or dynamic libraries residing in ephemeral directories like /tmp. As a result, Carbon Black treats the loading attempt as potentially suspicious and blocks it, which prevents the library from being injected and disrupts mirrord’s operation.
+
+To resolve this problem, you can create an explicit exclusion policy in Carbon Black to permit loading of the `mirrord-layer` dynamic library. Your policy should permit loading dynamic libraries from a specific predictable directory, such as `/private/tmp/mirrord/**`.
