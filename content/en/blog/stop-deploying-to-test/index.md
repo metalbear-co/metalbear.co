@@ -20,7 +20,7 @@ weight: 50
 images:
   - thumbnail.png
 contributors:
-  - ""
+  - "Lawrence Franklin"
 ---
 
 Staging environments are the default method for validating how an application would behave before it reaches production. They provide a safe environment to test changes under conditions that closely match your live infrastructure. This model still holds value, but only when used for its intended purposes: **final integration and pre-release validation**.
