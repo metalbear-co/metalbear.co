@@ -158,3 +158,19 @@ For example, if you use Istio and have set the agent port to 5000, you can add t
 ```
 traffic.sidecar.istio.io/excludeInboundPorts: '50000'
 ```
+
+### My mirrord fails to load `mirrord-layer` dynamic library with Carbon Black installed
+
+When running mirrord, you might see an error indicating that it failed to load its required dynamic library, for example:
+
+```shell
+failed to load mirrord-layer dynamic library '/tmp/11832501046814586937-libmirrord_layer.dylib'
+```
+
+This error can occur on systems with Carbon Black Endpoint Detection and Response (EDR) software installed. Carbon Black enforces strict controls over code execution, including blocking attempts to load dynamic libraries (shared objects) that are unsigned or located in potentially untrusted or ephemeral directories like `/tmp`.
+
+mirrord, by design, builds a temporary dynamic library at runtime — the `mirrord-layer` — which is written to a randomized path in `/tmp` (for example, `/tmp/11832501046814586937-libmirrord_layer.dylib`). This library is then dynamically injected into your local application so mirrord can intercept and redirect its network traffic transparently to a remote Kubernetes environment.
+
+Because this temporary `.dylib` is not code-signed in a way Carbon Black recognizes, and because it lives in `/tmp`, Carbon Black treats its load attempt as suspicious and blocks it. This results in the dynamic library failing to load, which breaks mirrord’s core functionality.
+
+To resolve this problem, you can create an explicit exclusion policy in Carbon Black to permit loading of the `mirrord-layer` dynamic library. Your policy should permit loading dynamic libraries from a specific predictable directory, such as `/private/tmp/mirrord/**`.
