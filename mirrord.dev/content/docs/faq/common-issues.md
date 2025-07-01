@@ -169,7 +169,7 @@ failed to load mirrord-layer dynamic library '/tmp/11832501046814586937-libmirro
 
 This error can occur on systems with Carbon Black Endpoint Detection and Response (EDR) software installed. Carbon Black enforces strict controls over code execution, including blocking attempts to load dynamic libraries (shared objects) that are unsigned or located in potentially untrusted or ephemeral directories like `/tmp`.
 
-mirrord, by design, builds a temporary dynamic library at runtime — the `mirrord-layer` — which is written to a randomized path in `/tmp` (for example, `/tmp/11832501046814586937-libmirrord_layer.dylib`). This library is then dynamically injected into your local application so mirrord can intercept and redirect its network traffic transparently to a remote Kubernetes environment.
+mirrord, by design, extracts a temporary dynamic library at runtime — the `mirrord-layer` — which is written to a randomized path in `/tmp` (for example, `/tmp/11832501046814586937-libmirrord_layer.dylib`). This library is then dynamically injected into your local application so mirrord can intercept and redirect its network traffic transparently to a remote Kubernetes environment.
 
 Because this temporary `.dylib` is not code-signed in a way Carbon Black recognizes, and because it lives in `/tmp`, Carbon Black treats its load attempt as suspicious and blocks it. This results in the dynamic library failing to load, which breaks mirrord’s core functionality.
 
