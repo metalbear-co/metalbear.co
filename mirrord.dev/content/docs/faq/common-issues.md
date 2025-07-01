@@ -164,7 +164,7 @@ traffic.sidecar.istio.io/excludeInboundPorts: '50000'
 When running mirrord, you might see an error indicating that it failed to load its required dynamic library, for example:
 
 ```shell
-failed to load mirrord-layer dynamic library '/tmp/11832501046814586937-libmirrord_layer.dylib'
+dyld[68792]: terminating because inserted dylib '/tmp/11832501046814586937-libmirrord_layer.dylib' could not be loaded: tried: '/tmp/11832501046814586937-libmirrord_layer.dylib' (code signing blocked mmap() of '/private/tmp/11832501046814586937-libmirrord_layer.dylib'), '/System/Volumes/Preboot/Cryptexes/OS/tmp/11832501046814586937-libmirrord_layer.dylib' (no such file), '/tmp/11832501046814586937-libmirrord_layer.dylib' (code signing blocked mmap() of '/private/tmp/11832501046814586937-libmirrord_layer.dylib'), '/private/tmp/11832501046814586937-libmirrord_layer.dylib' (code signing blocked mmap() of '/private/tmp/11832501046814586937-libmirrord_layer.dylib'), '/System/Volumes/Preboot/Cryptexes/OS/private/tmp/11832501046814586937-libmirrord_layer.dylib' (no such file), '/private/tmp/11832501046814586937-libmirrord_layer.dylib' (code signing blocked mmap() of '/private/tmp/11832501046814586937-libmirrord_layer.dylib')
 ```
 
 This error can occur on systems with Carbon Black Endpoint Detection and Response (EDR) software installed. Carbon Black enforces strict controls over code execution, including blocking attempts to load dynamic libraries (shared objects) that are unsigned or located in potentially untrusted or ephemeral directories like `/tmp`.
