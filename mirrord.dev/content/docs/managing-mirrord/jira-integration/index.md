@@ -51,6 +51,12 @@ The operator will emit logs with details upon successful session reporting, or u
 * If no branch name was recieved by the operator, a `DEBUG` log will be emitted. This can happen if a mirrord user is not using the latest version of the mirrord CLI or plugin, or if they are not currently on a git branch.
 * If the branch name was present but the operator still fails to report metric to the Jira app, a `WARN` log will be emitted with more details.
 
+### Data security
+
+When a session ends, the session data is sent by the operator via HTTP request to a [Jira Forge webtrigger](https://developer.atlassian.com/platform/forge/runtime-reference/web-trigger/) URL and is not stored by the operator.
+
+The Jira app stores usage data for each issue in [encrypted key-value storage](https://developer.atlassian.com/platform/forge/runtime-reference/storage-api-secret/). It is not visible to anyone outside those with access to the current Jira instance; the only way to access the data is through the context panel on an issue.
+
 ### Known Issues
 
 * Metrics reporting will not work for `jj` users, as `jj` operates in detached HEAD mode.
