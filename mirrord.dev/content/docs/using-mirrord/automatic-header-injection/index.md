@@ -35,14 +35,17 @@ Before you start, make sure you have:
         },
       }
     }
-    "browser_extenstion": {
-        "enabled": true // add / change name
+    { 
+        "experimental": { 
+        "browser_extension_config": true
+        } 
     }
   }
 }
 ```
 
 ### Using mirrord Browser Extension
+
 1. Run `mirrord exec` with the configured `mirrord.json`, mirrord will then:
    - Prints the localhost URL to the screen.
    - Launch the extension.
@@ -51,9 +54,13 @@ Before you start, make sure you have:
 3. You can check the current header and status in the extension popup. The extension can be opened anytime from the Chrome extension icon // add image
 
 ### Header Filter
+
 The mirrord Browser extenstion will automatically inject the `header_filter` defined in `mirrord.json`.
-In case `header_filter` configured with regex pattern, you will be prompted in the browser to enter a header that matches it.
+In case `header_filter` configured with regex pattern, you will be prompted in the browser to enter a header that matches it:
+`Please enter a header that matches pattern $HEADER_PATTERN`
 
 ### More details
 
-In case the mirrord browser extenstion is not downloaded prior to running `mirrord exec` with the configured `mirrord.json`, the URL will fail to open. 
+- In case the mirrord browser extension is not downloaded prior to running `mirrord exec` with the configured `mirrord.json`, the URL will fail to open. Google Chrome will display an error page showing
+the URL is blocked by Google Chrome.
+- In case the Browser Extension is enabled in `mirrord.json`, but no http header filter is configured, mirrord will not initiate the extension in Google Chrome and display a warning in the terminal.
