@@ -20,7 +20,7 @@ mirrord’s browser extension injects an HTTP header into all browser requests w
 Before you start, make sure you have:
 1. Header propagation set up in your app.
 2. Google Chrome is installed.
-3. Installed [mirrord Browser Extension] (). // add link
+3. Installed [mirrord Browser Extension for Chrome]. (https://chromewebstore.google.com/detail/mirrord/bijejadnnfgjkfdocgocklekjhnhkhkf).
 4. Defined in `mirrord.json` a valid HTTP header filter in `feature.network.incoming.http_filter.header_filter` with steal mode in `feature.metwork.incoming.mode`.
 5. Set in `mirrord.json`  the browser extension enabled. (feature is currenly experimental).
 
@@ -51,7 +51,8 @@ Before you start, make sure you have:
    - Launch the extension.
    - Opens the link automatically in a Chrome tab.
 2. The extension injects the active session’s header into all browser requests across tabs.
-3. You can check the current header and status in the extension popup. The extension can be opened anytime from the Chrome extension icon // add image
+3. You can check the current header and status in the extension popup, the extension can be opened anytime from the Chrome extension icon
+
 4. To stop the extension from injecting HTTP request header, click on the extension icon and remove the header from the pop up menu.
 
 ### Header Filter
