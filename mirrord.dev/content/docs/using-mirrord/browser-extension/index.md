@@ -3,7 +3,7 @@ title: "Browser Extension"
 description: "How to use Browser extenstion for automatic header injection"
 date: 2024-07-07T09:39:44+01:00
 lastmod: 2024-07-07T09:39:44+01:00
-draft: true
+draft: false
 menu:
   docs:
     parent: "using-mirrord"
@@ -52,7 +52,6 @@ Before you start, make sure you have:
    - Opens the link automatically in a Chrome tab.
 2. The extension injects the active session’s header into all browser requests across tabs.
 3. You can check the current header and status in the extension popup, the extension can be opened anytime from the Chrome extension icon
-
 4. To stop the extension from injecting HTTP request header, click on the extension icon and remove the header from the pop up menu.
 
 ### Header Filter
