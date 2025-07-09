@@ -1,29 +1,35 @@
 <!doctype html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
-  {{ partial "head/head.html" . }}
-  {{ if eq .Kind "home" -}}
-    {{ .Scratch.Set "class" "home" -}}
-  {{ else if eq .Kind "404" -}}
-    {{ .Scratch.Set "class" "error404" -}}
-  {{ else if eq .Kind "page" -}}
-    {{ .Scratch.Set "class" .Type -}}
-    {{ .Scratch.Add "class" " single" -}}
-  {{ else -}}
-    {{ .Scratch.Set "class" .Type -}}
-    {{ .Scratch.Add "class" " list" -}}
-  {{ end -}}
-  <body class="{{ .Scratch.Get "class" }}">
-    {{- if or (eq .Section "mirrord") (eq .Section "careers") }}
-    {{ partial "header/mirrord-header.html" . }}
-    {{- else }}
-    {{ partial "header/header.html" . }}
-    {{- end }}
-    {{ block "main" . }}{{ end }}
-    {{- if or (eq .Section "mirrord") (eq .Section "careers") }}
-    {{ partial "footer/mirrord-footer.html" . }}
-    {{- else }}
-    {{ partial "footer/footer.html" . }}
-    {{- end }}
-    {{ partial "footer/script-footer.html" . }}
-  </body>
+<html lang="{{ .Site.LanguageCode | default " en" }}">
+{{ partial "head/head.html" . }}
+{{ if eq .Kind "home" -}}
+{{ .Scratch.Set "class" "home" -}}
+{{ else if eq .Kind "404" -}}
+{{ .Scratch.Set "class" "error404" -}}
+{{ else if eq .Kind "page" -}}
+{{ .Scratch.Set "class" .Type -}}
+{{ .Scratch.Add "class" " single" -}}
+{{ else -}}
+{{ .Scratch.Set "class" .Type -}}
+{{ .Scratch.Add "class" " list" -}}
+{{ end -}}
+
+<body class="{{ .Scratch.Get " class" }}">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3T38KFN" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  {{- if or (eq .Section "mirrord") (eq .Section "careers") }}
+  {{ partial "header/mirrord-header.html" . }}
+  {{- else }}
+  {{ partial "header/header.html" . }}
+  {{- end }}
+  {{ block "main" . }}{{ end }}
+  {{- if or (eq .Section "mirrord") (eq .Section "careers") }}
+  {{ partial "footer/mirrord-footer.html" . }}
+  {{- else }}
+  {{ partial "footer/footer.html" . }}
+  {{- end }}
+  {{ partial "footer/script-footer.html" . }}
+</body>
+
 </html>
