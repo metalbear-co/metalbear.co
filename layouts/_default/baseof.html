@@ -12,7 +12,11 @@
     {{ .Scratch.Set "class" .Type -}}
     {{ .Scratch.Add "class" " list" -}}
   {{ end -}}
-  <body class="{{ .Scratch.Get "class" }}">
+<body class="{{ .Scratch.Get " class" }}">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3T38KFN" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     {{- if or (eq .Section "mirrord") (eq .Section "careers") }}
     {{ partial "header/mirrord-header.html" . }}
     {{- else }}
