@@ -52,6 +52,7 @@ Before you start, make sure you have:
    - Opens the link automatically in a Chrome tab.
 2. The extension injects the active session’s header into all browser requests across tabs.
 3. You can check the current header and status in the extension popup. The extension can be opened anytime from the Chrome extension icon // add image
+4. To stop the extension from injecting HTTP request header, click on the extension icon and remove the header from the pop up menu.
 
 ### Header Filter
 
