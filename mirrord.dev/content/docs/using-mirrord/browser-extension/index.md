@@ -29,20 +29,17 @@ Before you start, make sure you have:
   "feature": {
     "network": {
       "incoming": {
-        "mode": "steal",  
+        "mode": "steal",
         "http_filter": {
-          "header_filter": "X-My-Header: my-header-value",
-        },
+          "header_filter": "X-My-Header: my-header-value"
+        }
       }
     }
-    { 
-        "experimental": { 
-        "browser_extension_config": true
-        } 
-    }
+  },
+  "experimental": {
+    "browser_extension_config": true
   }
 }
-```
 
 ## Using mirrord Browser Extension
 
