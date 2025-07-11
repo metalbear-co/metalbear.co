@@ -11,17 +11,14 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "npm run build:subsite && exec-bin node_modules/.bin/hugo/hugo server",
-    "build": "npm run build:subsite && exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir && HUGO_BASEURL=$CF_PAGES_URL/mirrord npm run pagefind:mirrord",
-    "build:cf-preview": "HUGO_BASEURL=$CF_PAGES_URL/mirrord npm run build:subsite && HUGO_BASEURL=$CF_PAGES_URL exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir && npm run pagefind:mirrord",
-    "build:subsite": "cd mirrord.dev && exec-bin ../node_modules/.bin/hugo/hugo --destination ../static/mirrord",
-    "pagefind:mirrord": "npx pagefind --site public/mirrord/docs --output-path public/mirrord/pagefind",
-    "clean": "shx rm -rf public resources static/mirrord mirrord.dev/public mirrord.dev/resources",
+    "dev": "exec-bin node_modules/.bin/hugo/hugo server",
+    "build": "exec-bin node_modules/.bin/hugo/hugo --gc --minify --cleanDestinationDir",
+    "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json node_modules",
     "start": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender",
     "server": "exec-bin node_modules/.bin/hugo/hugo server",
     "check": "exec-bin node_modules/.bin/hugo/hugo version",
-    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo && cd mirrord.dev && npm install",
+    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo",
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
     "prestart": "npm run clean",
@@ -46,7 +43,7 @@
     "auto-changelog": "^2.4",
     "autoprefixer": "^10.4",
     "bootstrap": "^5.1",
-    "clipboard": "^2.0",
+    "clipboard": "^2.0.11",
     "eslint": "^8.12",
     "exec-bin": "^1.0.0",
     "flexsearch": "^0.7.21",
@@ -66,7 +63,7 @@
     "stylelint-config-standard-scss": "^3.0"
   },
   "otherDependencies": {
-    "hugo": "0.141.0"
+    "hugo": "0.147.0"
   },
   "dependencies": {
     "@splidejs/splide": "^4.1.4",

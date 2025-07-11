@@ -1,0 +1,103 @@
+{{ define "main" }}
+<div class="user-stories__page pt-12 lg:pt-16">
+  <div class="container w-full max-w-screen-md mx-auto px-6">
+    <article class="mb-8">
+      <header class="flex flex-wrap justify-between border-b border-dashed border-[#9B9B9B] pb-8">
+        <div class="flex-none w-full md:w-1/2 lg:w-2/3 mb-8 md:mb-0">
+          <h3 class="text-3xl lg:text-4xl text-[#000000] font-bold mb-12 lg:mb-16">User Stories</h3>
+          {{- $logo := .Resources.GetMatch .Params.logo }}
+          {{- with $logo }}
+          {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
+          <div class="w-full md:w-2/3 lg:w-3/5">
+            <img class="w-full h-auto object-cover object-center" src="{{ .RelPermalink }}" width="{{ .Width }}"
+              height="{{ .Height }}">
+          </div>
+          {{- end }}
+          {{- end }}
+        </div>
+        <div class="flex-none w-full md:w-1/2 lg:w-1/3 flex md:block items-center">
+          {{- $avatar := .Resources.GetMatch .Params.avatar }}
+          {{- with $avatar }}
+          {{- with .Resize "90x webp" }}
+          <div
+            class="flex-none w-[48px] h-[48px] md:w-[80px] md:h-[80px] lg:w-[90px] lg:h-[90px] md:mb-4 flex items-center md:block md:mx-auto">
+            <img class="w-full h-auto object-cover object-center" src="{{ .RelPermalink }}" width="{{ .Width }}"
+              height="{{ .Height }}">
+          </div>
+          {{- end }}
+          {{- end }}
+          <div class="text-center pl-4 lg:pl-0 flex-1">
+            <p class="lg:text-sm italic text-[#000000] font-bold mb-0">"{{ .Params.description }}"</p>
+          </div>
+        </div>
+      </header>
+      <div class="text-[#000000] border-b border-dashed border-[#9B9B9B] pt-8">
+        {{ .Content }}
+      </div>
+    </article>
+
+    {{- if or .PrevInSection .NextInSection }}
+    <div class="grid grid-cols-12 gap-6 border-b border-dashed border-[#9B9B9B] pb-12 mb-16">
+
+      {{- with .PrevInSection }}
+      <div class="col-span-6">
+        <a href="{{ .RelPermalink }}">
+          <div class="mb-2">
+            <span class="text-xs text-[#000000]">Previous</span>
+          </div>
+          <div class="h-14 lg:h-16 mb-1">
+            {{- $logo := .Resources.GetMatch .Params.logo }}
+            {{- with $logo }}
+            {{- $resizeWidth := cond (ge .Width 181) 181 .Width -}}
+            {{- with .Resize (printf "%dx webp" $resizeWidth) }}
+            <div class="lg:w-2/3 h-14 lg:h-16">
+              <img class="w-full h-16 object-contain object-left-top" src="{{ .RelPermalink }}" width="{{ .Width }}"
+                height="{{ .Height }}">
+            </div>
+            {{- end }}
+            {{- end }}
+          </div>
+          <div>
+            <span
+              class="text-[#000000] hover:font-medium leading-loose border-b hover:border-b-2 border-solid border-[#222222]">
+              &larr; Read User Story
+            </span>
+          </div>
+        </a>
+      </div>
+      {{- end }}
+
+      {{- with .NextInSection }}
+      <div class="col-span-6 col-start-7">
+        <a class="text-right" href="{{ .RelPermalink }}">
+          <div class="mb-2 text-right">
+            <span class="text-xs text-[#000000]">Next</span>
+          </div>
+          <div class="h-14 lg:h-16 mb-1">
+            {{- $logo := .Resources.GetMatch .Params.logo }}
+            {{- with $logo }}
+            {{- $resizeWidth := cond (ge .Width 181) 181 .Width -}}
+            {{- with .Resize (printf "%dx webp" $resizeWidth) }}
+            <div class="lg:w-2/3 h-14 lg:h-16 ml-auto">
+              <img class="w-full h-16 object-contain object-right" src="{{ .RelPermalink }}" width="{{ .Width }}"
+                height="{{ .Height }}">
+            </div>
+            {{- end }}
+            {{- end }}
+          </div>
+          <div class="text-right">
+            <span
+              class="text-[#000000] hover:font-medium leading-loose border-b hover:border-b-2 border-solid border-[#222222]">
+              Read User Story &rarr;
+            </span>
+          </div>
+        </a>
+      </div>
+      {{- end }}
+
+    </div>
+    {{- end }}
+
+  </div>
+</div>
+{{- end }}

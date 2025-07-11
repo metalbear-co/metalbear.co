@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="main">
+  {{ $ctx := . }}
+  {{ with .Params.sections }}
+    {{ range . }}
+      {{ $partial := printf "sections/%s.html" . }}  {{/* RELATIF ke _partials */}}
+      {{ if templates.Exists (printf "_partials/%s" $partial) }}
+        {{ partial $partial $ctx }}   {{/* Panggil partial */}}
+      {{ else }}
+        {{ warnf "Partial %q tidak ditemukan" $partial }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

@@ -1133,6 +1133,10 @@
     .home-arrow__box-2 {
         height: 175px;
     }
+
+    .md\:w-5 {
+        width: 20px;
+    }
 }
 
 @include media-breakpoint-up(lg) {
@@ -1145,7 +1149,8 @@
     }
 
     .home-arrow__box-2 {
-        height: 150px;;
+        height: 150px;
+        ;
     }
 }
 
@@ -1161,6 +1166,11 @@
     }
 
     .home-arrow__box-2 {
-        height: 250px;;
+        height: 250px;
+        ;
+    }
+
+    .xl\:w-6 {
+        width: 24px;
     }
 }

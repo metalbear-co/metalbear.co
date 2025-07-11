@@ -1,0 +1,80 @@
+<section>
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-6 pt-15 md:pt-18.5 lg:pt-15 xl:pt-18.5 2xl:pt-25 pb-28 md:pb-35 lg:pb-28 xl:pb-35 2xl:pb-46.5">
+        <header class="text-center mb-8.5 md:mb-10.5 lg:mb-8.5 xl:mb-10.5 2xl:mb-14">
+            <h2
+                class="text-black text-3xl 2xl:text-[2.5rem] font-heading font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] xl:leading-[1.3] 2xl:leading-[1.3] mb-2">
+                New on the blog</h2>
+            <div
+                class="text-black text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                <p>Check out our blog for technical insights, hands-on tutorials, and best practices.</p>
+            </div>
+        </header>
+        <div class="splide splide-blog">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    {{- range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") -}}
+                    <li class="splide__slide pb-3">
+                        <div
+                            class="bg-[#FAFAFD] h-full flex flex-col relative align-center justify-between pt-[50px] xl:pt-[70px] 2xl:pt-[72px] px-7.5 2xl:px-11.5 pb-11 xl:pb-8.5 2xl:pb-17 rounded-[7px] xl:rounded-[10px] border border-black hover:shadow-[-5px_5px_0px_#000000] lg:hover:shadow-[-9px_8px_0px_#000000] transition-all duration-300 ease-[ease]">
+                            <div class="text-center">
+                                <div class="min-h-[74px] xl:min-h-[82px] 2xl:min-h-[108px] mb-5 xl:mb-16 2xl:mb-7.5">
+                                    <h3
+                                        class="text-black text-lg 2xl:text-[1.625rem] font-bold font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mt-0 mb-0">
+                                        <a class="stretched-link text-black after:absolute after:top-0 after:right-0 after:bottom-0 after:left-0 after:z-[1]"
+                                            href="{{ .RelPermalink }}">{{
+                                            .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{
+                                            end -}}</a>
+                                    </h3>
+                                </div>
+                                <div
+                                    class="text-black text-base 2xl:text-lg font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal min-h-[160px] lg:min-h-[180px] 2xl:min-h-[242px]">
+                                    <p class="summary mb-0">{{ .Params.lead | safeHTML }}</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-between">
+                                <div
+                                    class="min-h-[45px] lg:min-h-[52px] 2xl:min-h-[62px] text-center border-t pt-3 mb-5">
+                                    {{ partial "main/blog-card-meta.html" . -}}
+                                </div>
+                                <div class="text-center">
+                                    <a class="relative z-10 w-[140px] xl:w-[208px] h-[44px] xl:h-[65px] text-lg 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease] mx-auto"
+                                        href="{{ .RelPermalink }}">Read Post</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{- end -}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        new Splide('.splide-blog', {
+            mediaQuery: 'min',
+            breakpoints: {
+                320: {
+                    perPage: 1,
+                },
+                1024: {
+                    perPage: 3,
+                    gap: '50px',
+                },
+                1292: {
+                    perPage: 3,
+                    gap: '50px',
+                },
+                1720: {
+                    perPage: 3,
+                    gap: '106px',
+                },
+            },
+            padding: { left: '0.75rem', right: '0.75rem' },
+            gap: '1.5rem',
+            arrows: false,
+            pagination: true,
+        }).mount();
+    });
+</script>

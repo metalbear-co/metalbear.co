@@ -1,0 +1,98 @@
+<section class="demo-bg-image--left-bottom border-b-3 border-b-black"
+    style="background-image: url(/home-section-8-bg.png);">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-6 pt-30 md:pt-37.5 lg:pt-30 xl:pt-37.5 2xl:pt-50 pb-26 md:pb-32.5 lg:pb-26 xl:pb-32.5 2xl:pb-43.5">
+        <div class="lg:flex">
+            <div class="lg:w-1/2 lg:flex-none">
+                <header>
+                    <h4
+                        class="text-[#686868] text-base md:text-[1.188rem] lg:text-base xl:text-[1.188rem] 2xl:text-[1.563rem] text-body font-normal leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                        Subscribe to our
+                        <span class="relative">
+                            <span class="absolute w-[105%] bottom-0 left-0">
+                                <svg class="w-full" viewBox="0 0 111 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M109.619 1.89898C95.7416 0.697123 81.8031 0.158194 67.8591 0.0294233C53.8985 -0.0945781 39.9379 0.18681 25.9884 0.620814C18.1466 0.864048 10.3048 1.15497 2.46299 1.44113C0.690298 1.5079 0.684776 3.89254 2.46299 3.82577C14.5957 3.37746 26.7284 2.93869 38.8666 2.66684C34.2498 2.91961 29.6331 3.21054 25.0219 3.54439C17.1304 4.1167 9.24448 4.80348 1.3806 5.60949C0.640597 5.68579 0 6.10549 0 6.80181C0 7.38843 0.635075 8.07044 1.3806 7.99413C15.3964 6.56334 29.4564 5.49979 43.5495 4.80348C57.6372 4.11193 71.7524 3.79239 85.8621 3.84008C93.7812 3.8687 101.7 4.01654 109.619 4.27886C110.365 4.3027 111 3.71131 111 3.08653C111 2.39022 110.365 1.96098 109.619 1.89421V1.89898Z"
+                                        fill="#FFCB7D" />
+                                </svg>
+                            </span>
+                            <strong class="relative">&nbsp;newsletter</strong>
+                        </span>
+                    </h4>
+                    <h1
+                        class="text-black text-[2rem] md:text-[2.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3.438rem] font-heading font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] xl:leading-[1.3] 2xl:leading-[1.3] mb-2">
+                        Bear in mind</h1>
+                    <div
+                        class="text-black text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                        <p>Get mirrord updates, early feature releases, and tips for better developer experience.
+                        </p>
+                    </div>
+                </header>
+                <div class="pt-5.5 md:pt-7 lg:pt-5.5 xl:pt-7 2xl:pt-9">
+                    <form id="newsletter-form" class="newsletter-form">
+                        <div class="flex gap-4 md:gap-5 lg:gap-4 xl:gap-5 2xl:gap-7">
+                            <div class="flex-1">
+                                <label class="hidden" for="email">Work email</label>
+                                <input
+                                    class="w-full h-[50px] xl:h-[65px] 2xl:h-[65px] bg-white text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl rounded-[7px] border border-black focus:outline-none pl-3.5 md:pl-4.5 lg:pl-3.5 xl:pl-4.5 2xl:pl-6"
+                                    type="email" id="email" name="email" placeholder="Work email" required="">
+                            </div>
+                            <div class="w-28.5 xl:w-35.5 2xl:w-47.5 flex-none">
+                                <button
+                                    class="w-full h-[45px] lg:h-[43px] xl:h-[57px] 2xl:h-[57px] cursor-pointer text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                    aria-label="Submit" form="newsletter-form" type="submit">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div
+                    class="text-black text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal pt-5.5 md:pt-7 lg:pt-5.5 xl:pt-7 2xl:pt-9">
+                    <p>One email a month. You can unsubscribe anytime.</p>
+                </div>
+            </div>
+            <div class="lg:w-1/2 lg:flex-none flex justify-center lg:justify-end pt-12 lg:pt-0">
+                <div class="w-[77%]">
+                    <img src="/newsletter-header.png" alt="newsletter-header">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email.toLowerCase());
+    }
+
+    document.getElementById('newsletter-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value.trim();
+
+        if (!validateEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        try {
+            const res = await fetch('https://yourserver.com/api/newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+
+            if (res.ok) {
+                window.location.href = "/thankyou";
+            } else {
+                alert("Registration failed. Please try again later.");
+            }
+        } catch (err) {
+            alert("An error occurred. Please try again later.");
+            console.error(err);
+        }
+    });
+</script>
