@@ -1,0 +1,71 @@
+{{ define "main" }}
+<div class="single__page pt-12">
+	<div x-data="{docsNav: false}" class="docs__container">
+		<div class="docs__wrapper docs">
+			<aside
+				class="docs__sidebar--left xl:col-span-2 bottom-0 w-full xl:top-[148px] top-0 hidden xl:block xl:sticky z-10 transition-all duration-300 ease-[ease]">							
+				<div class="docs__sidebar-mobile">
+					<h3 class="text-2xl text-primary-text font-bold mb-0">Documentation</h3>
+				</div>
+				
+				<div class="docs__sidebar-search">
+					<div class="flex-none w-4/5 lg:w-full">
+					{{ partial "sidebar/docs-search.html" . }}
+					</div>
+					<button  @click="docsNav = !docsNav" class="flex-none w-1/5 flex lg:hidden items-center justify-center text-primary-text cursor-pointer border-none outline-none focus:outline-none transition-all duration-300 ease-[ease]">
+						<svg class="transition duration-300 ease-in-out" :class="{'-rotate-180': docsNav === true }" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill="currentColor" d="M8.0001 8.76666C7.82232 8.76666 7.65566 8.73866 7.5001 8.68266C7.34455 8.62755 7.2001 8.53333 7.06677 8.4L0.933435 2.26666C0.688991 2.02222 0.561435 1.71644 0.550769 1.34933C0.539213 0.983107 0.666768 0.666663 0.933435 0.399996C1.17788 0.155552 1.48899 0.0333296 1.86677 0.0333296C2.24455 0.0333296 2.55566 0.155552 2.8001 0.399996L8.0001 5.56666L13.2001 0.399996C13.4445 0.155552 13.7499 0.0275518 14.1161 0.0159962C14.4832 0.00532958 14.8001 0.13333 15.0668 0.399996C15.3112 0.644441 15.4334 0.955552 15.4334 1.33333C15.4334 1.71111 15.3112 2.02222 15.0668 2.26666L8.93344 8.4C8.8001 8.53333 8.65566 8.62755 8.5001 8.68266C8.34455 8.73866 8.17788 8.76666 8.0001 8.76666ZM8.0001 16.7667C7.82232 16.7667 7.65566 16.7387 7.5001 16.6827C7.34455 16.6276 7.2001 16.5333 7.06677 16.4L0.933435 10.2667C0.688991 10.0222 0.561435 9.71644 0.550769 9.34933C0.539213 8.98311 0.666768 8.66666 0.933435 8.4C1.17788 8.15555 1.48899 8.03333 1.86677 8.03333C2.24455 8.03333 2.55566 8.15555 2.8001 8.4L8.0001 13.5667L13.2001 8.4C13.4445 8.15555 13.7499 8.02755 14.1161 8.016C14.4832 8.00533 14.8001 8.13333 15.0668 8.4C15.3112 8.64444 15.4334 8.95555 15.4334 9.33333C15.4334 9.71111 15.3112 10.0222 15.0668 10.2667L8.93344 16.4C8.8001 16.5333 8.65566 16.6276 8.5001 16.6827C8.34455 16.7387 8.17788 16.7667 8.0001 16.7667Z"/>
+						</svg>							
+					</button>
+				</div>
+
+				<div class="docs__sidebar-wrapper" :class="docsNav === true ? 'docs__sidebar-wrapper--active' : 'docs__sidebar-wrapper--not-active'">
+				{{ partial "sidebar/docs-menu.html" . }}
+				<div class="toc__mobile hidden px-4">
+					{{ partial "sidebar/docs-toc.html" . }}
+				</div>
+				</div>
+			</aside>
+			<div class="docs__main lg:col-span-7 lg:col-start-4 xl:col-span-8  pl-4 pr-4 lg:pl-8 lg:pr-8 xl:pl-20 xl:pr-0 2xl:pr-[4%] 3xl:pr-[10%] 4xl:pr-[15%] 5xl:pr-[20%]">
+				<article class="docs__article">
+					<header class="mb-4">
+						<h1 class="text-2xl lg:text-4xl text-primary-text font-heading font-bold mb-0">{{ .Title }}</h1>
+					</header>
+					{{- if .Params.tags }}
+					<div class="content__tags border-t border-b border-solid border-[#EBEBEB] md:inline-flex items-center py-3 mb-4 lg:mb-8">
+						<div class="font-medium mr-10 md:flex-none md:w-[140px] lg:w-[110px]">
+							<p class="mb-2 lg:mb-0">Available for:</p>
+						</div>
+						<div class="flex w-full justify-between md:space-x-8 lg:space-x-4 xl:space-x-10">
+						{{- range (.GetTerms "tags") }}
+						<a class="text-primary-text hover:text-primary-text text-sm xl:text-base" href="{{ .RelPermalink }}">
+							{{- if eq .LinkTitle "open source" }}
+							{{ partial (printf "svg/icon-%s.svg" "open-source") (dict "class" "inline-block text-current mr-1 xl:mr-2 w-[14px] h-[14px] xl:w-[23px] xl:h-[23px]") }}
+							{{- else if eq .LinkTitle "team" }}
+							{{ partial (printf "svg/icon-%s.svg" "team") (dict "class" "inline-block text-current mr-1 xl:mr-2 w-[17px] h-[13px] xl:w-[27px] xl:h-[23px]") }}
+							{{- else }}
+							{{ partial (printf "svg/icon-%s.svg" "enterprise") (dict "class" "inline-block text-current mr-1 xl:mr-2 w-[13px] h-[13px] xl:w-[21px] xl:h-[21px]") }}
+							{{- end }}
+
+						{{ .LinkTitle | humanize }}</a>
+						{{- end }}
+						</div>
+					</div>
+					{{- end }}
+
+					<div class="docs__content transition-all duration-300 ease-[ease]">
+						{{- .Content }}
+					</div>
+				</article>
+				<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+					{{ partial "main/edit-page.html" . }}
+				</div>				
+			</div>
+			<aside
+				class="docs__sidebar--right xl:pl-[20%] 3xl:pl-[25%] 4xl:pl-[30%] 5xl:pl-[35%] lg:col-span-2 lg:col-start-11 hidden lg:block lg:sticky left-0 top-0 lg:top-[148px] bottom-0 w-full z-10 transition-all duration-300 ease-[ease]">
+				{{ partial "sidebar/docs-toc.html" . }}
+			</aside>
+		</div>
+	</div>
+</div>
+{{ end }}
