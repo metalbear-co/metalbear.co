@@ -29,17 +29,20 @@
                     </div>
                 </header>
                 <div class="pt-5.5 md:pt-7 lg:pt-5.5 xl:pt-7 2xl:pt-9">
-                    <form id="newsletter-form" class="newsletter-form">
+                    <form id="newsletter-form" name="newsletter" method="GET" action="/thankyou/"
+                        class="newsletter-form" novalidate>
                         <div class="flex gap-4 md:gap-5 lg:gap-4 xl:gap-5 2xl:gap-7">
                             <div class="flex-1">
                                 <label class="hidden" for="email">Work email</label>
                                 <input
                                     class="w-full h-[50px] xl:h-[65px] 2xl:h-[65px] bg-white text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl rounded-[7px] border border-black focus:outline-none pl-3.5 md:pl-4.5 lg:pl-3.5 xl:pl-4.5 2xl:pl-6"
-                                    type="email" id="email" name="email" placeholder="Work email" required="">
+                                    type="email" id="email" name="email" placeholder="Work email" />
+                                <p id="email-error" class="text-red-600 text-sm mt-2 hidden">Please enter a valid email
+                                    address.</p>
                             </div>
                             <div class="w-28.5 xl:w-35.5 2xl:w-47.5 flex-none">
                                 <button
-                                    class="w-full h-[45px] lg:h-[43px] xl:h-[57px] 2xl:h-[57px] cursor-pointer text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                    class="w-full h-[45px] lg:h-[43px] xl:h-[57px] cursor-pointer text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
                                     aria-label="Submit" form="newsletter-form" type="submit">
                                     Subscribe
                                 </button>
@@ -49,7 +52,7 @@
                 </div>
                 <div
                     class="text-black text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal pt-5.5 md:pt-7 lg:pt-5.5 xl:pt-7 2xl:pt-9">
-                    <p>One email a month. You can unsubscribe anytime.</p>
+                    <p>One email a month.</p>
                 </div>
             </div>
             <div class="lg:w-1/2 lg:flex-none flex justify-center lg:justify-end pt-12 lg:pt-0">
@@ -61,38 +64,19 @@
     </div>
 </section>
 <script>
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email.toLowerCase());
-    }
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const email = emailInput.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    document.getElementById('newsletter-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const email = document.getElementById('email').value.trim();
-
-        if (!validateEmail(email)) {
-            alert("Please enter a valid email address.");
-            return;
-        }
-
-        try {
-            const res = await fetch('https://yourserver.com/api/newsletter', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email })
-            });
-
-            if (res.ok) {
-                window.location.href = "/thankyou";
-            } else {
-                alert("Registration failed. Please try again later.");
-            }
-        } catch (err) {
-            alert("An error occurred. Please try again later.");
-            console.error(err);
+        if (!emailPattern.test(email)) {
+            e.preventDefault();
+            emailError.classList.remove('hidden');
+            emailInput.classList.add('border-red-600');
+        } else {
+            emailError.classList.add('hidden');
+            emailInput.classList.remove('border-red-600');
         }
     });
 </script>

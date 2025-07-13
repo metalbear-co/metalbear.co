@@ -1,9 +1,9 @@
 <img referrerpolicy="no-referrer-when-downgrade"
     src="https://static.scarf.sh/a.png?x-pxid=dcb0e56d-4a49-410c-9b10-71751b5d2f48" />
-<section class="section-header bg-[#FAFAFD]">
+<section class="section-header">
     <div
         class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-6 xl:px-0 pt-9 lg:pt-10 xl:pt-9 2xl:pt-10 pb-17 lg:pb-9 2xl:pb-15">
-        <div class="grid grid-cols-12 items-center">
+        <div class="grid grid-cols-12 items-center relative z-10">
             <div class="col-span-12 lg:col-span-7">
                 <div class="lg:pl-7.5 2xl:pl-10 mb-10 lg:mb-0">
                     <div class="text-center lg:text-left">
@@ -54,91 +54,33 @@
         </div>
     </div>
 </section>
-<section class="pb-2 overflow-hidden">
-    <div class="bg-primary border-y-2">
-        <div class="container py-3.5 lg:py-2.5 2xl:py-3">
-            <div class="text-center px-5 xl:px-0">
-                <h3 class="text-base lg:text-xl 2xl:text-[32px] text-white font-bold font-heading mt-0 mb-0">Some of the
-                    companies
-                    shipping code faster & better</h3>
-            </div>
-        </div>
+<section class="pb-2 relative bg-[#FAFAFD] z-0">
+    <div class="absolute w-[1080px] lg:w-[1632px] h-[802px] lg:h-[1212px] -left-[30%] xl:-left-[10%] -top-[322px] lg:-top-[547px] z-[1]">
+        <img class="w-full h-auto" src="/running-text-bg.png" alt="bg">
     </div>
-    <div class="shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000]">
-        <div class="mirrord-logo-slider">
-            <ul class="mirrord-logo-track">
-                <li>
-                    <div class="w-[93px] xl:w-[131px]">
-                        <img class="w-full h-auto" src="/mirrord-zooplus.png" alt="zooplus">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[135px] xl:w-[194px]">
-                        <img class="w-full h-auto" src="/mirrord-sentinel-one.png" alt="sentinel-one">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[103px] xl:w-[145px]">
-                        <img class="w-full h-auto" src="/mirrord-colab.png" alt="colab">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[171px] xl:w-[271px]">
-                        <img class="w-full h-auto" src="/mirrord-survey-monkey.png" alt="survey-monkey">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[102px] xl:w-[165px]">
-                        <img class="w-full h-auto" src="/mirrord-cadence.png" alt="cadence">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[61px] xl:w-[90px]">
-                        <img class="w-full h-auto" src="/mirrord-augury.png" alt="augury">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[101px] xl:w-[166px]">
-                        <img class="w-full h-auto" src="/mirrord-imprint.png" alt="imprint">
-                    </div>
-                </li>
-                <!-- Duplicate logos for seamless scrolling -->
-                <li>
-                    <div class="w-[93px] xl:w-[131px]">
-                        <img class="w-full h-auto" src="/mirrord-zooplus.png" alt="zooplus">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[135px] xl:w-[194px]">
-                        <img class="w-full h-auto" src="/mirrord-sentinel-one.png" alt="sentinel-one">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[103px] xl:w-[145px]">
-                        <img class="w-full h-auto" src="/mirrord-colab.png" alt="colab">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[171px] xl:w-[271px]">
-                        <img class="w-full h-auto" src="/mirrord-survey-monkey.png" alt="survey-monkey">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[102px] xl:w-[165px]">
-                        <img class="w-full h-auto" src="/mirrord-cadence.png" alt="cadence">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[61px] xl:w-[90px]">
-                        <img class="w-full h-auto" src="/mirrord-augury.png" alt="augury">
-                    </div>
-                </li>
-                <li>
-                    <div class="w-[101px] xl:w-[166px]">
-                        <img class="w-full h-auto" src="/mirrord-imprint.png" alt="imprint">
-                    </div>
-                </li>
-            </ul>
+    <div class="container w-full sm:max-w-full lg:max-w-[1200px] xl:max-w-[1556px] 2xl:max-w-[1920px] mx-auto relative z-10">
+        <div class="text-center bg-primary border-y-2 border-x border-black px-5 xl:px-0 py-3.5 lg:py-2.5 2xl:py-3">
+            <h3 class="text-base lg:text-xl 2xl:text-[32px] text-white font-bold font-heading mt-0 mb-0">Some of the
+                companies
+                shipping code faster & better</h3>
+        </div>
+        <div class="border-b-5 lg:border-b-8 border-x border-black bg-white overflow-hidden">
+            <div class="mirrord-logo-slider">
+                {{- $data := .Site.Data.home }}
+                {{- $logos := $data.running_logo }}
+                {{- $repeat := $data.logo_repeat }}
+                <ul class="mirrord-logo-track">
+                    {{- range seq 1 $repeat }}
+                    {{- range $logos }}
+                    <li>
+                        <div class="{{ .class }}">
+                            <img class="w-full h-auto" src="{{ .image }}" alt="{{ .title }}">
+                        </div>
+                    </li>
+                    {{- end }}
+                    {{- end }}
+                </ul>
+            </div>
         </div>
     </div>
 </section>
