@@ -10,7 +10,7 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 1024px;
     --breakpoint-xl: 1292px;
-    --breakpoint-2xl: 1720px;
+    --breakpoint-2xl: 1300x;
 
     --color-primary: #756DF3;
     --color-secondary: #E4E3FD;
@@ -123,7 +123,7 @@ body {
 }
 
 .mirrord-logo-track {
-    @apply h-[72px] lg:h-[58px] xl:h-[72px] 2xl:h-[96px] flex items-center gap-[30px] md:gap-[40px] lg:gap-[57px] xl:gap-[65px] 2xl:gap-[76px];
+    @apply h-18 lg:h-14.5 xl:h-23 flex items-center gap-7.5 md:gap-10 lg:gap-14.5 xl:gap-15;
 
     animation: scroll 15s linear infinite;
 }

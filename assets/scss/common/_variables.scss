@@ -95,7 +95,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1600px
+  xxl: 1292px
 ) !default;
 // scss-docs-end grid-breakpoints
 
@@ -111,7 +111,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1240px,
-  xxl: 1720px //1320px
+  xxl: 1292px //1320px
 );
 
 @include _assert-ascending($container-max-widths, "$container-max-widths"); 

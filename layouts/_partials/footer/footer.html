@@ -2,15 +2,15 @@
   <div class="container">
     <div class="footer__content d-flex flex-column flex-lg-row">
       <div class="footer__info">
-        <div class="d-flex justify-content-center">
-          <a class="footer__logo p-0" href="{{ " /" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
+        <div class="d-flex justify-content-center justify-content-lg-start">
+          <a class="footer__logo p-0" href="{{ "/" | relLangURL }}" aria-label="{{ .Site.Params.Title }}">
             <img class="img-fluid mx-auto" src="/metalbear-header-logo.svg" />
           </a>
         </div>
         <div class="footer__social-wrapper">
-          <ul class="footer__social nav d-inline-flex justify-content-center align-items-center">
+          <ul class="footer__social nav d-flex align-items-center justify-content-center justify-content-lg-start">
             {{ range .Site.Menus.footer_social -}}
-            <li class="nav-item">
+            <li class="ms-0">
               <a class="nav-link {{ urlize .Name }}" target="_blank" href="{{ .URL | relURL }}">{{ .Pre | safeHTML
                 }}</a>
             </li>

@@ -361,6 +361,10 @@
     margin-bottom: 50px;
 }
 
+.w-4\.5 {
+    width: 18px;
+}
+
 .w-70 {
     width: 70%;
 }
@@ -709,6 +713,11 @@
 }
 
 @include media-breakpoint-up(xl) {
+    .px-xl-16 {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
     .px-xl-21 {
         padding-left: 21px !important;
         padding-right: 21px !important;

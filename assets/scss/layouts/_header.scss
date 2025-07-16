@@ -58,7 +58,8 @@
   }
 
   .navbar-brand {
-    width: 98px;
+    width: 140px;
+    padding-top: 0;
   }
 }
 
@@ -75,12 +76,14 @@
 
 @include media-breakpoint-up(xxl) {
   .navbar {
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding-top: 16px;
+    padding-bottom: 8px;
   }
 
   .navbar-brand {
-    width: 164px;
+    width: 238px;
+    padding-top: 0;
+    padding-bottom: 8px;
   }
 }
 
@@ -165,11 +168,11 @@ button#doks-versions {
 
 @include media-breakpoint-up(xxl) {
   .navbar .offcanvas .nav-link {
-    font-size: 0.938rem; //15px
+    font-size: 0.875rem; //15px
   }
 
   .navbar-expand-lg .offcanvas {
-    padding-left: 80px;
+    padding-left: 60px;
   }
 }
 
