@@ -123,9 +123,8 @@ body {
 }
 
 .mirrord-logo-track {
-    @apply h-18 lg:h-14.5 xl:h-23 flex items-center gap-7.5 md:gap-10 lg:gap-14.5 xl:gap-15;
-
-    animation: scroll 15s linear infinite;
+    @apply h-18 lg:h-14.5 xl:h-23 flex items-center gap-7.5 md:gap-10 lg:gap-14.5 xl:gap-15 w-max animate-[scroll_100s_linear_infinite];
+    will-change: transform;
 }
 
 @keyframes scroll {
@@ -370,7 +369,7 @@ body {
 }
 
 .book-form__input {
-    @apply outline-none outline-offset-2 text-[#222222] text-xs md:text-xl lg:text-sm xl:text-base 2xl:text-[1.188rem] leading-6 bg-[white] border w-full px-2 lg:px-5 py-1.5 md:py-3.5 lg:py-3 xl:py-3.5 2xl:py-[18px] rounded-[5px] md:rounded-lg border-solid border-[#222222];
+    @apply outline-none outline-offset-2 text-midblack text-xs md:text-xl lg:text-sm xl:text-base leading-6 bg-white border w-full px-2 lg:px-5 py-1.5 md:py-3.5 lg:py-3 xl:py-3.5 rounded-[5px] md:rounded-lg border-solid border-midblack;
 }
 
 .demo-single-content h2,
@@ -427,7 +426,7 @@ ol {
 }
 
 .demo__toc li {
-    @apply leading-normal relative break-words mb-5 xl:mb-[25px] 2xl:mb-[30px] py-[5px];
+    @apply leading-normal relative break-words mb-5 xl:mb-6 py-1.5;
 }
 
 .demo__toc a {
