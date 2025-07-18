@@ -6,6 +6,7 @@ enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
 languageCode = "en-US"
+ignoreLogs = ['image-not-found']
 [pagination]
 pagerSize = 6
 rssLimit = 10

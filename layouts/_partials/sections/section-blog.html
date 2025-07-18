@@ -1,0 +1,103 @@
+<section class="bg-[#FAFAFD] border-b-3 border-b-black bg-image--right-top" style="background-image: url(/home-section-7-bg.png);">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-6 pt-15 md:pt-18.5 lg:pt-15 xl:pt-18.5 2xl:pt-25 pb-12 xl:pb-25.5 2xl:pb-19">
+        <header class="text-center mb-8.5 md:mb-10.5 lg:mb-8.5 xl:mb-10.5 2xl:mb-14">
+            <h2
+                class="text-black text-3xl 2xl:text-[2.5rem] font-heading font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] xl:leading-[1.3] 2xl:leading-[1.3] mb-2">
+                <span class="relative hidden lg:inline-block">
+                    <span class="absolute w-[102%] top-3/5 -left-1">
+                        <svg class="w-auto" viewBox="0 0 544 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M537.234 6.88381C469.22 2.52707 400.909 0.573453 332.571 0.106659C264.151 -0.342846 195.732 0.677185 127.366 2.25045C88.9345 3.13217 50.5027 4.18678 12.0708 5.2241C3.38308 5.46614 3.35602 14.1105 12.0708 13.8684C71.5319 12.2433 130.993 10.6527 190.481 9.66728C167.855 10.5836 145.229 11.6382 122.63 12.8484C83.9546 14.923 45.3063 17.4126 6.76617 20.3344C3.1395 20.611 0 22.1324 0 24.6565C0 26.7831 3.11244 29.2553 6.76617 28.9787C75.4563 23.7921 144.363 19.9367 213.432 17.4126C282.474 14.9057 351.651 13.7474 420.802 13.9203C459.612 14.024 498.423 14.56 537.234 15.5108C540.888 15.5973 544 13.4535 544 11.1887C544 8.66454 540.888 7.10856 537.234 6.86652V6.88381Z"
+                                fill="#FFD18C" />
+                        </svg>
+                    </span>
+                    <span class="relative">Insights and tutorials</span>
+                </span>
+                <span class="relative lg:hidden">
+                    <span class="absolute w-full top-3/5 left-0">
+                        <svg width="157" height="18" viewBox="0 0 157 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M155.047 4.27271C135.418 1.56853 115.704 0.355936 95.9809 0.0662024C76.2348 -0.212801 56.4888 0.420322 36.7583 1.39683C25.6668 1.94411 14.5752 2.59869 3.48368 3.24255C0.976368 3.39278 0.968557 8.75822 3.48368 8.60799C20.6443 7.59929 37.805 6.61204 54.9734 6.00038C48.4435 6.56912 41.9135 7.2237 35.3914 7.97487C24.2296 9.26257 13.0755 10.8078 1.95274 12.6213C0.90607 12.793 0 13.7374 0 15.3041C0 16.624 0.898259 18.1585 1.95274 17.9868C21.7769 14.7675 41.6636 12.3745 61.5971 10.8078C81.5228 9.25184 101.488 8.53287 121.445 8.64018C132.645 8.70457 143.846 9.03722 155.047 9.62742C156.102 9.68108 157 8.35045 157 6.9447C157 5.37799 156.102 4.41221 155.047 4.26198V4.27271Z"
+                                fill="#FFD18C" />
+                        </svg>
+                    </span>
+                    <span class="relative">Insights&nbsp;</span>
+                </span><span class="lg:hidden">and tutorials&nbsp;</span>
+                from developers like you
+            </h2>
+            <div
+                class="text-black text-base md:text-lg lg:text-base xl:text-lg 2xl:text-2xl font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                <p>Check out our blog for technical insights, hands-on tutorials, and best practices.</p>
+            </div>
+        </header>
+        <div class="splide splide-blog">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    {{- range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") -}}
+                    <li class="splide__slide pb-3">
+                        <div
+                            class="bg-[#FAFAFD] h-full flex flex-col relative align-center justify-between pt-[50px] xl:pt-[70px] 2xl:pt-[72px] px-7.5 2xl:px-11.5 pb-11 xl:pb-8.5 2xl:pb-17 rounded-[7px] xl:rounded-[10px] border border-black hover:shadow-[-5px_5px_0px_#000000] lg:hover:shadow-[-9px_8px_0px_#000000] transition-all duration-300 ease-[ease]">
+                            <div class="text-center">
+                                <div class="min-h-[74px] xl:min-h-[82px] 2xl:min-h-[108px] mb-5 xl:mb-14.5 2xl:mb-7.5">
+                                    <h3
+                                        class="text-black text-lg 2xl:text-[1.625rem] font-bold font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mt-0 mb-0">
+                                        <a class="stretched-link text-black after:absolute after:top-0 after:right-0 after:bottom-0 after:left-0 after:z-[1]"
+                                            href="{{ .RelPermalink }}">{{
+                                            .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{
+                                            end -}}</a>
+                                    </h3>
+                                </div>
+                                <div
+                                    class="text-black text-base xl:text-lg font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal min-h-[160px] lg:min-h-[180px] 2xl:min-h-[242px]">
+                                    <p class="summary mb-0">{{ .Params.lead | safeHTML }}</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-between">
+                                <div
+                                    class="min-h-[45px] lg:min-h-[52px] 2xl:min-h-[62px] text-center border-t pt-3 mb-5">
+                                    {{ partial "main/blog-card-meta.html" . -}}
+                                </div>
+                                <div class="text-center">
+                                    <a class="relative z-10 w-[140px] xl:w-[208px] h-[44px] xl:h-[65px] text-lg 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease] mx-auto"
+                                        href="{{ .RelPermalink }}">Read Post</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{- end -}}
+                </ul>
+            </div>
+        </div>
+        <div class="text-center pt-9.5 xl:pt-22 2xl:pt-19.5">
+            <div class="inline-block border-b">
+                <a class="text-black text-lg 2xl:text-xl font-body" href="/blog/">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        new Splide('.splide-blog', {
+            mediaQuery: 'min',
+            breakpoints: {
+                320: {
+                    perPage: 1,
+                },
+                1024: {
+                    perPage: 3,
+                    gap: '50px',
+                },
+                1292: {
+                    perPage: 3,
+                    gap: '50px',
+                }
+            },
+            padding: { left: '0.75rem', right: '0.75rem' },
+            gap: '1.5rem',
+            arrows: false,
+            pagination: true,
+        }).mount();
+    });
+</script>

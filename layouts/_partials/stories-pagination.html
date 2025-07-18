@@ -1,0 +1,24 @@
+{{- $paginator := .Paginate (where site.RegularPages "Type" "in" "stories") }}
+{{- $paginator := .Paginator }}
+<!-- If there's more than one page. -->
+<script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+{{ if and (gt $paginator.TotalPages 1) ($paginator.HasNext) }}
+<a href="{{- $paginator.Next.URL }}" class="pagination__page"></a>
+
+<div class="flex justify-center pt-20">
+    <button class="view-more-button w-[165px] lg:w-[280px] h-12 lg:h-[52px] xl:h-[65px] flex items-center justify-center text-lg text-white hover:text-[#222222] bg-primary hover:bg-white border border-solid border-[#222222] rounded-[6px] lg:rounded-[10px] shadow-[-7px_6px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]">Load More Stories</button>
+</div>
+
+<script>
+    let elem = document.querySelector('.stories__grid');
+    let infScroll = new InfiniteScroll(elem, {
+        // options
+        path: '.pagination__page',
+        append: '.stories__grid-item',
+        button: '.view-more-button',
+        // using button, disable loading on scroll 
+        scrollThreshold: false,
+       // status: '.page-load-status',
+    });
+</script>
+{{- end }}

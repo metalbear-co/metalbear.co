@@ -1,13 +1,13 @@
 {{- define "main" }}
-<main id="site-main" class="contact-page">
-  <div class="contact-page__wrapper" id="contact-us">
+<main id="site-main" class="demo-page bg-[#FAFAFD]">
+  <div class="contact-page__wrapper">
     <div class="demo-bg-image--left-bottom" style="background-image: url(/home-section-8-bg.png);">
       <div
-        class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0 pt-[42px] lg:pt-[82px] 2xl:pt-[110px] pb-[52px] lg:pb-[78px] 2xl:pb-[104px]">
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-6 xl:px-0 pt-[42px] lg:pt-[82px] 2xl:pt-[110px] pb-[52px] lg:pb-[78px] 2xl:pb-[104px]">
         <header class="mx-auto text-center mb-[32px] lg:mb-[62px] 2xl:mb-[82px]">
           <div class="px-3 lg:px-0">
             <h2
-              class="text-[1.875rem] md:text-[2.313rem] lg:text-[2.313rem] xl:text-[2.938rem] 2xl:text-[3.5rem] text-black font-medium font-heading leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mt-0 mb-6 lg:mb-[32px] 2xl:mb-[42px]">
+              class="text-3xl lg:text-[2.5rem] xl:text-[3.125rem] 2xl:text-6xl text-black font-bold font-heading leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mt-0 mb-6 lg:mb-[32px] 2xl:mb-[42px]">
               Book a
               <span class="relative">
                 <span class="absolute w-full top-[30%] left-[8%] lg:hidden">
@@ -34,7 +34,7 @@
           <div class="lg:flex lg:justify-between">
             <div class="demo-textbox lg:w-[444px] xl:w-[554px] 2xl:w-[744px]">
               <h2
-                class="text-[30px] lg:text-[36px] xl:text-[45px] 2xl:text-[56px] text-black font-bold leading-none mt-0 mb-[28px] lg:mb-[34px] xl:mb-[40px] 2xl:mb-[48px]">
+                class="text-3xl lg:text-[2.5rem] xl:text-[3.125rem] 2xl:text-6xl text-black font-bold leading-none mt-0 mb-[28px] lg:mb-[34px] xl:mb-[40px] 2xl:mb-[48px]">
                 Let’s chat!
               </h2>
               <div
@@ -74,9 +74,9 @@
                   <textarea class="book-form__input" name="message" id="message"
                     placeholder="What do you want to talk about in the call?" rows="7" required=""></textarea>
                 </div>
-                <div class="button-wrapper flex justify-center mt-5 2xl:mt-[34px] mb-[42px] xl:mb-[52px] 2xl:mb-[65px]">
+                <div class="button-wrapper flex justify-center mt-5 2xl:mt-8.5 mb-10.5 xl:mb-13 2xl:mb-16">
                   <button
-                    class="w-full lg:w-[155px] xl:w-[194px] 2xl:w-[233px] h-[50px] xl:h-[54px] 2xl:h-[65px] cursor-pointer mb-5 text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl text-white hover:text-[#000000] capitalize font-body font-medium flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                    class="w-full lg:w-[155px] xl:w-[194px] 2xl:w-[233px] h-12 xl:h-[65px] text-lg cursor-pointer text-white hover:text-[#000000] capitalize font-body font-medium flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
                     aria-label="Submit" form="contact-form" type="submit">
                     Get in touch
                   </button>
@@ -90,97 +90,36 @@
         </div>
       </div>
     </div>
-    <section>
-      <div class="bg-primary border-y-2">
-        <div class="container py-3.5 lg:py-2.5 2xl:py-3">
-          <div class="text-center px-5 xl:px-0">
-            <h3 class="text-base lg:text-xl 2xl:text-[32px] text-white font-bold font-heading mt-0 mb-0">Some of the
-              companies
-              shipping code faster & better</h3>
-          </div>
+    <section class="pb-2 relative bg-[#FAFAFD] z-0">
+      <div class="relative z-10">
+        <div class="text-center bg-primary border border-black px-5 xl:px-0 py-3.5 lg:py-2">
+          <h3 class="text-base lg:text-xl xl:text-2xl text-white font-bold font-heading mt-0 mb-0">Some of the
+            companies
+            shipping code faster & better</h3>
         </div>
-      </div>
-      <div class="shadow-card overflow-hidden">
-        <div class="mirrord-logo-slider">
-          <ul class="mirrord-logo-track">
-            <li>
-              <div class="w-[93px] xl:w-[131px]">
-                <img class="w-full h-auto" src="/mirrord-zooplus.png" alt="zooplus">
-              </div>
-            </li>
-            <li>
-              <div class="w-[135px] xl:w-[194px]">
-                <img class="w-full h-auto" src="/mirrord-sentinel-one.png" alt="sentinel-one">
-              </div>
-            </li>
-            <li>
-              <div class="w-[103px] xl:w-[145px]">
-                <img class="w-full h-auto" src="/mirrord-colab.png" alt="colab">
-              </div>
-            </li>
-            <li>
-              <div class="w-[171px] xl:w-[271px]">
-                <img class="w-full h-auto" src="/mirrord-survey-monkey.png" alt="survey-monkey">
-              </div>
-            </li>
-            <li>
-              <div class="w-[102px] xl:w-[165px]">
-                <img class="w-full h-auto" src="/mirrord-cadence.png" alt="cadence">
-              </div>
-            </li>
-            <li>
-              <div class="w-[61px] xl:w-[90px]">
-                <img class="w-full h-auto" src="/mirrord-augury.png" alt="augury">
-              </div>
-            </li>
-            <li>
-              <div class="w-[101px] xl:w-[166px]">
-                <img class="w-full h-auto" src="/mirrord-imprint.png" alt="imprint">
-              </div>
-            </li>
-            <!-- Duplicate logos for seamless scrolling -->
-            <li>
-              <div class="w-[93px] xl:w-[131px]">
-                <img class="w-full h-auto" src="/mirrord-zooplus.png" alt="zooplus">
-              </div>
-            </li>
-            <li>
-              <div class="w-[135px] xl:w-[194px]">
-                <img class="w-full h-auto" src="/mirrord-sentinel-one.png" alt="sentinel-one">
-              </div>
-            </li>
-            <li>
-              <div class="w-[103px] xl:w-[145px]">
-                <img class="w-full h-auto" src="/mirrord-colab.png" alt="colab">
-              </div>
-            </li>
-            <li>
-              <div class="w-[171px] xl:w-[271px]">
-                <img class="w-full h-auto" src="/mirrord-survey-monkey.png" alt="survey-monkey">
-              </div>
-            </li>
-            <li>
-              <div class="w-[102px] xl:w-[165px]">
-                <img class="w-full h-auto" src="/mirrord-cadence.png" alt="cadence">
-              </div>
-            </li>
-            <li>
-              <div class="w-[61px] xl:w-[90px]">
-                <img class="w-full h-auto" src="/mirrord-augury.png" alt="augury">
-              </div>
-            </li>
-            <li>
-              <div class="w-[101px] xl:w-[166px]">
-                <img class="w-full h-auto" src="/mirrord-imprint.png" alt="imprint">
-              </div>
-            </li>
-          </ul>
+        <div class="border-b-5 lg:border-b-8 border-x border-black bg-white overflow-hidden">
+          <div class="mirrord-logo-slider">
+            {{- $data := .Site.Data.home }}
+            {{- $logos := $data.running_logo }}
+            {{- $repeat := $data.logo_repeat }}
+            <ul class="mirrord-logo-track">
+              {{- range seq 1 $repeat }}
+              {{- range $logos }}
+              <li>
+                <div class="{{ .class }}">
+                  <img class="w-full h-auto" src="{{ .image }}" alt="{{ .title }}">
+                </div>
+              </li>
+              {{- end }}
+              {{- end }}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
     <section class="section-demo-3 border-b-3">
       <div
-        class="container w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0 relative">
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-6 xl:px-0 relative">
         <div
           class="demo-mirrord-bg absolute w-[238px] xl:w-[296px] 2xl:w-[398px] h-full items-center right-[94%] top-0 hidden lg:flex">
           {{ partial "svg/mirrord-demo-bg.html" . }}
@@ -191,24 +130,24 @@
               <img class="img-fluid w-full h-auto" src="/arrow-demo.svg" alt="arrow">
             </div>
             <div
-              class="demo-card-desc w-full lg:w-[536px] xl:w-[670px] 2xl:w-[900px] mx-auto text-base xl:text-lg 2xl:text-2xl text-center mb-[26px] xl:mb-[33px] 2xl:mb-[44px]">
+              class="demo-card-desc w-full lg:w-[536px] xl:w-[670px] 2xl:w-[900px] mx-auto text-base xl:text-lg 2xl:text-2xl text-center mb-6.5 xl:mb-8 2xl:mb-11">
               <p class="mb-0">Private, secure, and designed to keep your data where it belongs – mirrord is built for
                 companies of
                 any
                 size.</p>
             </div>
           </div>
-          <div class="lg:w-[82%] mx-auto lg:flex lg:gap-[20px] px-3 xl:px-0">
+          <div class="lg:w-[82%] mx-auto lg:flex lg:gap-5 px-3 xl:px-0">
             <div
-              class="border-card relative lg:w-1/2 flex flex-col justify-between bg-[#FAFAFD] border border-solid border-black rounded-[7px] pt-[33px] md:pt-[42px] lg:pt-[33px] xl:pt-[42px] 2xl:pt-[50px] px-[27px] md:px-[33px] lg:px-[27px] xl:px-[33px] 2xl:px-[40px] pb-[16px] md:pb-[20px] lg:pb-[16px] xl:pb-[20px] 2xl:pb-[24px] transition-all duration-300 ease-[ease] mb-8 md:mb-9 lg:mb-0">
-              <div class="h-[300px] md:h-[238px] lg:h-[220px] xl:h-[260px] 2xl:h-[286px]">
+              class="border-card relative lg:w-1/2 flex flex-col justify-between bg-[#FAFAFD] border border-solid border-black rounded-[7px] pt-8 md:pt-10.5 lg:pt-8 xl:pt-10.5 2xl:pt-12.5 px-7 md:px-8 lg:px-7 xl:px-8 2xl:px-10 pb-4 md:pb-5 lg:pb-4 xl:pb-5 2xl:pb-6 transition-all duration-300 ease-[ease] mb-8 md:mb-9 lg:mb-0">
+              <div class="h-[300px] md:h-[238px] lg:h-[270px] xl:h-[280px] 2xl:h-[286px]">
                 <div class="mb-[25px] md:mb-[32px] lg:mb-[25px] xl:mb-[32px] 2xl:mb-[38px]">
                   <h3
-                    class="text-black text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-0">
+                    class="text-black text-base md:text-xl lg:text-base xl:text-xl font-bold leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-0">
                     CoLab drastically reduced the time to deploy changes, accelerating their iteration speed.</h3>
                 </div>
                 <div
-                  class="text-midblack text-base lg:text-sm xl:text-base 2xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                  class="text-midblack text-base lg:text-sm xl:text-base leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
                   <p class="mb-0">“How long does it take to test a change in development? If you have to make a hundred
                     of those changes, that would take you what? 15 minutes x 100 changes? [25 hours] With mirrord, you
                     can do all that in 20 minutes.”</p>
@@ -226,14 +165,14 @@
             </div>
             <div
               class="border-card relative lg:w-1/2 flex flex-col justify-between bg-[#FAFAFD] border border-solid border-black rounded-[7px] pt-[33px] md:pt-[42px] lg:pt-[33px] xl:pt-[42px] 2xl:pt-[50px] px-[27px] md:px-[33px] lg:px-[27px] xl:px-[33px] 2xl:px-[40px] pb-[16px] md:pb-[20px] lg:pb-[16px] xl:pb-[20px] 2xl:pb-[24px] transition-all duration-300 ease-[ease]">
-              <div class="h-[300px] md:h-[238px] lg:h-[220px] xl:h-[260px] 2xl:h-[286px]">
+              <div class="h-[300px] md:h-[238px] lg:h-[270px] xl:h-[280px] 2xl:h-[286px]">
                 <div class="mb-[25px] md:mb-[32px] lg:mb-[25px] xl:mb-[32px] 2xl:mb-[38px]">
                   <h3
                     class="text-black text-base md:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal mb-0">
                     Cadence saved hours each week for every engineer while improving product quality.</h3>
                 </div>
                 <div
-                  class="text-midblack text-base lg:text-sm xl:text-base 2xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                  class="text-midblack text-base lg:text-sm xl:text-base leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
                   <p class="mb-0">“mirrord has had as big an impact on development productivity at Cadence as AI has”
                   </p>
                 </div>

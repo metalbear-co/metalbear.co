@@ -1,8 +1,0 @@
-node_modules
-public
-resources
-.netlify
-.hugo_build.lock
-.DS_Store
-hugo_stats.json
-static/pagefind

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+  {{ partial "head/head.html" . }}
+  {{ if eq .Kind "home" -}}
+    {{ .Scratch.Set "class" "home" -}}
+  {{ else if eq .Kind "404" -}}
+    {{ .Scratch.Set "class" "error404" -}}
+  {{ else if eq .Kind "page" -}}
+    {{ .Scratch.Set "class" .Type -}}
+    {{ .Scratch.Add "class" " single" -}}
+  {{ else -}}
+    {{ .Scratch.Set "class" .Type -}}
+    {{ .Scratch.Add "class" " list" -}}
+  {{ end -}}
+  <body class="{{ .Scratch.Get "class" }}">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3T38KFN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {{- if or (eq .Section "mirrord") (eq .Section "careers") (eq .Section "docs") (eq .Layout "newsletter") (eq .Layout "builder") .IsHome }}
+    {{ partial "header/mirrord-header.html" . }}
+    {{- else }}
+    {{ partial "header/header.html" . }}
+    {{- end }}
+    {{ block "main" . }}{{ end }}
+    {{- if or (eq .Section "mirrord") (eq .Section "careers") (eq .Section "docs") (eq .Layout "newsletter") (eq .Layout "builder") .IsHome }}
+    <button id="backToTopBtn"
+      class="cursor-pointer p-[7px] bg-[#756DF3] rounded-full fixed bottom-0 right-0 mr-4 mb-4 z-50 hidden">
+      <svg class="w-[32px]" xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 40 40">
+        <path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"
+          fill="white" />
+      </svg>
+    </button>
+    {{ partial "footer/mirrord-footer.html" . }}
+    {{- else }}
+    {{ partial "footer/footer.html" . }}
+    {{- end }}
+    {{ partial "footer/script-footer.html" . }}
+    <script>
+      // Get the FAB
+      var fabButton = document.getElementById("backToTopBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the FAB
+      window.onscroll = function () {
+        if (window.scrollY > 20) {
+          fabButton.style.display = "block";
+        } else {
+          fabButton.style.display = "none";
+        }
+      };
+
+      // When the user clicks on the FAB, scroll to the top of the document
+      fabButton.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

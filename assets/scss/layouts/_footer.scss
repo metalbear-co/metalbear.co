@@ -21,6 +21,10 @@
     padding-top: 64px;
   }
 
+  .footer__logo {
+    width: 200px;
+  }
+
   .footer__info {
     order: 1;
   }
@@ -64,26 +68,34 @@
 
 .footer__social-wrapper {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 24px;
+}
+
+.footer__social {
+  gap: 13px;
 }
 
 .footer__social .nav-link {
   width: 20px;
   padding: 0;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .footer__social .nav-link.github {
-  width: 17px;
+  width: 24px;
 }
 
 .footer__social .nav-link.slack {
-  width: 25px;
+  width: 20px;
+}
+
+.footer__social .nav-link.twitter {
+  width: 24px;
 }
 
 .footer__social .nav-link.linkedin {
-  width: 17px;
+  width: 24px;
 }
 
 .footer__copyright {
@@ -100,28 +112,26 @@
 @include media-breakpoint-up(lg) {
   .footer__social .nav-link {
     width: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .footer__social .nav-link.github {
-    width: 17px;
+    width: 28px;
   }
 
   .footer__social .nav-link.slack {
-    width: 25px;
+    width: 28px;
+  }
+
+  .footer__social .nav-link.twitter {
+    width: 28px;
   }
 
   .footer__social .nav-link.linkedin {
-    width: 17px;
+    width: 25px;
   }
 
   .footer__navigation {
     flex: 1 1 0%;
-  }
-
-  .footer__menu-wrapper {
-    width: 85%;
   }
 
   .footer__menu-title {
@@ -134,7 +144,7 @@
   }
 
   .footer__info {
-    width: 37%;
+    width: 30%;
     flex: none;
     margin-bottom: 0;
   }
@@ -152,12 +162,10 @@
 @include media-breakpoint-up(xl) {
   .footer__social .nav-link {
     width: 22px;
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .footer__social .nav-link.github {
-    width: 19px;
+    width: 28px;
   }
 
   .footer__social .nav-link.slack {
@@ -165,7 +173,7 @@
   }
 
   .footer__social .nav-link.linkedin {
-    width: 19px;
+    width: 28px;
   }
 
   .footer__menu-title {
@@ -174,22 +182,22 @@
 }
 
 @include media-breakpoint-up(xxl) {
+  .footer__social {
+    gap: 17px;
+  }
+
   .footer__social .nav-link {
     width: 32px;
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
-  .footer__social .nav-link.github {
-    width: 28px;
-  }
-
+  .footer__social .nav-link.github,
+  .footer__social .nav-link.twitter,
   .footer__social .nav-link.slack {
-    width: 36px;
+    width: 34px;
   }
 
   .footer__social .nav-link.linkedin {
-    width: 28px;
+    width: 34px;
   }
 
   .footer__logo {
@@ -197,7 +205,7 @@
   }
 
   .footer__menu-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .footer__menu-link {

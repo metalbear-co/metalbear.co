@@ -275,6 +275,7 @@ pre {
 
 .button-menu-cta {
   box-shadow: none;
+  font-weight: 400;
 }
 
 .button:hover {
@@ -343,7 +344,8 @@ pre {
   .button-menu-cta {
     font-size: 0.813rem; //13px
     box-shadow: none;
-    padding: 8px 17px;
+    padding: 8px 2px;
+    width: 156px;
   }
 
   .button-widget__cta {
@@ -385,7 +387,7 @@ pre {
     font-size: 1.5rem; //24px
     box-shadow: -8.4px 7.5px 0px #000000;
     border-radius: 9px;
-    padding: 10px 23px;
+    padding: 13px 23px;
   }
 
   .button-hero {
@@ -397,9 +399,9 @@ pre {
   }
 
   .button-menu-cta {
-    font-size: 0.938rem; //15px
+    font-size: 0.875rem; //14px
     box-shadow: none;
-    padding: 9px 15px;
+    padding: 10px 2px;
     width: 174px;
   }
 
