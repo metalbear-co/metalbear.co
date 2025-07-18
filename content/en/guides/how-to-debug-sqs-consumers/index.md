@@ -293,7 +293,7 @@ Before we get into how to use queue splitting, let’s go through the following 
 
 Initial setup with the mirrord operator intercepting messages:
 
-![Queue splitting in Mirrord](mirrord-queue-split.png)
+![Queue splitting in mirrord](mirrord-queue-split.png)
 
 The mirrord operator intercepts messages at the SQS API level before they are delivered to consumers. It makes copies of these messages and delivers them to both the remote consumers and your local application.
 
@@ -307,7 +307,7 @@ When multiple debug consumers are active, the mirrord operator creates temporary
 
 In case of multiple debug consumers, a new temporary mirrord queue and mirrord-copy Pod is created for every new debug consumer.
 
-![Multiple queue splitting in Mirrord](multiple-mirrord-queues.png)
+![Multiple queue splitting in mirrord](multiple-mirrord-queues.png)
 
 mirrord allows multiple debug consumers to run simultaneously. Each developer can run their own local consumer, and all will receive copies of the same messages. The mirrord operator also ensures that each local debug consumer gets a complete copy of the message stream, without any competition between them or with the production consumers.
 

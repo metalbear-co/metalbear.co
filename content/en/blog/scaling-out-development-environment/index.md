@@ -74,7 +74,7 @@ The other thing is the learning curve. That’s a very valid argument but, ideal
 
     If you’re on Windows or Mac - yes, there’re some extra overhead. Some people may not have enough compute power on their dev machine even if using Linux. That’s this post is about anyway! The “Scaling-Out” aspect of the Dev Environment. But that’s something I’ll talk about in more detail, connecting all the dots, a bit later down in this post, stay with me 🙂
 
-## Mirrord FTW
+## mirrord FTW
 
 ---
 
@@ -84,14 +84,14 @@ Tilt helps you to take your application closer to the platform, on the other han
 
 You may use the vscode extension for mirrord, or the CLI directly.
 
-- **Mirrord CLI example**
+- **mirrord CLI example**
 
     Here, If I run `task cargo:dev` mirrord will steal all the traffic coming to the target deployment and forward them to the application (written in rust in this case). Any outgoing request from the application will be resolved in context of the deployment. That means cluster local IP addresses and DNS resolves will work as expected, and all the environment variables passed to the deployment is available to the process running locally!
 
     ```yaml
     # https://taskfile.dev/usage/
     version: "3"
-    
+
     tasks:
       # cargo check for failing fast on build time errors
       cargo:check:
@@ -101,8 +101,8 @@ You may use the vscode extension for mirrord, or the CLI directly.
         internal: true
       cargo:watch :
         cmd: >-
-          mirrord exec -f .mirrord/mirrord.json -- cargo watch 
-          --no-vcs-ignores -w .trigger 
+          mirrord exec -f .mirrord/mirrord.json -- cargo watch
+          --no-vcs-ignores -w .trigger
           -x 'run'
         internal: true
       cargo:dev:
