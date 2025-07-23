@@ -29,8 +29,7 @@
                     </div>
                 </header>
                 <div class="pt-5.5 md:pt-7 lg:pt-5.5 xl:pt-7 2xl:pt-9">
-                    <form id="newsletter-form" name="newsletter" method="GET" action="/thankyou/"
-                        class="newsletter-form" novalidate>
+                    <form id="newsletter-form" name="newsletter" class="newsletter-form" novalidate>
                         <div class="flex gap-4 md:gap-5 lg:gap-4 xl:gap-5 2xl:gap-7">
                             <div class="flex-1">
                                 <label class="hidden" for="email">Work email</label>
@@ -39,6 +38,8 @@
                                     type="email" id="email" name="email" placeholder="Work email" />
                                 <p id="email-error" class="text-red-600 text-sm mt-2 hidden">Please enter a valid email
                                     address.</p>
+                                <p id="submit-error" class="text-red-600 text-sm mt-2 hidden">Failed to submit form.
+                                    Please check your privacy settings or try again later.</p>
                             </div>
                             <div class="w-28.5 xl:w-35.5 2xl:w-47.5 flex-none">
                                 <button
@@ -60,19 +61,55 @@
     </div>
 </section>
 <script>
-    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+    const form = document.getElementById('newsletter-form')
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        function sendData(form, emailInput) {
+            const XHR = new XMLHttpRequest();
+            const FD = new FormData(form);
+
+            const object = {
+                context: {
+                    pageUri: window.location.href,
+                    pageName: document.title
+                },
+                fields: [
+                    {
+                        "objectTypeId": "0-1",
+                        "name": "email",
+                        "value": FD.get('email')
+                    }
+                ],
+            }
+
+            try {
+                XHR.open("POST", "https://forms-eu1.hsforms.com/submissions/v3/integration/submit/143742664/297a4bbc-0f7e-471a-9ac7-cee951a8d8aa", false);
+                XHR.setRequestHeader("Content-Type", "application/json");
+                XHR.setRequestHeader("Accept", "application/json");
+                XHR.send(JSON.stringify(object));
+                window.location.href = "/thankyou/";
+            } catch (e) {
+                console.error("failed to send request:", e);
+                emailInput.classList.add('border-red-600');
+                const submitError = document.getElementById('submit-error');
+                submitError.classList.remove('hidden');
+            }
+        }
+
         const emailInput = document.getElementById('email');
         const emailError = document.getElementById('email-error');
         const email = emailInput.value.trim();
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(email)) {
-            e.preventDefault();
             emailError.classList.remove('hidden');
             emailInput.classList.add('border-red-600');
         } else {
             emailError.classList.add('hidden');
             emailInput.classList.remove('border-red-600');
+
+            sendData(form, emailInput);
         }
     });
 </script>
