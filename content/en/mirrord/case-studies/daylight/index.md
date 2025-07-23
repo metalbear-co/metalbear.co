@@ -24,7 +24,7 @@ story:
 ## TL;DR
 
 - Daylight use mirrord to **test new code in production-like environment** in 5 seconds instead of 5-8 minutes.
-- They use the mirrord Cursor extension to test **AI-assisted code** in quick iterations.
+- They use the mirrord Cursor extension to test **AI-generated code** in quick iterations.
 - Devs can focus on one task at a time, **without context switching or waiting on builds**.
 - More frequent and higher fidelity testing means **fewer bugs in production** and more confident releases.
 
