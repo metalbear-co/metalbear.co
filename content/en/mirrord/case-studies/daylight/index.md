@@ -5,7 +5,12 @@ lead: "Daylight baked mirrord into their dev loop from the beginning, giving the
 url:  mirrord/case-study/daylight
 date: 2025-04-21T06:00:00+00:00
 draft: false
-weight: 20
+weight: 30
+feed:
+  title: "Daylight Chose mirrord over Personal Cloud Environments"
+  logo: "demo-daylight.jpg"
+  quote: >
+      “We’re testing against the real environment before merging. That level of fidelity gives us high confidence in every release.”
 header:
   title: 'Why Daylight Chose mirrord over Personal Cloud Environments'
   description: "Daylight knew they couldn’t afford to waste time waiting on container builds just to test their code in staging. So they baked mirrord into their dev loop from the beginning, giving their engineers a way to test new code in realistic, production-like conditions immediately after writing it."

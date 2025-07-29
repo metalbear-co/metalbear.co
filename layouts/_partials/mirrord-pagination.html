@@ -1,0 +1,24 @@
+{{- $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+{{- $paginator := .Paginator }}
+<!-- If there's more than one page. -->
+<script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+{{ if and (gt $paginator.TotalPages 1) ($paginator.HasNext) }}
+<a href="{{- $paginator.Next.URL }}" class="pagination__page"></a>
+
+<div class="flex justify-center text-center">
+    <button class="view-more-button relative z-10 w-[140px] xl:w-[208px] h-[44px] xl:h-[65px] cursor-pointer text-lg text-white hover:text-[#000000] capitalize font-body flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease] mx-auto">Show Me More</button>
+</div>
+
+<script>
+    let elem = document.querySelector('.blog-card__wrapper');
+    let infScroll = new InfiniteScroll(elem, {
+        // options
+        path: '.pagination__page',
+        append: '.blog-card__col',
+        button: '.view-more-button',
+        // using button, disable loading on scroll 
+        scrollThreshold: false,
+        // status: '.page-load-status',
+    });
+</script>
+{{- end }}

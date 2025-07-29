@@ -5,7 +5,12 @@ lead: "Colab made development faster, onboarding easier, and developers happier 
 url:  mirrord/case-study/colab
 date: 2025-04-21T06:00:00+00:00
 draft: false
-weight: 20
+weight: 10
+feed:
+  title: "CoLab cut dev cycle time by up to 98% with mirrord"
+  logo: "demo-colab.png"
+  quote: >
+      “How long does it take to test a change in development? If you have to make a hundred of those changes, that would take you what? 15 minutes x 100 changes? [25 hours] With mirrord, you can do all that in 20 minutes.”
 header:
   title: 'How CoLab <span class="text-primary">cut dev cycle time by up to 98%</span> with mirrord'
   description: "CoLab cut the time to get changes running in the cloud from over 15 minutes down to 10 seconds. Read on to discover how they achieved it."

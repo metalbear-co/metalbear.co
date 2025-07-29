@@ -5,7 +5,12 @@ lead: "Cadence saved hours each week for every engineer and enhanced product out
 url:  mirrord/case-study/cadence
 date: 2025-04-21T06:00:00+00:00
 draft: false
-weight: 30
+weight: 20
+feed:
+  title: "Cadence saved hours each week for every engineer while improving product quality"
+  logo: "demo-cadence.png"
+  quote: >
+      “mirrord has had as big an impact on development productivity at Cadence as AI has.”
 header:
   title: 'How Cadence simplified development and <span class="text-primary">improved product quality</span> with mirrord'
   description: "Cadence saved hours each week for every engineer and enhanced product outcomes. Read on to learn how they made it happen."
