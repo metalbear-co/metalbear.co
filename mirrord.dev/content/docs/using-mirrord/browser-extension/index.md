@@ -44,9 +44,8 @@ Before you start, make sure you have:
 ## Using mirrord Browser Extension
 
 1. Run `mirrord exec` with the configured `mirrord.json`, mirrord will then:
-   - Prints the localhost URL to the screen.
-   - Launch the extension.
-   - Opens the link automatically in a Chrome tab.
+   - Prints the configuration URL to the screen.
+   - Opens the URL automatically in a Chrome tab.
 2. The extension injects the active session’s header into all browser requests across tabs.
 3. You can check the current header and status in the extension popup, the extension can be opened anytime from the Chrome extension icon
 4. To stop the extension from injecting HTTP request header, click the extension icon and remove the header from the pop up menu.
