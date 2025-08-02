@@ -1,6 +1,6 @@
 ---
-title: "Aviram Hassan"
-description: "CEO & Co-founder @ MetalBear"
+title: "Aviram Hassan – Cloud Native Developer and Contributor"
+description: "Profile of Aviram Hassan, highlighting contributions to cloud native tools, Kubernetes debugging, and improving developer experiences at MetalBear."
 date: 2022-05-12T08:50:45+00:00
 lastmod: 2022-05-12T08:50:45+00:00
 draft: false

@@ -1,7 +1,7 @@
 ---
-title: "Terms of Service"
-description: "MetalBear Cloud Terms of Service"
-lead: "MetalBear Cloud Terms of Service"
+title: "Terms of Service | MetalBear | mirrord Software License"
+description: "MetalBear’s Terms of Service covering subscription rights, account security, and prohibited actions for safe and compliant mirrord usage."
+lead: "MetalBear’s Terms of Service covering subscription rights, account security, and prohibited actions for safe and compliant mirrord usage."
 tags:
   - legal
 images: []

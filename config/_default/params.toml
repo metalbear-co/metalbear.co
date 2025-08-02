@@ -38,6 +38,15 @@ schemaLinkedIn = "https://www.linkedin.com/company/metalbearco"
 schemaGitHub = "https://github.com/metalbear-co"
 schemaSection = "blog"
 
+# schemaType = "FAQPage"
+schemaName = "MetalBear FAQ"
+schemaAuthor = "MetalBear"
+schemaQuestion = "Why does mirrord have no effect with my program?"
+schemaAnswer = "Cases include statically linked binaries or macOS SIP‑protected executables. Use dynamically linked binaries or move binaries out of protected paths."
+schemaQuestion = "Why isn't incoming traffic reaching my local process?"
+schemaAnswer = "Ensure local process listens on the same port, or configure port_mapping; also service mesh may interfere."
+schemaSection = "Homepage"
+
 ## Sitelinks Search Box
 siteLinksSearchBox = false
 
