@@ -1,6 +1,6 @@
 ---
 title: "mirrord as an alternative to Telepresence"
-description: "A comparison between mirrord and Telepresence"
+description: "Compare mirrord and Telepresence for Kubernetes. Learn how mirrord improves local cloud debugging with no root access, traffic mirroring & IDE plugins."
 lead: "A comparison between mirrord and Telepresence"
 tags:
   - Kubernetes

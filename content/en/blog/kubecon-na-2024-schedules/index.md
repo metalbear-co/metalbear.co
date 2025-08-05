@@ -1,7 +1,7 @@
 ---
-title: "Four KubeCon + CloudNativeCon Schedules for Four Types of Attendees"
-description: "Schedule recommendations for KubeCon North America 2024"
-lead: "Schedule recommendations for KubeCon North America 2024"
+title: "KubeCon 2025 Guide | Best Sessions by Attendee Type"
+description: "Your KubeCon + CloudNativeCon 2025 guide: 4 custom schedules for first-timers, SREs, AI lovers, and platform engineering teams to maximize the conference."
+lead: "Schedule recommendations for KubeCon North America 2025"
 tags:
   - mirrord
   - CNCF

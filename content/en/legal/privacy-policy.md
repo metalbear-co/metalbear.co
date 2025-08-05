@@ -1,6 +1,6 @@
 ---
-title: "Privacy Policy"
-description: "MetalBear's Privacy Policy"
+title: "MetalBear Privacy Policy | Data Use & User Rights"
+description: "MetalBear collects, uses, and protects your personal data. Understand your rights and our commitment to privacy on our cloud platform."
 lead: "MetalBear Privacy Policy"
 tags:
   - legal
