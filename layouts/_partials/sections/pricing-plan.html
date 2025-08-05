@@ -1,0 +1,172 @@
+{{- $site := .Site }}
+{{- $section := .section }}
+{{ with $section }}
+<section class="bg-[#FAFAFD] border-b-3 border-black">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 xl:px-0 pt-10.5 lg:pt-21 pb-[100px] lg:pb-34.5">
+        <header class="mx-auto text-center mb-[32px] lg:mb-[62px] 2xl:mb-[82px]">
+            <div class="px-3 lg:px-0">
+                <h2
+                    class="text-3xl lg:text-[2.5rem] xl:text-[3.125rem] text-black font-bold font-heading leading-normal lg:leading-normal xl:leading-normal mt-0 mb-6 lg:mb-8">
+                    <span class="relative">
+                        <span class="absolute w-full bottom-0 left-0">
+                            <svg class="w-full h-auto" viewBox="0 0 287 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M283.43 6.88381C247.548 2.52707 211.509 0.573453 175.456 0.106659C139.359 -0.342846 103.263 0.677185 67.1951 2.25045C46.9195 3.13217 26.6439 4.18678 6.36826 5.2241C1.78483 5.46614 1.77055 14.1105 6.36826 13.8684C37.7384 12.2433 69.1085 10.6527 100.493 9.66728C88.5559 10.5836 76.619 11.6382 64.6964 12.8484C44.2922 14.923 23.9024 17.4126 3.56965 20.3344C1.65632 20.611 0 22.1324 0 24.6565C0 26.7831 1.64204 29.2553 3.56965 28.9787C39.8088 23.7921 76.1621 19.9367 112.601 17.4126C149.026 14.9057 185.522 13.7474 222.004 13.9203C242.479 14.024 262.955 14.56 283.43 15.5109C285.358 15.5973 287 13.4535 287 11.1887C287 8.66454 285.358 7.10856 283.43 6.86652V6.88381Z"
+                                    fill="#FFD18C" />
+                            </svg>
+                        </span>
+                        <span class="relative">Choose</span>
+                    </span>
+                    <span>&nbsp;your plan</span>
+                </h2>
+            </div>
+        </header>
+        <div x-data="{ isMontly: $persist(true) }"
+            class="grid gap-10 xl:gap-12.5 lg:grid-cols-2 lg:w-[92%] xl:w-[80%] mx-auto mb-11.5">
+            {{ range $index, $plan := .plans }}
+            <div
+                class="border-card shadow-card border-[1.5px] border-black rounded-[5px] lg:rounded-[7px] pt-10 pb-8 px-5.5">
+                <div class="flex justify-between items-center mb-7 lg:mb-7.5">
+                    <h3
+                        class="text-primary text-3xl xl:text-[2rem] font-heading font-bold leading-none xl:leading-none">
+                        {{ .name }}</h3>
+                    {{ if eq $index 0 }}
+                    <div class="flex justify-center items-center gap-x-1.5 lg:gap-x-3">
+                        <p class="text-black text-sm xl:text-lg font-body leading-none xl:leading-none">Monthly</p>
+                        <div
+                            class="w-[42px] lg:w-[55px] h-[22px] lg:h-[28px] relative bg-primary cursor-pointer rounded-[21px] flex items-center p-[1px]">
+                            <button @click="isMontly = !isMontly" class="w-full">
+                                <span
+                                    class="w-[20px] h-[20px] lg:w-[26px] lg:h-[26px] flex items-center justify-center bg-[#E4E3FD] rounded-full transition-all duration-300 ease-[ease]"
+                                    :class="{ 'translate-x-0': isMontly, 'translate-x-[20px] lg:translate-x-[27px]': !isMontly }">
+                                </span>
+                            </button>
+                        </div>
+                        <p class="text-black text-sm xl:text-lg font-body font-semibold leading-none xl:leading-none">
+                            Annually</p>
+                    </div>
+                    {{ end }}
+                </div>
+                <div
+                    class="text-black text-base xl:text-lg font-body leading-normal xl:leading-normal mb-7 lg:mb-7.5 lg:min-h-[72px] xl:min-h-[81px]">
+                    <p>{{ .description }}</p>
+                </div>
+                <div
+                    class="text-black text-base xl:text-lg font-body leading-normal xl:leading-normal mb-7 lg:mb-7.5 lg:min-h-[104px] xl:min-h-[116px]">
+                    <h4 class="font-medium mb-2">Best for:</h4>
+                    <ul class="mb-4 list-disc pl-5">
+                        {{ range .best_for }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="relative pb-4 border-b border-black mb-7 lg:mb-7.5">
+                    <span
+                        class="text-black text-3xl xl:text-[2rem] font-heading font-semibold leading-none xl:leading-none"
+                        {{ if eq $index 0 }}x-text="isMontly ? '$50' : '$40'" {{ end }}>{{
+                        .pricing }}</span>
+                    {{ if eq $index 0 }}
+                    <div
+                        class="text-black text-lg font-body leading-normal xl:leading-normal inline-flex justify-center items-center space-x-1">
+                        <span>Seat</span>
+                        <div class="w-[14px] h-[14px] cursor-pointer group">
+                            <div
+                                class="relative hidden group-hover:block transition-all duration-200 ease-[ease] before:content-[''] before:absolute before:w-4 before:h-4 before:-left-[2px] before:bottom-[12px] before:border before:border-solid before:border-[#222222] before:transform before:rotate-45 before:z-30 after:content-[''] after:absolute after:w-4 after:h-4 after:bg-white after:-left-[2px] after:bottom-[13px] after:transform after:rotate-45 after:z-40">
+                            </div>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.9959 5.43761C7.5208 5.43761 7.94728 5.86409 7.94728 6.38899V10.3011C7.94728 10.8178 7.5208 11.2443 6.9959 11.2443C6.4792 11.2443 6.05272 10.8178 6.05272 10.3011V6.38899C6.05272 5.86409 6.4792 5.43761 6.9959 5.43761ZM1.16462 6.9959C1.16462 5.3884 1.81254 3.92853 2.87053 2.87053C3.92853 1.81254 5.3884 1.16462 6.9959 1.16462C8.6116 1.16462 10.0715 1.81254 11.1213 2.87053C12.1793 3.92853 12.8354 5.3884 12.8354 6.9959C12.8354 8.6116 12.1793 10.0715 11.1213 11.1213C10.0715 12.1793 8.6116 12.8354 6.9959 12.8354C5.3884 12.8354 3.92853 12.1793 2.87053 11.1213C1.81254 10.0715 1.16462 8.6116 1.16462 6.9959ZM11.9496 2.05038C10.6784 0.787346 8.93146 0 6.9959 0C5.06854 0 3.31342 0.787346 2.05038 2.05038C0.787346 3.31342 0 5.06854 0 6.9959C0 8.93146 0.787346 10.6784 2.05038 11.9496C3.31342 13.2127 5.06854 14 6.9959 14C8.93146 14 10.6784 13.2127 11.9496 11.9496C13.2127 10.6784 14 8.93146 14 6.9959C14 5.06854 13.2127 3.31342 11.9496 2.05038ZM6.9959 2.75571C7.5208 2.75571 7.94728 3.18219 7.94728 3.70709C7.94728 3.96954 7.84066 4.20738 7.66842 4.37961C7.49619 4.55185 7.25835 4.65026 6.9959 4.65026C6.73345 4.65026 6.49561 4.55185 6.32337 4.37961C6.15114 4.20738 6.04452 3.96954 6.04452 3.70709C6.04452 3.18219 6.471 2.75571 6.9959 2.75571Z"
+                                    fill="black" />
+                            </svg>
+                            <div
+                                class="absolute hidden group-hover:block left-0 bottom-14 w-full text-left bg-white rounded-[4px] border border-solid border-[#222222] py-3 px-3">
+                                <p class="text-[#222222] text-xs mb-2">Seats are calculated by
+                                    monthly activity. Any user that used mirrord in a calendar month
+                                    is counted towards your seat count.</p>
+                                <p class="text-[#222222] text-xs mb-0">mirrord identifies users with
+                                    a unique file it creates on the machine it runs on. If this does
+                                    not represent distinct users in your organization, or if you use
+                                    mirrord on cloud workers (e.g. for CI, or cloud development
+                                    environments), please <a class="underline text-[#222222]"
+                                        href="/mirrord/contact/">contact us</a> </p>
+                            </div>
+                        </div>
+                        <span>/Month</span>
+                    </div>
+                    {{ end }}
+                </div>
+                <div
+                    class="text-black font-body leading-normal xl:leading-normal lg:min-h-[252px] xl:min-h-[204px] mb-7 lg:mb-7.5">
+                    <h4 class="text-xl font-medium mb-5">{{ .feature_title }}</h4>
+                    <ul class="text-base mb-4 list-none space-y-5">
+                        {{ range .features }}
+                        <li class="flex gap-2">
+                            <span class="block pt-1">
+                                <svg class="w-4.5 h-auto" viewBox="0 0 21 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M19.6051 0.961922C20.4212 1.52996 20.6144 2.64082 20.0366 3.44308L9.05421 18.6915C8.71482 19.1628 8.164 19.4429 7.57668 19.4429C6.98935 19.4429 6.4385 19.1629 6.09906 18.6917L0.606589 11.0675C0.0286833 10.2653 0.221706 9.15439 1.03772 8.58626C1.85373 8.01814 2.98372 8.20789 3.56163 9.0101L7.5764 14.5831L17.0813 1.38603C17.6591 0.583764 18.7891 0.393883 19.6051 0.961922Z"
+                                        fill="#756DF3" />
+                                </svg>
+                            </span>
+                            <span>{{ . | safeHTML }}</span>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="text-black font-body leading-normal xl:leading-normal min-h-[116px] mb-7 lg:mb-7.5">
+                    <h4 class="text-xl font-medium mb-5">Admin & Support:</h4>
+                    <ul class="text-base mb-4 list-none space-y-5">
+                        {{ range .admin_support }}
+                        <li class="flex gap-2">
+                            <span class="block pt-1">
+                                <svg class="w-4.5 h-auto" viewBox="0 0 21 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M19.6051 0.961922C20.4212 1.52996 20.6144 2.64082 20.0366 3.44308L9.05421 18.6915C8.71482 19.1628 8.164 19.4429 7.57668 19.4429C6.98935 19.4429 6.4385 19.1629 6.09906 18.6917L0.606589 11.0675C0.0286833 10.2653 0.221706 9.15439 1.03772 8.58626C1.85373 8.01814 2.98372 8.20789 3.56163 9.0101L7.5764 14.5831L17.0813 1.38603C17.6591 0.583764 18.7891 0.393883 19.6051 0.961922Z"
+                                        fill="#756DF3" />
+                                </svg>
+                            </span>
+                            <span>{{ . | safeHTML }}</span>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="flex justify-center mb-3">
+                    <a href="{{ .cta_link }}" {{ if eq $index 0 }}target="_blank" {{ end }}
+                        class="w-[250px] xl:w-[275px] h-12 xl:h-[65px] text-lg cursor-pointer font-body flex justify-center items-center border border-solid rounded-[6px] lg:rounded-[11px] transition-colors duration-200 ease-[ease] {{ if eq $index 0 }}text-white hover:text-[#000000] bg-primary hover:bg-[#FFD18C] border-[#222222]{{ else }}text-primary border-primary hover:bg-[#E4E3FD]{{ end }}">{{
+                        .cta }}</a>
+                </div>
+                <div class="text-center text-black text-base">
+                    <p>{{ .billing_note }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="text-center text-black text-lg xl:text-xl mb-[100px]">
+            <p>Looking for a specific feature? <a class="text-primary font-semibold underline"
+                    href="#compare-features">Compare our plans in detail</a></p>
+        </div>
+        <div class="mb-14 xl:mb-15.5 text-center">
+            <h3 class="text-3xl xl:text-[2rem] text-black font-body font-bold">Trusted by the best engineering teams
+            </h3>
+        </div>
+        <div class="lg:w-[85%] lg:mx-auto flex flex-wrap justify-center items-center gap-x-14.5 xl:gap-x-18.5 gap-y-10">
+            {{ range .teams }}
+            <div class="{{ .class }} relative">
+                <img src="{{ .logo }}" alt="logo">
+                {{ if .url }}
+                <div class="absolute left-6 -bottom-7 w-full flex justify-end">
+                    <a class="w-[84px] h-5.5 bg-[#E4E3FD] text-xs text-center flex items-center justify-center rounded-md"
+                        href="{{ .url }}">Case study</a>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

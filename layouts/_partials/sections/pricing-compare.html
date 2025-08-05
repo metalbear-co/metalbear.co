@@ -1,0 +1,176 @@
+{{- $site := .Site }}
+{{- $section := .section }}
+{{ with $section }}
+<section class="bg-[#FAFAFD]">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 xl:px-0 pt-25 xl:pt-32.5 pb-13 xl:pb-16">
+        <div class="compare-features__wrapper overflow-x-auto pb-10 mb-8 xl:mb-11.5">
+            <table id="compare-features" class="w-full text-left border-collapse">
+                <thead>
+                    <tr>
+                        <th class="w-3/5 h-[84px] align-top">
+                            <h3 class="text-black text-xl lg:text-[2rem] font-heading font-bold">Compare features</h3>
+                        </th>
+                        <th class="w-1/5 h-[84px] text-center align-top">
+                            <h3 class="text-black text-sm lg:text-2xl font-heading font-bold mb-1 lg:mb-2">Team</h3>
+                            <a href="https://app.metalbear.co/account/sign-up"
+                                class="text-black text-xs lg:text-xl underline font-normal font-body leading-tight"
+                                target="_blank">Try it now
+                                for free</a>
+                        </th>
+                        <th class="w-1/5 h-[84px] text-center align-top">
+                            <h3 class="text-black text-sm lg:text-2xl font-heading font-bold mb-1 lg:mb-2">Enterprise</h3>
+                            <a href="/mirrord/demo/"
+                                class="text-black text-xs lg:text-xl underline font-normal font-body leading-tight">Book a
+                                chat</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range $index, $features := .compare_features }}
+                    <tr>
+                        <td class="bg-[#E3E2FD] text-black text-base xl:text-xl font-body font-bold p-2 lg:p-3.5" colspan="3">{{
+                            .category }}</td>
+                    </tr>
+                    {{ $total := len .features }}
+                    {{ range $i, $f := .features }}
+                    <tr>
+                        <td
+                            class="text-sm xl:text-lg p-2 lg:p-3.5 {{ if ne (add $i 1) $total }}border-b border-[#C4C4C4]{{ end }} {{ if eq (add $i 1) $total }}pb-7{{ end }}">
+                            {{ $f.name }}</td>
+                        <td
+                            class="text-sm xl:text-lg p-2 lg:p-3.5 text-center {{ if ne (add $i 1) $total }}border-b border-[#C4C4C4]{{ end }} {{ if eq (add $i 1) $total }}pb-7{{ end }}">
+                            {{ if eq (printf "%T" $f.team) "bool" }}
+                            {{ if $f.team }}
+                            <span>
+                                {{- partial "svg/pricing-check-icon.svg" . }}
+                            </span>
+                            {{ else }}
+                            <span>
+                                <svg class="w-4 h-4 xl:w-7 xl:h-7 inline-block" viewBox="0 0 34 34" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.875 6.88086L27.1131 27.119M6.875 27.119L27.1131 6.88086"
+                                        stroke="#F36869" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            {{ end }}
+                            {{ else }}
+                            {{ $f.team }}
+                            {{ end }}
+                        </td>
+                        <td
+                            class="text-sm xl:text-lg p-2 lg:p-3.5 text-center {{ if ne (add $i 1) $total }}border-b border-[#C4C4C4]{{ end }} {{ if eq (add $i 1) $total }}pb-7{{ end }}">
+                            {{ if eq (printf "%T" $f.enterprise) "bool" }}
+                            {{ if $f.enterprise }}
+                            <span>
+                                {{- partial "svg/pricing-check-icon.svg" . }}
+                            </span>
+                            {{ else }}
+                            <span>
+                                <svg class="w-4 h-4 xl:w-7 xl:h-7 inline-block" viewBox="0 0 34 34" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.875 6.88086L27.1131 27.119M6.875 27.119L27.1131 6.88086"
+                                        stroke="#F36869" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            {{ end }}
+                            {{ else }}
+                            {{ $f.enterprise }}
+                            {{ end }}
+                        </td>
+                    </tr>
+                    {{ end }}
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center flex justify-center mb-24 xl:mb-[108px]">
+            <button onclick="toggleRows()" id="toggle-btn"
+                class="text-primary text-lg xl:text-xl underline font-semibold font-body cursor-pointer flex items-center gap-x-2">
+                <span class="button-toggle__text">Compare our plans in detail</span>
+                <svg class="compare-btn-icon w-3 xl:w-3.5 rotate-180" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                </svg>
+            </button>
+        </div>
+        <div
+            class="lg:w-[90%] lg:mx-auto bg-[#E3E2FD] rounded-[7px] border border-midblack shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] px-8 lg:px-23 xl:px-26.5 pt-6 xl:pt-13 pb-5 xl:pb-12">
+            <div class="flex flex-col lg:flex-row lg:justify-between">
+                <div class="mb-8 lg:mb-0 text-center lg:text-left">
+                    <h3 class="text-black text-2xl xl:text-[2rem] font-bold font-heading mb-5.5 xl:mb-6.5">Want to test it out?</h3>
+                    <div class="text-black text-base xl:text-xl font-body">
+                        <p>Try out our full feature plan for free.<br>
+                            No credit card required.</p>
+                    </div>
+                    <div class="flex flex-wrap lg:flex-nowrap justify-center lg:justify-start lg:gap-5 xl:gap-6 pt-8.5 lg:pt-10.5">
+                        <a class="flex-none w-[200px] xl:w-[220px] h-12 xl:h-13.5 mb-5 text-lg xl:text-xl text-white hover:text-[#000000] capitalize font-body flex justify-center items-center bg-primary hover:bg-tertiary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                            href="https://app.metalbear.co/account/sign-up" target="_blank">Try it now For Free</a>
+                        <a class="flex-none w-[240px] xl:w-[268px] h-12 xl:h-13.5 mb-5 text-lg xl:text-xl text-[#000000] capitalize font-body flex justify-center items-center bg-tertiary hover:bg-secondary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                            href="/mirrord/demo">Book a technical demo</a>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-end">
+                    <div class="w-[210px] lg:w-[260px]">
+                        <img src="/pricing/pricing-banner.svg" alt="banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function toggleRows() {
+        const table = document.getElementById("compare-features");
+        const wrapper = document.querySelector(".compare-features__wrapper");
+        const btn = document.getElementById("toggle-btn");
+        const btnText = document.querySelector(".button-toggle__text");
+
+        if (!table || !wrapper || !btn) {
+            console.error("Required element not found.");
+            return;
+        }
+
+        const rows = table.querySelectorAll("tbody tr");
+        const isCurrentlyLess = wrapper.classList.contains("show-less__active");
+
+        if (isCurrentlyLess) {
+            // Tampilkan semua baris
+            for (let i = 4; i < rows.length; i++) {
+                rows[i].style.display = "table-row";
+            }
+            wrapper.classList.remove("show-less__active");
+            btn.classList.remove("show-less-btn__active");
+            btnText.textContent = "Close comparison";
+        } else {
+            // Sembunyikan baris 5 ke bawah
+            for (let i = 4; i < rows.length; i++) {
+                rows[i].style.display = "none";
+            }
+            wrapper.classList.add("show-less__active");
+            btn.classList.add("show-less-btn__active");
+            btnText.textContent = "Compare our plans in detail";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const table = document.getElementById("compare-features");
+        const wrapper = document.querySelector(".compare-features__wrapper");
+        const btn = document.getElementById("toggle-btn");
+
+        if (!table || !wrapper || !btn) return;
+
+        const rows = table.querySelectorAll("tbody tr");
+        for (let i = 4; i < rows.length; i++) {
+            rows[i].style.display = "none";
+        }
+
+        // Tambahkan class saat awal load
+        wrapper.classList.add("show-less__active");
+        btn.classList.add("show-less-btn__active");
+    });
+</script>
+{{ end }}

@@ -1,0 +1,65 @@
+<section class="demo-bg-image--left-bottom bg-[#FAFAFD]"
+    style="background-image: url(/home-section-8-bg.png);">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 relative overflow-hidden">
+        <div class="py-17 xl:py-20">
+            <div
+                class="lg:w-[92%] xl:w-3/4 mx-auto border-card shadow-card border-[1.5px] border-black rounded-[5px] lg:rounded-[7px] bg-[#EFEEFC] px-4 lg:px-0 py-10 xl:py-13">
+                <header class="text-center">
+                    <h2
+                        class="text-2xl lg:text-[2.5rem] xl:text-[3.125rem] text-black font-extrabold leading-[1.4] lg:leading-[1.4] xl:leading-[1.4] mb-7 lg:mb-8.5 xl:mb-10">
+                        <span class="text-primary">Thanks for reaching out!</span><br>
+                        We’ll be in touch soon.
+                    </h2>
+                    <div
+                        class="flex items-center justify-center gap-x-2 text-black text-base lg:text-xl font-body mb-7 lg:mb-8.5 xl:mb-10">
+                        <span>
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 21C13.1819 21 14.3522 20.7672 15.4442 20.3149C16.5361 19.8626 17.5282 19.1997 18.364 18.364C19.1997 17.5282 19.8626 16.5361 20.3149 15.4442C20.7672 14.3522 21 13.1819 21 12C21 10.8181 20.7672 9.64778 20.3149 8.55585C19.8626 7.46392 19.1997 6.47177 18.364 5.63604C17.5282 4.80031 16.5361 4.13738 15.4442 3.68508C14.3522 3.23279 13.1819 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12C3 14.3869 3.94821 16.6761 5.63604 18.364C7.32387 20.0518 9.61305 21 12 21ZM23 12C23 18.075 18.075 23 12 23C5.925 23 1 18.075 1 12C1 5.925 5.925 1 12 1C18.075 1 23 5.925 23 12ZM15 16.414L11 12.414V5.5H13V11.586L16.414 15L15 16.414Z"
+                                    fill="black" />
+                            </svg>
+                        </span>
+                        <p>Typical response time: ~2 hours</p>
+                    </div>
+                    <div class="lg:w-[75%] lg:mx-auto text-black text-base lg:text-xl font-body">
+                        <p>Keep an eye on your inbox! A technical expert will reach out with a proposed time for your
+                            demo. Looking forward to connecting!</p>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="absolute w-full left-0 -bottom-[48px] lg:-bottom-[60px] xl:-bottom-[80px] flex justify-end">
+            <div class="w-[140px] lg:w-[180px] xl:w-[272px]">
+                <img src="/demo-thankyou.png" alt="image">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pb-2 relative bg-[#FAFAFD] z-0">
+    <div class="relative z-10">
+        <div class="text-center bg-primary border border-black px-5 xl:px-0 py-3.5 lg:py-2">
+            <h3 class="text-base lg:text-xl xl:text-2xl text-white font-bold font-heading mt-0 mb-0">Some of the
+                companies
+                shipping code faster & better</h3>
+        </div>
+        <div class="border-b-5 lg:border-b-8 border-x border-black bg-white overflow-hidden">
+            <div class="mirrord-logo-slider">
+                {{- $data := .Site.Data.home }}
+                {{- $logos := $data.running_logo }}
+                {{- $repeat := $data.logo_repeat }}
+                <ul class="mirrord-logo-track">
+                    {{- range seq 1 $repeat }}
+                    {{- range $logos }}
+                    <li>
+                        <div class="{{ .class }}">
+                            <img class="w-full h-auto" src="{{ .image }}" alt="{{ .title }}">
+                        </div>
+                    </li>
+                    {{- end }}
+                    {{- end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -19,7 +19,7 @@ disableLanguages = ["de", "nl"]
 
 # add redirects/headers
 [outputs]
-home = ["HTML", "RSS", "REDIRECTS", "HEADERS", "SITEMAP"]
+home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
 section = ["HTML", "RSS", "SITEMAP"]
 
 # remove .{ext} from text/netlify
@@ -86,7 +86,7 @@ keepWhitespace = false
 [module]
 [module.hugoVersion]
 extended = true
-min = "0.136.0"
+min = "0.147.0"
 max = ""
 [[module.mounts]]
 source = "assets"

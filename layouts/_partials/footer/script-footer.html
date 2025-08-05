@@ -10,8 +10,6 @@
 {{ $katex := resources.Get "js/vendor/katex/dist/katex.js" -}}
 {{ $katexAutoRender := resources.Get "js/vendor/katex/dist/contrib/auto-render.js" -}}
 
-{{ $mermaid := resources.Get "js/mermaid.js" | js.Build -}}
-
 {{ $app := resources.Get "js/app.js" -}}
 
 {{ $slice := slice $app -}}
@@ -36,17 +34,6 @@
 {{ $instantPage := resources.Get "js/instant.page.js" -}}
 {{ $instantPage := $instantPage | js.Build -}}
 {{ $slice = $slice | append $instantPage -}}
-{{ end -}}
-
-{{ if .Site.Params.options.flexSearch -}}
-{{ $flexSearch := resources.Get "js/vendor/flexsearch/dist/flexsearch.bundle.js" -}}
-{{ $slice = $slice | append $flexSearch -}}
-{{ end -}}
-
-{{ if .Site.Params.options.darkMode -}}
-{{ $darkMode := resources.Get "js/darkmode.js" -}}
-{{ $darkMode := $darkMode | js.Build -}}
-{{ $slice = $slice | append $darkMode -}}
 {{ end -}}
 
 {{ if and (.Site.Params.alert) (.Site.Params.alertDismissable) -}}
@@ -78,12 +65,6 @@
 <script src="{{ $katexAutoRender.RelPermalink }}" onload="renderMathInElement(document.body);" defer></script>
 {{ end -}}
 <script src="{{ $js.RelPermalink }}" defer></script>
-{{ with .Params.mermaid -}}
-<script src="{{ $mermaid.RelPermalink }}" defer></script>
-{{ end -}}
-{{ if and (.Site.Params.options.flexSearch) (eq .Section "docs") -}}
-<script src="{{ $index.RelPermalink }}" defer></script>
-{{ end -}}
 {{ else -}}
 {{ $js := $js | minify | fingerprint "sha512" -}}
 {{ $index := $index | minify | fingerprint "sha512" -}}
@@ -91,7 +72,6 @@
 {{ $highlight := $highlight | minify | fingerprint "sha512" -}}
 {{ $katex := $katex | minify | fingerprint "sha512" -}}
 {{ $katexAutoRender := $katexAutoRender | minify | fingerprint "sha512" -}}
-{{ $mermaid := $mermaid | minify | fingerprint "sha512" -}}
 {{ if .Site.Params.options.bootStrapJs -}}
 <script src="{{ $bs.RelPermalink }}" defer></script>
 {{ end -}}
@@ -103,13 +83,8 @@
 <script src="{{ $katexAutoRender.RelPermalink }}" defer></script>
 {{ end -}}
 <script src="{{ $js.RelPermalink }}" defer></script>
-{{ with .Params.mermaid -}}
-<script src="{{ $mermaid.RelPermalink }}" defer></script>
 {{ end -}}
-{{ if and (.Site.Params.options.flexSearch) (eq .Section "docs") -}}
-<script src="{{ $index.Permalink }}" defer></script>
-{{ end -}}
-{{ end -}}
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js"
   integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
