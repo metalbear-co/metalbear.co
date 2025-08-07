@@ -1,7 +1,7 @@
 ---
-title: "How to Debug Java Microservices in Kubernetes"
-description: "Learn to debug Java microservices in Kubernetes with mirrord, using IntelliJ IDE or the CLI for efficient, real-time troubleshooting without redeploying."
-lead: "Learn to debug Java microservices in Kubernetes with mirrord, using IntelliJ IDE or the CLI for efficient, real-time troubleshooting without redeploying."
+title: "Debug a Java Microservice in Kubernetes with mirrord | MetalBear"
+description: "Debug Java microservices in Kubernetes with mirrord. Run your code locally while connected to your remote cluster."
+lead: "Debug Java microservices in Kubernetes with mirrord. Run your code locally while connected to your remote cluster."
 url:  guides/how-to-debug-a-java-microservice
 tags:
   - metalbear

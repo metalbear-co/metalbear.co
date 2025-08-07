@@ -1,7 +1,7 @@
 ---
-title: "How to Debug Golang Microservices in Kubernetes"
-description: "Learn to debug Golang microservices in Kubernetes with mirrord, using Goland or the CLI for efficient, real-time troubleshooting without redeploying."
-lead: "Learn to debug Golang microservices in Kubernetes with mirrord, using Goland or the CLI for efficient, real-time troubleshooting without redeploying."
+title: "Debug Go Microservices in Kubernetes with mirrord | MetalBear"
+description: "How to debug Go microservices in Kubernetes using mirrord. Run code locally with real cluster context—no need to rebuild or redeploy."
+lead: "How to debug Go microservices in Kubernetes using mirrord. Run code locally with real cluster context—no need to rebuild or redeploy."
 url:  guides/how-to-debug-a-go-microservice
 tags:
   - metalbear
