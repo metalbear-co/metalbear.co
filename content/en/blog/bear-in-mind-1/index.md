@@ -1,7 +1,7 @@
 ---
 url:  blog/bear-in-mind-1
-title: "Bear in Mind #1: Platform Engineering"
-description: "Some of our favorite Platform Engineering content from recent weeks."
+title: "Bear in Mind 1 | Platform Engineering Digest | MetalBear"
+description: "MetalBear's inaugural digest, featuring top articles on platform engineering, MONK metrics, and the evolution of DevOps practices."
 lead: "Some of our favorite Platform Engineering content from recent weeks."
 tags:
   - metalbear

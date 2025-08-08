@@ -1,7 +1,7 @@
 ---
-title: "5 KubeCon India Talks I’m Really Looking Forward To"
-description: "A list of talks we're excited about at KubeCon + CloudNativeCon India 2025 - from AI at PepsiCo to CNCF community stories and security panels."
-lead: "KubeCon can be overwhelming with so many sessions. Here are 5 talks we're excited about and why you might want to add them to your schedule too."
+title: "mirrord at KubeCon India 2025 | MetalBear Blog | MetalBear"
+description: "KubeCon India 2025 with mirrord. A list of talks we're excited about, from AI at PepsiCo to CNCF community stories and security panels."
+lead: "KubeCon India 2025 with mirrord. A list of talks we're excited about, from AI at PepsiCo to CNCF community stories and security panels."
 slug: "kubecon-india-2025"
 tags:
   - KubeCon

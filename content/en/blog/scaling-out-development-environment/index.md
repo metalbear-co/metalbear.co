@@ -1,6 +1,6 @@
 ---
-title: "Scaling Out Development Environments"
-description: "How mirrord helps to alleviate the pain of dev-prod parity"
+title: "Scalable Developer Environments Strategy | Metal Bear"
+description: "Best practices for scaling dev environments using microservices, automation and environment parity. Make your developer workflow faster and reliable."
 lead: "Using mirrord to close the gap between Dev & Prod"
 tags:
   - metalbear

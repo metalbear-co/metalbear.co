@@ -1,7 +1,7 @@
 ---
-title: "Getting Started With Ephemeral Containers"
-description: "Getting started with Ephemeral Containers, and a short case study on how we used them with mirrord"
-lead: "Getting started with Ephemeral Containers, and a short case study on how we used them with mirrord"
+title: "Getting Started With Ephemeral Containers | MetalBear Blog"
+description: "Debug distroless Kubernetes containers using ephemeral containers. This guide covers setup, usage, and practical examples with kubectl debug."
+lead: "Debug distroless Kubernetes containers using ephemeral containers. This guide covers setup, usage, and practical examples with kubectl debug."
 tags:
   - kubernetes
   - containers

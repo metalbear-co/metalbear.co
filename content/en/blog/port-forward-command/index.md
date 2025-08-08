@@ -1,7 +1,7 @@
 ---
-title: "There and Back Again: Port Forwarding with mirrord"
-description: "Understanding and using the mirrord port-forward command to redirect traffic."
-lead: "Understanding and using the mirrord port-forward command to redirect traffic."
+title: "mirrord Port Forwarding Guide | Beyond kubectl | Metal Bear"
+description: "mirrord’s powerful port-forwarding features that enable flexible, multi-route traffic forwarding with inherited pod permissions for Kubernetes development."
+lead: "mirrord’s powerful port-forwarding features that enable flexible, multi-route traffic forwarding with inherited pod permissions for Kubernetes development."
 tags:
   - open-source
   - devtools
