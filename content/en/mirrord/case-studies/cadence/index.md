@@ -24,6 +24,8 @@ story:
   image: eric-hauser.png
   name: Eric Hauser
   position: CTO | Cadence
+cta:
+  description: See how mirrord can reduce testing and debugging time, simplify onboarding, and boost developer satisfaction.
 ---
 
 ## TL;DR
