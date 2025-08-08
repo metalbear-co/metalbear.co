@@ -1,7 +1,7 @@
 ---
-title: "Hooking Go from Rust - Hitchhiker’s Guide to the Go-laxy"
-description: "How did we hook Go functions from Rust to work with mirrord? A quick dive into the Go Runtime and switching from the Go stack to the system stack."
-lead: "How did we hook Go functions from Rust to work with mirrord? A quick dive into the Go Runtime and switching from the Go stack to the system stack."
+title: "Hooking Go from Rust Guide | MetalBear"
+description: "mirrord uses Rust to hook Go's syscall functions with trampolines and assembly. Deep dive into Go runtime interop techniques and Go ABI quirks."
+lead: "mirrord uses Rust to hook Go's syscall functions with trampolines and assembly. Deep dive into Go runtime interop techniques and Go ABI quirks."
 tags:
   - rust
   - low-level
