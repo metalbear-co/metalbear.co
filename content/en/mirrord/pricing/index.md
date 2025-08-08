@@ -42,7 +42,6 @@ sections:
 
   - name: "Enterprise"
     pricing: "Custom"
-    billing_note: "with a technical expert"
     description: "Built for bigger teams and enterprises that need secure, scalable solutions for complex, cloud-based development environments"
     best_for:
       - "15+ engineers"
@@ -52,10 +51,11 @@ sections:
     features:
       - "<strong>Everything in Teams</strong>"
       - "Support for airgapped clusters"
+      - "mirrord support in CI pipelines"
       - "Annual billing via Invoice, custom contracts"
     admin_support:
       - "Support tickets, email, private Discord, Slack, or Teams"
-    cta: "Book a chat"
+    cta: "Talk to us"
     cta_link: "https://metalbear.co/mirrord/demo/"
   teams:
     - logo: "/pricing/sentinel-one.png"
@@ -121,6 +121,9 @@ sections:
 
     - category: "Advanced Kubernetes Support"
       features:
+        - name: "mirrord support in CI pipelines"
+          team: false
+          enterprise: true
         - name: "Support for live scaling"
           team: true
           enterprise: true
@@ -156,6 +159,10 @@ sections:
 - template: pricing-faq
   title: "Choose your plan"
   questions:
+    - title: "Is there a free version of mirrord?"
+      content: >
+        Yes! <a href="https://app.metalbear.co/account/sign-up" target="_blank">Check out the mirrord OSS here</a>. You can read more about the differences between the mirrord OSS and mirrord for Teams here.
+
     - title: "Do I need a credit card to start a trial?"
       content: >
         No, you can <a href="https://app.metalbear.co/account/sign-up" target="_blank">try out mirrord for Teams without a credit card</a>—just sign up and start using it. No commitments, no automatic charges.

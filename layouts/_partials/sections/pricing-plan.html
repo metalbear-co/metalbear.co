@@ -69,7 +69,7 @@
                         .pricing }}</span>
                     {{ if eq $index 0 }}
                     <div
-                        class="text-black text-lg font-body leading-normal xl:leading-normal inline-flex justify-center items-center space-x-1">
+                        class="text-black text-lg font-body leading-normal xl:leading-normal inline-flex justify-center items-center space-x-1 pl-2">
                         <span>Seat</span>
                         <div class="w-[14px] h-[14px] cursor-pointer group">
                             <div
@@ -140,9 +140,11 @@
                         class="w-[250px] xl:w-[275px] h-12 xl:h-[65px] text-lg cursor-pointer font-body flex justify-center items-center border border-solid rounded-[6px] lg:rounded-[11px] transition-colors duration-200 ease-[ease] {{ if eq $index 0 }}text-white hover:text-[#000000] bg-primary hover:bg-[#FFD18C] border-[#222222]{{ else }}text-primary border-primary hover:bg-[#E4E3FD]{{ end }}">{{
                         .cta }}</a>
                 </div>
+                {{ with .billing_note }}
                 <div class="text-center text-black text-base">
-                    <p>{{ .billing_note }}</p>
+                    <p>{{ . }}</p>
                 </div>
+                {{ end }}
             </div>
             {{ end }}
         </div>
@@ -151,8 +153,7 @@
                     href="#compare-features">Compare our plans in detail</a></p>
         </div>
         <div class="mb-14 xl:mb-15.5 text-center">
-            <h3 class="text-3xl xl:text-[2rem] text-black font-body font-bold">Trusted by the best engineering teams
-            </h3>
+            <h3 class="text-3xl xl:text-[2rem] text-black font-body font-bold">Some of the companies using mirrord</h3>
         </div>
         <div class="lg:w-[85%] lg:mx-auto flex flex-wrap justify-center items-center gap-x-14.5 xl:gap-x-18.5 gap-y-10">
             {{ range .teams }}
