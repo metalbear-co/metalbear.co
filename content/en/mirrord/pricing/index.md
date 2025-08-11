@@ -62,6 +62,7 @@ sections:
       class: "w-[162px] lg:w-[235px]"
     - logo: "/pricing/survey-monkey.png"
       class: "w-[204px] lg:w-[297px]"
+      url: "/mirrord/case-study/surveymonkey/"
     - logo: "/pricing/colab.png"
       class: "w-[124px] lg:w-[180px]"
       url: "/mirrord/case-study/colab/"
