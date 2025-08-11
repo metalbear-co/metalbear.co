@@ -1,4 +1,5 @@
-<svg class="{{ .class }}" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3 11.8506L9.26806 20.7012L21.8012 3" stroke="#756DF3" stroke-width="4.13238" stroke-linecap="round" stroke-linejoin="round"/>
+<svg class="w-4 h-4 xl:w-7 xl:h-7 inline-block" viewBox="0 0 34 34" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.23438 16.999L13.0818 27.8964L28.7728 6.10156" stroke="#756DF3"
+        stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
-

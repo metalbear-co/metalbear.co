@@ -12,7 +12,7 @@ feed:
   quote: >
       “We’re testing against the real environment before merging. That level of fidelity gives us high confidence in every release.”
 header:
-  title: 'Why Daylight Chose mirrord over Personal Cloud Environments'
+  title: 'Why Daylight Chose mirrord <span class="text-primary">over Personal Cloud Environments</span>'
   description: "Daylight knew they couldn’t afford to waste time waiting on container builds just to test their code in staging. So they baked mirrord into their dev loop from the beginning, giving their engineers a way to test new code in realistic, production-like conditions immediately after writing it."
   company: Daylight Security provides Managed Agentic Security Services, offering tailored MDR solutions that are delivered by Agentic AI and backed by elite human experts.
   site: daylight.ai
@@ -24,6 +24,8 @@ story:
   image: alon-gluzman.png
   name: Alon Gluzman
   position: Senior Platform Engineer | Daylight Security
+cta:
+  description: See how mirrord can help you save time, improve code quality, and make developers happier—just like it did for Daylight.
 ---
 
 ## TL;DR

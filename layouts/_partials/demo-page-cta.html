@@ -8,12 +8,13 @@
                     class="demo-cta__title text-3xl xl:text-[2.625rem] 2xl:text-[3.125rem] font-heading font-bold text-black leading-normal mt-0 mb-[18px]">
                     Ready to <span class="text-primary">improve</span> your&nbsp;<br class="hidden lg:block">development
                     workflow?</h2>
+                {{- with .Params.cta.description }}
                 <div>
                     <p
                         class="demo-cta__text text-base xl:text-lg 2xl:text-2xl font-light text-black mb-12 xl:mb-14.5 2xl:mb-[70px]">
-                        See how mirrord can reduce testing and debugging time, simplify
-                        onboarding, and boost developer satisfaction.</p>
+                        {{ . | safeHTML }}</p>
                 </div>
+                {{ end }}
             </header>
             <div
                 class="flex flex-wrap lg:flex-nowrap justify-center gap-5 lg:gap-5 xl:gap-6 2xl:gap-7.5 mb-4 md:mb-5 lg:mb-4 xl:mb-5 2xl:mb-6">

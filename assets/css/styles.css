@@ -1077,3 +1077,11 @@ ol {
 .content-accordion a {
     @apply underline;  
 }
+
+.compare-features__wrapper.show-less__active {
+    @apply relative mb-0 before:absolute before:content-[''] before:w-full before:h-21 before:lg:h-23 before:left-0 before:bottom-0 before:z-10 before:bg-linear-to-t before:from-[#FAFAFD] before:via-[#FAFAFD] before:via-65% before:to-transparent before:to-100%;
+}
+
+.show-less-btn__active .compare-btn-icon {
+    @apply rotate-0;
+}

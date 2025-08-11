@@ -24,6 +24,8 @@ story:
   image: josh-bell.png
   name: Josh Bell
   position: Senior Software Engineer | CoLab
+cta:
+  description: See how mirrord can reduce testing and debugging time, simplify onboarding, and boost developer satisfaction.
 ---
 
 ## TL;DR
