@@ -34,7 +34,7 @@
                         {{ .name }}</h3>
                     {{ if eq $index 0 }}
                     <div class="flex justify-center items-center gap-x-1.5 lg:gap-x-3">
-                        <p class="text-black text-sm xl:text-lg font-body leading-none xl:leading-none">Monthly</p>
+                        <p class="text-black text-sm xl:text-lg font-body leading-none xl:leading-none" :class="isMontly ? 'font-semibold' : ''">Monthly</p>
                         <div
                             class="w-[42px] lg:w-[55px] h-[22px] lg:h-[28px] relative bg-primary cursor-pointer rounded-[21px] flex items-center p-[1px]">
                             <button @click="isMontly = !isMontly" class="w-full">
@@ -44,7 +44,7 @@
                                 </span>
                             </button>
                         </div>
-                        <p class="text-black text-sm xl:text-lg font-body font-semibold leading-none xl:leading-none">
+                        <p class="text-black text-sm xl:text-lg font-body leading-none xl:leading-none" :class="isMontly ? '' : 'font-semibold'">
                             Annually</p>
                     </div>
                     {{ end }}

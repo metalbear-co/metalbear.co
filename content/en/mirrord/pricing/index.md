@@ -26,7 +26,7 @@ sections:
     billing_note: "no credit card required"
     description: "Advanced functionalities for teams sharing a staging cluster"
     best_for:
-      - "5–15 engineers"
+      - "Best for small teams"
       - "No dedicated/custom support"
     feature_title: "Team feature highlights:"
     features:
@@ -44,7 +44,7 @@ sections:
     pricing: "Custom"
     description: "Built for bigger teams and enterprises that need secure, scalable solutions for complex, cloud-based development environments"
     best_for:
-      - "15+ engineers"
+      - "Best for larger organizations (15+ engineers)"
       - "White glove support"
       - "Airgapped clusters"
     feature_title: "Enterprise feature highlights:"
@@ -161,7 +161,7 @@ sections:
   questions:
     - title: "Is there a free version of mirrord?"
       content: >
-        Yes! <a href="https://app.metalbear.co/account/sign-up" target="_blank">Check out the mirrord OSS here</a>. You can read more about the differences between the mirrord OSS and mirrord for Teams here.
+        Yes! <a href="https://github.com/metalbear-co/mirrord" target="_blank">Check out the mirrord OSS here</a>. You can read more about the differences between the mirrord OSS and mirrord for Teams <a href="https://metalbear.co/mirrord/docs/overview/teams/" target="_blank">here</a>.
 
     - title: "Do I need a credit card to start a trial?"
       content: >
