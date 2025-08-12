@@ -1,6 +1,6 @@
 ---
 title: "Comparison of Internal Developer Platforms"
-description: "A comprehensive comparison of Internal Developer Platform vendors and tools."
+description: "Compare top Internal Developer Platforms (IDPs) like Humanitec, Mia Platform, Backstage & more. Features, pricing & tools to boost DevOps efficiency."
 lead: "A comprehensive comparison of Internal Developer Platform vendors and tools."
 tags:
   - idps

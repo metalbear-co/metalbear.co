@@ -1,7 +1,7 @@
 ---
-title: "Why Your Shift-Left Strategy Fails (and How DevX Saves It)"
-description: "Most teams aim for shift-left testing but hit roadblocks. Learn why development environments slow you down and how improved DevX tools make early testing possible."
-lead: "If you’re struggling to test early, you’re not alone. This article explains why shift-left often breaks in practice and shows how better DevX bridges the gap."
+title: "Why Your Shift-Left Strategy Fails | MetalBear Blog | MetalBear"
+description: "Most teams aim for shift-left testing but hit roadblocks. Learn why dev environments slow you down and how you can make early testing possible."
+lead: "Most teams aim for shift-left testing but hit roadblocks. Learn why dev environments slow you down and how you can make early testing possible."
 slug: "shift-left-strategy-fails-devx-saves-it"
 tags:
   - Shift-Left

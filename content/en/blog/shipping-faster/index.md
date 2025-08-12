@@ -1,7 +1,7 @@
 ---
-title: "Enabling Developers To Ship Cloud-Native Applications Faster"
-description: "For cloud-native applications, moving code from a developer’s local machine to a staging or testing environment is rarely straightforward. In this blog we'll learn about how mirrord changes that by shifting testing left."
-lead: "For cloud-native applications, moving code from a developer’s local machine to a staging or testing environment is rarely straightforward. In this blog we'll learn about how mirrord changes that by shifting testing left."
+title: "Ship Cloud-Native Apps Faster with mirrord | MetalBear Blog | MetalBear"
+description: "mirrord shortens your dev loop by letting you run code locally in the context of your Kubernetes environments—no CI, no deploy."
+lead: "mirrord shortens your dev loop by letting you run code locally in the context of your Kubernetes environments—no CI, no deploy."
 tags:
   - development
   - kubernetes

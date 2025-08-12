@@ -1,7 +1,7 @@
 ---
-title: "Utila User Story | Roman Yarinovsky"
+title: "Utila User Story: Faster Debugging with mirrord | MetalBear"
 card_title: "Roman Yarinovsky"
-description: "mirrord seamlessly integrating into our current environment and allowing us to debug remotely is a game changer for us"
+description: "mirrord seamlessly integrating into our current environment and allowing us to debug remotely is a game changer for us. Read the full story."
 date: 2023-09-19T06:00:00+00:00
 lastmod: 2023-09-19T06:00:00+00:00
 position: "Senior Software Engineer | Utila"

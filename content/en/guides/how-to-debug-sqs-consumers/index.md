@@ -1,7 +1,7 @@
 ---
-title: "How to Debug SQS Consumers"
-description: "Learn to debug SQS Consumers in Kubernetes with mirrord, using any IDE or the CLI for efficient, real-time troubleshooting without redeploying."
-lead: "Learn to debug SQS Consumers in Kubernetes with mirrord, using any IDE or the CLI for efficient, real-time troubleshooting without redeploying."
+title: "How to Debug SQS Consumers in Kubernetes | MetalBear"
+description: "Guide to debugging Amazon SQS consumer applications locally while connected to your cloud environment using mirrord."
+lead: "Guide to debugging Amazon SQS consumer applications locally while connected to your cloud environment using mirrord."
 url: guides/how-to-debug-sqs-consumers
 tags:
   - metalbear

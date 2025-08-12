@@ -1,7 +1,7 @@
 ---
-title: "Salt Security User Story | Nitzan Braham"
+title: "Salt Security Ships Faster & Better Code | mirrord User Stories"
 card_title: "Nitzan Braham"
-description: "With the use of mirrord and its extensions, we were able to [debug a complete workflow], significantly improving the development feedback cycle."
+description: " With of mirrord we were able to [debug a complete workflow] at Salt Security, significantly improving the development feedback cycle"
 date: 2023-07-31T06:00:00+00:00
 lastmod: 2023-07-31T06:00:00+00:00
 position: "Software Engineer | Salt Security"
