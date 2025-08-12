@@ -1,7 +1,7 @@
 ---
-title: "Supercharging Development With Dapr and mirrord"
-description: "Learn how Dapr makes cloud application development easier and how to simplify local development after adopting Dapr with Kubernetes using mirrord, improving your developer experience."
-lead: "Combining Dapr and mirrord makes developing cloud-native applications simpler and greatly improves your developer experience."
+title: "Dapr & mirrord: Developing cloud-native applications faster"
+description: "Dapr and mirrord make developing cloud-native applications simpler. Improve your developer experience with mirrord"
+lead: "Dapr and mirrord make developing cloud-native applications simpler. Improve your developer experience with mirrord"
 slug: "dapr-mirrord"
 tags:
   - DevEx

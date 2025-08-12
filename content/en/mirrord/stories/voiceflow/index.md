@@ -1,7 +1,7 @@
 ---
-title: "Voiceflow User Story | Greg O'Grady"
+title: "Voiceflow User Story: Simplifying Cloud Development with mirrord | MetalBear"
 card_title: "Greg O'Grady"
-description: "mirrord abstracts away the complexities for developers who may not have deep knowledge of Kubernetes or the networking stack"
+description: "We’ve seamlessly integrated mirrord with our internal tools, making it easy for devs to work on specific services without worrying about Kubernetes complexities."
 date: 2024-11-07T06:00:00+00:00
 lastmod: 2024-11-07T06:00:00+00:00
 position: "Software Engineer | Voiceflow"

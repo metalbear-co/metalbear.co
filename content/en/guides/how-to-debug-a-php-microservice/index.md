@@ -1,7 +1,7 @@
 ---
-title: "How to Debug PHP Microservices in Kubernetes"
-description: "Learn to debug PHP microservices in Kubernetes with mirrord, using PHP or the CLI for efficient, real-time troubleshooting without redeploying."
-lead: "Learn to debug PHP microservices in Kubernetes with mirrord, using PHP or the CLI for efficient, real-time troubleshooting without redeploying."
+title: "How to Debug PHP Microservices Faster and Better | MetalBear"
+description: "Step-by-step guide to debug PHP microservices by running local code connected directly to Kubernetes clusters using mirrord"
+lead: "Step-by-step guide to debug PHP microservices by running local code connected directly to Kubernetes clusters using mirrord"
 url:  guides/how-to-debug-a-php-microservice
 tags:
   - metalbear

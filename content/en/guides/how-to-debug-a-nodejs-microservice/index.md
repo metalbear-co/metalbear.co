@@ -1,7 +1,7 @@
 ---
-title: "How to Debug Node.js Microservices in Kubernetes"
-description: "Learn to debug Node.js microservices in Kubernetes with mirrord, using Node.js or the CLI for efficient, real-time troubleshooting without redeploying."
-lead: "Learn to debug Node.js microservices in Kubernetes with mirrord, using Node.js or the CLI for efficient, real-time troubleshooting without redeploying."
+title: "Debug a Node.js Microservice in Kubernetes | MetalBear"
+description: "Debug Node.js microservices in Kubernetes with mirrord, using Node.js or the CLI for efficient, real-time troubleshooting without redeploying."
+lead: "Debug Node.js microservices in Kubernetes with mirrord, using Node.js or the CLI for efficient, real-time troubleshooting without redeploying."
 url:  guides/how-to-debug-a-nodejs-microservice
 tags:
   - metalbear

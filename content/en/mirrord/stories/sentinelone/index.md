@@ -1,5 +1,5 @@
 ---
-title: "SentinelOne User Story | Piotr Szczepański"
+title: "SentinelOne uses mirrord to Speed Up Debugging | mirrord User Stories"
 card_title: "Piotr Szczepański"
 description: "Instead of asking every developer to create and fill a local environment, we have a single large remote one that is used by everyone."
 date: 2023-07-31T06:00:00+00:00

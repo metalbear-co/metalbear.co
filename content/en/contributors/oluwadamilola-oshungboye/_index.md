@@ -1,6 +1,6 @@
 ---
-title: "Oluwadamilola Oshungboye"
-description: "Software Engineer and Technical writer"
+title: "Oluwadamilola Oshungboye | mirrord Contributor Profile | MetalBear"
+description: "Oluwadamilola Oshungboye, technical writer at MetalBear. Tutorials, Kubernetes insights, and development tips."
 draft: false
 images: ["profile.png"]
 linkedin: "https://www.linkedin.com/in/oluwadamilolaoshungboye"

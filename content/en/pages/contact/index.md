@@ -1,6 +1,6 @@
 ---
-title: "Contact Us | mirrord by MetalBear"
-description: "Send us a message about mirrord, schedule a demo, or join our Slack. Direct technical support from the team behind mirrord by MetalBear."
+title: "Contact MetalBear | Get Support or Book a Demo | MetalBear"
+description: "Contact the mirrord team at MetalBear. Ask questions, request support, or book a live demo to see how mirrord can improve your workflow."
 slug: contact
 layout: contact
 ---

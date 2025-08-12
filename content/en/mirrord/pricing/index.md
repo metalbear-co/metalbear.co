@@ -1,6 +1,6 @@
 ---
-title: Pricing
-description: mirrord for Teams plans and pricing
+title: Pmirrord Pricing | Open Source Available | MetalBearricing
+description: mirrord pricing for teams and enterprises. Start for free and scale up to advanced features like concurrent usage in the same cluster.
 slug: pricing
 questions:
   - title: "How are seats calculated?"

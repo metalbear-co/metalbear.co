@@ -1,7 +1,7 @@
 ---
-title: "Couldn’t make it to KubeCon EU 2025? Here’s what you missed and why it matters"
-description: "A summary of our experience from KubeCon Europe 2025 in London"
-lead: "A summary of our experience from KubeCon Europe 2025 in London"
+title: "KubeCon EU 2025 Highlights & Trends | MetalBear Blog | MetalBear"
+description: "DevEx trends, AI in Kubernetes, and how mirrord is helping teams ship code faster and better. Full KubeCon EU 2025 recap from the MetalBear team"
+lead: "DevEx trends, AI in Kubernetes, and how mirrord is helping teams ship code faster and better. Full KubeCon EU 2025 recap from the MetalBear team"
 tags:
   - CNCF
   - KubeCon

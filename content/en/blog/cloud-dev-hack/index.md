@@ -1,7 +1,7 @@
 ---
-title: "A Cloud Dev Hack: Connecting Local Code to Remote Clusters"
-description: "Learn how to run local code like it's inside your Kubernetes cluster. This guide shows you how to connect, debug, and test cloud-native apps."
-lead: "Cloud-native development is messy, but your workflow doesn’t have to be. This guide shows how to connect local code to your Kubernetes cluster so you can test, debug, and iterate without the usual slowdown."
+title: "A Cloud Dev Hack: Connect Local Code to Remote Clusters | MetalBear Blog"
+description: "Learn how to run local code like it's inside your Kubernetes cluster. This guide shows you how to connect, debug, and test cloud-native apps"
+lead: "Learn how to run local code like it's inside your Kubernetes cluster. This guide shows you how to connect, debug, and test cloud-native apps"
 slug: "cloud-dev-hack"
 tags:
   - DevX
