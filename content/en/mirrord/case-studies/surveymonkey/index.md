@@ -7,12 +7,12 @@ date: 2025-08-08T06:00:00+00:00
 draft: false
 weight: 10
 feed:
-  title: "How SurveyMonkey Doubled Developer Velocity with mirrord"
+  title: "How SurveyMonkey doubled developer velocity with mirrord"
   logo: "demo-surveymonkey.png"
   quote: >
       “We've reduced the time from when an engineer builds something to when it's deployed - because when they test locally, it is a true approximation of our production environment.”
 header:
-  title: 'How SurveyMonkey Doubled Developer Velocity with mirrord'
+  title: 'How SurveyMonkey <span class="text-primary">doubled developer velocity<span class="text-primary"> with mirrord'
   description: "With mirrord, SurveyMonkey cut development cycles in half, shipped features faster, improved code quality, and reduced onboarding time from days to hours."
   company: SurveyMonkey is a leading global survey platform, trusted by millions of organizations and individuals to help them uncover insights about their customers, employees, and prospects.
   site: https://surveymonkey.com/
