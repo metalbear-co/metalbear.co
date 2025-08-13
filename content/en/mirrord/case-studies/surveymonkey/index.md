@@ -22,7 +22,7 @@ header:
 story:
   content: We've reduced the time from when an engineer builds something to when it's deployed - because when they test locally, it is a true approximation of our production environment.
   image: craik-pyke.png
-  name: Craig Pyke
+  name: Craik Pyke
   position: VP of Infrastructure and Security | SurveyMonkey
 ---
 
