@@ -4,7 +4,7 @@
 title = "MetalBear 🐻"
 titleSeparator = "|"
 titleAddition = "Creators of mirrord"
-description = "Build cloud-native apps better and faster with mirrord. Run local code in your Kubernetes cluster — no deploying needed."
+description = "Collection of advanced guides for cloud native developers who want to spend more time coding not waiting for CI"
 
 ## Documentation
 # docsVersion = "0.3"

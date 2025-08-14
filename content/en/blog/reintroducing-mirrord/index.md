@@ -1,7 +1,7 @@
 ---
-title: "(Re)Introducing mirrord"
-description: "The War on the Long Dev Loop"
-lead: "The War on the Long Dev Loop"
+title: "Reintroducing mirrord | Local Kubernetes Dev | Metal Bear"
+description: "The new features and workflow improvements in mirrord that make local Kubernetes development faster and more intuitive than ever."
+lead: "The new features and workflow improvements in mirrord that make local Kubernetes development faster and more intuitive than ever."
 tags:
   - metalbear
   - mirrord

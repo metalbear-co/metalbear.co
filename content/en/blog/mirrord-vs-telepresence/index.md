@@ -1,7 +1,7 @@
 ---
-title: "mirrord as an alternative to Telepresence"
-description: "A comparison between mirrord and Telepresence"
-lead: "A comparison between mirrord and Telepresence"
+title: "mirrord or Telepresence | MetalBear"
+description: "mirrord vs Telepresence. Learn why developers choose mirrord. No more compatibility issues, sluggish performance, or complex setup. "
+lead: "mirrord or Telepresence | MetalBear"
 tags:
   - Kubernetes
   - microservices

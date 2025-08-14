@@ -1,7 +1,7 @@
 ---
-title: "How to Debug Ruby Microservices in Kubernetes"
-description: "Learn to debug Ruby microservices in Kubernetes with mirrord, using RubyMine IDE or the CLI for efficient, real-time troubleshooting without redeploying."
-lead: "Learn to debug Ruby microservices in Kubernetes with mirrord, using RubyMine IDE or the CLI for efficient, real-time troubleshooting without redeploying."
+title: "Debug Ruby Microservice in Kubernetes with mirrord | MetalBear"
+description: "Debug Ruby microservices in Kubernetes using mirrord. Skip rebuilds to test locally with real cluster context."
+lead: "Debug Ruby microservices in Kubernetes using mirrord. Skip rebuilds to test locally with real cluster context."
 url:  guides/how-to-debug-a-ruby-microservice
 tags:
   - metalbear

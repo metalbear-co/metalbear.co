@@ -1,7 +1,7 @@
 ---
-title: "mirrord Case Study: Colab"
-description: "Colab made development faster, onboarding easier, and developers happier with mirrord. Read the the full story — and try mirrord free."
-lead: "Colab made development faster, onboarding easier, and developers happier with mirrord. Read the the full story — and try mirrord free."
+title: "Colab Case Study: Reducing dev cycle time with mirrord | MetalBear"
+description: "CoLab cut the time to get changes running in the cloud from over 15 minutes down to 10 seconds with mirrord"
+lead: "CoLab cut the time to get changes running in the cloud from over 15 minutes down to 10 seconds with mirrord"
 url:  mirrord/case-study/colab
 date: 2025-04-21T06:00:00+00:00
 draft: false

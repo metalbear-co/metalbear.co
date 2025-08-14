@@ -1,7 +1,7 @@
 ---
-title: "VMWare User Story | Shani Sahar Kaneti"
+title: "VMware User Story: Speeding up development with mirrord | MetalBear"
 card_title: "Shani Sahar Kaneti"
-description: "Debugging a service became much faster and easier."
+description: "VMware accelerates cloud native development and debugging by using mirrord to connect local code to Kubernetes cluster."
 date: 2023-07-31T06:00:00+00:00
 lastmod: 2023-07-31T06:00:00+00:00
 position: "Backend Developer | VMware"

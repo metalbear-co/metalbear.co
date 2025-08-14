@@ -1,7 +1,7 @@
 ---
-title : "MetalBear 🐻 | Creators of mirrord"
-description: "Build cloud-native apps better and faster with mirrord. Run local code in your Kubernetes cluster — no deploying needed."
-lead: "Build cloud-native apps better and faster with mirrord. Run local code in your Kubernetes cluster — no deploying needed."
+title : "mirrord Guides | How to Debug Microservices in Kubernetes | MetalBear "
+description: "mirrord guides to learn how to debug microservices in any language—Go, Java, Node.js, PHP, and more—all in the context of your Kubernetes cluster."
+lead: "mirrord guides to learn how to debug microservices in any language—Go, Java, Node.js, PHP, and more—all in the context of your Kubernetes cluster."
 date: 2022-05-12T16:35:10.183+0300
 lastmod: 2022-05-12T16:35:10.183+0300
 sections:

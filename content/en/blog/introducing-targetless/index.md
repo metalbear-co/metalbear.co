@@ -1,6 +1,6 @@
 ---
-title: "Easy K8S Connectivity for Local Utils"
-description: "A short introduction to the new targetless mode of mirrord, explaining its main use-cases."
+title: "Easy K8s Connectivity for Local Utilities | MetalBear Blog"
+description: "mirrord's targetless mode enables seamless local development with Kubernetes. Access cluster-internal services and external endpoints effortlessly."
 lead: "Introducing the new targetless mode for mirrord"
 tags:
   - Kubernetes

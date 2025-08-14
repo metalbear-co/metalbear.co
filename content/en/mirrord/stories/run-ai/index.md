@@ -1,7 +1,7 @@
 ---
-title: "Run:ai User Story | Guy Shaibi"
+title: "Run:AI Scales Dev with mirrord | mirrord User Stories"
 card_title: "Guy Shaibi"
-description: "mirrord made development faster and much more enjoyable."
+description: "See how Run:AI uses mirrord to make development faster and much more enjoyable"
 date: 2023-07-31T06:00:00+00:00
 lastmod: 2023-07-31T06:00:00+00:00
 position: "Software Developer | Run:ai"

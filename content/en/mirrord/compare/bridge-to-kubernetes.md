@@ -1,6 +1,6 @@
 ---
-title: Looking for Bridge to Kubernetes alternatives? Try mirrord
-description: Find an easy-to-migrate solution with mirrord, offering all Bridge to Kubernetes features (and more) to keep your cloud development loop tight and efficient
+title: "mirrord or Bridge to Kubernetes | MetalBear"
+description: "Compare mirrord to Bridge to Kubernetes. mirrord offers easier setup, full control, and better compatibility."
 url: /mirrord/compare/bridge-to-kubernetes
 sections:
   - bridge-to-kubernetes-hero

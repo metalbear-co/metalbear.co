@@ -1,7 +1,7 @@
 ---
-title: "Stop Deploying Just To Test!"
-description: "Learn why deploying to staging is not always necessary and how remocal testing can speed up feedback loops without sacrificing test accuracy."
-lead: "Learn why deploying to staging is not always necessary and how remocal testing can speed up feedback loops without sacrificing test accuracy."
+title: "Stop Deploying to Test | MetalBear Blog | MetalBear"
+description: "Tired of deploying to test? Learn how remocal testing can speed up feedback loops without sacrificing test accuracy."
+lead: "Tired of deploying to test? Learn how remocal testing can speed up feedback loops without sacrificing test accuracy."
 slug: "stop-deploying-to-test"
 tags:
   - DevEx
