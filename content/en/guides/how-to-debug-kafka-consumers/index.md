@@ -1,7 +1,7 @@
 ---
-title: "How to Debug Kafka Consumers"
-description: "Learn to debug Kafka Consumers in Kubernetes with mirrord, using any IDE or the CLI for efficient, real-time troubleshooting without redeploying."
-lead: "Learn to debug Kafka Consumers in Kubernetes with mirrord, using any IDE or the CLI for efficient, real-time troubleshooting without redeploying."
+title: "How to Debug Kafka Consumers in Kubernetes using mirrord | MetalBear"
+description: "Practical guide for debugging Kafka consumers with local code connected to Kubernetes clusters for faster debugging"
+lead: "Practical guide for debugging Kafka consumers with local code connected to Kubernetes clusters for faster debugging"
 url: guides/how-to-debug-kafka-consumers
 tags:
   - metalbear

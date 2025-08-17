@@ -1,6 +1,6 @@
 ---
 title: "Approaches in Cloud Development Ergonomics"
-description: "Where we discuss the ways modern devtool companies are trying to make life easier for cloud developers."
+description: "Strategies to enhance cloud development workflows. mirrord enables seamless integration between local and cloud environments for efficient development."
 lead: "Where we discuss the ways modern devtool companies are trying to make life easier for cloud developers."
 tags:
   - microservices

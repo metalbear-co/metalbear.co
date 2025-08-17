@@ -1,7 +1,7 @@
 ---
-title: "How to Debug Kotlin Microservices in Kubernetes"
-description: "Learn to debug Kotlin microservices in Kubernetes with mirrord, using IntelliJ IDEA IDE or the mirrord CLI for efficient, real-time troubleshooting without redeploying."
-lead: "Learn to debug Kotlin microservices in Kubernetes with mirrord, using IntelliJ IDEA IDE or the mirrord CLI for efficient, real-time troubleshooting without redeploying."
+title: "Debug Kotlin Microservices in Kubernetes | MetalBear"
+description: "Debug Kotlin microservices locally in Kubernetes using mirrord. Skip deployments and speed up your dev loop."
+lead: "Debug Kotlin microservices locally in Kubernetes using mirrord. Skip deployments and speed up your dev loop."
 url:  guides/how-to-debug-a-kotlin-microservice
 tags:
   - metalbear
