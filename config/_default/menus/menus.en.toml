@@ -72,6 +72,11 @@ name = "Careers - we’re hiring!"
 weight = 50
 url = "/careers/"
 
+[[footer_left]]
+name = "Legal"
+weight = 60
+url = "/legal/"
+
 [[footer_center]]
 name = "Blog"
 weight = 10
