@@ -162,7 +162,7 @@ button#doks-versions {
   }
 
   .navbar-expand-lg .offcanvas {
-    padding-left: 60px;
+    padding-left: 40px;
   }
 }
 
@@ -682,5 +682,51 @@ button#doks-versions {
 @include media-breakpoint-up(xxl) {
   .dropdown-menu-main {
     left: 28px;
+  }
+}
+
+.header-icon__btn {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1024px) {
+  .header-icon__btn {
+    margin-right: 32px;
+    margin-bottom: 0;
+  }
+}
+
+.header-icon__btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.header-icon__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-icon__link span {
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  line-height: 1;
+}
+
+@media (min-width: 1024px) {
+  .navbar-container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1292px) {
+  .navbar-container {
+    max-width: 1292px;
   }
 }
