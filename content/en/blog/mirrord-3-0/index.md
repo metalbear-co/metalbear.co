@@ -1,6 +1,6 @@
 ---
 title: "mirrord 3.0 | Connect Local Code to Kubernetes Pods"
-description: "Local apps with full Kubernetes context using mirrord 3.0. Open-source tool for mirroring traffic, files & env vars without deploying code."
+description: "Run local applications with full Kubernetes context using mirrord 3.0. Open-source tool for mirroring traffic, files, and environment variables—no deployment required."
 lead: "Our biggest release yet is now available for download"
 tags:
   - metalbear
