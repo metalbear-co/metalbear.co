@@ -1,6 +1,6 @@
 ---
 title: "Hooking Go from Rust Guide | MetalBear"
-description: "mirrord uses Rust to hook Go's syscall functions with trampolines and assembly. Deep dive into Go runtime interop techniques and Go ABI quirks."
+description: "Hitchhiker’s Guide to the Go-laxy. A quick dive into the Go Runtime and switching from the Go stack to the system stack."
 lead: "mirrord uses Rust to hook Go's syscall functions with trampolines and assembly. Deep dive into Go runtime interop techniques and Go ABI quirks."
 tags:
   - rust
