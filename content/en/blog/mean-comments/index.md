@@ -1,6 +1,6 @@
 ---
 title: "MetalBear Reads Mean Comments"
-description: "Sometimes our blog posts about mirrord hit a nerve. Here's us responding to the mean comments on one such recent post."
+description: "We address some recent criticism with gravity and poise."
 lead: "Sometimes our blog posts about mirrord hit a nerve. Here's us responding to the mean comments on one such recent post."
 slug: "mean-comments"
 tags:
@@ -23,7 +23,11 @@ contributors:
   - "Eyal Bukchin"
 ---
 
-Here at MetalBear we like to write, and one thing we like to write about in particular is mirrord. We think it’s a great tool that can bring lots of enterprise value, plus there’s an open-source version that’s totally free. Our blog posts are generally well received, but sometimes one of them trips some sort of karmic landmine and we wake up in the European AM to find the comment section awash with bitter criticism. This usually falls into one or more of these categories:
+Here at MetalBear we like to write, and one thing we like to write about in particular is mirrord. We think it’s a great tool that can bring lots of enterprise value, plus there’s an open-source version that’s totally free. Our blog posts are generally well received, but sometimes one of them trips some sort of karmic landmine and we wake up in the European AM to find the comment section awash with bitter criticism.
+
+{{<figure src="thumbnail.png" alt="MetalBear mascot getting sad reading mean comments." height="100%" width="100%">}}
+
+This usually falls into one or more of these categories:
 
 - What mirrord does is unnecessary
 - What mirrord does is necessary, but I can easily build it myself
