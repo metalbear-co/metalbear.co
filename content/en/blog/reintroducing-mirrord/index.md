@@ -1,7 +1,7 @@
 ---
-title: "Reintroducing mirrord | Local Kubernetes Dev | Metal Bear"
-description: "The new features and workflow improvements in mirrord that make local Kubernetes development faster and more intuitive than ever."
-lead: "The new features and workflow improvements in mirrord that make local Kubernetes development faster and more intuitive than ever."
+title: "(Re)introducing mirrord | Local Kubernetes Dev | MetalBear Blog"
+description: "The new features and workflow improvements in mirrord that make local Kubernetes development faster and more intuitive."
+lead: "The new features and workflow improvements in mirrord that make local Kubernetes development faster and more intuitive."
 tags:
   - metalbear
   - mirrord
