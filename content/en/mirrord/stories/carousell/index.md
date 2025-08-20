@@ -1,7 +1,7 @@
 ---
-title: "Carousell User Story: Easier & Faster Debugging with mirrord | MetalBear"
+title: "Carousell Speeds Up Debugging with mirrord | mirrord User Stories"
 card_title: "Praveen Sanap"
-description: "Debugging a process locally, using familiar tools like IntelliJ, has made it much easier to handle egress traffic to remote env. Read Carousell's story."
+description: "Learn how Carousell uses mirrord to debug processes locally with tools like IntelliJ, streamlining development and handling remote traffic effortlessly."
 date: 2025-01-20T06:00:00+00:00
 lastmod: 2025-01-20T06:00:00+00:00
 position: "Software Engineer | Carousell"
