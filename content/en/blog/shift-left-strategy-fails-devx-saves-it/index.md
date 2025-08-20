@@ -1,5 +1,5 @@
 ---
-title: "Why Your Shift-Left Strategy Fails | MetalBear Blog | MetalBear"
+title: "Why Your Shift-Left Strategy Fails | MetalBear Blog "
 description: "Most teams aim for shift-left testing but hit roadblocks. Learn why dev environments slow you down and how you can make early testing possible."
 lead: "Most teams aim for shift-left testing but hit roadblocks. Learn why dev environments slow you down and how you can make early testing possible."
 slug: "shift-left-strategy-fails-devx-saves-it"
