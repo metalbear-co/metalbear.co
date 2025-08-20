@@ -1,5 +1,5 @@
 ---
-title: "mirrord or Bridge to Kubernetes | MetalBear"
+title: "Looking for Bridge to Kubernetes alternatives? Try mirrord | MetalBear"
 description: "Compare mirrord to Bridge to Kubernetes. mirrord offers easier setup, full control, and better compatibility."
 url: /mirrord/compare/bridge-to-kubernetes
 sections:
@@ -10,3 +10,4 @@ sections:
   - bridge-to-kubernetes-cta
 layout: compare
 ---
+
