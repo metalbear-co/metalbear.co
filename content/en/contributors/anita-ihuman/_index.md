@@ -1,6 +1,6 @@
 ---
-title: "Anita Ihuman | Developer Advocate at Metal Bear"
-description: "Anita Ihuman, Developer Advocate at MetalBear, championing platform engineering and cloud-native developer experiences."
+title: "Anita Ihuman | Developer Advocate at MetalBear"
+description: "Explore blogs and insights by Anita Ihuman, Developer Advocate at MetalBear, covering developer tools and best practices."
 date: 2024-02-22T06:00:00+00:00
 lastmod: 2024-02-22T06:00:00+00:00
 draft: false
