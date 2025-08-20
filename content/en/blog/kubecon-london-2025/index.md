@@ -1,5 +1,5 @@
 ---
-title: "KubeCon EU 2025 Highlights & Trends | MetalBear Blog | MetalBear"
+title: "KubeCon EU 2025 Highlights & Trends | MetalBear Blog"
 description: "DevEx trends, AI in Kubernetes, and how mirrord is helping teams ship code faster and better. Full KubeCon EU 2025 recap from the MetalBear team"
 lead: "DevEx trends, AI in Kubernetes, and how mirrord is helping teams ship code faster and better. Full KubeCon EU 2025 recap from the MetalBear team"
 tags:
