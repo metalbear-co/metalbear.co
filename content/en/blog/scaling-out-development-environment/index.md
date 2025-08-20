@@ -1,6 +1,6 @@
 ---
-title: "Scalable Developer Environments Strategy | Metal Bear"
-description: "Best practices for scaling dev environments using microservices, automation and environment parity. Make your developer workflow faster and reliable."
+title: "Scaling Out Development Environments | MetalBear Blog"
+description: "Learn how to scale development environments using Kubernetes, dev containers, and mirrord to improve dev-prod parity and speed up your workflow."
 lead: "Using mirrord to close the gap between Dev & Prod"
 tags:
   - metalbear
