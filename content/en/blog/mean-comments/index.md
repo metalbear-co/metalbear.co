@@ -56,15 +56,21 @@ So we’re not saying you should never deploy your code to staging - we’re say
 
 **Counterpoint:**  100% agree, which is why the [stated purpose](https://metalbear.co/mirrord/docs/overview/introduction#why) of mirrord is to let you test in staging more, not less. Instead of going through 15 SDLC steps every time you want to test a little piece of code in staging, mirrord lets you do it as the first step, from your IDE, and it takes five seconds.
 
+<br/>
+
 **Comment**: “This just seems like an ad for the mirrord service.”
 
 **Counterpoint**: It is! We think mirrord is great. 
+
+<br/>
 
 **Comment**: “Why can’t I just spin up a Docker container with the staging ENV and use ngrok to tunnel the traffic? Your service feels the same.”
 
 **Counterpoint**: This is indeed kind of similar to the free OSS version of mirrord. But it’s free, so why would you go through all that trouble instead of just using mirrord? Plus you get to run your code natively instead of messing around with Dockerization.
 
 Of course there's also mirrord for Teams, which lets your entire organization develop continuously and concurrently against the same staging environment without stepping on each other's toes (read more [here](https://metalbear.co/mirrord/docs/overview/teams)). 
+
+<br/>
 
 **Comment:** “Never use the word remocal again lmao.”
 
