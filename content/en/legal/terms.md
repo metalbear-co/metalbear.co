@@ -1,6 +1,6 @@
 ---
-title: "Terms of Service | MetalBear | mirrord Software License"
-description: "MetalBear’s Terms of Service covering subscription rights, account security, and prohibited actions for safe and compliant mirrord usage."
+title: "Terms of Service | MetalBear | mirrord License"
+description: "Review MetalBear’s Terms of Service to understand your subscription rights, account responsibilities, and rules for safe, compliant use of mirrord."
 lead: "MetalBear’s Terms of Service covering subscription rights, account security, and prohibited actions for safe and compliant mirrord usage."
 tags:
   - legal
