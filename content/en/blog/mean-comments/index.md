@@ -50,9 +50,13 @@ BUT: running your code locally is quick. Running your code locally **with mirror
 
 So we’re not saying you should never deploy your code to staging - we’re saying test it with mirrord first, so when you finally do deploy to staging, you only have to do it once.
 
+<br/>
+
 **Comment:** “Testing in staging is an integral part of software development that you can’t simply replace with some service.”
 
 **Counterpoint:**  100% agree, which is why the [stated purpose](https://metalbear.co/mirrord/docs/overview/introduction#why) of mirrord is to let you test in staging more, not less. Instead of going through 15 SDLC steps every time you want to test a little piece of code in staging, mirrord lets you do it as the first step, from your IDE, and it takes five seconds.
+
+{{<br/>}}
 
 **Comment**: “This just seems like an ad for the mirrord service.”
 
@@ -74,4 +78,4 @@ We originally wanted people to use mirrord to debug using live traffic for produ
 
 Still, to this day mirrord remains weirdly contentious. We think it's because people's knee-jerk reaction to the real remocal workflow (= shift staging all the way left) is that it just wouldn't work. But, shockingly, it does.
 
-Still think we're wrong? Inconvenient, because we haven't added a comments section to our blog. But this is probably going to be posted on our socials, so let us know what you think over there, and if you're mean enough maybe we'll feature you on the next edition of... MetalBear Reads Mean Comments.
+Still think we're wrong? Inconvenient, because we haven't added a comments section to our blog. But this is probably going to be posted on our socials, so let us know what you think over there, and if you're mean enough maybe we'll feature you on the next edition of... **MetalBear Reads Mean Comments**.
