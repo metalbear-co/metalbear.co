@@ -1,7 +1,7 @@
 ---
-title: "Flexport User Story: Efficient Development with mirrord | MetalBear"
+title: "Flexport Improves Development with mirrord | mirrord User Stories"
 card_title: "Vergil Zhao"
-description: "Learn how mirrord has significantly improved Flexport's development experience, making the team happier and more efficient."
+description: "Flexport uses mirrord to speed up development, simplify remote and local service connections, and boost team efficiency."
 date: 2023-08-30T06:00:00+00:00
 lastmod: 2023-07-30T06:00:00+00:00
 position: "Senior Software Engineer | Flexport"
