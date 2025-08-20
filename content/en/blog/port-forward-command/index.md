@@ -1,7 +1,7 @@
 ---
-title: "mirrord Port Forwarding Guide | Beyond kubectl | Metal Bear"
-description: "mirrord’s powerful port-forwarding features that enable flexible, multi-route traffic forwarding with inherited pod permissions for Kubernetes development."
-lead: "mirrord’s powerful port-forwarding features that enable flexible, multi-route traffic forwarding with inherited pod permissions for Kubernetes development."
+title: "Port Forwarding with mirrord | MetalBear Blog "
+description: "Forward traffic to and from your Kubernetes pods effortlessly with mirrord, using flexible multi-port routing, inherited pod permissions, and faster local development."
+lead: "Forward traffic to and from your Kubernetes pods effortlessly with mirrord, using flexible multi-port routing, inherited pod permissions, and faster local development."
 tags:
   - open-source
   - devtools
