@@ -1,5 +1,5 @@
 ---
-title: "Inspecting Service Traffic with mirrord dump  | MetalBear Blog | MetalBear"
+title: "Inspecting Service Traffic with mirrord dump  | MetalBear Blog "
 description: "Overview of mirrord dump feature, why behind it, common use cases, and a peek under the hood at how it works."
 lead: "mirrord dump lets you inspect incoming TCP traffic to a Kubernetes resource, helping you troubleshoot and understand your application behavior."
 slug: "mirrord-dump"
