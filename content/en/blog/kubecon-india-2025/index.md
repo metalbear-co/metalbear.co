@@ -1,5 +1,5 @@
 ---
-title: "mirrord at KubeCon India 2025 | MetalBear Blog | MetalBear"
+title: "mirrord at KubeCon India 2025 | MetalBear Blog"
 description: "KubeCon India 2025 with mirrord. A list of talks we're excited about, from AI at PepsiCo to CNCF community stories and security panels."
 lead: "KubeCon India 2025 with mirrord. A list of talks we're excited about, from AI at PepsiCo to CNCF community stories and security panels."
 slug: "kubecon-india-2025"
