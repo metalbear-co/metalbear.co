@@ -1,5 +1,5 @@
 ---
-title: "Ship Cloud-Native Apps Faster with mirrord | MetalBear Blog | MetalBear"
+title: "Ship Cloud-Native Apps Faster with mirrord | MetalBear Blog"
 description: "mirrord shortens your dev loop by letting you run code locally in the context of your Kubernetes environments—no CI, no deploy."
 lead: "mirrord shortens your dev loop by letting you run code locally in the context of your Kubernetes environments—no CI, no deploy."
 tags:
