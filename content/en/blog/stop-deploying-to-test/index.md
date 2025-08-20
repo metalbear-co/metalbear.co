@@ -1,5 +1,5 @@
 ---
-title: "Stop Deploying to Test | MetalBear Blog | MetalBear"
+title: "Stop Deploying to Test | MetalBear Blog"
 description: "Tired of deploying to test? Learn how remocal testing can speed up feedback loops without sacrificing test accuracy."
 lead: "Tired of deploying to test? Learn how remocal testing can speed up feedback loops without sacrificing test accuracy."
 slug: "stop-deploying-to-test"
