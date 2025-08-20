@@ -1,5 +1,5 @@
 ---
-title: Pmirrord Pricing | Open Source Available | MetalBearricing
+title: mirrord Pricing | MetalBear
 description: mirrord pricing for teams and enterprises. Start for free and scale up to advanced features like concurrent usage in the same cluster.
 slug: pricing
 questions:
@@ -193,3 +193,4 @@ sections:
         Enterprise support is included in the mirrord for Teams Enterprise plan. As part of our enterprise support, you’ll get our usual support channels as well as a dedicated Microsoft Teams/Slack/Discord channel.
 - template: pricing-cta
 ---
+
