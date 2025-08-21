@@ -1,5 +1,5 @@
 ---
-title: "Oluwadamilola Oshungboye | MetalBear Contributor Profile | MetalBear"
+title: "Oluwadamilola Oshungboye"
 description: "Oluwadamilola Oshungboye, technical writer. Tutorials, Kubernetes insights, and development tips."
 draft: false
 images: ["profile.png"]
