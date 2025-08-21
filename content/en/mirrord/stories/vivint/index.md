@@ -1,5 +1,5 @@
 ---
-title: "Vivint User Story: Efficiently Debugging Go and Python microservices | MetalBear"
+title: "Vivint Simplified Working with Go and Python Microservices | mirrord User Stories"
 card_title: "Brooke Weaver"
 description: "Learn why Vivint chose mirrord over Telepresence.'mirrord works with almost no configuration, but it allows for a great deal of customization should you want it.'"
 date: 2023-12-15T06:00:00+00:00
