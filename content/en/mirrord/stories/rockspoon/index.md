@@ -1,5 +1,5 @@
 ---
-title: "Rockspoon User Story: Accelerating Dev with mirrord | MetalBear"
+title: "Rockspoon Accelerated Development with mirrord | mirrord User Stories"
 card_title: "Leonard Melo"
 description: "Rockspoon boosts development efficiency by debugging issues and testing local changes in their shared staging environment without impacting other developers."
 date: 2023-07-31T06:00:00+00:00
