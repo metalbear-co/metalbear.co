@@ -1,5 +1,5 @@
 ---
-title: "Lawrence Franklin | MetalBear Contributor Profile | MetalBear"
+title: "Lawrence Franklin"
 description: "Lawrence Franklin, contributor at MetalBear. Tutorials, DevEx insights, and debugging tips."
 draft: false
 images: ["profile.png"]
