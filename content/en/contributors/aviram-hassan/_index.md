@@ -1,5 +1,5 @@
 ---
-title: "Aviram Hassan | CEO & Co-Founder of MetalBear"
+title: "Aviram Hassan"
 description: "Technical content by Aviram Hassan, CEO and Co-Founder of MetalBear. Topics include mirrord, Kubernetes, and cloud-native development."
 date: 2022-05-12T08:50:45+00:00
 lastmod: 2022-05-12T08:50:45+00:00
