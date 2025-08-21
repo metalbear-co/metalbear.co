@@ -1,5 +1,5 @@
 ---
-title: "Savvy User Story: Improving Developer Experience with mirrord | MetalBear"
+title: "Savvy Improved Developer Experience with mirrord | mirrord User Stories"
 card_title: "Danny Rehelis"
 description: "Out-of-the-box integration experience with our development containers setup directly from VSCode, all with a push of a button. Read Savvy's use case."
 date: 2023-09-19T06:00:00+00:00
