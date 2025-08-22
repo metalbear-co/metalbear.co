@@ -1,5 +1,5 @@
 ---
-title: "Oyedele Temitope Taiwo | MetalBear Contributor Profile | MetalBear"
+title: "Oyedele Temitope Taiwo"
 description: "Oyedele Temitope Taiwo is a software developer and is a technical writer for MetalBear, focused on cloud native tools."
 draft: false
 images: ["profile.png"]
