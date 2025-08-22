@@ -1,7 +1,7 @@
 ---
 title: "Utila Speeds Up Debugging with mirrord | mirrord User Stories"
 card_title: "Roman Yarinovsky"
-description: "mirrord seamlessly integrating into our current environment and allowing us to debug remotely is a game changer for us. Read the full story."
+description: "mirrord seamlessly integrating into our current environment and allowing us to debug remotely is a game changer for us."
 date: 2023-09-19T06:00:00+00:00
 lastmod: 2023-09-19T06:00:00+00:00
 position: "Senior Software Engineer | Utila"
