@@ -13,7 +13,8 @@ feed:
       “Just imagine—you can immerse yourself in the cluster. You become the application. And everything around you just works.”
 header:
   title: 'How zooplus engineers work up to <span class="text-primary">20% faster<span class="text-primary"> with mirrord'
-  description: "Engineers at zooplus save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters"
+  description: "Engineers at zooplus save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters."
+
   company: Zooplus is the leading European online retailer for pet supplies, selling a wide range of pet food, accessories, and other products for pets like cats, dogs, and small animals. 
   site: https://www.zooplus.com/
   logo: page-demo-zooplus.png
