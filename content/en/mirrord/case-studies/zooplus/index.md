@@ -62,7 +62,8 @@ That’s when they discovered mirrord.
 mirrord let developers run local code in the context of their Kubernetes cluster, so they could connect to shared systems like Keycloak, validate access, and test end-to-end flows without mocks or deploy cycles.
 
 
-> “mirrord was pretty fast the favorite candidate because it was super easy to handle and it fitted exactly for the purpose. [...] It was just the right fit for the case we had and very simple to adopt.”
+> “mirrord was pretty fast the favorite candidate because it was super easy to handle and it fitted exactly for the purpose. It was just the right fit for the case we had and very simple to adopt.”
+
 
 
 ## The results: Faster feedback, higher-quality code, and more focused engineering time
