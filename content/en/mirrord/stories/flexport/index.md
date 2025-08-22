@@ -1,7 +1,7 @@
 ---
 title: "Flexport Improves Development with mirrord | mirrord User Stories"
 card_title: "Vergil Zhao"
-description: "Flexport uses mirrord to speed up development, simplify remote and local service connections, and boost team efficiency."
+description: "[mirrord] has significantly improved our development experience, making the team happier and more efficient."
 date: 2023-08-30T06:00:00+00:00
 lastmod: 2023-07-30T06:00:00+00:00
 position: "Senior Software Engineer | Flexport"
