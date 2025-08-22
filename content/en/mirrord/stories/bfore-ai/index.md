@@ -1,7 +1,7 @@
 ---
 title: "Bfore.AI Boosts Dev Productivity with mirrord | mirrord User Stories"
 card_title: "Bar Hochman"
-description: "Bfore.AI leverages mirrord to speed up development and simplify debugging. Learn how Bar Hochman and his team ship better code faster."
+description: "Configuring mirrord and using it worked like a magic."
 date: 2023-07-31T06:00:00+00:00
 lastmod: 2023-07-31T06:00:00+00:00
 position: "Development Team Lead | Bfore.Ai"
