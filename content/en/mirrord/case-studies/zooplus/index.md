@@ -5,7 +5,7 @@ lead: "zooplus engineers save up to 20% of their time daily by using mirrord to 
 url:  mirrord/case-study/zooplus
 date: 2025-08-22T06:00:00+00:00
 draft: false
-weight: 30
+weight: 10
 feed:
   title: "zooplus Engineers Work up to 20% Faster With mirrord"
   logo: "demo-zooplus.png"
