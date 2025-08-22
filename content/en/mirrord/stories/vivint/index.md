@@ -1,7 +1,7 @@
 ---
 title: "Vivint Simplified Working with Go and Python Microservices | mirrord User Stories"
 card_title: "Brooke Weaver"
-description: "Learn why Vivint chose mirrord over Telepresence.'mirrord works with almost no configuration, but it allows for a great deal of customization should you want it.'"
+description: "Then I tried mirrord and it was flawless. It does everything I liked about Telepresence but better."
 date: 2023-12-15T06:00:00+00:00
 lastmod: 2023-12-15T06:00:00+00:00
 position: "Staff Software Engineer | Vivint"
