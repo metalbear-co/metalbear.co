@@ -18,7 +18,7 @@ header:
   site: https://www.zooplus.com/
   logo: page-demo-zooplus.png
   employees: 1200+
-  using_since: To be filled
+  using_since: June 2024
 story:
   content: Just imagine—you can immerse yourself in the cluster. You become the application. And everything around you just works.
   image: thomas-schneider.png
