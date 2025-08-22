@@ -1,7 +1,7 @@
 ---
 title: "Rockspoon Accelerated Development with mirrord | mirrord User Stories"
 card_title: "Leonard Melo"
-description: "Rockspoon boosts development efficiency by debugging issues and testing local changes in their shared staging environment without impacting other developers."
+description: "We are using mirrord to debug issues and test local changes, in our shared staging environment, without impacting other developers"
 date: 2023-07-31T06:00:00+00:00
 lastmod: 2023-07-31T06:00:00+00:00
 position: "Software Engineer | RockSpoon"
