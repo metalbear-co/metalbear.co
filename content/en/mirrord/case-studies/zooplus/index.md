@@ -1,19 +1,19 @@
 ---
 title: "mirrord Case Study: zooplus"
-description: "zooplus engineers save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters"
-lead: "zooplus engineers save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters"
+description: "Engineers at zooplus save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters"
+lead: "Engineers at zooplus save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters"
 url:  mirrord/case-study/zooplus
 date: 2025-08-22T06:00:00+00:00
 draft: false
 weight: 10
 feed:
-  title: "zooplus Engineers Work up to 20% Faster With mirrord"
+  title: "How zooplus engineers work up to 20% faster with mirrord"
   logo: "demo-zooplus.png"
   quote: >
       “Just imagine—you can immerse yourself in the cluster. You become the application. And everything around you just works.”
 header:
-  title: 'How zooplus Engineers Work up to <span class="text-primary">20% Faster<span class="text-primary"> With mirrord'
-  description: "zooplus engineers save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters"
+  title: 'How zooplus engineers work up to <span class="text-primary">20% faster<span class="text-primary"> with mirrord'
+  description: "Engineers at zooplus save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters"
   company: Zooplus is the leading European online retailer for pet supplies, selling a wide range of pet food, accessories, and other products for pets like cats, dogs, and small animals. 
   site: https://www.zooplus.com/
   logo: page-demo-zooplus.png
