@@ -13,7 +13,7 @@ contributors: []
 
 ## Cookies Notice
 
-We use in our site https://metalbear.co and https://app.metalbear.co/ ("Site") cookies and similar files or technologies to automatically collect and store information about your computer, device, and Site usage, in order to improve their performance and enhance your user experience. We use the general term "cookies" in this notice to refer to these technologies and all such similar technologies that collect information automatically when you are using our Site where this notice is posted.  You can find out more about cookies and how to control them in the information below. 
+We use in our site https://metalbear.com and https://app.metalbear.com/ ("Site") cookies and similar files or technologies to automatically collect and store information about your computer, device, and Site usage, in order to improve their performance and enhance your user experience. We use the general term "cookies" in this notice to refer to these technologies and all such similar technologies that collect information automatically when you are using our Site where this notice is posted.  You can find out more about cookies and how to control them in the information below. 
 
 If you do not accept the use of these cookies, please disable them using the instructions in this cookie notice or by changing your browser settings so that cookies from this Site cannot be placed on your computer or mobile device. Important: disabling cookies on this Site may impair certain Site features.
 In this cookie notice (“Cookies Notice”), we use the term MetalBear (and "we", "us" and "our") to refer to MetalBear Tech Ltd. Our Privacy Policy is available at [here]({{< relref "privacy-policy.md" >}}).
@@ -40,9 +40,9 @@ These cookies are essential to provide you with services available through this 
 
 | Cookie name |	Source |	Expiry |	Purpose |
 | --- | --- | --- | --- |
-| fe_refresh | app.metalbear.co | 1 week | Authentication and Authorization
-| fe_device | app.metalbear.co | 1 week | Authentication and Authorization
-| fe_* | app.metalbear.co | 1 week | Authentication and Authorization
+| fe_refresh | app.metalbear.com | 1 week | Authentication and Authorization
+| fe_device | app.metalbear.com | 1 week | Authentication and Authorization
+| fe_* | app.metalbear.com | 1 week | Authentication and Authorization
 
 #### How to control or delete cookies
 You may have the right to decide whether to accept or reject cookies.  When you access our Site, you are presented with a cookie consent mechanism that allows you to accept or reject cookies that are not essential cookies.  You may also control cookies by setting your browser to turn off cookies as described further below. If you turn off cookies, web beacon and other technologies will still detect your visits to our Site; however, they will not be associated with information otherwise stored in cookies
@@ -70,4 +70,4 @@ If you would like to find out more about cookies and their use on the Internet, 
 Cookies that have been set in the past
 If you have disabled one or more Cookies, we may still use information collected from cookies prior to your disabled preference being set, however, we will stop using the disabled cookie to collect any further information. 
 Contact us
-If you have any questions or comments about this Cookies Notice, or privacy matters generally, please contact us via email at privacy@metalbear.co. 
+If you have any questions or comments about this Cookies Notice, or privacy matters generally, please contact us via email at privacy@metalbear.com. 

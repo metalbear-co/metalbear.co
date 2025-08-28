@@ -16,7 +16,7 @@ categories:
 date: 2025-07-24
 summary: >
   The mirrord extension for Cursor and Windsurf eliminates the bottleneck in AI-assisted development by letting you test AI-generated code instantly in production-like Kubernetes environments. Instead of waiting for CI pipelines and deployments, you can run your local code directly in the cluster context, accessing real environment variables, files, and services. This dramatically speeds up iteration cycles and increases confidence in AI-generated code before shipping it.
-canonicalurl: "https://metalbear.co/blog/cursor-windsurf-mirrord-extension"
+canonicalurl: "https://metalbear.com/blog/cursor-windsurf-mirrord-extension"
 draft: false
 weight: 50
 images:
@@ -138,7 +138,7 @@ But with mirrord, we can avoid all that :)
 
 ### Using mirrord to Test AI-Generated Code
 
-By default, mirrord mirrors traffic from the cluster to your local code, but the original service in the cluster continues responding to requests. Since we want to directly test our local service's response as well, we need to enable [steal mode](https://metalbear.co/mirrord/docs/using-mirrord/steal).
+By default, mirrord mirrors traffic from the cluster to your local code, but the original service in the cluster continues responding to requests. Since we want to directly test our local service's response as well, we need to enable [steal mode](https://metalbear.com/mirrord/docs/using-mirrord/steal).
 
 Edit the configuration file at `./ip-visit-counter/mirrord.json` to look like this:
 
@@ -248,4 +248,4 @@ I think you can now see how much faster you can iterate when using mirrord with 
 
 To sum up what we discussed in this blog, today’s AI-assisted dev workflows face significant bottlenecks due to slow CI pipelines and limited access to realistic testing environments. mirrord fixes these problems by letting you test AI-generated code instantly in real, production-like conditions. This dramatically speeds up development and increases your confidence in the code your AI generates.
 
-So if you’re ready to embrace the full potential of AI-assisted development, try out the mirrord extension for Cursor and Windsurf, or [book a call](https://metalbear.co/mirrord/demo/) if you’d like to learn more!
+So if you’re ready to embrace the full potential of AI-assisted development, try out the mirrord extension for Cursor and Windsurf, or [book a call](https://metalbear.com/mirrord/demo/) if you’d like to learn more!

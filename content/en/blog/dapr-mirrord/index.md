@@ -17,7 +17,7 @@ categories:
 date: 2025-07-10
 summary: >
     Dapr makes developing cloud-native apps easier, but local Kubernetes development can still be challenging. mirrord lets you quickly test your local Dapr code against the real Kubernetes environment, keeping your workflow simple and productive.
-canonicalurl: "https://metalbear.co/blog/dapr-mirrord"
+canonicalurl: "https://metalbear.com/blog/dapr-mirrord"
 draft: false
 weight: 50
 images:
@@ -26,7 +26,7 @@ contributors:
   - "Arsh Sharma"
 ---
 
-[Dapr](https://dapr.io/) (Distributed Application Runtime) is a framework designed to simplify building cloud-native applications. By abstracting tasks like service invocation, pub/sub, state management, and telemetry, Dapr significantly speeds up development. In this blog, we’ll look at what problems Dapr solves (and why you should be using it), what the local development experience (DevEx) looks like when you start using Dapr with Kubernetes, and then a demo on how you can improve that DevEx using [mirrord](https://metalbear.co/mirrord/)!
+[Dapr](https://dapr.io/) (Distributed Application Runtime) is a framework designed to simplify building cloud-native applications. By abstracting tasks like service invocation, pub/sub, state management, and telemetry, Dapr significantly speeds up development. In this blog, we’ll look at what problems Dapr solves (and why you should be using it), what the local development experience (DevEx) looks like when you start using Dapr with Kubernetes, and then a demo on how you can improve that DevEx using [mirrord](https://metalbear.com/mirrord/)!
 
 ## The Problems Dapr Solves
 
@@ -58,7 +58,7 @@ mirrord is built precisely to resolve this friction.
 
 ## Introduction to mirrord
 
-mirrord allows you to run your local code in the context of a Kubernetes cluster. It does so by letting you mirror incoming and outgoing traffic between the cluster and your local machine. It also allows your locally running code to access environment variables and other configuration from the cluster. By doing all this, mirrord makes your local process "think" it’s running in the cloud, allowing you to test it under production-like conditions. If you’d like to learn more about how mirrord works, check out [our docs](https://metalbear.co/mirrord/docs/overview/introduction/#how-it-works).
+mirrord allows you to run your local code in the context of a Kubernetes cluster. It does so by letting you mirror incoming and outgoing traffic between the cluster and your local machine. It also allows your locally running code to access environment variables and other configuration from the cluster. By doing all this, mirrord makes your local process "think" it’s running in the cloud, allowing you to test it under production-like conditions. If you’d like to learn more about how mirrord works, check out [our docs](https://metalbear.com/mirrord/docs/overview/introduction/#how-it-works).
 
 Using mirrord enables the code you write locally to interact directly with the Kubernetes deployed Dapr sidecars and other services running in the cluster. With mirrord, you can:
 
@@ -86,11 +86,11 @@ In order to follow along with this step-by-step tutorial, make sure you have the
 
 * A Kubernetes cluster (I’ll be using [k3d](https://k3d.io/stable/))  
 * [Dapr CLI](https://docs.dapr.io/getting-started/install-dapr-cli/)  
-* [mirrord Operator](https://metalbear.co/mirrord/docs/overview/quick-start/#operator) installed in the cluster  
-* [mirrord VS Code](https://metalbear.co/mirrord/docs/using-mirrord/vscode-extension/) extension installed  
+* [mirrord Operator](https://metalbear.com/mirrord/docs/overview/quick-start/#operator) installed in the cluster  
+* [mirrord VS Code](https://metalbear.com/mirrord/docs/using-mirrord/vscode-extension/) extension installed  
 * Clone the sample application we’ll be working with
 
-Note that while I’ll be using mirrord with VS Code it supports other code editors like Cursor, Windsurf, and the JetBrains IDEs as well. You can also always using the [mirrord CLI](https://metalbear.co/mirrord/docs/overview/quick-start/#cli-tool) instead of the code editor extensions.
+Note that while I’ll be using mirrord with VS Code it supports other code editors like Cursor, Windsurf, and the JetBrains IDEs as well. You can also always using the [mirrord CLI](https://metalbear.com/mirrord/docs/overview/quick-start/#cli-tool) instead of the code editor extensions.
 
 ### Create a Kubernetes Cluster
 
@@ -167,7 +167,7 @@ This will print the pod name in each log entry.
 
 ### Create a mirrord.json Config File
 
-By default, mirrord will “mirror” the traffic coming to the targeted microservice, and the original microservice running in the cluster will continue replying to requests. Since we want to test the response of our code as well (that is, see the pod name in the logs), we need to enable the [steal mode](https://metalbear.co/mirrord/docs/using-mirrord/steal/) in mirrord. We can do this by creating a simple configuration file `./.mirrord/mirrord.json`:
+By default, mirrord will “mirror” the traffic coming to the targeted microservice, and the original microservice running in the cluster will continue replying to requests. Since we want to test the response of our code as well (that is, see the pod name in the logs), we need to enable the [steal mode](https://metalbear.com/mirrord/docs/using-mirrord/steal/) in mirrord. We can do this by creating a simple configuration file `./.mirrord/mirrord.json`:
 
 ```json
 {
@@ -211,4 +211,4 @@ The pod name now appears in the logs, but the really cool part you need to pay a
 
 ## Make Cloud Development Easier With Dapr and mirrord
 
-To sum up, building cloud-native applications is hard for many different reasons, and tools like Dapr can help fix some of those frustrations. Letting Dapr abstract away the infrastructure-related configuration allows you to focus on your application. But when adopting tools like Dapr, your dev environment slowly starts drifting away from production, and you find yourself relying on CI pipelines and staging environments much more, which kills developer productivity. mirrord fixes that. Using Dapr and mirrord together allows you to focus solely on your application code while letting the two tools handle infrastructure and dev environment setup complexities. Together, they create a development experience that allows your team to ship code significantly faster than before! If you’d like to learn more about mirrord, check out our [documentation](https://metalbear.co/mirrord/docs/overview/introduction/).
+To sum up, building cloud-native applications is hard for many different reasons, and tools like Dapr can help fix some of those frustrations. Letting Dapr abstract away the infrastructure-related configuration allows you to focus on your application. But when adopting tools like Dapr, your dev environment slowly starts drifting away from production, and you find yourself relying on CI pipelines and staging environments much more, which kills developer productivity. mirrord fixes that. Using Dapr and mirrord together allows you to focus solely on your application code while letting the two tools handle infrastructure and dev environment setup complexities. Together, they create a development experience that allows your team to ship code significantly faster than before! If you’d like to learn more about mirrord, check out our [documentation](https://metalbear.com/mirrord/docs/overview/introduction/).
