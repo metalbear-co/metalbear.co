@@ -14,7 +14,7 @@ categories:
 date: 2025-08-19
 summary: >
   We address the critical comments we've received about mirrord, explaining how it helps developers test using staging environments more efficiently without replacing the need for proper staging deployments.
-canonicalurl: "https://metalbear.co/blog/mean-comments"
+canonicalurl: "https://metalbear.com/blog/mean-comments"
 draft: false
 weight: 50
 images:
@@ -54,7 +54,7 @@ So we’re not saying you should never deploy your code to staging - we’re say
 
 **Comment:** “Testing in staging is an integral part of software development that you can’t simply replace with some service.”
 
-**Counterpoint:**  100% agree, which is why the [stated purpose](https://metalbear.co/mirrord/docs/overview/introduction#why) of mirrord is to let you test in staging more, not less. Instead of going through 15 SDLC steps every time you want to test a little piece of code in staging, mirrord lets you do it as the first step, from your IDE, and it takes five seconds.
+**Counterpoint:**  100% agree, which is why the [stated purpose](https://metalbear.com/mirrord/docs/overview/introduction#why) of mirrord is to let you test in staging more, not less. Instead of going through 15 SDLC steps every time you want to test a little piece of code in staging, mirrord lets you do it as the first step, from your IDE, and it takes five seconds.
 
 <br/>
 
@@ -68,7 +68,7 @@ So we’re not saying you should never deploy your code to staging - we’re say
 
 **Counterpoint**: This is indeed kind of similar to the free OSS version of mirrord. But it’s free, so why would you go through all that trouble instead of just using mirrord? Plus you get to run your code natively instead of messing around with Dockerization.
 
-Of course there's also mirrord for Teams, which lets your entire organization develop continuously and concurrently against the same staging environment without stepping on each other's toes (read more [here](https://metalbear.co/mirrord/docs/overview/teams)). 
+Of course there's also mirrord for Teams, which lets your entire organization develop continuously and concurrently against the same staging environment without stepping on each other's toes (read more [here](https://metalbear.com/mirrord/docs/overview/teams)). 
 
 <br/>
 

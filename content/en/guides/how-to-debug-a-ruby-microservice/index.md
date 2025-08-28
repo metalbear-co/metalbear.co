@@ -299,4 +299,4 @@ This guide explored using mirrord with RubyMine and the mirrord CLI. We demonstr
 
 By enabling local execution with Kubernetes context, mirrord helps developers save substantial time during debugging.
 
-Curious to try it out? [Give mirrord a go](https://app.metalbear.co/account/sign-up) and see how it works for you. Got questions? [Hop into our Slack](https://metalbear.co/slack) and let us know!
+Curious to try it out? [Give mirrord a go](https://app.metalbear.com/account/sign-up) and see how it works for you. Got questions? [Hop into our Slack](https://metalbear.com/slack) and let us know!
