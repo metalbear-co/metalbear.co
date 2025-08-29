@@ -12,7 +12,7 @@ description = "Build cloud-native apps better and faster with mirrord. Run local
 ## Open Graph
 images = ["metalbear.png"]
 ogLocale = "en_US"
-domainTLD = "metalbear.com"
+domainTLD = "metalbear.co"
 titleHome = "MetalBear 🐻"
 
 ## Twitter Cards

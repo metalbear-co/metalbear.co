@@ -53,7 +53,7 @@
                     <p class="text-sm lg:text-lg text-[#222222] font-body mb-0">Or if you prefer,
                         <a class="text-[#222222] underline" target="_blank" href="/mirrord/demo">schedule a
                             meeting</a> or chat with us on <a class="text-[#222222] underline" target="_blank"
-                            href="https://metalbear.com/slack">Slack</a>.
+                            href="https://metalbear.co/slack">Slack</a>.
                     </p>
                 </div>
             </div>
@@ -135,12 +135,12 @@
                         window.location.href = "/contact/thankyou/";
                     } else {
                         console.log(response);
-                        updateResult(`Failed to submit message, got error response from server: ${json.message}. Please contact us at support@metalbear.com`);
+                        updateResult(`Failed to submit message, got error response from server: ${json.message}. Please contact us at support@metalbear.co`);
                     }
                 })
                 .catch(error => {
                     console.log(error);
-                    updateResult("Failed to submit your message. Please contact us at support@metalbear.com");
+                    updateResult("Failed to submit your message. Please contact us at support@metalbear.co");
                 })
                 .then(function () {
                     form.reset();

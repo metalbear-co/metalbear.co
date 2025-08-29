@@ -315,4 +315,4 @@ This guide explored how to use mirrord in VSCode using the mirrord extension and
 
 By enabling local execution with Kubernetes context, mirrord helps developers save substantial time during debugging.
 
-Curious to try it out? Give mirrord a go and see how it works for you. Got questions? [Hop into our Slack](https://metalbear.com/slack) and let us know!
+Curious to try it out? Give mirrord a go and see how it works for you. Got questions? [Hop into our Slack](https://metalbear.co/slack) and let us know!

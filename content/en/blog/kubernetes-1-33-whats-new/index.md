@@ -20,7 +20,7 @@ categories:
   - Infrastructure
 date: 2025-05-12T00:00:00+00:00
 summary: "From smarter traffic routing to in-place vertical scaling, Kubernetes 1.33 delivers magical improvements for modern clusters — inspired by Discworld’s elusive eighth color."
-canonicalURL: "https://metalbear.com/blog/new-features-in-kubernetes-1.33-octarine-the-discworld-inspired-release-you-didnt-know-you-needed"
+canonicalURL: "https://metalbear.co/blog/new-features-in-kubernetes-1.33-octarine-the-discworld-inspired-release-you-didnt-know-you-needed"
 draft: false
 weight: 50
 images: [thumbnail.png]
@@ -307,9 +307,9 @@ For very large deployments or mission-critical services, you might set even tigh
 
 This release delights us with a broad collection of tools that elevate every layer of our favorite orchestration platform. From networking and security to resource management, Kubernetes 1.33 brings a refreshing spring vibe to our clusters, full of growth, color, and possibility.
 
-If you're curious to try out these new capabilities without the friction of redeploying code, [mirrord](https://metalbear.com/mirrord/docs/overview/introduction/) can be a helpful tool too. It lets you run your local processes (This binary you've just compiled with fear 😱 and love 😍) in the context of a live Kubernetes environment, so you can quickly validate things like autoscaling thresholds, image pull flows, or service mesh behavior. All from your own machine. It's a great way to explore what Kubernetes 1.33 introduces, while keeping your feedback loop tight.
+If you're curious to try out these new capabilities without the friction of redeploying code, [mirrord](https://metalbear.co/mirrord/docs/overview/introduction/) can be a helpful tool too. It lets you run your local processes (This binary you've just compiled with fear 😱 and love 😍) in the context of a live Kubernetes environment, so you can quickly validate things like autoscaling thresholds, image pull flows, or service mesh behavior. All from your own machine. It's a great way to explore what Kubernetes 1.33 introduces, while keeping your feedback loop tight.
 
-> 🔔 [Try mirrord today](https://app.metalbear.com/account/sign-up) to test Kubernetes 1.33 features directly in your live cluster and streamline your development workflow!
+> 🔔 [Try mirrord today](https://app.metalbear.co/account/sign-up) to test Kubernetes 1.33 features directly in your live cluster and streamline your development workflow!
 
 Like octarine, the magical eighth color visible only to wizards in [Discworld](https://en.wikipedia.org/wiki/Discworld), the true strength of Kubernetes 1.33 lies not in any single feature, but in how they come together, shifting us from static infrastructure to dynamic systems that respond to intent, not just configuration.
 

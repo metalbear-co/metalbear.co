@@ -17,7 +17,7 @@ contributors: ["Vibhav Bobade"]
 
 In this guide, we’ll cover how to debug SQS consumer applications running in a Kubernetes environment using mirrord. You’ll learn how to set up mirrord and use it to effectively debug SQS consumers without the traditional overhead of rebuilding and redeploying your application.
 
-**Tip**: mirrord is a development tool which makes developing cloud applications significantly easier. If you're not familiar we'll recommend checking out the [getting started guide](https://metalbear.com/mirrord/docs/overview/quick-start/) first!
+**Tip**: mirrord is a development tool which makes developing cloud applications significantly easier. If you're not familiar we'll recommend checking out the [getting started guide](https://metalbear.co/mirrord/docs/overview/quick-start/) first!
 
 Debugging distributed applications, especially those that use messaging systems like Amazon SQS, can be challenging. These systems often span multiple services and depend on asynchronous communication patterns. Traditional debugging approaches can fall short when trying to trace issues across these complex systems.
 
@@ -85,13 +85,13 @@ Install the mirrord CLI:
 brew install metalbear-co/mirrord/mirrord
 ```
 
-For alternative installation methods, please follow the [quick start guide](https://metalbear.com/mirrord/docs/overview/quick-start/).
+For alternative installation methods, please follow the [quick start guide](https://metalbear.co/mirrord/docs/overview/quick-start/).
 
 ## Installing mirrord operator
 
 You can install the mirrord operator using either Helm or the mirrord CLI:
 
-**Tip**: You can obtain a LICENSE key by visiting https://app.metalbear.com/. This key is required for installing the mirrord operator with queue splitting functionality.
+**Tip**: You can obtain a LICENSE key by visiting https://app.metalbear.co/. This key is required for installing the mirrord operator with queue splitting functionality.
 
 ### Using Helm:
 
@@ -234,7 +234,7 @@ Now that we know how to access the producer, let’s dive into two effective app
 
 ### Approach 1: Simple Debugging with copy_target + scaledown (easier to execute)
 
-The simplest way to debug SQS consumers is to ensure your local consumer is the only one receiving messages from the queue. mirrord’s copy_target feature with scale_down enabled accomplishes this. For detailed documentation, see [mirrord’s copy target documentation](https://metalbear.com/mirrord/docs/using-mirrord/copy-target/#replacing-a-whole-deployment-using-scale_down).
+The simplest way to debug SQS consumers is to ensure your local consumer is the only one receiving messages from the queue. mirrord’s copy_target feature with scale_down enabled accomplishes this. For detailed documentation, see [mirrord’s copy target documentation](https://mirrord.dev/docs/using-mirrord/copy-target/#replacing-a-whole-deployment-using-scale_down).
 
 ```json
 {
@@ -285,7 +285,7 @@ When you run this command, you can use the producer to send messages which will 
 
 ### Approach 2: Queue Splitting for non-disruptive debugging
 
-Queue splitting is a powerful feature in mirrord that allows both your local application and the remote application to receive the same messages. This is particularly useful when you want to debug without disrupting the existing remote consumers. For detailed documentation on queue splitting, visit https://metalbear.com/mirrord/docs/using-mirrord/queue-splitting/.
+Queue splitting is a powerful feature in mirrord that allows both your local application and the remote application to receive the same messages. This is particularly useful when you want to debug without disrupting the existing remote consumers. For detailed documentation on queue splitting, visit https://mirrord.dev/docs/using-mirrord/queue-splitting/.
 
 #### How queue splitting works
 
@@ -311,7 +311,7 @@ In case of multiple debug consumers, a new temporary mirrord queue and mirrord-c
 
 mirrord allows multiple debug consumers to run simultaneously. Each developer can run their own local consumer, and all will receive copies of the same messages. The mirrord operator also ensures that each local debug consumer gets a complete copy of the message stream, without any competition between them or with the production consumers.
 
-**Tip**: This means your entire team can debug the same SQS consumer application simultaneously without interfering with each other or with production traffic! This team collaboration capability is a feature of [mirrord for Teams](https://metalbear.com/mirrord/docs/overview/teams/).
+**Tip**: This means your entire team can debug the same SQS consumer application simultaneously without interfering with each other or with production traffic! This team collaboration capability is a feature of [mirrord for Teams](https://mirrord.dev/docs/overview/teams/).
 
 #### Configuration for queue splitting
 
@@ -407,7 +407,7 @@ You’ll see that both the consumer and the copy Pod are available ensuring that
 
 Similarly multiple debug consumers can consume these messages without disrupting the original consumer by creating more copy Pods and temporary mirrord queues as required.
 
-Here, each instance creates its own mirrord-copy pod and receives the same messages, demonstrating how multiple developers can debug simultaneously. Notice in the second screenshot how multiple debug consumers are actively receiving messages in parallel. This collaborative debugging is made possible by [mirrord for Teams](https://metalbear.com/mirrord/docs/overview/teams/), which enables concurrent use of mirrord on the same environment.
+Here, each instance creates its own mirrord-copy pod and receives the same messages, demonstrating how multiple developers can debug simultaneously. Notice in the second screenshot how multiple debug consumers are actively receiving messages in parallel. This collaborative debugging is made possible by [mirrord for Teams](https://mirrord.dev/docs/overview/teams/), which enables concurrent use of mirrord on the same environment.
 
 ## Debugging with mirrord vs. other techniques
 
@@ -417,10 +417,10 @@ mirrord distinguishes itself by eliminating the need for repeated building and d
 
 In this guide, we’ve explored how to use mirrord to debug SQS consumer applications in Kubernetes. We’ve seen two powerful approaches:
 
-1. **Queue splitting** allows you to debug without disrupting existing consumers by duplicating messages. Learn more about this feature in the [queue splitting documentation](https://metalbear.com/mirrord/docs/using-mirrord/queue-splitting/).
+1. **Queue splitting** allows you to debug without disrupting existing consumers by duplicating messages. Learn more about this feature in the [queue splitting documentation](https://mirrord.dev/docs/using-mirrord/queue-splitting/).
 
-1. **Copy target with scale down** gives your local application exclusive access to SQS messages. Learn more in the [copy target documentation](https://metalbear.com/mirrord/docs/using-mirrord/copy-target/#replacing-a-whole-deployment-using-scale_down).
+1. **Copy target with scale down** gives your local application exclusive access to SQS messages. Learn more in the [copy target documentation](https://mirrord.dev/docs/using-mirrord/copy-target/#replacing-a-whole-deployment-using-scale_down).
 
-By leveraging mirrord, you can significantly improve your productivity when working with SQS consumer applications and streamline your debugging workflow. For teams working together on SQS applications, [mirrord for Teams](https://metalbear.com/mirrord/docs/overview/teams/) provides additional collaborative features that enable multiple developers to debug simultaneously.
+By leveraging mirrord, you can significantly improve your productivity when working with SQS consumer applications and streamline your debugging workflow. For teams working together on SQS applications, [mirrord for Teams](https://mirrord.dev/docs/overview/teams/) provides additional collaborative features that enable multiple developers to debug simultaneously.
 
-Curious to try it out? Give mirrord a go and see how it works for you. Got questions? Visit the [mirrord documentation](https://metalbear.com/mirrord/docs/) or join the community [Slack](https://metalbear.com/slack) channel!
+Curious to try it out? Give mirrord a go and see how it works for you. Got questions? Visit the [mirrord documentation](https://mirrord.dev/docs/) or join the community [Slack](https://metalbear.co/slack) channel!

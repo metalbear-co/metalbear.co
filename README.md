@@ -1,4 +1,4 @@
-## metalbear.com 🐻
+## metalbear.co 🐻
 
 Our company website, hosted by Cloudflare Pages and built using [Doks](https://getdoks.org/).
 

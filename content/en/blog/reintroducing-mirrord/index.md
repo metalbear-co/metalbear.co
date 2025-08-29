@@ -36,7 +36,7 @@ Simply put, mirrord lets you run a local process in the context of your cloud se
  
 ## Getting Started (and: other practical info)
 Today we’re releasing [mirrord 2.0](/mirrord), which supports incoming traffic. That means whatever traffic reaches your service in staging is duplicated by mirrord and sent to your local process. We’ll soon be adding support for outgoing traffic, file access, and environment variables - everything needed for your local process to “think” it’s running on the staging environment.
-All you need to run mirrord is kubectl access to your staging environment[^1]. You can use it as either a CLI tool, or an extension for VS Code (IntelliJ support is on the way). Try it out [here](/mirrord), and let us know what you think at [hi@metalbear.com](mailto:hi@metalbear.com), or in our repo!
+All you need to run mirrord is kubectl access to your staging environment[^1]. You can use it as either a CLI tool, or an extension for VS Code (IntelliJ support is on the way). Try it out [here](/mirrord), and let us know what you think at [hi@metalbear.co](mailto:hi@metalbear.co), or in our repo!
 
 
 [^1]: note that mirrord doesn’t install anything persistent in your Kubernetes cluster. It runs a job that self-deletes when mirrord terminates.

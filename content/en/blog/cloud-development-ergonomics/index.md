@@ -100,7 +100,7 @@ So local setups are easy to use but don’t support large deployments; personal 
 
 By using mirrord, developers can run the one service they’re working on locally, without juggling configurations or straining their development machine; they can run it against a full environment with mature database state and managed services; and they can do it quickly, easily and without risk. 
 
-We’ve recently released our [first stable version](https://metalbear.com/blog/mirrord-3.0-is-out/), and would love to hear your thoughts (on [GitHub](https://github.com/metalbear-co/mirrord) or [Discord](https://discord.gg/metalbear)).
+We’ve recently released our [first stable version](https://metalbear.co/blog/mirrord-3.0-is-out/), and would love to hear your thoughts (on [GitHub](https://github.com/metalbear-co/mirrord) or [Discord](https://discord.gg/metalbear)).
 
 [^1]: It can also be supplemented with a cloud development environment, as provided by products like Gitpod or Codespaces. For a comprehensive survey of the non-localhost space see this [excellent article](https://dx.tips/the-end-of-localhost).  
 

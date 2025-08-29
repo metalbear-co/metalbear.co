@@ -38,7 +38,7 @@ sections:
       - "Role based access control"
       - "Usage Monitoring & Auditing"
     cta: "Try it now for free"
-    cta_link: "https://app.metalbear.com/account/sign-up"
+    cta_link: "https://app.metalbear.co/account/sign-up"
 
   - name: "Enterprise"
     pricing: "Custom"
@@ -56,7 +56,7 @@ sections:
     admin_support:
       - "Support tickets, email, private Discord, Slack, or Teams"
     cta: "Talk to us"
-    cta_link: "https://metalbear.com/mirrord/demo/"
+    cta_link: "https://metalbear.co/mirrord/demo/"
   teams:
     - logo: "/pricing/sentinel-one.png"
       class: "w-[162px] lg:w-[235px]"
@@ -162,11 +162,11 @@ sections:
   questions:
     - title: "Is there a free version of mirrord?"
       content: >
-        Yes! <a href="https://github.com/metalbear-co/mirrord" target="_blank">Check out the mirrord OSS here</a>. You can read more about the differences between the mirrord OSS and mirrord for Teams <a href="https://metalbear.com/mirrord/docs/overview/teams/" target="_blank">here</a>.
+        Yes! <a href="https://github.com/metalbear-co/mirrord" target="_blank">Check out the mirrord OSS here</a>. You can read more about the differences between the mirrord OSS and mirrord for Teams <a href="https://metalbear.co/mirrord/docs/overview/teams/" target="_blank">here</a>.
 
     - title: "Do I need a credit card to start a trial?"
       content: >
-        No, you can <a href="https://app.metalbear.com/account/sign-up" target="_blank">try out mirrord for Teams without a credit card</a>—just sign up and start using it. No commitments, no automatic charges.
+        No, you can <a href="https://app.metalbear.co/account/sign-up" target="_blank">try out mirrord for Teams without a credit card</a>—just sign up and start using it. No commitments, no automatic charges.
     
     - title: "How are seats calculated?"
       content: >

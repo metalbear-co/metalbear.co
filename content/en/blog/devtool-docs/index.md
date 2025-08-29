@@ -13,7 +13,7 @@ categories:
 date: 2025-08-13
 summary: >
   Our experience evaluating documentation platforms for mirrord, from Hugo's limitations to Mintlify's integration issues, and why we ultimately chose GitBook for its AI-powered search, chatbot, and PostHog support.
-canonicalurl: "https://metalbear.com/blog/devtool-docs"
+canonicalurl: "https://metalbear.co/blog/devtool-docs"
 draft: false
 weight: 50
 images:
@@ -24,7 +24,7 @@ contributors:
 
 If you’re building a devtool, providing a good documentation experience to your users is really important. Developers don’t like booking demos, they prefer trying things out on their own. And a good docs experience goes a long way in making that possible.
 
-That’s especially true for us at MetalBear, where we’re building [mirrord](https://metalbear.com/mirrord/). While mirrord is easy to get started with, it's a versatile and highly configurable tool. mirrord lets you run your code locally while making it behave like it’s running inside your Kubernetes cluster. It mirrors traffic and configuration from the cluster, so you can test locally in cloud conditions without going through CI pipelines or cloud environments for every single change. We’ve learned that a good documentation experience makes a huge difference in helping users understand how mirrord works and how to use it effectively for their own specific use case.
+That’s especially true for us at MetalBear, where we’re building [mirrord](https://metalbear.co/mirrord/). While mirrord is easy to get started with, it's a versatile and highly configurable tool. mirrord lets you run your code locally while making it behave like it’s running inside your Kubernetes cluster. It mirrors traffic and configuration from the cluster, so you can test locally in cloud conditions without going through CI pipelines or cloud environments for every single change. We’ve learned that a good documentation experience makes a huge difference in helping users understand how mirrord works and how to use it effectively for their own specific use case.
 
 In this post, I’ll walk you through:
 
@@ -57,7 +57,7 @@ But the problems started after that.
 
 ### Our unique requirements
 
-Before the switch, our docs were hosted at `metalbear.com/mirrord/docs`, and our first preference was to keep that same URL structure to avoid breaking links. Mintlify *technically* supported hosting docs at a [subdirectory](https://mintlify.com/docs/advanced/subpath/cloudflare), but only one level deep. That meant we could do `metalbear.com/docs`, but not `metalbear.com/mirrord/docs`.
+Before the switch, our docs were hosted at `metalbear.co/mirrord/docs`, and our first preference was to keep that same URL structure to avoid breaking links. Mintlify *technically* supported hosting docs at a [subdirectory](https://mintlify.com/docs/advanced/subpath/cloudflare), but only one level deep. That meant we could do `metalbear.co/docs`, but not `metalbear.co/mirrord/docs`.
 
 This wasn’t ideal for us, but we liked the platform enough to consider hosting at `/docs` and adding redirects for the older URLs. Even getting that to work turned out to be tricky. Their *documentation* wasn’t fully up to date, so we had to try a bunch of things and figure it out ourselves before finally managing to host at `/docs`.
 
@@ -79,7 +79,7 @@ Eventually, one search result popped up that caught our eye: GitBook.
 
 ## Trying GitBook
 
-I looked through [GitBook’s](https://www.gitbook.com/) product page, and they seemed to have a lot of the things we were looking for. This time, we didn’t want to waste efforts without being sure, so I reached out to their support *before* setting anything up. I asked if they supported custom subdirectories like `metalbear.com/mirrord/docs`, and to my surprise, they did. That was already a plus point in their favour.
+I looked through [GitBook’s](https://www.gitbook.com/) product page, and they seemed to have a lot of the things we were looking for. This time, we didn’t want to waste efforts without being sure, so I reached out to their support *before* setting anything up. I asked if they supported custom subdirectories like `metalbear.co/mirrord/docs`, and to my surprise, they did. That was already a plus point in their favour.
 
 ### Experience with GitBook as a Docs Platform
 
@@ -87,7 +87,7 @@ Now, setting up GitBook wasn’t as smooth as Mintlify. It felt like GitBook wan
 
 Their documentation also seemed focused on using the UI rather than configuring things via Markdown or JSON files, which is what I prefer. But once I figured out how to enable Git sync, I could at least manage the documentation content in GitHub which helped a lot. Configuration still had to be done through the UI, which wasn’t my favorite thing, but it wasn’t a dealbreaker either. 
 
-On the upside, GitBook’s support team was much more responsive and helpful than Mintlify’s. That made a big difference. It was also so much simpler hosting the docs at `metalbear.com/mirrord/docs` than it was with Mintlify. 
+On the upside, GitBook’s support team was much more responsive and helpful than Mintlify’s. That made a big difference. It was also so much simpler hosting the docs at `metalbear.co/mirrord/docs` than it was with Mintlify. 
 
 They also have this concept of integrations, and there was one for [PostHog](https://www.gitbook.com/integrations/posthog). Setting it up was super straightforward and it just worked out of the box. Another huge win.
 
@@ -100,7 +100,7 @@ This solved all our needs for a docs platform. GitBook has a really cool AI sear
 
 While GitBook today fulfills our needs better than anything else out there, it’s not perfect. There are still a few areas where we had to make compromises.
 
-- **Deep linking to subheadings**: mirrord supports a lot of configuration options via the `mirrord.json` file. We list these on the [Configuration page](https://metalbear.com/mirrord/docs/config/options), and often we need to share a direct link to a specific option. GitBook only supports linking to headings up to level 3, so we can’t link directly to something like `feature.network.dns.filter`—only to `feature.network.dns`. Depending on how important that is to you, it might be a tradeoff worth considering. For us, it was.
+- **Deep linking to subheadings**: mirrord supports a lot of configuration options via the `mirrord.json` file. We list these on the [Configuration page](https://metalbear.co/mirrord/docs/config/options), and often we need to share a direct link to a specific option. GitBook only supports linking to headings up to level 3, so we can’t link directly to something like `feature.network.dns.filter`—only to `feature.network.dns`. Depending on how important that is to you, it might be a tradeoff worth considering. For us, it was.
 - **UI-first approach:** GitBook has clearly made a product decision to be UI-first. While I can’t fault them for that, I personally would prefer being able to define everything via JSON configs. I’d also prefer if their docs included Markdown snippets for all the content blocks they support (like [Hints](https://gitbook.com/docs/creating-content/blocks/hint), [Cards](https://gitbook.com/docs/creating-content/blocks/cards), etc.) so I could add those via Markdown instead of the web editor.
 
 ## Final Thoughts
@@ -111,4 +111,4 @@ Everyone talks about delivering the best user experience through the product its
 
 But maybe it’s time to challenge that. Your documentation is how people experience your tool before they even install it, why not make it amazing? :)
 
-[Check out the new mirrord docs here](https://metalbear.com/mirrord/docs) if you want some inspiration, and if you’ve got feedback, come chat with us on [Slack](https://metalbear.com/slack).
+[Check out the new mirrord docs here](https://metalbear.co/mirrord/docs) if you want some inspiration, and if you’ve got feedback, come chat with us on [Slack](https://metalbear.co/slack).
