@@ -342,7 +342,7 @@ We decided **not** to handle the non-blocking changes that Go makes, primarily b
 
 One of the ideas we had while working on this was to write a framework that will provide APIs to hook Go functions, i.e make trampolines from Rust using proc macros. It felt like too big of a project, and what we ended up doing suits our current needs, but if anyone is up for working on such a framework, we’d be happy to sponsor it! We’d love to hear your feedback and thoughts in our Backend Engineers community on [Discord](https://discord.com/invite/J5YSrStDKD).
 
-Feel free to checkout [mirrord](https://github.com/metalbear-co/mirrord), send corrections/issues with the blog post on our [website’s repository](https://github.com/metalbear-co/metalbear.co) or just reach us at hi@metalbear.com.
+Feel free to checkout [mirrord](https://github.com/metalbear-co/mirrord), send corrections/issues with the blog post on our [website’s repository](https://github.com/metalbear-co/metalbear.com) or just reach us at hi@metalbear.com.
 
 [^1]: [https://github.com/metalbear-co/mirrord](https://github.com/metalbear-co/mirrord)
 [^2]: Application binary interface - how binary programs interact, how do they use the stack, registers, etc.

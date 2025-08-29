@@ -65,7 +65,7 @@ alertText = "mirrord for Teams is live on Product Hunt! <a class=\"alert-link st
 
 # Edit Page
 repoHost = "GitHub"
-docsRepo = "https://github.com/metalbear-co/metalbear.co"
+docsRepo = "https://github.com/metalbear-co/metalbear.com"
 docsRepoBranch = "main"
 docsRepoSubPath = ""
 editPage = true
