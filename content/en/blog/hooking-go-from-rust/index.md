@@ -19,7 +19,7 @@ contributors: ["Aviram Hassan", "Mehul Arora"]
 
 Most mainstream programming languages strive to fit into a few common standards, to increase interoperability and decrease adoption friction. Golang isn’t one of those (there [are](https://spectralops.io/blog/rust-vs-go-why-not-use-both/) [several](https://words.filippo.io/rustgo/) [articles](https://fasterthanli.me/articles/lies-we-tell-ourselves-to-keep-using-golang) on the subject). In this blog post we’ll demonstrate how to overcome Go’s isolationist design and integrate with it from another language (in our case Rust).
 
-Why do we need to interop with Go? mirrord[^1] works by [hooking system calls to the operating systems](https://metalbear.com/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/) and applying logic that decides whether to execute locally or remotely. To do that, mirrord side-loads (using `LD_PRELOAD`) into the process, then hooks relevant functions.
+Why do we need to interop with Go? mirrord[^1] works by [hooking system calls to the operating systems](https://metalbear.co/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/) and applying logic that decides whether to execute locally or remotely. To do that, mirrord side-loads (using `LD_PRELOAD`) into the process, then hooks relevant functions.
 To cover most common scenarios, mirrord hooks libc functions and this works for most common languages (Python, Go on macOS, Rust, Node to name a few) as they all rely on libc.
 
 ## Mostly Harmless
@@ -342,7 +342,7 @@ We decided **not** to handle the non-blocking changes that Go makes, primarily b
 
 One of the ideas we had while working on this was to write a framework that will provide APIs to hook Go functions, i.e make trampolines from Rust using proc macros. It felt like too big of a project, and what we ended up doing suits our current needs, but if anyone is up for working on such a framework, we’d be happy to sponsor it! We’d love to hear your feedback and thoughts in our Backend Engineers community on [Discord](https://discord.com/invite/J5YSrStDKD).
 
-Feel free to checkout [mirrord](https://github.com/metalbear-co/mirrord), send corrections/issues with the blog post on our [website’s repository](https://github.com/metalbear-co/metalbear.com) or just reach us at hi@metalbear.com.
+Feel free to checkout [mirrord](https://github.com/metalbear-co/mirrord), send corrections/issues with the blog post on our [website’s repository](https://github.com/metalbear-co/metalbear.co) or just reach us at hi@metalbear.co.
 
 [^1]: [https://github.com/metalbear-co/mirrord](https://github.com/metalbear-co/mirrord)
 [^2]: Application binary interface - how binary programs interact, how do they use the stack, registers, etc.

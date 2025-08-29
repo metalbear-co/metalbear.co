@@ -1,4 +1,4 @@
-baseurl = "https://metalbear.com/"
+baseurl = "https://metalbear.co/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true

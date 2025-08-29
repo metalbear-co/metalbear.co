@@ -18,7 +18,7 @@ categories:
 date: 2025-06-02
 summary: >
   Everyone talks about shift-left testing, but most teams still wait until code is deployed to catch bugs. In this top-of-funnel overview, we explore the hidden friction in cloud-native pipelines and introduce the concept of “remocal” DevX. You’ll see why traditional environments stall early testing and how tools like mirrord help you get feedback from real cloud services without lengthy build-deploy cycles.
-canonicalurl: "https://metalbear.com/blog/shift-left-strategy-fails-devx-saves-it"
+canonicalurl: "https://metalbear.co/blog/shift-left-strategy-fails-devx-saves-it"
 draft: false
 weight: 50
 images:
@@ -201,9 +201,9 @@ By adopting mirrord, you can implement shift-left testing under realistic condit
 When adopting a shift-left approach in cloud-native environments using mirrord, several key strategies exist to maximize the benefits of this approach.
 
 
-- Isolate test traffic from production workloads: Never connect to production for testing purposes. The last thing you want is for your local testing to affect real users. Instead, use mirrord with staging or other non-production environments only. For detailed instructions on traffic filtering, check our [traffic management guide](https://metalbear.com/mirrord/docs/using-mirrord/steal/).
-- Manage concurrent development effectively: When multiple team members connect to the same staging environment, you might accidentally disrupt each other. To prevent one person from accidentally stealing all the traffic, use mirrord policies to enforce traffic filtering using HTTP headers or path patterns unique to each developer. These policies provide centralized control and ensure team members can work simultaneously without interference. The [mirrord policies documentation](https://metalbear.com/mirrord/docs/managing-mirrord/policies/) explains how to implement these safeguards for your team.
-- Implement proper access controls: Security should be a top priority when connecting local environments to remote clusters. Use Kubernetes role-based access control to limit the scope of what your team can access. The mirrord Operator respects existing RBAC policies, allowing administrators to control which developers can access specific resources. Our [security documentation](https://metalbear.com/mirrord/docs/managing-mirrord/security/) provides guidance on setting up these controls correctly.
+- Isolate test traffic from production workloads: Never connect to production for testing purposes. The last thing you want is for your local testing to affect real users. Instead, use mirrord with staging or other non-production environments only. For detailed instructions on traffic filtering, check our [traffic management guide](https://metalbear.co/mirrord/docs/using-mirrord/steal/).
+- Manage concurrent development effectively: When multiple team members connect to the same staging environment, you might accidentally disrupt each other. To prevent one person from accidentally stealing all the traffic, use mirrord policies to enforce traffic filtering using HTTP headers or path patterns unique to each developer. These policies provide centralized control and ensure team members can work simultaneously without interference. The [mirrord policies documentation](https://metalbear.co/mirrord/docs/managing-mirrord/policies/) explains how to implement these safeguards for your team.
+- Implement proper access controls: Security should be a top priority when connecting local environments to remote clusters. Use Kubernetes role-based access control to limit the scope of what your team can access. The mirrord Operator respects existing RBAC policies, allowing administrators to control which developers can access specific resources. Our [security documentation](https://metalbear.co/mirrord/docs/managing-mirrord/security/) provides guidance on setting up these controls correctly.
 
 ## Wrapping Up
 Shift-left testing only works when you can test against real-world conditions from the start of the software development process. The traditional cloud-native development workflow contradicts the shift-left approach by forcing you to deploy code to test against real dependencies, thereby pushing meaningful testing activities to the later stages of the development cycle.
@@ -212,4 +212,4 @@ mirrord solves this problem by bringing the cloud to you rather than forcing you
 
 For cloud-native teams, this approach makes shift-left testing practical in ways faster pipelines or more automated testing never could. 
 
-[Sign up for mirrord](https://app.metalbear.com/account/sign-up) today and start catching issues during development, where they're easiest to fix. Visit our [homepage](https://metalbear.com/mirrord) to learn more about mirrord.
+[Sign up for mirrord](https://app.metalbear.co/account/sign-up) today and start catching issues during development, where they're easiest to fix. Visit our [homepage](https://metalbear.co/mirrord) to learn more about mirrord.

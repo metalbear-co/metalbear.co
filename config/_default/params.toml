@@ -12,7 +12,7 @@ description = "Build cloud-native apps better and faster with mirrord. Run local
 ## Open Graph
 images = ["metalbear.png"]
 ogLocale = "en_US"
-domainTLD = "metalbear.com"
+domainTLD = "metalbear.co"
 titleHome = "MetalBear 🐻"
 
 ## Twitter Cards
@@ -65,7 +65,7 @@ alertText = "mirrord for Teams is live on Product Hunt! <a class=\"alert-link st
 
 # Edit Page
 repoHost = "GitHub"
-docsRepo = "https://github.com/metalbear-co/metalbear.com"
+docsRepo = "https://github.com/metalbear-co/metalbear.co"
 docsRepoBranch = "main"
 docsRepoSubPath = ""
 editPage = true

@@ -25,7 +25,7 @@ date: 2025-05-26
 summary: >
   Chasing bugs in staging, fighting drift and stepping on a teammate’s kube-config?  
   These six DevX tools bring production realism to your laptop, speed up rebuild-deploy cycles, and standardize environments—so you ship faster with fewer surprises.
-canonicalurl: "https://metalbear.com/blog/devx-tools-kubernetes-developers"
+canonicalurl: "https://metalbear.co/blog/devx-tools-kubernetes-developers"
 draft: false
 weight: 50
 images: [thumbnail.png]
@@ -327,6 +327,6 @@ Or install it with a single command using the install script:
 curl -fsSL https://raw.githubusercontent.com/metalbear-co/mirrord/main/scripts/install.sh | bash
 ```
 
-And [sign up for a free mirrord for Teams account](https://app.metalbear.com/account/sign-up) to get started in under 5 minutes. Ship your next feature without waiting for staging environments. 🙌
+And [sign up for a free mirrord for Teams account](https://app.metalbear.co/account/sign-up) to get started in under 5 minutes. Ship your next feature without waiting for staging environments. 🙌
 
 

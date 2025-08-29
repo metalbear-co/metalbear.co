@@ -17,14 +17,14 @@ images: [thumbnail.png]
 contributors: ["Arsh Sharma"]
 slug: enabling-developers-to-ship-cloud-native-applications-faster
 summary: "Learn how you can enable your developers to ship faster by avoiding slow CI loops with the help of mirrord."
-canonicalURL: "https://metalbear.com/blog/enabling-developers-to-ship-cloud-native-applications-faster/"
+canonicalURL: "https://metalbear.co/blog/enabling-developers-to-ship-cloud-native-applications-faster/"
 ---
 
 For cloud-native applications, moving code from a developer’s local machine to a staging or testing environment is rarely straightforward. In a common setup, developers first commit their code to a version control system. Then, a CI system builds a container image with the latest changes. Finally, a CD system (like [Argo CD](https://argo-cd.readthedocs.io/en/stable/)) deploys that image to a [Kubernetes](https://kubernetes.io/) cluster. It is only after all of this that developers are able to test out their changes. This process, repeated multiple times per feature, can be really slow.
 
 Of course, this isn’t the only workflow. Some teams use remote development environments where code is compiled directly in the cluster with file synchronization. Others spin up ephemeral environments in CI pipelines for automated end-to-end testing. From this variety of dev loops, it’s clear there’s no one-size-fits-all but in nearly every case, the friction from code-to-test remains a shared pain.
 
-We built [mirrord](https://metalbear.com/mirrord/?utm_source=enabling-devs-blog&utm_medium=blog&utm_campaign=blogpost) to change that. mirrord *shifts testing left* by letting developers run their code in a real Kubernetes environment instantly, without needing to rebuild or redeploy. It allows developers to use a shared cluster for development, removing the need for isolated, costly personal environments. Instead of waiting for CI pipelines or clashing in shared dev or integration clusters, each developer can connect to the same Kubernetes environment and test their changes safely and independently. This avoids the usual environment collisions while reducing the iteration time from 15–30 minutes per change down to just a few seconds.
+We built [mirrord](https://metalbear.co/mirrord/?utm_source=enabling-devs-blog&utm_medium=blog&utm_campaign=blogpost) to change that. mirrord *shifts testing left* by letting developers run their code in a real Kubernetes environment instantly, without needing to rebuild or redeploy. It allows developers to use a shared cluster for development, removing the need for isolated, costly personal environments. Instead of waiting for CI pipelines or clashing in shared dev or integration clusters, each developer can connect to the same Kubernetes environment and test their changes safely and independently. This avoids the usual environment collisions while reducing the iteration time from 15–30 minutes per change down to just a few seconds.
 
 In this blog I’ll walk you through how this works!
 
@@ -38,7 +38,7 @@ Shifting left in software development means moving processes (like testing) earl
 
 ## Shortening the Development Loop With mirrord
 
-We built [mirrord](https://metalbear.com/mirrord/) to make developing modern applications significantly faster. It does so by allowing developers to test their code in a real Kubernetes environment without the need for repeated deployments, thus significantly shortening the development loop. Here’s how it works:
+We built [mirrord](https://mirrord.dev/) to make developing modern applications significantly faster. It does so by allowing developers to test their code in a real Kubernetes environment without the need for repeated deployments, thus significantly shortening the development loop. Here’s how it works:
 
 mirrord consists of two main components:
 
@@ -51,7 +51,7 @@ Here’s how it works in detail:
 
 - Incoming traffic to the target pod in the cluster is mirrored to your local process. This means you can test your changes with real traffic without affecting the actual pod or the staging environment.
 - Outgoing traffic from your local process is routed through the mirrord-agent, making it appear as if it’s originating from the cluster. This also allows your local process to interact seamlessly with other services in the cluster without you having to run them locally.
-- mirrord also allows your local process to [*steal*](https://metalbear.com/mirrord/docs/using-mirrord/steal/) some (or all) of the traffic coming to service you’re developing from the cluster. This means that you can have your locally written code answer requests coming to the staging endpoint and see how it behaves. We’ll soon see this in action in the next section.
+- mirrord also allows your local process to [*steal*](https://metalbear.co/mirrord/docs/using-mirrord/steal/) some (or all) of the traffic coming to service you’re developing from the cluster. This means that you can have your locally written code answer requests coming to the staging endpoint and see how it behaves. We’ll soon see this in action in the next section.
 - mirrord also redirects file reads and writes to the remote pod’s file system, ensuring that your local process interacts with the same files as the deployed application.
 - It also merges the environment variables of the remote pod with those of your local process, ensuring that your application has access to the same configuration and secrets as it would in the cluster.
 
@@ -61,7 +61,7 @@ All of this means that developers can test their code in a real world environmen
 
 ## Preparing our Kubernetes cluster
 
-The first thing you need to enable your developers to start using mirrord for development is to have a Kubernetes cluster ready. This cluster should already have the application your developers will be working on deployed. If you’re using a shared development, testing, or staging cluster, you're likely already set up for this. In addition to the application itself, the cluster also needs to have the [mirrord operator](https://metalbear.com/mirrord/docs/overview/teams/?utm_source=enabling-devs-blog&utm_medium=blog&utm_campaign=blogpost) installed.
+The first thing you need to enable your developers to start using mirrord for development is to have a Kubernetes cluster ready. This cluster should already have the application your developers will be working on deployed. If you’re using a shared development, testing, or staging cluster, you're likely already set up for this. In addition to the application itself, the cluster also needs to have the [mirrord operator](https://metalbear.co/mirrord/docs/overview/teams/?utm_source=enabling-devs-blog&utm_medium=blog&utm_campaign=blogpost) installed.
 
 For this blog, we’ll use a classic todo list application as our example. It includes a React frontend, a Node.js backend, and a PostgreSQL database. You can find the code, along with the Kubernetes manifests needed to deploy it, in [this GitHub repository](https://github.com/RinkiyaKeDad/todolist).
 
@@ -69,7 +69,7 @@ For this blog, we’ll use a classic todo list application as our example. It in
 
 ### Installing the mirrord Operator
 
-To install the mirrord operator, you’ll first need a license key. You can generate one from your [MetalBear account](https://app.metalbear.com/account/login?utm_source=enabling-devs-blog&utm_medium=blog&utm_campaign=blogpost). Once you have your key, follow these steps to install the operator on your cluster:
+To install the mirrord operator, you’ll first need a license key. You can generate one from your [MetalBear account](https://app.metalbear.co/account/login?utm_source=enabling-devs-blog&utm_medium=blog&utm_campaign=blogpost). Once you have your key, follow these steps to install the operator on your cluster:
 
 > Don’t forget to update the `license.key` field in `values.yaml` with your actual license key before installation.
 
@@ -93,7 +93,7 @@ But here’s the catch: the frontend depends on a backend API, the database, and
 
 ### Installing the mirrord CLI
 
-The first thing you need to do is install the mirrord CLI on your local machine. mirrord also offers [extensions](https://metalbear.com/mirrord/docs/overview/quick-start/#vs-code-extension) for various code editors, but for this tutorial, we’ll focus on the CLI. 
+The first thing you need to do is install the mirrord CLI on your local machine. mirrord also offers [extensions](https://mirrord.dev/docs/overview/quick-start/#vs-code-extension) for various code editors, but for this tutorial, we’ll focus on the CLI. 
 
 You can install the CLI on macOS by running:
 
@@ -101,7 +101,7 @@ You can install the CLI on macOS by running:
 brew install metalbear-co/mirrord/mirrord
 ```
 
-For other platforms, detailed instructions can be found in our [documentation](https://metalbear.com/mirrord/docs/overview/quick-start/). We’ve made the setup experience with mirrord as frictionless as possible. You should be able to get started in under 5 minutes.
+For other platforms, detailed instructions can be found in our [documentation](https://mirrord.dev/docs/overview/quick-start/). We’ve made the setup experience with mirrord as frictionless as possible. You should be able to get started in under 5 minutes.
 
 Once installed, you’ll need the name of the target deployment in the Kubernetes cluster running the frontend service.
 
@@ -125,7 +125,7 @@ Running the above command starts the client (frontend) service locally while mir
 
 When you interact with this service (currently running on `localhost`), you might notice that adding a todo item or the delete functionality doesn’t work. That’s because the application is designed to be accessed via an ingress URL, specifically, the staging [FQDN](https://www.f5.com/glossary/fqdn) configured in the ingress resource. On top of that the code for the delete functionality is also currently commented out. 
 
-To test the app as intended, we’ll access it through its staging URL, where both services are deployed behind the ingress. However, by default, mirrord only mirrors traffic to your local machine while the original pod continues serving requests. If we want to test our newly written changes on the staging URL, we need our locally running code to handle incoming requests instead of the pod. This can be done by enabling [steal mode](https://metalbear.com/mirrord/docs/using-mirrord/steal/).
+To test the app as intended, we’ll access it through its staging URL, where both services are deployed behind the ingress. However, by default, mirrord only mirrors traffic to your local machine while the original pod continues serving requests. If we want to test our newly written changes on the staging URL, we need our locally running code to handle incoming requests instead of the pod. This can be done by enabling [steal mode](https://mirrord.dev/docs/using-mirrord/steal/).
 
 ### Enabling Steal Mode
 
@@ -171,4 +171,4 @@ I think you can now start to see how mirrord significantly speeds up the traditi
 - Debug and iterate – Identify and fix issues faster by testing in a real environment.
 - Commit and deploy – Once everything works as expected, push your changes and move forward with the confidence that things won’t break :)
 
-So if you’re ready to enable your team to ship faster [try mirrord for free](https://metalbear.com/mirrord/docs/overview/teams/) or [reach out to us](https://metalbear.com/mirrord/demo/)—we’d love to help you level up your dev workflow!
+So if you’re ready to enable your team to ship faster [try mirrord for free](https://metalbear.co/mirrord/docs/overview/teams/) or [reach out to us](https://metalbear.co/mirrord/demo/)—we’d love to help you level up your dev workflow!

@@ -14,7 +14,7 @@ categories:
 date: 2025-07-01
 summary: >
     Developers shouldn't have to deploy code just to test small changes. This blog explores how remocal workflows, like those enabled by mirrord, let you test against staging or production-like environments without the time-consuming deploy step. Cut feedback loops from hours to seconds, stay in flow, and validate more accurately without clogging your CI pipelines.
-canonicalurl: "https://metalbear.com/blog/stop-deploying-to-test"
+canonicalurl: "https://metalbear.co/blog/stop-deploying-to-test"
 draft: false
 weight: 50
 images:
@@ -73,7 +73,7 @@ Several technical capabilities make remocal possible:
 - **Mirroring environment variables** and service configurations into your local process.
 - **Intercepting requests** that the local app makes to the filesystem and then proxying them to the cluster
 
-That’s the exact workflow you can use [mirrord](https://metalbear.com/mirrord/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) to achieve.
+That’s the exact workflow you can use [mirrord](https://metalbear.co/mirrord/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) to achieve.
 
 By connecting your local process to a remote Kubernetes environment, you can mirror the runtime behavior of your application without deploying it. mirrord does this by intercepting system-level operations and rerouting them through a remote pod in your cluster, as seen below:
 
@@ -92,7 +92,7 @@ This means you can use mirrord to:
 - Interact with services in your cluster without deploying containers.
 - Validate API responses, database queries, or internal service calls with live infrastructure.
 
-In the next section, you’ll install mirrord and use it in your development workflow. If that resonates with you, [give it a try](https://app.metalbear.com/account/sign-up/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) now and follow along.
+In the next section, you’ll install mirrord and use it in your development workflow. If that resonates with you, [give it a try](https://app.metalbear.co/account/sign-up/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) now and follow along.
 
 ## How to use mirrord in your development workflow
 
@@ -100,7 +100,7 @@ You only need access to the Kubernetes cluster where your target pod is running.
 
 Before you begin, make sure you have the following:
 
-- mirrord installed locally (via the CLI or your IDE plugin for VS Code or IntelliJ). Refer to the [mirrord documentation for installation instructions.](https://metalbear.com/mirrord/docs/overview/quick-start/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test)
+- mirrord installed locally (via the CLI or your IDE plugin for VS Code or IntelliJ). Refer to the [mirrord documentation for installation instructions.](https://mirrord.dev/docs/overview/quick-start/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test)
 - [kubectl configured](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl) to connect to the cluster you want to test against.
 
 Once your environment is ready, here’s how to get started.
@@ -134,4 +134,4 @@ You don't need to overhaul your entire workflow. Start small and pick a simple c
 
 When you see it work for one small change, try something bigger - a full feature or bug fix.
 
-The goal isn't to eliminate staging. It's to stop depending on it for every change so that you can test faster. As next steps, you can explore the [mirrord docs](https://metalbear.com/mirrord/docs/overview/introduction/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) or [try it out](https://app.metalbear.com/account/sign-up/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) in your next dev cycle.
+The goal isn't to eliminate staging. It's to stop depending on it for every change so that you can test faster. As next steps, you can explore the [mirrord docs](https://metalbear.co/mirrord/docs/overview/introduction/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) or [try it out](https://app.metalbear.co/account/sign-up/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) in your next dev cycle.

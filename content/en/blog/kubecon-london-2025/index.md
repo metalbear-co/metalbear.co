@@ -14,9 +14,9 @@ weight: 50
 contributors: ["Arsh Sharma"]
 ---
 
-Earlier this month, the MetalBear team was in London for [KubeCon + CloudNativeCon EU](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/). This was our second time sponsoring the event, and it was an incredible few days of meeting developers, talking cloud native trends, and sharing the magic of [mirrord](https://metalbear.com/mirrord/?utm_source=blog&utm_medium=blog&utm_campaign=kubecon_london_blog).
+Earlier this month, the MetalBear team was in London for [KubeCon + CloudNativeCon EU](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/). This was our second time sponsoring the event, and it was an incredible few days of meeting developers, talking cloud native trends, and sharing the magic of [mirrord](https://metalbear.co/mirrord/?utm_source=blog&utm_medium=blog&utm_campaign=kubecon_london_blog).
 
-If you couldn’t attend, we’ve got you covered. Here’s what stood out on the ground: what the buzz was about, the dev pain points people were talking about, and why [mirrord](https://metalbear.com/mirrord/product/?utm_source=blog&utm_medium=blog&utm_campaign=kubecon_london_blog) struck such a chord with so many teams.
+If you couldn’t attend, we’ve got you covered. Here’s what stood out on the ground: what the buzz was about, the dev pain points people were talking about, and why [mirrord](https://metalbear.co/mirrord/product/?utm_source=blog&utm_medium=blog&utm_campaign=kubecon_london_blog) struck such a chord with so many teams.
 
 ## The Conference (and what it told us)
 
@@ -50,7 +50,7 @@ We spent a lot of time at our booth, and it turned out to be one of the most ins
 
 What really stood out wasn’t just the volume of conversations, but the kinds of questions we kept hearing again and again. Almost every developer who stopped by was grappling with the same core frustration: *“How do I shorten my development loop without CI or staging being a bottleneck?”* That question alone sparked dozens of conversations about workflows, deployment struggles, and the tools teams are trying (and abandoning).
 
-For us, it was incredibly energizing to see just how quickly the core idea behind [mirrord](https://metalbear.com/mirrord/?utm_source=blog&utm_medium=blog&utm_campaign=kubecon_london_blog) clicked with people, even those who hadn’t heard of it before. Once they understood that mirrord lets them run the code they’ve written locally in the context of a remote Kubernetes cluster, you could see that “aha” moment land. Suddenly, the problems they’d been working around for months had a clear path forward.
+For us, it was incredibly energizing to see just how quickly the core idea behind [mirrord](https://metalbear.co/mirrord/?utm_source=blog&utm_medium=blog&utm_campaign=kubecon_london_blog) clicked with people, even those who hadn’t heard of it before. Once they understood that mirrord lets them run the code they’ve written locally in the context of a remote Kubernetes cluster, you could see that “aha” moment land. Suddenly, the problems they’d been working around for months had a clear path forward.
 
 We also heard from plenty of folks already using mirrord in production. Many of them shared how it's helped them use staging environments much more effectively, debug faster, and build with more confidence. 
 
@@ -87,6 +87,6 @@ Other than that, we as a team also attended [Kuberoke](https://kuberoke.love/) w
 
 Cloud native development still feels messy, and it’s clear that teams are looking for better ways to move fast without breaking things. That’s why mirrord resonated so strongly with so many people at KubeCon: it helps developers test faster, debug with confidence, and skip the CI chaos.
 
-If you’ve ever waited on CI just to validate a tiny change, or found yourself stepping on a teammate’s toes in a shared environment, [mirrord](https://metalbear.com/mirrord/?utm_source=blog&utm_medium=blog&utm_campaign=kubecon_london_blog) might be exactly what you’ve been missing.
+If you’ve ever waited on CI just to validate a tiny change, or found yourself stepping on a teammate’s toes in a shared environment, [mirrord](https://metalbear.co/mirrord/?utm_source=blog&utm_medium=blog&utm_campaign=kubecon_london_blog) might be exactly what you’ve been missing.
 
 We’ll be at [KubeCon NA](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/) in Atlanta later this year, but until then, we’ve got a lot more to share. From community interviews to cloud native insights, we’ll be rolling out more of what we captured in London over the coming weeks. Follow us on [LinkedIn](https://www.linkedin.com/company/metalbearco/) to stay in the loop!

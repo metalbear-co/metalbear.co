@@ -256,12 +256,12 @@
           window.location.href = "/mirrord/demo/thankyou/";
         } else {
           console.log(response);
-          updateResult(`Failed to submit message, got error response from server: ${jsonResponse.message}. Please contact us at support@metalbear.com`);
+          updateResult(`Failed to submit message, got error response from server: ${jsonResponse.message}. Please contact us at support@metalbear.co`);
         }
       })
       .catch(error => {
         console.log(error);
-        updateResult("Failed to submit your message. Please contact us at support@metalbear.com");
+        updateResult("Failed to submit your message. Please contact us at support@metalbear.co");
       })
       .then(function () {
         posthog.identify(formData.get('email'));
