@@ -52,7 +52,7 @@ spec:
   pool:
     name: gpu-pool
     generation: 1
-		resourceSliceCount: 1
+    resourceSliceCount: 1
   driver: dra.example.com
   sharedCounters:
     - name: gpu-memory
