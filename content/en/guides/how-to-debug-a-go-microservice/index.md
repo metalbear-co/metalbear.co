@@ -304,4 +304,4 @@ This guide explored how to use mirrord with Goland and the mirrord CLI. We demon
 
 By enabling local execution with Kubernetes context, mirrord helps developers save substantial time during debugging.
 
-Curious to try it out? Give [mirrord](https://app.metalbear.co/account/sign-up) a go and see how it works for you. Got questions? Hop into our [Slack](https://metalbear.co/slack) and let us know!
+Curious to try it out? Give [mirrord](https://app.metalbear.com/account/sign-up) a go and see how it works for you. Got questions? Hop into our [Slack](https://metalbear.com/slack) and let us know!

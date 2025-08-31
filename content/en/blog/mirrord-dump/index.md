@@ -17,7 +17,7 @@ categories:
 date: 2025-06-25
 summary: >
   The `mirrord dump` command gives you a powerful way to inspect incoming traffic to your Kubernetes resources directly in your terminal. Whether you’re debugging a mysterious 500 error, onboarding mirrord across your team, or just need to see what headers are flowing between services, this built-in command makes it easy to get visibility without extra setup. Learn how it works, when to use it, and how it works behind the scenes.
-canonicalurl: "https://metalbear.co/blog/mirrord-dump"
+canonicalurl: "https://metalbear.com/blog/mirrord-dump"
 draft: false
 weight: 50
 images:
@@ -89,7 +89,7 @@ If you don’t see any traffic? You’ve just ruled out your app. Traffic is pro
 
 When companies start adopting mirrord, one of the first things they want to enable is concurrent usage so that multiple developers can use mirrord in the same shared environment (like a staging cluster) without stepping on each other’s toes.
 
-To do that, you need to filter traffic per developer session. You want each developer to see only their own traffic, not everyone else's. That’s where [traffic filters](https://metalbear.co/mirrord/docs/using-mirrord/steal/#stealing-only-a-subset-of-the-remote-targets-traffic/?utm_source=blog&utm_medium=blog&utm_campaign=mirrord-dump-blog) come in. mirrord lets you filter incoming requests based on headers like `user-id`, `X-Session-ID`, `tenant-id`, etc. so each developer can isolate and mirror just the traffic relevant to them.
+To do that, you need to filter traffic per developer session. You want each developer to see only their own traffic, not everyone else's. That’s where [traffic filters](https://metalbear.com/mirrord/docs/using-mirrord/steal/#stealing-only-a-subset-of-the-remote-targets-traffic/?utm_source=blog&utm_medium=blog&utm_campaign=mirrord-dump-blog) come in. mirrord lets you filter incoming requests based on headers like `user-id`, `X-Session-ID`, `tenant-id`, etc. so each developer can isolate and mirror just the traffic relevant to them.
 
 But to do this you need to figure out what header to filter by in the first place.
 
@@ -109,7 +109,7 @@ mirrord can have edge cases: maybe the agent fails to inject, maybe it’s not a
 `mirrord dump` reuses the same core mechanics of any mirrord session:
 
 1. Spawns an agent, either via:
-    - the mirrord operator (for [Teams users](https://metalbear.co/mirrord/docs/overview/teams/?utm_source=blog&utm_medium=blog&utm_campaign=mirrord-dump-blog)), or
+    - the mirrord operator (for [Teams users](https://metalbear.com/mirrord/docs/overview/teams/?utm_source=blog&utm_medium=blog&utm_campaign=mirrord-dump-blog)), or
     - directly via agent pod creation (for OSS users).
 2. Once the agent is live, it subscribes to traffic on a specific port.
 3. Under the hood:

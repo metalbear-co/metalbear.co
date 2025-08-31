@@ -17,7 +17,7 @@ categories:
 date: 2025-07-17
 summary: >
     KubeCon India is back in Hyderabad! With so many sessions happening, it’s easy to feel overwhelmed. In this blog, I share five talks I’m personally looking forward to—and why they stood out to me.
-canonicalurl: "https://metalbear.co/blog/kubecon-india-2025"
+canonicalurl: "https://metalbear.com/blog/kubecon-india-2025"
 draft: false
 weight: 50
 images:
