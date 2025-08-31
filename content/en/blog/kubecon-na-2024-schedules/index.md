@@ -654,5 +654,5 @@ CloudNativeCon T-shirt.
 {{<figure src="map.png" class="center large-width">}}
 
 Come find us there,
-[talk to us about cloud things](https://metalbear.co/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/),
+[talk to us about cloud things](https://metalbear.com/blog/discover-mirrords-approach-to-fast-cloud-connected-local-dev-at-kubecon/),
 and let us know if this post was helpful for you.

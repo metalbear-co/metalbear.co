@@ -252,4 +252,4 @@ In this guide, we explored how to use mirrord with IntelliJ IDEA through a plugi
 
 By enabling local execution with Kubernetes context, mirrord helps developers save substantial time during debugging.
 
-Curious to try it out? Give [mirrord](/mirrord/) a go and see how it works for you. Got questions? [Hop into our Slack](https://metalbear.co/slack) and let us know!
+Curious to try it out? Give [mirrord](/mirrord/) a go and see how it works for you. Got questions? [Hop into our Slack](https://metalbear.com/slack) and let us know!

@@ -44,6 +44,6 @@ All the keynotes and sessions will be recorded and made available on the [CNCF Y
 
 ## We’ll be there too!
 
-[Aviram Hassan](https://metalbear.co/contributors/aviram-hassan/) and [Tal Zwick](https://metalbear.co/contributors/tal-zwick/) from the MetalBear team will be at KubeCon EU this year (it’s Aviram’s first time in Paris!). If you have any tips or just want to chat about mirrord or cloud development philosophies in general, feel free to connect with them! 
+[Aviram Hassan](https://metalbear.com/contributors/aviram-hassan/) and [Tal Zwick](https://metalbear.com/contributors/tal-zwick/) from the MetalBear team will be at KubeCon EU this year (it’s Aviram’s first time in Paris!). If you have any tips or just want to chat about mirrord or cloud development philosophies in general, feel free to connect with them! 
 You can also book a [personalized demo slot](/mirrord/contact/) with our team to discuss your unique needs and how mirrord can be tailored to meet them.
 À bientôt!

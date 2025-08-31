@@ -239,7 +239,7 @@ Let’s take a look at how these shared namespaces turned out to be useful for t
 
 ## Case Study - mirrord 🤝 Ephemeral Containers
 
-In our last [blog post](https://metalbear.co/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/), we discussed how network operations are handled by mirrord-layer, how subscription requests are sent to mirrord-agent when `listen` is called and that mirrord-agent is responsible for sending back traffic to mirrord-layer. Verbosely, mirrord-agent is shipped as a container image and runs with elevated permissions on the same node as the impersonated pod.
+In our last [blog post](https://metalbear.com/blog/mirrord-internals-hooking-libc-functions-in-rust-and-fixing-bugs/), we discussed how network operations are handled by mirrord-layer, how subscription requests are sent to mirrord-agent when `listen` is called and that mirrord-agent is responsible for sending back traffic to mirrord-layer. Verbosely, mirrord-agent is shipped as a container image and runs with elevated permissions on the same node as the impersonated pod.
 
 This idea is similar to the one described in [KEP-277: Ephemeral Containers](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/277-ephemeral-containers/README.md#standalone-pod-in-shared-namespace-debug-pod).
 
