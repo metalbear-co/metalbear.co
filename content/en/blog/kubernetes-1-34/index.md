@@ -234,7 +234,7 @@ spec:
 
 In this example, the `oci-volume` references an OCI image that contains files. The pod mounts specific files from that image, `hello.txt`, into its container. Since the volume is read-only, multiple pods can safely share the same source without conflicts. 
 
-For developers using [mirrord](https://metalbear.co/mirrord/), this also means that you can now run your local code against a pod that already mounts an image volume in the cluster. Your local process will gain the same access to the shared files, so you can test how your code interacts with the data without deploying or modifying the cluster setup.
+For developers using [mirrord](https://metalbear.com/mirrord/), this also means that you can now run your local code against a pod that already mounts an image volume in the cluster. Your local process will gain the same access to the shared files, so you can test how your code interacts with the data without deploying or modifying the cluster setup.
 
 ## Features Moving to Alpha: New Currents on the Horizon
 
