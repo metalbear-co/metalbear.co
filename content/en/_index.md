@@ -6,7 +6,6 @@ date: 2022-05-12T16:35:10.183+0300
 lastmod: 2022-05-12T16:35:10.183+0300
 sections:
   - section-header
-  - section-about
   - section-how-mirrord-work
   - section-benefit
   - section-blog
