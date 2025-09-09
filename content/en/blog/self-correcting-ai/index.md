@@ -1,14 +1,14 @@
 ---
 title: "Enabling Self-Correcting AI Agents Through Autonomous Integration Testing"
-description: ""
-lead: ""
+description: "Learn how to enable AI agents to autonomously test and iterate on their code using mirrord, closing the development loop and unlocking true Agentic AI development."
+lead: "LLMs have made code generation very easy and now integration testing remains the biggest bottleneck. Discover how mirrord enables AI agents to autonomously test, validate, and fix their code in real-time."
 slug: "self-correcting-ai"
 tags:
   - ai
   - claude
 date: 2025-09-09
 summary: >
-  
+  AI agents can generate code rapidly, but integration testing remains the dominant bottleneck in autonomous development. This post shows how mirrord enables AI agents to autonomously test their code against live Kubernetes environments, allowing them to iterate, fix issues, and ship working features end-to-end without human intervention. By providing concurrent testing capabilities and real-time feedback, mirrord closes the development loop and unlocks the full potential of Agentic AI development.
 canonicalurl: "https://metalbear.com/blog/self-correcting-ai"
 draft: false
 weight: 50
@@ -44,13 +44,13 @@ What if AI agents could handle integration testing on their own? If they could r
 
 Let me show you how this can be made possible by giving your AI agents access to [mirrord](https://metalbear.co/mirrord/).
 
-# What is mirrord?
+## What is mirrord?
 
 mirrord is a tool we built to let developers run code in a production-like setting as soon as they write it, instead of having to go through builds and CI pipelines and deployments. mirrord does this by running your local code directly in the context of your Kubernetes cluster without deploying it to the cluster itself. Instead of replacing or modifying the remote service, mirrord mirrors cluster traffic and resources to your local machine, allowing you to test changes in real time. This not only allows developers to test in the cloud faster and earlier in the development cycle, but also enables multiple developers to [test and iterate on their changes simultaneously](https://metalbear.com/mirrord/docs/using-mirrord/sharing-the-cluster/), without interfering with each other or the live cluster state.
 
 In today’s world of AI-assisted development, mirrord already lets developers test AI-generated code more effectively. In this post, we’re going a step further: instead of just assisting developers, **we're giving AI agents the autonomy to test and iterate on their own code**, effectively closing the loop themselves. This unlocks a new level of speed and capability. We’ll walk through how this works using Claude Code, though any AI agent should be able to follow a similar approach. If you're using tools like Cursor or Windsurf, check out [our earlier blog post](https://metalbear.com/blog/cursor-windsurf-mirrord-extension/), which focuses on AI-assisted workflows, for specific guidance on using them with mirrord.
 
-# Teaching your AI agent to integration test
+## Teaching your AI agent to integration test
 
 The first thing we need to do is teach our AI agent, Claude Code in this case, how to use mirrord. mirrord can be used as a standalone CLI or via [IDE extensions](https://metalbear.co/mirrord/docs/overview/quick-start#vs-code-extension). For this example, we’ll assume you have the [mirrord CLI](https://metalbear.co/mirrord/docs/overview/quick-start#cli-tool) installed on your local machine and go with that approach. The first thing we start with is creating a [CLAUDE.md](https://docs.anthropic.com/en/docs/claude-code/memory#claude-md-imports) file that shows Claude how to use mirrord to test our application:
 
@@ -183,7 +183,7 @@ After that when Claude sends requests to the playground endpoint, mirrord sends 
 
 Another important detail here is how mirrord uses traffic filtering. By setting the header `X-PG-Tenant: Aviram`, only requests tagged with that tenant value are sent to the local process. This ensures that one agent’s tests don’t interfere with other agents or developers working with the playground app. Each agent is effectively “sandboxed” to just its own session. The rest of the traffic keeps flowing normally to the deployed service, while every agent gets a realistic testing environment tied to its code changes.
 
-# The sooner your AI agents can test, the faster they can ship
+## The sooner your AI agents can test, the faster they can ship
 
 If you look at the conversation history above, you’ll see that Claude tells us it tested the code change against the staging environment and it worked successfully. This is great because now we have the confidence that when we finally do deploy to staging, things will work on the first try.
 
@@ -195,7 +195,7 @@ At that point, the only role left for you is a quick final verification through 
 
 {{<figure src="concurrent-ai-agents.png" title="AI agents developing concurrently using mirrord" alt="Diagram showing AI agents running in parallel and shipping code using mirrord" height="100%" width="100%">}}
 
-# Equip your AI agents with mirrord and close the code development loop
+## Equip your AI agents with mirrord and close the code development loop
 
 The era of AI-assisted code generation has arrived, making coding faster and easier than ever. However, the true breakthrough in Agentic AI development will come when AI agents are equipped with the ability to test, validate, and iterate on their code autonomously. This is what will really unlock the full potential of Agentic AI development.
 
