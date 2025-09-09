@@ -54,7 +54,7 @@ In today’s world of AI-assisted development, mirrord already lets developers t
 
 The first thing we need to do is teach our AI agent, Claude Code in this case, how to use mirrord. mirrord can be used as a standalone CLI or via [IDE extensions](https://metalbear.co/mirrord/docs/overview/quick-start#vs-code-extension). For this example, we’ll assume you have the [mirrord CLI](https://metalbear.co/mirrord/docs/overview/quick-start#cli-tool) installed on your local machine and go with that approach. The first thing we start with is creating a [CLAUDE.md](https://docs.anthropic.com/en/docs/claude-code/memory#claude-md-imports) file that shows Claude how to use mirrord to test our application:
 
-```markdown
+````markdown
 # Running/Testing ip-visit-counter in staging before deploying - USE THIS INSTEAD OF DEPLOYING TO STAGING
 
 To run ip-visit-counter in staging without deploying, you can use:
@@ -64,7 +64,7 @@ mirrord exec -f .mirrord/mirrord.json -- go run ip-visit-counter/main.go
 
 Then you can access it via playground.metalbear.dev if you set header "X-PG-Tenant" to have value "Aviram". For example
 `curl -H "X-PG-Tenant: Aviram" playground.metalbear.dev/count` will go to the local instance
-```
+````
 
 In this example, we’re using a demo application we’ve built called the [IP visit counter](https://github.com/metalbear-co/playground) app. This app is deployed to a Kubernetes cluster and is available at the [playground.metalbear.dev](http://playground.metalbear.dev) URL. When you send a request to that URL, the app responds back with the count of the number of times it has been sent a request from your IP. Behind the scenes, it stores and retrieves these counts from a Redis database running in the cluster. This is what the architecture of the app looks like:
 
