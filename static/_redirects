@@ -1,0 +1,3 @@
+/mirrord /mirrord/ 301
+/mirrord/docs/* /mirrord/docs/:splat/ 301
+/* /:splat/ 301
