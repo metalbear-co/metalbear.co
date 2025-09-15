@@ -25,7 +25,7 @@ Most engineering teams struggle with the cost and friction of cloud native devel
 
 mirrord solves this problem. It allows developers to run their code locally while seamlessly mirroring traffic, environment variables, and services from a remote Kubernetes cluster. This gives developers the realism of testing inside a production-like environment without the overhead of actually deploying code. It also allows multiple developers to safely share a cluster for development, reducing cloud costs and the management burden on platform teams. 
 
-![image.png](MetalBear%20Recognized%20as%20a%202025%20Gartner%20Cool%20Vendor%2026c15e391394802e95c3ff01a35a7a3c/image.png)
+{{<figure src="dev-loop.png" title="How mirrord simplifies the dev loop" alt="image showing how mirrord simplifies the dev loop" height="100%" width="100%">}}
 
 Caption: How mirrord increases developer velocity by shortening the dev loop
 
