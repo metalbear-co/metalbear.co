@@ -5,7 +5,7 @@ lead: "We raised $12.5m to fix everything that's broken in cloud software develo
 slug: "seed-funding"
 tags:
   - metalbear
-date: 2025-09-16
+date: 2025-09-15
 summary: >
   MetalBear has raised $12.5m in funding led by TLV Partners to continue building mirrord, a tool that solves the biggest pain points in cloud development. mirrord lets developers test their code locally while connected to real cloud environments, reducing testing time from hours to seconds. The company is fully remote with 25 people across 15 countries, and their customers like SurveyMonkey are already seeing 50% faster time-to-ship and 20% developer time savings.
 canonicalurl: "https://metalbear.com/blog/seed-funding"
