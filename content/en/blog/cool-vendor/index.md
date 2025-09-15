@@ -19,7 +19,7 @@ contributors:
 
 As more teams go all in on Kubernetes and cloud native, the friction of building and testing cloud apps is slowing developers down. At MetalBear, we saw this problem early on, and it’s exactly why we built mirrord. Today we’re very happy to share that we’ve been recognized as a *Cool Vendor* in Gartner’s 2025 Cool Vendors report in the Container Management category$^1$. 
 
-# What makes mirrord cool?
+## What makes mirrord cool?
 
 Most engineering teams struggle with the cost and friction of cloud native development. Until now, there have not been any good options that let developers test in production-like conditions without long wait times, while also avoiding extra burden on platform teams and rising cloud spend for organizations. 
 
@@ -31,7 +31,7 @@ Caption: How mirrord increases developer velocity by shortening the dev loop
 
 We believe this recognition by Gartner validates the direction we’ve been pursuing since day one: helping organizations remove bottlenecks in cloud development so their teams can ship features faster, stay ahead of competitors, and do so with lower cloud costs.
 
-# **The road ahead**
+## The road ahead
 
 As Kubernetes adoption continues to accelerate, the demand for efficient, production-like development workflows will only grow. We are committed to meeting that demand by expanding mirrord’s capabilities, from database branching to mirrord for CI and AI-driven testing. By giving teams a way to move faster without ballooning costs or unnecessary complexity, this recognition reinforces our belief that mirrord is helping shape the future of cloud development.
 
