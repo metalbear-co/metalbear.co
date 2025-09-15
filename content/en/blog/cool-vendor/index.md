@@ -1,6 +1,6 @@
 ---
-title: "MetalBear Recognized as a 2025 Gartner Cool Vendor"
-description: "MetalBear has been recognized as a Cool Vendor in Gartner's 2025 Container Management report for solving the painpoints around cloud development."
+title: "MetalBear Named as a Gartner Cool Vendor"
+description: "MetalBear has been recognized as a Cool Vendor in Gartner's 2025 Container Management report for solving the pain points around cloud development."
 lead: "We're excited to share that MetalBear has been recognized as a Cool Vendor in Gartner's Cool Vendors 2025 Report in the Container Management category."
 slug: "cool-vendor"
 tags:
@@ -17,17 +17,15 @@ contributors:
   - "Arsh Sharma"
 ---
 
-As more teams go all in on Kubernetes and cloud native, the friction of building and testing cloud apps is slowing developers down. At MetalBear, we saw this problem early on, and it’s exactly why we built mirrord. Today we’re very happy to share that we’ve been recognized as a *Cool Vendor* in Gartner’s 2025 Cool Vendors report in the Container Management category$^1$. 
+The way developers build software for the cloud has become untenable—too complex, too slow, and too expensive. Traditional approaches haven’t kept pace with the demands of modern cloud architectures. At MetalBear, we set out to reimagine this process with mirrord, and our community and customers are proving that it changes the game. Today, we’re proud to share that Gartner has recognized us as a Cool Vendor in its 2025 Cool Vendors in Container Management report[^1].
 
 ## What makes mirrord cool?
 
-Most engineering teams struggle with the cost and friction of cloud native development. Until now, there have not been any good options that let developers test in production-like conditions without long wait times, while also avoiding extra burden on platform teams and rising cloud spend for organizations. 
+No engineer writing software for the cloud is happy with their development process. Because production environments have grown so complex, we have lost the ability to run copies of them locally, and getting new code to production has become a stop-start marathon of builds, CI and deployments to various testing environments. Older developers yearn for the days when you could just hit F5 and debug your code in your IDE.
 
-mirrord solves this problem. It allows developers to run their code locally while seamlessly mirroring traffic, environment variables, and services from a remote Kubernetes cluster. This gives developers the realism of testing inside a production-like environment without the overhead of actually deploying code. It also allows multiple developers to safely share a cluster for development, reducing cloud costs and the management burden on platform teams. 
+Which is exactly what mirrord lets you do. It allows developers to run their code locally while seamlessly mirroring traffic, environment variables, and services from a remote Kubernetes cluster. This gives developers the realism of testing inside a production-like environment without the overhead of actually deploying code. It also allows multiple developers to safely share a cluster for development, eliminating the bottleneck on shared staging environments, and allowing organizations to save cloud costs by consolidating multiple testing clusters.
 
-{{<figure src="dev-loop.png" title="How mirrord simplifies the dev loop" alt="image showing how mirrord simplifies the dev loop" height="100%" width="100%">}}
-
-Caption: How mirrord increases developer velocity by shortening the dev loop
+{{<figure src="dev-loop.png" title="Fast, concurrent development with mirrord" alt="image showing how mirrord simplifies the dev loop" height="100%" width="100%">}}
 
 We believe this recognition by Gartner validates the direction we’ve been pursuing since day one: helping organizations remove bottlenecks in cloud development so their teams can ship features faster, stay ahead of competitors, and do so with lower cloud costs.
 
@@ -37,11 +35,20 @@ As Kubernetes adoption continues to accelerate, the demand for efficient, produc
 
 We also want to take a moment to thank the mirrord community. mirrord wouldn’t be where it is today without the engineers who adopted it early, shared feedback, and helped us refine the product. Thank you for your trust and support!
 
-Developers can get started with mirrord today by visiting metalbear.com/mirrord or exploring the open-source project on [GitHub](https://github.com/metalbear-co/mirrord).
+Developers can get started with mirrord today by visiting [metalbear.com/mirrord](https://metalbear.com/mirrord) or exploring the open-source project on [GitHub](https://github.com/metalbear-co/mirrord).
+
+
+
+[^1]: Gartner, Cool Vendors in Container Management, [names of authors] et al., 15 September 2025
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 **Disclaimer**
-
-1 Gartner, Cool Vendors in Container Management, [names of authors] et al., 15 September 2025
 
 GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permission. All rights reserved. Cool Vendors is a registered trademark of Gartner, Inc. and/or its affiliates and is used herein with permission. All rights reserved.
 
