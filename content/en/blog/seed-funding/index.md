@@ -20,7 +20,7 @@ contributors:
 
 **TL;DR:** We’ve raised $12.5m to continue building mirrord and fix everything that’s broken in the world… of cloud software development.
 
-The round was led by TLV Partners with participation from TQ Ventures, Modern Technical Fund, David Cramer (co-founder of Sentry), Ben Sigelman (co-creator OpenTelemetry), and others.
+The round was led by TLV Partners with participation from TQ Ventures, Modern Technical Fund, Netz Capital, David Cramer (Sentry), Ben Sigelman (OpenTelemetry), Thomas Dullien (Optimyze), Guy Zipori and Or Hiltch (Skyline.ai), Nader Al-Naji (DeSo), Eric Hauser (Cadence), Tamar Bar-Ilan and Yotam Segev (Cyera), Yoni Broyde (Alooma), Eilon Lotem and Tal Zackon (Tres).
 
 If you’re just looking to check out mirrord, go [here](https://metalbear.com/mirrord/).
 
