@@ -1,7 +1,7 @@
 ---
-title: "MetalBear raises $12.5m to make cloud software development 100x faster"
-description: "MetalBear announces $12.5m funding round led by TLV Partners to continue building mirrord, the tool that lets developers test cloud code locally in seconds instead of hours."
-lead: "We raised $12.5m to fix everything that's broken in cloud software development. Here's how mirrord is already helping companies ship code faster."
+title: "METALBEAR: CAPITALIZED"
+description: "MetalBear raises $12.5m to make cloud software development 100x faster."
+lead: "We raised $12.5m to fix everything that's broken in cloud software development."
 slug: "seed-funding"
 tags:
   - metalbear
