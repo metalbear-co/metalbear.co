@@ -68,6 +68,7 @@ sections:
       url: "/mirrord/case-study/colab/"
     - logo: "/pricing/zooplus.png"
       class: "w-[100px] lg:w-[146px]"
+      url: "/mirrord/case-study/zooplus/"
     - logo: "/pricing/cadence.png"
       class: "w-[121px] lg:w-[177px]"
       url: "/mirrord/case-study/cadence/"
