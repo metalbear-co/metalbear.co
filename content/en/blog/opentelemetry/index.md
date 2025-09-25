@@ -1,14 +1,14 @@
 ---
 title: "Easier OpenTelemetry Instrumentation with Remocal Development"
-description: ""
-lead: ""
+description: "Learn how to test OpenTelemetry instrumentation locally with mirrord, skipping the painful deploy-and-wait cycle."
+lead: "Learn how to skip the tedious deploy-and-wait cycle when adding OpenTelemetry instrumentation with mirrord."
 slug: "opentelemetry"
 tags:
   - opentelemetry
   - observability
 date: 2025-09-25
 summary: >
-  
+  OpenTelemetry instrumentation is essential for modern distributed applications, but testing it traditionally requires committing code, waiting for CI/CD pipelines, and deploying to staging. mirrord solves this by letting you run your instrumented app locally while connecting directly to your cluster's observability stack, allowing you to see your metrics, logs, and traces in real-time without any deployments.
 canonicalurl: "https://metalbear.com/blog/opentelemetry"
 draft: false
 weight: 50
