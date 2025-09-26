@@ -5,7 +5,7 @@ lead: "We're excited to share that MetalBear has been recognized as a Cool Vendo
 slug: "cool-vendor"
 tags:
   - metalbear
-date: 2025-09-15
+date: 2025-09-26
 summary: >
   MetalBear has been recognized as a Cool Vendor in Gartner's 2025 Container Management report for mirrord, our tool that solves cloud native development friction. mirrord allows developers to run code locally while mirroring traffic and services from remote Kubernetes clusters, enabling production-like testing without deployment overhead. This recognition validates our mission to help teams ship features faster with lower cloud costs and reduced platform team burden.
 canonicalurl: "https://metalbear.com/blog/cool-vendor"
@@ -39,7 +39,7 @@ Developers can get started with mirrord today by visiting [metalbear.com/mirrord
 
 
 
-[^1]: Gartner, Cool Vendors in Container Management, [names of authors] et al., 15 September 2025
+[^1]: Gartner, Cool Vendors in Container Management, Dennis Smith, Tony Iams, Lucas Albuquerque, et al., 25 September 2025
 
 <br/>
 <br/>
