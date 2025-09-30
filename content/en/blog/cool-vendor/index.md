@@ -1,11 +1,11 @@
 ---
-title: "MetalBear Named as a Gartner Cool Vendor"
+title: "MetalBear Named Cool Vendor™ by Gartner®"
 description: "MetalBear has been recognized as a Cool Vendor in Gartner's 2025 Container Management report for solving the pain points around cloud development."
 lead: "We're excited to share that MetalBear has been recognized as a Cool Vendor in Gartner's Cool Vendors 2025 Report in the Container Management category."
 slug: "cool-vendor"
 tags:
   - metalbear
-date: 2025-09-26
+date: 2025-09-30
 summary: >
   MetalBear has been recognized as a Cool Vendor in Gartner's 2025 Container Management report for mirrord, our tool that solves cloud native development friction. mirrord allows developers to run code locally while mirroring traffic and services from remote Kubernetes clusters, enabling production-like testing without deployment overhead. This recognition validates our mission to help teams ship features faster with lower cloud costs and reduced platform team burden.
 canonicalurl: "https://metalbear.com/blog/cool-vendor"
@@ -17,7 +17,7 @@ contributors:
   - "Arsh Sharma"
 ---
 
-The way developers build software for the cloud has become untenable—too complex, too slow, and too expensive. Traditional approaches haven’t kept pace with the demands of modern cloud architectures. At MetalBear, we set out to reimagine this process with mirrord, and our community and customers are proving that it changes the game. Today, we’re proud to share that Gartner has recognized us as a Cool Vendor in its 2025 Cool Vendors in Container Management report[^1].
+As cloud architectures become more complex, it becomes imperative to solve the slow process of building software for the cloud. This is not a new problem, and many companies tried to solve it before, but at MetalBear we found the way to do it in building [mirrord](https://metalbear.com/mirrord/), and our community and customers agree. Today we’re very happy to share that we’ve been recognized as a Cool Vendor in the 2025 Gartner Cool Vendors in Container Management report[^1].
 
 ## What makes mirrord cool?
 
