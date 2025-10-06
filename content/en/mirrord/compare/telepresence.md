@@ -12,9 +12,6 @@ compares:
   - title: Works without root permission (when local process isn't containerized)
     is_mirrord: true
     is_telepresence: false
-  - title: Supports both traffic mirroring and interception
-    is_mirrord: true
-    is_telepresence: false
   - title: "Configurable: Choose what runs locally vs. on the cluster"
     is_mirrord: true
     is_telepresence: false
