@@ -6,7 +6,10 @@ compares:
   - title: Connect your local process to Kubernetes
     is_mirrord: true
     is_telepresence: true
-  - title: Works without root permission
+  - title: Works without root permission (when local process is containerized)
+    is_mirrord: true
+    is_telepresence: true
+  - title: Works without root permission (when local process isn't containerized)
     is_mirrord: true
     is_telepresence: false
   - title: Supports both traffic mirroring and interception
@@ -22,9 +25,6 @@ compares:
     is_mirrord: true
     is_telepresence: false
   - title: Doesn't require a sidecar
-    is_mirrord: true
-    is_telepresence: false
-  - title: Supports connecting to clusters over a corporate VPN
     is_mirrord: true
     is_telepresence: false
 sections:
