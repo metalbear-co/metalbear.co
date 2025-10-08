@@ -1,7 +1,7 @@
 ---
 title: "How I Learned to Stop Worrying and Trust AI Coding Agents"
 description: "A story about how Claude, an AI coding agent, solved a complex Terraform schema bug in mirrord not by brute force, but by reasoning its way out with a helper script it wrote for itself."
-lead: "A firsthand account of how Claude solved a complex bug that stumped human engineers by not just writing code, but by inventing its own debugging tools."
+lead: "A firsthand account of how Claude solved a complex bug by not just writing code, but by inventing its own debugging tools."
 slug: "claude-experience"
 tags:
   - claude
