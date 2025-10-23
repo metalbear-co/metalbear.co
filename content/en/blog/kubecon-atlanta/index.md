@@ -28,7 +28,7 @@ KubeCon season is here again, this time landing in Atlanta. Every year, the clou
 
 I’ve been going through [the schedule](https://kccncna2025.sched.com/?iframe=no) (while trying not to open 40 tabs at once), and there are some seriously interesting talks lined up. Here are a few talks I’m really excited about including a couple of talks from the MetalBear team.
 
-And if you’ll be around Atlanta, come find us at the MetalBear booth (booth number goes here). We’ll have mirrord demos, stickers, some really special swag (🤫) and probably way too many opinions about staging environments.
+And if you’ll be around Atlanta, come find us at the MetalBear booth (booth number 1560). We’ll have mirrord demos, stickers, some really special swag (🤫) and probably way too many opinions about staging environments.
 
 ### 1000 Clusters, 1 Brain: Salesforce’s Approach to Self-Healing Using AIOps
 
