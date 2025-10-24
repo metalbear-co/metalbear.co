@@ -118,4 +118,4 @@ When I first started learning data structures, I didn’t exactly picture them s
 
 That’s my shortlist for KubeCon + CloudNativeCon North America 2025. I tried to keep it a mix of deep technical dives, new projects and features, and a little bit of MetalBear pride :) What I love about KubeCon talks is how they always leave you inspired (and slightly humbled) by how much is happening across the ecosystem. There’s always some new project, tool, or idea that makes you want to go back home and start building.
 
-If you’re heading to Atlanta, come find us at the MetalBear booth. We’d love to chat about mirrord, developer experience, or just geek out about Kubernetes. Safe travels, and see you at KubeCon! 🚀
+If you’re heading to Atlanta, come find us at the MetalBear booth (booth number 1560). We know KubeCon gets pretty busy, so if you want to make sure we have time to chat, you can fill out [this form](https://2dkwjs.share-eu1.hsforms.com/2uOCG5_c4TyqR_-JBJ8eUQQ) and our team will reach out to coordinate a slot. We’d love to chat about mirrord, developer experience, or just geek out about Kubernetes. Safe travels, and see you at KubeCon! 🚀
