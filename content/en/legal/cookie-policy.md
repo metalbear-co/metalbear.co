@@ -32,6 +32,7 @@ Cookies can remain on your computer for different periods of time. Some cookies 
 ### How do we use cookies?
 We use cookies to:
 -	Authenticate users using our app;
+- Track user behavior on our Site for analytics purposes;
 
 The types of cookies used by us in connection with the Site can be considered 'essential website cookies'. We've set out some further information below, and the purposes of the cookies we set in the following table. 
 
@@ -43,6 +44,17 @@ These cookies are essential to provide you with services available through this 
 | fe_refresh | app.metalbear.com | 1 week | Authentication and Authorization
 | fe_device | app.metalbear.com | 1 week | Authentication and Authorization
 | fe_* | app.metalbear.com | 1 week | Authentication and Authorization
+
+#### Analytics Cookies
+
+These are non-essential cookies used for tracking user behavior. Collecting analytics data to help us improve the Site and your user experience. 
+
+| Cookie name |	Source |	Expiry |	Purpose |
+| --- | --- | --- | --- |
+| __hstc | hubspot.com | 1 week | Analytics
+| __hstc | hubspot.com | 1 week | Analytics
+| hubspotutk | hubspot.com | 1 week | Analytics
+| ph_* | hubspot.com | 1 week | Analytics
 
 #### How to control or delete cookies
 You may have the right to decide whether to accept or reject cookies.  When you access our Site, you are presented with a cookie consent mechanism that allows you to accept or reject cookies that are not essential cookies.  You may also control cookies by setting your browser to turn off cookies as described further below. If you turn off cookies, web beacon and other technologies will still detect your visits to our Site; however, they will not be associated with information otherwise stored in cookies
