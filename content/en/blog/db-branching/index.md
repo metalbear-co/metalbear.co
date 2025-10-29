@@ -34,6 +34,8 @@ DB Branching in mirrord lets you create a temporary, isolated branch for your da
 
 When you run your app with mirrord and turn on DB Branching, mirrord creates a database branch and automatically overrides your DB connection string. Your local service now connects to this new DB branch instead of the shared database in your cluster.
 
+{{<figure src="db-branching.png" title="How DB Branching in mirrord works" alt="image showing how DB branching in mirrord works" height="100%" width="100%">}}
+
 This gives you a safe place to run migrations and try schema changes without risking the shared DB. You can even share the branch with a teammate so you can test together without juggling separate copies or syncing changes.
 
 Now that we understand what the feature does, let’s see how to use it. 
