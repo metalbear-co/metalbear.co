@@ -26,7 +26,7 @@ mirrord lets developers work directly against a shared Kubernetes environment by
 
 Databases in shared environments can be tricky to work with. A migration or schema change gone wrong could impact other developers, so many devs avoid testing such changes in the shared environment. Instead, they rely on local setups for that.
 
-We wanted to give developers a safe way to test schema changes and migrations without risking shared resources. That’s exactly why we built DB Branching**.**
+We wanted to give developers a safe way to test schema changes and migrations without risking shared resources. That’s exactly why we built DB Branching.
 
 ## What is DB Branching?
 
