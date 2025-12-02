@@ -1,7 +1,7 @@
 ---
-title: "If You Missed KubeCon Atlanta Here’s the Quick Recap"
-description: ""
-lead: ""
+title: "If You Missed KubeCon Atlanta Here's the Quick Recap"
+description: "A recap of KubeCon + CloudNativeCon Atlanta 2025 covering AI trends, observability, and MetalBear's experience at the conference"
+lead: "The MetalBear team was at KubeCon + CloudNativeCon Atlanta, and we're sharing the trends we heard on repeat, what we saw on the floor, and a few fun moments along the way."
 slug: "kubecon-atlanta-takeaways"
 tags:
   - KubeCon
@@ -12,9 +12,9 @@ categories:
   - kubernetes
   - events
   - cloud-native
-date: 2025-11-27
+date: 2025-12-02
 summary: >
-  
+  A recap of KubeCon + CloudNativeCon Atlanta 2025, covering the major trends that dominated the conference: AI's pervasive presence (including the new Certified Kubernetes AI Conformance Program), observability's continued importance with a focus on custom resources and controllers, and OCI's quiet takeover as the default distribution model.
 canonicalurl: "https://metalbear.com/blog/kubecon-atlanta-takeaways"
 draft: false
 weight: 50
@@ -24,9 +24,9 @@ contributors:
   - "Arsh Sharma"
 ---
 
-The MetalBear team just got back from KubeCon + CloudNativeCon Atlanta, slightly sleep-deprived, very caffeinated, and fully humbled by the fact that “Hotlanta” was… really not that hot in November. We had our booth, presented two talks, and spent a lot of time in the vendor hall and hallway track eavesdropping to hear what the community’s really vibing with. If you weren’t there, or you want the highlights reel without sitting through 12 keynotes, this recap covers the trends we heard on repeat, what we saw on the floor, and a few fun moments along the way :)
+The MetalBear team was at KubeCon + CloudNativeCon Atlanta a few weeks ago, slightly sleep-deprived, very caffeinated, and fully humbled by the fact that “Hotlanta” was… really not that hot in November. We had our booth, presented two talks, and spent a lot of time in the vendor hall and hallway track eavesdropping to hear what the community’s really vibing with. If you weren’t there, or you want the highlights reel without sitting through 12 keynotes, this recap covers the trends we heard on repeat, what we saw on the floor, and a few fun moments along the way :)
 
-Also, next week we’re hosting a webinar with CNCF Ambassadors, maintainers, and attendees from KubeCon to recap what 2025 was like for the cloud native community. You can sign up for that here!
+Also, we just hosted a webinar with CNCF Ambassadors, maintainers, and attendees from KubeCon to recap what 2025 was like for the cloud native community. You can check out the recording for that [here](https://www.youtube.com/watch?v=V4Zo-NMajEo)!
 
 ## Where the cloud native community is headed
 
@@ -72,7 +72,7 @@ We also had two talks from the team this year: Oshrat moderated a [panel on secu
 
 Outside the conference, another highlight for us was hosting our first-ever KubeCon happy hour with our friends at Diagrid (the team behind Dapr). It was a huge success with lots of people showing up, and us having great conversations about developer experience, the cloud native ecosystem, and life :)
 
-[photo from the happy hour]
+{{<figure src="happy-hour.jpg" title="Photo from the MetalBear happy hour" alt="Photo from the MetalBear happy hour" height="100%" width="100%">}}
 
 ## Stay in Touch
 
