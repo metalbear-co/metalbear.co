@@ -52,7 +52,7 @@ sections:
     features:
       - "<strong>Everything in Teams</strong>"
       - "High availability"
-      - "Support for airgapped clusters"
+      - "Support for air-gapped clusters"
       - "Support for using mirrord in CI pipelines"
       - "Annual billing via invoice, custom contracts"
     admin_support:
@@ -122,7 +122,7 @@ sections:
         - name: "RBAC"
           team: true
           enterprise: true
-        - name: "Support for airgapped clusters"
+        - name: "Support for air-gapped clusters"
           team: false
           enterprise: true
 
