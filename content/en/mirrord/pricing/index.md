@@ -36,7 +36,7 @@ sections:
       - "Support for targeting Jobs, StatefulSets and more"
     admin_support:
       - "Role based access control"
-      - "Usage Monitoring & Auditing"
+      - "Usage monitoring and auditing"
       - "Support on email and community Slack"
     cta: "Try it now for free"
     cta_link: "https://app.metalbear.com/account/sign-up"
