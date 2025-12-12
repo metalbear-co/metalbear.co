@@ -23,7 +23,7 @@ sections:
   - name: "Team"
     pricing: "$40"
     pricing_note: "Seat / Month"
-    billing_note: "no credit card required"
+    billing_note: "No credit card required"
     description: "Advanced functionalities for teams sharing a staging cluster"
     best_for:
       - "Best for small teams"
@@ -37,7 +37,7 @@ sections:
     admin_support:
       - "Role based access control"
       - "Usage monitoring and auditing"
-      - "Support on email and community Slack"
+      - "Support via email and community Slack"
     cta: "Try it now for free"
     cta_link: "https://app.metalbear.com/account/sign-up"
 
