@@ -55,7 +55,7 @@ sections:
       - "Support for using mirrord in CI pipelines"
       - "Annual billing via invoice, custom contracts"
     admin_support:
-      - "Support tickets, email, private Discord, Slack, or Teams"
+      - "Support tickets, email, private Slack or Teams channel"
     cta: "Talk to us"
     cta_link: "https://metalbear.com/mirrord/demo/"
   teams:
@@ -150,7 +150,7 @@ sections:
           enterprise: "Custom (+ 24h)"
         - name: "Support tickets, email, public Slack"
           team: true
-        - name: "Support tickets, email, private Discord, Slack, or Teams"
+        - name: "Support tickets, email, private Slack or Teams channel"
           team: false
           enterprise: true
         - name: "Customer success team and Professional services"
