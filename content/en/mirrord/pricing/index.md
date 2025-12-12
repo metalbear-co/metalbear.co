@@ -46,13 +46,14 @@ sections:
     best_for:
       - "Best for larger organizations (15+ engineers)"
       - "White glove support"
-      - "Airgapped clusters"
+      - "Enterprise-grade reliability and scalability"
     feature_title: "Enterprise feature highlights:"
     features:
       - "<strong>Everything in Teams</strong>"
+      - "High availability"
       - "Support for airgapped clusters"
-      - "mirrord support in CI pipelines"
-      - "Annual billing via Invoice, custom contracts"
+      - "Support for using mirrord in CI pipelines"
+      - "Annual billing via invoice, custom contracts"
     admin_support:
       - "Support tickets, email, private Discord, Slack, or Teams"
     cta: "Talk to us"
@@ -108,6 +109,9 @@ sections:
         - name: "Session management"
           team: true
           enterprise: true
+        - name: "High availability"
+          team: false
+          enterprise: true
 
     - category: "Security and Compliance"
       features:
@@ -123,7 +127,7 @@ sections:
 
     - category: "Advanced Kubernetes Support"
       features:
-        - name: "mirrord support in CI pipelines"
+        - name: "Support for using mirrord in CI pipelines"
           team: false
           enterprise: true
         - name: "Support for live scaling"
