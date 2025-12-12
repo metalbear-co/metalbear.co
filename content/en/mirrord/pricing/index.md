@@ -37,6 +37,7 @@ sections:
     admin_support:
       - "Role based access control"
       - "Usage Monitoring & Auditing"
+      - "Support on email and community Slack"
     cta: "Try it now for free"
     cta_link: "https://app.metalbear.com/account/sign-up"
 
@@ -148,7 +149,7 @@ sections:
         - name: "Service Level Agreement"
           team: "48h"
           enterprise: "Custom (+ 24h)"
-        - name: "Support tickets, email, public Slack"
+        - name: "Email, public Slack"
           team: true
         - name: "Support tickets, email, private Slack or Teams channel"
           team: false
