@@ -23,7 +23,7 @@ sections:
   - name: "Team"
     pricing: "$40"
     pricing_note: "Seat / Month"
-    billing_note: "no credit card required"
+    billing_note: "No credit card required"
     description: "Advanced functionalities for teams sharing a staging cluster"
     best_for:
       - "Best for small teams"
@@ -36,7 +36,8 @@ sections:
       - "Support for targeting Jobs, StatefulSets and more"
     admin_support:
       - "Role based access control"
-      - "Usage Monitoring & Auditing"
+      - "Usage monitoring and auditing"
+      - "Support via email and community Slack"
     cta: "Try it now for free"
     cta_link: "https://app.metalbear.com/account/sign-up"
 
@@ -46,15 +47,16 @@ sections:
     best_for:
       - "Best for larger organizations (15+ engineers)"
       - "White glove support"
-      - "Airgapped clusters"
+      - "Enterprise-grade reliability and scalability"
     feature_title: "Enterprise feature highlights:"
     features:
       - "<strong>Everything in Teams</strong>"
-      - "Support for airgapped clusters"
-      - "mirrord support in CI pipelines"
-      - "Annual billing via Invoice, custom contracts"
+      - "High availability"
+      - "Support for air-gapped clusters"
+      - "Support for using mirrord in CI pipelines"
+      - "Annual billing via invoice, custom contracts"
     admin_support:
-      - "Support tickets, email, private Discord, Slack, or Teams"
+      - "Support tickets, email, private Slack or Teams channel"
     cta: "Talk to us"
     cta_link: "https://metalbear.com/mirrord/demo/"
   teams:
@@ -108,6 +110,9 @@ sections:
         - name: "Session management"
           team: true
           enterprise: true
+        - name: "High availability"
+          team: false
+          enterprise: true
 
     - category: "Security and Compliance"
       features:
@@ -117,13 +122,13 @@ sections:
         - name: "RBAC"
           team: true
           enterprise: true
-        - name: "Support for airgapped clusters"
+        - name: "Support for air-gapped clusters"
           team: false
           enterprise: true
 
     - category: "Advanced Kubernetes Support"
       features:
-        - name: "mirrord support in CI pipelines"
+        - name: "Support for using mirrord in CI pipelines"
           team: false
           enterprise: true
         - name: "Support for live scaling"
@@ -144,9 +149,9 @@ sections:
         - name: "Service Level Agreement"
           team: "48h"
           enterprise: "Custom (+ 24h)"
-        - name: "Support tickets, email, public Slack"
+        - name: "Email, public Slack"
           team: true
-        - name: "Support tickets, email, private Discord, Slack, or Teams"
+        - name: "Support tickets, email, private Slack or Teams channel"
           team: false
           enterprise: true
         - name: "Customer success team and Professional services"
