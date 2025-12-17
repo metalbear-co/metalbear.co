@@ -120,7 +120,7 @@ With this configuration:
 
 ## Features Moving to Beta: Branches Under Construction
 
-### **Removing cgroup v1 support**
+### Removing cgroup v1 support
 
 Control groups (cgroups) are a core Linux kernel feature that Kubernetes relies on for container isolation and resource management. For a long time, Kubernetes supported both versions of this system: the original cgroup v1 and the newer cgroup v2. That flexibility is now coming to an end.
 
