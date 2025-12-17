@@ -74,7 +74,7 @@ This change also introduces an important security hardening step that you need t
 
 To address this, Kubernetes v1.35 is adding an extra authorization layer. When a user attempts to upgrade a connection for operations like `exec`, `attach`, or `port-forward`, the API server now also requires the `CREATE` permission on the relevant subresource. This ensures that only users explicitly allowed to create these interactive sessions can do so. Before upgrading to Kubernetes 1.35, you should review your RBAC policies and ensure that users who rely on interactive pod access have the appropriate `CREATE` permissions configured. If needed, this new check can be temporarily disabled using the `AuthorizePodWebsocketUpgradeCreatePermission` feature gate, though the long-term recommendation is to update RBAC rules to match the new, more secure model.
 
-### **PreferSameNode Traffic Distribution**
+### PreferSameNode Traffic Distribution
 
 Efficient service-to-service traffic routing has always been tricky in Kubernetes. By default, Services spread traffic evenly across all healthy endpoints, regardless of where those endpoints are running. While simple, this often results in unnecessary cross-node or cross-zone network hops, increasing latency and consuming extra bandwidth.
 
