@@ -27,7 +27,7 @@ Nodes have now been made more explicit about what they can support. Security bou
 
 As is the case always, the full release notes are quite extensive. So instead of you having to climb every branch of the World Tree, we’ve highlighted the Kubernetes 1.35 features we think are worth paying attention to in this release!
 
-![image.png](New%20Features%20We%20Find%20Exciting%20in%20the%20Kubernetes%201%20/image.png)
+{{<figure src="release-logo.png" title="Kubernetes 1.35 (World Tree) Release Logo" alt="Release logo for K8s 1.35" height="100%" width="100%">}}
 
 *Caption: Kubernetes 1.35 (*World Tree*) Release Logo*
 
