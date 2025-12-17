@@ -175,7 +175,7 @@ When this Pod starts, it finds a private key and a signed certificate bundle alr
 
 ## Features Moving to Alpha: Saplings and Experiments
 
-### **Node Declared Features**
+### Node Declared Features
 
 Kubernetes scheduling decisions depend on what a node can and cannot do. Today, that information is mostly inferred through labels, taints, and tolerations. While flexible, this model starts to break down during cluster upgrades, when the control plane and nodes are running different Kubernetes versions. In those situations, Pods can be scheduled onto nodes that don’t actually support the features the Pod relies on, leading to failures that only show up at runtime.
 
