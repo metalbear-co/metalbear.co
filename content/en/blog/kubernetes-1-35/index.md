@@ -32,7 +32,7 @@ As is the case always, the full release notes are quite extensive. So instead of
 
 ## Features Moving to Stable: Roots You Can Rely On
 
-### **Mounting OCI Images as Volumes**
+### Mounting OCI Images as Volumes
 
 Modern Kubernetes workloads, in addition to the application code, often depend on external files such as configuration bundles, binaries, or what is now becoming increasingly common for AI workloads: machine learning models. Until recently, Kubernetes didn’t offer a native, clean way to provide this kind of data to a Pod. You either had to bundle everything into the application’s container image, which made images large, slower to build, and harder to update safely, or use init containers whose sole job was to fetch and unpack files into a shared volume before the main container started.
 
