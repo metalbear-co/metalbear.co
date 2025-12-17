@@ -173,7 +173,7 @@ spec:
 
 When this Pod starts, it finds a private key and a signed certificate bundle already available at `/run/workload-spiffe-credentials/credentialbundle.pem`, ready to be used for mTLS authentication, without any manual certificate management being required.
 
-## **Features Moving to Alpha: Saplings and Experiments**
+## Features Moving to Alpha: Saplings and Experiments
 
 ### **Node Declared Features**
 
