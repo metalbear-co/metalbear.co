@@ -64,7 +64,7 @@ In this example, Kubernetes pulls the OCI image and mounts its contents at `/dat
 
 For teams using [mirrord](https://metalbear.com/mirrord/), this works seamlessly with local development as well. If the target pod in the cluster mounts an OCI image volume, your locally running process will see the same files as if it were running inside the pod. This makes it possible to validate how your code reads or interacts with that data locally, without rebuilding images, adding init containers, or changing anything in the cluster.
 
-### **Transition from SPDY to WebSockets**
+### Transition from SPDY to WebSockets
 
 A lot of common Kubernetes commands like `kubectl exec`, `attach`, and `port-forward` all depend on a streaming transport between the client and the API server. For years, that transport has been built on SPDY, a protocol that has been deprecated since 2015 and is increasingly unsupported by modern proxies and load balancers.
 
