@@ -118,7 +118,7 @@ With this configuration:
 - `service-1` sends traffic to a pod on the same node whenever possible, minimizing latency and avoiding cross-node network overhead.
 - `service-2` prefers endpoints in the same zone, reducing cross-zone traffic while still allowing fallback when needed.
 
-## **Features Moving to Beta: Branches Under Construction**
+## Features Moving to Beta: Branches Under Construction
 
 ### **Removing cgroup v1 support**
 
