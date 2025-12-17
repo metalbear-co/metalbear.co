@@ -30,7 +30,7 @@ As is the case always, the full release notes are quite extensive. So instead of
 {{<figure src="release-logo.png" title="Kubernetes 1.35 (World Tree) Release Logo" alt="Release logo for K8s 1.35" height="100%" width="100%">}}
 
 
-## **Features Moving to Stable: Roots You Can Rely On**
+## Features Moving to Stable: Roots You Can Rely On
 
 ### **Mounting OCI Images as Volumes**
 
