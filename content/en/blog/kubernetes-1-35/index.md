@@ -134,7 +134,7 @@ stat -fc %T /sys/fs/cgroup/
 
 If the output states `cgroup2fs`, then cgroups v2 are used. If it shows `tmpfs`, that means you’re still using cgroups v1.
 
-### **Pod certificates**
+### Pod certificates
 
 Workloads running in a Kubernetes cluster need a reliable way to prove who they are to other workloads. However, the tools Kubernetes provides today are not a great fit for this problem. ServiceAccount tokens are scoped for Kubernetes API access, not workload identity. The generic CertificateSigningRequest (CSR) API can issue X.509 certificates, but it offers no straightforward way to deliver those certificates into running Pods. As a result, teams have typically turned to external systems like cert-manager or SPIFFE/SPIRE, adding more components and operational overhead just to establish basic workload identity.
 
