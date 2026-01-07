@@ -23,6 +23,8 @@ contributors:
 
 At the end of last year, we did a [webinar](https://www.youtube.com/watch?v=V4Zo-NMajEo) with some friends from the cloud native community, including CNCF Ambassadors and project maintainers, and we discussed what 2026 could hold for the cloud ecosystem based on our experiences at KubeCon in Atlanta and what we’ve been seeing in the community. Based on that conversation, and the time I’ve had thinking about it over the holidays, I’m going to share my top 5 predictions on where I think cloud native is headed.
 
+{{<figure src="webinar.jpeg" title="Screenshot from our webinar with CNCF Ambassadors and project maintainers" alt="Screenshot from our webinar with CNCF Ambassadors and project maintainers" height="100%" width="100%">}}
+
 ## Questioning the value of AI
 
 One of the remarkable differences between KubeCon London in April and KubeCon Atlanta in November was the way people reacted to AI announcements and features. In April at KubeCon, and even before that over the last few KubeCons, everyone was excited about all things AI. You could just mention those two letters together and have people coming in to hear what you were saying. All the sessions about AI were packed full of attendees.
