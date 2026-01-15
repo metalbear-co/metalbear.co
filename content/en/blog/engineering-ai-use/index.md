@@ -60,17 +60,21 @@ If there’s one area where everyone on the team agrees AI consistently delivers
 ````
 # Prompt 1
 
-I want to create a basic PowerShell function to add to my PowerShell profile.
+I want to create a basic PowerShell function to add to my
+PowerShell profile.
 
-The function should create a Kubernetes pod using `kubectl`, based on the `busybox` image.
+The function should create a Kubernetes pod using `kubectl`,
+based on the `busybox` image.
 - It should accept at least one argument for the pod name.
-- The pod must run forever using `-- sleep infinity` (this is an absolute requirement).
+- The pod must run forever using `-- sleep infinity` (this is an
+absolute requirement).
 
 The command it generates should look like this:
 `kubectl run fun --image=busybox --restart=Never -- sleep infinity`
 
 Additional requirements:
-- Make the restart policy configurable via a function argument, so I don’t have to keep deleting the pod every time I restart the cluster.
+- Make the restart policy configurable via a function argument,
+  so I don’t have to keep deleting the pod every time I restart the cluster.
 - Run basic sanity checks to ensure there is a running Kubernetes cluster.
 - After writing the script, suggest a few additional improvements.
 
@@ -80,8 +84,10 @@ Name the function `New-KubectlBusyBoxPod`.
 
 Extend the function with the following behavior:
 
-- Add an option to automatically attach to `/bin/sh` in the newly created pod.
-- Before creating the pod, run `kubectl get pod $Name` to check if it already exists.
+- Add an option to automatically attach to `/bin/sh` in the newly
+  created pod.
+- Before creating the pod, run `kubectl get pod $Name` to check if it
+  already exists.
 
 If the pod exists, the output will look like:
 
@@ -100,10 +106,11 @@ If the pod already exists, stop early and print a message like:
 Final adjustments:
 1. Change the default restart policy to `"Always"`.
 2. Wrap the existing pod status in single quotes in the output.
-3. Display the “pod already exists” message in red, since this is an error case.
-4. If the pod exists, prompt with a y/n question asking whether to delete it and proceed with creation.
+3. Display the “pod already exists” message in red, since this is an
+   error case.
+4. If the pod exists, prompt with a y/n question asking whether to delete 
+   it and proceed with creation.
    - If deleting, use `--force` and verify that the deletion succeeded.
-
 ````
 
 But there's another benefit besides time-saving. These AI-generated scripts tend to be more structured and readable by default compared to what an engineer would write, because spending extra time on a throwaway script usually isn’t worth it for them. This makes them much easier to tweak, extend, and reuse later when similar needs come up. Over time, many of these scripts have stopped being one-offs and instead become part of a small personal toolkit that gets reused again and again across debugging sessions.
@@ -174,7 +181,10 @@ mirrord lets developers run local processes in the context of a Kubernetes clust
 
 ### The Three Tiers
 
-**Layer** (`mirrord-layer`) - Injected into the user's process via `LD_PRELOAD` (Linux) or `DYLD_INSERT_LIBRARIES` (macOS). Uses Frida GUM to hook libc functions. When a hooked function is called, the layer either:
+**Layer** (`mirrord-layer`) 
+- Injected into the user's process via `LD_PRELOAD` (Linux) or 
+  `DYLD_INSERT_LIBRARIES` (macOS). Uses Frida GUM to hook libc functions.
+  When a hooked function is called, the layer either:
 - Handles it locally (bypass)
 - Sends a `ClientMessage` to the proxy and waits for a `DaemonMessage` response
 
@@ -182,7 +192,9 @@ mirrord lets developers run local processes in the context of a Kubernetes clust
 - **Intproxy** (`mirrord-intproxy`): Runs locally in open-source mode
 - **Operator**: Runs in-cluster for paid version (separate repo at `../operator/`)
 
-**Agent** (`mirrord-agent`) - Ephemeral pod that performs operations in the target's context. Network tasks run in the **target pod's network namespace** for correct DNS resolution and routing.
+**Agent** (`mirrord-agent`) 
+- Ephemeral pod that performs operations in the target's context. Network tasks
+  run in the **target pod's network namespace** for correct DNS resolution and routing.
 
 ...
 ````
