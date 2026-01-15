@@ -54,5 +54,8 @@ running_logo:
   - title: "torq"
     image: "/mirrord-torq.png"
     class: "w-[101px] xl:w-[160px]"
+  - title: "monday"
+    image: "/mirrord-monday.png"
+    class: "w-[101px] xl:w-[160px]"
   
     
