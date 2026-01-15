@@ -82,7 +82,7 @@
 }
 
 .blog-single__wrapper {
-  max-width: 1080px;
+  max-width: 1200px;
   padding-top: 3em;
 }
 
@@ -111,41 +111,47 @@
 }
 
 .blog-single__header h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 1rem;
+  line-height: 1.3;
 }
 
 .blog-single__content h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  margin-top: 3rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .blog-single__content h3 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.75rem !important;
 }
 
 @include media-breakpoint-up(lg) {
   .blog-single__main.col-lg-10 {
     flex: 0 0 auto;
-    width: 62.5%;
+    width: 68%;
   }
 
   .blog-single__sidebar.col-lg-6 {
     flex: 0 0 auto;
-    width: 37.5%;
+    width: 32%;
   }
 
 
   .blog-single__header h1 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     margin-top: 1rem;
+    line-height: 1.2;
   }
 
   .blog-single__content h2 {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
 
   .blog-single__content h3 {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
   }
 
   .blog-list__wrapper .blog-card__col {
@@ -172,12 +178,12 @@
 @include media-breakpoint-up(xl) {
   .blog-single__main.col-xl-11 {
     flex: 0 0 auto;
-    width: 68.75%;
+    width: 72%;
   }
 
   .blog-single__sidebar.col-xl-5 {
     flex: 0 0 auto;
-    width: 31.25%;
+    width: 28%;
   }
 }
 
@@ -191,14 +197,57 @@
   text-decoration: underline;
 }
 
+
 .blog-single__content p {
   font-size: 1rem;
   line-height: 1.8;
   color: $brand-black;
+  margin-bottom: 1.5rem;
+}
+
+.blog-single__content > p:first-of-type {
+  font-size: 1.125rem;
+  line-height: 1.9;
 }
 
 .blog-single__content img {
   max-width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.blog-single__content a {
+  color: $purple;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.blog-single__content a:hover {
+  color: darken($purple, 10%);
+}
+
+.blog-single__content blockquote {
+  border-left: 4px solid $purple;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #444;
+}
+
+.blog-single__content ul,
+.blog-single__content ol {
+  margin-bottom: 1.5rem;
+}
+
+.blog-single__content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.blog-single__content hr {
+  border: none;
+  border-top: 1px dashed #ccc;
+  margin: 3rem 0;
 }
 
 .blog__newsletter {
