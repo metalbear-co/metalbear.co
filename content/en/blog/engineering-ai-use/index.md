@@ -33,7 +33,9 @@ We raised our [seed round](https://metalbear.com/blog/seed-funding/) a couple of
 One of the most consistent and least controversial ways we have been using AI is as an entry point into unfamiliar code. This is especially useful when understanding a new area of the codebase, coming back to something that hasn’t been touched in a while, or trying to understand code in external libraries. Instead of starting by opening files and reading through the code manually, people often use tools like Claude Code or Cursor for a high-level explanation of how a certain part of the system is structured and how the pieces relate to each other. A prompt might look something like: 
 
 ```
-I’m looking at the TCP outgoing interception code in the mirrord layer. Can you explain which modules are involved and how a connection flows from the local process to the agent?
+I’m looking at the TCP outgoing interception code in the mirrord layer. 
+Can you explain which modules are involved and how a connection flows from the
+local process to the agent?
 ```
 
 It’s important to note here that engineers aren’t asking the AI to explain mirrord as a whole, or to be an authority on the architecture. That simply doesn’t work for a codebase as large as ours. They’re using it to form an initial mental model for a specific part of the system they’ll be working on. So even if that model is incomplete or slightly wrong, it still provides a useful starting point and makes the next step, reading the actual code, much easier. 
@@ -43,9 +45,9 @@ It’s important to note here that engineers aren’t asking the AI to explain m
 Another area where AI has been useful for us is early in the development process, during the planning stage before any approach has been chosen for solving a problem. Engineers often use it to explore ideas by describing the feature they want to implement or a bug they’re trying to fix, and seeing what kinds of approaches the model suggests. Having AI lay out a few different options can surface trade-offs earlier, or help rule out directions they don’t want to pursue, without paying the full cost of writing and rewriting code. A prompt in this case might look something like:
 
 ```
-I’m looking into adding support for  filtering incoming requests by HTTP method in mirrord.
-I don’t want implementation code yet. Can you help me think through where filtering could live
-, what kinds of constraints or edge cases we should consider, and what
+I’m looking into adding support for filtering incoming requests by HTTP method in mirrord.
+I don’t want implementation code yet. Can you help me think through where filtering could live,
+what kinds of constraints or edge cases we should consider, and what
 trade-offs different approaches might have?
 ```
 
@@ -55,7 +57,7 @@ That said, objections have also been raised internally about using AI this way. 
 
 If there’s one area where everyone on the team agrees AI consistently delivers value, it’s scripts. For debugging scenarios or local workflows, being able to describe what you need and have a working script generated for you can save a huge amount of time. One of the engineers used these prompts to create a reusable PowerShell function which they needed:
 
-```
+````
 # Prompt 1
 
 I want to create a basic PowerShell function to add to my PowerShell profile.
@@ -74,7 +76,6 @@ Additional requirements:
 
 Name the function `New-KubectlBusyBoxPod`.
 
----
 # Prompt 2
 
 Extend the function with the following behavior:
@@ -103,7 +104,7 @@ Final adjustments:
 4. If the pod exists, prompt with a y/n question asking whether to delete it and proceed with creation.
    - If deleting, use `--force` and verify that the deletion succeeded.
 
-```
+````
 
 But there's another benefit besides time-saving. These AI-generated scripts tend to be more structured and readable by default compared to what an engineer would write, because spending extra time on a throwaway script usually isn’t worth it for them. This makes them much easier to tweak, extend, and reuse later when similar needs come up. Over time, many of these scripts have stopped being one-offs and instead become part of a small personal toolkit that gets reused again and again across debugging sessions.
 
@@ -115,7 +116,7 @@ mirrord has a complex and fairly unusual architecture, which general purpose LLM
 
 That said, some engineers have had better results by explicitly giving the model persistent architectural context. In practice, this means maintaining internal CLAUDE.md or AGENTS.md files that describe mirrord’s structure and its major components. These files aren’t static, and engineers use the models themselves to keep them updated for future use. In case you’re curious, this is what one of those files looks like currently:
 
-```markdown
+````markdown
 # CLAUDE.md
 
 Context for Claude Code when working with the mirrord repository.
@@ -184,7 +185,7 @@ mirrord lets developers run local processes in the context of a Kubernetes clust
 **Agent** (`mirrord-agent`) - Ephemeral pod that performs operations in the target's context. Network tasks run in the **target pod's network namespace** for correct DNS resolution and routing.
 
 ...
-```
+````
 
 If you check out the [full file here](https://github.com/metalbear-co/mirrord/blob/main/CLAUDE.md) you’ll see, it’s a lot of context that we need to provide the model to get it to a state where it’s decent, but still not enough to be trusted entirely.
 
