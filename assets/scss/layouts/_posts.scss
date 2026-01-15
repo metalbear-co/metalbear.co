@@ -128,6 +128,17 @@
   margin-bottom: 0.75rem !important;
 }
 
+.blog-single__content h2,
+.blog-single__content h3 {
+  position: relative;
+}
+
+.blog-single__content h2 .anchor,
+.blog-single__content h3 .anchor {
+  position: absolute;
+  margin-left: 0.5rem;
+}
+
 @include media-breakpoint-up(lg) {
   .blog-single__main.col-lg-10 {
     flex: 0 0 auto;
