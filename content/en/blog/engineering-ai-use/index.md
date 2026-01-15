@@ -32,17 +32,23 @@ We raised our [seed round](https://metalbear.com/blog/seed-funding/) a couple of
 
 One of the most consistent and least controversial ways we have been using AI is as an entry point into unfamiliar code. This is especially useful when understanding a new area of the codebase, coming back to something that hasn’t been touched in a while, or trying to understand code in external libraries. Instead of starting by opening files and reading through the code manually, people often use tools like Claude Code or Cursor for a high-level explanation of how a certain part of the system is structured and how the pieces relate to each other. A prompt might look something like: 
 
+<div class="wrap-text">
+
 ```markdown
 I’m looking at the TCP outgoing interception code in the mirrord layer. 
 Can you explain which modules are involved and how a connection flows from the
 local process to the agent?
 ```
+</div>
+
 
 It’s important to note here that engineers aren’t asking the AI to explain mirrord as a whole, or to be an authority on the architecture. That simply doesn’t work for a codebase as large as ours. They’re using it to form an initial mental model for a specific part of the system they’ll be working on. So even if that model is incomplete or slightly wrong, it still provides a useful starting point and makes the next step, reading the actual code, much easier. 
 
 ### Exploring ideas and alternatives
 
 Another area where AI has been useful for us is early in the development process, during the planning stage before any approach has been chosen for solving a problem. Engineers often use it to explore ideas by describing the feature they want to implement or a bug they’re trying to fix, and seeing what kinds of approaches the model suggests. Having AI lay out a few different options can surface trade-offs earlier, or help rule out directions they don’t want to pursue, without paying the full cost of writing and rewriting code. A prompt in this case might look something like:
+
+<div class="wrap-text">
 
 ```markdown
 I’m looking into adding support for filtering incoming requests by HTTP method in mirrord.
@@ -51,11 +57,15 @@ what kinds of constraints or edge cases we should consider, and what
 trade-offs different approaches might have?
 ```
 
+</div>
+
 That said, objections have also been raised internally about using AI this way. Once a model proposes a concrete solution, it can unintentionally narrow your thinking. Even a mediocre solution can anchor your brain and make it harder to explore better alternatives on your own. 
 
 ### Scripts
 
 If there’s one area where everyone on the team agrees AI consistently delivers value, it’s scripts. For debugging scenarios or local workflows, being able to describe what you need and have a working script generated for you can save a huge amount of time. One of the engineers used these prompts to create a reusable PowerShell function which they needed:
+
+<div class="wrap-text">
 
 ````
 # Prompt 1
@@ -112,6 +122,8 @@ Final adjustments:
    it and proceed with creation.
    - If deleting, use `--force` and verify that the deletion succeeded.
 ````
+</div>
+
 
 But there's another benefit besides time-saving. These AI-generated scripts tend to be more structured and readable by default compared to what an engineer would write, because spending extra time on a throwaway script usually isn’t worth it for them. This makes them much easier to tweak, extend, and reuse later when similar needs come up. Over time, many of these scripts have stopped being one-offs and instead become part of a small personal toolkit that gets reused again and again across debugging sessions.
 
