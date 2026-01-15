@@ -32,7 +32,7 @@ We raised our [seed round](https://metalbear.com/blog/seed-funding/) a couple of
 
 One of the most consistent and least controversial ways we have been using AI is as an entry point into unfamiliar code. This is especially useful when understanding a new area of the codebase, coming back to something that hasn’t been touched in a while, or trying to understand code in external libraries. Instead of starting by opening files and reading through the code manually, people often use tools like Claude Code or Cursor for a high-level explanation of how a certain part of the system is structured and how the pieces relate to each other. A prompt might look something like: 
 
-```
+```markdown
 I’m looking at the TCP outgoing interception code in the mirrord layer. 
 Can you explain which modules are involved and how a connection flows from the
 local process to the agent?
@@ -44,7 +44,7 @@ It’s important to note here that engineers aren’t asking the AI to explain m
 
 Another area where AI has been useful for us is early in the development process, during the planning stage before any approach has been chosen for solving a problem. Engineers often use it to explore ideas by describing the feature they want to implement or a bug they’re trying to fix, and seeing what kinds of approaches the model suggests. Having AI lay out a few different options can surface trade-offs earlier, or help rule out directions they don’t want to pursue, without paying the full cost of writing and rewriting code. A prompt in this case might look something like:
 
-```
+```markdown
 I’m looking into adding support for filtering incoming requests by HTTP method in mirrord.
 I don’t want implementation code yet. Can you help me think through where filtering could live,
 what kinds of constraints or edge cases we should consider, and what
