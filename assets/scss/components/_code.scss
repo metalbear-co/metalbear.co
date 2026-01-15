@@ -64,3 +64,9 @@ pre code::-webkit-scrollbar-thumb:hover {
 code.language-mermaid {
   background: none;
 }
+
+.wrap-text code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
