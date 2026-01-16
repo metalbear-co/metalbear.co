@@ -1,0 +1,74 @@
+<section class="section-header bg-[#E4E3FD]/50">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-6 xl:px-0 pt-[52px] md:pt-[65px] lg:pt-[52px] xl:pt-[65px] 2xl:pt-[78px] pb-[54px] md:pb-[70px] lg:pb-[70px] xl:pb-[87px] 2xl:pb-[104px]">
+        <div class="grid grid-cols-12 items-center relative z-10">
+            <div class="col-span-12 lg:col-span-6 mb-6 lg:mb-0">
+                <div class="flex justify-center lg:justify-start">
+                    <div
+                        class="w-[125px] md:w-[140px] lg:w-[141px] xl:w-[177px] mb-[12px] md:mb-[20px] lg:mb-[24px] xl:mb-[30px] 2xl:mb-[36px]">
+                        <img class="w-full h-auto" src="/mirrord-by-metalbear.svg" alt="mirrord-by-metalbear">
+                    </div>
+                </div>
+                <div class="pt-5 md:pt-6 lg:pt-5 xl:pt-6 2xl:pt-7.5">
+                    <div class="text-center lg:text-left">
+                        <h2
+                            class="text-[#010009] text-[1.688rem] md:text-3xl lg:text-[2.688rem] xl:text-[3.375rem] font-heading font-semibold leading-[1.2] md:leading-[1.2] lg:leading-[1.2] xl:leading-[1.2] 2xl:leading-[1.2] mb-[32px] md:mb-[42px] lg:mb-[28px] xl:mb-[35px] 2xl:mb-[42px]">
+                            Run Tests in CI <br>Against a <br><span class="text-primary">Real Environment</span></h2>
+                        <div
+                            class="lg:w-[88%] text-black text-base xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal px-6 lg:px-0">
+                            <p class="mb-5">mirrord for CI lets you test against your shared staging or pre-prod
+                                environment in
+                                Kubernetes, without deploying code to it or having to spin up test environments.</p>
+                            <p class="font-medium">Enable cheap, fast, production-accurate testing.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex flex-wrap lg:flex-nowrap justify-center lg:justify-start lg:gap-[20px] xl:gap-[25px] 2xl:gap-[30px] pt-6.5 lg:pt-12 mb-4 md:mb-5 lg:mb-4 xl:mb-5 2xl:mb-6">
+                        <a class="flex-none w-[263px] lg:w-[250px] xl:w-[306px] h-12 xl:h-13.5 2xl:h-[65px] text-xl text-[#000000] font-body font-medium flex justify-center items-center bg-tertiary hover:bg-secondary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                            href="/mirrord/demo">Schedule a Free Demo</a>
+                        <a class="flex-none w-[263px] lg:w-[171px] xl:w-[171px] h-12 xl:h-13.5 2xl:h-[65px] text-xl text-white hover:text-[#000000] font-body font-medium flex justify-center items-center bg-primary hover:bg-tertiary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                            href="https://metalbear.com/mirrord/docs/using-mirrord/mirrord-for-ci" target="_blank">See
+                            docs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 pt-5 lg:pt-0">
+                <div class="w-11/12 lg:w-5/6 xl:w-11/12 ml-auto mr-auto lg:mr-0">
+                    <img class="w-full h-auto" src="/mirrord-for-ci/mirrord-for-ci-header.png" alt="hero image" />
+                </div>
+                <div class="lg:hidden pt-10 px-5 space-y-5">
+                    <a class="w-full h-15 text-lg xl:text-xl text-[#000000] font-body flex justify-center items-center bg-tertiary hover:bg-secondary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                        href="/mirrord/demo">Schedule a Free Demo</a>
+                    <a class="w-full h-15 text-lg xl:text-xl text-white hover:text-[#000000] font-body flex justify-center items-center bg-primary hover:bg-tertiary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                        href="https://metalbear.com/mirrord/docs/using-mirrord/mirrord-for-ci" target="_blank">See
+                        docs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pb-2 bg-[#FAFAFD] z-0">
+    <div class="text-center bg-primary border border-black px-5 xl:px-0 py-3.5 lg:py-2">
+        <div class="w-[240px] lg:w-full mx-auto">
+            <h3 class="text-base lg:text-xl xl:text-2xl text-white font-bold font-heading mt-0 mb-0">Trusted by
+                high-scale DevOps teams at...</h3>
+        </div>
+    </div>
+    <div class="border-b-5 lg:border-b-8 border-x border-black bg-white overflow-hidden">
+        <div class="mirrord-logo-slider">
+            {{- $logos := .Params.running_logo }}
+            {{- $repeat := .Params.logo_repeat }}
+            <ul class="mirrord-logo-track">
+                {{- range seq 1 $repeat }}
+                {{- range $logos }}
+                <li>
+                    <div class="{{ .class }}">
+                        <img class="w-full h-auto" src="{{ .image }}" alt="{{ .title }}">
+                    </div>
+                </li>
+                {{- end }}
+                {{- end }}
+            </ul>
+        </div>
+    </div>
+</section>
