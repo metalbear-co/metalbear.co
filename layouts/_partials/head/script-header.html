@@ -17,6 +17,7 @@
 
 <!-- vendor -->
 {{- $alpinejs := resources.Get "js/alpinejs@3.14.8.min.js" }}
+{{- $collapse := resources.Get "js/collapse.js" }}
 {{- $clipboard := resources.Get "js/clipboardjs.js" }}
 
 <!-- local js -->
@@ -31,7 +32,7 @@
 {{- $instantPage := resources.Get "js/instant.page.js" -}}
 {{- $instantPage := $instantPage | js.Build -}}
 
-{{- $js := slice $splide $alpineClipboard $persist $alpinejs $instantPage $search $clipboard | resources.Concat "js/main.js" }}
+{{- $js := slice $splide $alpineClipboard $persist $alpinejs $collapse $instantPage $search $clipboard | resources.Concat "js/main.js" }}
 {{- $js_min := $js | resources.Minify }}
 
 <script src="{{ $js_min.RelPermalink }}" defer></script>
