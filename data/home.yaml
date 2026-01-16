@@ -20,7 +20,7 @@ running_logo:
     class: "w-[171px] xl:w-[270px]"  
   - title: "monday"
     image: "/mirrord-monday.png"
-    class: "w-[101px] xl:w-[160px]"         
+    class: "w-[93px] xl:w-[142px]"         
   - title: "cadence"
     image: "/mirrord-cadence.png"
     class: "w-[102px] xl:w-[160px]"     
