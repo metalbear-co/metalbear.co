@@ -1,7 +1,7 @@
 ---
 title: "mirrord for CI"
 description: "mirrord for CI"
-slug: /mirrord-for-ci/
+slug: mirrord-for-ci
 logo_repeat: 10
 running_logo: 
   - title: "monday"
