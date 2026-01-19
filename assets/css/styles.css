@@ -1085,3 +1085,62 @@ ol {
 .show-less-btn__active .compare-btn-icon {
     @apply rotate-0;
 }
+
+/* custom select */
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  padding: 14px 48px 14px 16px; /* space for arrow */
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 26px;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.select-wrapper select {
+  background-color: #fff;
+  color: #000;
+}
+
+.select-wrapper select option {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.select-wrapper select option:focus {
+  background-color: #e6e6ff;
+  color: #000000;
+}
+
+.select-wrapper select option:checked {
+  background-color: #e6e6ff;
+  color: #000;
+}
+
+.text-ci-highlight {
+    color: #FFCB7D;
+    text-shadow: -3px 3px 0px #000000;
+    text-transform: uppercase;
+}
