@@ -93,6 +93,11 @@ weight = 30
 url = "/mirrord/case-studies/"
 
 [[footer_center]]
+name = "User Stories"
+weight = 35
+url = "/mirrord/stories/"
+
+[[footer_center]]
 name = "vs Telepresence"
 weight = 40
 url = "/mirrord/compare/telepresence/"
