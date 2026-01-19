@@ -53,9 +53,9 @@ weight = 10
 url = "/mirrord/"
 
 [[footer_left]]
-name = "User Stories"
+name = "mirrord for CI"
 weight = 20
-url = "/mirrord/stories/"
+url = "/mirrord-for-ci/"
 
 [[footer_left]]
 name = "Pricing"
