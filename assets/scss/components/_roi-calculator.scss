@@ -1,0 +1,17 @@
+// ROI Calculator Component Styles
+
+// Number input - hide spinners for cleaner look
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+// Smooth transitions for collapsible sections
+[x-cloak] {
+    display: none !important;
+}
