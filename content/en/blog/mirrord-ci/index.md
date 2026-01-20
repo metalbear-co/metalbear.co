@@ -24,9 +24,8 @@ We’ve launched mirrord for CI, which uses mirrord to enable running concurrent
 Testing cloud native applications isn’t an easy task because of their distributed nature. A code change made on a single service often requires other services to be brought up as well to test how it would behave. Today organizations do this in CI pipelines by either spinning up ephemeral cloud environments or using local Kubernetes tools like minikube and kind in their pipelines. Both approaches have their own set of drawbacks:
 
 - **Ephemeral cloud environments in CI:** Spinning up a cloud environment or deploying to an existing environment for each CI run significantly slows down developers, since every change can mean waiting 20–30 minutes for the environment to spin up, container images to build, and get deployed. On top of that it’s expensive and operationally heavy, increasing cloud costs and adding ongoing maintenance work for platform teams. These environments also rarely mimic a full production-like setup because they run with limited data, lack access to third-party APIs, and often don’t include all microservices when systems are large.
-- **Local Kubernetes tools:** To save costs, some organizations replace cloud environments with tools like minikube and kind, which let them create a Kubernetes cluster local to the CI runner for testing purposes. The drawback here being that local clusters behave very differently from real ones, which means poor test coverage. On top of that, this also takes time and isn’t necessarily cheap, since you need to run your pipelines on machines powerful enough to support local clusters, so your CI bill is higher.
 
-So either you’re are trading developer velocity and money for environments which match production, or making do with environments which can’t catch all the bugs.
+- **Local Kubernetes tools:** To save costs, some organizations replace cloud environments with tools like minikube and kind, which let them create a Kubernetes cluster local to the CI runner for testing purposes. The drawback here being that local clusters behave very differently from real ones, which means poor test coverage. On top of that, this also takes time and isn’t necessarily cheap, since you need to run your pipelines on machines powerful enough to support local clusters, so your CI bill is higher.
 
 ## What is mirrord for CI?
 
@@ -91,7 +90,6 @@ jobs:
         shell: bash
         run: |
           mirrord ci start --target deployment/ip-visit-counter go run ip-visit-counter.go
-
           npm test
           mirrord ci stop
 ```
