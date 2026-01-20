@@ -32,7 +32,7 @@ So either you’re are trading developer velocity and money for environments whi
 
 These problems don't only apply to CI, but also to local development - local Kubernetes tools are resource-intensive and don't simulate production, and personal cloud environments are incredibly expensive. [mirrord](https://metalbear.com/mirrord/) already fixes those by allowing developers to run their local code in the context of a shared Kubernetes environment (usually the staging cluster) and mirror traffic, files, and environment variables between the two. mirrord for CI extends this functionality to CI pipelines as well. With mirrord for CI:
 
-- Your code runs in the CI runner, but mirrord proxies incoming and outgoing traffic, environment variables, and files back and forth between it and the cluster.
+- Your code, i.e. the microservice in the branch you want to merge, runs in the CI runner, but mirrord proxies incoming and outgoing traffic, environment variables, and files back and forth between it and the cluster.
 - The result is that your code behaves as if it’s running in the cloud, allowing you to test it against real services, real data, and real traffic, without spinning up or deploying anything, easily saving 20–25 minutes per CI run.
 - mirrord lets you connect to an existing Kubernetes environment (like staging or your pre-prod cluster), removing the need to spin up dedicated ephemeral environments for CI, reducing your cloud bill significantly.
 
