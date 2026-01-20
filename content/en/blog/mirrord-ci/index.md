@@ -58,7 +58,7 @@ mirrord ci start --target deployment/ip-visit-counter go run ip-visit-counter.go
 
 At this point, your microservice will be running inside the CI runner and mirrord will be connecting it to the cluster. You can now run your test script as usual. These tests can target the stable, already deployed service in your cluster (for example, the service running in staging). mirrord will intercept that traffic and redirect it to the service running inside the CI runner, allowing it to work against real dependencies without deploying anything.
 
-Note: Make sure to run `mirrord ci stop` after the tests finish running.
+> Note: Make sure to run `mirrord ci stop` after the tests finish running.
 
 {{<figure src="mirrord-ci-diagram.png" title="How mirrord for CI works" alt="mirrord for CI diagram" height="100%" width="100%">}}
 
