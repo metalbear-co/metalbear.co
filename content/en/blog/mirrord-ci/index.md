@@ -50,7 +50,7 @@ Copy the generated key and save it as a secret environment variable named `MIRRO
 
 ### Starting a mirrord CI session
 
-The `mirrord ci start` command is used to start the service being tested in your CI runner, and supports the same arguments as `mirrord exec`, including specifying a target with `--target` or using a configuration file with `--config-file`. Here’s an example for starting a Go service called `ip-visit-counter`
+The `mirrord ci start` command is used to start the service being tested in your CI runner, and supports the same arguments as `mirrord exec`, including specifying a target with `--target` or using a configuration file with `--config-file`. Here’s an example for starting a Go service called `ip-visit-counter`:
 
 ```
 mirrord ci start --target deployment/ip-visit-counter go run ip-visit-counter.go
