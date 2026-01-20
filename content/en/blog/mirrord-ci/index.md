@@ -17,7 +17,7 @@ contributors:
   - "Arsh Sharma"
 ---
 
-We’ve launched mirrord for CI, which uses mirrord to enable running concurrent CI tests on a shared, production-like Kubernetes environment. In this blog we’ll cover the problems with traditional CI, what mirrord for CI is, and how you can get started with it.
+We’ve launched [mirrord for CI](https://metalbear.com/mirrord-for-ci/), which uses mirrord to enable running concurrent CI tests on a shared, production-like Kubernetes environment. In this blog we’ll cover the problems with traditional CI, what mirrord for CI is, and how you can get started with it.
 
 ## Why traditional CI pipelines slow developers
 
@@ -100,4 +100,4 @@ With this setup, the tests you’ve defined to be executed when running `npm tes
 
 Traditional CI pipelines force teams into slow, expensive workflows that still fall short of realism. mirrord for CI fixes this problem by running the PR code inside your CI runner while connecting it to an existing Kubernetes environment. This way you get fast feedback, realistic tests, and no extra infrastructure to manage. No ephemeral environments to spin up, no images to build and deploy, and no special CI-only setups to maintain.
 
-If you want to see this in action you can [book a call with us](https://metalbear.com/mirrord/demo/) and in just 30 minutes, we’ll show you exactly how mirrord eliminates your CI bottleneck and fits into your existing setup.
+If you want to see this in action you can [book a call with us](https://metalbear.com/mirrord-for-ci/) and in just 30 minutes, we’ll show you exactly how mirrord eliminates your CI bottleneck and fits into your existing setup.
