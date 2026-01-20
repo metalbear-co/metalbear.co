@@ -90,7 +90,7 @@ jobs:
       - name: Run tests with mirrord for CI
         shell: bash
         run: |
-          mirrord ci start --target deployment/ip-visit-counter go run ip-visit-counter.go &
+          mirrord ci start --target deployment/ip-visit-counter go run ip-visit-counter.go
 
           npm test
           mirrord ci stop
