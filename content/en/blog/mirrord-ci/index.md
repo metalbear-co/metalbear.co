@@ -38,7 +38,7 @@ These problems don't only apply to CI, but also to local development - local Kub
 
 If you’re not familiar with mirrord, this might sound a bit too good to be true. The obvious question is how can multiple CI runners safely connect and run tests on an existing Kubernetes cluster which other developers might also be using for development or testing? What sets mirrord apart is its ability to provide isolation within the [shared cluster](https://metalbear.com/mirrord/docs/using-mirrord/sharing-the-cluster) for each run. Features like [HTTP traffic filtering](https://metalbear.com/mirrord/docs/using-mirrord/traffic-filtering), [database branching](https://metalbear.com/mirrord/docs/using-mirrord/db-branching), and [queue splitting](https://metalbear.com/mirrord/docs/using-mirrord/queue-splitting) ensure that CI runners’ traffic and data are isolated, without affecting other runners or developers using the shared environment. You can also use features like [mirrord Policies](https://metalbear.com/mirrord/docs/managing-mirrord/policies), which act as guardrails preventing unsafe operations on the shared cluster.
 
-## How to get started?
+## How to get started
 
 mirrord for CI is available for mirrord users on the [Enterprise plan](https://metalbear.com/mirrord/pricing/). To use mirrord for CI, you’ll first need to generate an API key:
 
