@@ -1,6 +1,6 @@
 ---
 title: "Meet mirrord at ContainerDays London 2026"
-description: "Visit the mirrord team at ContainerDays London 2026 - February 11-12 at Truman Brewery. See live demos, get swag, and learn how to test Kubernetes apps without the deploy cycle."
+description: "Visit the mirrord team at ContainerDays London 2026 - February 11-12 at Truman Brewery. Catch Jake Page's talk on AI and Kubernetes testing, see live demos, and get swag."
 slug: containerdays-london-2026
 layout: builder
 
@@ -29,6 +29,7 @@ faq:
 
 sections:
   - containerdays-london-header
+  - containerdays-london-talk
   - containerdays-london-booth
   - containerdays-london-meeting
   - containerdays-london-faq
