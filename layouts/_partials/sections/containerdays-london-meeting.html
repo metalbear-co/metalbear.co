@@ -42,21 +42,100 @@
             </div>
             <div class="col-span-12 lg:col-span-7">
                 <div id="meeting-form"
-                    class="border-[1.5px] border-black shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] rounded-[5px] lg:rounded-[7px] bg-[#E4E3FD] py-8 lg:py-10 px-5 lg:px-10">
-                    <header class="text-center mb-6">
+                    class="border-[1.5px] border-black shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] rounded-[5px] lg:rounded-[7px] bg-[#E4E3FD] py-10 lg:py-15 px-5 lg:px-12">
+                    <header class="text-center mb-9">
                         <h3
-                            class="text-black text-lg lg:text-xl font-heading font-medium leading-[1.3] mb-3">
+                            class="text-black text-lg lg:text-[1.375rem] font-heading font-medium leading-[1.3] lg:leading-[1.3] mb-5">
                             Book Your Meeting at ContainerDays London</h3>
-                        <div class="text-black text-sm">
+                        <div class="text-black text-base italic">
                             <p>February 11-12, 2026 at Truman Brewery</p>
                         </div>
                     </header>
-                    <div>
-                        <script src="https://js-eu1.hsforms.net/forms/embed/143742664.js"></script>
-                        <div class="hs-form-frame" data-region="eu1" data-form-id="a2948bd0-279b-44c8-bd4d-83240a4e4432" data-portal-id="143742664"></div>
+                    <div class="lg:px-3">
+                        <form id="meeting-contact-form" class="contact-form">
+                            <div class="book-form__field mb-3">
+                                <label class="text-sm font-medium mb-1" for="meeting-email">Work email</label>
+                                <input class="book-form__input placeholder:text-transparent" type="email" id="meeting-email"
+                                    name="email" placeholder="Work email" required="">
+                            </div>
+                            <div class="book-form__field mb-3">
+                                <label class="text-sm font-medium mb-1" for="meeting-company">Company</label>
+                                <input class="book-form__input placeholder:text-transparent" type="text" id="meeting-company"
+                                    name="company" placeholder="Company" required="">
+                            </div>
+                            <div class="book-form__field mb-3">
+                                <label class="text-sm font-medium mb-1" for="meeting-jobtitle">Job title</label>
+                                <input class="book-form__input placeholder:text-transparent" type="text" id="meeting-jobtitle"
+                                    name="jobtitle" placeholder="Job title" required="">
+                            </div>
+                            <div class="book-form__field mb-3">
+                                <label class="text-sm font-medium mb-1" for="meeting-team-size">Engineering team size</label>
+                                <div class="select-wrapper">
+                                    <select id="meeting-team-size" name="engineeringteam" class="book-form__input pr-4">
+                                        <option selected>&lt;50</option>
+                                        <option>50-500</option>
+                                        <option>&gt;500</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="book-form__field mb-0">
+                                <label class="text-sm font-medium mb-1" for="meeting-message">What do you want to talk about?</label>
+                                <textarea class="book-form__input" name="message" id="meeting-message" placeholder="Your Kubernetes setup, development challenges, specific mirrord questions..."
+                                    rows="5" required=""></textarea>
+                            </div>
+                            <div class="button-wrapper flex justify-center mt-5 xl:mt-8.5">
+                                <button
+                                    class="w-full h-15 xl:h-[65px] text-xl cursor-pointer text-white hover:text-[#000000] capitalize font-body font-medium flex justify-center items-center bg-primary hover:bg-[#FFD18C] border border-solid border-[#222222] rounded-[6px] lg:rounded-[11px] shadow-[-6px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                                    aria-label="Submit" form="meeting-contact-form" type="submit">
+                                    Book Meeting
+                                </button>
+                            </div>
+                        </form>
                     </div>
+                </div>
+                <div id="meeting-result" class="">
+                    <span id="meetingResultText"></span>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+    document
+        .getElementById("meeting-contact-form")
+        .addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const form = e.target;
+
+            const data = {
+                fields: [
+                    { name: "email", value: form.email.value },
+                    { name: "company", value: form.company.value },
+                    { name: "jobtitle", value: form.jobtitle.value },
+                    { name: "engineeringteam", value: form.engineeringteam.value },
+                    { name: "message", value: form.message.value }
+                ],
+                context: {
+                    pageUri: window.location.href,
+                    pageName: document.title
+                }
+            };
+
+            const res = await fetch(
+                "https://api-eu1.hsforms.com/submissions/v3/integration/submit/143742664/a2948bd0-279b-44c8-bd4d-83240a4e4432",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                }
+            );
+
+            if (res.ok) {
+                form.reset();
+                window.location.href = "/contact/thankyou/";
+            } else {
+                alert("Failed to submit. Please try again.");
+            }
+        });
+</script>
