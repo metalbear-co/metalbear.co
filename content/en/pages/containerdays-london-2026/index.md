@@ -15,7 +15,7 @@ faq:
       content: >
         Yes! mirrord's core is open source with over 4,000 GitHub stars. We also offer a commercial version with advanced features for teams. <a href="https://github.com/metalbear-co/mirrord" target="_blank">Check out our GitHub</a>.
 
-    - title: "Who should visit your booth?"
+    - title: "Who should visit MetalBear's booth?"
       content: >
         Platform engineers, DevOps specialists, and developers working with Kubernetes who want faster development cycles and lower cloud costs. If you spend time waiting for deployments or managing dev environments, we should talk.
 
