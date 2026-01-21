@@ -1,6 +1,6 @@
 ---
-title: "Meet mirrord at ContainerDays London 2026"
-description: "Visit the mirrord team at ContainerDays London 2026 - February 11-12 at Truman Brewery. Catch Jake Page's talk on AI and Kubernetes testing, see live demos, and get swag."
+title: "Meet MetalBear at ContainerDays London 2026"
+description: "Visit the MetalBear team at ContainerDays London 2026 - February 11-12 at Truman Brewery. Catch Jake Page's talk on AI and Kubernetes testing, see live demos, and get swag."
 slug: containerdays-london-2026
 layout: builder
 
