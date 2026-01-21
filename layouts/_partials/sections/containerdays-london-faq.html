@@ -1,0 +1,44 @@
+<section class="section-faq bg-[#FAFAFD]">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 xl:px-0 pt-16 xl:pt-20 pb-16 xl:pb-24">
+        <header class="text-center mb-8 xl:mb-12">
+            <h2 class="text-black text-2xl xl:text-3xl font-heading font-bold mb-3">
+                {{ with .Params.faq }}{{ .title }}{{ else }}FAQ{{ end }}</h2>
+            <p class="text-midblack text-base lg:text-lg">Everything you need to know before stopping by</p>
+        </header>
+        <div x-data="{ open: [] }" class="lg:w-[70%] lg:mx-auto space-y-4 lg:space-y-5">
+            {{ with .Params.faq }}
+            {{- $lastIndex := sub (len .questions) 1 }}
+            {{- range $index, $qa := .questions }}
+            <div class="border border-black rounded-[7px] bg-white">
+                <div class="flex justify-between space-x-6 cursor-pointer p-4 lg:p-5"
+                    @click="open.includes({{ $index }}) ? open = open.filter(i => i !== {{ $index }}) : open.push({{ $index }})">
+                    <div class="flex-1">
+                        <h3 class="text-base lg:text-lg text-black font-bold font-body mb-0">
+                            {{ .title | safeHTML }}
+                        </h3>
+                    </div>
+                    <div class="w-[16px] flex-none text-black pt-0.5">
+                        <svg class="w-[12px] lg:w-[14px] transition-transform duration-200" :class="{'-rotate-180': open.includes({{ $index }}) }"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="content-accordion text-base text-midblack font-body leading-relaxed pb-4 xl:pb-5 px-4 lg:px-5"
+                    x-show="open.includes({{ $index }})" x-collapse>
+                    {{ .content | markdownify }}
+                </div>
+            </div>
+            {{- end }}
+            {{- end }}
+        </div>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 pt-10 lg:pt-12">
+            <a class="flex-none w-full sm:w-[280px] h-14 xl:h-[60px] text-lg text-[#000000] font-body font-medium flex justify-center items-center bg-tertiary hover:bg-secondary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-6px_5px_0px_#000000] lg:shadow-[-8px_7px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                href="#meeting-form">Schedule a Meeting</a>
+            <a class="flex-none w-full sm:w-[220px] h-14 xl:h-[60px] text-lg text-white hover:text-[#000000] font-body font-medium flex justify-center items-center bg-primary hover:bg-tertiary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-6px_5px_0px_#000000] lg:shadow-[-8px_7px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                href="/mirrord/">Learn About mirrord</a>
+        </div>
+    </div>
+</section>
