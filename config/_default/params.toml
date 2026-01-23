@@ -16,14 +16,14 @@ domainTLD = "metalbear.com"
 titleHome = "MetalBear 🐻"
 
 ## Twitter Cards
-twitterSite = "@metalbearco"
+twitterSite = "@metalbear"
 
 ## JSON-LD
 # schemaType = "Person"
 schemaType = "Organization"
 schemaName = "MetalBear"
 schemaAuthor = "MetalBear"
-schemaAuthorTwitter = "https://twitter.com/metalbearco"
+schemaAuthorTwitter = "https://twitter.com/metalbear"
 schemaAuthorLinkedIn = "https://www.linkedin.com/company/metalbearco"
 schemaAuthorGitHub = "https://github.com/metalbear-co"
 schemaLocale = "en-US"
@@ -33,7 +33,7 @@ schemaLogoHeight = 512
 schemaImage = "metalbear.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
-schemaTwitter = "https://twitter.com/metalbearco"
+schemaTwitter = "https://twitter.com/metalbear"
 schemaLinkedIn = "https://www.linkedin.com/company/metalbearco"
 schemaGitHub = "https://github.com/metalbear-co"
 schemaSection = "blog"
