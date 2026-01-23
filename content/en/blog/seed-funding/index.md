@@ -80,7 +80,7 @@ Want to try it out? Go [here](https://metalbear.com/mirrord/).
 Want to follow along as we keep building? Here’s how you can stay connected:
 
 - Star us on [GitHub](https://github.com/metalbear-co/mirrord) and join our community discussions on [Slack](https://metalbear.com/slack)  
-- Follow us on [Twitter](https://twitter.com/mirrord_dev) and [LinkedIn](https://www.linkedin.com/company/metalbear/)  
+- Follow us on [Twitter](https://twitter.com/metalbear) and [LinkedIn](https://www.linkedin.com/company/metalbear/)  
 - Subscribe to our [newsletter](https://metalbear.com/newsletter/) for updates, technical deep-dives, and memes
 
 We love hearing from developers—feedback, feature requests, weird edge cases—we want it all.
