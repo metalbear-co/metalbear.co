@@ -6,31 +6,31 @@ slug: devex
 hero:
   title: "Make Cloud Development Feel Local"
   subtitle: "Remove the friction that slows your developers down"
-  description: "mirrord eliminates the gap between local development and cloud environments, giving developers instant access to production-like testing without the complexity."
+  description: "mirrord lets your entire team work on a single shared environment without stepping on each other's toes. Developers only deploy their own service—everything else just works."
 
 pain_points:
-  - title: "Developer Friction is Killing Velocity"
-    description: "Your developers spend hours on environment setup, debugging deployment issues, and waiting for CI. That's time not spent shipping features."
+  - title: "Cross-Team Dependencies Block Everyone"
+    description: "When one team's service breaks, it cascades to every developer's environment. Your devs spend hours chasing other teams to fix issues that aren't even theirs."
   - title: "Onboarding Takes Forever"
-    description: "New developers need weeks to get productive. They're fighting with local setup, learning deployment pipelines, and figuring out how to test their changes."
-  - title: "Tooling Fragmentation"
-    description: "Every team has different scripts, different Docker Compose files, different ways to test. There's no standard path from code to confidence."
+    description: "New developers need weeks to get productive. They're fighting with environment setup, waiting for clusters to scale, and figuring out why services won't start."
+  - title: "Senior Engineers Can't Use Short Time Blocks"
+    description: "Your most experienced engineers have 30-minute gaps between meetings they can't use productively. Environment startup time is longer than the available window."
 
 benefits:
-  - title: "Instant Developer Productivity"
-    description: "Developers test against real environments from day one. No setup, no configuration, no waiting."
-  - title: "Onboarding in Hours, Not Weeks"
-    description: "New developers run mirrord and immediately connect to real services. They're productive from their first PR."
-  - title: "Standardized Developer Workflow"
-    description: "One tool that works across all teams and services. Consistent experience from local development to CI."
+  - title: "One Environment, Zero Cross-Team Friction"
+    description: "A single shared environment that everyone is responsible for. Developers only deploy their own service—no more chasing other teams to fix broken dependencies."
+  - title: "Onboarding in Minutes, Not Weeks"
+    description: "New developers run mirrord and immediately connect to real services. Simple onboarding that gives value from day one."
+  - title: "Reclaim Lost Developer Time"
+    description: "With instant startup, even 30-minute gaps between meetings become productive coding time. No more waiting for environments to wake up."
 
 stats:
-  - value: "90%"
-    label: "faster onboarding"
-  - value: "50%"
-    label: "less time on environment issues"
+  - value: "80%"
+    label: "faster startup time"
+  - value: "Zero"
+    label: "cross-team dependencies"
   - value: "1"
-    label: "tool for all teams"
+    label: "shared environment for all"
 
 cta:
   title: "See How Teams Improve Developer Experience"
