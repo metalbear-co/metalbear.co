@@ -14,33 +14,38 @@ weight = 30
 url = "https://metalbear.com/mirrord/docs/overview/introduction/"
 
 [[main]]
-name = "Resources"
-weight = 40
-identifier = "resources"
+name = "Use Cases"
+weight = 35
+identifier = "use-cases"
 
 [[main]]
 name = "For VPs of Engineering"
-parent = "resources"
-weight = 5
+parent = "use-cases"
+weight = 10
 url = "/mirrord/for/vp-rd/"
 
 [[main]]
 name = "For DevOps"
-parent = "resources"
-weight = 6
+parent = "use-cases"
+weight = 20
 url = "/mirrord/for/devops/"
 
 [[main]]
 name = "For Engineers"
-parent = "resources"
-weight = 7
+parent = "use-cases"
+weight = 30
 url = "/mirrord/for/engineers/"
 
 [[main]]
 name = "For DevEx"
-parent = "resources"
-weight = 8
+parent = "use-cases"
+weight = 40
 url = "/mirrord/for/devex/"
+
+[[main]]
+name = "Resources"
+weight = 40
+identifier = "resources"
 
 [[main]]
 name = "Blog"
