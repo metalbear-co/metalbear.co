@@ -53,7 +53,18 @@
                     <ul class="dropdown-menu dropdown-menu-main" aria-labelledby="navbarDropdownMenuLink">
                       {{ range .Children -}}
                       {{- $active = eq .Name $current.Title -}}
-                        {{ if .HasChildren }}
+                      {{- $childIdentifier := .Identifier -}}
+                      {{- $hasGrandchildren := false -}}
+                      {{- $grandchildren := slice -}}
+                      {{- if $childIdentifier -}}
+                        {{- range $.Site.Menus.main -}}
+                          {{- if eq .Parent $childIdentifier -}}
+                            {{- $hasGrandchildren = true -}}
+                            {{- $grandchildren = $grandchildren | append . -}}
+                          {{- end -}}
+                        {{- end -}}
+                      {{- end -}}
+                        {{ if $hasGrandchildren }}
                         <li class="dropdown-submenu">
                           <a class="dropdown-item dropdown-toggle px-lg-14 px-xl-21 px-xxl-28" href="#">
                             {{ .Name }}
@@ -64,7 +75,7 @@
                             </span>
                           </a>
                           <ul class="dropdown-menu dropdown-menu-nested">
-                            {{ range .Children -}}
+                            {{ range $grandchildren -}}
                             {{- $activeChild := eq .Name $current.Title -}}
                               <li>
                                 <a class="dropdown-item px-lg-14 px-xl-21 px-xxl-28 {{ if $activeChild }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if $activeChild }} aria-current="true"{{ end }}>{{ .Name }}</a>
