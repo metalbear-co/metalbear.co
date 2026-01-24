@@ -1,0 +1,22 @@
+<section class="section-cta bg-white border-b-3 border-b-black">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 xl:px-0 pt-16 lg:pt-24 pb-16 lg:pb-24">
+        <div class="max-w-[800px] mx-auto text-center">
+            <h2
+                class="text-2xl md:text-3xl lg:text-[2.5rem] xl:text-[3rem] text-black font-semibold font-heading leading-normal lg:leading-[1.2] mb-6">
+                {{ .Params.cta.title }}
+            </h2>
+            <div class="text-black text-lg lg:text-xl leading-normal mb-10">
+                <p>{{ .Params.cta.description }}</p>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-center gap-5">
+                <a class="flex-none w-full lg:w-[280px] h-15 xl:h-[65px] text-xl text-white hover:text-[#000000] font-body font-medium flex justify-center items-center bg-primary hover:bg-tertiary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                    href="{{ .Params.cta.button_link }}">{{ .Params.cta.button_text }}</a>
+                {{ with .Params.cta.secondary_button_text }}
+                <a class="flex-none w-full lg:w-[220px] h-15 xl:h-[65px] text-xl text-[#000000] font-body font-medium flex justify-center items-center bg-tertiary hover:bg-secondary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                    href="{{ $.Params.cta.secondary_button_link }}">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>

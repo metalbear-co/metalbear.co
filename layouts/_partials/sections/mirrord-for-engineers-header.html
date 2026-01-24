@@ -1,0 +1,55 @@
+<section class="section-header bg-[#E4E3FD]/50 overflow-hidden">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-6 xl:px-0 pt-[52px] md:pt-[65px] lg:pt-[52px] xl:pt-[65px] pb-[54px] md:pb-[70px] xl:pb-[80px]">
+        <div class="grid grid-cols-12 relative z-10">
+            <div class="col-span-12 lg:col-span-7 mb-6 lg:mb-0">
+                <div class="flex justify-center lg:justify-start">
+                    <div
+                        class="w-[125px] md:w-[140px] lg:w-[141px] xl:w-[177px] mb-[12px] md:mb-[20px] lg:mb-[24px] xl:mb-[30px]">
+                        <img class="w-full h-auto" src="/mirrord-by-metalbear.svg" alt="mirrord-by-metalbear">
+                    </div>
+                </div>
+                <div class="pt-5 md:pt-6 lg:pt-5 xl:pt-6 2xl:pt-7.5">
+                    <div class="text-center lg:text-left">
+                        <div class="mb-4">
+                            <span class="text-primary text-sm font-semibold uppercase tracking-wide">For Software Engineers</span>
+                        </div>
+                        <h1
+                            class="text-[#010009] text-[1.688rem] md:text-3xl lg:text-[2.688rem] xl:text-[3.375rem] font-heading font-semibold leading-[1.2] md:leading-[1.2] lg:leading-[1.2] xl:leading-[1.2] 2xl:leading-[1.2] mb-[20px] md:mb-[28px] lg:mb-[20px] xl:mb-[28px]">
+                            {{ .Params.hero.title }}</h1>
+                        <div
+                            class="lg:w-[88%] text-black text-base xl:text-lg leading-normal md:leading-normal lg:leading-normal xl:leading-normal px-6 lg:px-0">
+                            <p class="mb-5 text-xl font-medium">{{ .Params.hero.subtitle }}</p>
+                            <p>{{ .Params.hero.description }}</p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex flex-wrap lg:flex-nowrap justify-center lg:justify-start lg:gap-[20px] xl:gap-[25px] 2xl:gap-[30px] pt-10 lg:pt-12">
+                        <a class="flex-none w-[263px] lg:w-[250px] xl:w-[280px] h-12 xl:h-13.5 2xl:h-[65px] text-xl text-white hover:text-[#000000] font-body font-medium flex justify-center items-center bg-primary hover:bg-tertiary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                            href="https://app.metalbear.com/account/sign-up" target="_blank">Get Started Free</a>
+                        <a class="flex-none w-[263px] lg:w-[171px] xl:w-[171px] h-12 xl:h-13.5 2xl:h-[65px] text-xl text-[#000000] font-body font-medium flex justify-center items-center bg-tertiary hover:bg-secondary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-5px_5px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                            href="/mirrord/docs">See Docs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-5 flex items-center justify-center">
+                <div class="w-full max-w-[400px] bg-white border-[1.5px] border-black rounded-[7px] shadow-[-8px_7px_0px_#000000] p-8">
+                    <div class="space-y-6">
+                        {{ range .Params.stats }}
+                        <div class="text-center">
+                            <div class="text-primary text-4xl xl:text-5xl font-heading font-bold">{{ .value }}</div>
+                            <div class="text-black text-base mt-1">{{ .label }}</div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lg:hidden mt-8 px-5 space-y-5 relative">
+            <a class="w-full h-15 text-lg xl:text-xl text-white hover:text-[#000000] font-body flex justify-center items-center bg-primary hover:bg-tertiary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                href="https://app.metalbear.com/account/sign-up" target="_blank">Get Started Free</a>
+            <a class="w-full h-15 text-lg xl:text-xl text-[#000000] font-body flex justify-center items-center bg-tertiary hover:bg-secondary border border-solid border-midblack rounded-[6px] lg:rounded-[11px] shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] transition-colors duration-200 ease-[ease]"
+                href="/mirrord/docs">See Docs</a>
+        </div>
+    </div>
+</section>

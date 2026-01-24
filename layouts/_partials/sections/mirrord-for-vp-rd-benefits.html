@@ -1,0 +1,32 @@
+<section class="section-benefits bg-[#E4E3FD] border-b-3 border-b-black overflow-hidden">
+    <div
+        class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-5 pt-14 md:pt-20 lg:pt-20 xl:pt-25.5 pb-14 lg:pb-20">
+        <header class="text-center mb-10 lg:mb-16">
+            <h2
+                class="text-2xl md:text-3xl lg:text-3xl xl:text-4xl text-black font-semibold font-heading leading-normal lg:leading-normal xl:leading-normal">
+                How <span class="text-primary">mirrord</span> Helps
+            </h2>
+        </header>
+        <div class="max-w-[1008px] mx-auto">
+            <div class="grid grid-cols-12 gap-y-8 lg:gap-8">
+                {{ range $index, $benefit := .Params.benefits }}
+                <div
+                    class="col-span-12 lg:col-span-4 border-[1.5px] border-black rounded-[5px] lg:rounded-[7px] bg-white shadow-[-8px_7px_0px_#000000] lg:shadow-[-9px_8px_0px_#000000] p-7.5">
+                    <div class="mb-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#E4E3FD] border border-primary flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-black text-xl lg:text-[1.375rem] font-bold mb-4">{{ .title }}</h3>
+                    <div class="text-black text-base lg:text-lg">
+                        <p>{{ .description }}</p>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
