@@ -19,33 +19,27 @@ weight = 40
 identifier = "resources"
 
 [[main]]
-name = "Use Cases"
-parent = "resources"
-identifier = "use-cases"
-weight = 5
-
-[[main]]
 name = "For VPs of Engineering"
-parent = "use-cases"
-weight = 10
+parent = "resources"
+weight = 5
 url = "/mirrord/for/vp-rd/"
 
 [[main]]
 name = "For DevOps"
-parent = "use-cases"
-weight = 20
+parent = "resources"
+weight = 6
 url = "/mirrord/for/devops/"
 
 [[main]]
 name = "For Engineers"
-parent = "use-cases"
-weight = 30
+parent = "resources"
+weight = 7
 url = "/mirrord/for/engineers/"
 
 [[main]]
 name = "For DevEx"
-parent = "use-cases"
-weight = 40
+parent = "resources"
+weight = 8
 url = "/mirrord/for/devex/"
 
 [[main]]
