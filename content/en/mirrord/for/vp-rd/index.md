@@ -43,5 +43,6 @@ sections:
   - mirrord-for-vp-rd-header
   - mirrord-for-vp-rd-pain-points
   - mirrord-for-vp-rd-benefits
+  - mirrord-for-vp-rd-testimonial
   - mirrord-for-vp-rd-cta
 ---

@@ -43,5 +43,6 @@ sections:
   - mirrord-for-devex-header
   - mirrord-for-devex-pain-points
   - mirrord-for-devex-benefits
+  - mirrord-for-devex-testimonial
   - mirrord-for-devex-cta
 ---

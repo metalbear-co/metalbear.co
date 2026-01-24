@@ -45,5 +45,6 @@ sections:
   - mirrord-for-engineers-header
   - mirrord-for-engineers-pain-points
   - mirrord-for-engineers-benefits
+  - mirrord-for-engineers-testimonial
   - mirrord-for-engineers-cta
 ---

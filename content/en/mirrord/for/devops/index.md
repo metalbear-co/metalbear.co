@@ -43,5 +43,6 @@ sections:
   - mirrord-for-devops-header
   - mirrord-for-devops-pain-points
   - mirrord-for-devops-benefits
+  - mirrord-for-devops-testimonial
   - mirrord-for-devops-cta
 ---
