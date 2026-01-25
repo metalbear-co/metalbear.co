@@ -1,6 +1,18 @@
 User-agent: *
 {{ if eq (hugo.Environment) "production" -}}
 Allow: /
+
+# Don't index RSS feeds
+Disallow: /*index.xml
+
+# Don't index GitBook internal paths
+Disallow: /mirrord/docs/~gitbook/
+
+# Don't index raw markdown files
+Disallow: /*.md
+
+# Don't index GTM endpoint
+Disallow: /zb2v/
 {{ else -}}
 Disallow: /
 {{ end }}
