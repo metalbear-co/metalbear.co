@@ -44,7 +44,7 @@
                     {{ . | safeHTML }}</p>
                   {{- end }}
                   {{- with .Params.header.site }}
-                  {{- $site := . | urlize }}
+                  {{- $site := . }}
                   {{- if not (hasPrefix $site "http") }}
                   {{- $site = printf "https://%s" $site }}
                   {{- end }}

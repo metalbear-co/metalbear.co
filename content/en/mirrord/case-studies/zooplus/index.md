@@ -17,7 +17,7 @@ header:
   description: "Engineers at zooplus save up to 20% of their time daily by using mirrord to test changes in seconds instead of deploying to remote clusters."
 
   company: zooplus is the leading European online retailer for pet supplies, selling a wide range of pet food, accessories, and other products for pets like cats, dogs, and small animals. 
-  site: https://www.zooplus.com/
+  site: zooplus.com
   logo: page-demo-zooplus.png
   employees: 1200+
   using_since: June 2024

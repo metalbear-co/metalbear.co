@@ -15,7 +15,7 @@ header:
   title: 'How SurveyMonkey <span class="text-primary">doubled developer velocity<span class="text-primary"> with mirrord'
   description: "With mirrord, SurveyMonkey cut development cycles in half, shipped features faster, improved code quality, and reduced onboarding time from days to hours."
   company: SurveyMonkey is a leading global survey platform, trusted by millions of organizations and individuals to help them uncover insights about their customers, employees, and prospects.
-  site: https://surveymonkey.com/
+  site: surveymonkey.com
   logo: page-demo-surveymonkey.png
   employees: 1500+
   using_since: October 2024
