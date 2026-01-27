@@ -47,7 +47,9 @@ cta:
 - After adopting mirrord, **245+ engineers** now work concurrently on a single shared staging cluster — reducing environment setup to seconds and new developer onboarding to under an hour
 - **Dev environment cloud costs dropped to zero**, developer satisfaction increased significantly, and teams eliminated cross-team dependency bottlenecks
 
-{{< video ratio="16x9" mp4-src="/monday-netanel-abergel.mp4" attributes="controls poster=/monday-netanel-poster.jpg" >}}
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+  <iframe src="https://www.youtube.com/embed/aHqU17QeMhs" title="monday.com on mirrord — Netanel Abergel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+</div>
 
 ## The challenge: Per-developer environments that couldn't keep up with hypergrowth
 
