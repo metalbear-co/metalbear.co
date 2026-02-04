@@ -63,7 +63,7 @@ minikube start
 2. Clone the repo with the sample .NET application.
 
 ```
-git clone https://github.com/aris-cub/mirrord-dotnet-debug-example
+git clone https://github.com/metalbear-co/mirrord-dotnet-debug-example
 cd mirrord-dotnet-debug-example
 ```
 
@@ -139,7 +139,7 @@ After you have run the guestbook program with mirrord you should be able to make
 
 In this section of the guide, we are going to use the VSCode mirrord extension to help debug the .NET application. If you would like to see how we can do the same in the CLI, go to this section of the guide.
 
-The application in question is Guestbook, a simple note-taking app written in ASP.NET Core with support for storing notes in Redis. The source code for the test application is available on GitHub at https://github.com/aris-cub/mirrord-dotnet-debug-example . We will use it as a follow-along .NET application for debugging with mirrord.
+The application in question is Guestbook, a simple note-taking app written in ASP.NET Core with support for storing notes in Redis. The source code for the test application is available on GitHub at https://github.com/metalbear-co/mirrord-dotnet-debug-example . We will use it as a follow-along .NET application for debugging with mirrord.
 
 ## Setup VSCode with the mirrord extension
 
