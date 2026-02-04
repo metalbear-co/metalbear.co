@@ -81,7 +81,7 @@ service/redis created
 
 
 Once the above is deployed, our application architecture now looks like this:
-![dotnet application architecture](dotnet_application_architecture.svg)
+![dotnet application architecture](<Screenshot 2026-02-04 at 10.34.53.png>)
 
 - A `dotnet-guestbook` Deployment running an ASP.NET Core web server on port 8080
 - A `redis` Deployment running Redis on port 6379
