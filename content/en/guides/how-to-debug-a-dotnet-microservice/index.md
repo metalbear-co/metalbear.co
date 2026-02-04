@@ -83,7 +83,7 @@ service/redis created
 
 
 Once the above is deployed, our application architecture now looks like this:
-![dotnet application architecture](<Screenshot 2026-02-04 at 10.34.53.png>)
+<img src="/guides/dotnet-debug-images/Screenshot 2026-02-04 at 10.34.53.png" alt="dotnet application architecture" class="img-fluid">
 
 - A `dotnet-guestbook` Deployment running an ASP.NET Core web server on port 8080
 - A `redis` Deployment running Redis on port 6379
@@ -104,7 +104,7 @@ dotnet run --project src
 
 On the run above we can see that the application run fails because this local execution doesn't have access to the Redis instance running inside the Kubernetes cluster we have created.
 
-![guestbook application failure](dotnet_run_failure.png)
+<img src="/guides/dotnet-debug-images/dotnet_run_failure.png" alt="guestbook application failure" class="img-fluid">
 
 The microservice needs access to the "redis" service hosted on the cluster. To run the .NET microservice in the context of the Kubernetes cluster, we can use the mirrord.
 
@@ -143,7 +143,7 @@ The `-f mirrord.json` flag points to the mirrord configuration file which specif
 
 You should see the following output which will let you know that the Guestbook has started in debug mode.
 
-![mirrord exec success](mirrord_exec_success.png)
+<img src="/guides/dotnet-debug-images/mirrord_exec_success.png" alt="mirrord exec success" class="img-fluid">
 
 The target impersonated Pod here is the Guestbook Pod. mirrord lets your local process use the mirrord-agent Pod as its *execution context*—meaning your app gets the same environment variables, file system, and network identity as if it were running inside that Pod in the cluster.
 
@@ -234,7 +234,7 @@ After that, let's Run and Debug our application with mirrord by selecting **Run 
 Upon choosing the .NET Pod as the target, you can see logs similar to the ones below with the .NET app, call stack and the terminal for debugging starting successfully. 
 
 
-![alt text](<Screenshot 2026-02-04 at 9.15.16.png>)
+<img src="/guides/dotnet-debug-images/Screenshot 2026-02-04 at 9.15.16.png" alt="alt text" class="img-fluid">
 
 
 
@@ -255,7 +255,7 @@ We can now be sure that mirrord is working properly.
 Let's set a debug breakpoint in the application and see how it runs. I want to put a breakpoint in the application every time I create a note with the Guestbook application. The below line of code is where I am going to put the breakpoint.
 
 
-![alt text](<Screenshot 2026-02-04 at 9.21.35.png>)
+<img src="/guides/dotnet-debug-images/Screenshot 2026-02-04 at 9.21.35.png" alt="alt text" class="img-fluid">
 
 
 
@@ -263,7 +263,7 @@ From http://localhost:8080, try publishing a new entry to the guestbook, which w
 
 You should hit the breakpoint as shown below:
 
-![debug breakpoint hit](debug.gif)
+<img src="/guides/dotnet-debug-images/debug.gif" alt="debug breakpoint hit" class="img-fluid">
 
 We can debug the issue now as the breakpoint is hit.
 
