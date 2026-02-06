@@ -4,9 +4,9 @@
 <link rel="preconnect" href="https://hog.metalbear.com">
 <link rel="preconnect" href="https://static.reo.dev" crossorigin>
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-{{/* Preload hero image for faster LCP */}}
+{{/* Preload LCP image for faster Largest Contentful Paint */}}
 {{ if .IsHome -}}
-<link rel="preload" as="image" href="/new-hero-image.webp" type="image/webp">
+<link rel="preload" as="image" href="/running-text-bg.webp" type="image/webp">
 {{- end }}
 {{/* Load Google Fonts asynchronously to avoid render-blocking */}}
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Unbounded:wght@400;700&display=swap">
