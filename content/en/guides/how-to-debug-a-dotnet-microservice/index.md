@@ -53,7 +53,7 @@ Make sure you have the .NET 10.0 SDK (or higher) installed locally. You can down
 
 Set up the Kubernetes cluster to test our application setup.
 
-1. Start an instance of a development cluster like minikube, k3d, kind, etc. We are  only using minikube cluster as an example. You should be using a staging/dev/test cluster where this app is already deployed.
+1. Start an instance of a development cluster like minikube, k3d, kind, etc. We are only using a minikube cluster here as an example. You should be using a staging/dev/test cluster where this app is already deployed.
 
 ```
 minikube start
