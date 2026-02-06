@@ -89,7 +89,10 @@
                     {{- range $logos }}
                     <li>
                         <div class="{{ .class }}">
-                            <img class="w-full h-auto" src="{{ .image }}" alt="{{ .title }}" loading="lazy" decoding="async">
+                            <picture>
+                                <source srcset="{{ replace .image ".png" ".webp" }}" type="image/webp">
+                                <img class="w-full h-auto" src="{{ .image }}" alt="{{ .title }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </li>
                     {{- end }}
