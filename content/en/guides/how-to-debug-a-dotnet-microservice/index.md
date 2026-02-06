@@ -4,7 +4,8 @@ description: "Learn to debug .NET microservices in Kubernetes with mirrord, usin
 lead: "Learn to debug .NET microservices in Kubernetes with mirrord, using dotnet CLI for efficient, real-time troubleshooting without redeploying."
 url:  guides/how-to-debug-a-dotnet-microservice
 tags:
-  - metalbear
+  - .NET
+  - debugging 
   - guides
 date: 2026-02-03T06:00:00+00:00
 draft: false
