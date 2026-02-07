@@ -11,11 +11,37 @@
   {{- else }}
   {{ block "head/stylesheet" . }}{{ partial "head/stylesheet.html" . }}{{ end }}
   {{- end }}
-  <!-- Start of Reo Javascript -->
-  <script type="text/javascript">
-    !function () { var e, t, n; e = "0e0f4d642e9f23a", t = function () { Reo.init({ clientID: "0e0f4d642e9f23a" }) }, (n = document.createElement("script")).src = "https://static.reo.dev/" + e + "/reo.js", n.defer = !0, n.onload = t, document.head.appendChild(n) }();
+  <!-- Reo and HubSpot deferred until idle/interaction to reduce main-thread work -->
+  <script>
+    (function() {
+      var loaded = false;
+      function loadDeferred() {
+        if (loaded) return;
+        loaded = true;
+        // Reo
+        var reo = document.createElement('script');
+        reo.src = 'https://static.reo.dev/0e0f4d642e9f23a/reo.js';
+        reo.defer = true;
+        reo.onload = function() { Reo.init({ clientID: '0e0f4d642e9f23a' }); };
+        document.head.appendChild(reo);
+        // HubSpot
+        var hs = document.createElement('script');
+        hs.src = '//js-eu1.hs-scripts.com/143742664.js';
+        hs.id = 'hs-script-loader';
+        hs.async = true;
+        hs.defer = true;
+        document.body.appendChild(hs);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadDeferred);
+      } else {
+        setTimeout(loadDeferred, 3500);
+      }
+      ['mousedown', 'touchstart', 'scroll', 'keydown'].forEach(function(e) {
+        document.addEventListener(e, loadDeferred, { once: true, passive: true });
+      });
+    })();
   </script>
-  <!-- End of Reo Javascript -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':

@@ -30,11 +30,7 @@
 {{ $slice = $slice | append $clipBoard -}}
 {{ end -}}
 
-{{ if .Site.Params.options.instantPage -}}
-{{ $instantPage := resources.Get "js/instant.page.js" -}}
-{{ $instantPage := $instantPage | js.Build -}}
-{{ $slice = $slice | append $instantPage -}}
-{{ end -}}
+{{/* instant.page already included in main bundle via script-header.html */}}
 
 {{ if and (.Site.Params.alert) (.Site.Params.alertDismissable) -}}
 {{ $alert := resources.Get "js/alert.js" -}}
@@ -85,8 +81,8 @@
 <script src="{{ $js.RelPermalink }}" defer></script>
 {{ end -}}
 
+{{- if not .IsHome }}
 <script src="/js/medium-zoom.min.js" defer></script>
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const images = Array.from(document.querySelectorAll(".zoomable img"));
@@ -98,6 +94,7 @@
     });
   });
 </script>
+{{- end }}
 
 {{- if or (eq .Section "guides") (eq .Section "mirrord") }}
 <script>
