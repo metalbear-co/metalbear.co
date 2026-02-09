@@ -10,7 +10,7 @@ ignoreLogs = ['image-not-found']
 [pagination]
 pagerSize = 6
 rssLimit = 10
-timeout = "120s"
+timeout = "5m0s"
 
 # Multilingual
 defaultContentLanguage = "en"
