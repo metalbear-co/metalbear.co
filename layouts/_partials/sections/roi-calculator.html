@@ -3,7 +3,7 @@
         x-data="{
             // Core inputs
             numDevs: 10,
-            costType: 'hourly',
+            costType: 'annual',
             hourlyRate: 75,
             annualSalary: 156000,
             deploysPerDay: 3,
@@ -50,10 +50,6 @@
             get roiPercentage() {
                 if (this.mirrordAnnualCost <= 0) return 0;
                 return (this.netROI / this.mirrordAnnualCost) * 100;
-            },
-            get paybackPeriodMonths() {
-                if (this.grossSavings <= 0) return null;
-                return this.mirrordAnnualCost / (this.grossSavings / 12);
             },
             get roadmapAcceleration() {
                 return (this.hoursSavedPerWeek / 40) * 100;
@@ -121,15 +117,15 @@
                         <!-- Toggle -->
                         <div class="flex items-center gap-3 mb-4">
                             <button
-                                @click="costType = 'hourly'"
-                                :class="costType === 'hourly' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
-                                class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
-                            >Hourly Rate</button>
-                            <button
                                 @click="costType = 'annual'"
                                 :class="costType === 'annual' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
                                 class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
                             >Annual Salary</button>
+                            <button
+                                @click="costType = 'hourly'"
+                                :class="costType === 'hourly' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
+                                class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
+                            >Hourly Rate</button>
                         </div>
 
                         <div x-show="costType === 'hourly'">
@@ -313,19 +309,6 @@
                     <div class="mb-4 pb-4 border-b border-gray-200">
                         <p class="text-sm text-gray-600 mb-1">Gross annual savings</p>
                         <p class="text-2xl lg:text-3xl font-bold text-black" x-text="formatCurrency(grossSavings)"></p>
-                    </div>
-
-                    <!-- Payback Period -->
-                    <div class="mb-4">
-                        <p class="text-sm text-gray-600 mb-1">Payback period</p>
-                        <p class="text-2xl lg:text-3xl font-bold text-black">
-                            <template x-if="paybackPeriodMonths !== null">
-                                <span><span x-text="formatNumber(paybackPeriodMonths)"></span> months</span>
-                            </template>
-                            <template x-if="paybackPeriodMonths === null">
-                                <span>N/A</span>
-                            </template>
-                        </p>
                     </div>
 
                     <!-- mirrord Cost -->
