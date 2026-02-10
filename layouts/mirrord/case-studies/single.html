@@ -23,6 +23,33 @@
               <p>{{ . | safeHTML }}</p>
             </div>
             {{- end }}
+            {{- with .Params.story }}
+            <div
+              class="page-demo__story border rounded-[7px] border-solid border-[#C4C4C4] mt-8 xl:mt-10 2xl:mt-12 pl-5 xl:pl-[25px] 2xl:pl-[34px] pr-9 xl:pr-[45px] 2xl:pr-[60px] pt-6 xl:pt-[30px] 2xl:pt-10 pb-[18px] xl:pb-[22px] 2xl:pb-7 bg-white/80">
+              {{- with .content }}
+              <div class="page-demo__story-content border-b-[#C4C4C4] border-b border-solid mb-2">
+                <p
+                  class="text-black text-lg xl:text-2xl 2xl:text-3xl font-bold leading-[1.67] md:leading-[1.67] lg:leading-[1.67] xl:leading-[1.67] 2xl:leading-[1.67] mb-6">
+                  "{{ . | safeHTML }}"</p>
+              </div>
+              {{- end }}
+              <div class="flex items-center pt-6">
+                {{- with .image }}
+                <div class="page-demo__story-image w-[52px] xl:w-[63px] 2xl:w-[85px] flex-none">
+                  <img class="img-fluid w-full h-auto" src="{{ . | relURL }}" alt="mirrord">
+                </div>
+                {{- end }}
+                <div class="page-demo__story-text pl-4 xl:pl-6">
+                  {{- with .name }}
+                  <h4 class="text-black text-base xl:text-lg 2xl:text-xl font-bold mt-0 mb-1">{{ . | safeHTML }}</h4>
+                  {{- end }}
+                  {{- with .position }}
+                  <p class="text-black text-base xl:text-lg 2xl:text-xl mb-0">{{ . | safeHTML }}</p>
+                  {{- end }}
+                </div>
+              </div>
+            </div>
+            {{- end }}
           </div>
         </div>
         <div class="page-demo__header-box lg:w-2/5 lg:flex-none pt-[80px] xl:pt-[100px] 2xl:pt-[134px]">
@@ -83,31 +110,23 @@
       class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-3 xl:px-0 guides-single__wrapper mb-[114px]">
       <div class="lg:flex items-start xl:px-0">
         <div class="guides-single__main flex-1 lg:w-3/4 px-4 lg:px-0">
-          <div
-            class="page-demo__story border rounded-[7px] border-solid border-[#C4C4C4] lg:w-[90%] xl:w-[90%] mb-9 xl:mb-11 2xl:mb-[52px] pl-5 xl:pl-[25px] 2xl:pl-[34px] pr-9 xl:pr-[45px] 2xl:pr-[60px] pt-6 xl:pt-[30px] 2xl:pt-10 pb-[18px] xl:pb-[22px] 2xl:pb-7">
-            {{- with .Params.story.content }}
-            <div class="page-demo__story-content border-b-[#C4C4C4] border-b border-solid mb-2">
-              <p
-                class="text-black text-lg xl:text-2xl 2xl:text-3xl font-bold leading-[1.67] md:leading-[1.67] lg:leading-[1.67] xl:leading-[1.67] 2xl:leading-[1.67] mb-6">
-                “{{ . | safeHTML }}”</p>
+          {{- with .Params.metrics }}
+          <div class="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mb-9 xl:mb-11 2xl:mb-[52px] lg:w-[90%] xl:w-[90%]">
+            {{- range . }}
+            <div class="bg-white shadow-[0px_4px_15px_3px_rgba(0,0,0,0.05)] rounded-[10px] pt-5 lg:pt-8 px-4 lg:px-6 pb-4 lg:pb-6">
+              <div class="text-primary text-xl md:text-2xl lg:text-[2rem] xl:text-[2.5rem] font-body font-semibold leading-tight mb-2">
+                {{ .number }}
+              </div>
+              <div class="text-black text-sm lg:text-base font-semibold border-b border-b-black pb-3 mb-3">
+                {{ .label }}
+              </div>
+              <div class="text-black text-sm lg:text-base">
+                {{ .detail }}
+              </div>
             </div>
             {{- end }}
-            <div class="flex items-center pt-6">
-              {{- with .Params.story.image }}
-              <div class="page-demo__story-image w-[52px] xl:w-[63px] 2xl:w-[85px] flex-none">
-                <img class="img-fluid w-full h-auto" src="{{ . | relURL }}" alt="mirrord">
-              </div>
-              {{- end }}
-              <div class="page-demo__story-text pl-4 xl:pl-6">
-                {{- with .Params.story.name }}
-                <h4 class="text-black text-base xl:text-lg 2xl:text-xl font-bold mt-0 mb-1">{{ . | safeHTML }}</h4>
-                {{- end }}
-                {{- with .Params.story.position }}
-                <p class="text-black text-base xl:text-lg 2xl:text-xl mb-0">{{ . | safeHTML }}</p>
-                {{- end }}
-              </div>
-            </div>
           </div>
+          {{- end }}
           <article class="guides-content__wrapper lg:w-[91%] overflow-hidden">
             <div class="demo-single-content single-content break-words mb-12 lg:mb-0">
               {{ .Content }}
