@@ -11,7 +11,7 @@ tags:
 categories:
   - kubernetes
   - security
-date: 2026-02-09
+date: 2026-02-10
 summary: >
   LLMs on Kubernetes need controls that the platform doesn't provide. This guide walks through building an LLM gateway that addresses OWASP Top 10 risks, using mirrord for fast development iteration and Cloudsmith for model artifact governance.
 canonicalurl: "https://metalbear.co/blog/llm-kubernetes-security/"
@@ -33,7 +33,7 @@ That's a different threat model. And it needs controls Kubernetes doesn't provid
 
 Let's walk through a typical deployment. You deploy [Ollama](https://docs.ollama.com/), a server for hosting and running LLM models locally, in a pod. You expose it via a Service, point [Open WebUI](https://github.com/open-webui/open-webui) (a chat interface similar to ChatGPT's UI) at it. Users type prompts, answers appear. From Kubernetes' perspective, everything looks healthy: pods are running, logs are clean, resource usage is stable.
 
-![Understanding what you're actually running](1-Understanding-what-you're-actually-running.png)
+{{<figure src="1-Understanding-what-you're-actually-running.png" title="Understanding what you're actually running" alt="Understanding what you're actually running" height="100%" width="100%">}}
 
 But consider what you've built. You've placed a programmable system in front of your internal services, tools, logs, and potentially credentials. Kubernetes did its job perfectly, scheduling and isolating the workload. What it can't do is understand whether a prompt should be allowed, whether a response contains sensitive data, or whether the model should have access to certain tools.
 
@@ -133,7 +133,7 @@ Ollama's job is to load models and generate responses efficiently. It shouldn't 
 
 What you need is something in front of the model that handles policy. It forwards requests, but it also enforces rules. Think of it as similar to an API gateway, but with awareness of LLM-specific patterns. It understands prompts, tool calls, and generated content, not just HTTP semantics.
 
-![Where these controls belong](2-Where-these-controls-belong.png)
+{{<figure src="2-Where-these-controls-belong.png" title="Where these controls belong" alt="Where these controls belong" height="100%" width="100%">}}
 
 ## Why build your own gateway?
 
@@ -179,7 +179,7 @@ For this post, we've built a working example gateway you can deploy and experime
 
 The architecture is straightforward:
 
-![What an LLM gateway actually does](3-What-an-LLM-gateway-actually-does.png)
+{{<figure src="3-What-an-LLM-gateway-actually-does.png" title="What an LLM gateway actually does" alt="What an LLM gateway actually does" height="100%" width="100%">}}
 
 The gateway acts as a reverse proxy with LLM-aware middleware. Requests pass through policy checks before reaching the model. Responses pass through output filters before reaching users.
 
@@ -203,7 +203,7 @@ What you want is your local code running against the real cluster environment: r
 
 That's what mirrord does. It lets you run your local process in the context of your cluster. When you start your process with mirrord, it creates a temporary agent pod that listens in on your target pod, overriding your local process's syscalls and proxying them to the cluster. Your local gateway talks to the real Ollama instance, receives real traffic, resolves cluster DNS. You edit a file, restart, and test in seconds.
 
-![Development: fast iteration with mirrord](4-Development-fast-iteration-with-mirrord.png)
+{{<figure src="4-Development-fast-iteration-with-mirrord.png" title="Development: fast iteration with mirrord" alt="Development: fast iteration with mirrord" height="100%" width="100%">}}
 
 ### A faster workflow with mirrord
 
@@ -272,7 +272,7 @@ Your terminal shows:
 
 Traffic from Open WebUI now flows to the Ollama server through the locally executed LLM Gateway. Edit .env, restart, test. The loop takes seconds.
 
-![mirrord development workflow](mirrord-llm-copy.gif)
+{{<figure src="mirrord-llm-copy.gif" title="mirrord development workflow" alt="mirrord development workflow" height="100%" width="100%">}}
 
 Watch the full [video](https://screen.studio/share/7jjj3HeM).
 
@@ -290,13 +290,13 @@ With `ENFORCEMENT_MODE=monitor` in .env, the request goes through, but you see:
 {"level": "WARNING", "message": "Prompt injection detected", "patterns": ["ignore\\s+.*(previous|all|above|prior).*\\s+instructions"], "enforcement_mode": "monitor"}
 ```
 
-![Prompt injection detected in monitor mode](screenshot-1.png)
+{{<figure src="screenshot-1.png" title="Prompt injection detected in monitor mode" alt="Prompt injection detected in monitor mode" height="100%" width="100%">}}
 
 Change to `ENFORCEMENT_MODE=hard`, restart the mirrord debug session. Same prompt now returns: `Request blocked: potentially unsafe input detected`
 
 You now see:
 
-![Request blocked in hard enforcement mode](screenshot-2.png)
+{{<figure src="screenshot-2.png" title="Request blocked in hard enforcement mode" alt="Request blocked in hard enforcement mode" height="100%" width="100%">}}
 
 **Output filtering (LLM02):**
 
@@ -318,7 +318,7 @@ Add `secret-model:latest` to `ALLOWED_MODELS` in .env, restart, and ask the mode
 
 This is only when the policy actually works. In writing this blog post the policy didn’t work on the first try, as you can see here. 
 
-![Policy hole - secret leaked despite model refusal](screenshot-3.png)
+{{<figure src="screenshot-3.png" title="Policy hole - secret leaked despite model refusal" alt="Policy hole - secret leaked despite model refusal" height="100%" width="100%">}}
 
 Even though it says it can’t provide the secret key, it serves it in the response anyway. Our policy has holes in it, this is not what we want. 
 
@@ -346,7 +346,7 @@ Once the bug was identified in the `llm-gateway/app/policy.py` file, here's wher
 
 No image rebuild, no kubectl apply, no waiting for pods. You changed the code, hit F5, and validated against real cluster traffic. Once we confirmed it worked, that's when we committed the changes and [pushed](https://github.com/jakepage91/operating-llms-on-kubernetes/commit/bfa7b0c098ee6efc462d36a1674b053f95fa8268#diff-3799455fc40a390e5aeb435ad593a4de4515037a31187b077c3dbb05eeb42a4b) a new llm-gateway image version.
 
-![Output filtering working correctly](screenshot-4.png)
+{{<figure src="screenshot-4.png" title="Output filtering working correctly" alt="Output filtering working correctly" height="100%" width="100%">}}
 
 So through quick iteration we were able to get to the behaviour we wanted, even when the model misbehaves, sensitive data doesn't reach the user.
 
