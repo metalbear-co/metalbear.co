@@ -16,13 +16,6 @@
             infraCostMonthly: 800,
             infraCostAnnual: 9600,
 
-            // Pricing inputs
-            pricingTier: 'teams',
-            customPrice: 40,
-
-            // UI state
-            showAdvanced: true,
-
             // Computed properties
             get effectiveHourlyRate() {
                 return this.costType === 'hourly' ? this.hourlyRate : this.annualSalary / 2080;
@@ -46,13 +39,24 @@
                 return this.annualProductivitySavings + this.annualInfraSavings;
             },
             get pricePerSeat() {
-                return this.pricingTier === 'teams' ? 40 : this.customPrice;
+                return 40;
             },
             get mirrordAnnualCost() {
                 return this.numDevs * this.pricePerSeat * 12;
             },
             get netROI() {
                 return this.grossSavings - this.mirrordAnnualCost;
+            },
+            get roiPercentage() {
+                if (this.mirrordAnnualCost <= 0) return 0;
+                return (this.netROI / this.mirrordAnnualCost) * 100;
+            },
+            get paybackPeriodMonths() {
+                if (this.grossSavings <= 0) return null;
+                return this.mirrordAnnualCost / (this.grossSavings / 12);
+            },
+            get roadmapAcceleration() {
+                return (this.hoursSavedPerWeek / 40) * 100;
             },
 
             // Formatting helpers
@@ -158,45 +162,28 @@
                         </div>
                     </div>
 
-                    <!-- Advanced Settings (Collapsible) -->
+                    <!-- Time Savings -->
                     <div class="mb-8">
-                        <button
-                            @click="showAdvanced = !showAdvanced"
-                            class="flex items-center gap-2 text-primary font-medium hover:underline"
-                        >
-                            <svg
-                                :class="showAdvanced ? 'rotate-90' : ''"
-                                class="w-4 h-4 transition-transform"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
+                        <h3 class="text-xl lg:text-2xl font-heading font-bold text-black mb-4">Time Savings</h3>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-black mb-2" for="deploysPerDay">Deploy/test cycles per developer per day</label>
+                            <input
+                                type="number"
+                                id="deploysPerDay"
+                                x-model.number="deploysPerDay"
+                                min="1"
+                                class="w-full h-[50px] lg:h-[55px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary px-4"
                             >
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                            Customize time savings estimates
-                        </button>
-
-                        <div x-show="showAdvanced" x-collapse class="mt-4 pl-6 border-l-2 border-[#E4E3FD]">
-                            <div class="mb-4">
-                                <label class="block text-sm font-medium text-black mb-2" for="deploysPerDay">Deploy/test cycles per developer per day</label>
-                                <input
-                                    type="number"
-                                    id="deploysPerDay"
-                                    x-model.number="deploysPerDay"
-                                    min="1"
-                                    class="w-full h-[50px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary px-4"
-                                >
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-black mb-2" for="minsPerDeploy">Minutes per deploy cycle</label>
-                                <input
-                                    type="number"
-                                    id="minsPerDeploy"
-                                    x-model.number="minsPerDeploy"
-                                    min="1"
-                                    class="w-full h-[50px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary px-4"
-                                >
-                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-black mb-2" for="minsPerDeploy">Minutes per deploy cycle</label>
+                            <input
+                                type="number"
+                                id="minsPerDeploy"
+                                x-model.number="minsPerDeploy"
+                                min="1"
+                                class="w-full h-[50px] lg:h-[55px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary px-4"
+                            >
                         </div>
                     </div>
 
@@ -281,33 +268,7 @@
                     <!-- mirrord Pricing -->
                     <div>
                         <h3 class="text-xl lg:text-2xl font-heading font-bold text-black mb-4">mirrord Pricing</h3>
-
-                        <div class="flex items-center gap-3 mb-4">
-                            <button
-                                @click="pricingTier = 'teams'"
-                                :class="pricingTier === 'teams' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
-                                class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
-                            >Teams ($40/seat/mo)</button>
-                            <button
-                                @click="pricingTier = 'custom'"
-                                :class="pricingTier === 'custom' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
-                                class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
-                            >Custom Pricing</button>
-                        </div>
-
-                        <div x-show="pricingTier === 'custom'" x-collapse>
-                            <label class="block text-sm font-medium text-black mb-2" for="customPrice">Price per seat (monthly)</label>
-                            <div class="relative">
-                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-lg text-black">$</span>
-                                <input
-                                    type="number"
-                                    id="customPrice"
-                                    x-model.number="customPrice"
-                                    min="0"
-                                    class="w-full h-[50px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary pl-8 pr-4"
-                                >
-                            </div>
-                        </div>
+                        <p class="text-sm text-gray-600">Teams &mdash; $40/seat/mo</p>
                     </div>
                 </div>
             </div>
@@ -322,6 +283,14 @@
                         <p class="text-sm text-gray-600 mb-1">Hours saved per developer per week</p>
                         <p class="text-2xl lg:text-3xl font-bold text-black">
                             <span x-text="formatNumber(hoursSavedPerWeek)"></span> hrs
+                        </p>
+                    </div>
+
+                    <!-- Roadmap Acceleration -->
+                    <div class="mb-6 pb-6 border-b border-gray-200">
+                        <p class="text-sm text-gray-600 mb-1">Roadmap acceleration</p>
+                        <p class="text-2xl lg:text-3xl font-bold text-primary">
+                            <span x-text="formatNumber(roadmapAcceleration)"></span>% faster delivery
                         </p>
                     </div>
 
@@ -346,6 +315,19 @@
                         <p class="text-2xl lg:text-3xl font-bold text-black" x-text="formatCurrency(grossSavings)"></p>
                     </div>
 
+                    <!-- Payback Period -->
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-600 mb-1">Payback period</p>
+                        <p class="text-2xl lg:text-3xl font-bold text-black">
+                            <template x-if="paybackPeriodMonths !== null">
+                                <span><span x-text="formatNumber(paybackPeriodMonths)"></span> months</span>
+                            </template>
+                            <template x-if="paybackPeriodMonths === null">
+                                <span>N/A</span>
+                            </template>
+                        </p>
+                    </div>
+
                     <!-- mirrord Cost -->
                     <div class="mb-4">
                         <p class="text-sm text-gray-600 mb-1">mirrord annual cost</p>
@@ -359,6 +341,9 @@
                     <div class="bg-[#E4E3FD] rounded-[7px] p-4 mb-6">
                         <p class="text-sm font-medium text-black mb-1">Net annual ROI</p>
                         <p class="text-3xl lg:text-4xl font-bold" :class="netROI >= 0 ? 'text-green-600' : 'text-red-600'" x-text="formatCurrency(netROI)"></p>
+                        <p class="text-sm font-medium mt-1" :class="netROI >= 0 ? 'text-green-600' : 'text-red-600'">
+                            <span x-text="formatNumber(roiPercentage, 0)"></span>% return on investment
+                        </p>
                     </div>
 
                     <!-- CTAs -->
@@ -380,7 +365,7 @@
         <div class="mt-16 lg:mt-24">
             <h2 class="text-2xl lg:text-3xl font-heading font-bold text-black text-center mb-10">Beyond the Numbers</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="border-[1.5px] border-black rounded-[5px] bg-white p-5">
+                <a href="/mirrord/case-study/colab/" class="block border-[1.5px] border-black rounded-[5px] bg-white p-5 hover:bg-[#FAFAFD] transition-colors no-underline">
                     <div class="w-10 h-10 bg-[#E4E3FD] rounded-full flex items-center justify-center mb-4">
                         <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -388,9 +373,10 @@
                     </div>
                     <h4 class="font-bold text-black mb-2">50-98% Faster Cycles</h4>
                     <p class="text-sm text-gray-600">Companies report dramatic reductions in test cycle time, from minutes to seconds.</p>
-                </div>
+                    <p class="text-sm text-primary font-medium mt-3">Read case study &rarr;</p>
+                </a>
 
-                <div class="border-[1.5px] border-black rounded-[5px] bg-white p-5">
+                <a href="/mirrord/case-study/surveymonkey/" class="block border-[1.5px] border-black rounded-[5px] bg-white p-5 hover:bg-[#FAFAFD] transition-colors no-underline">
                     <div class="w-10 h-10 bg-[#E4E3FD] rounded-full flex items-center justify-center mb-4">
                         <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
@@ -398,9 +384,10 @@
                     </div>
                     <h4 class="font-bold text-black mb-2">Days to Hours Onboarding</h4>
                     <p class="text-sm text-gray-600">New developers go from multi-day setup to productive in hours.</p>
-                </div>
+                    <p class="text-sm text-primary font-medium mt-3">Read case study &rarr;</p>
+                </a>
 
-                <div class="border-[1.5px] border-black rounded-[5px] bg-white p-5">
+                <a href="/mirrord/case-study/surveymonkey/" class="block border-[1.5px] border-black rounded-[5px] bg-white p-5 hover:bg-[#FAFAFD] transition-colors no-underline">
                     <div class="w-10 h-10 bg-[#E4E3FD] rounded-full flex items-center justify-center mb-4">
                         <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -408,9 +395,10 @@
                     </div>
                     <h4 class="font-bold text-black mb-2">Higher Code Quality</h4>
                     <p class="text-sm text-gray-600">Test against real environments from day one. Fewer bugs reach production.</p>
-                </div>
+                    <p class="text-sm text-primary font-medium mt-3">Read case study &rarr;</p>
+                </a>
 
-                <div class="border-[1.5px] border-black rounded-[5px] bg-white p-5">
+                <a href="/mirrord/case-study/cadence/" class="block border-[1.5px] border-black rounded-[5px] bg-white p-5 hover:bg-[#FAFAFD] transition-colors no-underline">
                     <div class="w-10 h-10 bg-[#E4E3FD] rounded-full flex items-center justify-center mb-4">
                         <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -418,7 +406,8 @@
                     </div>
                     <h4 class="font-bold text-black mb-2">Happier Developers</h4>
                     <p class="text-sm text-gray-600">No more waiting on builds or context switching. Stay in flow.</p>
-                </div>
+                    <p class="text-sm text-primary font-medium mt-3">Read case study &rarr;</p>
+                </a>
             </div>
 
             <div class="text-center mt-10">
