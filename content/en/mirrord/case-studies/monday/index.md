@@ -13,19 +13,19 @@ feed:
       "We are not pushing them to use mirrord. Everyone is asking for it."
 header:
   title: 'How monday.com went from <span class="text-primary">hundreds of dev environments to one</span> with mirrord'
-  description: "245+ engineers work concurrently on a single shared staging cluster, with zero dev environment cloud spend, 15x faster setup times, and new developer onboarding in under an hour."
+  description: "Growing 30–60% year over year, monday.com needed a dev environment model that could keep up. mirrord made it possible."
   company: monday.com is a leading work operating system (Work OS) that enables organizations to build and manage any workflow, project, or process.
   site: monday.com
   logo: page-demo-monday.png
   employees: 2,500+
   using_since: 2024
 story:
-  content: With mirrord, we shifted development onto a real environment with real data, without paying the cost of running hundreds of dev environments.
+  content: With mirrord, we shifted development onto a real environment with real data, without paying the cost of provisioning a separate environment for every developer.
   image: netanel-abergel.png
   name: Netanel Abergel
   position: R&D Director | monday.com
 metrics:
-  - number: "10s"
+  - number: "10sec"
     label: "Environment setup"
     detail: "Down from 30 minutes"
   - number: "~1hr"
@@ -43,11 +43,11 @@ cta:
 
 ## TL;DR
 
-- monday.com was spending heavily on **per-developer cloud environments** that took 30+ minutes to spin up and 3–5 days for new hires to learn how to wrangle
-- After adopting mirrord, **245+ engineers** now work concurrently on a single shared staging cluster, reducing environment setup to seconds and new developer onboarding to under an hour
-- **Dev environment cloud costs dropped to zero**, developer satisfaction increased significantly, and teams eliminated cross-team dependency bottlenecks
+- Every developer needed their own full cloud environment. The cost and complexity weren't scaling with monday.com's rapid growth
+- With mirrord, developers work against the shared staging cluster from step one of the dev cycle, testing on a real environment with real data instead of maintaining their own personal cloud environments
+- The result: eliminated dev environment costs, faster shipping, and higher confidence when deploying to production
 
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+<div style="margin-top:2rem;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
   <iframe src="https://www.youtube.com/embed/aHqU17QeMhs" title="monday.com on mirrord - Netanel Abergel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
 </div>
 
@@ -91,7 +91,7 @@ With mirrord, developers work against **a real staging environment with real dat
 <!-- TODO: Add monday-giora-guttseit.mp4 to static/ when ready -->
 {{< video ratio="16x9" mp4-src="/monday-giora-guttseit.mp4" attributes="controls" >}}
 
-## The results
+## The results: Lower cloud costs, faster shipping, and fewer bugs reaching production
 
 What started as a careful rollout became organic adoption. Today, **245+ engineers** work concurrently on the same shared cluster.
 
