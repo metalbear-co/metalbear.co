@@ -1,0 +1,403 @@
+<section class="bg-[#FAFAFD] border-b-3 border-black">
+    <div class="container w-full sm:max-w-full lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 xl:px-0 pt-10.5 lg:pt-21 pb-[100px] lg:pb-34.5"
+        x-data="{
+            // Core inputs
+            numDevs: 10,
+            costType: 'annual',
+            hourlyRate: 75,
+            annualSalary: 156000,
+            deploysPerDay: 3,
+            minsPerDeploy: 15,
+
+            // Infrastructure inputs
+            showInfra: true,
+            numEnvironments: 0,
+            infraCostType: 'monthly',
+            infraCostMonthly: 800,
+            infraCostAnnual: 9600,
+
+            // Computed properties
+            get effectiveHourlyRate() {
+                return this.costType === 'hourly' ? this.hourlyRate : this.annualSalary / 2080;
+            },
+            get hoursSavedPerWeek() {
+                return (this.deploysPerDay * this.minsPerDeploy * 5) / 60;
+            },
+            get teamHoursSavedPerYear() {
+                return this.hoursSavedPerWeek * 52 * this.numDevs;
+            },
+            get annualProductivitySavings() {
+                return this.hoursSavedPerWeek * this.effectiveHourlyRate * 52 * this.numDevs;
+            },
+            get annualInfraSavings() {
+                if (!this.showInfra || this.numEnvironments <= 0) return 0;
+                return this.infraCostType === 'monthly'
+                    ? this.numEnvironments * this.infraCostMonthly * 12
+                    : this.numEnvironments * this.infraCostAnnual;
+            },
+            get grossSavings() {
+                return this.annualProductivitySavings + this.annualInfraSavings;
+            },
+            get pricePerSeat() {
+                return 40;
+            },
+            get mirrordAnnualCost() {
+                return this.numDevs * this.pricePerSeat * 12;
+            },
+            get netROI() {
+                return this.grossSavings - this.mirrordAnnualCost;
+            },
+            get roiPercentage() {
+                if (this.mirrordAnnualCost <= 0) return 0;
+                return (this.netROI / this.mirrordAnnualCost) * 100;
+            },
+            get roadmapAcceleration() {
+                return (this.hoursSavedPerWeek / 40) * 100;
+            },
+
+            // Formatting helpers
+            formatCurrency(value) {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(value);
+            },
+            formatNumber(value, decimals = 1) {
+                return new Intl.NumberFormat('en-US', {
+                    minimumFractionDigits: decimals,
+                    maximumFractionDigits: decimals
+                }).format(value);
+            }
+        }">
+
+        <!-- Header -->
+        <header class="mx-auto text-center mb-8 lg:mb-14">
+            <h1 class="text-3xl lg:text-[2.5rem] xl:text-[3.125rem] text-black font-bold font-heading leading-normal lg:leading-normal xl:leading-normal mt-0 mb-4 lg:mb-6">
+                <span class="relative">
+                    <span class="absolute w-full bottom-0 left-0">
+                        <svg class="w-full h-auto" viewBox="0 0 287 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M283.43 6.88381C247.548 2.52707 211.509 0.573453 175.456 0.106659C139.359 -0.342846 103.263 0.677185 67.1951 2.25045C46.9195 3.13217 26.6439 4.18678 6.36826 5.2241C1.78483 5.46614 1.77055 14.1105 6.36826 13.8684C37.7384 12.2433 69.1085 10.6527 100.493 9.66728C88.5559 10.5836 76.619 11.6382 64.6964 12.8484C44.2922 14.923 23.9024 17.4126 3.56965 20.3344C1.65632 20.611 0 22.1324 0 24.6565C0 26.7831 1.64204 29.2553 3.56965 28.9787C39.8088 23.7921 76.1621 19.9367 112.601 17.4126C149.026 14.9057 185.522 13.7474 222.004 13.9203C242.479 14.024 262.955 14.56 283.43 15.5109C285.358 15.5973 287 13.4535 287 11.1887C287 8.66454 285.358 7.10856 283.43 6.86652V6.88381Z" fill="#FFD18C"/>
+                        </svg>
+                    </span>
+                    <span class="relative">ROI</span>
+                </span>
+                Calculator
+            </h1>
+            <p class="text-lg lg:text-xl text-black font-body max-w-2xl mx-auto">
+                See how much time and money your team can save by eliminating deployment cycles with mirrord.
+            </p>
+        </header>
+
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10">
+            <!-- Calculator Inputs -->
+            <div class="lg:col-span-7">
+                <div class="border-[1.5px] border-black rounded-[5px] lg:rounded-[7px] shadow-[-5px_5px_0px_#000] bg-white p-6 lg:p-8">
+
+                    <!-- Team Size -->
+                    <div class="mb-8">
+                        <h3 class="text-xl lg:text-2xl font-heading font-bold text-black mb-4">Team Size</h3>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-black mb-2" for="numDevs">Number of developers</label>
+                            <input
+                                type="number"
+                                id="numDevs"
+                                x-model.number="numDevs"
+                                min="1"
+                                class="w-full h-[50px] lg:h-[55px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary px-4"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Developer Cost -->
+                    <div class="mb-8">
+                        <h3 class="text-xl lg:text-2xl font-heading font-bold text-black mb-4">Developer Cost</h3>
+
+                        <!-- Toggle -->
+                        <div class="flex items-center gap-3 mb-4">
+                            <button
+                                @click="costType = 'annual'"
+                                :class="costType === 'annual' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
+                                class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
+                            >Annual Salary</button>
+                            <button
+                                @click="costType = 'hourly'"
+                                :class="costType === 'hourly' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
+                                class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
+                            >Hourly Rate</button>
+                        </div>
+
+                        <div x-show="costType === 'hourly'">
+                            <label class="block text-sm font-medium text-black mb-2" for="hourlyRate">Hourly rate (USD)</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-lg text-black">$</span>
+                                <input
+                                    type="number"
+                                    id="hourlyRate"
+                                    x-model.number="hourlyRate"
+                                    min="1"
+                                    class="w-full h-[50px] lg:h-[55px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary pl-8 pr-4"
+                                >
+                            </div>
+                        </div>
+
+                        <div x-show="costType === 'annual'">
+                            <label class="block text-sm font-medium text-black mb-2" for="annualSalary">Annual salary (USD)</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-lg text-black">$</span>
+                                <input
+                                    type="number"
+                                    id="annualSalary"
+                                    x-model.number="annualSalary"
+                                    min="1"
+                                    class="w-full h-[50px] lg:h-[55px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary pl-8 pr-4"
+                                >
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">Effective hourly rate: <span x-text="formatCurrency(effectiveHourlyRate)"></span>/hr</p>
+                        </div>
+                    </div>
+
+                    <!-- Time Savings -->
+                    <div class="mb-8">
+                        <h3 class="text-xl lg:text-2xl font-heading font-bold text-black mb-4">Time Savings</h3>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-black mb-2" for="deploysPerDay">Deploy/test cycles per developer per day</label>
+                            <input
+                                type="number"
+                                id="deploysPerDay"
+                                x-model.number="deploysPerDay"
+                                min="1"
+                                class="w-full h-[50px] lg:h-[55px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary px-4"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-black mb-2" for="minsPerDeploy">Minutes per deploy cycle</label>
+                            <input
+                                type="number"
+                                id="minsPerDeploy"
+                                x-model.number="minsPerDeploy"
+                                min="1"
+                                class="w-full h-[50px] lg:h-[55px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary px-4"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Infrastructure Savings (Collapsible) -->
+                    <div class="mb-8">
+                        <button
+                            @click="showInfra = !showInfra"
+                            class="flex items-center gap-2 text-primary font-medium hover:underline"
+                        >
+                            <svg
+                                :class="showInfra ? 'rotate-90' : ''"
+                                class="w-4 h-4 transition-transform"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            Add infrastructure savings
+                        </button>
+
+                        <div x-show="showInfra" x-collapse class="mt-4 pl-6 border-l-2 border-[#E4E3FD]">
+                            <p class="text-sm text-gray-600 mb-4">
+                                With mirrord, teams often consolidate multiple staging/dev environments into a single shared environment.
+                            </p>
+
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-black mb-2" for="numEnvironments">Environments to decommission</label>
+                                <input
+                                    type="number"
+                                    id="numEnvironments"
+                                    x-model.number="numEnvironments"
+                                    min="0"
+                                    class="w-full h-[50px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary px-4"
+                                >
+                            </div>
+
+                            <!-- Cost Toggle -->
+                            <div class="flex items-center gap-3 mb-4">
+                                <button
+                                    @click="infraCostType = 'monthly'"
+                                    :class="infraCostType === 'monthly' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
+                                    class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
+                                >Monthly Cost</button>
+                                <button
+                                    @click="infraCostType = 'annual'"
+                                    :class="infraCostType === 'annual' ? 'bg-primary text-white' : 'bg-[#E4E3FD] text-black'"
+                                    class="px-4 py-2 rounded-[7px] border border-black text-sm font-medium transition-colors"
+                                >Annual Cost</button>
+                            </div>
+
+                            <div x-show="infraCostType === 'monthly'">
+                                <label class="block text-sm font-medium text-black mb-2" for="infraCostMonthly">Cost per environment (monthly)</label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-lg text-black">$</span>
+                                    <input
+                                        type="number"
+                                        id="infraCostMonthly"
+                                        x-model.number="infraCostMonthly"
+                                        min="0"
+                                        class="w-full h-[50px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary pl-8 pr-4"
+                                    >
+                                </div>
+                            </div>
+
+                            <div x-show="infraCostType === 'annual'">
+                                <label class="block text-sm font-medium text-black mb-2" for="infraCostAnnual">Cost per environment (annual)</label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-lg text-black">$</span>
+                                    <input
+                                        type="number"
+                                        id="infraCostAnnual"
+                                        x-model.number="infraCostAnnual"
+                                        min="0"
+                                        class="w-full h-[50px] bg-[#E4E3FD] text-lg rounded-[7px] border border-black focus:outline-none focus:ring-2 focus:ring-primary pl-8 pr-4"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- mirrord Pricing -->
+                    <div>
+                        <h3 class="text-xl lg:text-2xl font-heading font-bold text-black mb-4">mirrord Pricing</h3>
+                        <p class="text-sm text-gray-600">Teams &mdash; $40/seat/mo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="lg:col-span-5">
+                <div class="border-[1.5px] border-black rounded-[5px] lg:rounded-[7px] shadow-[-5px_5px_0px_#000] bg-white p-6 lg:p-8 lg:sticky lg:top-6">
+                    <h3 class="text-xl lg:text-2xl font-heading font-bold text-black mb-6">Your ROI</h3>
+
+                    <!-- Time Saved -->
+                    <div class="mb-6 pb-6 border-b border-gray-200">
+                        <p class="text-sm text-gray-600 mb-1">Hours saved per developer per week</p>
+                        <p class="text-2xl lg:text-3xl font-bold text-black">
+                            <span x-text="formatNumber(hoursSavedPerWeek)"></span> hrs
+                        </p>
+                    </div>
+
+                    <!-- Roadmap Acceleration -->
+                    <div class="mb-6 pb-6 border-b border-gray-200">
+                        <p class="text-sm text-gray-600 mb-1">Roadmap acceleration</p>
+                        <p class="text-2xl lg:text-3xl font-bold text-primary">
+                            <span x-text="formatNumber(roadmapAcceleration)"></span>% faster delivery
+                        </p>
+                    </div>
+
+                    <!-- Productivity Savings -->
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-600 mb-1">Annual productivity savings</p>
+                        <p class="text-2xl lg:text-3xl font-bold text-primary">
+                            <span x-text="formatCurrency(annualProductivitySavings)"></span>
+                            <span class="text-base font-normal text-gray-600">(<span x-text="formatNumber(teamHoursSavedPerYear, 0)"></span> team hours)</span>
+                        </p>
+                    </div>
+
+                    <!-- Infra Savings -->
+                    <div x-show="showInfra && numEnvironments > 0" class="mb-4">
+                        <p class="text-sm text-gray-600 mb-1">Annual infrastructure savings</p>
+                        <p class="text-2xl lg:text-3xl font-bold text-primary" x-text="formatCurrency(annualInfraSavings)"></p>
+                    </div>
+
+                    <!-- Gross Savings -->
+                    <div class="mb-4 pb-4 border-b border-gray-200">
+                        <p class="text-sm text-gray-600 mb-1">Gross annual savings</p>
+                        <p class="text-2xl lg:text-3xl font-bold text-black" x-text="formatCurrency(grossSavings)"></p>
+                    </div>
+
+                    <!-- mirrord Cost -->
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-600 mb-1">mirrord annual cost</p>
+                        <p class="text-xl font-medium text-gray-700">
+                            <span x-text="formatCurrency(mirrordAnnualCost)"></span>
+                            <span class="text-sm font-normal">(<span x-text="numDevs"></span> seats &times; <span x-text="formatCurrency(pricePerSeat)"></span>/mo)</span>
+                        </p>
+                    </div>
+
+                    <!-- Net ROI -->
+                    <div class="bg-[#E4E3FD] rounded-[7px] p-4 mb-6">
+                        <p class="text-sm font-medium text-black mb-1">Net annual ROI</p>
+                        <p class="text-3xl lg:text-4xl font-bold" :class="netROI >= 0 ? 'text-green-600' : 'text-red-600'" x-text="formatCurrency(netROI)"></p>
+                        <p class="text-sm font-medium mt-1" :class="netROI >= 0 ? 'text-green-600' : 'text-red-600'">
+                            <span x-text="formatNumber(roiPercentage, 0)"></span>% return on investment
+                        </p>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="space-y-3">
+                        <a href="https://app.metalbear.com/account/sign-up" target="_blank"
+                            class="block w-full h-12 lg:h-14 text-lg cursor-pointer font-body flex justify-center items-center bg-primary hover:bg-tertiary text-white hover:text-black border border-black rounded-[7px] transition-colors duration-200">
+                            Start Free Trial
+                        </a>
+                        <a href="/mirrord/demo/"
+                            class="block w-full h-12 lg:h-14 text-lg cursor-pointer font-body flex justify-center items-center bg-white hover:bg-[#E4E3FD] text-primary border border-primary rounded-[7px] transition-colors duration-200">
+                            Talk to Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Qualitative Benefits -->
+        <div class="mt-16 lg:mt-24">
+            <h2 class="text-2xl lg:text-3xl font-heading font-bold text-black text-center mb-10">Beyond the Numbers</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="/mirrord/case-study/colab/" class="block border-[1.5px] border-black rounded-[5px] bg-white p-5 hover:bg-[#FAFAFD] transition-colors no-underline">
+                    <div class="w-10 h-10 bg-[#E4E3FD] rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-black mb-2">50-98% Faster Cycles</h4>
+                    <p class="text-sm text-gray-600">Companies report dramatic reductions in test cycle time, from minutes to seconds.</p>
+                    <p class="text-sm text-primary font-medium mt-3">Read case study &rarr;</p>
+                </a>
+
+                <a href="/mirrord/case-study/surveymonkey/" class="block border-[1.5px] border-black rounded-[5px] bg-white p-5 hover:bg-[#FAFAFD] transition-colors no-underline">
+                    <div class="w-10 h-10 bg-[#E4E3FD] rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-black mb-2">Days to Hours Onboarding</h4>
+                    <p class="text-sm text-gray-600">New developers go from multi-day setup to productive in hours.</p>
+                    <p class="text-sm text-primary font-medium mt-3">Read case study &rarr;</p>
+                </a>
+
+                <a href="/mirrord/case-study/surveymonkey/" class="block border-[1.5px] border-black rounded-[5px] bg-white p-5 hover:bg-[#FAFAFD] transition-colors no-underline">
+                    <div class="w-10 h-10 bg-[#E4E3FD] rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-black mb-2">Higher Code Quality</h4>
+                    <p class="text-sm text-gray-600">Test against real environments from day one. Fewer bugs reach production.</p>
+                    <p class="text-sm text-primary font-medium mt-3">Read case study &rarr;</p>
+                </a>
+
+                <a href="/mirrord/case-study/cadence/" class="block border-[1.5px] border-black rounded-[5px] bg-white p-5 hover:bg-[#FAFAFD] transition-colors no-underline">
+                    <div class="w-10 h-10 bg-[#E4E3FD] rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-black mb-2">Happier Developers</h4>
+                    <p class="text-sm text-gray-600">No more waiting on builds or context switching. Stay in flow.</p>
+                    <p class="text-sm text-primary font-medium mt-3">Read case study &rarr;</p>
+                </a>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="/mirrord/case-studies/" class="text-primary font-medium hover:underline">
+                    Read our case studies &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
