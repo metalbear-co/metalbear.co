@@ -18,6 +18,10 @@
                 <label class="d-none" for="email">Email*</label>
                 <input class="contact-form__input" type="email" id="email" name="email" placeholder="Email" required="">
               </div>
+              <div class="contact-form__field">
+                <label class="d-none" for="phone">Phone (optional)</label>
+                <input class="contact-form__input" type="tel" id="phone" name="phone" placeholder="Phone">
+              </div>
               <div class="contact-form__field mb-0">
                 <label class="d-none" for="message">Message*</label>
                 <textarea class="contact-form__input" name="message" id="message" placeholder="Message" rows="5"
@@ -99,6 +103,11 @@
             "objectTypeId": "0-1",
             "name": "message",
             "value": formData.get('message')
+          },
+          {
+            "objectTypeId": "0-1",
+            "name": "phone",
+            "value": formData.get('phone')
           },
         ],
 
