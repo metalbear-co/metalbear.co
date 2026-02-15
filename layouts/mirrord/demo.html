@@ -61,6 +61,10 @@
                     required="">
                 </div>
                 <div class="book-form__field mb-[18px] xl:mb-[22px] 2xl:mb-[28px]">
+                  <label class="hidden" for="phone">Phone (optional)</label>
+                  <input class="book-form__input" type="tel" id="phone" name="phone" placeholder="Phone (optional)">
+                </div>
+                <div class="book-form__field mb-[18px] xl:mb-[22px] 2xl:mb-[28px]">
                   <label class="hidden" for="company">Company</label>
                   <input class="book-form__input" type="text" id="company" name="Company" placeholder="Company"
                     required="">
@@ -234,6 +238,11 @@
           "objectTypeId": "0-1",
           "name": "message",
           "value": formData.get('message')
+        },
+        {
+          "objectTypeId": "0-1",
+          "name": "phone",
+          "value": formData.get('phone')
         }
       ]
     };
