@@ -97,6 +97,17 @@
                         <hr class="my-6 border-t border-solid border-t-[#222222] opacity-25 lg:hidden">
                         {{ partial "header/header-icon-btn.html" . }}
                         <ul class="nav flex flex-col lg:flex-row justify-center lg:justify-start items-center">
+                            <li class="py-2 lg:py-0 lg:pr-2 xl:pr-3">
+                                <button
+                                    id="ai-mode-toggle"
+                                    type="button"
+                                    class="flex items-center gap-1.5 border border-black rounded-full px-3 py-1.5 text-sm font-bold font-body bg-white cursor-pointer"
+                                    aria-label="Toggle AI messaging mode"
+                                >
+                                    <span id="ai-toggle-dot" class="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0"></span>
+                                    <span>AI</span>
+                                </button>
+                            </li>
                             <li>
                                 <a class="text-white hover:text-midblack text-base lg:text-[0.813rem] xl:text-sm leading-normal lg:leading-normal xl:leading-normal text-center inline-block bg-primary hover:bg-tertiary border border-solid border-[#222222] rounded-[8px] lg:rounded-[7px] xl:rounded-[8px] 2xl:rounded-[9px] py-[11px] lg:py-[8px] xl:py-2.5 px-5 lg:px-1 transition-all duration-300 ease-[ease] lg:w-[156px] xl:w-[174px]"
                                     href="https://app.metalbear.com/account/sign-up" target="_blank">Try mirrord for

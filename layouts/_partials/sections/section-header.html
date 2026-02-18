@@ -14,7 +14,7 @@
                         </div>
                     </a></div> -->
                     <!-- Comment above here to remove banner -->
-                    <div class="text-center lg:text-left">
+                    <div class="default-content text-center lg:text-left">
                         <h2
                             class="text-black text-[2rem] md:text-[2.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3.438rem] font-heading leading-[1.3] md:leading-[1.3] lg:leading-[1.3] xl:leading-[1.3] 2xl:leading-[1.3] mb-8 lg:mb-6 xl:mb-9 2xl:mb-12">
                             <div class="lg:max-w-3/4">
@@ -40,7 +40,27 @@
                         <div
                             class="lg:w-4/6 text-black text-[1.375rem] xl:text-xl 2xl:text-3xl font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
                             <p>Run local
-                                code like it’s in your Kubernetes cluster without deploying it first.</p>
+                                code like it's in your Kubernetes cluster without deploying it first.</p>
+                        </div>
+                    </div>
+                    <div class="ai-content text-center lg:text-left">
+                        <h2
+                            class="text-black text-[2rem] md:text-[2.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3.438rem] font-heading leading-[1.3] md:leading-[1.3] lg:leading-[1.3] xl:leading-[1.3] 2xl:leading-[1.3] mb-8 lg:mb-6 xl:mb-9 2xl:mb-12">
+                            <div class="lg:max-w-3/4">
+                                <span class="font-medium">We built mirrord so your AI agents can ship code, not waste time on</span>
+                            </div>
+                            <div
+                                class="relative text-primary font-heading font-semibold leading-[1.2] md:leading-[1.2] lg:leading-[1.2] xl:leading-[1.2] 2xl:leading-[1.2] h-[72px] lg:h-[50px] 2xl:h-[68px] overflow-hidden">
+                                <span class="ai-rotating-text active">missing cloud context</span>
+                                <span class="ai-rotating-text">broken integrations</span>
+                                <span class="ai-rotating-text">deployment delays</span>
+                                <span class="ai-rotating-text">hallucinated configs</span>
+                                <span class="ai-rotating-text">flaky agent tests</span>
+                            </div>
+                        </h2>
+                        <div
+                            class="lg:w-4/6 text-black text-[1.375rem] xl:text-xl 2xl:text-3xl font-body leading-normal md:leading-normal lg:leading-normal xl:leading-normal 2xl:leading-normal">
+                            <p>Give AI coding agents real cloud context. Run agentic workflows as if they're inside your Kubernetes cluster—instantly.</p>
                         </div>
                     </div>
                     <div
@@ -123,4 +143,18 @@
     }
 
     setInterval(rotateText, 2000);
+
+    const aiTexts = document.querySelectorAll(".ai-rotating-text");
+    let aiIndex = 0;
+    function rotateAIText() {
+        const current = aiTexts[aiIndex];
+        current.classList.remove("active");
+        current.classList.add("exit");
+        aiIndex = (aiIndex + 1) % aiTexts.length;
+        const next = aiTexts[aiIndex];
+        next.classList.remove("exit");
+        next.classList.add("active");
+        setTimeout(() => { current.classList.remove("exit"); }, 500);
+    }
+    setInterval(rotateAIText, 2000);
 </script>

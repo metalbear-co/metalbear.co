@@ -13,6 +13,14 @@
     {{ .Scratch.Add "class" " list" -}}
   {{ end -}}
   <body class="{{ .Scratch.Get "class" }}">
+    <style>
+      html:not(.ai-mode) .ai-content { display: none !important; }
+      html.ai-mode .default-content { display: none !important; }
+      #ai-mode-toggle { transition: background-color 0.2s; }
+      html.ai-mode #ai-mode-toggle { background-color: #FFCB7D; border-color: #222; }
+      #ai-toggle-dot { background-color: #d1d5db; transition: background-color 0.2s; }
+      html.ai-mode #ai-toggle-dot { background-color: #756DF3; }
+    </style>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3T38KFN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
@@ -52,6 +60,18 @@
       fabButton.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+    </script>
+    <script>
+      (function() {
+        var html = document.documentElement;
+        var toggle = document.getElementById('ai-mode-toggle');
+        if (toggle) {
+          toggle.addEventListener('click', function() {
+            var isAI = html.classList.toggle('ai-mode');
+            try { localStorage.setItem('aiMode', isAI.toString()); } catch(e) {}
+          });
+        }
+      })();
     </script>
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/143742664.js"></script>
