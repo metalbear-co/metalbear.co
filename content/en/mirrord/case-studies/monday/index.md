@@ -87,10 +87,10 @@ With mirrord, developers work against **a real staging environment with real dat
 
 > "When I'm working with mirrord, I don't have to compromise between speed and confidence. I get both."
 >
-> — Giora Guttseit, Software Engineer, CRM Group
+> — Giora Guttsait, Software Engineer, CRM Group
 
 <div style="margin-top:2rem;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-  <iframe src="https://www.youtube.com/embed/01Yek75HTTA" title="monday.com on mirrord - Giora Guttseit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  <iframe src="https://www.youtube.com/embed/01Yek75HTTA" title="monday.com on mirrord - Giora Guttsait" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
 </div>
 
 ## The results: Lower cloud costs, faster shipping, and fewer bugs reaching production
