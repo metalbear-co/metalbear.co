@@ -77,8 +77,9 @@ The rollout was deliberate, starting with **40 alpha users**, then expanding tea
 >
 > — Shahar Golan, DevOps Engineer, Distribution Infra
 
-<!-- TODO: Add monday-shahar-golan.mp4 to static/ when ready -->
-{{< video ratio="16x9" mp4-src="/monday-shahar-golan.mp4" attributes="controls" >}}
+<div style="margin-top:2rem;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+  <iframe src="https://www.youtube.com/embed/QAPTnJTjTAM" title="monday.com on mirrord - Shahar Golan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+</div>
 
 For developers, the change was immediate. No more spending 30 minutes to four hours setting up a local environment. No more discovering that your environment drifted from production only after deploying. No more getting tagged the morning after a release because a bug slipped through that your local setup couldn't catch.
 
@@ -88,8 +89,9 @@ With mirrord, developers work against **a real staging environment with real dat
 >
 > — Giora Guttseit, Software Engineer, CRM Group
 
-<!-- TODO: Add monday-giora-guttseit.mp4 to static/ when ready -->
-{{< video ratio="16x9" mp4-src="/monday-giora-guttseit.mp4" attributes="controls" >}}
+<div style="margin-top:2rem;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+  <iframe src="https://www.youtube.com/embed/01Yek75HTTA" title="monday.com on mirrord - Giora Guttseit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+</div>
 
 ## The results: Lower cloud costs, faster shipping, and fewer bugs reaching production
 
