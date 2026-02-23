@@ -14,7 +14,7 @@
           <div>
             {{- with .Params.header.title }}
             <h1
-              class="page-demo__header-title text-3xl xl:text-[2.5rem] 2xl:text-[3.438rem] text-black font-semibold font-heading leading-[1.4] md:leading-[1.4] lg:leading-[1.4] xl:leading-[1.4] 2xl:leading-[1.4] mb-[37px] xl:mb-[46px] 2xl:mb-[62px]">
+              class="page-demo__header-title text-3xl xl:text-[2.5rem] 2xl:text-[3.438rem] text-black font-semibold font-heading leading-[1.4] md:leading-[1.4] lg:leading-[1.4] xl:leading-[1.4] 2xl:leading-[1.4] mb-[37px] xl:mb-[46px] 2xl:mb-[62px]" style="text-wrap: balance">
               {{ . | safeHTML }}</h1>
             {{- end }}
             {{- with .Params.header.description }}
