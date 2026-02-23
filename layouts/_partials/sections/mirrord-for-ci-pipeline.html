@@ -95,6 +95,11 @@
                                     name="email" placeholder="Work email" required="">
                             </div>
                             <div class="book-form__field mb-3">
+                                <label class="text-sm font-medium mb-1" for="phone">Phone (optional)</label>
+                                <input class="book-form__input placeholder:text-transparent" type="tel" id="phone"
+                                    name="phone" placeholder="Phone (optional)">
+                            </div>
+                            <div class="book-form__field mb-3">
                                 <label class="text-sm font-medium mb-1" for="platform">CI Platform</label>
                                 <div class="select-wrapper">
                                     <select id="platform" name="ciplatform" class="book-form__input pr-4">
@@ -173,6 +178,7 @@
             const data = {
                 fields: [
                     { name: "email", value: form.email.value },
+                    { name: "phone", value: form.phone.value },
                     { name: "ciplatform", value: form.ciplatform.value },
                     { name: "engineeringteam", value: form.engineeringteam.value },
                     { name: "ci_bottleneck", value: form.ci_bottleneck.value }

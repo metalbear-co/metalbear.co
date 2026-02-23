@@ -1,62 +1,100 @@
 logo_repeat: 10
-running_logo: 
+running_logo:
   - title: "zooplus"
     image: "/mirrord-zooplus.png"
     class: "w-[93px] xl:w-[142px]"
+    width: 500
+    height: 160
   - title: "sentinel-one"
     image: "/mirrord-sentinel-one.png"
     class: "w-[135px] xl:w-[214px]"
+    width: 540
+    height: 188
   - title: "nab"
     image: "/mirrord-nab.png"
-    class: "w-[101px] xl:w-[160px]" 
+    class: "w-[101px] xl:w-[160px]"
+    width: 142
+    height: 80
   - title: "harness"
     image: "/mirrord-harness.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 248
+    height: 66
   - title: "colab"
     image: "/mirrord-colab.png"
-    class: "w-[103px] xl:w-[164px]"       
+    class: "w-[103px] xl:w-[164px]"
+    width: 500
+    height: 119
   - title: "survey-monkey"
     image: "/mirrord-survey-monkey.png"
-    class: "w-[171px] xl:w-[270px]"  
+    class: "w-[171px] xl:w-[270px]"
+    width: 540
+    height: 81
   - title: "monday"
     image: "/mirrord-monday.png"
-    class: "w-[171px] xl:w-[270px]"         
+    class: "w-[171px] xl:w-[270px]"
+    width: 540
+    height: 94
   - title: "cadence"
     image: "/mirrord-cadence.png"
-    class: "w-[102px] xl:w-[160px]"     
+    class: "w-[102px] xl:w-[160px]"
+    width: 540
+    height: 81
   - title: "augury"
     image: "/mirrord-augury.png"
-    class: "w-[61px] xl:w-[95px]"  
+    class: "w-[61px] xl:w-[95px]"
+    width: 540
+    height: 249
   - title: "imprint"
     image: "/mirrord-imprint.png"
-    class: "w-[101px] xl:w-[160px]" 
+    class: "w-[101px] xl:w-[160px]"
+    width: 540
+    height: 181
   - title: "personio"
     image: "/mirrord-personio.png"
-    class: "w-[101px] xl:w-[160px]" 
+    class: "w-[101px] xl:w-[160px]"
+    width: 540
+    height: 241
   - title: "mercari"
     image: "/mirrord-mercari.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 540
+    height: 540
   - title: "league"
     image: "/mirrord-league.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 240
+    height: 72
   - title: "intellistack"
     image: "/mirrord-intellistack.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 341
+    height: 63
   - title: "nexo"
     image: "/mirrord-nexo.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 215
+    height: 43
   - title: "dz-bank"
     image: "/mirrord-dz-bank.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 278
+    height: 50
   - title: "dotmatics"
     image: "/mirrord-dotmatics.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 236
+    height: 39
   - title: "envoy"
     image: "/mirrord-envoy.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 203
+    height: 64
   - title: "torq"
     image: "/mirrord-torq.png"
     class: "w-[101px] xl:w-[160px]"
+    width: 144
+    height: 48
 
   
     
