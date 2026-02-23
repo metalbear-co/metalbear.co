@@ -1,7 +1,7 @@
 ---
-title: "mirrord | Let agents safely test on staging"
-description: "mirrord gives AI agents full cloud context by letting them run local code in your staging environment."
-slug: mirrord-and-ai-agents
+title: "AI Agents for Kubernetes Testing | mirrord"
+description: "Let AI coding agents test safely on your Kubernetes staging environment. mirrord gives agents and developers isolated access to live cloud services — no mocks, no deploys, no waiting."
+slug: ai-agents-kubernetes
 logo_repeat: 10
 running_logo: 
   - title: "monday"
@@ -26,10 +26,10 @@ running_logo:
 layout: builder
 sections:
   - mirrord-ai-agents-header
-  - mirrord-ai-agents-concurrency
-  - mirrord-ai-agents-video
-  - mirrord-ai-agents-problem-solution
   - mirrord-ai-agents-comparison
+  - mirrord-ai-agents-concurrency
+  - mirrord-ai-agents-problem-solution
+  - mirrord-ai-agents-video
   - mirrord-ai-agents-stats
   - mirrord_ai_agents_footer
 ---
