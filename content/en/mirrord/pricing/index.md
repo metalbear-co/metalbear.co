@@ -94,15 +94,19 @@ sections:
         - name: "Preview Environments"
           team: false
           enterprise: true
+        - name: "Database Branching"
+          team: true
+          enterprise: true
+        - name: "Queue Splitting – SQS, Kafka, Redis (Coming soon)"
+          team: true
+          enterprise: true
         - name: "Conflict resolution"
           team: true
           enterprise: true
         - name: "mirrord Profiles"
           team: true
           enterprise: true
-        - name: "Queue Splitting – SQS, Kafka, Redis (Coming soon)"
-          team: true
-          enterprise: true
+
 
     - category: "Observability and Control"
       features:
@@ -146,12 +150,6 @@ sections:
           team: true
           enterprise: true
         - name: "Support for targeting StatefulSets"
-          team: true
-          enterprise: true
-
-    - category: "Database Branching"
-      features:
-        - name: "Database Branching"
           team: true
           enterprise: true
 
