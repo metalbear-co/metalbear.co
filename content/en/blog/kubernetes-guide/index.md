@@ -1,14 +1,14 @@
 ---
-title: "A Beginner's Guide to Kubernetes"
-description: "Learn the fundamentals of Kubernetes, the container orchestration platform used by 82% of organizations using containers. Understand core resources like Pods, Deployments, Services, and more."
-lead: "Kubernetes has become the de-facto platform for running containerized applications at scale. This beginner's guide covers the fundamentals you need to understand how it works."
+title: "A Beginner’s Guide to Kubernetes"
+description: ""
+lead: ""
 slug: "kubernetes-guide"
 tags:
   - CI
   - Kubernetes
 date: 2026-02-04
 summary: >
-  Learn the basics of Kubernetes, from understanding what it is and how clusters work to familiarizing yourself with core resources like Pods, Deployments, Services, ConfigMaps, Secrets, Volumes, and Namespaces. This guide provides practical examples and explains how to get started with Kubernetes.
+  
 draft: false
 weight: 50
 images:
@@ -37,7 +37,7 @@ The control plane is the brain of the cluster. It exposes the Kubernetes API, st
 
 Worker nodes are the machines that actually run your application containers. Each node runs a container runtime and a set of Kubernetes components that communicate with the control plane. When the control plane decides a container should run, it schedules it onto one of these nodes, and the node is responsible for starting it, monitoring it, and reporting its status back.
 
-{{<figure src="kubernetes-arch.png" title="Architecture of a simple Kubernetes cluster" alt="Architecture of a simple Kubernetes cluster" height="100%" width="100%">}}
+![image.png](A%20Beginner%E2%80%99s%20Guide%20to%20Kubernetes/image.png)
 
 One important thing to understand is that in most cases, you won’t have to manage these pieces directly. You’ll probably use a managed Kubernetes offering like Google’s GKE or AWS’s EKS. In these managed offerings, the control plane is typically operated for you, and nodes are often created automatically.
 
