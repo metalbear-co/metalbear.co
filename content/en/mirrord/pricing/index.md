@@ -31,7 +31,8 @@ sections:
     feature_title: "Team feature highlights:"
     features:
       - "Unlimited concurrent work on the same target"
-      - "Queue splitting"
+      - "Queue Splitting"
+      - "Database Branching"
       - "Support for deployments with multiple pods"
       - "Support for targeting Jobs, StatefulSets and more"
     admin_support:
@@ -90,6 +91,9 @@ sections:
         - name: "Unlimited concurrent work on the same target"
           team: true
           enterprise: true
+        - name: "Preview Environments"
+          team: false
+          enterprise: true
         - name: "Conflict resolution"
           team: true
           enterprise: true
@@ -126,9 +130,6 @@ sections:
 
     - category: "Advanced Kubernetes Support"
       features:
-        - name: "Preview Environments"
-          team: false
-          enterprise: true
         - name: "Support for using mirrord in CI pipelines"
           team: false
           enterprise: true
@@ -145,6 +146,12 @@ sections:
           team: true
           enterprise: true
         - name: "Support for targeting StatefulSets"
+          team: true
+          enterprise: true
+
+    - category: "Database Branching"
+      features:
+        - name: "Database Branching"
           team: true
           enterprise: true
 
