@@ -52,6 +52,7 @@ sections:
     features:
       - "<strong>Everything in Teams</strong>"
       - "High availability"
+      - "Preview Environments"
       - "Support for air-gapped clusters"
       - "Support for using mirrord in CI pipelines"
       - "Annual billing via invoice, custom contracts"
@@ -110,9 +111,6 @@ sections:
         - name: "Session management"
           team: true
           enterprise: true
-        - name: "High availability"
-          team: false
-          enterprise: true
 
     - category: "Security and Compliance"
       features:
@@ -128,7 +126,13 @@ sections:
 
     - category: "Advanced Kubernetes Support"
       features:
+        - name: "Preview Environments"
+          team: false
+          enterprise: true
         - name: "Support for using mirrord in CI pipelines"
+          team: false
+          enterprise: true
+        - name: "High availability"
           team: false
           enterprise: true
         - name: "Support for live scaling"
