@@ -18,7 +18,7 @@ header:
   site: monday.com
   logo: page-demo-monday.png
   employees: 2,500+
-  using_since: 2024
+  using_since: 2025
 story:
   content: With mirrord, we shifted development onto a real environment with real data, without paying the cost of provisioning a separate environment for every developer.
   image: netanel-abergel.png
