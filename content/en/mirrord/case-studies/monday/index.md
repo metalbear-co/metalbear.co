@@ -12,7 +12,7 @@ feed:
   quote: >
       "We are not pushing them to use mirrord. Everyone is asking for it."
 header:
-  title: 'How monday.com went from <span class="text-primary">hundreds of dev environments to one</span> with mirrord'
+  title: 'How monday.com went from <span class="text-primary">hundreds of dev environments to one</span>'
   description: "Growing 30–60% year over year, monday.com needed a dev environment model that could keep up. mirrord made it possible."
   company: monday.com is a leading work operating system (Work OS) that enables organizations to build and manage any workflow, project, or process.
   site: monday.com
