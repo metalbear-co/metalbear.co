@@ -174,8 +174,8 @@ url = "https://metalbear.com/slack"
 weight = 10
 
 [[footer_social]]
-name = "Twitter"
-pre = '<svg class="w-100 w-full h-auto" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_596_1331)"> <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" fill="black" stroke="black" stroke-width="0.857415" stroke-linecap="round" stroke-linejoin="round"/> </g> <defs> <clipPath id="clip0_596_1331"> <rect width="34.2966" height="34.2966" fill="white" transform="translate(0.515625)"/> </clipPath> </defs> </svg> '
+name = "X"
+pre = '<svg class="w-100 w-full h-auto" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_596_1331)"> <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="black" stroke="black" stroke-width="0.857415" stroke-linecap="round" stroke-linejoin="round"/> </g> <defs> <clipPath id="clip0_596_1331"> <rect width="34.2966" height="34.2966" fill="white" transform="translate(0.515625)"/> </clipPath> </defs> </svg> '
 url = "https://x.com/metalbear"
 weight = 30
 
