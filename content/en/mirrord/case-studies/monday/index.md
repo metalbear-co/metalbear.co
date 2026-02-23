@@ -7,12 +7,12 @@ date: 2026-01-27T06:00:00+00:00
 draft: false
 weight: 5
 feed:
-  title: "How monday.com eliminated dev environment costs and onboards engineers in under an hour with mirrord"
+  title: "How monday.com went from 100s of dev environments to one"
   logo: "demo-monday.png"
   quote: >
       "We are not pushing them to use mirrord. Everyone is asking for it."
 header:
-  title: 'How monday.com went from <span class="text-primary">hundreds of dev environments to one</span>'
+  title: 'How monday.com went from <span class="text-primary">100s of dev environments to one</span>'
   description: "Growing 30–60% year over year, monday.com needed a dev environment model that could keep up. mirrord made it possible."
   company: monday.com is a leading work operating system (Work OS) that enables organizations to build and manage any workflow, project, or process.
   site: monday.com
