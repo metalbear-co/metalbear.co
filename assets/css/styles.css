@@ -1145,7 +1145,41 @@ ol {
     text-transform: uppercase;
 }
 
-/* Quickstart wizard mobile overrides */
+/* Quickstart wizard */
+.qs-slide {
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.qs-slide-forward {
+    animation: qs-in-right 0.2s ease-out;
+}
+
+.qs-slide-back {
+    animation: qs-in-left 0.2s ease-out;
+}
+
+@keyframes qs-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes qs-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 639px) {
     [x-data="quickstartWizard()"] > div:last-child {
         min-height: 100vh;
