@@ -1144,3 +1144,11 @@ ol {
     text-shadow: -3px 3px 0px #000000;
     text-transform: uppercase;
 }
+
+/* Quickstart wizard mobile overrides */
+@media (max-width: 639px) {
+    [x-data="quickstartWizard()"] > div:last-child {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+}

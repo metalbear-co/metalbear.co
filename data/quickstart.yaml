@@ -1,0 +1,62 @@
+# Quickstart wizard content
+# Flow: k8s check → intent → (personal: IDE install) or (team: size → route)
+
+no_k8s:
+  title: "mirrord needs Kubernetes"
+  description: "mirrord connects your local dev environment to a Kubernetes cluster. If your team is exploring Kubernetes, we'd love to help."
+  learn_url: "https://mirrord.dev/docs/overview/introduction/"
+  contact_url: "https://calendly.com/metalbear/intro-call"
+
+ides:
+  - id: vscode
+    name: "VS Code"
+    install_command: "code --install-extension MetalBear.mirrord"
+    install_alt: "Or search 'mirrord' in VS Code Extensions panel"
+    marketplace_url: "https://marketplace.visualstudio.com/items?itemName=MetalBear.mirrord"
+    docs_url: "https://mirrord.dev/docs/using-mirrord/vscode-extension/"
+  - id: intellij
+    name: "IntelliJ"
+    install_command: ""
+    install_alt: "Install from Preferences > Plugins > search 'mirrord'"
+    marketplace_url: "https://plugins.jetbrains.com/plugin/19772-mirrord"
+    docs_url: "https://mirrord.dev/docs/using-mirrord/intellij-plugin/"
+  - id: cli
+    name: "CLI"
+    install_command: "brew install metalbear-co/mirrord/mirrord"
+    install_alt_command: "curl -fsSL https://raw.githubusercontent.com/metalbear-co/mirrord/main/scripts/install.sh | bash"
+    install_alt: "Or use the install script (Linux/macOS)"
+    docs_url: "https://mirrord.dev/docs/overview/quick-start/#cli-tool"
+
+team_sizes:
+  - id: small
+    label: "1-10"
+    description: "Small team"
+  - id: medium
+    label: "11-50"
+    description: "Growing team"
+  - id: large
+    label: "50+"
+    description: "Enterprise"
+
+team_routes:
+  small:
+    title: "Start a free trial"
+    description: "mirrord for Teams gives your team concurrent sessions, access control, and centralized config."
+    primary_url: "https://app.metalbear.com/account/sign-up"
+    primary_text: "Start free trial"
+    secondary_url: "https://calendly.com/metalbear/intro-call"
+    secondary_text: "Book a demo instead"
+  medium:
+    title: "Start a free trial"
+    description: "mirrord for Teams gives your team concurrent sessions, access control, and centralized config."
+    primary_url: "https://app.metalbear.com/account/sign-up"
+    primary_text: "Start free trial"
+    secondary_url: "https://calendly.com/metalbear/intro-call"
+    secondary_text: "Book a demo instead"
+  large:
+    title: "Let's talk"
+    description: "For teams over 50 engineers, we'll set up a tailored proof of concept with your infrastructure."
+    primary_url: "https://calendly.com/metalbear/intro-call"
+    primary_text: "Book a demo"
+    secondary_url: "https://app.metalbear.com/account/sign-up"
+    secondary_text: "Or start a free trial"
