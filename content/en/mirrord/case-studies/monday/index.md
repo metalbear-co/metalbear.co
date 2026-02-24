@@ -77,7 +77,7 @@ The rollout was deliberate, starting with **40 alpha users**, then expanding tea
 >
 > — Shahar Golan, DevOps Engineer, Distribution Infra
 
-<div style="margin-top:2rem;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+<div style="margin-top:2rem;margin-bottom:2rem;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
   <iframe src="https://www.youtube.com/embed/QAPTnJTjTAM" title="monday.com on mirrord - Shahar Golan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
 </div>
 
