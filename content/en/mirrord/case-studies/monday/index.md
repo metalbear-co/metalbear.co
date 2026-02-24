@@ -18,7 +18,7 @@ header:
   site: monday.com
   logo: page-demo-monday.png
   employees: 2,500+
-  using_since: 2025
+  using_since: June 2025
 story:
   content: With mirrord, we shifted development onto a real environment with real data, without paying the cost of provisioning a separate environment for every developer.
   image: netanel-abergel.png
@@ -59,7 +59,7 @@ The team started with Docker Compose, but as the system grew, not everything cou
 
 ![Before mirrord: every developer needed their own full cloud environment](monday-before.png)
 
-With hundreds of developers today and a roadmap to **1,000+ developers** and **400+ microservices**, the math was unsustainable. Every new hire meant another full environment to provision and maintain. Setup took **30 minutes to several hours**, new hires spent **3–5 days** just learning how to wrangle their environments, and the cloud bill for dev environments alone was massive.
+With hundreds of developers today and the engineering org and service count continuing to grow, the math was unsustainable. Every new hire meant another full environment to provision and maintain. Setup took **30 minutes to several hours**, new hires spent **3–5 days** just learning how to wrangle their environments, and the cloud bill for dev environments alone was massive.
 
 The team called the defining pain point **"domains leaking."** Because each developer had to deploy services owned by every other team, any issue in someone else's code would break your environment. Developers spent their time chasing other teams instead of writing code, and DevOps was stuck playing intermediary.
 
@@ -67,7 +67,7 @@ After six months of optimization effort, the minimum number of services each dev
 
 ## The solution: One shared environment for everyone
 
-The DevEx team researched the request isolation pattern and evaluated several tools including Telepresence. mirrord offered what they needed: **a way for all developers to share the existing staging environment** without interfering with each other.
+The DevEx team researched the request isolation pattern and evaluated several tools. mirrord offered what they needed: **a way for all developers to share the existing staging environment** without interfering with each other.
 
 ![After mirrord: all developers share one environment](monday-after.png)
 
@@ -83,7 +83,7 @@ The rollout was deliberate, starting with **40 alpha users**, then expanding tea
 
 For developers, the change was immediate. No more spending 30 minutes to four hours setting up a local environment. No more discovering that your environment drifted from production only after deploying. No more getting tagged the morning after a release because a bug slipped through that your local setup couldn't catch.
 
-With mirrord, developers work against **a real staging environment with real data**: already configured, already running, already matching production. Features that previously took days or a week to ship now go out in **a day or two**. And because the environment is always ready, even short windows between meetings became productive coding time.
+With mirrord, developers work against **a real staging environment with real data**: already configured, already running, already matching production. Features that previously took several days to a week to ship now go out in **a day or two**. And because the environment is always ready, even short windows between meetings became productive coding time.
 
 > "When I'm working with mirrord, I don't have to compromise between speed and confidence. I get both."
 >
@@ -103,11 +103,11 @@ What started as a careful rollout became organic adoption. Today, **245+ enginee
 
 ### Dev environment cloud costs eliminated
 
-monday.com's cloud spend for dev environments dropped to **zero**. Every developer used to need their own full copy of the staging environment provisioned in the cloud. As monday.com scales toward 1,000+ developers and 400+ microservices, that bill was only going to grow. With mirrord, everyone shares the staging cluster that already existed.
+monday.com's cloud spend for dev environments dropped to **zero**. Every developer used to need their own full copy of the staging environment provisioned in the cloud. As monday.com continues to grow its engineering org and add more microservices, that bill was only going to grow. With mirrord, everyone shares the staging cluster that already existed.
 
 ### Dev velocity increased
 
-Features that previously took days or a week to ship now go out in a day or two. CI end-to-end test runtime dropped by **~50%**, and senior engineers reclaimed short windows between meetings that used to be dead time because environment setup alone would eat them.
+Features that previously took several days to a week to ship now go out in a day or two. CI end-to-end test runtime dropped by **~50%**, and senior engineers reclaimed short windows between meetings that used to be dead time because environment setup alone would eat them.
 
 ### Higher confidence, fewer production bugs
 
