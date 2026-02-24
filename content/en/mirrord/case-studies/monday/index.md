@@ -10,7 +10,7 @@ feed:
   title: "How monday.com went from hundreds of dev environments to one"
   logo: "demo-monday.png"
   quote: >
-      "We are not pushing them to use mirrord. Everyone is asking for it."
+      "People are happier developing on mirrord. It's quicker, it's leaner, it's closer to them."
 header:
   title: 'How monday.com went from <span class="text-primary">hundreds of dev environments to one</span>'
   description: "With its engineering team growing 30–60% year over year, monday.com needed a dev environment model that could keep up. mirrord made it possible."
