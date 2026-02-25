@@ -97,7 +97,7 @@ sections:
         - name: "Database Branching"
           team: true
           enterprise: true
-        - name: "Queue Splitting – SQS, Kafka, Redis (Coming soon)"
+        - name: "Queue Splitting"
           team: true
           enterprise: true
         - name: "Conflict resolution"
@@ -161,6 +161,9 @@ sections:
         - name: "Email, public Slack"
           team: true
         - name: "Support tickets, email, private Slack or Teams channel"
+          team: false
+          enterprise: true
+        - name: "Implementation and onboarding support"
           team: false
           enterprise: true
         - name: "Customer success team and Professional services"
