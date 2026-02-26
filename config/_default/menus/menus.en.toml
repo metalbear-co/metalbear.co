@@ -2,6 +2,13 @@
 name = "mirrord"
 weight = 10
 url = "/mirrord/"
+identifier = "mirrord"
+
+[[main]]
+name = "mirrord for AI Agents"
+parent = "mirrord"
+weight = 10
+url = "/ai-agents-kubernetes/"
 
 [[main]]
 name = "Pricing"
