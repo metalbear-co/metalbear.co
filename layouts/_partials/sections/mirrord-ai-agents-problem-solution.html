@@ -1,0 +1,74 @@
+<section class="relative overflow-hidden"
+    style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(228, 227, 253, 0.3) 40%, rgba(228, 227, 253, 0.3) 100%);">
+
+    <!-- bullets.png background — top of section only -->
+    <div class="absolute top-0 left-0 w-full pointer-events-none select-none" style="height: 260px;">
+        <img src="/mirrord-ai-agents/bullets.png" alt="" class="w-full h-full object-cover object-top">
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 py-[60px] md:py-[80px] lg:py-[100px]">
+
+        <!-- Section heading -->
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <h2
+                class="text-black text-[1.625rem] md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-[2.5rem] font-heading font-semibold leading-tight mb-4">
+                AI has made it possible to generate<br>
+                <span class="text-primary">entire features in minutes</span>
+            </h2>
+            <p class="text-black text-sm md:text-base">
+                The bottleneck isn't building anymore — <strong>it's testing that code in a realistic
+                    environment.</strong>
+            </p>
+        </div>
+
+        <!-- THE PROBLEM row -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 mb-4 max-w-4xl mx-auto">
+            <!-- Bear image (confused) -->
+            <div class="flex-none w-[200px] md:w-[240px] lg:w-[260px]">
+                <img src="/mirrord-ai-agents/bear-problem.png" alt="Confused bear character" class="w-full h-auto">
+            </div>
+
+            <!-- Problem text + arrow -->
+            <div class="flex-1 pt-0 lg:pt-12 text-center lg:text-left">
+                <h3 class="text-[#F06E6E] text-xl md:text-2xl font-bold uppercase tracking-wide mb-4">THE PROBLEM</h3>
+                <p class="text-black text-base md:text-lg leading-relaxed">
+                    Staging environments can't keep up, local mocks miss critical bugs, and developers spend 15–30
+                    minutes each time they test AI code.
+                </p>
+                <!-- arrow.png — dashed curved arrow pointing down-left -->
+                <div class="hidden lg:block mt-4 -ml-8">
+                    <img src="/mirrord-ai-agents/arrow.png" alt="" class="w-[260px] h-auto">
+                </div>
+            </div>
+        </div>
+
+        <!-- THE SOLUTION card -->
+        <div class="max-w-4xl mx-auto bg-[#E4E3FD] rounded-[18px] border-2 border-black relative overflow-visible">
+
+            <div class="flex flex-col lg:flex-row items-end gap-0 overflow-hidden rounded-[14px]">
+                <!-- Solution text -->
+                <div class="flex-1 relative z-10 p-8 md:p-10 pb-10 self-center">
+                    <h3 class="text-primary text-xl md:text-2xl font-bold uppercase tracking-wide mb-4">THE SOLUTION
+                    </h3>
+                    <p class="text-black text-base md:text-lg leading-relaxed">
+                        Cut testing time from 30 minutes to 30 seconds. mirrord closes that gap by letting you run local
+                        code with live cloud traffic and services, instantly.
+                    </p>
+                </div>
+
+                <!-- Bear + star behind it -->
+                <div class="flex-none w-[260px] md:w-[320px] lg:w-[360px] relative self-end">
+                    <!-- star watermark behind bear -->
+                    <div class="absolute pointer-events-none select-none"
+                        style="bottom: 0; left: 50%; transform: translateX(-50%) scale(1.5); transform-origin: bottom center; width: 100%;">
+                        <img src="/mirrord-ai-agents/bear-solution-star.png" alt="" class="w-full h-auto opacity-80">
+                    </div>
+                    <!-- happy bear -->
+                    <img src="/mirrord-ai-agents/bear-solution.png" alt="Happy bear character"
+                        class="w-full h-auto relative z-10">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
