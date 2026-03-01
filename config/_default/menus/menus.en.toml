@@ -98,6 +98,11 @@ weight = 35
 url = "/mirrord/stories/"
 
 [[footer_center]]
+name = "ROI Calculator"
+weight = 37
+url = "/mirrord/roi-calculator/"
+
+[[footer_center]]
 name = "vs Telepresence"
 weight = 40
 url = "/mirrord/compare/telepresence/"
