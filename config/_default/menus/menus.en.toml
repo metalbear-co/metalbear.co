@@ -98,11 +98,6 @@ weight = 35
 url = "/mirrord/stories/"
 
 [[footer_center]]
-name = "ROI Calculator"
-weight = 37
-url = "/mirrord/roi-calculator/"
-
-[[footer_center]]
 name = "vs Telepresence"
 weight = 40
 url = "/mirrord/compare/telepresence/"
@@ -111,6 +106,11 @@ url = "/mirrord/compare/telepresence/"
 name = "vs Bridge to Kubernetes"
 weight = 50
 url = "/mirrord/compare/bridge-to-kubernetes/"
+
+[[footer_center]]
+name = "ROI Calculator"
+weight = 60
+url = "/mirrord/roi-calculator/"
 
 [[footer_right]]
 name = "How to Debug a Java Microservice"
