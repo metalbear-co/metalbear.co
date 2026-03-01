@@ -1,5 +1,5 @@
 ---
-title: "AI Agents for Kubernetes Testing | mirrord"
+title: "Real-world Context for AI Agents | mirrord"
 description: "Let AI coding agents test safely on your Kubernetes staging environment. mirrord gives agents and developers isolated access to live cloud services — no mocks, no deploys, no waiting."
 slug: mirrord-for-ai-agents-kubernetes
 logo_repeat: 10
