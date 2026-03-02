@@ -134,4 +134,4 @@ You don't need to overhaul your entire workflow. Start small and pick a simple c
 
 When you see it work for one small change, try something bigger - a full feature or bug fix.
 
-The goal isn't to eliminate staging. It's to stop depending on it for every change so that you can test faster. As next steps, you can explore the [mirrord docs](https://metalbear.com/mirrord/docs/overview/introduction/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) or [try it out](https://app.metalbear.com/account/sign-up/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) in your next dev cycle.
+The goal isn't to eliminate staging. It's to stop depending on it for every change so that you can test faster. As next steps, you can explore the [mirrord docs](https://metalbear.com/mirrord/docs/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) or [try it out](https://app.metalbear.com/account/sign-up/?utm_source=blog&utm_medium=social&utm_campaign=blog-stop-deploying-to-test) in your next dev cycle.
