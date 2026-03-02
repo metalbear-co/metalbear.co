@@ -120,7 +120,7 @@ Or you can install it as a [VS Code extension](vscode:extension/MetalBear.mirror
 Of course, as mirrord is completely [open source](https://github.com/metalbear-co/mirrord) you can also 
 [build it from source](https://github.com/metalbear-co/mirrord/blob/main/CONTRIBUTING.md#build-and-run-mirrord).
 
-Check out the [mirrord docs](/mirrord/docs/), especially the 
+Check out the [mirrord docs](/mirrord/docs), especially the 
 [mirrord configuration docs](/mirrord/docs/reference/configuration/), and the target reference for 
 [how to run targetless](/mirrord/docs/reference/targets/#running-without-a-target).
 Reach out to us on [Discord](https://discord.gg/metalbear) or [GitHub](https://github.com/metalbear-co/mirrord) 
