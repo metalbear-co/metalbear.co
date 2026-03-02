@@ -107,6 +107,11 @@ name = "vs Bridge to Kubernetes"
 weight = 50
 url = "/mirrord/compare/bridge-to-kubernetes/"
 
+[[footer_center]]
+name = "ROI Calculator"
+weight = 60
+url = "/mirrord/roi-calculator/"
+
 [[footer_right]]
 name = "How to Debug a Java Microservice"
 weight = 10
