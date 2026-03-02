@@ -93,6 +93,6 @@ Do you have any questions/corrections? Our website is completely open-source, so
 
 Want to help mirrord? Have a look at our open issues in the [GitHub issue tracker](https://github.com/metalbear-co/mirrord/issues) and feel free to contribute.
 
-[^1]: [/mirrord/docs/overview/introduction/](/mirrord/docs/overview/introduction/)
+[^1]: [/mirrord/docs](/mirrord/docs)
 
 [^2]: A software layer that connects the low level C run time with the JS runtime (translating the hooks into JS function calls)

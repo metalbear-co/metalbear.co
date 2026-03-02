@@ -11,7 +11,7 @@ url = "/mirrord/pricing/"
 [[main]]
 name = "Docs"
 weight = 30
-url = "https://metalbear.com/mirrord/docs/overview/introduction/"
+url = "https://metalbear.com/mirrord/docs"
 
 [[main]]
 name = "Resources"
@@ -85,7 +85,7 @@ url = "/blog/"
 [[footer_center]]
 name = "Docs"
 weight = 20
-url = "https://metalbear.com/mirrord/docs/overview/introduction/"
+url = "https://metalbear.com/mirrord/docs"
 
 [[footer_center]]
 name = "Case Studies"
