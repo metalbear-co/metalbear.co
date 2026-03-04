@@ -7,14 +7,12 @@
         </div>
         <div
             class="border-4 border-solid border-black rounded-[18px] overflow-hidden max-w-5xl mx-auto">
-            <!-- 16:9 responsive YouTube embed -->
-            <div class="relative w-full" style="padding-bottom: 56.25%;">
-                <iframe class="absolute top-0 left-0 w-full h-full"
-                    src="https://www.youtube.com/embed/p43HWjZFycs?si=SWPkPwGSXa3_bYHa" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+            <!-- 16:9 responsive YouTube embed with thumbnail -->
+            <div id="video-container" class="relative w-full cursor-pointer" style="padding-bottom: 56.25%;" onclick="this.innerHTML='<iframe class=\'absolute top-0 left-0 w-full h-full\' src=\'https://www.youtube.com/embed/5ZTP-te9_y8?autoplay=1\' title=\'YouTube video player\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\' referrerpolicy=\'strict-origin-when-cross-origin\' allowfullscreen></iframe>'; this.style.cursor='default';">
+                <img class="absolute top-0 left-0 w-full h-full object-cover" src="https://img.youtube.com/vi/5ZTP-te9_y8/maxresdefault.jpg" alt="mirrord AI agents demo video thumbnail">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <svg width="68" height="48" viewBox="0 0 68 48" fill="none"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg>
+                </div>
             </div>
         </div>
         <div class="flex justify-center mt-12">
