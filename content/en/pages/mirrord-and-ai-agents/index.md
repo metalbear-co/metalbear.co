@@ -1,9 +1,9 @@
 ---
-title: "Real-world Context for AI Agents | mirrord"
-description: "Let AI coding agents test safely on your Kubernetes staging environment. mirrord gives agents and developers isolated access to live cloud services, no mocks, no deploys, no waiting."
+title: "Real-World Context for AI Agents | mirrord"
+description: "Instantly validate every agent change against your live staging environment. Multiple agents, same cluster, no conflicts."
 images:
-  - /mirrord-ai-agents/og_updated.png
-slug: mirrord-for-ai-agents-kubernetes
+  - og_updated.png
+url: /mirrord/ai-agents/
 logo_repeat: 10
 running_logo: 
   - title: "monday"
