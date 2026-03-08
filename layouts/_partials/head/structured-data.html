@@ -40,7 +40,27 @@
         {{ with .Site.Params.schemaGitHub -}}
         , {{ . }}
         {{ end -}}
+        {{ with .Site.Params.schemaCrunchbase -}}
+        , {{ . }}
+        {{ end -}}
       ],
+      {{ with .Site.Params.schemaDescription -}}
+      "description": "{{ . }}",
+      {{ end -}}
+      {{ with .Site.Params.schemaFoundingDate -}}
+      "foundingDate": "{{ . }}",
+      {{ end -}}
+      {{ with .Site.Params.schemaFounders -}}
+      "founder": [
+        {{ range $index, $founder := split . "," -}}
+        {{ if $index }},{{ end -}}
+        {
+          "@type": "Person",
+          "name": "{{ trim $founder " " }}"
+        }
+        {{ end -}}
+      ],
+      {{ end -}}
       {{ if eq .Site.Params.schemaType "Organization" -}}
         "logo": {
           "@type": "ImageObject",
