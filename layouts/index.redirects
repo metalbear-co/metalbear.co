@@ -15,3 +15,15 @@
 # Fix 404s from Google Search Console
 /mirrord/product/ /mirrord/ 301
 /mirrord/product /mirrord/ 301
+
+# Guides moved to Gitbook
+/guides/ https://metalbear.com/mirrord/docs/guides 301
+/guides/how-to-debug-a-java-microservice/ https://metalbear.com/mirrord/docs/guides/how-to-debug-a-java-microservice 301
+/guides/how-to-debug-a-go-microservice/ https://metalbear.com/mirrord/docs/guides/how-to-debug-a-go-microservice 301
+/guides/how-to-debug-a-ruby-microservice/ https://metalbear.com/mirrord/docs/guides/how-to-debug-a-ruby-microservice 301
+/guides/how-to-debug-a-nodejs-microservice/ https://metalbear.com/mirrord/docs/guides/how-to-debug-a-nodejs-microservice 301
+/guides/how-to-debug-a-php-microservice/ https://metalbear.com/mirrord/docs/guides/how-to-debug-a-php-microservice 301
+/guides/how-to-debug-a-dotnet-microservice/ https://metalbear.com/mirrord/docs/guides/how-to-debug-a-dotnet-microservice 301
+/guides/how-to-debug-a-kotlin-microservice/ https://metalbear.com/mirrord/docs/guides/how-to-debug-a-kotlin-microservice 301
+/guides/how-to-debug-kafka-consumers/ https://metalbear.com/mirrord/docs/guides/how-to-debug-kafka-consumers 301
+/guides/how-to-debug-sqs-consumers/ https://metalbear.com/mirrord/docs/guides/how-to-debug-sqs-consumers 301

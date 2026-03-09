@@ -28,7 +28,7 @@ url = "/blog/"
 name = "Guides"
 parent = "resources"
 weight = 20
-url = "/guides/"
+url = "https://metalbear.com/mirrord/docs/guides"
 
 [[main]]
 name = "Case Studies"
@@ -120,37 +120,37 @@ url = "/mirrord/roi-calculator/"
 [[footer_right]]
 name = "How to Debug a Java Microservice"
 weight = 10
-url = "/guides/how-to-debug-a-java-microservice/"
+url = "https://metalbear.com/mirrord/docs/guides/how-to-debug-a-java-microservice"
 
 [[footer_right]]
 name = "How to Debug a Ruby Microservice"
 weight = 20
-url = "/guides/how-to-debug-a-ruby-microservice/"
+url = "https://metalbear.com/mirrord/docs/guides/how-to-debug-a-ruby-microservice"
 
 [[footer_right]]
 name = "How to Debug a Go Microservice"
 weight = 30
-url = "/guides/how-to-debug-a-go-microservice/"
+url = "https://metalbear.com/mirrord/docs/guides/how-to-debug-a-go-microservice"
 
 [[footer_right]]
 name = "How to Debug a Kotlin Microservice"
 weight = 31
-url = "/guides/how-to-debug-a-kotlin-microservice/"
+url = "https://metalbear.com/mirrord/docs/guides/how-to-debug-a-kotlin-microservice"
 
 [[footer_right]]
 name = "How to Debug a NodeJS Microservice"
 weight = 32
-url = "/guides/how-to-debug-a-nodejs-microservice/"
+url = "https://metalbear.com/mirrord/docs/guides/how-to-debug-a-nodejs-microservice"
 
 [[footer_right]]
 name = "How to Debug a PHP Microservice"
 weight = 33
-url = "/guides/how-to-debug-a-php-microservice/"
+url = "https://metalbear.com/mirrord/docs/guides/how-to-debug-a-php-microservice"
 
 [[footer_right]]
 name = "How to Debug a .NET Microservice"
 weight = 34
-url = "/guides/how-to-debug-a-dotnet-microservice/"
+url = "https://metalbear.com/mirrord/docs/guides/how-to-debug-a-dotnet-microservice"
 
 [[social]]
 name = "Slack"
