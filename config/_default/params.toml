@@ -36,6 +36,10 @@ schemaImageHeight = 640
 schemaTwitter = "https://twitter.com/metalbear"
 schemaLinkedIn = "https://www.linkedin.com/company/metalbearco"
 schemaGitHub = "https://github.com/metalbear-co"
+schemaCrunchbase = "https://www.crunchbase.com/organization/metalbear"
+schemaFoundingDate = "2022"
+schemaFounders = "Aviram Hassan, Eyal Bukchin"
+schemaDescription = "MetalBear builds mirrord, a developer tool that lets you run local code in the context of your cloud environment without deploying."
 schemaSection = "blog"
 
 ## Sitelinks Search Box
