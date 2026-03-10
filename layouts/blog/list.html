@@ -9,7 +9,7 @@
 				</div>
 				<div class="col">
 					<div class="blog-list__image-logo">
-						<img src="/metalbear-logo-blog.svg" />
+						<img src="/blog-header-bear.png" />
 					</div>
 				</div>
 			</div>
@@ -22,17 +22,26 @@
 			<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
 				{{ range $paginator.Pages -}}
 				<div class="blog-card__col col mb-5">
-					<div class="blog-card d-flex flex-column px-3 position-relative">
-						<div class="blog-card__body mb-auto">
-							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{
-									with
-									.Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+					<div class="blog-card d-flex flex-column position-relative">
+						{{ $thumb := .Resources.GetMatch "thumbnail*" }}
+						{{ if $thumb }}
+							{{ $img := $thumb.Resize "600x webp" }}
+							<div class="blog-card__image-wrapper">
+								<img class="blog-card__image" src="{{ $img.RelPermalink }}" alt="" loading="lazy" />
+							</div>
+						{{ else }}
+							<div class="blog-card__image-wrapper">
+								<img class="blog-card__image" src="/blog-thumbnail-placeholder.png" alt="" loading="lazy" />
+							</div>
+						{{ end }}
+						<div class="blog-card__body mb-auto px-3 pt-3">
+							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji }}&nbsp;{{ . | emojify }}{{ end }}</a></h3>
 							<div class="blog-card__summary">
 								<p class="summary">{{ .Params.lead | safeHTML }}</p>
 							</div>
 							{{ partial "main/blog-meta.html" . -}}
 						</div>
-						<div class="blog-card__continue">
+						<div class="blog-card__continue px-3">
 							<a class="blog-card__continue-link position-relative" href="{{ .RelPermalink }}">Reading
 								Time&nbsp;-&nbsp;<span>{{ .ReadingTime -}}&nbsp;min</span></a>
 						</div>
