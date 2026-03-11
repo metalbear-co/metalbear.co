@@ -44,6 +44,24 @@ def generate_image(prompt, out_path):
 - **Fallback:** `/static/blog-thumbnail-placeholder.png`
 - Fallback chain in template: `blog-thumbnail*` → `thumbnail*` → placeholder
 
+### Generating a thumbnail for a new blog post
+
+1. Read the post's `title` and `lead`/`description` from its `index.md`.
+2. Check if the title contains a **city or country** — if so, make that place the primary visual anchor.
+3. Write a prompt using the prefix below, then describe the scene (objects only, no characters):
+
+```
+Rubberhose cartoon illustration, 1930s animation style, flat colors, bold black outlines,
+wide 16:9 landscape, absolutely NO TEXT, NO characters, NO people, NO animals, NO robots.
+Brand colors: background #FAFAFD, purple #756DF3, yellow #FFCB7D, dark purple #232141,
+blush red #F36869. Bold black outlines throughout.
+
+Scene: <your concept here>
+```
+
+4. Run `generate_image(prompt, "content/en/blog/<slug>/blog-thumbnail.png")`.
+5. Commit the new file: `git add content/en/blog/<slug>/blog-thumbnail.png && git commit`.
+
 ### Art direction for blog thumbnails
 - Size: **1200x630**
 - Style: **rubberhose** — 1930s cartoon, noodle limbs, flat colors, bold black outlines

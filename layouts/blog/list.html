@@ -19,35 +19,101 @@
 	<div class="blog-list__wrapper container">
 		<div class="flex-wrap flex-md-nowrap">
 			{{ $paginator := .Paginate (.Data.Pages) -}}
-			<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
-				{{ range $paginator.Pages -}}
-				<div class="blog-card__col col mb-5">
-					<div class="blog-card d-flex flex-column position-relative">
-						{{ $thumb := .Resources.GetMatch "blog-thumbnail*" }}
-						{{ if not $thumb }}{{ $thumb = .Resources.GetMatch "thumbnail*" }}{{ end }}
-						<div class="blog-card__image-wrapper">
-							{{ if $thumb }}
-								{{ $img := $thumb.Resize "600x webp" }}
-								<img class="blog-card__image" src="{{ $img.RelPermalink }}" alt="" loading="lazy" />
-							{{ else }}
-								<img class="blog-card__image" src="/blog-thumbnail-placeholder.png" alt="" loading="lazy" />
-							{{ end }}
-						</div>
-						<div class="blog-card__body mb-auto px-3 pt-3">
-							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji }}&nbsp;{{ . | emojify }}{{ end }}</a></h3>
-							<div class="blog-card__summary">
-								<p class="summary">{{ .Params.lead | safeHTML }}</p>
+
+			{{ if eq $paginator.PageNumber 1 }}
+				{{ $featured := index $paginator.Pages 0 }}
+				{{ $restPages := after 1 $paginator.Pages }}
+
+				{{/* Featured post */}}
+				<div class="blog-featured mb-5">
+					<a class="blog-featured__link" href="{{ $featured.RelPermalink }}">
+						<div class="blog-featured__card row g-0">
+							<div class="blog-featured__image-col col-12 col-md-6">
+								{{ $thumb := $featured.Resources.GetMatch "blog-thumbnail*" }}
+								{{ if not $thumb }}{{ $thumb = $featured.Resources.GetMatch "thumbnail*" }}{{ end }}
+								{{ if $thumb }}
+									{{ $img := $thumb.Resize "800x webp" }}
+									<img class="blog-featured__image" src="{{ $img.RelPermalink }}" alt="{{ $featured.Title }}" loading="lazy" />
+								{{ else }}
+									<img class="blog-featured__image" src="/blog-thumbnail-placeholder.png" alt="" loading="lazy" />
+								{{ end }}
 							</div>
-							{{ partial "main/blog-meta.html" . -}}
+							<div class="blog-featured__content col-12 col-md-6 d-flex flex-column">
+								<div class="blog-featured__badge">Featured Post</div>
+								<h2 class="blog-featured__title">{{ $featured.Title }}{{ with $featured.Params.emoji }}&nbsp;{{ . | emojify }}{{ end }}</h2>
+								<p class="blog-featured__lead">{{ $featured.Params.lead | safeHTML }}</p>
+								<div class="blog-featured__meta mt-auto">
+									{{ partial "main/blog-meta.html" $featured }}
+								</div>
+							</div>
 						</div>
-						<div class="blog-card__continue px-3">
-							<a class="blog-card__continue-link position-relative" href="{{ .RelPermalink }}">Reading
-								Time&nbsp;-&nbsp;<span>{{ .ReadingTime -}}&nbsp;min</span></a>
+					</a>
+				</div>
+
+				{{/* Remaining posts grid */}}
+				<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
+					{{ range $restPages -}}
+					<div class="blog-card__col col mb-5">
+						<div class="blog-card d-flex flex-column position-relative">
+							{{ $thumb := .Resources.GetMatch "blog-thumbnail*" }}
+							{{ if not $thumb }}{{ $thumb = .Resources.GetMatch "thumbnail*" }}{{ end }}
+							<div class="blog-card__image-wrapper">
+								{{ if $thumb }}
+									{{ $img := $thumb.Resize "600x webp" }}
+									<img class="blog-card__image" src="{{ $img.RelPermalink }}" alt="" loading="lazy" />
+								{{ else }}
+									<img class="blog-card__image" src="/blog-thumbnail-placeholder.png" alt="" loading="lazy" />
+								{{ end }}
+							</div>
+							<div class="blog-card__body mb-auto px-3 pt-3">
+								<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji }}&nbsp;{{ . | emojify }}{{ end }}</a></h3>
+								<div class="blog-card__summary">
+									<p class="summary">{{ .Params.lead | safeHTML }}</p>
+								</div>
+								{{ partial "main/blog-meta.html" . -}}
+							</div>
+							<div class="blog-card__continue px-3">
+								<a class="blog-card__continue-link position-relative" href="{{ .RelPermalink }}">Reading
+									Time&nbsp;-&nbsp;<span>{{ .ReadingTime -}}&nbsp;min</span></a>
+							</div>
 						</div>
 					</div>
+					{{ end -}}
 				</div>
-				{{ end -}}
-			</div>
+
+			{{ else }}
+				{{/* Pages 2+: all posts in grid */}}
+				<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
+					{{ range $paginator.Pages -}}
+					<div class="blog-card__col col mb-5">
+						<div class="blog-card d-flex flex-column position-relative">
+							{{ $thumb := .Resources.GetMatch "blog-thumbnail*" }}
+							{{ if not $thumb }}{{ $thumb = .Resources.GetMatch "thumbnail*" }}{{ end }}
+							<div class="blog-card__image-wrapper">
+								{{ if $thumb }}
+									{{ $img := $thumb.Resize "600x webp" }}
+									<img class="blog-card__image" src="{{ $img.RelPermalink }}" alt="" loading="lazy" />
+								{{ else }}
+									<img class="blog-card__image" src="/blog-thumbnail-placeholder.png" alt="" loading="lazy" />
+								{{ end }}
+							</div>
+							<div class="blog-card__body mb-auto px-3 pt-3">
+								<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji }}&nbsp;{{ . | emojify }}{{ end }}</a></h3>
+								<div class="blog-card__summary">
+									<p class="summary">{{ .Params.lead | safeHTML }}</p>
+								</div>
+								{{ partial "main/blog-meta.html" . -}}
+							</div>
+							<div class="blog-card__continue px-3">
+								<a class="blog-card__continue-link position-relative" href="{{ .RelPermalink }}">Reading
+									Time&nbsp;-&nbsp;<span>{{ .ReadingTime -}}&nbsp;min</span></a>
+							</div>
+						</div>
+					</div>
+					{{ end -}}
+				</div>
+			{{ end }}
+
 			{{ $.Scratch.Set "paginator" true }}
 			<div class="d-flex justify-content-center mb-5">
 				{{ partial "pagination.html" . -}}
