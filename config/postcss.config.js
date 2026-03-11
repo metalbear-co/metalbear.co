@@ -1,6 +1,24 @@
 const autoprefixer = require('autoprefixer');
 const purgecss = require('@fullhuman/postcss-purgecss');
-const whitelister = require('purgecss-whitelister');
+const fs = require('fs');
+
+function extractSafelistFromFiles(paths) {
+  const classPattern = /\.(-?[_a-zA-Z]+[_a-zA-Z0-9-]*)/g;
+  const classes = new Set();
+
+  for (const filePath of paths) {
+    if (!fs.existsSync(filePath)) {
+      continue;
+    }
+
+    const content = fs.readFileSync(filePath, 'utf8');
+    for (const match of content.matchAll(classPattern)) {
+      classes.add(match[1]);
+    }
+  }
+
+  return [...classes];
+}
 
 module.exports = {
   plugins: [
@@ -22,7 +40,7 @@ module.exports = {
         'alert-link',
         'container-xxl',
         'container-fluid',
-        ...whitelister([
+        ...extractSafelistFromFiles([
           './assets/scss/components/_alerts.scss',
           './assets/scss/components/_buttons.scss',
           './assets/scss/components/_code.scss',

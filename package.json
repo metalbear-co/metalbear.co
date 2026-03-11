@@ -50,15 +50,14 @@
     "highlight.js": "^11.5",
     "hugo-installer": "^4.0.1",
     "instant.page": "^5.1",
-    "katex": "^0.15",
+    "katex": "^0.16.38",
     "lazysizes": "^5.3",
-    "markdownlint-cli2": "^0.4.0",
+    "markdownlint-cli2": "^0.21.0",
     "node-fetch": "^3.2",
     "pagefind": "^1.3.0",
     "postcss": "^8.4",
     "postcss-cli": "^9.1",
     "postcss-import": "^16.1.0",
-    "purgecss-whitelister": "^2.4",
     "shx": "^0.3.4",
     "stylelint": "^14.6",
     "stylelint-config-standard-scss": "^3.0"
@@ -69,9 +68,24 @@
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/cli": "^4.1.4",
+    "@tailwindcss/cli": "^4.2.1",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.2.1"
+  },
+  "overrides": {
+    "hugo-installer": {
+      "semver": "7.7.2"
+    },
+    "minimatch": "3.1.4",
+    "eslint": {
+      "ajv": "6.14.0"
+    },
+    "@eslint/eslintrc": {
+      "ajv": "6.14.0"
+    },
+    "table": {
+      "ajv": "8.18.0"
+    }
   }
 }
