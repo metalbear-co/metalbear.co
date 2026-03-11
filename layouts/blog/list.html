@@ -71,9 +71,9 @@
 						<div class="blog-card__image-wrapper">
 							{{ if $thumb }}
 								{{ $img := $thumb.Resize "600x webp" }}
-								<img class="blog-card__image" src="{{ $img.RelPermalink }}" alt="" loading="lazy" />
+								<img class="blog-card__image" src="{{ $img.RelPermalink }}" alt="{{ .Title }}" loading="lazy" />
 							{{ else }}
-								<img class="blog-card__image" src="/blog-thumbnail-placeholder.png" alt="" loading="lazy" />
+								<img class="blog-card__image" src="/blog-thumbnail-placeholder.png" alt="{{ .Title }}" loading="lazy" />
 							{{ end }}
 						</div>
 						<div class="blog-card__body mb-auto px-3 pt-3">
