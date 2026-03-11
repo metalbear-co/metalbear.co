@@ -1,38 +1,89 @@
 {{ define "main" }}
 <div class="blog-list">
 	<div class="blog-list__header">
-		<div class="blog-list__wrapper container mb-5">
-			<div class="row row-cols-1 row-cols-lg-2 align-items-center">
-				<div class="col">
-					<h2 class="blog-list__header-title">{{ .Title }}</h2>
+		<div class="blog-list__wrapper container">
+			<div class="blog-list__header-inner">
+				<div class="blog-list__header-text">
+					<h2 class="blog-list__header-title">
+						<span class="blog-list__header-title-word">
+							<span class="blog-list__header-underline" aria-hidden="true">
+								<svg viewBox="0 0 544 29" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M537.234 6.88381C469.22 2.52707 400.909 0.573453 332.571 0.106659C264.151 -0.342846 195.732 0.677185 127.366 2.25045C88.9345 3.13217 50.5027 4.18678 12.0708 5.2241C3.38308 5.46614 3.35602 14.1105 12.0708 13.8684C71.5319 12.2433 130.993 10.6527 190.481 9.66728C167.855 10.5836 145.229 11.6382 122.63 12.8484C83.9546 14.923 45.3063 17.4126 6.76617 20.3344C3.1395 20.611 0 22.1324 0 24.6565C0 26.7831 3.11244 29.2553 6.76617 28.9787C75.4563 23.7921 144.363 19.9367 213.432 17.4126C282.474 14.9057 351.651 13.7474 420.802 13.9203C459.612 14.024 498.423 14.56 537.234 15.5108C540.888 15.5973 544 13.4535 544 11.1887C544 8.66454 540.888 7.10856 537.234 6.86652V6.88381Z" fill="#FFD18C"/>
+								</svg>
+							</span>
+							<span class="blog-list__header-title-text">{{ .Title }}</span>
+						</span>
+					</h2>
 					<p class="blog-list__header-desc">{{ .Params.description | safeHTML }}</p>
 				</div>
-				<div class="col">
-					<div class="blog-list__image-logo">
-						<img src="/metalbear-logo-blog.svg" />
-					</div>
+				<div class="blog-list__image-logo">
+					<img src="/blog-header-bear.png" />
 				</div>
 			</div>
+		</div>
+		<div class="blog-list__header-wave">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+				<path d="M0,70 Q90,0 180,70 Q270,0 360,70 Q450,0 540,70 Q630,0 720,70 Q810,0 900,70 Q990,0 1080,70 Q1170,0 1260,70 Q1350,0 1440,70 Z" fill="white"/>
+			</svg>
 		</div>
 	</div>
 
 	<div class="blog-list__wrapper container">
 		<div class="flex-wrap flex-md-nowrap">
-			{{ $paginator := .Paginate (.Data.Pages) -}}
+			{{ $allPages := .Data.Pages }}
+			{{ $featured := index $allPages 0 }}
+			{{ $gridPages := after 1 $allPages }}
+			{{ $paginator := .Paginate $gridPages -}}
+
+			{{ if eq $paginator.PageNumber 1 }}
+				{{/* Featured post — page 1 only */}}
+				<div class="blog-featured mb-5">
+					<div class="blog-featured__card row g-0 position-relative">
+						<div class="blog-featured__image-col col-12 col-md-6">
+							{{ $thumb := $featured.Resources.GetMatch "blog-thumbnail*" }}
+							{{ if not $thumb }}{{ $thumb = $featured.Resources.GetMatch "thumbnail*" }}{{ end }}
+							{{ if $thumb }}
+								{{ $img := $thumb.Resize "1200x webp" }}
+								<img class="blog-featured__image" src="{{ $img.RelPermalink }}" alt="{{ $featured.Title }}" loading="lazy" />
+							{{ else }}
+								<img class="blog-featured__image" src="/blog-thumbnail-placeholder.png" alt="" loading="lazy" />
+							{{ end }}
+						</div>
+						<div class="blog-featured__content col-12 col-md-6 d-flex flex-column">
+							<div class="blog-featured__badge">Featured Post</div>
+							<h2 class="blog-featured__title"><a class="stretched-link text-body" href="{{ $featured.RelPermalink }}">{{ $featured.Title }}{{ with $featured.Params.emoji }}&nbsp;{{ . | emojify }}{{ end }}</a></h2>
+							<p class="blog-featured__lead">{{ $featured.Params.lead | safeHTML }}</p>
+							<div class="blog-featured__meta mt-auto">
+								{{ partial "main/blog-meta.html" $featured }}
+							</div>
+						</div>
+					</div>
+				</div>
+			{{ end }}
+
+			{{/* Posts grid — 6 per page on all pages */}}
 			<div class="blog-card__wrapper row row-cols-1 row-cols-md-2 row-cols-lg-3 mb-3">
 				{{ range $paginator.Pages -}}
 				<div class="blog-card__col col mb-5">
-					<div class="blog-card d-flex flex-column px-3 position-relative">
-						<div class="blog-card__body mb-auto">
-							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{
-									with
-									.Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h3>
+					<div class="blog-card d-flex flex-column position-relative">
+						{{ $thumb := .Resources.GetMatch "blog-thumbnail*" }}
+						{{ if not $thumb }}{{ $thumb = .Resources.GetMatch "thumbnail*" }}{{ end }}
+						<div class="blog-card__image-wrapper">
+							{{ if $thumb }}
+								{{ $img := $thumb.Resize "600x webp" }}
+								<img class="blog-card__image" src="{{ $img.RelPermalink }}" alt="" loading="lazy" />
+							{{ else }}
+								<img class="blog-card__image" src="/blog-thumbnail-placeholder.png" alt="" loading="lazy" />
+							{{ end }}
+						</div>
+						<div class="blog-card__body mb-auto px-3 pt-3">
+							<h3><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji }}&nbsp;{{ . | emojify }}{{ end }}</a></h3>
 							<div class="blog-card__summary">
 								<p class="summary">{{ .Params.lead | safeHTML }}</p>
 							</div>
 							{{ partial "main/blog-meta.html" . -}}
 						</div>
-						<div class="blog-card__continue">
+						<div class="blog-card__continue px-3">
 							<a class="blog-card__continue-link position-relative" href="{{ .RelPermalink }}">Reading
 								Time&nbsp;-&nbsp;<span>{{ .ReadingTime -}}&nbsp;min</span></a>
 						</div>
@@ -40,6 +91,7 @@
 				</div>
 				{{ end -}}
 			</div>
+
 			{{ $.Scratch.Set "paginator" true }}
 			<div class="d-flex justify-content-center mb-5">
 				{{ partial "pagination.html" . -}}

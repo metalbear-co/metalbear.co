@@ -162,7 +162,15 @@ button#doks-versions {
   }
 
   .navbar-expand-lg .offcanvas {
-    padding-left: 40px;
+    padding-left: 20px;
+  }
+
+  .navbar-expand-lg .offcanvas-body {
+    flex-wrap: nowrap;
+  }
+
+  .navbar-expand-lg .offcanvas-body .nav.flex-lg-row {
+    flex-wrap: nowrap;
   }
 }
 
