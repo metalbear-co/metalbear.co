@@ -38,9 +38,8 @@
             get grossSavings() {
                 return this.annualProductivitySavings + this.annualInfraSavings;
             },
-            get pricePerSeat() {
-                return 40;
-            },
+            pricePerSeat: 40,
+            editingPrice: false,
             get mirrordAnnualCost() {
                 return this.numDevs * this.pricePerSeat * 12;
             },
@@ -264,7 +263,22 @@
                     <!-- mirrord Pricing -->
                     <div>
                         <h3 class="text-xl lg:text-2xl font-heading font-bold text-black mb-4">mirrord Pricing</h3>
-                        <p class="text-sm text-gray-600">Teams &mdash; $40/seat/mo</p>
+                        <p class="text-sm text-gray-600">Teams &mdash; $<span
+                                x-show="!editingPrice"
+                                @click="editingPrice = true; $nextTick(() => { $refs.priceInput.focus(); $refs.priceInput.select(); })"
+                                x-text="pricePerSeat"
+                                class="cursor-text"
+                            ></span><input
+                                x-show="editingPrice"
+                                x-ref="priceInput"
+                                type="number"
+                                x-model.number="pricePerSeat"
+                                min="1"
+                                @blur="editingPrice = false"
+                                @keydown.enter="editingPrice = false"
+                                @keydown.escape="editingPrice = false"
+                                class="bg-transparent border-0 focus:outline-none p-0 m-0 text-gray-600 text-sm font-[inherit] w-[2.5em]"
+                            >/seat/mo</p>
                     </div>
                 </div>
             </div>
