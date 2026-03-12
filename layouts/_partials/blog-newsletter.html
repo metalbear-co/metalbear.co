@@ -72,8 +72,11 @@
         }
       });
 
+      var hutkCookie = document.cookie.split(";").find(function(c) { return c.trim().startsWith("hubspotutk="); });
+      var hutk = hutkCookie ? hutkCookie.split("=")[1] : null;
       const object = {
         context: {
+          hutk: hutk,
           pageUri: window.location.href,
           pageName: document.title
         },
