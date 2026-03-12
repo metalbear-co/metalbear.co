@@ -21,7 +21,7 @@ Today, AI coding agents are generating [more](https://www.sonarsource.com/compan
 
 ## Why AI can't verify its own work
 
-Boris Cherny, the creator of Claude Code, put it plainly: "The most important thing to get great results out of Claude Code — give Claude a way to verify its work. If Claude has that feedback loop, it will 2–3x the quality of the final result." The challenge is especially acute for cloud-native applications. In a microservices architecture running on Kubernetes, a service's behavior depends on everything around it: other microservices, databases, queues, APIs, configuration, and secrets that only exist inside the cluster. Because of this, simply generating code is not enough, and the real challenge is getting that code to work correctly within the existing system.
+Boris Cherny, the creator of Claude Code, put it plainly: "The most important thing to get great results out of Claude Code — give Claude a way to verify its work. If Claude has that feedback loop, it will 2–3x the quality of the final result." How do you enable this verification when building cloud-native applications? In a microservices architecture running on Kubernetes, a service's behavior depends on everything around it: other microservices, databases, queues, APIs, configuration, and secrets that only exist inside the cluster. Because of this, simply generating code is not enough, and the real challenge is getting that code to work correctly within the existing system.
 
 Most AI coding agents can't close that gap on their own. After generating code, engineers can review it and run limited unit tests locally, but eventually they have to wait for CI pipelines and staging deployments to see if it actually works. That process is slow for several reasons:
 
@@ -68,7 +68,7 @@ The key advantage here is that the AI isn’t generating code blindly anymore. Y
 
 ## mirrord: remocal testing for Kubernetes
 
-mirrord is how we've implemented remocal testing for Kubernetes. mirrord lets developers run the AI-generated code locally on their machines while connecting it to an existing cluster by mirroring incoming and outgoing traffic, environment variables, and files between the cluster and the local process. The diagram below shows how this works:
+mirrord lets developers run the AI-generated code locally on their machines while connecting it to an existing cluster by mirroring incoming and outgoing traffic, environment variables, and files between the cluster and the local process. The diagram below shows how this works:
 
 {{<figure src="mirrord.png" title="How mirrord works" alt="How mirrord works" height="100%" width="100%">}}
 
