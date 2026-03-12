@@ -14,7 +14,7 @@ feed:
 header:
   title: 'How monday.com went from <span class="text-primary">hundreds of dev environments to one</span>'
   description: "With its engineering team growing 30–60% year over year, monday.com needed a dev environment model that could keep up. mirrord made it possible."
-  company: monday.com is a leading work operating system (Work OS) that enables organizations to build and manage any workflow, project, or process.
+  company: monday.com is the AI work platform that not only helps manage and orchestrate work, but also does the work for you. Over 250,000 customers worldwide use monday.com to bring people, workflows, and AI agents together on one flexible platform, where AI doesn't just assist, it executes.
   site: monday.com
   logo: page-demo-monday.png
   employees: 2,500+
