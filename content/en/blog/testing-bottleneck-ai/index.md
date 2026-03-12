@@ -17,7 +17,7 @@ contributors:
   - "Arsh Sharma"
 ---
 
-Today, AI coding agents are generating more [code than ever](https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-now-produces-three-times-as-much-code-as-before-ai-specialized-version-of-cursor-is-being-used-by-over-30-000-nvidia-engineers-internally?utm_source=chatgpt.com). Yet despite this surge in output, many organizations aren't shipping software proportionally faster, because while AI has dramatically accelerated writing code, it hasn't improved [testing and validation](https://devops.com/survey-ai-tools-are-increasing-amount-of-bad-code-needing-to-be-fixed/) to the same degree. Verification has become the new bottleneck.
+Today, AI coding agents are generating [more](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) [code](https://www.faros.ai/blog/ai-software-engineering) [than](https://www.infoworld.com/article/4061078/the-productivity-paradox-of-ai-assisted-coding.html) [ever](https://arxiv.org/abs/2509.20353). Yet despite this surge in output, many organizations aren't shipping software proportionally faster, because while AI has dramatically accelerated writing code, it hasn't improved [testing and validation](https://devops.com/survey-ai-tools-are-increasing-amount-of-bad-code-needing-to-be-fixed/) to the same degree. Verification has become the new bottleneck.
 
 ## Why AI can't verify its own work
 
