@@ -5,7 +5,7 @@ lead: "MetalBear Cookie Policy"
 tags:
   - legal
 date: 2022-10-31T06:00:00+00:00
-lastmod: 2022-10-31T06:00:00+00:00
+lastmod: 2026-03-12T06:00:00+00:00
 draft: false
 weight: 50
 contributors: []
@@ -13,31 +13,39 @@ contributors: []
 
 ## Cookies Notice
 
-We use in our site https://metalbear.com and https://app.metalbear.com/ ("Site") cookies and similar files or technologies to automatically collect and store information about your computer, device, and Site usage, in order to improve their performance and enhance your user experience. We use the general term "cookies" in this notice to refer to these technologies and all such similar technologies that collect information automatically when you are using our Site where this notice is posted.  You can find out more about cookies and how to control them in the information below. 
+This Cookies Notice explains how MetalBear Tech Ltd. ("MetalBear", "we", "us", or "our") uses cookies and similar technologies on:
+- https://metalbear.com
+- https://app.metalbear.com
 
-If you do not accept the use of these cookies, please disable them using the instructions in this cookie notice or by changing your browser settings so that cookies from this Site cannot be placed on your computer or mobile device. Important: disabling cookies on this Site may impair certain Site features.
-In this cookie notice (“Cookies Notice”), we use the term MetalBear (and "we", "us" and "our") to refer to MetalBear Tech Ltd. Our Privacy Policy is available at [here]({{< relref "privacy-policy.md" >}}).
+In this notice, we use the term "cookies" for cookies and similar technologies that automatically collect information when you use our sites.
 
+If you do not accept cookies, you can disable them using the instructions below or by changing your browser settings. Please note that disabling cookies may affect the functionality of certain site features.
 
-### What is a cookie? 
-Cookies are computer files containing small amounts of information which are downloaded to your computer or mobile device when you visit a website.  Cookies can then be sent back to the originating website on each subsequent visit, or to another website that recognizes that cookie. Cookies are widely used in order to make websites work, or to work more efficiently, as well as to provide information to the owners of the website. 
+For more details on how we process personal data, see our [Privacy Policy]({{< relref "privacy-policy.md" >}}).
 
-Cookies do lots of different jobs, like letting you navigate between pages efficiently, remembering your preferences, and generally improving the user experience. Cookies may tell us, for example, whether you have visited our Site before or whether you are a new visitor.
-There are two broad categories of cookies:
-- First party cookies, served directly by us to your computer or mobile device.
-- Third party cookies, which are served by a third party on our behalf.  We use third party cookies for functionality. The third-party cookies are outside of our control. The third parties may, at any time, change their terms of service, purpose and use of cookies, etc. See below additional information on how to manage such cookies.
+### What is a cookie?
+Cookies are small text files placed on your computer or mobile device when you visit a website. Cookies allow websites to recognize your browser and remember information over time.
 
-Cookies can remain on your computer for different periods of time. Some cookies are 'session cookies', meaning that they exist only while your browser is open. These are deleted automatically once you close your browser. Other cookies are 'permanent cookies', meaning that they survive after your browser is closed. They can be used by websites to recognize your computer when you open your browser and browse the Internet again.
+Cookies can help with:
+- Navigation and basic site functionality.
+- Remembering preferences.
+- Understanding site usage and performance.
+
+There are two main categories of cookies:
+- First-party cookies: set directly by us.
+- Third-party cookies: set by third-party providers used by us.
+
+Cookies also differ by duration:
+- Session cookies: deleted when you close your browser.
+- Persistent cookies: remain after the browser is closed, until they expire or are deleted.
 
 ### How do we use cookies?
 We use cookies to:
--	Authenticate users using our app;
-- Track user behavior on our Site for analytics purposes;
-
-The types of cookies used by us in connection with the Site can be considered 'essential website cookies'. We've set out some further information below, and the purposes of the cookies we set in the following table. 
+- Authenticate users in our app.
+- Measure and analyze site usage.
 
 #### Cookies necessary for essential website purposes
-These cookies are essential to provide you with services available through this Site and to use some of its features, such as access to secure areas. Without these cookies we will not be able to provide services that you require, such as transactional pages and secure login accounts.
+These cookies are required to provide core features, such as secure login and authenticated access.
 
 | Cookie name |	Source |	Expiry |	Purpose |
 | --- | --- | --- | --- |
@@ -47,30 +55,38 @@ These cookies are essential to provide you with services available through this 
 
 #### Analytics Cookies
 
-These are non-essential cookies used for tracking user behavior. Collecting analytics data to help us improve the Site and your user experience. 
+These are non-essential cookies used to understand usage patterns and improve site performance and user experience.
 
 | Cookie name |	Source |	Expiry |	Purpose |
 | --- | --- | --- | --- |
-| __hstc | hubspot.com | 1 week | Analytics
-| __hstc | hubspot.com | 1 week | Analytics
-| hubspotutk | hubspot.com | 1 week | Analytics
-| ph_* | hubspot.com | 1 week | Analytics
+| __hstc | .metalbear.com (set by HubSpot) | 6 months | HubSpot visitor tracking and session attribution |
+| __hssc | .metalbear.com (set by HubSpot) | 30 minutes | HubSpot session tracking |
+| __hssrc | .metalbear.com (set by HubSpot) | Session | HubSpot browser/session detection |
+| hubspotutk | .metalbear.com (set by HubSpot) | 6 months | HubSpot user identity and deduplication |
+| ph_* | hog.metalbear.com (PostHog) | 1 year | PostHog analytics and product usage tracking |
 
 #### How to control or delete cookies
-You may have the right to decide whether to accept or reject cookies.  When you access our Site, you are presented with a cookie consent mechanism that allows you to accept or reject cookies that are not essential cookies.  You may also control cookies by setting your browser to turn off cookies as described further below. If you turn off cookies, web beacon and other technologies will still detect your visits to our Site; however, they will not be associated with information otherwise stored in cookies
-As another way of controlling cookies, most browsers allow you to change your cookie settings. These settings will typically be found in the “options” or “preferences” menu of your browser. In order to understand these settings and learn how to use them, please consult the “Help” function of your browser, or the documentation published online for your particular browser type and version. However, please note that if you choose to refuse cookies you may not be able to use the full functionality of our Site. The following pages have information on how to change your cookies settings for the different browsers:
-- [Cookie settings in Chrome](https://support.google.com/chrome/answer/95647?hl=en&ref_topic=14666) and [Chrome mobile](https://support.google.com/chrome/answer/95647?hl=en) 
-- [Cookie settings in Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies) and [Firefox mobile](https://support.mozilla.org/en-US/kb/clearing-cookies-private-data-history-and-settings) 
+When you access our Site, you may be presented with a cookie consent mechanism that lets you accept or reject non-essential cookies.
+
+You can also control cookies through your browser settings. These settings are usually available under your browser's "Options", "Settings", or "Preferences" menu.
+
+If you disable cookies, some features may not work as intended.
+
+Browser-specific help:
+- [Cookie settings in Chrome](https://support.google.com/chrome/answer/95647?hl=en&ref_topic=14666) and [Chrome mobile](https://support.google.com/chrome/answer/95647?hl=en)
+- [Cookie settings in Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies) and [Firefox mobile](https://support.mozilla.org/en-US/kb/clearing-cookies-private-data-history-and-settings)
 - [Cookie settings in Internet Explorer](http://windows.microsoft.com/en-GB/internet-explorer/delete-manage-cookies#ie=ie-10) and [Microsoft Edge](https://support.microsoft.com/en-gb/help/4027947/microsoft-edge-delete-cookies)
 - [Cookie settings in Safari](https://support.apple.com/kb/PH5042?locale=en_US) and [Safari mobile](https://support.apple.com/en-gb/HT201265)
 - [Cookie settings in iOS](https://support.apple.com/en-gb/HT201265)
 - [Cookie settings in Opera](https://www.opera.com/help/tutorials/security/privacy/)
 - [Cookie settings in Apple Safari](https://support.apple.com/en-gb/safari)
 
-If you use another browser, you can check if the procedure for your browser is mentioned in this explanatory website or here.
-Third Party Websites' Cookies 
-When using our Site, you may be directed to other websites for such activities as surveys, ect.. These websites may use their own cookies. We do not have control over the placement of cookies by other websites you visit, even if you are directed to them from our Site.
-If you use the buttons that allow you to share products and content with your friends via social networks like Google, Twitter and Facebook, these companies may set a cookie on your computer memory. Find out more about these here:
+If you use another browser, consult that browser's official support documentation.
+
+#### Third-party websites' cookies
+When using our Site, you may be redirected to third-party websites (for example, for surveys or external content). Those websites may set their own cookies, and we do not control their cookie behavior.
+
+If you use social sharing buttons, the relevant social platform may also set cookies. You can read more here:
 
 - https://www.facebook.com/about/privacy
 - http://twitter.com/privacy
@@ -78,8 +94,10 @@ If you use the buttons that allow you to share products and content with your fr
 
 ## Need More Information?
 
-If you would like to find out more about cookies and their use on the Internet, you may find the following link useful: All About Cookies
-Cookies that have been set in the past
-If you have disabled one or more Cookies, we may still use information collected from cookies prior to your disabled preference being set, however, we will stop using the disabled cookie to collect any further information. 
-Contact us
-If you have any questions or comments about this Cookies Notice, or privacy matters generally, please contact us via email at privacy@metalbear.com. 
+If you would like to learn more about cookies and their use on the internet, you may find this resource helpful: [All About Cookies](https://www.allaboutcookies.org/).
+
+### Cookies already set
+If you disable one or more cookies, we may still use information collected before your updated preference was applied, but we will stop using the disabled cookie to collect new information.
+
+### Contact us
+If you have any questions about this Cookies Notice or privacy matters generally, contact us at privacy@metalbear.com.
